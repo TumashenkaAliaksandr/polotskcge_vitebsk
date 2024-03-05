@@ -663,7 +663,7 @@ a.button-btn span, button.button-btn span {
 
 .form-control:focus {
   box-shadow: none;
-  background-color: none;
+  background-color: initial;
   border: none;
 }
 
@@ -2051,7 +2051,7 @@ Services section
 }
 
 .contact-main-wrapper .sb-contact-section .breadcrumb li {
-  color: "Lato", sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 20px;
 }
 
@@ -9212,7 +9212,7 @@ ul {
 
 .ic-section-2 .icon-box-two span i {
   margin-top: 50px;
-  border: 1px solid,#e12454;
+  border: 1px solid #e12454;
   border-radius: 40px;
   background-color: #e12454;
   color: #fff;
@@ -9295,7 +9295,7 @@ ul {
 
 .ic-section-3 .icon-box-three span i {
   margin-top: 50px;
-  border: 1px solid,#e12454;
+  border: 1px solid #e12454;
   border-radius: 40px;
   background-color: #fff;
   color: #797979;
@@ -9353,7 +9353,7 @@ ul {
   background-color: #e12454;
   color: #fff;
   margin-top: 50px;
-  border: 1px solid,#e12454;
+  border: 1px solid #e12454;
   border-radius: 40px;
   width: 70px;
   height: 70px;
@@ -9435,7 +9435,7 @@ ul {
 
 .ic-section-5 .icon-box-five span i {
   margin-top: 50px;
-  border: 1px solid,#e12454;
+  border: 1px solid #e12454;
   border-radius: 40px;
   background-color: #e12454;
   color: #fff;
@@ -9684,7 +9684,7 @@ ul {
 }
 
 .list-main-wrapper-five .list-five-wrapper ul li .list-content p {
-  font-weight: 500x;
+  font-weight: 500;
 }
 
 .list-main-wrapper-five .list-five-wrapper ul li .list-price {
