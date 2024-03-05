@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<!-- 
+   Template Name: medisch
+   Version: 1.0.0
+   Author:  Webstrot
+   
+   -->
+<!--[if IE 8]> 
+<html lang="en" class="ie8 no-js">
+   <![endif]-->
+<!--[if IE 9]> 
+   <html lang="en" class="ie9 no-js">
+      <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zxx" dir="ltr">
+<!--[endif]-->
+
+<head>
+   <meta charset="utf-8" />
+   <title>Medical</title>
+   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+   <!--Template style -->
+   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/animate.css" />
+   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/animate.min.css" />
+   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/bootstrap.min.css" />
+   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/fonts.css" />
+   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/font-awesome.css" />
+   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/font-awesome.min.css" />
+   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/font-awesome2.css" />
+   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/font-awesome.min2.css" />
+   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/magnific-popup.css" />
+   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/owl.carousel.min.css" />
+   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/owl.theme.default.min.css" />
+   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/style.css" />
+   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/responsive.css" />
+   <!--favicon-->
+   <link rel="shortcut icon" type="image/png" href="{% static 'webapp/images/fav-icon.png" />
+</head>
+
+<body>
+   <div id="preloader">
+      <div id="status">
+         <img src="{% static 'webapp/images/preloader.gif" id="preloader_image" alt="loader">
+      </div>
+   </div>
+   <!-- return-to-top-end -->
+   <!-- top to return -->
+   <a href="javascript:;" id="return-to-top"><i class="fas fa-angle-double-up"></i></a>
+   <!-- header start -->
+   <div class="main-header-wrapper float_left">
+      <div class="sb-main-header">
+         <div class="top-header-section">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-8">
+                     <div class="sb-top-left-section">
+                        <div>
+                           <a href="/mailto:madisch@example.com"><span><i class="fas fa-envelope"></i></span>&nbsp;
+                              &nbsp;madisch@example.com</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-6 col-4 p-0">
+                     <div class="sb-top-right-section">
+                        <ul>
+                           <li>
+                              <ul class="d-xl-flex d-lg-flex d-md-none d-sm-none d-none">
+                                 <li><a href="www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
+                                 <li><a href="www.twitter.com"><i class="fab fa-twitter"></i></a></li>
+                                 <li><a href="www.instagram.com"><i class="fab fa-instagram"></i></a></li>
+                                 <li><a href="www.pinterest.com"><i class="fab fa-pinterest-p"></i></a></li>
+                              </ul>
+                           </li>
+                           <li class="login-btn">
+                              <span>
+                                 <a href="login.html">Login</a>
+                                 /
+                                 <a href="register.html">Register</a>
+                              </span>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="mid-header-section d-xl-block d-lg-block d-md-none d-sm-none d-none">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-3 col-md-3 col-sm-12 col-12">
+                     <div class="sb_logo_wrapper">
+                        <a href="index.html">
+                           <img src="{% static 'webapp/images/logo.png" alt="img" class="">
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-lg-9 col-md-9 col-sm-12 col-12">
+                     <div class="sb-mid-right-section">
+                        <ul>
+                           <li>
+                              <a href="contact-us.html"><i class="fas fa-map-marker-alt"></i></a>
+                              <a href="contact-us.html">121 Waldeck Street<br>
+                                 NY, USA</a>
+                           </li>
+                           <li>
+                              <a href="contact-us.html"><i class="fas fa-phone"></i></a>
+                              <a href="contact-us.html">Call Us 24/7<br>
+                                 +80 (234) 123 567 12
+                              </a>
+                           </li>
+                           <li class="border-none pe-0">
+                              <a href="contact-us.html"><i class="fas fa-map-marker-alt"></i></a>
+                              <a href="contact-us.html">Mon - Fri: 8:00 - 20:00<br>
+                                 Sat - Sun: 9:00 - 16:00</a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="menu-items-wrapper d-xl-block d-lg-block d-md-none d-sm-none d-none ">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-8 col-md-6">
+                     <nav class="navbar navbar-expand-lg">
+                        <ul class="navbar-nav">
+                           <li class="nav-item ps-rel">
+                              <a class="nav-link" href="javascript:;">Home
+                                 <span><i class="fas fa-chevron-right"></i></span>
+                              </a>
+                              <ul class="dropdown-items">
+                                 <li><a href="index.html">Home 01</a></li>
+                                 <li><a href="index2.html">Home 02</a></li>
+                                 <li><a href="index3.html">Home 03</a></li>
+                              </ul>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="javascript:;">Pages
+                                 <span><i class="fas fa-chevron-right"></i></span>
+                              </a>
+                              <ul class="dropdown-items">
+                                 <li><a href="about-us.html">About Us</a></li>
+                                 <li><a href="all-dr.html">Doctors</a></li>
+                                 <li><a href="dr-single.html">Doctor single</a></li>
+                                 <li><a href="appoinment.html">Appoinment</a></li>
+                                 <li><a href="error404.html">404</a></li>
+                              </ul>
+                           </li>
+                           <li class="nav-item ps-rel">
+                              <a class="nav-link" href="javascript:;">Services
+                                 <span><i class="fas fa-chevron-right"></i></span>
+                              </a>
+                              <ul class="dropdown-items">
+                                 <li><a href="service.html">Service
+                                       <span><i class="fas fa-chevron-right"></i></span>
+                                    </a>
+                                    <ul class="sub-dropdown">
+                                       <li><a href="covid-single.html">Covid 19</a></li>
+                                       <li><a href="stathoscope-single.html">Full Stathoscope</a></li>
+                                       <li><a href="heart-specialist.html">Heart Specialist</a></li>
+                                       <li><a href="blood-bank.html">Blood Bank</a></li>
+                                       <li><a href="disable.html">For Disable</a></li>
+                                       <li><a href="psychiatrist.html">Psychiatrist</a></li>
+                                    </ul>
+                                 </li>
+                                 <li><a href="single-details.html">Service Details</a></li>
+                              </ul>
+                           </li>
+                           <li class="nav-item ps-rel">
+                              <a class="nav-link" href="javascript:;">Gallery
+                                 <span><i class="fas fa-chevron-right"></i></span>
+                              </a>
+                              <ul class="dropdown-items">
+                                 <li><a href="gallery.html">3 Columns</a></li>
+                                 <li><a href="gallery2.html">4 Columns</a></li>
+                                 <li><a href="gallery3.html">5 Columns</a></li>
+                              </ul>
+                           </li>
+                           <li class="nav-item ps-rel">
+                              <a class="nav-link" href="javascript:;">Blog
+                                 <span><i class="fas fa-chevron-right"></i></span>
+                              </a>
+                              <ul class="dropdown-items">
+                                 <li><a href="blog-left-sidebar.html">Blog Left-sidebar</a></li>
+                                 <li><a href="blog-right-sidebar.html">Blog Right-sidebar</a></li>
+                                 <li>
+                                    <a href="javascript:;">Blog-single
+                                       <span><i class="fas fa-chevron-right"></i></span>
+                                    </a>
+                                    <ul class="sub-dropdown">
+                                       <li><a href="blog-single.html">Blog single</a></li>
+                                       <li><a href="blog-single-slider.html">Blog single slider</a></li>
+                                       <li><a href="blog-single-video.html">Blog single video</a></li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                           <li class="nav-item ps-rel">
+                              <a class="nav-link" href="javascript:;">Shortcode
+                                 <span><i class="fas fa-chevron-right"></i></span>
+                              </a>
+                              <div class="dropdown-items mega-menu">
+                                 <ul>
+                                    <li><a href="accordion.html">Accordion</a></li>
+                                    <li><a href="client.html">Client</a></li>
+                                    <li><a href="counter.html">Counter</a></li>
+                                    <li><a href="form.html">Form</a></li>
+
+                                 </ul>
+                                 <ul>
+                                    <li><a href="alert.html">Alert</a></li>
+                                    <li><a href="icon.html">Icon</a></li>
+                                    <li><a href="list.html">List</a></li>
+                                    <li><a href="pricing-table.html">Pricing Table</a></li>
+                                 </ul>
+                                 <ul>
+                                    <li><a href="button.html">Button</a></li>
+                                    <li><a href="tab.html">Tabs</a></li>
+                                    <li><a href="team.html">Team</a></li>
+                                    <li><a href="testimonials.html">Testimonial</a></li>
+                                 </ul>
+                                 <ul>
+                                    <li><a href="portfolio.html">Portfolio</a></li>
+                                    <li><a href="social-icon.html">Social Icon</a></li>
+                                 </ul>
+                              </div>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="contact-us.html">Contact Us</a>
+                           </li>
+                        </ul>
+                     </nav>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                     <form class="d-flex justify-content-end ps-rel">
+                        <input class="" placeholder="Search">
+                        <span><i class="fas fa-search"></i></span>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- mobile menu -->
+         <div class="mobile-menu-wrapper d-xl-none d-lg-none d-md-block d-sm-block">
+            <div class="container">
+               <div class="row">
+                  <div class=" col-md-6 col-sm-6 col-6">
+                     <div class="mobile-logo">
+                        <a href="javascript:;">
+                           <img src="{% static 'webapp/images/logo3.png" alt="img">
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-6">
+                     <div class="d-flex  justify-content-end">
+                        <div class="d-flex align-items-center">
+                           <div class="toggle-main-wrapper mt-2" id="sidebar-toggle">
+                              <span class="line"></span>
+                              <span class="line"></span>
+                              <span class="line"></span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="sidebar">
+            <div class="sidebar_logo">
+               <a href="javascript:;"><img src="{% static 'webapp/images/logo.png" alt="img"></a>
+            </div>
+            <div id="toggle_close">&times;</div>
+            <div id='cssmenu'>
+               <ul class="float_left">
+                  <li class="has-sub">
+                     <a href="javascript:;">Home</a>
+                     <ul>
+                        <li><a href="index.html">Home 01</a></li>
+                        <li><a href="index2.html">Home 02</a></li>
+                        <li><a href="index3.html">Home 03</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="about-us.html">about</a></li>
+                  <li><a href="all-dr.html">Doctors</a></li>
+                  <li><a href="dr-single.html">Doctor Single</a></li>
+                  <li><a href="appoinment.html">Appointment</a></li>
+                  <li class="has-sub">
+                     <a href="javascript:;">Services</a>
+                     <ul>
+                        <li><a href="service.html">Service</a></li>
+                        <li><a href="single-details.html">Service Details</a></li>
+                     </ul>
+                  </li>
+                  <li class="has-sub">
+                     <a href="javascript:;">Gallery</a>
+                     <ul>
+                        <li><a href="gallery.html">3 Columns</a></li>
+                        <li><a href="gallery2.html">4 Columns</a></li>
+                        <li><a href="gallery3.html">5 Columns</a></li>
+                     </ul>
+                  </li>
+                  <li class="has-sub">
+                     <a href="javascript:;">Blog</a>
+                     <ul>
+                        <li><a href="blog-left-sidebar.html">Blog Left-sidebar</a></li>
+                        <li><a href="blog-right-sidebar.html">Blog Right-sidebar</a></li>
+                        <li class="has-sub">
+                           <a class="sub-icon">Blog Single</a>
+                           <ul class="m-sub-dropdown">
+                              <li><a href="blog-single.html">Blog single</a></li>
+                              <li><a href="blog-single-slider.html">Blog single slider</a></li>
+                              <li><a href="blog-single-video.html">Blog single video</a></li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="has-sub">
+                     <a href="javascript:;">Shortcode</a>
+                     <ul>
+                        <li><a href="accordion.html">Accordion</a></li>
+                        <li><a href="client.html">Client</a></li>
+                        <li><a href="counter.html">Counter</a></li>
+                        <li><a href="form.html">Form</a></li>
+                        <li><a href="alert.html">Alert</a></li>
+                        <li><a href="icon.html">Icon</a></li>
+                        <li><a href="list.html">List</a></li>
+                        <li><a href="pricing-table.html">Pricing Table</a></li>
+                        <li><a href="button.html">Button</a></li>
+                        <li><a href="tab.html">Tabs</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="testimonials.html">Testimonial</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="social-icon.html">Social Icon</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="contact-us.html">contact us</a></li>
+                  <li class="border-none"><a href="error404.html">404</a></li>
+                  <li class="input-group border-none my-3 mx-2">
+                     <input type="text" class="form-control" placeholder="Search">
+                     <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
+                           class="fas fa-search"></i></button>
+                  </li>
+                  <li class="border-none">
+                     <ul class="social-icon">
+                        <li><a href="www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="www.twitter.com"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="www.instagram.com"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="www.pinterest.com"><i class="fab fa-pinterest-p"></i></a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- header end -->
+   <!--HEADER END-->
+   <!-- breadcrumb  start-->
+   <div class="contact-main-wrapper">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+               <div class="sb-contact-section">
+                  <nav aria-label="breadcrumb">
+                     <h4>Pricing Table</h4>
+                     <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item " aria-current="page">Pricing Table</li>
+                     </ol>
+                  </nav>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- breadcrumb  end-->
+
+   <!-- pricing Table first table start -->
+   <div class="pt-section-1 padd-100 float-start w-100">
+      <div class="container">
+         <div class="section-heading">
+            <h4>Pricing Table 01</h4>
+         </div>
+         <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12  wow fadeInUp" data-wow-delay=".1s">
+               <div class="p-box-1 p-bottom-padding box-border">
+                  <h4 class="p-top-padding">Basic Package</h4>
+                  <h1 class="heading-1">free</h1>
+                  <p class="text-1">Location Listings: 5</p>
+                  <p class="text-1">Duration: 3 months</p>
+                  <p class="text-1">Online Booking: Yes</p>
+                  <p class="text-1">Sponsored Listings: No</p>
+                  <p class="text-1">Support: No</p>
+                  <button class="btn-1">Submit free listing</button>
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 wow fadeInUp">
+               <div class="p-box-1 p-bottom-padding box-border wow backInLeft" data-wow-delay=".2s">
+                  <h4 class="p-top-padding">Standard Package</h4>
+                  <h1 class="heading-1">$45</h1>
+                  <p class="text-1">Location Listings: 5</p>
+                  <p class="text-1">Duration: 3 months</p>
+                  <p class="text-1">Online Booking: Yes</p>
+                  <p class="text-1">Sponsored Listings: No</p>
+                  <p class="text-1">Support: No</p>
+                  <button class="btn-1">Get Package</button>
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12  wow fadeInUp">
+               <div class="p-box-1 p-bottom-padding box-border wow backInLeft" data-wow-delay=".3s">
+                  <h4 class="p-top-padding">Premium Package</h4>
+                  <h1 class="heading-1">$89</h1>
+                  <p class="text-1">Location Listings: 5</p>
+                  <p class="text-1">Duration: 3 months</p>
+                  <p class="text-1">Online Booking: Yes</p>
+                  <p class="text-1">Sponsored Listings: No</p>
+                  <p class="text-1">Support: No</p>
+                  <button class="btn-1">Get Package</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- Pricing table second section start -->
+   <div class="pt-section-2  padd-100 float-start w-100">
+      <div class="container">
+         <div class="section-heading">
+            <h4>Pricing Table 02</h4>
+         </div>
+         <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 wow fadeInUp" data-delay=".1s">
+               <div class="p-box-2 p-bottom-padding p-top-padding">
+                  <img src="{% static 'webapp/images/pricing-table/pt-1.png" alt="cant't loded">
+                  <h4 class="p-top-padding"><a href="javascript:;">Web hosting</a></h4>
+
+                  <p class="text-2">40 GB Data Limit</p>
+                  <p class="text-2">Unlimited Bandwidth</p>
+                  <p class="text-2">4* MBPS Speed </p>
+                  <p class="text-2">Free 2GB Night Data</p>
+                  <p class="text-2">No Installation charges</p>
+                  <h3 class="heading-2 pd-b-40">$29.99/<span class="small">monthly</span></h3>
+                  <button class="btn-2">choose plan</button>
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+               <div class="p-box-2 p-bottom-padding p-top-padding wow fadeInUp" data-delay=".2s">
+                  <img src="{% static 'webapp/images/pricing-table/pt-2.png" alt="can't loaded">
+                  <h4 class="p-top-padding"><a href="javascript:;">Cloud hosting</a></h4>
+
+                  <p class="text-2">Location Listings: 5</p>
+                  <p class="text-2">Duration: 3 months</p>
+                  <p class="text-2">Online Booking: Yes</p>
+                  <p class="text-2">Sponsored Listings: No</p>
+                  <p class="text-2">Support: No</p>
+                  <h3 class="heading-2 pd-b-40">$29.99/<span class="small">monthly</span></h3>
+                  <button class="btn-2">choose plan</button>
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+
+               <div class="p-box-2 p-bottom-paddign p-top-padding wow fadeInUp" data-delay=".3s">
+                  <img src="{% static 'webapp/images/pricing-table/pt-3.png" alt="can't loaded">
+                  <h4 class="p-top-padding"><a href="javascript:;">VPN hosting</a></h4>
+                  <p class="text-2">Location Listings: 5</p>
+                  <p class="text-2">Duration: 3 months</p>
+                  <p class="text-2">Online Booking: Yes</p>
+                  <p class="text-2">Sponsored Listings: No</p>
+                  <p class="text-2">Support: No</p>
+                  <h3 class="heading-2 pd-b-40">$29.99/<span class="small">monthly</span></h3>
+                  <button class="btn-2">choose plan</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- pricing table third section start -->
+   <div class="pt-section-3 padd-100 float-start w-100">
+      <div class="container">
+         <div class="section-heading">
+            <h4>Pricing Table 03</h4>
+         </div>
+         <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 wow fadeInUp" data-wow-delay=".1s">
+               <div class="p-box-3 p-bottom-padding p-top-padding">
+                  <div class="p-promo p-bottom-padding p-top-padding">
+                     <div class="deal">
+                        <span>Premium</span>
+                        <span>This is really a good deal!</span>
+                     </div>
+                     <span class="price">$79</span>
+                     <ul class="features">
+                        <li>Some great feature</li>
+                        <li>Another super feature</li>
+                        <li>And more...</li>
+                     </ul>
+                     <button class="btn-5">Sign up</button>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 wow fadeInUp" data-wow-delay=".2s">
+               <div class="p-box-3 p-bottom-padding p-top-padding">
+                  <div class="p-promo p-bottom-padding p-top-padding">
+                     <div class="deal">
+                        <span>Plus</span>
+                        <span>This is really a good deal!</span>
+                     </div>
+                     <span class="price">$59</span>
+                     <ul class="features">
+                        <li>Some great feature</li>
+                        <li>Another super feature</li>
+                        <li>And more...</li>
+                     </ul>
+                     <button class="btn-5">Sign up</button>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
+               <div class="p-box-3 p-bottom-padding p-top-padding">
+                  <div class="p-promo p-bottom-padding p-top-padding">
+                     <div class="deal">
+                        <span>Basic</span>
+                        <span>This is really a good deal!</span>
+                     </div>
+                     <span class="price">$49</span>
+                     <ul class="features">
+                        <li>Some great feature</li>
+                        <li>Another super feature</li>
+                        <li>And more...</li>
+                     </ul>
+                     <button class="btn-5">Sign up</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Pricing Table four section -->
+   <div class="pt-section-4  padd-100 float-start w-100">
+      <div class="container">
+         <div class="section-heading">
+            <h4>Pricing Table 04</h4>
+         </div>
+         <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12  wow fadeInUp" data-wow-delay=".1s">
+               <div class="p-box-4">
+                  <div class="p-box-4-1">
+                     <h2>Primary</h2>
+                     <h3>$100 <span>/Mon</span></h3>
+                  </div>
+                  <ul class="list-6">
+                     <li>300 Gb harddisk space</li>
+                     <li>30+ Email Address</li>
+                     <li>Unlimited Traffic Per Year</li>
+                  </ul>
+                  <button class="btn-6">Purchase Now</button>
+
+
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 wow fadeInUp" data-wow-delay=".2s">
+               <div class="p-box-4">
+                  <div class="p-box-4-1">
+                     <h2>Standard</h2>
+                     <h3>$300 <span>/Mon</span></h3>
+                  </div>
+                  <ul class="list-6">
+                     <li>300 Gb harddisk space</li>
+                     <li>30+ Email Address</li>
+                     <li>Unlimited Traffic Per Year</li>
+                  </ul>
+                  <button class="btn-6">Purchase Now</button>
+
+
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
+               <div class="p-box-4">
+                  <div class="p-box-4-1">
+                     <h2>Premium</h2>
+                     <h3>$500 <span>/Mon</span></h3>
+                  </div>
+                  <ul class="list-6">
+                     <li>300 Gb harddisk space</li>
+                     <li>30+ Email Address</li>
+                     <li>Unlimited Traffic Per Year</li>
+                  </ul>
+                  <button class="btn-6">Purchase Now</button>
+
+
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </div>
+   <!-- pricing table five section -->
+   <!--Price Table Section-16-->
+   <div class="pt-section-5 padd-100 float-start w-100">
+      <div class="container">
+         <div class="section-heading">
+            <h4>Pricing Table 05</h4>
+         </div>
+         <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 wow fadeInUp" data-wow-delay=".1s">
+               <div class="p-box-5">
+                  <div class="heading-5">
+                     <a href="javascript:;"><i class="fas fa-home"></i></a>
+                     <h2>Pro</h2>
+                     <h3>$599 <small>/month</small> </h3>
+                  </div>
+                  <div class="content-5">
+                     <ul>
+                        <li>Email Marketing</li>
+                        <li>Email Builder</li>
+                        <li>Client Testing</li>
+                        <li>Multiplet Email Support</li>
+                        <li>Email Read Receipent</li>
+                        <li>2 Users Free</li>
+                     </ul>
+                     <button class="btn-5">Get Now</button>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 wow fadeInUp" data-wow-delay=".2s">
+               <div class="p-box-5">
+                  <div class="heading-5">
+                     <a href="javascript:;"><i class="fas fa-home"></i></a>
+                     <h2>Plus</h2>
+                     <h3>$399 <small>/month</small> </h3>
+                  </div>
+                  <div class="content-5">
+                     <ul>
+                        <li>Email Marketing</li>
+                        <li>Email Builder</li>
+                        <li>Client Testing</li>
+                        <li>Multiplet Email Support</li>
+                        <li>Email Read Receipent</li>
+                        <li>2 Users Free</li>
+                     </ul>
+                     <button class="btn-5">Get Now</button>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 wow fadeInUp" data-wow-delay=".3s">
+               <div class="p-box-5">
+                  <div class="heading-5">
+                     <a href="javascript:;"><i class="fas fa-home"></i></a>
+                     <h2>Standard</h2>
+                     <h3>$199 <small>/month</small> </h3>
+                  </div>
+                  <div class="content-5">
+                     <ul>
+                        <li>Email Marketing</li>
+                        <li>Email Builder</li>
+                        <li>Client Testing</li>
+                        <li>Multiplet Email Support</li>
+                        <li>Email Read Receipent</li>
+                        <li>2 Users Free</li>
+                     </ul>
+                     <button class="btn-5">Get Now</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- footer section start -->
+   <div class="footer-main-wrapper">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12 col-12">
+               <div class="sb-footer-section">
+                  <div class="footer-logo">
+                     <img src="{% static 'webapp/images/footer-logo.png" alt="img">
+                  </div>
+                  <ul>
+                     <li><a href="javascript:;"><i class="fas fa-map-marker-alt"></i>ADDRESS<br>
+                           121 Waldeck Street, NY, USA</a>
+                     </li>
+                     <li><a href="javascript:;"><i class="fas fa-phone"></i>PHONE<br>
+                           0800-123456, 0800-123489</a>
+                     </li>
+                     <li><a href="javascript:;"><i class="fas fa-envelope"></i>EMAIL<br>
+                           medisch@example.com</a>
+                     </li>
+                     <li>
+                        <ul class="footer-media">
+                           <li><a href="javascript:;"><i class="fab fa-facebook-f"></i></a></li>
+                           <li><a href="javascript:;"><i class="fab fa-twitter"></i></a></li>
+                           <li><a href="javascript:;"><i class="fab fa-instagram"></i></a></li>
+                           <li><a href="javascript:;"><i class="fab fa-pinterest-p"></i></a></li>
+                        </ul>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-lg-2 col-md-6 col-sm-12 col-12">
+               <div class="links">
+                  <h4>Useful Links</h4>
+                  <ul>
+                     <li><a href="about-us.html"><i class="fas fa-angle-right"></i>About Us</a></li>
+                     <li><a href="service.html"><i class="fas fa-angle-right"></i>Service</a></li>
+                     <li><a href="gallery.html"><i class="fas fa-angle-right"></i>Gallery</a></li>
+                     <li><a href="blog-single.html"><i class="fas fa-angle-right"></i>Blog</a></li>
+                     <li><a href="appoinment.html"><i class="fas fa-angle-right"></i>Appoinments</a></li>
+                     <li><a href="contact-us.html"><i class="fas fa-angle-right"></i>Contact Us</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+               <h4>Recent Posts</h4>
+               <div class="img-link">
+                  <ul>
+                     <li>
+                        <img src="{% static 'webapp/images/post-img1.jpg" alt="img">
+                        <div class="content">
+                           <h5 class="pb-0"><a href="blog-single.html">Best Surgery</a></h5>
+                           <p>Our best surgery<br>
+                              available here.
+                           </p>
+                        </div>
+                     </li>
+                     <li>
+                        <img src="{% static 'webapp/images/post-img2.jpg" alt="img">
+                        <div class="content">
+                           <h5 class="pb-0"><a href="blog-single.html">Best Doctors</a></h5>
+                           <p>Our best surgery<br>
+                              available here.
+                           </p>
+                        </div>
+                     </li>
+                     <li>
+                        <img src="{% static 'webapp/images/post-img3.jpg" alt="img">
+                        <div class="content">
+                           <h5 class="pb-0"><a href="blog-single.html">Best Services</a></h5>
+                           <p>Our best surgery<br>
+                              available here.
+                           </p>
+                        </div>
+                     </li>
+                     <li>
+                        <img src="{% static 'webapp/images/post-img4.jpg" alt="img">
+                        <div class="content">
+                           <h5 class="pb-0"><a href="blog-single.html">Best Rooms</a></h5>
+                           <p>Our best surgery<br>
+                              available here.
+                           </p>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 col-12">
+               <div class="time-wrapper">
+                  <div>
+                     <h4>Days</h4>
+                     <ul>
+                        <li>Monday</li>
+                        <li>Tuesday</li>
+                        <li>Wednesday</li>
+                        <li>Thrusday</li>
+                        <li>Friday</li>
+                        <li>Saturday</li>
+                        <li>Sunday</li>
+                     </ul>
+                  </div>
+                  <div>
+                     <h4>Opening Hours</h4>
+                     <ul>
+                        <li>08.00 - 10.00</li>
+                        <li>09.00 - 11.00</li>
+                        <li>10.00 - 12.00</li>
+                        <li>11.00 - 01.00</li>
+                        <li>12.00 - 02.00</li>
+                        <li>01.00 - 02.00</li>
+                        <li>02.00 - 04.00</li>
+                     </ul>
+                  </div>
+               </div>
+               <div id="newsletter">
+                  <h5>Sign Up for Newsletter</h5>
+                  <div class="input-box">
+                     <input type="text" name="text" id="text" placeholder="Enter Your Email">
+                     <a href="javascript:;">
+                        <i class="fas fa-paper-plane"></i>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <section>
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                  <p>© Copyright 2022 - 23 Design by <a href="https://webstrot.com/">Webstrot</a> | All Rights Reserved.
+                  </p>
+               </div>
+               <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+                  <p class="last-para">Private Policy | Terms and Conditions.</p>
+               </div>
+            </div>
+         </div>
+      </section>
+   </div>
+   <!-- footer section end -->
+   <!-- js files -->
+   <script src="{% static 'webapp/js/jquery-3.6.0.min.js"></script>
+   <script src="{% static 'webapp/js/bootstrap.min.js"></script>
+   <script src="{% static 'webapp/js/wow.js"></script>
+   <script src="{% static 'webapp/js/jquery.magnific-popup.js"></script>
+   <script src="{% static 'webapp/js/owl.carousel.min.js"></script>
+   <script src="{% static 'webapp/js/contact_form.js"></script>
+   <script src="{% static 'webapp/js/custom.js"></script>
+   <!-- custom js -->
+   <!-- search -->
+
+   <script>
+      $('#search_button').on("click", function (e) {
+         $('#search_open').slideToggle();
+         e.stopPropagation();
+      });
+
+      $(document).on("click", function (e) {
+         if (!(e.target.closest('#search_open1'))) {
+            $("#search_open1").slideUp();
+         }
+      });
+   </script>
+   <script>
+      $('#search_button1').on("click", function (e) {
+         $('#search_open1').slideToggle();
+         e.stopPropagation();
+      });
+
+      $(document).on("click", function (e) {
+         if (!(e.target.closest('#search_open1'))) {
+            $("#search_open1").slideUp();
+         }
+      });
+   </script>
+</body>
+
+</html>
