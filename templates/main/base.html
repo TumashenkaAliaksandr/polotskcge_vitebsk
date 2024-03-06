@@ -2,480 +2,235 @@
 
 
 {% block head %}
-   -->
-<!--[if IE 8]>
-<html lang="en" class="ie8 no-js">
-   <![endif]-->
-<!--[if IE 9]>
-   <html lang="en" class="ie9 no-js">
-      <![endif]-->
-<!--[if !IE]><!-->
-<html lang="zxx" dir="ltr">
-<!--[endif]-->
 
 <head>
-   <meta charset="utf-8" />
-   <title>Medical</title>
-   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-   <!--Template style -->
-   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/animate.css' %}" />
-   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/animate.min.css' %}" />
-   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/bootstrap.min.css' %}" />
-   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/fonts.css' %}" />
-   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/font-awesome.css' %}" />
-   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/font-awesome.min.css' %}" />
-   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/magnific-popup.css' %}" />
-   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/owl.carousel.min.css' %}" />
-   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/owl.theme.default.min.css' %}" />
-   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/style.css' %}" />
-   <link rel="stylesheet" type="text/css" href="{% static 'webapp/css/responsive.css' %}" />
-   <!--favicon-->
-   <link rel="shortcut icon" type="image/png" href="{% static 'webapp/images/fav-icon.png' %}" />
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Полоцкий зональный центр гигиены и эпидемиалогии</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'webapp/assets/img/pzce_favicon_nobg.png' %}" rel="icon">
+  <link href="{% static 'webapp/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'webapp/assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+  <link href="{% static 'webapp/assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'webapp/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'webapp/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'webapp/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'webapp/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'webapp/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'webapp/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'webapp/assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Medicio
+  * Updated: Jan 29 2024 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/medicio-free-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 {% endblock %}
+<body>
 
-<div id="preloader">
-      <div id="status">
-         <img src="{% static 'webapp/images/preloader.gif' %}" id="preloader_image" alt="loader">
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+      <div class="align-items-center d-none d-md-flex">
+        <i class="bi bi-clock"></i> Пн - Пт, 8.00 - 12.00
       </div>
-   </div>
-   <!-- top to return -->
-   <a href="javascript:;" id="return-to-top" class="change-bg1"><i class="fas fa-angle-double-up"></i></a>
-   <div class="main-header-wrapper2 float_left">
-      <div class="sb-header-section2 d-xl-block d-lg-block d-md-none d-sm-none d-none">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-3 col-md-3">
-                  <div class="logo-wrapper2">
-                     <a href="javascript:;"> <img src="{% static 'webapp/images/logo2.png' %}" alt="img"></a>
-                  </div>
-               </div>
-               <div class="col-lg-9 col-md-9 ">
-                  <div class="menu-top-section2">
-                     <ul>
-                        <li>
-                           <a href="javascript:;"><span><i class="fas fa-map-marker-alt"></i></span>121 Waldeck
-                              Street, NY, USA</a>
-                        </li>
-                        <li>
-                           <a href="javascript:;"><span><i class="far fa-clock"></i></span>Mon-Sat: 9am to
-                              6pm</a>
-                        </li>
-                        <li>
-                           <ul class="">
-                              <li><a href="www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
-                              <li><a href="www.twitter.com"><i class="fab fa-twitter"></i></a></li>
-                              <li><a href="www.instagram.com"><i class="fab fa-instagram"></i></a></li>
-                              <li><a href="www.pinterest.com"><i class="fab fa-pinterest-p"></i></a></li>
-                           </ul>
-                        </li>
-                        <li class="btn2">
-                           <span class="text-light">
-                              <a href="login.html">Login</a>
-                              /
-                              <a href="register.html">Register</a>
-                           </span>
-                        </li>
-                     </ul>
-                  </div>
-                  <div class="menu-section2">
-                     <ul>
-                        <li class="nav-item ps-rel">
-                           <a class="nav-link" href="javascript:;">Home
-                              <span><i class="fas fa-chevron-right"></i></span>
-                           </a>
-                           <ul class="dropdown-items">
-                              <li><a href="index.html">Home 01</a></li>
-                              <li><a href="index2.html">Home 02</a></li>
-                              <li><a href="index3.html">Home 03</a></li>
-                           </ul>
-                        </li>
-                        <li class="nav-item ps-rel">
-                           <a class="nav-link" href="javascript:;">Pages
-                              <span><i class="fas fa-chevron-right"></i></span>
-                           </a>
-                           <ul class="dropdown-items">
-                              <li><a href="about-us.html">About Us</a></li>
-                              <li><a href="all-dr.html">Doctors</a></li>
-                              <li><a href="dr-single.html">Doctor single</a></li>
-                              <li><a href="appoinment.html">Appoinment</a></li>
-                              <li><a href="error404.html">404</a></li>
-                           </ul>
-                        </li>
-                        <li class="nav-item ps-rel">
-                           <a class="nav-link" href="javascript:;">Shortcode
-                              <span><i class="fas fa-chevron-right"></i></span>
-                           </a>
-                           <div class="dropdown-items mega-menu">
-                              <ul>
-                                 <li><a href="accordion.html">Accordion</a></li>
-                                 <li><a href="client.html">Client</a></li>
-                                 <li><a href="counter.html">Counter</a></li>
-                                 <li><a href="form.html">Form</a></li>
+      <div class="d-flex align-items-center">
+        <i class="bi bi-phone"></i> Наш Телефон: 8 (0214) 49 31 68
+      </div>
+    </div>
+  </div>
 
-                              </ul>
-                              <ul>
-                                 <li><a href="alert.html">Alert</a></li>
-                                 <li><a href="icon.html">Icon</a></li>
-                                 <li><a href="list.html">List</a></li>
-                                 <li><a href="pricing-table.html">Pricing Table</a></li>
-                              </ul>
-                              <ul>
-                                 <li><a href="button.html">Button</a></li>
-                                 <li><a href="tab.html">Tabs</a></li>
-                                 <li><a href="team.html">Team</a></li>
-                                 <li><a href="testimonials.html">Testimonial</a></li>
-                              </ul>
-                              <ul>
-                                 <li><a href="portfolio.html">Portfolio</a></li>
-                                 <li><a href="social-icon.html">Social Icon</a></li>
-                              </ul>
-                           </div>
-                        </li>
-                        <li class="nav-item ps-rel">
-                           <a class="nav-link" href="javascript:;">Blog
-                              <span><i class="fas fa-chevron-right"></i></span>
-                           </a>
-                           <ul class="dropdown-items">
-                              <li><a href="blog-left-sidebar.html">Blog Left-sidebar</a></li>
-                              <li><a href="blog-right-sidebar.html">Blog Right-sidebar</a></li>
-                              <li>
-                                 <a href="javascript:;">Blog-single
-                                    <span><i class="fas fa-chevron-right"></i></span>
-                                 </a>
-                                 <ul class="sub-dropdown">
-                                    <li><a href="blog-single.html">Blog single</a></li>
-                                    <li><a href="blog-single-slider.html">Blog single slider</a></li>
-                                    <li><a href="blog-single-video.html">Blog single video</a></li>
-                                 </ul>
-                              </li>
-                           </ul>
-                        </li>
-                        <li class="nav-item ps-rel">
-                           <a class="nav-link" href="javascript:;">Services
-                              <span><i class="fas fa-chevron-right"></i></span>
-                           </a>
-                           <ul class="dropdown-items">
-                              <li><a href="service.html">Service
-                                 <span><i class="fas fa-chevron-right"></i></span>
-                              </a>
-                              <ul class="sub-dropdown">
-                                 <li><a href="covid-single.html">Covid 19</a></li>
-                                 <li><a href="stathoscope-single.html">Full Stathoscope</a></li>
-                                 <li><a href="heart-specialist.html">Heart Specialist</a></li>
-                                 <li><a href="blood-bank.html">Blood Bank</a></li>
-                                 <li><a href="disable.html">For Disable</a></li>
-                                 <li><a href="psychiatrist.html">Psychiatrist</a></li>
-                              </ul>
-                           </li>
-                              <li><a href="single-details.html">Service Details</a></li>
-                           </ul>
-                        </li>
-                        <li class="nav-item ps-rel">
-                           <a class="nav-link" href="javascript:;">Gallery
-                              <span><i class="fas fa-chevron-right"></i></span>
-                           </a>
-                           <ul class="dropdown-items">
-                              <li><a href="gallery.html">3 Columns</a></li>
-                              <li><a href="gallery2.html">4 Columns</a></li>
-                              <li><a href="gallery3.html">5 Columns</a></li>
-                           </ul>
-                        </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="contact-us.html">Contact Us</a>
-                        </li>
-                        <li>
-                           <a href="javascript:;" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                 class="fas fa-search"></i></a>
-                        </li>
-                        <li><a href="javascript:;" class="page2-btn">Book Now</a></li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="mobile-menu-wrapper d-xl-none d-lg-none d-md-block d-sm-block">
-         <div class="container">
-            <div class="row">
-               <div class=" col-md-6 col-sm-6 col-6">
-                  <div class="mobile-logo">
-                     <a href="javascript:;">
-                        <img src="{% static 'webapp/images/logo3.png' %}" alt="img">
-                     </a>
-                  </div>
-               </div>
-               <div class="col-md-6 col-sm-6 col-6">
-                  <div class="d-flex  justify-content-end">
-                     <div class="d-flex align-items-center">
-                        <div class="toggle-main-wrapper mt-2" id="sidebar-toggle">
-                           <span class="line"></span>
-                           <span class="line"></span>
-                           <span class="line"></span>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div id="sidebar">
-         <div class="sidebar_logo">
-            <a href="javascript:;"><img src="{% static 'webapp/images/logo2.png' %}" alt="img"></a>
-         </div>
-         <div id="toggle_close">&times;</div>
-         <div id='cssmenu'>
-            <ul class="float_left">
-               <li class="has-sub">
-                  <a href="javascript:;">Home</a>
-                  <ul>
-                     <li><a href="index.html">Home 01</a></li>
-                     <li><a href="index2.html">Home 02</a></li>
-                     <li><a href="index3.html">Home 03</a></li>
-                  </ul>
-               </li>
-               <li><a href="about-us.html">about</a></li>
-               <li><a href="all-dr.html">Doctors</a></li>
-               <li><a href="dr-single.html">Doctor Single</a></li>
-               <li><a href="appoinment.html">Appointment</a></li>
-               <li class="has-sub">
-                  <a href="javascript:;">Services</a>
-                  <ul>
-                     <li><a href="service.html">Service</a></li>
-                     <li><a href="single-details.html">Service Details</a></li>
-                  </ul>
-               </li>
-               <li class="has-sub">
-                  <a href="javascript:;">Gallery</a>
-                  <ul>
-                     <li><a href="gallery.html">3 Columns</a></li>
-                     <li><a href="gallery2.html">4 Columns</a></li>
-                     <li><a href="gallery3.html">5 Columns</a></li>
-                  </ul>
-               </li>
-               <li class="has-sub">
-                  <a href="javascript:;">Blog</a>
-                  <ul>
-                     <li><a href="blog-left-sidebar.html">Blog Left-sidebar</a></li>
-                     <li><a href="blog-right-sidebar.html">Blog Right-sidebar</a></li>
-                     <li class="has-sub">
-                        <a class="sub-icon">Blog Single</a>
-                        <ul class="m-sub-dropdown">
-                           <li><a href="blog-single.html">Blog single</a></li>
-                           <li><a href="blog-single-slider.html">Blog single slider</a></li>
-                           <li><a href="blog-single-video.html">Blog single video</a></li>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <a href="index.html" class="logo me-auto"><img src="{% static 'webapp/assets/img/logo_gigi_center_polock.png' %}" alt=""></a>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+            <li><a class="nav-link scrollto " href="#hero">Главная</a></li>
+            <li><a class="nav-link scrollto" href="#about">Новости</a></li>
+            <li class="dropdown"><a href="#"><span>О Центре</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                    <li><a href="#">Drop Down 1</a></li>
+                    <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                        <ul>
+                            <li><a href="#">Deep Drop Down 1</a></li>
+                            <li><a href="#">Deep Drop Down 2</a></li>
+                            <li><a href="#">Deep Drop Down 3</a></li>
+                            <li><a href="#">Deep Drop Down 4</a></li>
+                            <li><a href="#">Deep Drop Down 5</a></li>
                         </ul>
-                     </li>
-                  </ul>
-               </li>
-               <li class="has-sub">
-                  <a href="javascript:;">Shortcode</a>
-                  <ul>
-                     <li><a href="accordion.html">Accordion</a></li>
-                     <li><a href="client.html">Client</a></li>
-                     <li><a href="counter.html">Counter</a></li>
-                     <li><a href="form.html">Form</a></li>
-                     <li><a href="alert.html">Alert</a></li>
-                     <li><a href="icon.html">Icon</a></li>
-                     <li><a href="list.html">List</a></li>
-                     <li><a href="pricing-table.html">Pricing Table</a></li>
-                     <li><a href="button.html">Button</a></li>
-                     <li><a href="tab.html">Tabs</a></li>
-                     <li><a href="team.html">Team</a></li>
-                     <li><a href="testimonials.html">Testimonial</a></li>
-                     <li><a href="portfolio.html">Portfolio</a></li>
-                     <li><a href="social-icon.html">Social Icon</a></li>
-                  </ul>
-               </li>
-               <li><a href="contact-us.html">contact us</a></li>
-               <li class="border-none"><a href="error404.html">404</a></li>
-               <li class="input-group border-none my-3 mx-2">
-                  <input type="text" class="form-control" placeholder="Search">
-                  <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i
-                        class="fas fa-search"></i></button>
-               </li>
-               <li class="border-none">
-                  <ul class="social-icon">
-                     <li><a href="www.facebook.com"><i class="fab fa-facebook-f"></i></a></li>
-                     <li><a href="www.twitter.com"><i class="fab fa-twitter"></i></a></li>
-                     <li><a href="www.instagram.com"><i class="fab fa-instagram"></i></a></li>
-                     <li><a href="www.pinterest.com"><i class="fab fa-pinterest-p"></i></a></li>
-                  </ul>
-               </li>
-            </ul>
-         </div>
-      </div>
-   </div>
+                    </li>
+                    <li><a href="#">Drop Down 2</a></li>
+                    <li><a href="#">Drop Down 3</a></li>
+                    <li><a href="#">Drop Down 4</a></li>
+                </ul>
+            </li>
+            <li class="dropdown"><a href="#"><span>Обращения</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                    <li><a href="#">Drop Down 1</a></li>
+                    <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                        <ul>
+                            <li><a href="#">Deep Drop Down 1</a></li>
+                            <li><a href="#">Deep Drop Down 2</a></li>
+                            <li><a href="#">Deep Drop Down 3</a></li>
+                            <li><a href="#">Deep Drop Down 4</a></li>
+                            <li><a href="#">Deep Drop Down 5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Drop Down 2</a></li>
+                    <li><a href="#">Drop Down 3</a></li>
+                    <li><a href="#">Drop Down 4</a></li>
+                </ul>
+            </li>
+            <li class="dropdown"><a href="#"><span>Админпроцессы</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                    <li><a href="#">Drop Down 1</a></li>
+                    <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                        <ul>
+                            <li><a href="#">Deep Drop Down 1</a></li>
+                            <li><a href="#">Deep Drop Down 2</a></li>
+                            <li><a href="#">Deep Drop Down 3</a></li>
+                            <li><a href="#">Deep Drop Down 4</a></li>
+                            <li><a href="#">Deep Drop Down 5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Drop Down 2</a></li>
+                    <li><a href="#">Drop Down 3</a></li>
+                    <li><a href="#">Drop Down 4</a></li>
+                </ul>
+            </li>
+            <li class="dropdown"><a href="#"><span>Услуги</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                    <li><a href="#">Drop Down 1</a></li>
+                    <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                        <ul>
+                            <li><a href="#">Deep Drop Down 1</a></li>
+                            <li><a href="#">Deep Drop Down 2</a></li>
+                            <li><a href="#">Deep Drop Down 3</a></li>
+                            <li><a href="#">Deep Drop Down 4</a></li>
+                            <li><a href="#">Deep Drop Down 5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Drop Down 2</a></li>
+                    <li><a href="#">Drop Down 3</a></li>
+                    <li><a href="#">Drop Down 4</a></li>
+                </ul>
+            </li>
+            <li><a class="nav-link scrollto" href="#contact">Контакты</a></li>
+        </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
 
-   {% block content %}{% endblock %}
+      <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Записаться на</span> Приём</a>
 
-       <!-- footer section start -->
-   <div class="footer-main-wrapper footer-main3">
+    </div>
+  </header><!-- End Header -->
+
+{% block content %}{% endblock %}
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
       <div class="container">
-         <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-               <div class="sb-footer-section">
-                  <div class="footer-logo">
-                     <a href="javascript:;"><img src="{% static 'webapp/images/home3/f-logo3.png' %}" alt="img"></a>
-                  </div>
-                  <ul>
-                     <li><a href="javascript:;"><i class="fas fa-map-marker-alt"></i>ADDRESS<br>
-                           121 Waldeck Street, NY, USA</a>
-                     </li>
-                     <li><a href="javascript:;"><i class="fas fa-phone"></i>PHONE<br>
-                           0800-123456, 0800-123489</a>
-                     </li>
-                     <li><a href="javascript:;"><i class="fas fa-envelope"></i>EMAIL<br>
-                           medisch@example.com</a>
-                     </li>
-                     <li>
-                        <ul class="footer-media">
-                           <li><a href="javascript:;"><i class="fab fa-facebook-f"></i></a></li>
-                           <li><a href="javascript:;"><i class="fab fa-twitter"></i></a></li>
-                           <li><a href="javascript:;"><i class="fab fa-instagram"></i></a></li>
-                           <li><a href="javascript:;"><i class="fab fa-pinterest-p"></i></a></li>
-                        </ul>
-                     </li>
-                  </ul>
-               </div>
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Medicio</h3>
+              <p>
+                211400, г. Полоцк, <br>
+                ул. Юбилейная, д.7б, пом.2<br><br>
+                <strong>Телефон:</strong>
+                  8 (0214) 49 31 68<br>
+                <strong>Почта:</strong> polotzk_hyg@mail.ru<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
             </div>
-            <div class="col-lg-2 col-md-6 col-sm-12 col-12">
-               <div class="links">
-                  <h4>Useful Links</h4>
-                  <ul>
-                     <li><a href="javascript:;"><i class="fas fa-angle-right"></i>About Us</a></li>
-                     <li><a href="javascript:;"><i class="fas fa-angle-right"></i>Our Mission</a></li>
-                     <li><a href="javascript:;"><i class="fas fa-angle-right"></i>Our Approch</a></li>
-                     <li><a href="javascript:;"><i class="fas fa-angle-right"></i>Our History</a></li>
-                     <li><a href="javascript:;"><i class="fas fa-angle-right"></i>Achivments</a></li>
-                     <li><a href="javascript:;"><i class="fas fa-angle-right"></i>Careers</a></li>
-                     <li><a href="javascript:;"><i class="fas fa-angle-right"></i>Appoinments</a></li>
-                  </ul>
-               </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12">
-               <h4>Recent Posts</h4>
-               <div class="img-link">
-                  <ul>
-                     <li>
-                        <img src="{% static 'webapp/images/post-img1.jpg' %}" alt="img">
-                        <div class="content">
-                           <h5 class="pb-0"><a href="blog-single.html">Best Surgery</a></h5>
-                           <p>Our best surgery<br>
-                              available here.
-                           </p>
-                        </div>
-                     </li>
-                     <li>
-                        <img src="{% static 'webapp/images/post-img2.jpg' %}" alt="img">
-                        <div class="content">
-                           <h5 class="pb-0"><a href="blog-single.html">Best Doctors</a></h5>
-                           <p>Our best surgery<br>
-                              available here.
-                           </p>
-                        </div>
-                     </li>
-                     <li>
-                        <img src="{% static 'webapp/images/post-img3.jpg' %}" alt="img">
-                        <div class="content">
-                           <h5 class="pb-0"><a href="blog-single.html">Best Services</a></h5>
-                           <p>Our best surgery<br>
-                              available here.
-                           </p>
-                        </div>
-                     </li>
-                     <li>
-                        <img src="{% static 'webapp/images/post-img4.jpg' %}" alt="img">
-                        <div class="content">
-                           <h5 class="pb-0"><a href="blog-single.html">Best Rooms</a></h5>
-                           <p>Our best surgery<br>
-                              available here.
-                           </p>
-                        </div>
-                     </li>
-                  </ul>
-               </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 col-12">
-               <div class="time-wrapper">
-                  <div>
-                     <h4>Days</h4>
-                     <ul>
-                        <li>Monday</li>
-                        <li>Tuesday</li>
-                        <li>Wednesday</li>
-                        <li>Thrusday</li>
-                        <li>Friday</li>
-                        <li>Saturday</li>
-                        <li>Sunday</li>
-                     </ul>
-                  </div>
-                  <div>
-                     <h4>Opening Hours</h4>
-                     <ul>
-                        <li>08.00 - 10.00</li>
-                        <li>09.00 - 11.00</li>
-                        <li>10.00 - 12.00</li>
-                        <li>11.00 - 01.00</li>
-                        <li>12.00 - 02.00</li>
-                        <li>01.00 - 02.00</li>
-                        <li>02.00 - 04.00</li>
-                     </ul>
-                  </div>
-               </div>
-               <div id="newsletter" class="mt-3">
-                  <h5>Sign Up for Newsletter</h5>
-                  <div class="input-box">
-                     <input type="text" name="letter" id="letter" placeholder="Enter Your Email ">
-                     <a href="javascript:;"><i class="fas fa-paper-plane"></i></a>
-                  </div>
-               </div>
-            </div>
-         </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Главное меню</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Главная</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">О Центре</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Услуги</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Новости</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Электронные Услуги</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
       </div>
-      <section>
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                  <p>© Copyright 2022 - 23 Design by <a href="https://webstrot.com/">Webstrot</a> | All Rights Reserved.</p>
-               </div>
-               <div class="col-lg-6 col-md-12 col-sm-12 col-12">
-                  <p class="last-para">Private Policy | Terms and Conditions.</p>
-               </div>
-            </div>
-         </div>
-      </section>
-   </div>
-   <!-- footer section end -->
+    </div>
 
-   <!-- Side Panel -->
-   <script src="{% static 'webapp/js/jquery-3.6.0.min.js' %}"></script>
-   <script src="{% static 'webapp/js/bootstrap.min.js' %}"></script>
-   <script src="{% static 'webapp/js/wow.js' %}"></script>
-   <script src="{% static 'webapp/js/jquery.magnific-popup.js' %}"></script>
-   <script src="{% static 'webapp/js/owl.carousel.min.js' %}"></script>
-   <script src="{% static 'webapp/js/contact_form.js' %}"></script>
-   <script src="{% static 'webapp/js/custom.js' %}"></script>
-   <!-- custom js-->
-   <script>
-      wow = new WOW(
-         {
-            animateClass: 'animated',
-            offset: 100,
-            callback: function (box) {
-               console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
-            }
-         }
-      );
-      wow.init();
-   </script>
-   <script>
-      function openSearch() {
-         document.getElementById("myOverlay").style.display = "block";
-      }
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Medicio</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medicio-free-bootstrap-theme/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
 
-      function closeSearch() {
-         document.getElementById("myOverlay").style.display = "none";
-      }
-   </script>
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <!-- Vendor JS Files -->
+  <script src="{% static 'webapp/assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'webapp/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'webapp/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'webapp/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'webapp/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'webapp/assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'webapp/assets/js/main.js' %}"></script>
