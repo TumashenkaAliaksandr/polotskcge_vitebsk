@@ -58,7 +58,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <a href="index.html" class="logo me-auto"><img src="{% static 'webapp/assets/img/logo_gigi_center_polock.png' %}" alt=""></a>
+      <a href="{% url 'webapp:home' %}" class="logo me-auto"><img src="{% static 'webapp/assets/img/logo_gigi_center_polock.png' %}" alt=""></a>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
 
@@ -105,7 +105,7 @@
                     <li><a href="#">Drop Down 1</a></li>
                     <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
                         <ul>
-                            <li><a href="#">Deep Drop Down 1</a></li>
+                            <li><a href="#">Вакансии</a></li>
                             <li><a href="#">Deep Drop Down 2</a></li>
                             <li><a href="#">Deep Drop Down 3</a></li>
                             <li><a href="#">Deep Drop Down 4</a></li>
