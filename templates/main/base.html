@@ -13,7 +13,7 @@
 
   <!-- Favicons -->
   <link href="{% static 'webapp/assets/img/pzce_favicon_nobg.png' %}" rel="icon">
-  <link href="{% static 'webapp/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <link href="{% static 'webapp/assets/img/pzce_favicon_nobg.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -56,17 +56,25 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center">
+      <div class="container d-flex align-items-center">
+          <div class="logos-container">
+              <a href="{% url 'webapp:home' %}" class="logo_gerb"><img
+                      src="{% static 'webapp/assets/img/gerb_rb_nobg.png' %}" alt=""></a>
 
-      <a href="{% url 'webapp:home' %}" class="logo me-auto"><img src="{% static 'webapp/assets/img/logo_gigi_center_polock.png' %}" alt=""></a>
-      <!-- Uncomment below if you prefer to use an image logo -->
+              <a href="{% url 'webapp:home' %}" class="logo me-auto"><img
+                      src="{% static 'webapp/assets/img/gerb_polocka_favicon1.png' %}" alt=""></a>
+          </div>
+          <a href="{% url 'webapp:home' %}" class="logo me-auto"><img
+                      src="{% static 'webapp/assets/img/center_gigig_polock_nobg.png' %}" alt=""></a>
+
+          <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
             <li><a class="nav-link scrollto " href="#hero">Главная</a></li>
-            <li><a class="nav-link scrollto" href="#about">Новости</a></li>
-            <li class="dropdown"><a href="#"><span>О Центре</span> <i class="bi bi-chevron-down"></i></a>
+            <li><a class="nav-link scrollto" href="#">Новости</a></li>
+            <li class="dropdown nav-link scrollto"><a href="#about"><span>О Центре</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                     <li><a href="#">Drop Down 1</a></li>
                     <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
@@ -139,7 +147,7 @@
           <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Записаться на</span> Приём</a>
+{#      <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Записаться на</span> Приём</a>#}
 
     </div>
   </header><!-- End Header -->
