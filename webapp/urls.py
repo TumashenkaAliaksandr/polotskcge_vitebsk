@@ -10,6 +10,7 @@ app_name = 'webapp'
 
 urlpatterns = [
     path('', index, name='home'),
+    path('chief-doctor/', chief_doctor, name='chief-doctor'),
     ]
 
 
