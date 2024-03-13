@@ -17,3 +17,8 @@ def info_main(request):
     """Main Page Main Info of Clinic"""
 
     return render(request, 'webapp/informations/info_main.html')
+
+def news_main(request):
+    """Main News Clinic"""
+
+    return render(request, 'webapp/news/news_main.html')
