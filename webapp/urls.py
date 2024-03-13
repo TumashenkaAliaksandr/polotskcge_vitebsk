@@ -11,6 +11,7 @@ app_name = 'webapp'
 urlpatterns = [
     path('', index, name='home'),
     path('chief-doctor/', chief_doctor, name='chief-doctor'),
+    path('cge-info/', info_main, name='cge-info'),
     ]
 
 
