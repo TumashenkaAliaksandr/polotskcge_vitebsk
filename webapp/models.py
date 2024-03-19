@@ -18,3 +18,16 @@ class Doctor(models.Model):
         verbose_name = "Доктора"
         verbose_name_plural = "Доктора"
 
+
+class Services(models.Model):
+    name = models.CharField(max_length=100, default='Service Name')
+    description = models.TextField(default='Service Description')
+    icon = models.ImageField(upload_to='service_icons/', null=True, blank=True)
+    link = models.URLField()  # Поле для хранения ссылки
+
+    class Meta:
+        verbose_name = 'Услуги'
+        verbose_name_plural = 'Услуги'
+
+    def __str__(self):
+        return self.name
