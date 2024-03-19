@@ -1014,6 +1014,11 @@ section {
   box-shadow: 0px 0 25px rgba(63, 187, 192, 0.3);
 }
 
+.services .icon img {
+    width: 60px; /* Ширина изображения */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+}
+
 .services .title {
   font-weight: 600;
   margin-bottom: 15px;

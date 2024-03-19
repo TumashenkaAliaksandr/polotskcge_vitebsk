@@ -186,43 +186,23 @@
     <!-- ======= Services Section ======= -->
     <section id="services" class="services services">
       <div class="container" data-aos="fade-up">
-
+        {% for desc in desc_services_title %}
         <div class="section-title">
           <h2>Платные Услуги</h2>
-          <p>Предлагаем вам широкий спектр профессиональных услуг по санитарной и эпидемиологической безопасности нашей Сан-Эпидем Станции.</p>
+          <p>{{ desc.description | safe}}</p>
         </div>
+        {% endfor %}
 
         <div class="row">
+            {% for main_servic in main_services  %}
           <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon"><i class="fas fa-coins"></i></div>
-            <h4 class="title"><a href="">Прейскурант</a></h4>
-            <p class="description">Полное описание наших услуг с ценами в формате <b>Exel</b></p>
+              <div class="icon">
+                  <img src="{{ main_servic.icon.url }}">
+              </div>
+            <h4 class="title"><a href="{{ main_servic.link }}">{{ main_servic.name }}</a></h4>
+            <p class="description">{{ main_servic.description | safe }}</p>
           </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon"><i class="fas fa-window-maximize"></i></div>
-            <h4 class="title"><a href="">Одно Окно</a></h4>
-            <p class="description">Обращения граждан и юридических лиц</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon"><i class="fas fa-hospital-user"></i></div>
-            <h4 class="title"><a href="">Админпроцессы</a></h4>
-            <p class="description">Перечень Административных процедур нашей <b>ЦГЭ</b> </p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon"><i class="fas fa-book-medical"></i></div>
-            <h4 class="title"><a href="">Персональные Услуги</a></h4>
-            <p class="description">Прием граждан (физ лиц) для оказания платных услуг</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon"><i class="fas fa-diagnoses"></i></div>
-            <h4 class="title"><a href="">Лабораторная Диагностика</a></h4>
-            <p class="description">Клинические исследования на микрофлору бактериологическим методом</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon"><i class="fas fa-hand-holding-heart"></i></div>
-            <h4 class="title"><a href="">Психологическая Помощь</a></h4>
-              <p class="description">Наркологи Полоцка, клиники в РБ и Запись на приём</p>
-          </div>
+            {% endfor %}
         </div>
 
       </div>

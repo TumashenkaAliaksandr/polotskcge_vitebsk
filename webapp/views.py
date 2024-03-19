@@ -1,10 +1,20 @@
 from django.shortcuts import render
 
+from webapp.models import *
+
 
 def index(request):
     """Main, center"""
 
-    return render(request, 'webapp/index.html')
+    main_services = Services.objects.all()
+    desc_services_title = Services_title.objects.all()
+
+    context = {
+        'desc_services_title': desc_services_title,
+        'main_services': main_services,
+    }
+
+    return render(request, 'webapp/index.html', context=context)
 
 
 def chief_doctor(request):
