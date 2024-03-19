@@ -1,3 +1,16 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-# Create your models here.
+
+class Doctor(models.Model):
+    first_name = models.CharField(max_length=100, default='John')
+    last_name = models.CharField(max_length=100, default='Doe')
+    position = models.CharField(max_length=100, default='Doctor')
+    phone = models.CharField(max_length=20, default='')
+    department = models.CharField(max_length=100, default='General')
+    photo = models.ImageField(upload_to='doctors/', null=True, blank=True)
+    appointment_time = models.CharField(max_length=100, default='10:00 AM - 4:00 PM')
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+
