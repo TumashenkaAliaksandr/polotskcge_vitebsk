@@ -73,83 +73,80 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
             <li><a class="nav-link scrollto " href="{% url 'webapp:home' %}">Главная</a></li>
-            <li class="dropdown"><a href="{% url 'webapp:cge-news' %}"><span>Новости</span> <i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a href="{% url 'webapp:cge-info' %}"><span>Новости</span> <i
+                    class="bi bi-chevron-down"></i></a>
                 <ul>
-                    <li><a href="#">Статьи и Рекомендации</a></li>
-                    <li><a href="#">Профилактика COVID-19</a></li>
-                    <li><a href="#">Видеоматериалы</a></li>
-                    <li><a href="#">Аудиоматериалы</a></li>
-                    <li><a href="#">Антикоррупционная Работа</a></li>
-                    <li><a href="#">Рекомендации Психолога</a></li>
-                    <li><a href="#">Информационные Материалы</a></li>
+{#                    <li><a class="nav-link scrollto" href="#contact">Контакты</a></li>#}
+{#                    <li><a href="#">Таможенный Союз</a></li>#}
+{#                    <li><a href="#">Евразийская Экономическая Комиссия</a></li>#}
+{#                    <li><a href="#">Нормативная база (декрет № 7)</a></li>#}
+                    <li class="dropdown"><a href="#"><span>Здоровый Образ Жизни</span> <i
+                            class="bi bi-chevron-right"></i></a>
+                        <ul>
+                            <li><a href="#">Профилактические Мероприятия</a></li>
+                            <li><a href="#">Единые Дни Здоровья</a></li>
+                            <li><a href="#">Здоровые города и поселки Полоцкого района</a></li>
+                            <li><a href="#">Цели Устойчивого Развития</a></li>
+                            <li><a href="#">Информационно-Аналитический бюллетень</a></li>
+                            <li><a href="#">Информационно-Образовательные материалы</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
             <li class="dropdown nav-link scrollto"><a href="#about"><span>О Центре</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                    <li><a href="#">Структура</a></li>
-                    <li><a href="#">Администрация</a></li>
-                    <li><a href="#">Наша Команда</a></li>
-                    <li class="dropdown"><a href="#"><span>Отделы</span> <i class="bi bi-chevron-right"></i></a>
+                    <li class="dropdown"><a href="#"><span>Структура</span> <i class="bi bi-chevron-right"></i></a>
                         <ul>
-                            <li><a href="#">Отдел Гигиены</a></li>
-                            <li><a href="#">Отдел Эпидемиалогии</a></li>
-                            <li><a href="#">Отдел Общественного Здоровья</a></li>
+                            <li><a href="#">Администрация</a></li>
                             <li><a href="#">Лабораторный Отдел</a></li>
-                            <li><a href="#">Отдел Дезинфекции</a></li>
+                            <li><a href="#">Отдел Эпидемиалогии</a></li>
+                            <li><a href="#">Отдел Профилактичексой Дезинфекции</a></li>
+                            <li><a href="#">Санитарно-карантинный Пункт</a></li>
+                            <li><a href="#">Отдел Общественного Здоровья</a></li>
+                            <li><a href="#">Отдел Гигиены</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Профсоюз</a></li>
-                    <li><a href="#">История Центра</a></li>
-                    <li><a href="#">Контакты и Реквизиты</a></li>
+                    <li><a href="#">Режим Работы</a></li>
+                    <li><a href="#">Документы Регламентирующие Деятельность</a></li>
+                    <li><a href="#">Лабораторный отдел</a></li>
+                    <li><a href="#">Коррупция</a></li>
                     <li><a href="#">Вакансии</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"><a href="#"><span>Услуги</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                    <li><a href="#">Прейскурант</a></li>
-                    <li><a href="#">Одно Окно</a></li>
-                    <li><a href="#">Тестирование на Короновирус 2019</a></li>
-                    <li><a href="#">Путешествуй без COVID 2019</a></li>
-                    <li><a href="#">Административные Процедуры</a></li>
-                    <li><a href="#">Услуги для Физических Лиц</a></li>
-                    <li><a href="#">Лабораторные исследования Питьевой Воды</a></li>
-                    <li><a href="#">Лабораторная Диагностика</a></li>
-                    <li><a href="#">Услуги Профилактической Дизинфекции</a></li>
-                    <li><a href="#">Гигиеническое Обучение</a></li>
-                    <li><a href="#">Оплата через ЕРИП</a></li>
-                    <li><a href="#">План проверок</a></li>
+                    <li><a href="#">Услуги</a></li>
                 </ul>
             </li>
             <li class="dropdown"><a href="#"><span>Обращения</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                    <li><a href="#">Электронные Обращения</a></li>
-                    <li><a href="#">Прием Граждан</a></li>
-                    <li><a href="#">Письменные Обращения</a></li>
-                    <li><a href="#">Горячая Линия</a></li>
-                    <li><a href="#">Прямая Телефонная Линия</a></li>
+                    <li><a href="#">Электронные обращения граждан и юридических лиц</a></li>
+                    <li><a href="#">Прямая телефонная линия "Горячая Линия"</a></li>
                     <li><a href="#">Книга Замечаний и Предложений</a></li>
+                    <li><a href="#">Вышестоящий Орган</a></li>
+                    <li><a href="#">Обращения</a></li>
                 </ul>
             </li>
-            <li class="dropdown"><a href="#"><span>Будьте Здоровы</span> <i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a href="#"><span>Админпроцессы</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                    <li><a href="#">Здоровый Образ Жизни</a></li>
-                    <li><a href="#">Информационно Образовательные Проекты</a></li>
+                    <li><a href="#">Экспертиза</a></li>
+                    <li><a href="#">Регистрация</a></li>
+                    <li><a href="#">В отношении граждан</a></li>
+                    <li><a href="#">Права и Обязанности</a></li>
+                    <li><a href="#">Порядок и сроки обжалования</a></li>
+                </ul>
+            </li>
+            <li class="dropdown"><a href="#"><span>Надзор</span> <i class="bi bi-chevron-down"></i></a>
+                <ul>
+                    <li><a href="#">Обобщенные Сведения</a></li>
+                    <li><a href="#">План Проверок</a></li>
+                    <li><a href="#">Мониторинг</a></li>
+                    <li><a href="#">Чек-Листы</a></li>
+                    <li><a href="#">Нестандартная Продукция</a></li>
                 </ul>
             </li>
             <li class="dropdown"><a href="{% url 'webapp:cge-info' %}"><span>Информация</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                    <li><a class="nav-link scrollto" href="#contact">Контакты</a></li>
-                    <li><a href="#">Технические Нормативные Правовые Акты</a></li>
-                    <li><a href="#">Декрет №7</a></li>
-                    <li><a href="#">Технические регламенты</a></li>
-                    <li><a href="#">Таможенный союз</a></li>
-                    <li><a href="#">Цели устойчивого развития</a></li>
-                    <li><a href="#">ТЕЛЕФОНЫ ДОВЕРИЯ</a></li>
-                    <li><a href="#">Антикоррупционная работа</a></li>
-                    <li><a href="#">Нестандартная продукция</a></li>
-                    <li><a href="#">Дни Здровья в РБ</a></li>
-                    <li><a href="#">Отзывы</a></li>
-                    <li><a href="#">Статистика</a></li>
+{#                    <li><a class="nav-link scrollto" href="#contact">Контакты</a></li>#}
+                    <li><a href="#">Таможенный Союз</a></li>
+                    <li><a href="#">Евразийская Экономическая Комиссия</a></li>
+                    <li><a href="#">Нормативная база (декрет № 7)</a></li>
                 </ul>
             </li>
         </ul>
@@ -174,77 +171,77 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
+      <div class="footer-top">
+          <div class="container">
+              <div class="row">
 
-          <div class="col-lg-3 col-md-6">
-            <div class="footer-info">
-              <h3>Полоцкий ЦГЭ</h3>
-              <p>
-                211400, г. Полоцк, <br>
-                ул. Юбилейная, д.7б, пом.2<br><br>
-                <strong>Телефон:</strong>
-                  8 (0214) 49 31 68<br>
-                <strong>Почта:</strong> polotzk_hyg@mail.ru<br>
-              </p>
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                  <div class="col-lg-3 col-md-6">
+                      <div class="footer-info">
+                          <h3>Полоцкий ЦГЭ</h3>
+                          <p>
+                              211400, г. Полоцк, <br>
+                              ул. Юбилейная, д.7б, пом.2<br><br>
+                              <strong>Телефон:</strong>
+                              8 (0214) 49 31 68<br>
+                              <strong>Почта:</strong> polotzk_hyg@mail.ru<br>
+                          </p>
+                          <div class="social-links mt-3">
+                              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-2 col-md-6 footer-links">
+                      <h4>Главное меню</h4>
+                      <ul>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Главная</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">О Центре</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Обращения</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Новости</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Электронные Услуги</a></li>
+                      </ul>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 footer-links">
+                      <h4>Услуги</h4>
+                      <ul>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                      </ul>
+                  </div>
+
+                  <div class="col-lg-4 col-md-6 footer-newsletter">
+                      <h4>Наши Новости</h4>
+                      <p>Подпишись на наши новости, будь вкурсе всех событий, мы не занимаемся рассылкой спама!</p>
+                      <form action="" method="post">
+                          <input type="email" name="email"><input type="submit" value="Подписаться">
+                      </form>
+
+                  </div>
+
               </div>
-            </div>
           </div>
-
-          <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Главное меню</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Главная</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">О Центре</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Обращения</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Новости</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Электронные Услуги</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Услуги</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Наши Новости</h4>
-            <p>Подпишись на наши новости, будь вкурсе всех событий, мы не занимаемся рассылкой спама!</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Подписаться">
-            </form>
-
-          </div>
-
-        </div>
       </div>
-    </div>
 
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Phoenix 2024</span></strong>. All Rights Reserved
+      <div class="container">
+          <div class="copyright">
+              &copy; Copyright <strong><span>Phoenix 2024</span></strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+              <!-- All the links in the footer should remain intact. -->
+              <!-- You can delete the links only if you purchased the pro version. -->
+              <!-- Licensing information: https://bootstrapmade.com/license/ -->
+              <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medicio-free-bootstrap-theme/ -->
+              Designed by <a href="https://t.me/ultravioletpartyeyes">Phoenix</a>
+          </div>
       </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medicio-free-bootstrap-theme/ -->
-        Designed by <a href="https://t.me/ultravioletpartyeyes">Phoenix</a>
-      </div>
-    </div>
   </footer><!-- End Footer -->
 
   <div id="preloader"></div>
