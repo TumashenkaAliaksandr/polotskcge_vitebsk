@@ -73,27 +73,8 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
             <li><a class="nav-link scrollto " href="{% url 'webapp:home' %}">Главная</a></li>
-            <li class="dropdown"><a href="{% url 'webapp:cge-info' %}"><span>Новости</span> <i
+            <li class="dropdown nav-link scrollto"><a href="#about"><span>О Центре</span> <i
                     class="bi bi-chevron-down"></i></a>
-                <ul>
-{#                    <li><a class="nav-link scrollto" href="#contact">Контакты</a></li>#}
-{#                    <li><a href="#">Таможенный Союз</a></li>#}
-{#                    <li><a href="#">Евразийская Экономическая Комиссия</a></li>#}
-{#                    <li><a href="#">Нормативная база (декрет № 7)</a></li>#}
-                    <li class="dropdown"><a href="#"><span>Здоровый Образ Жизни</span> <i
-                            class="bi bi-chevron-right"></i></a>
-                        <ul>
-                            <li><a href="#">Профилактические Мероприятия</a></li>
-                            <li><a href="#">Единые Дни Здоровья</a></li>
-                            <li><a href="#">Здоровые города и поселки Полоцкого района</a></li>
-                            <li><a href="#">Цели Устойчивого Развития</a></li>
-                            <li><a href="#">Информационно-Аналитический бюллетень</a></li>
-                            <li><a href="#">Информационно-Образовательные материалы</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li class="dropdown nav-link scrollto"><a href="#about"><span>О Центре</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                     <li class="dropdown"><a href="#"><span>Структура</span> <i class="bi bi-chevron-right"></i></a>
                         <ul>
@@ -114,6 +95,26 @@
                     <li><a href="#">Услуги</a></li>
                 </ul>
             </li>
+            <li class="dropdown"><a href="{% url 'webapp:cge-info' %}"><span>Новости</span> <i
+                    class="bi bi-chevron-down"></i></a>
+                <ul>
+{#                    <li><a class="nav-link scrollto" href="#contact">Контакты</a></li>#}
+{#                    <li><a href="#">Таможенный Союз</a></li>#}
+{#                    <li><a href="#">Евразийская Экономическая Комиссия</a></li>#}
+{#                    <li><a href="#">Нормативная база (декрет № 7)</a></li>#}
+                    <li class="dropdown"><a href="#"><span>Здоровый Образ Жизни</span> <i
+                            class="bi bi-chevron-right"></i></a>
+                        <ul>
+                            <li><a href="#">Профилактические Мероприятия</a></li>
+                            <li><a href="#">Единые Дни Здоровья</a></li>
+                            <li><a href="#">Здоровые города и поселки Полоцкого района</a></li>
+                            <li><a href="#">Цели Устойчивого Развития</a></li>
+                            <li><a href="#">Информационно-Аналитический бюллетень</a></li>
+                            <li><a href="#">Информационно-Образовательные материалы</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
             <li class="dropdown"><a href="#"><span>Обращения</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                     <li><a href="#">Электронные обращения граждан и юридических лиц</a></li>
@@ -123,7 +124,7 @@
                     <li><a href="#">Обращения</a></li>
                 </ul>
             </li>
-            <li class="dropdown"><a href="#"><span>Админпроцессы</span> <i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a href="#"><span>АП</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                     <li><a href="#">Экспертиза</a></li>
                     <li><a href="#">Регистрация</a></li>
@@ -132,7 +133,7 @@
                     <li><a href="#">Порядок и сроки обжалования</a></li>
                 </ul>
             </li>
-            <li class="dropdown"><a href="#"><span>Надзор</span> <i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a href="#"><span>Услуги</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                     <li><a href="#">Обобщенные Сведения</a></li>
                     <li><a href="#">План Проверок</a></li>
@@ -141,7 +142,7 @@
                     <li><a href="#">Нестандартная Продукция</a></li>
                 </ul>
             </li>
-            <li class="dropdown"><a href="{% url 'webapp:cge-info' %}"><span>Информация</span> <i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a href="{% url 'webapp:cge-info' %}"><span>Деятельность</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
 {#                    <li><a class="nav-link scrollto" href="#contact">Контакты</a></li>#}
                     <li><a href="#">Таможенный Союз</a></li>
@@ -149,6 +150,7 @@
                     <li><a href="#">Нормативная база (декрет № 7)</a></li>
                 </ul>
             </li>
+            <li><a class="nav-link scrollto " href="{% url 'webapp:home' %}">НПА</a></li>
         </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
