@@ -36,7 +36,7 @@ a:hover {
 .header-search a {
   color: #3fbbc0;
   text-decoration: none;
-  margin-left: 40px;
+  margin-left: 100px;
 }
 
 .header-search input.search-submit, .header-search input.search-submit:visited {
