@@ -76,30 +76,22 @@
             <li class="dropdown nav-link scrollto"><a href="#about"><span>О Центре</span> <i
                     class="bi bi-chevron-down"></i></a>
                 <ul>
-                    <li class="dropdown"><a href="#"><span>Структура</span> <i class="bi bi-chevron-right"></i></a>
-                        <ul>
-                            <li><a href="#">Администрация</a></li>
-                            <li><a href="#">Лабораторный Отдел</a></li>
-                            <li><a href="#">Отдел Эпидемиалогии</a></li>
-                            <li><a href="#">Отдел Профилактичексой Дезинфекции</a></li>
-                            <li><a href="#">Санитарно-карантинный Пункт</a></li>
-                            <li><a href="#">Отдел Общественного Здоровья</a></li>
-                            <li><a href="#">Отдел Гигиены</a></li>
-                        </ul>
-                    </li>
+                    <li><a href="#">Структура</a></li>
+                    <li><a href="#">Контакты</a></li>
                     <li><a href="#">Режим Работы</a></li>
-                    <li><a href="#">Документы Регламентирующие Деятельность</a></li>
-                    <li><a href="#">Лабораторный отдел</a></li>
-                    <li><a href="#">Коррупция</a></li>
+                    <li><a href="#">Антикоррупционная работа</a></li>
+                    <li><a href="#">Идеологическая работа</a></li>
+                    <li><a href="#">Устав</a></li>
+                    <li><a href="#">Профсоюз</a></li>
                     <li><a href="#">Вакансии</a></li>
-                    <li><a href="#">Услуги</a></li>
                 </ul>
             </li>
             <li><a class="nav-link scrollto " href="{% url 'webapp:home' %}">Новости</a></li>
             <li class="dropdown"><a href="#"><span>Обращения</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                    <li><a href="#">Электронные обращения граждан и юридических лиц</a></li>
-                    <li><a href="#">Прямая телефонная линия "Горячая Линия"</a></li>
+                    <li><a href="#">Нормативные Документы</a></li>
+                    <li><a href="#">Электронные Обращения граждан и юридических лиц</a></li>
+                    <li><a href="#">Прямая телефонная линия «горячая линия»</a></li>
                     <li><a href="#">Книга Замечаний и Предложений</a></li>
                     <li><a href="#">Вышестоящий Орган</a></li>
                     <li><a href="#">Обращения</a></li>
@@ -107,6 +99,7 @@
             </li>
             <li class="dropdown"><a href="#"><span>АП</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
+                    <li><a href="#">Нормативные Документы</a></li>
                     <li><a href="#">Экспертиза</a></li>
                     <li><a href="#">Регистрация</a></li>
                     <li><a href="#">В отношении граждан</a></li>
@@ -116,19 +109,48 @@
             </li>
             <li class="dropdown"><a href="#"><span>Услуги</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                    <li><a href="#">Обобщенные Сведения</a></li>
-                    <li><a href="#">План Проверок</a></li>
-                    <li><a href="#">Мониторинг</a></li>
-                    <li><a href="#">Чек-Листы</a></li>
-                    <li><a href="#">Нестандартная Продукция</a></li>
+                    <li><a href="#">Платные Услуги</a></li>
+                    <li><a href="#">Гигиенические услуги</a></li>
+                    <li><a href="#">Лабораторные услуги</a></li>
+                    <li><a href="#">Гигиеническое обучение</a></li>
+                    <li><a href="#">Дезинфекция | Дезинсекция | Дератизация</a></li>
                 </ul>
             </li>
-            <li class="dropdown"><a href="{% url 'webapp:cge-info' %}"><span>Деятельность</span> <i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a href="{% url 'webapp:cge-info' %}"><span>Деятельность</span> <i
+                    class="bi bi-chevron-down"></i></a>
                 <ul>
-{#                    <li><a class="nav-link scrollto" href="#contact">Контакты</a></li>#}
-                    <li><a href="#">Таможенный Союз</a></li>
-                    <li><a href="#">Евразийская Экономическая Комиссия</a></li>
-                    <li><a href="#">Нормативная база (декрет № 7)</a></li>
+                    <li class="dropdown"><a href="#"><span>Контрольно-Hадзорная деятельность</span> <i
+                            class="bi bi-chevron-right"></i></a>
+                        <ul>
+                            <li><a href="#">План Проверок</a></li>
+                            <li><a href="#">План Мониторинга</a></li>
+                            <li><a href="#">О типичных Нарушениях</a></li>
+                            <li><a href="#">Чек-Листы</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-link scrollto" href="#contact">Нестандартная Продукция</a></li>
+                    <li class="dropdown"><a href="#"><span>Здоровый Образ Жизни</span> <i
+                            class="bi bi-chevron-right"></i></a>
+                        <ul>
+                            <li><a href="#">Профилактические мероприятия</a></li>
+                            <li><a href="#">Единые Дни Здоровья</a></li>
+                            <li><a href="#">Информационно-Образовательные материалы</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="#"><span>Цели Устойчивого Развития</span> <i
+                            class="bi bi-chevron-right"></i></a>
+                        <ul>
+                            <li><a href="#">Информационно-Аналитический бюллетень</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Здоровые Города и Посёлки</a></li>
+                    <li class="dropdown"><a href="#"><span>Эпидемиология</span> <i class="bi bi-chevron-right"></i></a>
+                        <ul>
+                            <li><a href="#">Иммунопрофилактика</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="nav-link scrollto" href="#contact">Евразийский экономический союз</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Санитарно-Карантинные пункты</a></li>
                 </ul>
             </li>
             <li><a class="nav-link scrollto " href="{% url 'webapp:home' %}">НПА</a></li>
