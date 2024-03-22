@@ -158,8 +158,9 @@ h6 {
 }
 
 #topbar i {
-  padding-right: 6px;
+  padding-right: 5px;
   line-height: 0;
+  padding-left: 10px;
 }
 
 /*--------------------------------------------------------------
