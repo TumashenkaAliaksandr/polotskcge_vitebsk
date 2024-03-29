@@ -43,3 +43,24 @@ class Services(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class AboutUs(models.Model):
+    name = models.CharField(max_length=100, default='About Us Name One')
+    description = models.TextField(default='About Us Description One')
+    name_two = models.CharField(max_length=100, default='About Us Name Two')
+    description_two = models.TextField(default='About Us Description Two')
+    name_li_one = models.CharField(max_length=100, default='About Us Name Li-One')
+    name_li_two = models.CharField(max_length=100, default='About Us Name Li-Two')
+    name_li_three = models.CharField(max_length=100, default='About Us Name Li-Three')
+    name_li_four = models.CharField(max_length=100, default='About Us Name Li-Four')
+    name_li_five = models.CharField(max_length=100, default='About Us Name Li-Five')
+    description_three = models.TextField(default='About Us Description Three')
+    photo = models.ImageField(upload_to='about_us/', null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Об Учреждении'
+        verbose_name_plural = 'Об Учреждении'
+
+    def __str__(self):
+        return self.name

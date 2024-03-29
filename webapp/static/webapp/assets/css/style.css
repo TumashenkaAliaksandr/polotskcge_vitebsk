@@ -163,6 +163,24 @@ h6 {
   padding-left: 10px;
 }
 
+
+/*Icon List teg Li*/
+.icon-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.icon-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* Регулируйте отступ между элементами списка по вашему усмотрению */
+}
+
+.icon-list li i {
+    margin-right: 5px; /* Регулируйте отступ между иконкой и текстом по вашему усмотрению */
+}
+/* End Icon List teg Li */
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -885,7 +903,8 @@ section {
 
 .about .content ul {
   list-style: none;
-  padding: 0;
+  padding: 7px;
+  margin-bottom: 3%;
 }
 
 .about .content ul li {

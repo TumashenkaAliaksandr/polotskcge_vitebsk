@@ -10,94 +10,138 @@
 
   <main id="main">
 
-    <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services">
-      <div class="container" data-aos="fade-up">
+      <!-- ======= Featured Services Section ======= -->
+      <section id="featured-services" class="featured-services">
+          <div class="container" data-aos="fade-up">
 
-        <div class="row">
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-              <div class="icon"><i class="fas fa-heartbeat"></i></div>
-              <h4 class="title"><a href="">Здоровье</a></h4>
-              <p class="description">Забота о вашем здоровье – наш главный приоритет.</p>
-            </div>
+              <div class="row">
+                  <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                      <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                          <div class="icon"><i class="fas fa-heartbeat"></i></div>
+                          <h4 class="title"><a href="">Здоровье</a></h4>
+                          <p class="description">Забота о вашем здоровье – наш главный приоритет.</p>
+                      </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                      <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                          <div class="icon"><i class="fas fa-biohazard"></i></div>
+                          <h4 class="title"><a href="">Профилактика</a></h4>
+                          <p class="description">Профилактические и эпидемиологические мероприятия для вашей
+                              безопасности.</p>
+                      </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                      <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                          <div class="icon"><i class="fas fa-flask"></i></div>
+                          <h4 class="title"><a href="">Лабораторный Отдел</a></h4>
+                          <p class="description">Точность в каждом анализе! Наш отдел на службе вашему здоровью.</p>
+                      </div>
+                  </div>
+
+                  <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                      <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+                          <div class="icon"><i class="fas fa-question-circle"></i></div>
+                          <h4 class="title"><a href="">Вопрос Ответ</a></h4>
+                          <p class="description">Ответим на все ваши вопросы, Мы здесь, для того чтобы помочь вам
+                              разобраться.</p>
+                      </div>
+                  </div>
+              </div>
           </div>
+      </section>
+      <!-- End Featured Services Section -->
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon"><i class="fas fa-biohazard"></i></div>
-              <h4 class="title"><a href="">Профилактика</a></h4>
-              <p class="description">Профилактические и эпидемиологические мероприятия для вашей безопасности.</p>
-            </div>
+      <!-- ======= Cta Section ======= -->
+      <section id="cta" class="cta">
+          <div class="container" data-aos="zoom-in">
+
+              <div class="text-center">
+                  <h3>У вас есть вопросы?</h3>
+                  <p>Вы можете написать нам на почту, мы обязательно с вами свяжемся!</p>
+                  <a class="cta-btn scrollto" href="#appointment">Написать на почту</a>
+              </div>
+
           </div>
+      </section>
+      <!-- End Cta Section -->
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-              <div class="icon"><i class="fas fa-flask"></i></div>
-              <h4 class="title"><a href="">Лабораторный Отдел</a></h4>
-              <p class="description">Точность в каждом анализе! Наш отдел на службе вашему здоровью.</p>
-            </div>
-          </div>
+  <!-- ======= About Us Section ======= -->
+      {% for main_about in about_us %}
+          <section id="about" class="about">
+              <div class="container" data-aos="fade-up">
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-              <div class="icon"><i class="fas fa-question-circle"></i></div>
-              <h4 class="title"><a href="">Вопрос Ответ</a></h4>
-              <p class="description">Ответим на все ваши вопросы, Мы здесь, для того чтобы помочь вам разобраться.</p>
-            </div>
-          </div>
+                  <div class="section-title">
+                      <h2>{{ main_about.name }}</h2>
+                      <p>{{ main_about.description | safe }}</p>
+                  </div>
 
-        </div>
+                  <div class="row">
+                      <div class="col-lg-6" data-aos="fade-right">
+                          <img src="{{ main_about.photo.url }}" class="img-fluid"
+                               alt="">
+                      </div>
+                      <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+                          <h3>{{ main_about.name_two }}</h3>
+                          <p class="fst-italic">{{ main_about.description_two | safe }}</p>
+                          <ul class="icon-list">
+                              <li><i class="bi bi-check-circle"></i> {{ main_about.name_li_one | safe }}</li>
+                              <li><i class="bi bi-check-circle"></i> {{ main_about.name_li_two | safe }}</li>
+                              <li><i class="bi bi-check-circle"></i> {{ main_about.name_li_three | safe }}</li>
+                              <li><i class="bi bi-check-circle"></i> {{ main_about.name_li_four | safe }}</li>
+                              <li><i class="bi bi-check-circle"></i> {{ main_about.name_li_five | safe }}</li>
+                          </ul>
 
-      </div>
-    </section><!-- End Featured Services Section -->
+                          <p>{{ main_about.description_three | safe }}</p>
+                      </div>
+                  </div>
 
-    <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
-      <div class="container" data-aos="zoom-in">
+              </div>
+          </section>
+      {% endfor %}
+      <!-- End About Us Section -->
 
-        <div class="text-center">
-          <h3>У вас есть вопросы?</h3>
-          <p>Вы можете написать нам на почту, мы обязательно с вами свяжемся!</p>
-          <a class="cta-btn scrollto" href="#appointment">Написать на почту</a>
-        </div>
-
-      </div>
-    </section><!-- End Cta Section -->
-
-    <!-- ======= About Us Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Об учреждении</h2>
-          <p>Свое официальное летоисчисление санитарная служба Полотчины, как и всей республики, начинает с 1926 года, когда Постановлением Совнаркома была утверждена система государственного санитарного надзора.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-right">
-            <img src="{% static 'webapp/assets/img/zonalnyi_epi_centr_polock.png' %}" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Решенние Задач</h3>
-            <p class="fst-italic">
-              Среди основных задач, решаемых санитарной службой на протяжении десятилетий являлись:
-            </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> Борьба с эпидемиями.</li>
-              <li><i class="bi bi-check-circle"></i> Ликвидация очагов инфекционных заболеваний.</li>
-              <li><i class="bi bi-check-circle"></i> Прививочная работа.</li>
-              <li><i class="bi bi-check-circle"></i> Санитарное просвещение.</li>
-              <li><i class="bi bi-check-circle"></i> Становление и укрепление материальной базы лабораторного обеспечения.</li>
-            </ul>
-            <p>
-                Полоцкий зональный ЦГЭ обслуживает население города Полоцка и Полоцкого района численностью 110 тысяч человек.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Us Section -->
+{#      <!-- ======= About Us Section ======= -->#}
+{#      <section id="about" class="about">#}
+{#          <div class="container" data-aos="fade-up">#}
+{##}
+{#              <div class="section-title">#}
+{#                  <h2>Об учреждении</h2>#}
+{#                  <p>Свое официальное летоисчисление санитарная служба Полотчины, как и всей республики, начинает с 1926#}
+{#                      года, когда Постановлением Совнаркома была утверждена система государственного санитарного#}
+{#                      надзора.</p>#}
+{#              </div>#}
+{##}
+{#              <div class="row">#}
+{#                  <div class="col-lg-6" data-aos="fade-right">#}
+{#                      <img src="{% static 'webapp/assets/img/zonalnyi_epi_centr_polock.png' %}" class="img-fluid"#}
+{#                           alt="">#}
+{#                  </div>#}
+{#                  <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">#}
+{#                      <h3>Решенние Задач</h3>#}
+{#                      <p class="fst-italic">#}
+{#                          Среди основных задач, решаемых санитарной службой на протяжении десятилетий являлись:#}
+{#                      </p>#}
+{#                      <ul>#}
+{#                          <li><i class="bi bi-check-circle"></i> Борьба с эпидемиями.</li>#}
+{#                          <li><i class="bi bi-check-circle"></i> Ликвидация очагов инфекционных заболеваний.</li>#}
+{#                          <li><i class="bi bi-check-circle"></i> Прививочная работа.</li>#}
+{#                          <li><i class="bi bi-check-circle"></i> Санитарное просвещение.</li>#}
+{#                          <li><i class="bi bi-check-circle"></i> Становление и укрепление материальной базы#}
+{#                              лабораторного обеспечения.#}
+{#                          </li>#}
+{#                      </ul>#}
+{#                      <p>#}
+{#                          Полоцкий зональный ЦГЭ обслуживает население города Полоцка и Полоцкого района численностью#}
+{#                          110 тысяч человек.#}
+{#                      </p>#}
+{#                  </div>#}
+{#              </div>#}
+{##}
+{#          </div>#}
+{#      </section>#}
+{#      <!-- End About Us Section -->#}
 
     <!-- ======= Counts Section ======= -->
     <section id="counts" class="counts">
