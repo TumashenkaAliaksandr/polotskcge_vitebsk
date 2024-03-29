@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.utils.safestring import mark_safe
 
 from .models import *
-from .forms import AboutUsForm
+from .forms import AboutUsForm, ResearchesForm
 
 
 class DoctorAdmin(admin.ModelAdmin):
@@ -48,6 +48,20 @@ admin.site.register(Services, ServicesAdmin)
 @admin.register(AboutUs)
 class AboutUsAdmin(admin.ModelAdmin):
     form = AboutUsForm
+    list_display = ['name', 'photo_display']  # Добавляем поле для отображения фотографии в списке
+
+    def photo_display(self, obj):
+        if obj.photo:
+            return mark_safe(f'<img src="{obj.photo.url}" width="100">')
+        else:
+            return "No photo"
+
+    photo_display.short_description = 'Photo'  # Заголовок колонки в списке
+
+
+@admin.register(Researches)
+class ResearchesAdmin(admin.ModelAdmin):
+    form = ResearchesForm
     list_display = ['name', 'photo_display']  # Добавляем поле для отображения фотографии в списке
 
     def photo_display(self, obj):

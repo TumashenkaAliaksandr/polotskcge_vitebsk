@@ -64,3 +64,20 @@ class AboutUs(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Researches(models.Model):
+    name = models.CharField(max_length=100, default='Researches Name One')
+    description = models.TextField(default='Researches Description One')
+    name_two = models.CharField(max_length=100, default='Researches Name Two')
+    description_two = models.TextField(default='Researches Description Two')
+    name_three = models.CharField(max_length=100, default='Researches Name Three')
+    description_three = models.TextField(default='Researches Description Three')
+    photo = models.ImageField(upload_to='researches/', null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Блок Иновации'
+        verbose_name_plural = 'Блок Иновации'
+
+    def __str__(self):
+        return self.name
