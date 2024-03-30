@@ -9,11 +9,13 @@ def index(request):
     main_services = Services.objects.all()
     desc_services_title = Services_title.objects.all()
     about_us = AboutUs.objects.all()
+    innovations = Researches.objects.all()
 
     context = {
         'desc_services_title': desc_services_title,
         'main_services': main_services,
         'about_us': about_us,
+        'innovations': innovations,
     }
 
     return render(request, 'webapp/index.html', context=context)

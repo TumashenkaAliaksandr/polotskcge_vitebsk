@@ -62,7 +62,7 @@ class AboutUsAdmin(admin.ModelAdmin):
 @admin.register(Researches)
 class ResearchesAdmin(admin.ModelAdmin):
     form = ResearchesForm
-    list_display = ['name', 'photo_display']  # Добавляем поле для отображения фотографии в списке
+    list_display = ['name', 'name_two', 'name_three', 'name_four', 'photo_display']  # Добавляем поле для отображения фотографии в списке
 
     def photo_display(self, obj):
         if obj.photo:

@@ -155,120 +155,133 @@
       </section>
       <!-- End Counts Section -->
 
-    <!-- ======= Features Section ======= -->
-    <section id="features" class="features">
-      <div class="container" data-aos="fade-up">
+      <!-- ======= Features Section ======= -->
+      <section id="features" class="features">
+          <div class="container" data-aos="fade-up">
+              {% for main_innovations in innovations %}
+                  <div class="row">
+                      <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
+                          <div class="icon-box mt-5 mt-lg-0">
+                              <i class="bx bxs-flask"></i>
+                              <h4>{{ main_innovations.name }}</h4>
+                              <p>{{ main_innovations.description | safe}}</p>
+                          </div>
+                          <div class="icon-box mt-5">
+                              <i class="bx bxs-network-chart"></i>
+                              <h4>{{ main_innovations.name_two }}</h4>
+                              <p>{{ main_innovations.description_two | safe }}</p>
+                          </div>
+                          <div class="icon-box mt-5">
+                              <i class="bx bx-support"></i>
+                              <h4>{{ main_innovations.name_three }}</h4>
+                              <p>{{ main_innovations.description_three | safe }}</p>
+                          </div>
+                          <div class="icon-box mt-5">
+                              <i class="bx bx-test-tube"></i>
+                              <h4>{{ main_innovations.name_four }}</h4>
+                              <p>{{ main_innovations.description_four | safe}}</p>
+                          </div>
+                      </div>
+                      <div class="image col-lg-6 order-1 order-lg-2"
+                           style='background-image: url({{ main_innovations.photo.url }});'
+                           data-aos="zoom-in"></div>
+                  </div>
+              {% endfor %}
 
-        <div class="row">
-          <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
-            <div class="icon-box mt-5 mt-lg-0">
-              <i class="bx bxs-flask"></i>
-              <h4>Исследования</h4>
-              <p>Проводим лабораторные исследования (испытания) в соответствии с действующей областью аккредитации</p>
-            </div>
-            <div class="icon-box mt-5">
-              <i class="bx bxs-network-chart"></i>
-              <h4>Иновации</h4>
-              <p>Регулярно занимемся освоением новых методов исследований<br>(испытаний) и их внедрением</p>
-            </div>
-            <div class="icon-box mt-5">
-              <i class="bx bx-support"></i>
-              <h4>Помощь</h4>
-              <p>Оказываем организационно-методическую помощь ведомственным лабораториям</p>
-            </div>
-            <div class="icon-box mt-5">
-              <i class="bx bx-test-tube"></i>
-              <h4>Организация</h4>
-              <p>Организация и проведение межлабораторных сличительных испытаний</p>
-            </div>
           </div>
-          <div class="image col-lg-6 order-1 order-lg-2" style='background-image: url({% static 'webapp/assets/img/features.jpg' %});' data-aos="zoom-in"></div>
-        </div>
+      </section>
+      <!-- End Features Section -->
 
-      </div>
-    </section><!-- End Features Section -->
+      <!-- ======= Services Section ======= -->
+      <section id="services" class="services services">
+          <div class="container" data-aos="fade-up">
+              {% for desc in desc_services_title %}
+                  <div class="section-title">
+                      <h2>{{ desc.name }}</h2>
+                      <p>{{ desc.description | safe }}</p>
+                  </div>
+              {% endfor %}
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services services">
-      <div class="container" data-aos="fade-up">
-        {% for desc in desc_services_title %}
-        <div class="section-title">
-          <h2>Услуги</h2>
-          <p>{{ desc.description | safe}}</p>
-        </div>
-        {% endfor %}
-
-        <div class="row">
-            {% for main_servic in main_services  %}
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
-              <div class="icon">
-                  <img src="{{ main_servic.icon.url }}">
+              <div class="row">
+                  {% for main_servic in main_services %}
+                      <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
+                          <div class="icon">
+                              <img src="{{ main_servic.icon.url }}">
+                          </div>
+                          <h4 class="title"><a href="{{ main_servic.link }}">{{ main_servic.name }}</a></h4>
+                          <p class="description">{{ main_servic.description | safe }}</p>
+                      </div>
+                  {% endfor %}
               </div>
-            <h4 class="title"><a href="{{ main_servic.link }}">{{ main_servic.name }}</a></h4>
-            <p class="description">{{ main_servic.description | safe }}</p>
+
           </div>
-            {% endfor %}
-        </div>
+      </section>
+      <!-- End Services Section -->
 
-      </div>
-    </section><!-- End Services Section -->
-
-    <!-- ======= Appointment Section ======= -->
-    <section id="appointment" class="appointment section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Записаться на прием</h2>
-          <p>Запишитесь к нам в клинику, выбирете дату, направление и врача.</p>
-        </div>
-
-        <form action="{% static 'webapp/forms/appointment.php' %}" method="post" role="form" class="php-email-form" data-aos="fade-up" data-aos-delay="100">
-          <div class="row">
-            <div class="col-md-4 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Ваше Имя" required>
-            </div>
-            <div class="col-md-4 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Ваша Почта" required>
-            </div>
-            <div class="col-md-4 form-group mt-3 mt-md-0">
-              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Ваш Телефон" required>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 form-group mt-3">
-              <input type="datetime" name="date" class="form-control datepicker" id="date" placeholder="Дата записи" required>
-            </div>
-            <div class="col-md-4 form-group mt-3">
-              <select name="department" id="department" class="form-select">
-                <option value="">Выбрать направление</option>
-                <option value="Department 1">Department 1</option>
-                <option value="Department 2">Department 2</option>
-                <option value="Department 3">Department 3</option>
-              </select>
-            </div>
-            <div class="col-md-4 form-group mt-3">
-              <select name="doctor" id="doctor" class="form-select">
-                <option value="">Выбрать Врача</option>
-                <option value="Doctor 1">Doctor 1</option>
-                <option value="Doctor 2">Doctor 2</option>
-                <option value="Doctor 3">Doctor 3</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group mt-3">
-            <textarea class="form-control" name="message" rows="5" placeholder="Сообщение (не обязательно)"></textarea>
-          </div>
-          <div class="my-3">
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
-          </div>
-          <div class="text-center"><button type="submit">Записаться на прием</button></div>
-        </form>
-
-      </div>
-    </section><!-- End Appointment Section -->
+{#      <!-- ======= Appointment Section ======= -->#}
+{#      <section id="appointment" class="appointment section-bg">#}
+{#          <div class="container" data-aos="fade-up">#}
+{##}
+{#              <div class="section-title">#}
+{#                  <h2>Записаться на прием</h2>#}
+{#                  <p>Запишитесь к нам в клинику, выбирете дату, направление и врача.</p>#}
+{#              </div>#}
+{##}
+{#              <form action="{% static 'webapp/forms/appointment.php' %}" method="post" role="form"#}
+{#                    class="php-email-form" data-aos="fade-up" data-aos-delay="100">#}
+{#                  <div class="row">#}
+{#                      <div class="col-md-4 form-group">#}
+{#                          <input type="text" name="name" class="form-control" id="name" placeholder="Ваше Имя" required>#}
+{#                      </div>#}
+{#                      <div class="col-md-4 form-group mt-3 mt-md-0">#}
+{#                          <input type="email" class="form-control" name="email" id="email" placeholder="Ваша Почта"#}
+{#                                 required>#}
+{#                      </div>#}
+{#                      <div class="col-md-4 form-group mt-3 mt-md-0">#}
+{#                          <input type="tel" class="form-control" name="phone" id="phone" placeholder="Ваш Телефон"#}
+{#                                 required>#}
+{#                      </div>#}
+{#                  </div>#}
+{#                  <div class="row">#}
+{#                      <div class="col-md-4 form-group mt-3">#}
+{#                          <input type="datetime" name="date" class="form-control datepicker" id="date"#}
+{#                                 placeholder="Дата записи" required>#}
+{#                      </div>#}
+{#                      <div class="col-md-4 form-group mt-3">#}
+{#                          <select name="department" id="department" class="form-select">#}
+{#                              <option value="">Выбрать направление</option>#}
+{#                              <option value="Department 1">Department 1</option>#}
+{#                              <option value="Department 2">Department 2</option>#}
+{#                              <option value="Department 3">Department 3</option>#}
+{#                          </select>#}
+{#                      </div>#}
+{#                      <div class="col-md-4 form-group mt-3">#}
+{#                          <select name="doctor" id="doctor" class="form-select">#}
+{#                              <option value="">Выбрать Врача</option>#}
+{#                              <option value="Doctor 1">Doctor 1</option>#}
+{#                              <option value="Doctor 2">Doctor 2</option>#}
+{#                              <option value="Doctor 3">Doctor 3</option>#}
+{#                          </select>#}
+{#                      </div>#}
+{#                  </div>#}
+{##}
+{#                  <div class="form-group mt-3">#}
+{#                      <textarea class="form-control" name="message" rows="5"#}
+{#                                placeholder="Сообщение (не обязательно)"></textarea>#}
+{#                  </div>#}
+{#                  <div class="my-3">#}
+{#                      <div class="loading">Loading</div>#}
+{#                      <div class="error-message"></div>#}
+{#                      <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>#}
+{#                  </div>#}
+{#                  <div class="text-center">#}
+{#                      <button type="submit">Записаться на прием</button>#}
+{#                  </div>#}
+{#              </form>#}
+{##}
+{#          </div>#}
+{#      </section>#}
+{#      <!-- End Appointment Section -->#}
 
     <!-- ======= Departments Section ======= -->
     <section id="departments" class="departments">

@@ -73,6 +73,8 @@ class Researches(models.Model):
     description_two = models.TextField(default='Researches Description Two')
     name_three = models.CharField(max_length=100, default='Researches Name Three')
     description_three = models.TextField(default='Researches Description Three')
+    name_four = models.CharField(max_length=100, default='Researches Name Four')
+    description_four = models.TextField(default='Researches Description Four')
     photo = models.ImageField(upload_to='researches/', null=True, blank=True)
 
     class Meta:
