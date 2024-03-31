@@ -1,6 +1,17 @@
 from django.shortcuts import render
-
 from webapp.models import *
+
+
+def base_main(request):
+    """main base template"""
+
+    logo_main = Logo.objects.all()
+
+    context = {
+        'logo_main': logo_main,
+    }
+
+    return render(request, 'main/base.html', context=context)
 
 
 def index(request):
