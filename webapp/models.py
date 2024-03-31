@@ -2,6 +2,18 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
+class Logo(models.Model):
+    """This is main haider logo model"""
+
+    name = models.CharField(max_length=100, default='Service Name')
+    icon = models.ImageField(upload_to='service_icons/', null=True, blank=True)
+    link = models.URLField()  # Поле для хранения ссылки
+
+    class Meta:
+        verbose_name = 'Лого на Главной'
+        verbose_name_plural = 'Лого на Главной'
+
+
 class Doctor(models.Model):
     first_name = models.CharField(max_length=100, default='Имя')
     last_name = models.CharField(max_length=100, default='Фамилия')

@@ -18,6 +18,7 @@ class AboutUsForm(forms.ModelForm):
             'name_li_five': CKEditorWidget(),
         }
 
+
 class ResearchesForm(forms.ModelForm):
     class Meta:
         model = Researches
@@ -32,3 +33,9 @@ class ResearchesForm(forms.ModelForm):
             # 'name_three': CKEditorWidget(),
             # 'name_four': CKEditorWidget(),
         }
+
+
+class LogoForm(forms.ModelForm):
+    class Meta:
+        model = Logo
+        fields = '__all__'

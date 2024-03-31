@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.utils.safestring import mark_safe
 
 from .models import *
-from .forms import AboutUsForm, ResearchesForm
+from .forms import AboutUsForm, ResearchesForm, LogoForm
 
 
 class DoctorAdmin(admin.ModelAdmin):
@@ -71,3 +71,7 @@ class ResearchesAdmin(admin.ModelAdmin):
             return "No photo"
 
     photo_display.short_description = 'Photo'  # Заголовок колонки в списке
+
+    @admin.register(Logo)
+    class LogoAdmin(admin.ModelAdmin):
+        form = LogoForm
