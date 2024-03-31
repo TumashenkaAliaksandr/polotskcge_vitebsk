@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 class Logo(models.Model):
     """This is main haider logo model"""
 
-    name = models.CharField(max_length=100, default='Service Name')
-    icon = models.ImageField(upload_to='service_icons/', null=True, blank=True)
+    name = models.CharField(max_length=100, default='Logo Name')
+    icon = models.ImageField(upload_to='logo/', null=True, blank=True)
     link = models.URLField()  # Поле для хранения ссылки
 
     class Meta:

@@ -72,6 +72,7 @@ class ResearchesAdmin(admin.ModelAdmin):
 
     photo_display.short_description = 'Photo'  # Заголовок колонки в списке
 
+
     @admin.register(Logo)
     class LogoAdmin(admin.ModelAdmin):
         form = LogoForm
