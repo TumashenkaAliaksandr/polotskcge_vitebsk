@@ -13,6 +13,10 @@ urlpatterns = [
     path('chief-doctor/', chief_doctor, name='chief-doctor'),
     path('cge-info/', info_main, name='cge-info'),
     path('cge-news/', news_main, name='cge-news'),
+    path('structure/', structure, name='structure'),
+    path('working_mode/', working_mode, name='working_mode'),
+    path('anti_corruption/', anti_corruption, name='anti_corruption'),
+    path('ideological_work/', ideological_work, name='ideological_work'),
     ]
 
 

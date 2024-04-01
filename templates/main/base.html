@@ -83,11 +83,11 @@
             <li class="dropdown nav-link scrollto"><a href="#about"><span>О Центре</span> <i
                     class="bi bi-chevron-down"></i></a>
                 <ul>
-                    <li><a href="#">Структура</a></li>
-                    <li><a href="#">Контакты</a></li>
-                    <li><a href="#">Режим Работы</a></li>
-                    <li><a href="#">Антикоррупционная работа</a></li>
-                    <li><a href="#">Идеологическая работа</a></li>
+                    <li><a href="{% url 'webapp:structure' %}">Структура</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                    <li><a href="{% url 'webapp:working_mode' %}">Режим Работы</a></li>
+                    <li><a href="{% url 'webapp:anti_corruption' %}">Антикоррупционная работа</a></li>
+                    <li><a href="{% url 'webapp:ideological_work' %}">Идеологическая работа</a></li>
                     <li><a href="#">Устав</a></li>
                     <li><a href="#">Профсоюз</a></li>
                     <li><a href="#">Вакансии</a></li>

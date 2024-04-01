@@ -21,12 +21,14 @@ def index(request):
     desc_services_title = Services_title.objects.all()
     about_us = AboutUs.objects.all()
     innovations = Researches.objects.all()
+    featured = Featured.objects.all()
 
     context = {
         'desc_services_title': desc_services_title,
         'main_services': main_services,
         'about_us': about_us,
         'innovations': innovations,
+        'featured': featured,
     }
 
     return render(request, 'webapp/index.html', context=context)
@@ -47,3 +49,48 @@ def news_main(request):
     """Main News Clinic"""
 
     return render(request, 'webapp/news/news_main.html')
+
+
+def structure(request):
+    """About us Structure template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/about_us/structure.html', context=context)
+
+
+def working_mode(request):
+    """About us Structure template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/about_us/structure.html', context=context)
+
+
+def anti_corruption(request):
+    """Anti-corruption template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/about_us/structure.html', context=context)
+
+
+def ideological_work(request):
+    """Ideological_work template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/about_us/ideological_work.html', context=context)
+
