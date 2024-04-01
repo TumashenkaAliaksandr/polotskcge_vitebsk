@@ -126,3 +126,14 @@ def vacancies(request):
     }
 
     return render(request, 'webapp/about_us/vacancies.html', context=context)
+
+
+def appeals(request):
+    """Appeals template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/appeals/main_appeals.html', context=context)

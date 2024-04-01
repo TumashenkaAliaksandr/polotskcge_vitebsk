@@ -20,6 +20,7 @@ urlpatterns = [
     path('charter/', charter, name='charter'),
     path('trade_union/', trade_union, name='trade_union'),
     path('vacancies/', vacancies, name='vacancies'),
+    path('appeals/', appeals, name='appeals'),
     ]
 
 
