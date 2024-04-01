@@ -14,6 +14,18 @@ class Logo(models.Model):
         verbose_name_plural = 'Лого на Главной'
 
 
+class Featured(models.Model):
+    """This Model for Featured block on the main page"""
+
+    name = models.CharField(max_length=100, default='Featured Name')
+    description = models.TextField(default='Featured Description')
+    link = models.URLField()  # Поле для хранения ссылки
+
+    class Meta:
+        verbose_name = 'Избранное'
+        verbose_name_plural = 'Избранное'
+
+
 class Doctor(models.Model):
     first_name = models.CharField(max_length=100, default='Имя')
     last_name = models.CharField(max_length=100, default='Фамилия')

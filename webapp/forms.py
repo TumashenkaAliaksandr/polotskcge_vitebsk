@@ -39,3 +39,8 @@ class LogoForm(forms.ModelForm):
     class Meta:
         model = Logo
         fields = '__all__'
+
+class FeaturedForm(forms.ModelForm):
+    class Meta:
+        model = Featured
+        fields = '__all__'

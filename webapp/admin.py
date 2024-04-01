@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.utils.safestring import mark_safe
 
 from .models import *
-from .forms import AboutUsForm, ResearchesForm, LogoForm
+from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm
 
 
 class DoctorAdmin(admin.ModelAdmin):
@@ -76,3 +76,7 @@ class ResearchesAdmin(admin.ModelAdmin):
     @admin.register(Logo)
     class LogoAdmin(admin.ModelAdmin):
         form = LogoForm
+
+    @admin.register(Featured)
+    class FeaturedAdmin(admin.ModelAdmin):
+        form = FeaturedForm
