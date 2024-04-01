@@ -17,6 +17,9 @@ urlpatterns = [
     path('working_mode/', working_mode, name='working_mode'),
     path('anti_corruption/', anti_corruption, name='anti_corruption'),
     path('ideological_work/', ideological_work, name='ideological_work'),
+    path('charter/', charter, name='charter'),
+    path('trade_union/', trade_union, name='trade_union'),
+    path('vacancies/', vacancies, name='vacancies'),
     ]
 
 

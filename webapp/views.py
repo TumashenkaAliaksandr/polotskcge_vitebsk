@@ -94,3 +94,35 @@ def ideological_work(request):
 
     return render(request, 'webapp/about_us/ideological_work.html', context=context)
 
+
+def charter(request):
+    """Charter template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/about_us/charter.html', context=context)
+
+
+def trade_union(request):
+    """Trade union template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/about_us/trade_union.html', context=context)
+
+
+def vacancies(request):
+    """Trade union template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/about_us/vacancies.html', context=context)
