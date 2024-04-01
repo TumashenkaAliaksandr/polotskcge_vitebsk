@@ -13,6 +13,9 @@ class Logo(models.Model):
         verbose_name = 'Лого на Главной'
         verbose_name_plural = 'Лого на Главной'
 
+    def __str__(self):
+        return self.name
+
 
 class Featured(models.Model):
     """This Model for Featured block on the main page"""
@@ -24,6 +27,9 @@ class Featured(models.Model):
     class Meta:
         verbose_name = 'Избранное'
         verbose_name_plural = 'Избранное'
+
+    def __str__(self):
+        return self.name
 
 
 class Doctor(models.Model):

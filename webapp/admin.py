@@ -73,10 +73,10 @@ class ResearchesAdmin(admin.ModelAdmin):
     photo_display.short_description = 'Photo'  # Заголовок колонки в списке
 
 
-    @admin.register(Logo)
-    class LogoAdmin(admin.ModelAdmin):
-        form = LogoForm
+@admin.register(Logo)
+class LogoAdmin(admin.ModelAdmin):
+    form = LogoForm
 
-    @admin.register(Featured)
-    class FeaturedAdmin(admin.ModelAdmin):
-        form = FeaturedForm
+@admin.register(Featured)
+class FeaturedAdmin(admin.ModelAdmin):
+    form = FeaturedForm
