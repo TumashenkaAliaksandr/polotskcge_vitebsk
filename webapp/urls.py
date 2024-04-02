@@ -36,6 +36,9 @@ urlpatterns = [
     path('services/', services, name='services'),
     path('paid_services/', paid_services, name='paid_services'),
     path('hygienic/', hygienic_services, name='hygienic'),
+    path('laboratory_services/', laboratory_services, name='laboratory_services'),
+    path('hygiene_education/', hygiene_education, name='hygiene_education'),
+    path('disinfection_disinsection_deratization/', disinfection_disinsection_deratization, name='disinfection_disinsection_deratization'),
     ]
 
 

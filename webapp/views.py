@@ -299,3 +299,37 @@ def hygienic_services(request):
     }
 
     return render(request, 'webapp/services/hygienic.html', context=context)
+
+
+
+def laboratory_services(request):
+    """Services - laboratory_services template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/services/laboratory_services.html', context=context)
+
+
+def hygiene_education(request):
+    """Services - hygiene_education template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/services/hygiene_education.html', context=context)
+
+
+def disinfection_disinsection_deratization(request):
+    """Services - disinfection_disinsection_deratization template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/services/disinfection_disinsection_deratization.html', context=context)
