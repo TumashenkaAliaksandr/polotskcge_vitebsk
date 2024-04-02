@@ -23,6 +23,9 @@ urlpatterns = [
     path('appeals/', appeals, name='appeals'),
     path('normative_documents/', normative_documents, name='normative_documents'),
     path('electronic_appeals/', electronic_appeals, name='electronic_appeals'),
+    path('hotline/', hotline, name='hotline'),
+    path('book_of_comments/', book_of_comments, name='book_of_comments'),
+    path('higher_authority/', higher_authority, name='higher_authority'),
     ]
 
 

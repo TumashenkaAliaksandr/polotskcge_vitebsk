@@ -159,3 +159,36 @@ def electronic_appeals(request):
     }
 
     return render(request, 'webapp/appeals/electronic_appeals.html', context=context)
+
+
+def hotline(request):
+    """Appeals - hotline template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/appeals/hotline.html', context=context)
+
+
+def book_of_comments(request):
+    """Appeals - book_of_comments template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/appeals/book_of_comments.html', context=context)
+
+
+def higher_authority(request):
+    """Appeals - higher_authority template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/appeals/higher_authority.html', context=context)
