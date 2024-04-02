@@ -28,6 +28,9 @@ urlpatterns = [
     path('book_of_comments/', book_of_comments, name='book_of_comments'),
     path('higher_authority/', higher_authority, name='higher_authority'),
     path('ap/', ap, name='ap'),
+    path('expertise/', expertise, name='expertise'),
+    path('registrations/', registrations, name='registrations'),
+    path('relation_to_citizens/', relation_to_citizens, name='relation_to_citizens'),
     ]
 
 

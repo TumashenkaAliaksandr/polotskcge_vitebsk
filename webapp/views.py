@@ -150,7 +150,7 @@ def normative_documents(request):
     return render(request, 'webapp/appeals/normative_documents.html', context=context)
 
 def normative_documents_ap(request):
-    """Appeals - normative_documents_ap template"""
+    """AP - normative_documents_ap template"""
     features = Featured.objects.all()
 
     context = {
@@ -204,7 +204,7 @@ def higher_authority(request):
     return render(request, 'webapp/appeals/higher_authority.html', context=context)
 
 def ap(request):
-    """Appeals - AP template"""
+    """AP template"""
     features = Featured.objects.all()
 
     context = {
@@ -212,3 +212,36 @@ def ap(request):
     }
 
     return render(request, 'webapp/ap/ap.html', context=context)
+
+
+def expertise(request):
+    """AP - expertise template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/ap/expertise.html', context=context)
+
+
+def registrations(request):
+    """AP - registrations template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/ap/registration.html', context=context)
+
+
+def relation_to_citizens(request):
+    """AP - relation_to_citizens template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/ap/relation_to_citizens.html', context=context)
