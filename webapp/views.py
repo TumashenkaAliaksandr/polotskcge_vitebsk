@@ -245,3 +245,25 @@ def relation_to_citizens(request):
     }
 
     return render(request, 'webapp/ap/relation_to_citizens.html', context=context)
+
+
+def rights_duties(request):
+    """AP - rights_duties template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/ap/rights_duties.html', context=context)
+
+
+def maintenance_schedule(request):
+    """AP - maintenance_schedule template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/ap/maintenance_schedule.html', context=context)

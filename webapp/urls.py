@@ -31,6 +31,8 @@ urlpatterns = [
     path('expertise/', expertise, name='expertise'),
     path('registrations/', registrations, name='registrations'),
     path('relation_to_citizens/', relation_to_citizens, name='relation_to_citizens'),
+    path('rights_duties/', rights_duties, name='rights_duties'),
+    path('maintenance_schedule/', maintenance_schedule, name='maintenance_schedule'),
     ]
 
 
