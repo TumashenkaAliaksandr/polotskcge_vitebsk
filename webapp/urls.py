@@ -33,6 +33,9 @@ urlpatterns = [
     path('relation_to_citizens/', relation_to_citizens, name='relation_to_citizens'),
     path('rights_duties/', rights_duties, name='rights_duties'),
     path('maintenance_schedule/', maintenance_schedule, name='maintenance_schedule'),
+    path('services/', services, name='services'),
+    path('paid_services/', paid_services, name='paid_services'),
+    path('hygienic/', hygienic_services, name='hygienic'),
     ]
 
 

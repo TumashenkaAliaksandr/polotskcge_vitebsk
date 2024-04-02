@@ -113,10 +113,10 @@
                     <li><a href="{% url 'webapp:maintenance_schedule' %}">Порядок и сроки обжалования</a></li>
                 </ul>
             </li>
-            <li class="dropdown"><a href="#services"><span>Услуги</span> <i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a href="{% url 'webapp:services' %}"><span>Услуги</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                    <li><a href="#">Платные Услуги</a></li>
-                    <li><a href="#">Гигиенические услуги</a></li>
+                    <li><a href="{% url 'webapp:paid_services' %}">Платные Услуги</a></li>
+                    <li><a href="{% url 'webapp:hygienic' %}">Гигиенические услуги</a></li>
                     <li><a href="#">Лабораторные услуги</a></li>
                     <li><a href="#">Гигиеническое обучение</a></li>
                     <li><a href="#">Дезинфекция | Дезинсекция | Дератизация</a></li>

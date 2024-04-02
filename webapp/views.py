@@ -267,3 +267,35 @@ def maintenance_schedule(request):
     }
 
     return render(request, 'webapp/ap/maintenance_schedule.html', context=context)
+
+def services(request):
+    """Services - services template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/services/services.html', context=context)
+
+
+def paid_services(request):
+    """Services - paid_services template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/services/paid_services.html', context=context)
+
+
+def hygienic_services(request):
+    """Services - hygienic template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/services/hygienic.html', context=context)
