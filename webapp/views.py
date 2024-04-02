@@ -137,3 +137,25 @@ def appeals(request):
     }
 
     return render(request, 'webapp/appeals/main_appeals.html', context=context)
+
+
+def normative_documents(request):
+    """Appeals - normative_documents template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/appeals/normative_documents.html', context=context)
+
+
+def electronic_appeals(request):
+    """Appeals - electronic_appeals template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/appeals/electronic_appeals.html', context=context)

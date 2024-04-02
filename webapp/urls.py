@@ -21,6 +21,8 @@ urlpatterns = [
     path('trade_union/', trade_union, name='trade_union'),
     path('vacancies/', vacancies, name='vacancies'),
     path('appeals/', appeals, name='appeals'),
+    path('normative_documents/', normative_documents, name='normative_documents'),
+    path('electronic_appeals/', electronic_appeals, name='electronic_appeals'),
     ]
 
 
