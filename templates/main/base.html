@@ -103,9 +103,9 @@
                     <li><a href="{% url 'webapp:appeals' %}">Обращения</a></li>
                 </ul>
             </li>
-            <li class="dropdown"><a href="#"><span>АП</span> <i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a href="{% url 'webapp:ap' %}"><span>АП</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                    <li><a href="#">Нормативные Документы</a></li>
+                    <li><a href="{% url 'webapp:normative_documents_ap' %}">Нормативные Документы</a></li>
                     <li><a href="#">Экспертиза</a></li>
                     <li><a href="#">Регистрация</a></li>
                     <li><a href="#">В отношении граждан</a></li>

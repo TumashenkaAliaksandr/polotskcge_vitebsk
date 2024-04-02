@@ -149,6 +149,16 @@ def normative_documents(request):
 
     return render(request, 'webapp/appeals/normative_documents.html', context=context)
 
+def normative_documents_ap(request):
+    """Appeals - normative_documents_ap template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/ap/normative_documents_ap.html', context=context)
+
 
 def electronic_appeals(request):
     """Appeals - electronic_appeals template"""
@@ -192,3 +202,13 @@ def higher_authority(request):
     }
 
     return render(request, 'webapp/appeals/higher_authority.html', context=context)
+
+def ap(request):
+    """Appeals - AP template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/ap/ap.html', context=context)

@@ -22,10 +22,12 @@ urlpatterns = [
     path('vacancies/', vacancies, name='vacancies'),
     path('appeals/', appeals, name='appeals'),
     path('normative_documents/', normative_documents, name='normative_documents'),
+    path('normative_documents_ap/', normative_documents_ap, name='normative_documents_ap'),
     path('electronic_appeals/', electronic_appeals, name='electronic_appeals'),
     path('hotline/', hotline, name='hotline'),
     path('book_of_comments/', book_of_comments, name='book_of_comments'),
     path('higher_authority/', higher_authority, name='higher_authority'),
+    path('ap/', ap, name='ap'),
     ]
 
 
