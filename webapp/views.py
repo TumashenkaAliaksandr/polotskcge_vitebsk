@@ -420,3 +420,47 @@ def check_lists(request):
     }
 
     return render(request, 'webapp/activity/check_lists.html', context=context)
+
+
+def custom_products(request):
+    """Activity - custom_products template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/activity/custom_products.html', context=context)
+
+
+def healthy_cities_towns(request):
+    """Activity - healthy_cities_towns template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/activity/healthy_cities_towns.html', context=context)
+
+
+def eurasian_economic_union(request):
+    """Activity - eurasian_economic_union template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/activity/eurasian_economic_union.html', context=context)
+
+
+def sanitary_quarantine_points(request):
+    """Activity - sanitary_quarantine_points template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/activity/sanitary_quarantine_points.html', context=context)

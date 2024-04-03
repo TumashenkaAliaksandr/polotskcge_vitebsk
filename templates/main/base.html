@@ -133,7 +133,7 @@
                             <li><a href="{% url 'webapp:check_lists' %}">Чек-Листы</a></li>
                         </ul>
                     </li>
-                    <li><a class="nav-link scrollto" href="#contact">Нестандартная Продукция</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'webapp:custom_products' %}">Нестандартная Продукция</a></li>
                     <li class="dropdown"><a href="#"><span>Здоровый Образ Жизни</span> <i
                             class="bi bi-chevron-right"></i></a>
                         <ul>
@@ -148,14 +148,14 @@
                             <li><a href="#">Информационно-Аналитический<br>бюллетень</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Здоровые Города и Посёлки</a></li>
+                    <li><a href="{% url 'webapp:healthy_cities_towns' %}">Здоровые Города и Посёлки</a></li>
                     <li class="dropdown"><a href="#"><span>Эпидемиология</span> <i class="bi bi-chevron-right"></i></a>
                         <ul>
                             <li><a href="#">Иммунопрофилактика</a></li>
                         </ul>
                     </li>
-                    <li><a class="nav-link scrollto" href="#contact">Евразийский экономический союз</a></li>
-                    <li><a class="nav-link scrollto" href="#contact">Санитарно-Карантинные пункты</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'webapp:eurasian_economic_union' %}">Евразийский экономический союз</a></li>
+                    <li><a class="nav-link scrollto" href="{% url 'webapp:sanitary_quarantine_points' %}">Санитарно-Карантинные пункты</a></li>
                 </ul>
             </li>
             <li><a class="nav-link scrollto " href="{% url 'webapp:cge-news' %}">Новости</a></li>
