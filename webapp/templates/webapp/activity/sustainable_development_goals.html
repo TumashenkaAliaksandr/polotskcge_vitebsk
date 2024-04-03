@@ -1,0 +1,69 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <ol>
+            <li><a href="{% url 'webapp:home' %}">Главная</a></li>
+            <li>Цели устойчивого развития</li>
+          </ol>
+        </div>
+      </div>
+    </section><!-- End Breadcrumbs Section -->
+
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+                {% for main_features in features %}
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="icon"><i class="fas fa-heartbeat"></i></div>
+                            <h4 class="title"><a href="{{ main_features.link }}">{{ main_features.name }}</a></h4>
+                            <p class="description">{{ main_features.description }}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+                            <div class="icon"><i class="fas fa-biohazard"></i></div>
+                            <h4 class="title"><a href="">Профилактика</a></h4>
+                            <p class="description">Профилактические и эпидемиологические мероприятия для вашей
+                                безопасности.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+                            <div class="icon"><i class="fas fa-flask"></i></div>
+                            <h4 class="title"><a href="">Лабораторный Отдел</a></h4>
+                            <p class="description">Точность в каждом анализе! Наш отдел на службе вашему здоровью.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+                            <div class="icon"><i class="fas fa-question-circle"></i></div>
+                            <h4 class="title"><a href="">Вопрос Ответ</a></h4>
+                            <p class="description">Ответим на все ваши вопросы, Мы здесь, для того чтобы помочь вам
+                                разобраться.</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- End Featured Services Section -->
+
+  </main><!-- End #main -->
+
+{% endblock %}

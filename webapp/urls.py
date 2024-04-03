@@ -51,6 +51,8 @@ urlpatterns = [
     path('sanitary_quarantine_points/', sanitary_quarantine_points, name='sanitary_quarantine_points'),
     path('epidemiology/', epidemiology, name='epidemiology'),
     path('immunoprophylaxis/', immunoprophylaxis, name='immunoprophylaxis'),
+    path('sustainable_development_goals/', sustainable_development_goals, name='sustainable_development_goals'),
+    path('analytical_newsletter/', analytical_newsletter, name='analytical_newsletter'),
     ]
 
 

@@ -142,10 +142,10 @@
                             <li><a href="#">Информационно-Образовательные<br>ресурсы</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="#"><span>Цели Устойчивого Развития</span> <i
+                    <li class="dropdown"><a href="{% url 'webapp:sustainable_development_goals' %}"><span>Цели Устойчивого Развития</span> <i
                             class="bi bi-chevron-right"></i></a>
                         <ul>
-                            <li><a href="#">Информационно-Аналитический<br>бюллетень</a></li>
+                            <li><a href="{% url 'webapp:analytical_newsletter' %}">Информационно-Аналитический<br>бюллетень</a></li>
                         </ul>
                     </li>
                     <li><a href="{% url 'webapp:healthy_cities_towns' %}">Здоровые Города и Посёлки</a></li>

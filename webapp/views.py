@@ -486,3 +486,25 @@ def immunoprophylaxis(request):
     }
 
     return render(request, 'webapp/activity/immunoprophylaxis.html', context=context)
+
+
+def sustainable_development_goals(request):
+    """Activity - sustainable_development_goals template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/activity/sustainable_development_goals.html', context=context)
+
+
+def analytical_newsletter(request):
+    """Activity - analytical_newsletter template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/activity/analytical_newsletter.html', context=context)
