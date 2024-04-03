@@ -78,21 +78,28 @@
       <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
-        <ul>
-            <li><a class="nav-link scrollto " href="{% url 'webapp:home' %}">Главная</a></li>
-            <li class="dropdown nav-link scrollto"><a href="#about"><span>О Центре</span> <i
-                    class="bi bi-chevron-down"></i></a>
-                <ul>
-                    <li><a href="{% url 'webapp:structure' %}">Структура</a></li>
-                    <li><a href="{% url 'webapp:contacts' %}">Контакты</a></li>
-                    <li><a href="{% url 'webapp:working_mode' %}">Режим Работы</a></li>
-                    <li><a href="{% url 'webapp:anti_corruption' %}">Антикоррупционная работа</a></li>
-                    <li><a href="{% url 'webapp:ideological_work' %}">Идеологическая работа</a></li>
-                    <li><a href="{% url 'webapp:charter' %}">Устав</a></li>
-                    <li><a href="{% url 'webapp:trade_union' %}">Профсоюз</a></li>
-                    <li><a href="{% url 'webapp:vacancies' %}">Вакансии</a></li>
-                </ul>
-            </li>
+          <ul>
+              <li {% if request.resolver_match.url_name == 'home' %} class="active" {% endif %} ><a
+                      class="nav-link scrollto active" href="{% url 'webapp:home' %}">Главная</a></li>
+              <li
+                      {% if request.resolver_match.url_name in "['structure', 'contacts', 'working_mode', 'anti_corruption', 'ideological_work', 'charter', 'trade_union', 'vacancies']" %}
+                          class="dropdown nav-link scrollto"{% else %} class="dropdown nav-link"{% endif %}><a
+                      href="#about"><span>О Центре</span>
+                  <i class="bi bi-chevron-down"></i></a>
+                  <ul>
+                      <li {% if request.resolver_match.url_name == 'structure' %}class="active"{% endif %}><a
+                              href="{% url 'webapp:structure' %}">Структура</a></li>
+                      <li><a href="{% url 'webapp:contacts' %}">Контакты</a></li>
+                      <li><a href="{% url 'webapp:working_mode' %}">Режим Работы</a></li>
+                      <li><a href="{% url 'webapp:anti_corruption' %}">Антикоррупционная работа</a></li>
+                      <li><a href="{% url 'webapp:ideological_work' %}">Идеологическая работа</a></li>
+                      <li><a href="{% url 'webapp:charter' %}">Устав</a></li>
+                      <li><a href="{% url 'webapp:trade_union' %}">Профсоюз</a></li>
+                      <li><a href="{% url 'webapp:vacancies' %}">Вакансии</a></li>
+                  </ul>
+              </li>
+
+
             <li class="dropdown"><a href="{% url 'webapp:appeals' %}"><span>Обращения</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                     <li><a href="{% url 'webapp:normative_documents' %}">Нормативные Документы</a></li>

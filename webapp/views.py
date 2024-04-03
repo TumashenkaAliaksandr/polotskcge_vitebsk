@@ -77,7 +77,7 @@ def working_mode(request):
         'features': features,
     }
 
-    return render(request, 'webapp/about_us/structure.html', context=context)
+    return render(request, 'webapp/about_us/working_mode.html', context=context)
 
 
 def anti_corruption(request):
@@ -88,7 +88,7 @@ def anti_corruption(request):
         'features': features,
     }
 
-    return render(request, 'webapp/about_us/structure.html', context=context)
+    return render(request, 'webapp/about_us/anti_corruption.html', context=context)
 
 
 def ideological_work(request):

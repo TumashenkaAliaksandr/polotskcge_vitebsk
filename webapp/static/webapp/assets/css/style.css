@@ -680,9 +680,40 @@ section {
   /*opacity: 0.7; !* задайте значение прозрачности по вашему усмотрению *!*/
 }
 
+section#contact {
+    padding: 35px 0 35px;
+    background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/epi_gigi_polock_contact.png') center/cover;
+    background-attachment: fixed;
+}
+/*styles for map*/
+
+.map-container {
+  text-align: center;
+  width: 100%;
+}
+
+.map-wrapper {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 255, 0.5);
+  display: inline-block;
+  overflow: hidden;
+  width: 85%; /* Карта будет максимально широкой, но не больше ширины родительского элемента */
+}
+
+.map-iframe {
+  border: 0;
+  width: 100%; /* Карта будет занимать всю доступную ширину внутри родительского элемента */
+  height: 450px;
+}
+
+/*end styles for map*/
+
+
 .section-title {
   text-align: center;
-  padding-bottom: 30px;
+  padding-bottom: 35px;
+  padding-top: 35px;
 }
 
 .section-title h2 {
@@ -770,6 +801,137 @@ section {
     display: inline-block;
   }
 }
+
+.breadcrumbs_contacts {
+  padding: 20px 0;
+  background-color: #ecf8f9;
+  min-height: 40px;
+  /*margin-top: 120px;*/
+}
+
+.breadcrumbs_contacts ol li+li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #6c757d;
+  content: "/";
+}
+
+
+@media (max-width: 992px) {
+  .breadcrumbs_contacts {
+    margin-top: 70px;
+  }
+}
+
+.breadcrumbs_contacts h2 {
+  font-size: 24px;
+  font-weight: 300;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .breadcrumbs_contacts h2 {
+    margin: 0 0 10px 0;
+  }
+}
+
+.breadcrumbs_contacts ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.breadcrumbs_contacts ol li+li {
+  padding-left: 10px;
+}
+
+.breadcrumbs_contacts ol li+li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #6c757d;
+  content: "/";
+}
+
+@media (max-width: 768px) {
+  .breadcrumbs_contacts .d-flex {
+    display: block !important;
+  }
+
+  .breadcrumbs_contacts ol {
+    display: block;
+  }
+
+  .breadcrumbs_contacts ol li {
+    display: inline-block;
+  }
+}
+
+/*page banner*/
+#pagebanner{
+  background: url(../img/pagebanner.jpg) no-repeat;
+  background-size:100%;
+  background-attachment: fixed;
+  background-position: bottom;
+  height: 300px;
+  width: 100%;
+}
+#pagebanner_two{
+  background: url(../img/pagebanner.jpg) no-repeat;
+  background-size:100%;
+  background-attachment: fixed;
+  background-position: bottom;
+  height: 350px;
+  width: 100%;
+}
+
+#pagebanner-two:before{
+  content: '';
+  background: #00000068;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#pagebanner:before{
+  content: '';
+  background: #00000068;
+  height: auto;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#pagebanner .page-title{
+  padding-top: 120px;
+  position: relative;
+  z-index: 1;
+}
+
+#pagebanner .page-title h2{
+  color: #4d483e;
+}
+
+@media(max-width: 911px){
+  #pagebanner{background-attachment: initial;}
+}
+
+@media (max-width: 767px) {
+    #pagebanner {
+        background-size: cover;
+        height: 100px;
+        width: 100%;
+    }
+}
+
+/*End page banner*/
 
 /*--------------------------------------------------------------
 # Featured Services
@@ -1641,7 +1803,7 @@ section {
 .contact .info-box {
   color: #444444;
   text-align: center;
-  box-shadow: 0 0 20px rgba(214, 215, 216, 0.5);
+  box-shadow: 0 0 20px rgba(214, 215, 216, 0.57);
   padding: 20px 0 30px 0;
 }
 
@@ -1727,10 +1889,12 @@ section {
 
 .contact .php-email-form input {
   padding: 10px 15px;
+  opacity: 0.67;
 }
 
 .contact .php-email-form textarea {
   padding: 12px 15px;
+  opacity: 0.67;
 }
 
 .contact .php-email-form button[type=submit] {
@@ -1740,6 +1904,7 @@ section {
   color: #fff;
   transition: 0.4s;
   border-radius: 4px;
+  opacity: 0.67;
 }
 
 .contact .php-email-form button[type=submit]:hover {
