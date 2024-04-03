@@ -45,10 +45,17 @@ def info_main(request):
 
     return render(request, 'webapp/informations/info_main.html')
 
+
 def news_main(request):
     """Main News Clinic"""
 
-    return render(request, 'webapp/news/news_main.html')
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/news/news_main.html', context=context)
 
 
 def structure(request):
@@ -149,6 +156,7 @@ def normative_documents(request):
 
     return render(request, 'webapp/appeals/normative_documents.html', context=context)
 
+
 def normative_documents_ap(request):
     """AP - normative_documents_ap template"""
     features = Featured.objects.all()
@@ -202,6 +210,7 @@ def higher_authority(request):
     }
 
     return render(request, 'webapp/appeals/higher_authority.html', context=context)
+
 
 def ap(request):
     """AP template"""
@@ -268,6 +277,7 @@ def maintenance_schedule(request):
 
     return render(request, 'webapp/ap/maintenance_schedule.html', context=context)
 
+
 def services(request):
     """Services - services template"""
     features = Featured.objects.all()
@@ -333,3 +343,25 @@ def disinfection_disinsection_deratization(request):
     }
 
     return render(request, 'webapp/services/disinfection_disinsection_deratization.html', context=context)
+
+
+def npa(request):
+    """NPA template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/npa.html', context=context)
+
+
+def activity(request):
+    """Activity template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/activity/activity.html', context=context)
