@@ -53,6 +53,11 @@ urlpatterns = [
     path('immunoprophylaxis/', immunoprophylaxis, name='immunoprophylaxis'),
     path('sustainable_development_goals/', sustainable_development_goals, name='sustainable_development_goals'),
     path('analytical_newsletter/', analytical_newsletter, name='analytical_newsletter'),
+    path('healthy_lifestyle/', healthy_lifestyle, name='healthy_lifestyle'),
+    path('preventive_measures/', preventive_measures, name='preventive_measures'),
+    path('health_days/', health_days, name='health_days'),
+    path('educational_resources/', educational_resources, name='educational_resources'),
+    path('contacts/', contacts, name='contacts'),
     ]
 
 

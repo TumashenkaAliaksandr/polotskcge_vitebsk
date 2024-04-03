@@ -508,3 +508,58 @@ def analytical_newsletter(request):
     }
 
     return render(request, 'webapp/activity/analytical_newsletter.html', context=context)
+
+
+def healthy_lifestyle(request):
+    """Healthy_lifestyle - healthy_lifestyle template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/healthy_lifestyle/healthy_lifestyle.html', context=context)
+
+
+def preventive_measures(request):
+    """Healthy_lifestyle - preventive_measures template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/healthy_lifestyle/preventive_measures.html', context=context)
+
+
+def health_days(request):
+    """Healthy_lifestyle - health_days template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/healthy_lifestyle/health_days.html', context=context)
+
+
+def educational_resources(request):
+    """Healthy_lifestyle - educational_resources template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/healthy_lifestyle/educational_resources.html', context=context)
+
+
+def contacts(request):
+    """Contacts template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/contacts.html', context=context)

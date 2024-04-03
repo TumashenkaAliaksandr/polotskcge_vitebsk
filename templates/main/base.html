@@ -84,7 +84,7 @@
                     class="bi bi-chevron-down"></i></a>
                 <ul>
                     <li><a href="{% url 'webapp:structure' %}">Структура</a></li>
-                    <li><a href="#contact">Контакты</a></li>
+                    <li><a href="{% url 'webapp:contacts' %}">Контакты</a></li>
                     <li><a href="{% url 'webapp:working_mode' %}">Режим Работы</a></li>
                     <li><a href="{% url 'webapp:anti_corruption' %}">Антикоррупционная работа</a></li>
                     <li><a href="{% url 'webapp:ideological_work' %}">Идеологическая работа</a></li>
@@ -134,12 +134,12 @@
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto" href="{% url 'webapp:custom_products' %}">Нестандартная Продукция</a></li>
-                    <li class="dropdown"><a href="#"><span>Здоровый Образ Жизни</span> <i
+                    <li class="dropdown"><a href="{% url 'webapp:healthy_lifestyle' %}"><span>Здоровый Образ Жизни</span> <i
                             class="bi bi-chevron-right"></i></a>
                         <ul>
-                            <li><a href="#">Профилактические мероприятия</a></li>
-                            <li><a href="#">Единые Дни Здоровья</a></li>
-                            <li><a href="#">Информационно-Образовательные<br>ресурсы</a></li>
+                            <li><a href="{% url 'webapp:preventive_measures' %}">Профилактические мероприятия</a></li>
+                            <li><a href="{% url 'webapp:health_days' %}">Единые Дни Здоровья</a></li>
+                            <li><a href="{% url 'webapp:educational_resources' %}">Информационно-Образовательные<br>ресурсы</a></li>
                         </ul>
                     </li>
                     <li class="dropdown"><a href="{% url 'webapp:sustainable_development_goals' %}"><span>Цели Устойчивого Развития</span> <i
