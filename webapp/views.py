@@ -464,3 +464,25 @@ def sanitary_quarantine_points(request):
     }
 
     return render(request, 'webapp/activity/sanitary_quarantine_points.html', context=context)
+
+
+def epidemiology(request):
+    """Activity - epidemiology template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/activity/epidemiology.html', context=context)
+
+
+def immunoprophylaxis(request):
+    """Activity - immunoprophylaxis template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/activity/immunoprophylaxis.html', context=context)

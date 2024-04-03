@@ -49,6 +49,8 @@ urlpatterns = [
     path('healthy_cities_towns/', healthy_cities_towns, name='healthy_cities_towns'),
     path('eurasian_economic_union/', eurasian_economic_union, name='eurasian_economic_union'),
     path('sanitary_quarantine_points/', sanitary_quarantine_points, name='sanitary_quarantine_points'),
+    path('epidemiology/', epidemiology, name='epidemiology'),
+    path('immunoprophylaxis/', immunoprophylaxis, name='immunoprophylaxis'),
     ]
 
 
