@@ -40,6 +40,11 @@ urlpatterns = [
     path('laboratory_services/', laboratory_services, name='laboratory_services'),
     path('hygiene_education/', hygiene_education, name='hygiene_education'),
     path('disinfection_disinsection_deratization/', disinfection_disinsection_deratization, name='disinfection_disinsection_deratization'),
+    path('control_supervisory_activities/', supervisory_activities, name='control_supervisory_activities'),
+    path('inspection_plan/', inspection_plan, name='inspection_plan'),
+    path('monitoring_plan/', monitoring_plan, name='monitoring_plan'),
+    path('typical_violations/', typical_violations, name='typical_violations'),
+    path('check_lists/', check_lists, name='check_lists'),
     ]
 
 

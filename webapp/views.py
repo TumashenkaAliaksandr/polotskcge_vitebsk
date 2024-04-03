@@ -365,3 +365,58 @@ def activity(request):
     }
 
     return render(request, 'webapp/activity/activity.html', context=context)
+
+
+def supervisory_activities(request):
+    """Activity - supervisory_activities template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/activity/supervisory_activities.html', context=context)
+
+
+def inspection_plan(request):
+    """Activity - inspection_plan template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/activity/inspection_plan.html', context=context)
+
+
+def monitoring_plan(request):
+    """Activity - monitoring_plan template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/activity/monitoring_plan.html', context=context)
+
+
+def typical_violations(request):
+    """Activity - typical_violations template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/activity/typical_violations.html', context=context)
+
+
+def check_lists(request):
+    """Activity - check_lists template"""
+    features = Featured.objects.all()
+
+    context = {
+        'features': features,
+    }
+
+    return render(request, 'webapp/activity/check_lists.html', context=context)
