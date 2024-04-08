@@ -88,13 +88,12 @@
                           <h3>{{ main_about.name_two }}</h3>
                           <p class="fst-italic">{{ main_about.description_two | safe }}</p>
                           <ul class="icon-list">
-                              <li><i class="bi bi-check-circle"></i> {{ main_about.name_li_one | safe }}</li>
-                              <li><i class="bi bi-check-circle"></i> {{ main_about.name_li_two | safe }}</li>
-                              <li><i class="bi bi-check-circle"></i> {{ main_about.name_li_three | safe }}</li>
-                              <li><i class="bi bi-check-circle"></i> {{ main_about.name_li_four | safe }}</li>
-                              <li><i class="bi bi-check-circle"></i> {{ main_about.name_li_five | safe }}</li>
+                              <li><i class="{{ main_about.icon_class_li_one }}"></i> {{ main_about.name_li_one | safe }}</li>
+                              <li><i class="{{ main_about.icon_class_li_two }}"></i> {{ main_about.name_li_two | safe }}</li>
+                              <li><i class="{{ main_about.icon_class_li_three }}"></i> {{ main_about.name_li_three | safe }}</li>
+                              <li><i class="{{ main_about.icon_class_li_four }}"></i> {{ main_about.name_li_four | safe }}</li>
+                              <li><i class="{{ main_about.icon_class_li_five }}"></i> {{ main_about.name_li_five | safe }}</li>
                           </ul>
-
                           <p>{{ main_about.description_three | safe }}</p>
                       </div>
                   </div>

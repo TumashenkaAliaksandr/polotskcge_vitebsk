@@ -75,6 +75,8 @@ class Services(models.Model):
         return self.name
 
 
+from django.db import models
+
 class AboutUs(models.Model):
     name = models.CharField(max_length=100, default='About Us Name One')
     description = models.TextField(default='About Us Description One')
@@ -87,10 +89,20 @@ class AboutUs(models.Model):
     name_li_five = models.CharField(max_length=100, default='About Us Name Li-Five')
     description_three = models.TextField(default='About Us Description Three')
     photo = models.ImageField(upload_to='about_us/', null=True, blank=True)
+    icon_class = models.CharField(max_length=100, default='bi bi-check-circle')  # Для основного описания
+    icon_class_li_one = models.CharField(max_length=100, default='bi bi-check-circle')  # Для первого элемента списка
+    icon_class_li_two = models.CharField(max_length=100, default='bi bi-check-circle')  # Для второго элемента списка
+    icon_class_li_three = models.CharField(max_length=100, default='bi bi-check-circle')  # Для третьего элемента списка
+    icon_class_li_four = models.CharField(max_length=100, default='bi bi-check-circle')  # Для четвертого элемента списка
+    icon_class_li_five = models.CharField(max_length=100, default='bi bi-check-circle')  # Для пятого элемента списка
 
     class Meta:
         verbose_name = 'Об Учреждении'
         verbose_name_plural = 'Об Учреждении'
+
+    def __str__(self):
+        return self.name
+
 
     def __str__(self):
         return self.name
