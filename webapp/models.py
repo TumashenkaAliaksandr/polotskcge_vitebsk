@@ -23,6 +23,7 @@ class Featured(models.Model):
     name = models.CharField(max_length=100, default='Featured Name')
     description = models.TextField(default='Featured Description')
     link = models.URLField()  # Поле для хранения ссылки
+    icon_class = models.CharField(max_length=100, default='fas fa-heartbeat')
 
     class Meta:
         verbose_name = 'Избранное'
