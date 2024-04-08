@@ -96,15 +96,21 @@ class AboutUs(models.Model):
         return self.name
 
 
+from django.db import models
+
 class Researches(models.Model):
     name = models.CharField(max_length=100, default='Researches Name One')
     description = models.TextField(default='Researches Description One')
+    icon_class = models.CharField(max_length=100, default='bx bxs-flask')  # Иконка для первого описания
     name_two = models.CharField(max_length=100, default='Researches Name Two')
     description_two = models.TextField(default='Researches Description Two')
+    icon_class_two = models.CharField(max_length=100, default='bx bxs-flask')  # Иконка для второго описания
     name_three = models.CharField(max_length=100, default='Researches Name Three')
     description_three = models.TextField(default='Researches Description Three')
+    icon_class_three = models.CharField(max_length=100, default='bx bxs-flask')  # Иконка для третьего описания
     name_four = models.CharField(max_length=100, default='Researches Name Four')
     description_four = models.TextField(default='Researches Description Four')
+    icon_class_four = models.CharField(max_length=100, default='bx bxs-flask')  # Иконка для четвертого описания
     photo = models.ImageField(upload_to='researches/', null=True, blank=True)
 
     class Meta:
@@ -113,3 +119,4 @@ class Researches(models.Model):
 
     def __str__(self):
         return self.name
+

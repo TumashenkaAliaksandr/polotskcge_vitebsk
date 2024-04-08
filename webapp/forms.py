@@ -28,10 +28,10 @@ class ResearchesForm(forms.ModelForm):
             'description_two': CKEditorWidget(),
             'description_three': CKEditorWidget(),
             'description_four': CKEditorWidget(),
-            # 'name_one': CKEditorWidget(),
-            # 'name_two': CKEditorWidget(),
-            # 'name_three': CKEditorWidget(),
-            # 'name_four': CKEditorWidget(),
+            'icon_class': forms.TextInput(),
+            'icon_class_two': forms.TextInput(),
+            'icon_class_three': forms.TextInput(),
+            'icon_class_four': forms.TextInput(),
         }
 
 
