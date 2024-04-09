@@ -1722,8 +1722,8 @@ section#contact {
 .pricing .advanced {
   width: 200px;
   position: absolute;
-  top: 18px;
-  right: -68px;
+  top: 4px;
+  right: -83px;
   transform: rotate(45deg);
   z-index: 1;
   font-size: 14px;
