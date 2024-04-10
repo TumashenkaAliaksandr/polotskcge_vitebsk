@@ -550,10 +550,12 @@
       <!-- ======= Frequently Asked Questioins Section ======= -->
       <section id="faq" class="faq section-bg">
           <div class="container" data-aos="fade-up">
-              <div class="section-title">
-                  <h2>Ответы на Вопросы</h2>
-                  <p>Часто задаваемые вопросы и ответы от нашей команды экспертов.</p>
-              </div>
+              {% for title_desc in title_desc_queans %}
+                  <div class="section-title">
+                      <h2>{{ title_desc.name }}</h2>
+                      <p>{{ title_desc.description | safe }}</p>
+                  </div>
+              {% endfor %}
 
               <ul class="faq-list">
                   {% for question in questions %}
