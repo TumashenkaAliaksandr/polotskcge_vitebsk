@@ -685,6 +685,18 @@ section#contact {
     background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/epi_gigi_polock_contact.png') center/cover;
     background-attachment: fixed;
 }
+
+section#clocks {
+    padding: 35px 0 35px;
+    background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/gigi_centr_back.jpg') center/cover;
+    background-attachment: fixed;
+}
+
+section#clocks-two {
+    padding: 10px 0 10px;
+    background: linear-gradient(rgba(255, 255, 255, 0.99), rgb(236, 248, 249, 0.99)), url('../img/gigi_centr_back.jpg') center/cover;
+    background-attachment: fixed;
+}
 /*styles for map*/
 
 .map-container {
