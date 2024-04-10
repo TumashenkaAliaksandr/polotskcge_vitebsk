@@ -136,8 +136,8 @@ class Researches(models.Model):
 
 
 class GeneralInfo(models.Model):
-    title = models.CharField(max_length=100)
-    description = RichTextField()
+    title = models.CharField(max_length=100, default='Тайтл')
+    description = RichTextField(max_length=200, default='Описание')
 
     class Meta:
         verbose_name = 'Заголовок и описание для Часы Приёма'
@@ -155,11 +155,46 @@ class ReceptionHours(models.Model):
     reception_time = models.CharField(max_length=100, default='Часы приёма')
     # general_info = models.OneToOneField(GeneralInfo, on_delete=models.CASCADE, related_name='reception_hours')
     general_info = models.OneToOneField(GeneralInfo, on_delete=models.CASCADE, related_name='reception_hours',
-                                        default=1)
+                                        blank=True)
 
     class Meta:
         verbose_name = 'Часы приема'
         verbose_name_plural = 'Часы приема'
+
+    def __str__(self):
+        return self.name
+
+
+class Question(models.Model):
+    question_text = models.CharField(max_length=255, default='вопрос')
+
+    class Meta:
+        verbose_name = 'Вопрос'
+        verbose_name_plural = 'Вопросы'
+
+    def __str__(self):
+        return self.question_text
+
+class Answer(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='answers')
+    answer_text = models.TextField(blank=True)
+
+    class Meta:
+        verbose_name = 'Ответ'
+        verbose_name_plural = 'Ответы'
+
+    def __str__(self):
+        return self.answer_text
+
+
+class Question_Ansver_title(models.Model):
+
+    name = models.CharField(max_length=255, default='Заголовок')
+    description = RichTextField(max_length=200, default='Описание')
+
+    class Meta:
+        verbose_name = 'Заголовок и Описание Ответов'
+        verbose_name_plural = 'Заголовок и Описание Ответов'
 
     def __str__(self):
         return self.name

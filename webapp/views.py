@@ -22,6 +22,8 @@ def index(request):
     about_us = AboutUs.objects.all()
     innovations = Researches.objects.all()
     featured = Featured.objects.all()
+    questions = Question.objects.all()
+    ansvers = Answer.objects.all()
 
     context = {
         'desc_services_title': desc_services_title,
@@ -29,6 +31,8 @@ def index(request):
         'about_us': about_us,
         'innovations': innovations,
         'featured': featured,
+        'questions': questions,
+        'ansvers': ansvers,
     }
 
     return render(request, 'webapp/index.html', context=context)

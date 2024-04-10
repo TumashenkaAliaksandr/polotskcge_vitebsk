@@ -95,3 +95,21 @@ class GeneralInfoAdmin(admin.ModelAdmin):
         return obj.description[:50]  # Предположим, что вы хотите отображать только первые 50 символов описания
 
     description_preview.short_description = 'Описание'
+
+
+class AnswerInline(admin.TabularInline):
+    model = Answer
+    extra = 1
+
+class QuestionAdmin(admin.ModelAdmin):
+    inlines = [AnswerInline]
+
+admin.site.register(Question, QuestionAdmin)
+
+
+@admin.register(Question_Ansver_title)
+class Question_Ansver_titleAdmin(admin.ModelAdmin):
+    list_display = ('name', 'description')
+    search_fields = ('name',)
+    list_per_page = 20
+
