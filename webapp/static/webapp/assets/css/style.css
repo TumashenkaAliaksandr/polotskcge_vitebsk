@@ -1732,6 +1732,49 @@ section#contact {
   color: #fff;
 }
 
+/*таблицы для время работ*/
+.iksweb {
+  text-decoration: none;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+}
+
+.iksweb th {
+  font-weight: normal;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #58c3c6;
+}
+
+.iksweb td {
+  font-size: 13px;
+  color: #354251;
+}
+
+.iksweb td, table.iksweb th {
+  white-space: pre-wrap;
+  padding: 10px 5px;
+  line-height: 13px;
+  vertical-align: middle;
+  border: 1px solid #58c3c6;
+}
+
+.iksweb tr:hover {
+  background-color: #f9fafb
+}
+
+.iksweb tr:hover td {
+  color: #58c3c6;
+  cursor: default;
+}
+
+.table-info{
+  padding-bottom: 5%;
+}
+
+/*конец таблиц*/
+
 /*--------------------------------------------------------------
 # Frequently Asked Questioins
 --------------------------------------------------------------*/

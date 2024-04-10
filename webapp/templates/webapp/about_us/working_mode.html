@@ -28,13 +28,70 @@
       </section>
 
 
+        <!-- ======= Pricing Section ======= -->
+        <section id="pricing" class="pricing">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>ГРАФИК ПРИЕМА</h2>
+                    <p>ЮРИДИЧЕСКИХ, ФИЗИЧЕСКИХ ЛИЦ И ИНДИВИДУАЛЬНЫХ ПРЕДПРИНИМАТЕЛЕЙ</p>
+                </div>
+
+                <div class="row">
+                    <div class="table-info">
+                        <div class="box" data-aos="fade-up" data-aos-delay="300">
+                            <table class="iksweb">
+                                <thead>
+                                <tr>
+                                    <th>ФИО</th>
+                                    <th>Должность</th>
+                                    <th>Этаж | Кабинет</th>
+                                    <th>Дни и Время приёма</th>
+                                    <th>Телефон</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for main_clock in clocks %}
+                                    <tr>
+                                        <td>{{ main_clock.family_name }}</td>
+                                        <td>{{ main_clock.name }}</td>
+                                        <td>{{ main_clock.office }}</td>
+                                        <td>{{ main_clock.reception_time }}</td>
+                                        <td>{{ main_clock.phone }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for main_clocks in clocks %}
+                        <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+                            <div class="box" data-aos="fade-up" data-aos-delay="300">
+                                <h3>{{ main_clocks.name }}</h3>
+                                <ul>
+                                    <li>{{ main_clocks.family_name }}</li>
+                                    {#                                    <li>{{ main_clocks.last_name }}</li>#}
+                                    <li>{{ main_clocks.office }}</li>
+                                    <li>{{ main_clocks.phone }}</li>
+                                    <li>{{ main_clocks.reception_time }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!-- End Pricing Section -->
+
         <!-- ======= Departments Section ======= -->
         <section id="departments" class="departments">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>Режим работы</h2>
-                    <p>Личный приём граждан, индивидуальных предпринимателей и юридических лиц<br>понедельник-пятница с
+                    <h2>Личный приём</h2>
+                    <p>граждан, индивидуальных предпринимателей и юридических лиц<br>понедельник-пятница с
                         8.00 до 17.00,
                         обед с 13.00 до 14.00</p>
                 </div>
@@ -60,12 +117,12 @@
                                     <p>Индивидуальных предпринимателей и юридических лиц.</p>
                                 </a>
                             </li>
-{#                            <li class="nav-item mt-2">#}
-{#                                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">#}
-{#                                    <h4>Pediatrics</h4>#}
-{#                                    <p>Ratione hic sapiente nostrum doloremque illum nulla praesentium id</p>#}
-{#                                </a>#}
-{#                            </li>#}
+                            {#                            <li class="nav-item mt-2">#}
+                            {#                                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">#}
+                            {#                                    <h4>Pediatrics</h4>#}
+                            {#                                    <p>Ratione hic sapiente nostrum doloremque illum nulla praesentium id</p>#}
+                            {#                                </a>#}
+                            {#                            </li>#}
                         </ul>
                     </div>
                     <div class="col-lg-8">
@@ -81,7 +138,8 @@
                             </div>
                             <div class="tab-pane" id="tab-2">
                                 <h3>Гречуха Юлия Владимирвона</h3>
-                                <p class="fst-italic">Личный приём граждан, индивидуальных предпринимателей и юридических лиц.</p>
+                                <p class="fst-italic">Личный приём граждан, индивидуальных предпринимателей и
+                                    юридических лиц.</p>
                                 <img src="{% static 'webapp/assets/img/departments-2.jpg' %}" alt="" class="img-fluid">
                                 <p>Кабинет № 3 (3 этаж)<br>
                                     Четверг с 8.00 до 13.00, еженедельно<br>
@@ -94,17 +152,17 @@
                                 <p>Понедельник - с 8.00 до 13.00<br>
                                     Четверг - с 8.00 до 13.00</p>
                             </div>
-{#                            <div class="tab-pane" id="tab-4">#}
-{#                                <h3>Pediatrics</h3>#}
-{#                                <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde#}
-{#                                    sonata raqer a videna mareta paulona marka</p>#}
-{#                                <img src="{% static 'webapp/assets/img/departments-4.jpg' %}" alt="" class="img-fluid">#}
-{#                                <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos#}
-{#                                    ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima#}
-{#                                    eveniet#}
-{#                                    eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus#}
-{#                                    nostrum rem vero</p>#}
-{#                            </div>#}
+                            {#                            <div class="tab-pane" id="tab-4">#}
+                            {#                                <h3>Pediatrics</h3>#}
+                            {#                                <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde#}
+                            {#                                    sonata raqer a videna mareta paulona marka</p>#}
+                            {#                                <img src="{% static 'webapp/assets/img/departments-4.jpg' %}" alt="" class="img-fluid">#}
+                            {#                                <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos#}
+                            {#                                    ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima#}
+                            {#                                    eveniet#}
+                            {#                                    eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus#}
+                            {#                                    nostrum rem vero</p>#}
+                            {#                            </div>#}
                         </div>
                     </div>
                 </div>

@@ -71,10 +71,13 @@ def structure(request):
 
 def working_mode(request):
     """About us Structure template"""
+
+    clocks = ReceptionHours.objects.all()
     features = Featured.objects.all()
 
     context = {
         'features': features,
+        'clocks': clocks,
     }
 
     return render(request, 'webapp/about_us/working_mode.html', context=context)
