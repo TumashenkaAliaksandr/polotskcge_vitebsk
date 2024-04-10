@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.utils.safestring import mark_safe
 
 from .models import *
-from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm, ReceptionHoursForm
+from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm, ReceptionHoursForm, GeneralInfoForm
 
 
 class DoctorAdmin(admin.ModelAdmin):
@@ -85,3 +85,13 @@ class FeaturedAdmin(admin.ModelAdmin):
 class ReceptionHoursAdmin(admin.ModelAdmin):
     form = ReceptionHoursForm
     list_display = ['name', 'last_name', 'family_name', 'office', 'phone', 'reception_time']
+
+@admin.register(GeneralInfo)
+class GeneralInfoAdmin(admin.ModelAdmin):
+    form = GeneralInfoForm
+    list_display = ['title', 'description']
+
+    def description_preview(self, obj):
+        return obj.description[:50]  # Предположим, что вы хотите отображать только первые 50 символов описания
+
+    description_preview.short_description = 'Описание'

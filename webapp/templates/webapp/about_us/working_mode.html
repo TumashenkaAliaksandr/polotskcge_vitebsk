@@ -28,14 +28,15 @@
       </section>
 
 
-        <!-- ======= Pricing Section ======= -->
+        <!-- ======= Doctors Section ======= -->
         <section id="pricing" class="pricing">
             <div class="container" data-aos="fade-up">
-
+             {% for main_title_clocks in info_clocks %}
                 <div class="section-title">
-                    <h2>ГРАФИК ПРИЕМА</h2>
-                    <p>ЮРИДИЧЕСКИХ, ФИЗИЧЕСКИХ ЛИЦ И ИНДИВИДУАЛЬНЫХ ПРЕДПРИНИМАТЕЛЕЙ</p>
+                    <h2>{{ main_title_clocks.title }}</h2>
+                    <p>{{ main_title_clocks.description | safe }}</p>
                 </div>
+            {% endfor %}
 
                 <div class="row">
                     <div class="table-info">
@@ -43,8 +44,8 @@
                             <table class="iksweb">
                                 <thead>
                                 <tr>
-                                    <th>ФИО</th>
                                     <th>Должность</th>
+                                    <th>ФИО</th>
                                     <th>Этаж | Кабинет</th>
                                     <th>Дни и Время приёма</th>
                                     <th>Телефон</th>
@@ -53,8 +54,8 @@
                                 <tbody>
                                 {% for main_clock in clocks %}
                                     <tr>
-                                        <td>{{ main_clock.family_name }}</td>
                                         <td>{{ main_clock.name }}</td>
+                                        <td>{{ main_clock.family_name }}</td>
                                         <td>{{ main_clock.office }}</td>
                                         <td>{{ main_clock.reception_time }}</td>
                                         <td>{{ main_clock.phone }}</td>
@@ -65,25 +66,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    {% for main_clocks in clocks %}
-                        <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-                            <div class="box" data-aos="fade-up" data-aos-delay="300">
-                                <h3>{{ main_clocks.name }}</h3>
-                                <ul>
-                                    <li>{{ main_clocks.family_name }}</li>
+{#                <div class="row">#}
+{#                    {% for main_clocks in clocks %}#}
+{#                        <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">#}
+{#                            <div class="box" data-aos="fade-up" data-aos-delay="300">#}
+{#                                <h3>{{ main_clocks.name }}</h3>#}
+{#                                <ul>#}
+{#                                    <li>{{ main_clocks.family_name }}</li>#}
                                     {#                                    <li>{{ main_clocks.last_name }}</li>#}
-                                    <li>{{ main_clocks.office }}</li>
-                                    <li>{{ main_clocks.phone }}</li>
-                                    <li>{{ main_clocks.reception_time }}</li>
-                                </ul>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
+{#                                    <li>{{ main_clocks.office }}</li>#}
+{#                                    <li>{{ main_clocks.phone }}</li>#}
+{#                                    <li>{{ main_clocks.reception_time }}</li>#}
+{#                                </ul>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    {% endfor %}#}
+{#                </div>#}
             </div>
         </section>
-        <!-- End Pricing Section -->
+        <!-- End Doctors Section -->
 
         <!-- ======= Departments Section ======= -->
         <section id="departments" class="departments">

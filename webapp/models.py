@@ -1,3 +1,4 @@
+from ckeditor.fields import RichTextField
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -134,13 +135,27 @@ class Researches(models.Model):
         return self.name
 
 
+class GeneralInfo(models.Model):
+    title = models.CharField(max_length=100)
+    description = RichTextField()
+
+    class Meta:
+        verbose_name = 'Заголовок и описание для Часы Приёма'
+        verbose_name_plural = 'Заголовок и описание для Часы Приёма'
+
+    def __str__(self):
+        return self.title
+
 class ReceptionHours(models.Model):
     name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100, default='Имя и Отчество')
     family_name = models.CharField(max_length=100, default='Фамилия')
     office = models.CharField(max_length=50)
     phone = models.CharField(max_length=20)
-    reception_time = models.CharField(max_length=100)
+    reception_time = models.CharField(max_length=100, default='Часы приёма')
+    # general_info = models.OneToOneField(GeneralInfo, on_delete=models.CASCADE, related_name='reception_hours')
+    general_info = models.OneToOneField(GeneralInfo, on_delete=models.CASCADE, related_name='reception_hours',
+                                        default=1)
 
     class Meta:
         verbose_name = 'Часы приема'
@@ -148,4 +163,3 @@ class ReceptionHours(models.Model):
 
     def __str__(self):
         return self.name
-

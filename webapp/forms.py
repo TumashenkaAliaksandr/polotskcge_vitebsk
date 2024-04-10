@@ -50,3 +50,8 @@ class ReceptionHoursForm(forms.ModelForm):
     class Meta:
         model = ReceptionHours
         fields = '__all__'
+
+class GeneralInfoForm(forms.ModelForm):
+    class Meta:
+        model = GeneralInfo
+        fields = ['title', 'description']  # Включаем поле description в форму
