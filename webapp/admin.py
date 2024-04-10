@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.utils.safestring import mark_safe
 
 from .models import *
-from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm
+from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm, ReceptionHoursForm
 
 
 class DoctorAdmin(admin.ModelAdmin):
@@ -80,3 +80,8 @@ class LogoAdmin(admin.ModelAdmin):
 @admin.register(Featured)
 class FeaturedAdmin(admin.ModelAdmin):
     form = FeaturedForm
+
+@admin.register(ReceptionHours)
+class ReceptionHoursAdmin(admin.ModelAdmin):
+    form = ReceptionHoursForm
+    list_display = ['name', 'last_name', 'family_name', 'office', 'phone', 'reception_time']

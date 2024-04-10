@@ -44,3 +44,9 @@ class FeaturedForm(forms.ModelForm):
     class Meta:
         model = Featured
         fields = '__all__'
+
+
+class ReceptionHoursForm(forms.ModelForm):
+    class Meta:
+        model = ReceptionHours
+        fields = '__all__'
