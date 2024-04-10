@@ -292,9 +292,15 @@ def maintenance_schedule(request):
 def services(request):
     """Services - services template"""
     features = Featured.objects.all()
+    questions = Question.objects.all()
+    ansvers = Answer.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
 
     context = {
         'features': features,
+        'questions': questions,
+        'ansvers': ansvers,
+        'title_desc_queans': title_desc_queans,
     }
 
     return render(request, 'webapp/services/services.html', context=context)
