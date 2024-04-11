@@ -197,7 +197,13 @@ h6 {
 
 @media (max-width: 992px) {
   #header {
-    padding: 15px 0;
+    background: #fff;
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 20px 0;
+    top: 8%;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0.95;
   }
 }
 
@@ -880,6 +886,22 @@ section#clocks-two {
     display: inline-block;
   }
 }
+
+/**/
+@media (max-width: 768px) {
+  #topbar {
+    background: #3fbbc0;
+    color: #fff;
+    height: 51px;
+    font-size: 16px;
+    font-weight: 600;
+    z-index: 996;
+    transition: all 0.5s;
+    padding-bottom: 10%;
+    padding-top: 8%;
+  }
+}
+/**/
 
 /*page banner*/
 #pagebanner{
