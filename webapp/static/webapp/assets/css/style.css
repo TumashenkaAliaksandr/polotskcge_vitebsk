@@ -351,6 +351,12 @@ h6 {
   padding: 0;
 }
 
+@media (max-width: 768px) {
+  .navbar {
+    padding: 5px;
+  }
+}
+
 .navbar ul {
   margin: 0;
   padding: 0;
@@ -466,6 +472,7 @@ h6 {
   display: none;
   line-height: 0;
   transition: 0.5s;
+  margin-right: 8px;
 }
 
 .mobile-nav-toggle.bi-x {
@@ -960,7 +967,7 @@ section#clocks-two {
     background: #3fbbc0;
     color: #fff;
     height: 51px;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 600;
     z-index: 996;
     transition: all 0.5s;
@@ -977,12 +984,13 @@ section#clocks-two {
   }
 
   .haderphone {
-    margin-top: 18px;
+    margin-top: 19px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin-bottom: 8px;
   }
 
   .haderphone a {
