@@ -191,6 +191,7 @@ h6 {
 .haderphone {
   display: flex;
   align-items: center;
+  margin-right: 21px;
 }
 
 
@@ -230,8 +231,8 @@ h6 {
     background: #fff;
     transition: all 0.5s;
     z-index: 997;
-    padding: 20px 0;
-    top: 10%;
+    padding: 16px 0;
+    top: 17%;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
     opacity: 0.95;
   }
@@ -961,18 +962,139 @@ section#clocks-two {
   }
 }
 
+/* Стили для мобильной версии */
+@media (max-width: 768px) {
+  .header-icons {
+    display: none; /* Скрываем иконки на десктопной версии */
+  }
+
+  .header-icons-mobile-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-icons-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3px;
+    margin-top: 0px;
+  }
+
+  .header-icons-mobile i {
+    font-size: 24px;
+    margin-right: 2px;
+    margin-left: 5px;
+    position: relative;
+  }
+
+  .header-icons-mobile i::after {
+    content: attr(data-description);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: auto;
+    max-width: 200px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .header-icons-mobile i:hover::after {
+    opacity: 1;
+  }
+}
+
+  .header-icons-mobile i {
+    font-size: 25px; /* Задайте желаемый размер иконок */
+  }
+
+
+/* Стили для десктопной версии */
+@media (min-width: 769px) {
+  .header-icons-mobile {
+    display: none; /* Скрываем мобильную версию на десктопной */
+  }
+
+  .align-items-center-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+  }
+
+  .align-items-center-mobile{
+    display: none;
+  }
+
+  .header-icons {
+    display: flex; /* Оставляем иконки видимыми на десктопной версии */
+    align-items: center;
+    margin-right: 21%;
+  }
+
+  .header-icons i {
+    font-size: 24px;
+    margin-right: 10px;
+    position: relative;
+  }
+
+  .header-icons i::after {
+    content: attr(data-description);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    width: auto;
+    max-width: 200px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .header-icons i:hover::after {
+    opacity: 1;
+  }
+}
+
+/*end hader icons*/
+
+
 /**/
 @media (max-width: 768px) {
   #topbar {
     background: #3fbbc0;
     color: #fff;
-    height: 51px;
+    height: 60px;
     font-size: initial;
     font-weight: 600;
     z-index: 996;
     transition: all 0.5s;
-    padding-bottom: 15%;
-    padding-top: 8%;
+    padding-bottom: 33%;
+    padding-top: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -980,24 +1102,67 @@ section#clocks-two {
   }
 
   #topbar i {
-    padding: 0;
+    padding: 3px;
+    margin-right: 5px;
   }
 
+  .topbar-scrolled {
+    display: none!important; /* Скрываем верхнюю панель при прокрутке */
+  }
+
+
   .haderphone {
-    margin-top: 19px;
+    margin-top: 27%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
   }
 
   .haderphone a {
     margin-top: 3px; /* добавляем отступ между элементами */
+    margin-bottom: 2px;
+    display: none;
+  }
+  .haderphone-mobile {
+    margin-top: 12%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2px;
+  }
+
+  .haderphone-mobile a {
+    margin-top: 3px; /* добавляем отступ между элементами */
+    margin-bottom: 2px;
   }
 }
 
+.haderphone-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+    .haderphone-mobile {
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 2px;
+  }
+
+  .haderphone-mobile a {
+    margin-top: 2px; /* добавляем отступ между элементами */
+    margin-bottom: 0px;
+    color: #ffffff;
+  }
+}
 
 /**/
 /*page banner*/

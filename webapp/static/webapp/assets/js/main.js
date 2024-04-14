@@ -98,6 +98,7 @@
     onscroll(document, headerScrolled)
   }
 
+
   /**
    * Back to top button
    */
@@ -270,4 +271,21 @@
    */
   new PureCounter();
 
-})()
+})();
+
+(function() {
+  // ваш существующий код JavaScript
+
+  const topbar = select('#topbar');
+
+  const topbarScrolled = () => {
+    if (window.scrollY > 100) {
+      topbar.classList.add('topbar-scrolled');
+    } else {
+      topbar.classList.remove('topbar-scrolled');
+    }
+  }
+
+  window.addEventListener('load', topbarScrolled);
+  onscroll(document, topbarScrolled);
+})();
