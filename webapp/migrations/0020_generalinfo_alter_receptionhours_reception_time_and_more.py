@@ -32,6 +32,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='receptionhours',
             name='general_info',
-            field=models.OneToOneField(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='reception_hours', to='webapp.generalinfo'),
+            field=models.OneToOneField(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='reception_hours', to='webapp.generalinfo'),
         ),
     ]

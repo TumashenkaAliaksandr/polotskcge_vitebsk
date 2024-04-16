@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='generalinfo',
             name='title',
-            field=models.CharField(default='Тайтл', max_length=100),
+            field=models.CharField(default='Тайтл', null=True, max_length=100),
         ),
     ]
