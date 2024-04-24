@@ -226,18 +226,20 @@ h6 {
   opacity: 0.95;
 }
 
-@media (max-width: 992px) {
-  #header {
-    background: #fff;
-    transition: all 0.5s;
-    z-index: 997;
-    padding: 16px 0;
-    top: 21%;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
-    opacity: 0.95;
-    position: fixed;
-  }
+@media (max-width: 768px) {
+    #header {
+        background: #fff;
+        transition: all 0.5s;
+        z-index: 997;
+        padding: 16px 0;
+        top: 141px; /* Добавлено значение высоты хедера */
+        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
+        opacity: 0.95;
+        position: fixed;
+        width: 100%;
+    }
 }
+
 
 #header.header-scrolled {
   top: 0;
@@ -347,7 +349,7 @@ h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -465,7 +467,7 @@ h6 {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #555555;
@@ -985,7 +987,7 @@ section#clocks-two {
   }
 
   .header-icons-mobile i {
-    font-size: 21px;
+    font-size: 26px;
     margin-right: 2px;
     margin-left: 5px;
     position: relative;
@@ -1017,10 +1019,6 @@ section#clocks-two {
   }
 }
 
-  .header-icons-mobile i {
-    font-size: 25px; /* Задайте желаемый размер иконок */
-  }
-
 
 /* Стили для десктопной версии */
 @media (min-width: 769px) {
@@ -1047,11 +1045,11 @@ section#clocks-two {
   .header-icons {
     display: flex; /* Оставляем иконки видимыми на десктопной версии */
     align-items: center;
-    margin-right: 21%;
+    margin-right: 22%;
   }
 
   .header-icons i {
-    font-size: 24px;
+    font-size: 25px;
     margin-right: 10px;
     position: relative;
   }
@@ -1084,7 +1082,6 @@ section#clocks-two {
 
 /*end hader icons*/
 
-
 /**/
 @media (max-width: 768px) {
   #topbar {
@@ -1095,8 +1092,8 @@ section#clocks-two {
     font-weight: 600;
     z-index: 996;
     transition: all 0.5s;
-    padding-bottom: 33%;
-    padding-top: 5%;
+    padding-bottom: 36%;
+    padding-top: 3%;
     display: flex;
     flex-direction: column;
     align-items: center;
