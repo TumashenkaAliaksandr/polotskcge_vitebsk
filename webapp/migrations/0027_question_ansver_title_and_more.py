@@ -15,8 +15,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Question_Ansver_title',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(default='Заголовок', max_length=255)),
+                ('id', models.BigAutoField(auto_created=True, blank=True, null=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('name', models.CharField(default='Заголовок', blank=True, null=True, max_length=255)),
                 ('description', ckeditor.fields.RichTextField(default='Описание', max_length=200)),
             ],
             options={

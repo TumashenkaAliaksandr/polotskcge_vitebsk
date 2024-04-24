@@ -183,7 +183,7 @@ h6 {
 }
 
 #topbar i {
-  padding-right: 5px;
+  padding-right: 2px;
   line-height: 0;
   padding-left: 15px;
 }
@@ -232,9 +232,10 @@ h6 {
     transition: all 0.5s;
     z-index: 997;
     padding: 16px 0;
-    top: 17%;
+    top: 21%;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
     opacity: 0.95;
+    position: fixed;
   }
 }
 
@@ -978,8 +979,9 @@ section#clocks-two {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0px;
-    margin-top: 0px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-top: 10px;
   }
 
   .header-icons-mobile i {
@@ -1147,21 +1149,22 @@ section#clocks-two {
 }
 
 @media (max-width: 768px) {
-    .haderphone-mobile {
-    margin-top: 5%;
+  .haderphone-mobile {
+    margin-top: 2%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-bottom: 2px;
+    margin-bottom: 0px;
+    padding: 2px;
   }
 
   .haderphone-mobile a {
     margin-top: 2px; /* добавляем отступ между элементами */
     margin-bottom: 0px;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 

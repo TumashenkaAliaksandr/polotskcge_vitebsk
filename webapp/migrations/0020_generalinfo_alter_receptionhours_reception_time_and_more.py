@@ -15,7 +15,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='GeneralInfo',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True, blank=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=100)),
                 ('description', ckeditor.fields.RichTextField()),
             ],
@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='receptionhours',
             name='reception_time',
-            field=models.CharField(default='Часы приёма', max_length=100),
+            field=models.CharField(default='Часы приёма', blank=True, null=True, max_length=100),
         ),
         migrations.AddField(
             model_name='receptionhours',

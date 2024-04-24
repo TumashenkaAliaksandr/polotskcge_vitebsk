@@ -14,6 +14,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='generalinfo',
             name='description',
-            field=ckeditor.fields.RichTextField(default='Описание', null=True, max_length=200),
+            field=ckeditor.fields.RichTextField(default='Описание', blank=True, null=True, max_length=200),
         ),
     ]

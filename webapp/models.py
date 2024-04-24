@@ -154,8 +154,8 @@ class ReceptionHours(models.Model):
     phone = models.CharField(max_length=20)
     reception_time = models.CharField(max_length=100, default='Часы приёма')
     # general_info = models.OneToOneField(GeneralInfo, on_delete=models.CASCADE, related_name='reception_hours')
-    general_info = models.OneToOneField(GeneralInfo, on_delete=models.CASCADE, related_name='reception_hours',
-                                        blank=True)
+    general_info = models.ForeignKey(GeneralInfo, on_delete=models.CASCADE, related_name='reception_hours',
+                                        blank=True, null=True, default='Основная Инф')
 
     class Meta:
         verbose_name = 'Часы приема'
