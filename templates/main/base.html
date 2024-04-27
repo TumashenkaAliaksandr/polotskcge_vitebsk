@@ -31,6 +31,13 @@
   <!-- Template Main CSS File -->
   <link href="{% static 'webapp/assets/css/style.css' %}" rel="stylesheet">
 
+    <!-- Custom Theme files -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all"/>
+    <link href="{% static 'css/style2.css' %}" rel="stylesheet" type="text/css" media="all"/>
+    <!-- js -->
+    <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+    <!-- //js -->
+
   <!-- =======================================================
   * Template Name: Medicio
   * Updated: Jan 29 2024 with Bootstrap v5.3.2
@@ -187,7 +194,7 @@
                     <li><a class="nav-link scrollto" href="{% url 'webapp:sanitary_quarantine_points' %}">Санитарно-Карантинные пункты</a></li>
                 </ul>
             </li>
-            <li><a class="nav-link scrollto " href="{% url 'webapp:cge-news' %}">Новости</a></li>
+            <li><a class="nav-link scrollto " href="{% url 'news:news' %}">Новости</a></li>
             <li><a class="nav-link scrollto " href="{% url 'webapp:npa' %}">НПА</a></li>
         </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
