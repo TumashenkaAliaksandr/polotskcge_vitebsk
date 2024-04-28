@@ -8,16 +8,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 html, body{
     font-size: 100%;
 	background:	#fff;
-	/*font-family: 'Oswald', sans-serif;*/
-}
-p{
-	margin:0;
-}
-h1,h2,h3,h4,h5,h6,a{
 	font-family: 'Oswald', sans-serif;
-	font-weight:100;
-	margin:0;
 }
+/*p{*/
+/*	margin:0;*/
+/*}*/
+/**/
 ul,label{
 	margin:0;
 	padding:0;
@@ -598,7 +594,7 @@ body a:hover{
 .health ul li a{
 	color: #fff;
     background: #0042ff;
-	padding: .1em 1.2em;
+	padding: .1em 0.2em;
 	border:2px solid #0042ff;
 	text-decoration:none;
 }
@@ -615,7 +611,7 @@ body a:hover{
 .banner-bottom-grid-left h3{
 	margin: .5em 0 0;
     color: #fff;
-    font-size: 1.8em;
+    font-size: 1.5em;
     letter-spacing: 1px;
     line-height: 1.4em;
 }
@@ -703,8 +699,8 @@ body a:hover{
 }
 .breaking_news {
     float: left;
-    padding:8px 15px 12px 30px;
-    background-color: #000;
+    padding:10px 18px 12px 21px;
+    background-color: #3fbbc0;
     position: relative;
 }
 .marquee {
@@ -724,24 +720,14 @@ body a:hover{
     float: right;
 }
 a.breaking {
-    color: #000;
+    color: #494949;
     font-size: 1.2em;
     font-weight: 400;
 	text-decoration:none;
 }
-.breaking_news:after {
-    content: '';
-    background: url(../images/dott1.png) no-repeat 0px 0px;
-    display: block;
-    width: 27px;
-    height: 60px;
-    position: absolute;
-    right: -17%;
-    top: 0%;
-    background-size: 100%;
-}
+
 .move-text {
-    background-color: #fcff00;
+    background-color: #f6f6f6;
 }
 .breaking_news h2 {
     font-size:1.3em;
@@ -924,7 +910,7 @@ position:relative;
 }
 ul.resp-tabs-list {
 	list-style: none;
-	background:#000;
+	background:#3fbbc0;
 	margin: 0em auto;
 	border-bottom:1px solid #DFDFDF;
 }
@@ -935,7 +921,7 @@ div#horizontalTab {
 	color: #fff;
 	font-size: 1em;
 	cursor: pointer;
-	padding:10px 46px;
+	padding:10px 50px;
 	display: inline-block;
 	margin: 0;
 	list-style: none;
@@ -952,9 +938,10 @@ div#horizontalTab {
 	text-shadow: none;
 }
 .resp-tab-active{
-	background:#27b311;
+	background:#8b8e8b;
 	text-shadow: none;
 	color:#fff;
+    width: 100%;
 }
 .resp-tabs-container {
 	padding: 0px;
@@ -978,7 +965,7 @@ h2.resp-accordion {
 	font-size:1em;
 	margin: 0px;
 	padding: 10px 15px;
-	background:#FF1827;
+	background:#3FBBC0;
 	margin:10px 0;
 	color:#fff;
 }
@@ -1562,7 +1549,7 @@ a.high {
     color: #fff;
     font-weight: 400;
     margin:0 0 2.6em;
-    background: #000;
+    background: #3fbbc0;
     padding: 0.8em;
 }
 .upcoming-events-right h3{
@@ -2800,12 +2787,22 @@ img.mobile1 {
 }
 /*-- //single --*/
 /*-----start-responsive-design------*/
-@media (max-width:1680px){
-	.move-text {
-		width: 97.5%;
-		margin-left:.8em;
-	}
+.move-text {
+    width: 97.9%;
+    margin-left: 0.8em;
 }
+@media (max-width: 768px) {
+  .move-text {
+    width: 92.3%;
+    margin-left: 0.8em;
+  }
+}
+/*@media (max-width:1680px){*/
+/*	.move-text {*/
+/*		width: 93%;*/
+/*		margin-left:0.8em;*/
+/*	}*/
+/*}*/
 @media (max-width:1280px){
 	.callbacks_nav {
 		left: -1%;
@@ -3043,9 +3040,9 @@ img.mobile1 {
 	.footer-grid-left {
 		margin: 2em 0;
 	}
-	.banner1,.banner-info1{
-		min-height:200px;
-	}
+	/*.banner1,.banner-info1{*/
+	/*	min-height:200px;*/
+	/*}*/
 	.gallery-left {
 		float: left;
 		width: 38%;
@@ -3185,12 +3182,6 @@ img.mobile1 {
 	}
 	.breaking_news h2 {
 		font-size: 1em;
-	}
-	.breaking_news:after {
-		background: url(../images/dott1.png) no-repeat 0px 0px;
-		width: 23px;
-		right: -18%;
-		background-size: 100%;
 	}
 	.marquee {
 		padding: 8px 0;
@@ -3338,14 +3329,9 @@ img.mobile1 {
 	}
 	.breaking_news {
 		padding: 6px 5px 9px 10px;
+        width: 100%;
 	}
-	.breaking_news:after {
-		background: url(../images/dott1.png) no-repeat 0px 0px;
-		width: 20px;
-		height: 35px;
-		right: -20%;
-		background-size: 100%;
-	}
+
 	.marquee {
 		width: 74%;
 		font-size: 14px;
@@ -3416,9 +3402,9 @@ img.mobile1 {
 	.blog-leftl a {
 		font-size: 1em;
 	}
-	.banner1, .banner-info1 {
-		min-height: 140px;
-	}
+	/*.banner1, .banner-info1 {*/
+	/*	min-height: 140px;*/
+	/*}*/
 	.blog-leftr ul li {
 		margin: 0 1em 0 0;
 	}
@@ -3566,7 +3552,7 @@ img.mobile1 {
 		margin: 7.2em 0 0;
 	}
 	.marquee {
-		width: 73%;
+		width: 100%;
 	}
 	.video-grid-pos h3 {
 		font-size: 1em;

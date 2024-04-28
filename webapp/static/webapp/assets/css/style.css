@@ -516,7 +516,7 @@ h6 {
   position: absolute;
   top: 55px;
   right: 15px;
-  bottom: 15px;
+  /*bottom: 55px;*/
   left: 15px;
   padding: 10px 0;
   border-radius: 8px;
@@ -608,7 +608,7 @@ h6 {
   background: rgba(255, 255, 255, 0.9);
   padding-top: 30px;
   padding-bottom: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 90px;
   border-top: 4px solid #3fbbc0;
 }
 
