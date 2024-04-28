@@ -705,7 +705,7 @@ body a:hover{
 }
 .marquee {
     width: 80%;
-    margin-left: 16%;
+    margin-left: 17.8%;
     color: #777;
     font-size: 1em;
     padding: 8px 0;
@@ -910,7 +910,7 @@ position:relative;
 }
 ul.resp-tabs-list {
 	list-style: none;
-	background:#3fbbc0;
+	background:#8b8e8b;
 	margin: 0em auto;
 	border-bottom:1px solid #DFDFDF;
 }
@@ -938,10 +938,10 @@ div#horizontalTab {
 	text-shadow: none;
 }
 .resp-tab-active{
-	background:#8b8e8b;
+	background:#3fbbc0;
 	text-shadow: none;
 	color:#fff;
-    width: 100%;
+    width: 75%;
 }
 .resp-tabs-container {
 	padding: 0px;
