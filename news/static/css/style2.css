@@ -1894,7 +1894,7 @@ ul.wmuSliderPagination {
     text-transform: uppercase;
     margin: 0;
     line-height: 1.5em;
-    color: #3fbbc0;
+    color: #0b2425;
     width: 80%;
 }
 .baner-beaking p{
@@ -1904,6 +1904,7 @@ ul.wmuSliderPagination {
 	background:#fff;
 	font-size:.8em;
 	line-height:1.8em;
+    opacity: 0.85;
 }
 .breaking-news-grids {
     margin: 3em 0;
@@ -1928,7 +1929,7 @@ ul.wmuSliderPagination {
 	font-size:.8em;
 	color:#000;
 	line-height:1.6em;
-	margin:0 0 1em;
+	margin:0 0 37px;
 }
 .breaking-news-grid-right-gridr h4 a{
 	font-weight:400;
@@ -1949,7 +1950,7 @@ ul.wmuSliderPagination {
 	font-weight:400;
 }
 .breaking-news-grid-right-gridr ul li a span{
-	left:-1em;
+	left: -0.5em;
 	color:#999;
 }
 .breaking-news-grid-right-gridr ul li a:hover{

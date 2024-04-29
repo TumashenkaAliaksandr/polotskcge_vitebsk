@@ -23,8 +23,8 @@ class ModelNews(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = 'News'
-        verbose_name_plural = 'News'
+        verbose_name = 'Главная модель Новости'
+        verbose_name_plural = 'Главная модель Новости'
 
 class Interactive(models.Model):
     """Model for interactiv menu News"""
@@ -48,6 +48,7 @@ class PreviewNews(models.Model):
     description = models.TextField(verbose_name='Описание', default='')
     photo = models.ImageField(upload_to='news_preview_photos/', null=True, blank=True,
                               verbose_name='Фотографии Превью Новостей')
+    link = models.URLField()  # Поле для хранения ссылки
 
     def __str__(self):
         return self.title

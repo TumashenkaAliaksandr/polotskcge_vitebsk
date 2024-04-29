@@ -50,55 +50,45 @@
 			<div class="breaking-news-grids">
 				<div class="col-md-8 breaking-news-grid-left">
 					<div class="wmuSlider example1">
+                        {% for main_preview in preview %}
 						<div class="wmuSliderWrapper">
-							<article style="position: absolute; width: 100%; opacity: 0;"> 
+							<article style="position: absolute; width: 100%; opacity: 0;">
 								<div class="banner-wrap">
-									<div class="baner-beaking">
-										<h3>PSLV-c29 successfully launches all the 6 Singapore satellites into their orbits.</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-										sed do eiusmod tempor incididunt ut labore et dolore magna 
-										aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-										ullamco</p>
-									</div>
-								</div>
-							</article>
-							<article style="position: absolute; width: 100%; opacity: 0;"> 
-								<div class="banner-wrap">
-									<div class="baner-beaking baner-beaking1">
-										<h3>incididunt ut labore et nostrud exercitation ullamco dolore magna aliqua.</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-										sed do eiusmod tempor incididunt ut labore et dolore magna 
-										aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-										ullamco</p>
+									<div class="baner-beaking" style="background-image: url('{{ main_preview.photo.url }}');">
+										<h3>{{ main_preview.title }}</h3>
+										{{ main_preview.description | safe}}
 									</div>
 								</div>
 							</article>
 						</div>
+                        {% endfor %}
 					</div>
 					<script src="{% static 'js/jquery.wmuSlider.js' %}"></script>
 					  <script>
-						$('.example1').wmuSlider();         
-					 </script> 
-
+						$('.example1').wmuSlider();
+					 </script>
 				</div>
 				<div class="col-md-4 breaking-news-grid-right">
 					<h3>Свежие новости</h3>
 					<ul>
+                        {% for main_litle_news in model_blog_main %}
 						<li>
 							<div class="breaking-news-grid-right-grids">
 								<div class="breaking-news-grid-right-gridl">
-									<a href="#"><img src="{% static 'images/11.jpg' %}" alt=" " class="img-responsive" /></a>
+									<a href="{% url 'news:single' pk=main_litle_news.id %}"><img src="{{ main_litle_news.logo_photo.url }}" alt=" " class="img-responsive" /></a>
 								</div>
 								<div class="breaking-news-grid-right-gridr">
-									<h4><a href="single.html">ut labore et dolore magnam aliquam quaerat voluptatem</a></h4>
+									<h4><a href="{% url 'news:single' pk=main_litle_news.id %}">{{ main_litle_news.title }}</a></h4>
+{#									<p><a href="{% url 'news:single' pk=main_litle_news.id %}">{{ main_litle_news.comment | safe }}</a></p>#}
 									<ul>
-										<li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> User</a></li>
-										<li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 3,506 Likes</a></li>
+										<li><a href="{% url 'news:single' pk=main_litle_news.id %}"><span class="fa fa-user" aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
+										<li><a href="#"><span class="fa fa-heart" aria-hidden="true"></span> 3,506 Likes</a></li>
 									</ul>
 								</div>
 								<div class="clearfix"> </div>
 							</div>
 						</li>
+                        {% endfor %}
 						<li>
 							<div class="breaking-news-grid-right-grids">
 								<div class="breaking-news-grid-right-gridl">

@@ -50,12 +50,12 @@ class InteractiveAdmin(admin.ModelAdmin):
 
 @admin.register(PreviewNews)
 class PreviewNewsAdmin(admin.ModelAdmin):
-    list_display = ('title', 'description', 'photo')
+    list_display = ('title', 'description', 'photo', 'link')
     search_fields = ('title',)
     list_filter = ('title',)
     fieldsets = (
         (None, {
-            'fields': ('title', 'description', 'photo')
+            'fields': ('title', 'description', 'photo', 'link')
         }),
     )
     formfield_overrides = {

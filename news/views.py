@@ -7,6 +7,7 @@ def news(request):
     """these are views for Blog News list"""
     model_blog_main = ModelNews.objects.all()
     interactiv = Interactive.objects.all()
+    preview = PreviewNews.objects.all()
 
     context = locals()
     return render(request, 'breaking.html', context=context)
