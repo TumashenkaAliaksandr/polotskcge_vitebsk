@@ -29,13 +29,14 @@
 <!-- breaking-news -->
 	<div class="breaking-news">
 		<div class="container">
+            {% for main_interactiv_string in interactiv %}
 			<div class="move-text">
 				<div class="breaking_news">
 					<h2>Новости Центра</h2>
 				</div>
 				<div class="marquee">
-					<div class="marquee1"><a class="breaking" href="single.html">📢 ВНИМАНИЕ! Полоцкий Зональный центр Санитарной Эпидемиологии сообщает: В связи с повышенным риском распространения заболеваний, рекомендуем принимать меры предосторожности.</a></div>
-					<div class="marquee2"><a class="breaking" href="single.html">Следите за обновлениями и соблюдайте меры гигиены. #БерегитеСебяИСвоихБлизких 💧🤲</a></div>
+					<div class="marquee1"><a class="breaking" href="single.html">{{ main_interactiv_string.description | safe }}</a></div>
+					<div class="marquee2"><a class="breaking" href="single.html">{{ main_interactiv_string.description_two | safe }}</a></div>
 					<div class="clearfix"></div>
 				</div>
 				<div class="clearfix"></div>
@@ -45,6 +46,7 @@
 				  //@ sourceURL=pen.js
 				</script>
 			</div>
+            {% endfor %}
 			<div class="breaking-news-grids">
 				<div class="col-md-8 breaking-news-grid-left">
 					<div class="wmuSlider example1">

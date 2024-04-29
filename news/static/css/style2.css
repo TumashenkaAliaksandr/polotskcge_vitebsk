@@ -712,15 +712,23 @@ body a:hover{
     color: #84754E;
     overflow: hidden;
 }
-.marquee1 {
-    float: left;
+/*.marquee1 {*/
+/*    float: left;*/
+/*    margin-right: 6em;*/
+/*}*/
+/*.marquee2 {*/
+/*    float: right;*/
+/*}*/
+
+.marquee1,
+.marquee2 {
+    display: inline-block;
+    vertical-align: top; /* Выравнивание по верхнему краю */
     margin-right: 6em;
 }
-.marquee2 {
-    float: right;
-}
+
 a.breaking {
-    color: #494949;
+    /*color: #494949;*/
     font-size: 1.2em;
     font-weight: 400;
 	text-decoration:none;
@@ -776,10 +784,10 @@ a.breaking {
 }
 .video-grid-pos ul li i{
 	font-style:normal;
-	color:#27b311;
+	color:#3fbbc0;
 }
 .video-grid-pos ul li span{
-	color:#ff1800;
+	color: #00ff33;
 }
 .video-grids-left1{
 	position:relative;
@@ -877,7 +885,7 @@ position:relative;
 }
 .floods-text h3 span{
 	display: block;
-    color: #ff1800;
+    color: #3fbbc0;
     margin: .5em 0 1em;
 	font-size: .8em;
 }
@@ -1023,7 +1031,7 @@ ul.tab_list{
 	font-size:.9em;
 }
 .tab_list1 ul li a{
-	color:#ff1800;
+	color:#3fbbc0;
 	text-decoration:none;
 	font-weight: 400;
 	text-transform: uppercase;
@@ -1276,7 +1284,7 @@ ul.list6 li a:hover,.res6 a{
 }
 .nav-tabs {
     border-bottom:none;
-    background: #27b311;
+    /*background: #27b311;*/
 }
 .nav-tabs > li > a {
     margin-right: 0;
@@ -1303,7 +1311,7 @@ ul.list6 li a:hover,.res6 a{
     border: none;
 }
 .nav > li > a:hover, .nav > li > a:focus {
-    background: #FD6917;
+    background: #b5ffff;
 }
 a.high {
     padding: 10px 68px 10px 25px !important;
@@ -1849,7 +1857,7 @@ ul.wmuSliderPagination {
 	-o-border-radius: 25px;
 }
 .wmuSliderPagination a.wmuActive {
-	background:#27b311;
+	background:#3fbbc0;
 }
 /* Default Skin */
 .wmuGallery .wmuGalleryImage {
@@ -1886,7 +1894,7 @@ ul.wmuSliderPagination {
     text-transform: uppercase;
     margin: 0;
     line-height: 1.5em;
-    color: #ff1800;
+    color: #3fbbc0;
     width: 80%;
 }
 .baner-beaking p{
@@ -1936,7 +1944,7 @@ ul.wmuSliderPagination {
 }
 .breaking-news-grid-right-gridr ul li a{
 	font-size:.8em;
-	color:#27b311;
+	color:#3fbbc0;
 	text-decoration:none;
 	font-weight:400;
 }
@@ -2790,6 +2798,7 @@ img.mobile1 {
 .move-text {
     width: 97.9%;
     margin-left: 0.8em;
+    height: 47.5px;
 }
 @media (max-width: 768px) {
   .move-text {
