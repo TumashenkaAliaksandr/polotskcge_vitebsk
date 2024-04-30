@@ -33,6 +33,7 @@
 						<div class="blog-leftr">
 							<img src="{{ main_single_news.photo.url }}" alt=" " class="img-responsive" />
 							<p>{{ main_single_news.description|safe }}</p>
+							<p>{{ main_single_news.description_small|safe }}</p>
 							<ul>
 								<li><a href="#"><i class="fa fa-user-doctor" aria-hidden="true"></i> {{ main_single_news.author }}</a></li>
 							</ul>
@@ -70,49 +71,61 @@
                         {% endfor %}
                     </ul>
                 </div>
+                <div class="news">
+                    <div class="news-grids">
+                        <div class="col-md-4 news-grid-right">
+                            <div class="news-grid-rght1">
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active"><a class="high" href="#home"
+                                                                              aria-controls="home" role="tab"
+                                                                              data-toggle="tab">погода в полоцке</a>
+                                    </li>
+                                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab"
+                                                               data-toggle="tab">выбрать местоположенине</a></li>
+                                </ul>
 
-                <div class="col-md-4 blog-right">
-                    <div class="recent">
-                        <h3>Recent Comments</h3>
-                        <div class="recent-grids">
-                            <div class="recent-grid">
-                                <div class="wom">
-                                    <a href="#"><img src="{% static '/images/6.jpg' %}" alt=" " class="img-responsive"/></a>
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active london" id="home">
+                                        <ul>
+                                            <li>
+                                                <h4>Понедельник</h4>
+                                                <span></span>
+                                                <p>21<sup>🌡</sup></p>
+                                            </li>
+                                            <li>
+                                                <h4>Вторник</h4>
+                                                <span class="moon"></span>
+                                                <p>25<sup>🌡</sup></p>
+                                            </li>
+                                            <li>
+                                                <h4>Среда</h4>
+                                                <span class="sun"></span>
+                                                <p>31<sup>🌡</sup></p>
+                                            </li>
+                                            <div class="clearfix"></div>
+                                        </ul>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="profile">
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26359652.109742895!2d-113.72446020222534!3d36.24602872499641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sin!4v1450786850582"
+                                                frameborder="0" style="border:0" allowfullscreen></iframe>
+                                    </div>
                                 </div>
-                                <div class="wom-right">
-                                    <h4><a href="#">Integer rutrum ante eu</a></h4>
-                                    <p>Mauris fermentum dictum magna. Sed laoreet aliquam leo.
-                                        Ut tellus dolor, dapibus eget.</p>
-                                </div>
-                                <div class="clearfix"></div>
                             </div>
-                            <div class="recent-grid">
-                                <div class="wom">
-                                    <a href="#"><img src="{% static '/images/7.jpg' %}" alt=" " class="img-responsive"/></a>
+                            <div class="news-grid-rght3">
+                                <img src="{% static 'images/gigi_centr_girispolkom.jpg' %}" alt=" " class="img-responsive"/>
+                                <div class="story">
+                                    <p>фото дня</p>
+                                    <h3><a href="single.html">Горисполком город Полоцк</a></h3>
                                 </div>
-                                <div class="wom-right">
-                                    <h4><a href="#">Integer rutrum ante eu</a></h4>
-                                    <p>Mauris fermentum dictum magna. Sed laoreet aliquam leo.
-                                        Ut tellus dolor, dapibus eget.</p>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="recent-grid">
-                                <div class="wom">
-                                    <a href="#"><img src="{% static '/images/8.jpg' %}" alt=" " class="img-responsive"/></a>
-                                </div>
-                                <div class="wom-right">
-                                    <h4><a href="#">Integer rutrum ante eu</a></h4>
-                                    <p>Mauris fermentum dictum magna. Sed laoreet aliquam leo.
-                                        Ut tellus dolor, dapibus eget.</p>
-                                </div>
-                                <div class="clearfix"></div>
                             </div>
                         </div>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
-				<div class="clearfix"> </div>
-			</div>
+
+            </div>
 		</div>
 	</div>
 <!-- //single -->
