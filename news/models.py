@@ -5,19 +5,19 @@ from django.conf import settings
 class ModelNews(models.Model):
     """Main model News"""
 
-    title = models.CharField(max_length=200, verbose_name='Name')
-    description_small = models.TextField(max_length=500, default='', verbose_name='Description_small')
-    description = models.TextField(verbose_name='Description', default='')
-    description_company = models.TextField(verbose_name='Description_company', default='Описание для нижнего блока')
-    location = models.CharField(max_length=200, verbose_name='Location', default='')
-    photo = models.ImageField(upload_to='news_photos/', null=True, blank=True, verbose_name='Photo')
-    logo_photo = models.ImageField(upload_to='news_photos/', null=True, blank=True, verbose_name='Logo Photo')
-    pub_date = models.DateTimeField(verbose_name='Publication Date')  # Added publication date field
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='Author', related_name='news', null=True, blank=True)
-    author_photo = models.ImageField(upload_to='author_photos/', null=True, blank=True, verbose_name='Author Photo')
+    title = models.CharField(max_length=200, verbose_name='Название')
+    description_small = models.TextField(max_length=500, default='', verbose_name='Не большое описание')
+    description = models.TextField(verbose_name='Описание', default='Описание')
+    description_company = models.TextField(verbose_name='Описание для нижнего блока', default='Описание для нижнего блока')
+    location = models.CharField(max_length=200, verbose_name='Место где (локация)', default='')
+    photo = models.ImageField(upload_to='news_photos/', null=True, blank=True, verbose_name='Фото')
+    logo_photo = models.ImageField(upload_to='news_photos/', null=True, blank=True, verbose_name='Фото(маленькое)')
+    pub_date = models.DateTimeField(verbose_name='Дата Публикации')  # Added publication date field
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='Автор', related_name='news', null=True, blank=True)
+    author_photo = models.ImageField(upload_to='author_photos/', null=True, blank=True, verbose_name='Фото автора')
     comment_author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
-                                       verbose_name='Comment Author', related_name='comments', null=True, blank=True)
-    comment = models.TextField(verbose_name='Comment', default='Your default comment here')
+                                       verbose_name='Комментарий автора', related_name='comments', null=True, blank=True)
+    comment = models.TextField(verbose_name='Примечание', default='Примечание')
 
     def __str__(self):
         return self.title

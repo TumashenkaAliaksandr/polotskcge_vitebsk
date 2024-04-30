@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 def news(request):
     """these are views for Blog News list"""
-    model_blog_main = ModelNews.objects.all()
+    model_blog_main = ModelNews.objects.all().order_by('-pub_date')
     interactiv = Interactive.objects.all()
     preview = PreviewNews.objects.all()
 

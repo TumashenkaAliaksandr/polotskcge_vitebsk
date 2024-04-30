@@ -64,17 +64,21 @@
 				<div class="col-md-4 breaking-news-grid-right">
 					<h3>Свежие новости</h3>
 					<ul>
-                        {% for main_litle_news in model_blog_main %}
+                        {% for main_litle_news in model_blog_main|slice:":3" %}
 						<li>
 							<div class="breaking-news-grid-right-grids">
-								<div class="breaking-news-grid-right-gridl">
-									<a href="{% url 'news:single' pk=main_litle_news.id %}"><img src="{{ main_litle_news.logo_photo.url }}" alt=" " class="img-responsive" /></a>
-								</div>
-								<div class="breaking-news-grid-right-gridr">
-									<h4><a href="{% url 'news:single' pk=main_litle_news.id %}">{{ main_litle_news.title }}</a></h4>
-{#									<p><a href="{% url 'news:single' pk=main_litle_news.id %}">{{ main_litle_news.comment | safe }}</a></p>#}
-									<ul>
-										<li><a href="{% url 'news:single' pk=main_litle_news.id %}"><span class="fa fa-user" aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
+                                <div class="breaking-news-grid-right-gridl img-fixed-size-three">
+                                    <a href="{% url 'news:single' pk=main_litle_news.id %}"><img
+                                            src="{{ main_litle_news.logo_photo.url }}" alt=" " class="img-responsive"/></a>
+                                </div>
+                                <div class="breaking-news-grid-right-gridr">
+                                    <h4>
+                                        <a href="{% url 'news:single' pk=main_litle_news.id %}">
+                                            {{ main_litle_news.title|wordwrap:30|truncatechars_html:58 }}
+                                        </a>
+                                    </h4>
+                                    <ul>
+                                    <li><a href="{% url 'news:single' pk=main_litle_news.id %}"><span class="fa fa-user" aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
 										<li><a href="#"><span class="fa fa-heart" aria-hidden="true"></span> 3,506 Likes</a></li>
 									</ul>
 								</div>
@@ -82,36 +86,6 @@
 							</div>
 						</li>
                         {% endfor %}
-						<li>
-							<div class="breaking-news-grid-right-grids">
-								<div class="breaking-news-grid-right-gridl">
-									<a href="#"><img src="{% static 'images/12.jpg' %}" alt=" " class="img-responsive" /></a>
-								</div>
-								<div class="breaking-news-grid-right-gridr">
-									<h4><a href="single.html">ut labore et dolore magnam aliquam quaerat voluptatem</a></h4>
-									<ul>
-										<li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> User</a></li>
-										<li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 3,506 Likes</a></li>
-									</ul>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-						</li>
-						<li>
-							<div class="breaking-news-grid-right-grids">
-								<div class="breaking-news-grid-right-gridl">
-									<a href="#"><img src="{% static 'images/13.jpg' %}" alt=" " class="img-responsive" /></a>
-								</div>
-								<div class="breaking-news-grid-right-gridr">
-									<h4><a href="single.html">ut labore et dolore magnam aliquam quaerat voluptatem</a></h4>
-									<ul>
-										<li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> User</a></li>
-										<li><a href="#"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span> 3,506 Likes</a></li>
-									</ul>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-						</li>
 					</ul>
 				</div>
 				<div class="clearfix"> </div>

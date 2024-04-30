@@ -1917,9 +1917,16 @@ ul.wmuSliderPagination {
 	float:right;
 	width:60%;
 }
+
+.img-fixed-size-three {
+    width: 140px; /* Установите желаемую ширину */
+    height: 15px; /* Установите желаемую высоту */
+    object-fit: cover; /* Этот свойство сохраняет соотношение сторон и обрезает изображение по нужным размерам */
+}
+
 .breaking-news-grid-right ul li{
 	list-style-type:none;
-	margin:2.15em 0;
+	margin:1.76em 0;
 }
 .breaking-news-grid-right ul li:nth-child(3){
 	margin:0;
@@ -1929,7 +1936,7 @@ ul.wmuSliderPagination {
 	font-size:.8em;
 	color:#000;
 	line-height:1.6em;
-	margin:0 0 37px;
+	margin:0 0 30px;
 }
 .breaking-news-grid-right-gridr h4 a{
 	font-weight:400;
