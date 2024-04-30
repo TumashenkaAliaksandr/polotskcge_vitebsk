@@ -1817,7 +1817,7 @@ h4.panel-title a span{
 /*-- //news-and-events --*/
 /*-- breaking-news --*/
 .breaking-news{
-	padding:3em 0 0;
+	padding:3em 0 10px;
 }
 /*-- wmuslider --*/
 .wmuSlider {
@@ -1969,7 +1969,7 @@ ul.wmuSliderPagination {
 /*-- //breaking-news --*/
 /*-- contact --*/
 .typo,.contact,.slicebox-slider,.single{
-	padding:5em 0;
+	padding:5em 0 5px;
 }
 h3.title,.map h3{
 	font-size:1.7em;
@@ -2616,7 +2616,7 @@ img.mobile1 {
 	margin:1em 0;
 }
 .coment-form input[type="submit"] {
-	background: #27B311;
+	background: #3FBBC0;
     text-transform: uppercase;
     border: none;
     padding: 10px 0;
@@ -2654,9 +2654,9 @@ img.mobile1 {
 .blog-leftl {
     float: left;
     width: 18%;
-    background: #27B311;
+    background: #3FBBC0;
     padding: 1em;
-    border-top: 4px solid #073400;
+    border-top: 4px solid #02575b;
 }
 .blog-leftl h4 {
     text-align: center;
@@ -2709,13 +2709,13 @@ img.mobile1 {
     padding-left: 1em;
 }
 .blog-leftr ul li a:hover{
-	color:#27b311;
+	color:#3fbbc0;
 }
 .blog-leftr ul li a i {
     left: -17px;
 }
 .blog-right h3, .response h4, .coment-form h4 {
-    color: #27B311;
+    color: #3FBBC0;
     margin: 0 0 1em;
     font-size: 1.5em;
     font-weight: 400;

@@ -18,214 +18,226 @@
             </div>
         </div>
     </section>
+
 <!-- single -->
 	<div class="single">
 		<div class="container">
 			<div class="single-grid">
 				<div class="col-md-8 blog-left">
 					<div class="blog-left-grid">
+                        {% for main_single_news in news %}
 						<div class="blog-leftl">
-							<h4>December <span>31</span></h4>
-							<a href="#"><i class="glyphicon glyphicon-tags" aria-hidden="true"></i>10</a>
+							<h4>{{ main_single_news.pub_date|date:"M" }}</h4>
+							<a href="#"><i class="fa fa-tags" aria-hidden="true"></i> {{ main_single_news.pub_date.day }}</a>
 						</div>
 						<div class="blog-leftr">
-							<img src="images/25.jpg" alt=" " class="img-responsive" />
-							<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-							nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-							reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-							pariatur</p>
+							<img src="{{ main_single_news.photo.url }}" alt=" " class="img-responsive" />
+							<p>{{ main_single_news.description|safe }}</p>
 							<ul>
-								<li><a href="#"><i class="glyphicon glyphicon-user" aria-hidden="true"></i>User Name</a></li>
-								<li><a href="#"><i class="glyphicon glyphicon-tags" aria-hidden="true"></i>0 Tages</a></li>
-								<li><a href="#"><i class="glyphicon glyphicon-comment" aria-hidden="true"></i>10 Comments</a></li>
+								<li><a href="#"><i class="fa fa-user-doctor" aria-hidden="true"></i> {{ main_single_news.author }}</a></li>
 							</ul>
 						</div>
 						<div class="clearfix"> </div>
-						<div class="admin-text">
-								<h5>Written By Admin Name</h5>
-								<div class="admin-text-left">
-									<a href="#"><img src="images/icon1.png" alt=""/></a>
-								</div>
-								<div class="admin-text-right">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
-									sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-									<span>View all posts by:<a href="#"> Admin </a></span>
-								</div>
-								<div class="clearfix"> </div>
-						</div>
-						<div class="response">
-							<h4>Responses</h4>
-							<div class="media response-info">
-								<div class="media-left response-text-left">
-									<a href="#">
-										<img class="media-object" src="images/icon1.png" alt=""/>
-									</a>
-									<h5><a href="#">Admin</a></h5>
-								</div>
-								<div class="media-body response-text-right">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
-										sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-									<ul>
-										<li>December 31, 2015</li>
-										<li><a href="single.html">Reply</a></li>
-									</ul>
-									<div class="media response-info">
-										<div class="media-left response-text-left">
-											<a href="#">
-												<img class="media-object" src="images/icon1.png" alt=""/>
-											</a>
-											<h5><a href="#">Admin</a></h5>
-										</div>
-										<div class="media-body response-text-right">
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
-												sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-											<ul>
-												<li>December 31, 2015</li>
-												<li><a href="single.html">Reply</a></li>
-											</ul>		
-										</div>
-										<div class="clearfix"> </div>
-									</div>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-							<div class="media response-info">
-								<div class="media-left response-text-left">
-									<a href="#">
-										<img class="media-object" src="images/icon1.png" alt=""/>
-									</a>
-									<h5><a href="#">Admin</a></h5>
-								</div>
-								<div class="media-body response-text-right">
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,There are many variations of passages of Lorem Ipsum available, 
-										sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-									<ul>
-										<li>December 31, 2015</li>
-										<li><a href="single.html">Reply</a></li>
-									</ul>		
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-						</div>	
-						<div class="coment-form">
-							<h4>Leave your comment</h4>
-							<form>
-								<input type="text" value="Name " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-								<input type="email" value="Email (will not be published)*" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email (will not be published)*';}" required="">
-								<input type="text" value="Website" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Website';}" required="">
-								<textarea type="text"  onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Your Comment...';}" required="">Your Comment...</textarea>
-								<input type="submit" value="Submit Comment" >
-							</form>
-						</div>
+                        {% endfor %}
 					</div>
-				</div>
-				<div class="col-md-4 blog-right">
-					<h3>Categories</h3>
-					<ul>
-						<li><a href="#">Aliquam erat volutpat</a></li>
-						<li><a href="#">Integer rutrum ante eu lacus</a></li>
-						<li><a href="#">Cum sociis natoque penatibus</a></li>
-						<li><a href="#">Mauris fermentum dictum magna</a></li>
-						<li><a href="#">Sed laoreet aliquam leo</a></li>
-						<li><a href="#">Cum sociis natoque penatibus</a></li>
-					</ul>
-					<div class="recent">
-						<h3>Recent Comments</h3>
-						<div class="recent-grids">
-							<div class="recent-grid">
-								<div class="wom">
-									<a href="#"><img src="images/6.jpg" alt=" " class="img-responsive" /></a>
-								</div>
-								<div class="wom-right">
-									<h4><a href="#">Integer rutrum ante eu</a></h4>
-									<p>Mauris fermentum dictum magna. Sed laoreet aliquam leo. 
-										Ut tellus dolor, dapibus eget.</p>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-							<div class="recent-grid">
-								<div class="wom">
-									<a href="#"><img src="images/7.jpg" alt=" " class="img-responsive" /></a>
-								</div>
-								<div class="wom-right">
-									<h4><a href="#">Integer rutrum ante eu</a></h4>
-									<p>Mauris fermentum dictum magna. Sed laoreet aliquam leo. 
-										Ut tellus dolor, dapibus eget.</p>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-							<div class="recent-grid">
-								<div class="wom">
-									<a href="#"><img src="images/8.jpg" alt=" " class="img-responsive" /></a>
-								</div>
-								<div class="wom-right">
-									<h4><a href="#">Integer rutrum ante eu</a></h4>
-									<p>Mauris fermentum dictum magna. Sed laoreet aliquam leo. 
-										Ut tellus dolor, dapibus eget.</p>
-								</div>
-								<div class="clearfix"> </div>
-							</div>
-						</div>
-					</div>
-					<div class="footer-top-grid1">
-						<h3>Recent Tags</h3>
-						<ul class="tag2">
-							<li><a href="#">awesome</a></li>
-							<li><a href="#">strategy</a></li>
-							<li><a href="#">development</a></li>
-						</ul>
-						<ul class="tag2">
-							<li><a href="#">css</a></li>
-							<li><a href="#">photoshop</a></li>
-							<li><a href="#">photography</a></li>
-							<li><a href="#">html</a></li>
-						</ul>
-						<ul class="tag2">
-							<li><a href="#">awesome</a></li>
-							<li><a href="#">strategy</a></li>
-							<li><a href="#">development</a></li>
-						</ul>
-						<ul class="tag2">
-							<li><a href="#">css</a></li>
-							<li><a href="#">photoshop</a></li>
-							<li><a href="#">photography</a></li>
-							<li><a href="#">html</a></li>
-						</ul>
-						<ul class="tag2">
-							<li><a href="#">awesome</a></li>
-							<li><a href="#">strategy</a></li>
-							<li><a href="#">development</a></li>
-						</ul>
-					</div>
-					<div class="poll">
-						<h3>Poll</h3>
-							<div class="progress p">
-							  <div class="progress-bar bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-								60%
-							  </div>
-							</div>
-							<div class="progress p">
-							  <div class="progress-bar bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
-								80%
-							  </div>
-							</div>
-							<div class="progress p">
-							  <div class="progress-bar bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
-								90%
-							  </div>
-							</div>
-							<div class="progress p">
-							  <div class="progress-bar bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-								40%
-							  </div>
-							</div>
-					</div>
-				</div>
+                </div>
+                <div class="col-md-4 breaking-news-grid-right">
+                    <h3>Свежие новости</h3>
+                    <ul>
+                        {% for main_litle_news in news_main|slice:":3" %}
+                            <li>
+                                <div class="breaking-news-grid-right-grids">
+                                    <div class="breaking-news-grid-right-gridl img-fixed-size-three">
+                                        <a href="{% url 'news:single' pk=main_litle_news.id %}"><img
+                                                src="{{ main_litle_news.logo_photo.url }}" alt=" "
+                                                class="img-responsive"/></a>
+                                    </div>
+                                    <div class="breaking-news-grid-right-gridr">
+                                        <h4>
+                                            <a href="{% url 'news:single' pk=main_litle_news.id %}">
+                                                {{ main_litle_news.title|wordwrap:30|truncatechars_html:58 }}
+                                            </a>
+                                        </h4>
+                                        <ul>
+                                            <li><a href="{% url 'news:single' pk=main_litle_news.id %}"><span
+                                                    class="fa fa-user-doctor"
+                                                    aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="col-md-4 blog-right">
+                    <div class="recent">
+                        <h3>Recent Comments</h3>
+                        <div class="recent-grids">
+                            <div class="recent-grid">
+                                <div class="wom">
+                                    <a href="#"><img src="{% static '/images/6.jpg' %}" alt=" " class="img-responsive"/></a>
+                                </div>
+                                <div class="wom-right">
+                                    <h4><a href="#">Integer rutrum ante eu</a></h4>
+                                    <p>Mauris fermentum dictum magna. Sed laoreet aliquam leo.
+                                        Ut tellus dolor, dapibus eget.</p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="recent-grid">
+                                <div class="wom">
+                                    <a href="#"><img src="{% static '/images/7.jpg' %}" alt=" " class="img-responsive"/></a>
+                                </div>
+                                <div class="wom-right">
+                                    <h4><a href="#">Integer rutrum ante eu</a></h4>
+                                    <p>Mauris fermentum dictum magna. Sed laoreet aliquam leo.
+                                        Ut tellus dolor, dapibus eget.</p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="recent-grid">
+                                <div class="wom">
+                                    <a href="#"><img src="{% static '/images/8.jpg' %}" alt=" " class="img-responsive"/></a>
+                                </div>
+                                <div class="wom-right">
+                                    <h4><a href="#">Integer rutrum ante eu</a></h4>
+                                    <p>Mauris fermentum dictum magna. Sed laoreet aliquam leo.
+                                        Ut tellus dolor, dapibus eget.</p>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 				<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
 <!-- //single -->
+
+    <!-- breaking-news -->
+    <div class="breaking-news">
+        <div class="container">
+            <div class="breaking-news-grids-bottom">
+                <div class="banner-bottom-grids">
+                    <div class="col-md-3 banner-bottom-grid-left">
+                        <div class="br-bm-gd-lt">
+                            <div class="overlay">
+                                <div class="arrow-left"></div>
+                                <div class="rectangle"></div>
+                            </div>
+                            <div class="health-pos">
+                                <div class="health">
+                                    <ul>
+                                        <li><a href="#">Здоровье</a></li>
+                                        <li>28 Мая 2024</li>
+                                    </ul>
+                                </div>
+                                <h3>Наши Статьи о том как беречь своё Здоровье.</h3>
+                                <div class="dummy">
+                                    <p>Тут мы расскажем вам о правильном питании и сне.</p>
+                                </div>
+                                <div class="com-heart">
+                                    <ul>
+                                        <li><a href="#"><span class="glyphicon glyphicon-envelope"
+                                                              aria-hidden="true"></span>120 Comments</a></li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-heart"
+                                                              aria-hidden="true"></span>12,536 Likes</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 banner-bottom-grid-left">
+                        <div class="br-bm-gd-lt br-bm-gd-lt1">
+                            <div class="overlay">
+                                <div class="arrow-left"></div>
+                                <div class="rectangle"></div>
+                            </div>
+                            <div class="health-pos">
+                                <div class="health">
+                                    <ul>
+                                        <li><a href="#" class="sport">Спорт</a></li>
+                                        <li>28 Мая 2024</li>
+                                    </ul>
+                                </div>
+                                <h3>Почему и как нужно заниматься спортом.</h3>
+                                <div class="dummy">
+                                    <p>Популярные статьи о спорте.</p>
+                                </div>
+                                <div class="com-heart">
+                                    <ul>
+                                        <li><a href="#"><span class="glyphicon glyphicon-envelope"
+                                                              aria-hidden="true"></span>200 Comments</a></li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-heart"
+                                                              aria-hidden="true"></span>13,536 Likes</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 banner-bottom-grid-left">
+                        <div class="br-bm-gd-lt br-bm-gd-lt2">
+                            <div class="overlay">
+                                <div class="arrow-left"></div>
+                                <div class="rectangle"></div>
+                            </div>
+                            <div class="health-pos">
+                                <div class="health">
+                                    <ul>
+                                        <li><a href="#" class="plane">Экономика</a></li>
+                                        <li>28 Мая 2024</li>
+                                    </ul>
+                                </div>
+                                <h3>Новости мира Экономики в 2024 году.</h3>
+                                <div class="dummy">
+                                    <p>Популярные статьи об экономике.</p>
+                                </div>
+                                <div class="com-heart">
+                                    <ul>
+                                        <li><a href="#"><span class="glyphicon glyphicon-envelope"
+                                                              aria-hidden="true"></span>180 Comments</a></li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-heart"
+                                                              aria-hidden="true"></span>18,536 Likes</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 banner-bottom-grid-left">
+                        <div class="br-bm-gd-lt br-bm-gd-lt3">
+                            <div class="overlay">
+                                <div class="arrow-left"></div>
+                                <div class="rectangle"></div>
+                            </div>
+                            <div class="health-pos">
+                                <div class="health">
+                                    <ul>
+                                        <li><a href="" class="general">Важное</a></li>
+                                        <li>28 Мая 2024</li>
+                                    </ul>
+                                </div>
+                                <h3>Новости о природе Беларуси, леса и водоемы.</h3>
+                                <div class="dummy">
+                                    <p>Что нужно знать посещая лесополосу и отдыхая рядом с водой.</p>
+                                </div>
+                                <div class="com-heart">
+                                    <ul>
+                                        <li><a href="#"><span class="glyphicon glyphicon-envelope"
+                                                              aria-hidden="true"></span>150 Comments</a></li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-heart"
+                                                              aria-hidden="true"></span>15,536 Likes</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //breaking-news -->
 {% endblock %}

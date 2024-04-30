@@ -26,10 +26,10 @@ def one_news(request, pk):
 def NewsDetailView(request, pk):
     """Views for News details"""
     news = ModelNews.objects.filter(pk=pk)
-    news_blog_main = ModelNews.objects.all()
+    news_main = ModelNews.objects.all().order_by('-pub_date')
 
     context = {
         'news': news,
-        'news_blog_main': news_blog_main,
+        'news_main': news_main,
     }
     return render(request, 'single.html', context=context)
