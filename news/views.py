@@ -27,9 +27,11 @@ def NewsDetailView(request, pk):
     """Views for News details"""
     news = ModelNews.objects.filter(pk=pk)
     news_main = ModelNews.objects.all().order_by('-pub_date')
+    interactiv = Interactive.objects.all()
 
     context = {
         'news': news,
         'news_main': news_main,
+        'interactiv': interactiv,
     }
     return render(request, 'single.html', context=context)

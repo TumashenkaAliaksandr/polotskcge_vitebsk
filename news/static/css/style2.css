@@ -535,21 +535,35 @@ body a:hover{
 	min-height:300px;
 	position:relative;
 }
-.br-bm-gd-lt{
-	background:url(../images/1.jpg) no-repeat 0px 0px;
-	display:block;
+
+.br-bm-gd-lt {
+    background: url(../images/gigi_centr_health.jpg) no-repeat 0px 0px;
+    display: block;
+    background-size: cover; /* или любой другой размер, который вам нужен */
+    width: 300px; /* задайте ширину */
+    height: 100px; /* задайте высоту */
 }
-.br-bm-gd-lt1{
-	background:url(../images/2.jpg) no-repeat 0px 0px;
-	display:block;
+.br-bm-gd-lt1 {
+    background: url(../images/gigi_centr_sport2.jpg) no-repeat 0px 0px;
+    display: block;
+    background-size: cover; /* или любой другой размер, который вам нужен */
+    width: 300px; /* задайте ширину */
+    height: 100px; /* задайте высоту */
 }
+
 .br-bm-gd-lt2{
-	background:url(../images/3.jpg) no-repeat 0px 0px;
+	background:url(../images/gigi_centr_economika.jpg) no-repeat 0px 0px;
 	display:block;
+    background-size: cover; /* или любой другой размер, который вам нужен */
+    width: 300px; /* задайте ширину */
+    height: 100px; /* задайте высоту */
 }
 .br-bm-gd-lt3{
-	background:url(../images/4.jpg) no-repeat 0px 0px;
+	background:url(../images/gigi_centr_important.png) no-repeat 0px 0px;
 	display:block;
+    background-size: cover; /* или любой другой размер, который вам нужен */
+    width: 300px; /* задайте ширину */
+    height: 100px; /* задайте высоту */
 }
 .br-bm-gd-lt4{
 	background:url(../images/5.jpg) no-repeat 0px 0px;
@@ -642,7 +656,7 @@ body a:hover{
 }
 .com-heart ul li a span {
     left: -0.5em;
-	color:#27b311;
+	color:#3fbbc0;
 }
 .banner-bottom-grid-left:hover .com-heart{
 	display:none;
@@ -1966,10 +1980,16 @@ ul.wmuSliderPagination {
 .breaking-news-grid-right h3{
 	margin:0 !important;
 }
+
+.single {
+  padding: 35px 0 35px;
+  background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../../static/images/zonalnyi_center_polock.jpg') center/cover;
+  background-attachment: fixed;
+}
 /*-- //breaking-news --*/
 /*-- contact --*/
 .typo,.contact,.slicebox-slider,.single{
-	padding:5em 0 5px;
+	padding:2em 0 5px;
 }
 h3.title,.map h3{
 	font-size:1.7em;
@@ -2696,7 +2716,7 @@ img.mobile1 {
 }
 .blog-leftr ul {
     padding: 1em 0;
-    margin: 2em 0 4em;
+    margin: 2em 0 1em;
     border-top: 1px dotted #CDCCCC;
     border-bottom: 1px dotted #CDCCCC;
 }

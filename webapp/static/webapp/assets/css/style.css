@@ -782,6 +782,8 @@ section#clocks-two {
     background: linear-gradient(rgba(255, 255, 255, 0.99), rgb(236, 248, 249, 0.99)), url('../img/gigi_centr_back.jpg') center/cover;
     background-attachment: fixed;
 }
+
+
 /*styles for map*/
 
 .map-container {
