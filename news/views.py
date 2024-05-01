@@ -1,5 +1,6 @@
 from news.models import *
 from django.shortcuts import render
+from .utils import get_weather
 
 
 
@@ -29,9 +30,13 @@ def NewsDetailView(request, pk):
     news_main = ModelNews.objects.all().order_by('-pub_date')
     interactiv = Interactive.objects.all()
 
+    # Получаем данные о погоде
+    weather = get_weather()
+
     context = {
         'news': news,
         'news_main': news_main,
         'interactiv': interactiv,
+        'weather': weather,  # Передаем данные о погоде в контекст
     }
     return render(request, 'single.html', context=context)

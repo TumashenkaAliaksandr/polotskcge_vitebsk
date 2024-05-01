@@ -20,7 +20,7 @@
     </section>
 
 <!-- single -->
-	<div id="single" class="single">
+	<div id="single" class="single single-bg">
 		<div class="container">
 			<div class="single-grid">
 				<div class="col-md-8 blog-left">
@@ -87,31 +87,32 @@
 
                                 <!-- Tab panes -->
                                 <div class="tab-content">
-                                    <div role="tabpanel" class="tab-pane active london" id="home">
-                                        <ul>
-                                            <li>
-                                                <h4>Понедельник</h4>
-                                                <span></span>
-                                                <p>21<sup>🌡</sup></p>
-                                            </li>
-                                            <li>
-                                                <h4>Вторник</h4>
-                                                <span class="moon"></span>
-                                                <p>25<sup>🌡</sup></p>
-                                            </li>
-                                            <li>
-                                                <h4>Среда</h4>
-                                                <span class="sun"></span>
-                                                <p>31<sup>🌡</sup></p>
-                                            </li>
-                                            <div class="clearfix"></div>
-                                        </ul>
-                                    </div>
+                                     <div role="tabpanel" class="tab-pane active london" id="home">
+                                            <ul>
+                                                <li>
+                                                    <h4>Понедельник</h4>
+                                                    <span>{{ weather.day1 }}</span>
+                                                    <p>{{ weather.temperature1 }}<sup>🌡</sup></p>
+                                                </li>
+                                                <li>
+                                                    <h4>Вторник</h4>
+                                                    <span class="moon">{{ weather.day2 }}</span>
+                                                    <p>{{ weather.temperature2 }}<sup>🌡</sup></p>
+                                                </li>
+                                                <li>
+                                                    <h4>Среда</h4>
+                                                    <span class="sun">{{ weather.day3 }}</span>
+                                                    <p>{{ weather.temperature3 }}<sup>🌡</sup></p>
+                                                </li>
+                                                <div class="clearfix"></div>
+                                            </ul>
+                                        </div>
                                     <div role="tabpanel" class="tab-pane" id="profile">
-                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26359652.109742895!2d-113.72446020222534!3d36.24602872499641!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited+States!5e0!3m2!1sen!2sin!4v1450786850582"
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194025.7100198714!2d28.666667!3d55.483333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e6c732a235bcab%3A0x60594c75ea92b66e!2z0JrQuNGX0LIg0KXQu9C40LrRgtC10YXQvdC40YbQsCDQotCw0LLRgdGM0LrQsCDQoNC-0YHRgtC10L3RgtGB0LrQsNGPINC-0LHQu9Cw0YHRgtC-0LzRgdGC0YwsIDY3MDAw!5e0!3m2!1sru!2sby!4v1649286014621!5m2!1sru!2sby"
                                                 frameborder="0" style="border:0" allowfullscreen></iframe>
                                     </div>
                                 </div>
+
                             </div>
                             <div class="news-grid-rght3">
                                 <img src="{% static 'images/gigi_centr_girispolkom.jpg' %}" alt=" " class="img-responsive"/>
@@ -131,7 +132,7 @@
 <!-- //single -->
 
     <!-- breaking-news -->
-    <div class="breaking-news">
+    <div class="breaking-news single-bg">
         <div class="container">
             <div class="breaking-news-grids-bottom">
                 <div class="banner-bottom-grids">
@@ -248,7 +249,7 @@
                 </ul>
             </div>
             {% for main_interactiv_string in interactiv %}
-                <div class="move-text">
+                <div class="move-text single-bg">
                     <div class="breaking_news">
                         <h2>Новости Центра</h2>
                     </div>

@@ -1981,9 +1981,9 @@ ul.wmuSliderPagination {
 	margin:0 !important;
 }
 
-.single {
+.single-bg {
   padding: 35px 0 35px;
-  background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../../static/images/zonalnyi_center_polock.jpg') center/cover;
+  background: linear-gradient(rgba(255, 255, 255, 0.97), rgba(248, 253, 255, 0.99)), url('../../static/images/gigi_centr_polock.png') center/cover;
   background-attachment: fixed;
 }
 /*-- //breaking-news --*/
