@@ -19,28 +19,30 @@
         </div>
     </section>
 
-<!-- single -->
-	<div id="single" class="single single-bg">
-		<div class="container">
-			<div class="single-grid">
-				<div class="col-md-8 blog-left">
-					<div class="blog-left-grid">
+    <!-- single -->
+    <div id="single" class="single single-bg">
+        <div class="container">
+            <div class="single-grid">
+                <div class="col-md-8 blog-left">
+                    <div class="blog-left-grid">
                         {% for main_single_news in news %}
-						<div class="blog-leftl">
-							<h4>{{ main_single_news.pub_date|date:"M" }}</h4>
-							<a href="#"><i class="fa fa-tags" aria-hidden="true"></i> {{ main_single_news.pub_date.day }}</a>
-						</div>
-						<div class="blog-leftr">
-							<img src="{{ main_single_news.photo.url }}" alt=" " class="img-responsive" />
-							<p>{{ main_single_news.description|safe }}</p>
-							<p>{{ main_single_news.description_small|safe }}</p>
-							<ul>
-								<li><a href="#"><i class="fa fa-user-doctor" aria-hidden="true"></i> {{ main_single_news.author }}</a></li>
-							</ul>
-						</div>
-						<div class="clearfix"> </div>
+                            <div class="blog-leftl">
+                                <h4>{{ main_single_news.pub_date|date:"M" }}</h4>
+                                <a href="#"><i class="fa fa-tags"
+                                               aria-hidden="true"></i> {{ main_single_news.pub_date.day }}</a>
+                            </div>
+                            <div class="blog-leftr">
+                                <img src="{{ main_single_news.photo.url }}" alt=" " class="img-responsive"/>
+                                <p>{{ main_single_news.description|safe }}</p>
+                                <p>{{ main_single_news.description_small|safe }}</p>
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-user-doctor"
+                                                       aria-hidden="true"></i> {{ main_single_news.author }}</a></li>
+                                </ul>
+                            </div>
+                            <div class="clearfix"></div>
                         {% endfor %}
-					</div>
+                    </div>
                 </div>
                 <div class="col-md-4 breaking-news-grid-right">
                     <h3>Свежие новости</h3>
@@ -81,41 +83,21 @@
                                                                               aria-controls="home" role="tab"
                                                                               data-toggle="tab">погода в полоцке</a>
                                     </li>
-                                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab"
-                                                               data-toggle="tab">выбрать местоположенине</a></li>
                                 </ul>
-
-                                <!-- Tab panes -->
-                                <div class="tab-content">
-                                     <div role="tabpanel" class="tab-pane active london" id="home">
-                                            <ul>
-                                                <li>
-                                                    <h4>Понедельник</h4>
-                                                    <span>{{ weather.day1 }}</span>
-                                                    <p>{{ weather.temperature1 }}<sup>🌡</sup></p>
-                                                </li>
-                                                <li>
-                                                    <h4>Вторник</h4>
-                                                    <span class="moon">{{ weather.day2 }}</span>
-                                                    <p>{{ weather.temperature2 }}<sup>🌡</sup></p>
-                                                </li>
-                                                <li>
-                                                    <h4>Среда</h4>
-                                                    <span class="sun">{{ weather.day3 }}</span>
-                                                    <p>{{ weather.temperature3 }}<sup>🌡</sup></p>
-                                                </li>
-                                                <div class="clearfix"></div>
-                                            </ul>
-                                        </div>
-                                    <div role="tabpanel" class="tab-pane" id="profile">
-                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194025.7100198714!2d28.666667!3d55.483333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46e6c732a235bcab%3A0x60594c75ea92b66e!2z0JrQuNGX0LIg0KXQu9C40LrRgtC10YXQvdC40YbQsCDQotCw0LLRgdGM0LrQsCDQoNC-0YHRgtC10L3RgtGB0LrQsNGPINC-0LHQu9Cw0YHRgtC-0LzRgdGC0YwsIDY3MDAw!5e0!3m2!1sru!2sby!4v1649286014621!5m2!1sru!2sby"
-                                                frameborder="0" style="border:0" allowfullscreen></iframe>
-                                    </div>
+                                <div class="tab-content-weather">
+                                    <ul>
+                                        <h4>{{ weather.month }} {{ weather.day_of_month }}, {{ weather.day }}</h4>
+                                        <p><span class="fa fa-wind"> Ветер: {{ weather.wind_speed }} м/с {{ weather.wind_direction }}</span></p>
+                                        <p><span class="fas fa-thermometer-half"></span>
+                                            Температура: {{ weather.temperature }}<sup>🌡</sup></p>
+                                        <p><span class="fas fa-tachometer-alt"></span>
+                                            Давление: {{ weather.pressure }} гПа</p>
+                                    </ul>
                                 </div>
-
                             </div>
                             <div class="news-grid-rght3">
-                                <img src="{% static 'images/gigi_centr_girispolkom.jpg' %}" alt=" " class="img-responsive"/>
+                                <img src="{% static 'images/gigi_centr_girispolkom.jpg' %}" alt=" "
+                                     class="img-responsive"/>
                                 <div class="story">
                                     <p>фото дня</p>
                                     <h3><a href="single.html">Горисполком город Полоцк</a></h3>
@@ -127,9 +109,9 @@
                 </div>
 
             </div>
-		</div>
-	</div>
-<!-- //single -->
+        </div>
+    </div>
+    <!-- //single -->
 
     <!-- breaking-news -->
     <div class="breaking-news single-bg">
@@ -155,8 +137,10 @@
                                 </div>
                                 <div class="com-heart">
                                     <ul>
-                                        <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span> Центр Гигиены</a></li>
-										<li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span> 11,536</a></li>
+                                        <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span> Центр
+                                            Гигиены</a></li>
+                                        <li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span> 11,536</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -181,8 +165,10 @@
                                 </div>
                                 <div class="com-heart">
                                     <ul>
-                                        <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span> Центр Гигиены</a></li>
-										<li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span> 13,536</a></li>
+                                        <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span> Центр
+                                            Гигиены</a></li>
+                                        <li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span> 13,536</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -207,8 +193,10 @@
                                 </div>
                                 <div class="com-heart">
                                     <ul>
-                                        <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span> Центр Гигиены</a></li>
-										<li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span> 7,536</a></li>
+                                        <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span> Центр
+                                            Гигиены</a></li>
+                                        <li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span> 7,536</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -233,8 +221,10 @@
                                 </div>
                                 <div class="com-heart">
                                     <ul>
-                                       <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span> Центр Гигиены</a></li>
-										<li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span> 15,536</a></li>
+                                        <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span> Центр
+                                            Гигиены</a></li>
+                                        <li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span> 15,536</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>

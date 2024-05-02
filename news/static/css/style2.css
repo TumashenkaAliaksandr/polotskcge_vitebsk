@@ -1353,32 +1353,32 @@ a.high {
 	font-weight:400;
 	margin:0;
 }
-.london ul li span{
-    background: url(../images/img-sp.png) no-repeat -167px -93px;
-    display: block;
-    width: 80px;
-    height: 80px;
-    margin: 1em 0;
-}
-.london ul li p{
-	font-size:1.5em;
-	color:#000;
-	margin:0;
-}
-.london ul li span.moon{
-	background:url(../images/img-sp.png) no-repeat -259px -6px;
-    display: block;
-    width: 80px;
-    height: 80px;
-    margin: 1em 0;
-}
-.london ul li span.sun{
-	background:url(../images/img-sp.png) no-repeat -268px -94px;
-    display: block;
-    width: 80px;
-    height: 80px;
-    margin: 1em 0;
-}
+/*.london ul li span{*/
+/*    !*background: url(../images/img-sp.png) no-repeat -167px -93px;*!*/
+/*    display: block;*/
+/*    width: 80px;*/
+/*    height: 80px;*/
+/*    margin: 1em 0;*/
+/*}*/
+/*.london ul li p{*/
+/*	font-size:1.5em;*/
+/*	color:#000;*/
+/*	margin:0;*/
+/*}*/
+/*.london ul li span.moon{*/
+/*	!*background:url(../images/img-sp.png) no-repeat -259px -6px;*!*/
+/*    display: block;*/
+/*    width: 80px;*/
+/*    height: 80px;*/
+/*    margin: 1em 0;*/
+/*}*/
+/*.london ul li span.sun{*/
+/*	!*background:url(../images/img-sp.png) no-repeat -268px -94px;*!*/
+/*    display: block;*/
+/*    width: 80px;*/
+/*    height: 80px;*/
+/*    margin: 1em 0;*/
+/*}*/
 #profile iframe{
 	width:100%;
 	min-height:200px;
@@ -2174,6 +2174,21 @@ li.list-group-item1 {
   display: block;
   visibility: visible;
 }
+
+.tab-content-weather {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-image: url(../images/gigi_centr_risunok.png);
+    background-repeat: no-repeat;
+    background-size: cover; /* или contain, в зависимости от вашего предпочтения */
+    background-position: center center;
+    width: 100%; /* задайте нужные размеры */
+    height: 240px; /* задайте нужные размеры */
+}
+
+
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
   z-index: 0;
 }

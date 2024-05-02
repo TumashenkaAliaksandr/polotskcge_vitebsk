@@ -327,7 +327,7 @@
 
 .focus-ring:focus {
   outline: 0;
-  box-shadow: var(--bs-focus-ring-x, 0) var(--bs-focus-ring-y, 0) var(--bs-focus-ring-blur, 0) var(--bs-focus-ring-width) var(--bs-focus-ring-color);
+  box-shadow: 0, 0, 0 var(--bs-focus-ring-width) var(--bs-focus-ring-color);
 }
 
 .icon-link {
@@ -354,7 +354,7 @@
 }
 
 .icon-link-hover:hover > .bi, .icon-link-hover:focus-visible > .bi {
-  transform: var(--bs-icon-link-transform, translate3d(0.25em, 0, 0));
+  transform: translate3d(0.25em, 0, 0);
 }
 
 .ratio {
