@@ -75,25 +75,20 @@
                 </div>
                 <div class="news">
                     <div class="news-grids">
-                        <div class="col-md-4 news-grid-right">
+                        <div class="col-md-4 breaking-news-grid-right">
                             <div class="news-grid-rght1">
+                                 <h3>Погода в Полоцке</h3>
                                 <!-- Nav tabs -->
-                                <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active"><a class="high" href="#home"
-                                                                              aria-controls="home" role="tab"
-                                                                              data-toggle="tab">погода в полоцке</a>
-                                    </li>
-                                </ul>
                                 <div class="tab-content-weather-bg">
                                     <div class="tab-content-weather">
                                         <ul>
                                             <h4>{{ weather.month }} {{ weather.day_of_month }}, {{ weather.day }}</h4>
                                             <p><span
-                                                    class="fa fa-wind"> Ветер: {{ weather.wind_speed }} м/с {{ weather.wind_direction }}</span>
+                                                    class="fa fa-wind"> Ветер: {{ weather.wind_direction }} {{ weather.wind_speed }} м/с</span>
                                             </p>
                                             <p><span class="fas fa-thermometer-half">
                                                 Температура: {{ weather.temperature }}</span></p>
-                                            <p><span class="fa fa-diagnoses">
+                                            <p><span class="fas fa-tachometer-alt">
                                                 Давление: {{ weather.pressure }} гПа</span></p>
                                         </ul>
                                     </div>

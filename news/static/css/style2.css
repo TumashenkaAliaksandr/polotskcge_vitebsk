@@ -2180,6 +2180,7 @@ li.list-group-item1 {
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 20px;
+    margin-top: 20px;
     background-image: url(../images/gigi_centr_risunok.png);
     background-repeat: no-repeat;
     background-size: cover; /* или contain, в зависимости от вашего предпочтения */
@@ -2196,7 +2197,7 @@ li.list-group-item1 {
     left: 0; /* Располагаем псевдоэлемент слева */
     width: 100%; /* Растягиваем псевдоэлемент на всю ширину */
     height: 100%; /* Растягиваем псевдоэлемент на всю высоту */
-    background-color: rgba(255, 255, 255, 0.73); /* Устанавливаем цвет фона с опасити */
+    background-color: rgba(255, 255, 255, 0.77); /* Устанавливаем цвет фона с опасити */
     z-index: 1; /* Устанавливаем z-index выше других элементов */
 }
 
@@ -2207,31 +2208,35 @@ li.list-group-item1 {
 
 .tab-content-weather h4 {
     /* Стили для h4 тегов внутри .tab-content-weather */
-    color: #8b8e8b; /* Цвет текста */
+    color: #3fbbc0; /* Цвет текста */
     font-size: 27px; /* Размер шрифта */
-    font-weight: bold; /* Жирный текст */
+    /*font-weight: bold; !* Жирный текст *!*/
     margin-top: 15px;
-    margin-bottom: 28px;
+    margin-bottom: 38px;
     margin-left: 7px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Тень текста */
-    -webkit-text-stroke: 1px #0000004C; /* Контур текста */
-    text-stroke: 1px #0000004C; /* Контур текста */
+    /*-webkit-text-stroke: 1px #A6A8A6; !* Контур текста *!*/
+    /*text-stroke: 1px #A6A8A6; !* Контур текста *!*/
 }
 
 .tab-content-weather p {
     /* Стили для p тегов внутри .tab-content-weather */
-    color: #8b8e8b; /* Цвет текста */
-    font-size: 21px; /* Размер шрифта */
+    color: #3fbbc0; /* Цвет текста */
+    font-size: 20px; /* Размер шрифта */
     line-height: 1.5; /* Межстрочный интервал */
     margin-top: 20px;
     font-weight: bold;
     margin-bottom: 25px;
     margin-left: 7px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Тень текста */
-    -webkit-text-stroke: 1px #0000004C; /* Контур текста */
-    text-stroke: 1px #0000004C; /* Контур текста */
+    /*-webkit-text-stroke: 1px #A6A8A6; !* Контур текста *!*/
+    /*text-stroke: 1px #A6A8A6; !* Контур текста *!*/
 }
 
+
+.news-grid-rght1{
+    margin-top: 50px;
+}
 
 
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
