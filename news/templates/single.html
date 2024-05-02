@@ -84,15 +84,19 @@
                                                                               data-toggle="tab">погода в полоцке</a>
                                     </li>
                                 </ul>
-                                <div class="tab-content-weather">
-                                    <ul>
-                                        <h4>{{ weather.month }} {{ weather.day_of_month }}, {{ weather.day }}</h4>
-                                        <p><span class="fa fa-wind"> Ветер: {{ weather.wind_speed }} м/с {{ weather.wind_direction }}</span></p>
-                                        <p><span class="fas fa-thermometer-half"></span>
-                                            Температура: {{ weather.temperature }}<sup>🌡</sup></p>
-                                        <p><span class="fas fa-tachometer-alt"></span>
-                                            Давление: {{ weather.pressure }} гПа</p>
-                                    </ul>
+                                <div class="tab-content-weather-bg">
+                                    <div class="tab-content-weather">
+                                        <ul>
+                                            <h4>{{ weather.month }} {{ weather.day_of_month }}, {{ weather.day }}</h4>
+                                            <p><span
+                                                    class="fa fa-wind"> Ветер: {{ weather.wind_speed }} м/с {{ weather.wind_direction }}</span>
+                                            </p>
+                                            <p><span class="fas fa-thermometer-half">
+                                                Температура: {{ weather.temperature }}</span></p>
+                                            <p><span class="fa fa-diagnoses">
+                                                Давление: {{ weather.pressure }} гПа</span></p>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <div class="news-grid-rght3">

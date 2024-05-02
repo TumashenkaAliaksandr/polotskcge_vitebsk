@@ -2175,7 +2175,7 @@ li.list-group-item1 {
   visibility: visible;
 }
 
-.tab-content-weather {
+.tab-content-weather-bg {
     border: 2px solid #ccc;
     border-radius: 5px;
     padding: 10px;
@@ -2186,7 +2186,52 @@ li.list-group-item1 {
     background-position: center center;
     width: 100%; /* задайте нужные размеры */
     height: 240px; /* задайте нужные размеры */
+    position: relative; /* Добавляем относительное позиционирование */
 }
+
+.tab-content-weather-bg::before {
+    content: ""; /* Создаем пустой контент для псевдоэлемента */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0; /* Располагаем псевдоэлемент вверху */
+    left: 0; /* Располагаем псевдоэлемент слева */
+    width: 100%; /* Растягиваем псевдоэлемент на всю ширину */
+    height: 100%; /* Растягиваем псевдоэлемент на всю высоту */
+    background-color: rgba(255, 255, 255, 0.73); /* Устанавливаем цвет фона с опасити */
+    z-index: 1; /* Устанавливаем z-index выше других элементов */
+}
+
+.tab-content-weather {
+    position: relative; /* Добавляем относительное позиционирование */
+    z-index: 2; /* Устанавливаем z-index выше псевдоэлемента */
+}
+
+.tab-content-weather h4 {
+    /* Стили для h4 тегов внутри .tab-content-weather */
+    color: #8b8e8b; /* Цвет текста */
+    font-size: 27px; /* Размер шрифта */
+    font-weight: bold; /* Жирный текст */
+    margin-top: 15px;
+    margin-bottom: 28px;
+    margin-left: 7px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Тень текста */
+    -webkit-text-stroke: 1px #0000004C; /* Контур текста */
+    text-stroke: 1px #0000004C; /* Контур текста */
+}
+
+.tab-content-weather p {
+    /* Стили для p тегов внутри .tab-content-weather */
+    color: #8b8e8b; /* Цвет текста */
+    font-size: 21px; /* Размер шрифта */
+    line-height: 1.5; /* Межстрочный интервал */
+    margin-top: 20px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    margin-left: 7px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Тень текста */
+    -webkit-text-stroke: 1px #0000004C; /* Контур текста */
+    text-stroke: 1px #0000004C; /* Контур текста */
+}
+
 
 
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
