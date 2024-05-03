@@ -1996,6 +1996,7 @@ ul.wmuSliderPagination {
 /*-- contact --*/
 .typo,.contact,.slicebox-slider,.single{
 	padding:2em 0 5px;
+    opacity: 0.77;
 }
 h3.title,.map h3{
 	font-size:1.7em;

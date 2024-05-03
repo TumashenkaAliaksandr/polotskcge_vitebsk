@@ -759,6 +759,12 @@ section {
   background-attachment: fixed;
 }
 
+.section-bg-erip {
+  padding: 35px 0 35px;
+  background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.98)), url('../img/gigi_bg_ERIP.png') center/cover;
+  background-attachment: fixed;
+}
+
 .section-bg-qwest {
   padding: 35px 0 35px;
   background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/gigi_centr_vopros.jpg') center/cover;
@@ -766,6 +772,12 @@ section {
 }
 
 section#contact {
+    padding: 35px 0 35px;
+    background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/epi_gigi_polock_contact.png') center/cover;
+    background-attachment: fixed;
+}
+
+.doctors {
     padding: 35px 0 35px;
     background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/epi_gigi_polock_contact.png') center/cover;
     background-attachment: fixed;
@@ -1806,7 +1818,7 @@ section#clocks-two {
   text-align: center;
   border-radius: 4px;
   background: #fff;
-  box-shadow: 0px 2px 15px rgba(63, 187, 192, 0.1);
+  box-shadow: 0px 2px 15px rgba(63, 187, 192, 0.2);
 }
 
 .doctors .member .member-img {
@@ -2413,7 +2425,7 @@ section#clocks-two {
 .post-slide{
     margin: 0 10px;
     border-bottom: 1px solid #dadada;
-    box-shadow: 0 0 5px rgba(167, 197, 167, 0.8);
+    box-shadow: 0 10px 10px rgba(167, 197, 167, 0.8);
     transition: all 0.4s ease-in-out 0s;
 
 }

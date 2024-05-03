@@ -1,4 +1,6 @@
 from django.shortcuts import render
+
+from news.models import Interactive
 from webapp.models import *
 
 
@@ -574,9 +576,11 @@ def educational_resources(request):
 def contacts(request):
     """Contacts template"""
     features = Featured.objects.all()
+    interactiv = Interactive.objects.all()
 
     context = {
         'features': features,
+        'interactiv': interactiv,
     }
 
     return render(request, 'webapp/contacts.html', context=context)
