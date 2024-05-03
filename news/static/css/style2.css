@@ -1937,6 +1937,12 @@ ul.wmuSliderPagination {
     height: 15px; /* Установите желаемую высоту */
     object-fit: cover; /* Этот свойство сохраняет соотношение сторон и обрезает изображение по нужным размерам */
 }
+.img-fixed-size-erip {
+    width: 200px; /* Установите желаемую ширину */
+    height: 200px;
+    margin-right: 20px;
+    object-fit: cover; /* Этот свойство сохраняет соотношение сторон и обрезает изображение по нужным размерам */
+}
 
 .breaking-news-grid-right ul li{
 	list-style-type:none;
