@@ -811,6 +811,11 @@ section {
   background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/gigi_centr_questions.jpg') center/cover;
   background-attachment: fixed;
 }
+.section-bg-structure {
+  padding: 35px 0 35px;
+  background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.97)), url('../img/gigi_centr_dna.jpg') center/cover;
+  background-attachment: fixed;
+}
 
 section#contact {
     padding: 35px 0 35px;
@@ -820,7 +825,7 @@ section#contact {
 
 .main-bg {
     padding: 35px 0 35px;
-    background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/epi_gigi_polock_contact.png') center/cover;
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.97)), url('../img/epi_gigi_polock_contact.png') center/cover;
     background-attachment: fixed;
 }
 
@@ -874,6 +879,33 @@ section#clocks-two {
   padding-top: 35px;
 }
 
+.news-more p{
+  text-align: right;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  font-size: 17px;
+  color: #444444;
+}
+
+.news-more p:hover {
+    color: #3fbbc0; /* Устанавливаем голубенький цвет при наведении */
+}
+
+.section-title-news {
+  text-align: center;
+  padding-bottom: 10px;
+  padding-top: 40px;
+}
+
+.section-title-news h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
 .section-title h2 {
   font-size: 32px;
   font-weight: bold;
@@ -884,6 +916,16 @@ section#clocks-two {
 }
 
 .section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #3fbbc0;
+  bottom: 0;
+  left: calc(50% - 25px);
+}
+.section-title-news h2::after {
   content: "";
   position: absolute;
   display: block;
@@ -1539,7 +1581,7 @@ section#clocks-two {
   width: 80px;
   height: 80px;
   margin-bottom: 20px;
-  background: #fff;
+  background: #f9fbfb;
   border-radius: 50%;
   transition: 0.5s;
   color: #3fbbc0;

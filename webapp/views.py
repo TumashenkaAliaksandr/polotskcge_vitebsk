@@ -24,7 +24,7 @@ def index(request):
     about_us = AboutUs.objects.all()
     innovations = Researches.objects.all()
     featured = Featured.objects.all()
-    questions = Question.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
     model_blog_main = ModelNews.objects.all().order_by('-pub_date')

@@ -284,6 +284,9 @@
       <!-- news-and-events -->
       <section id="about" class="about main-bg">
           <div class="container" data-aos="fade-up">
+          <div class="section-title-news">
+                  <h2>Новости</h2>
+              </div>
               <div class="news">
                   <div class="news-grids">
                       <div class="col-md-8 news-grid-left">
@@ -303,6 +306,9 @@
                               </li>
                               {% endfor %}
                           </ul>
+                      <div class="news-more">
+                          <a href="{% url 'news:news' %}"><p>Узнать больше..</p></a>
+                      </div>
                       </div>
                       <!-- Tab panes -->
                       <div class="news">
@@ -356,7 +362,7 @@
               {% endfor %}
 
               <ul class="faq-list">
-                  {% for question in questions %}
+                  {% for question in questions|slice:":6" %}
                       <li>
                           <div data-bs-toggle="collapse" class="collapsed question"
                                href="#{{ question.id }}"> {{ question.question_text }} <i
