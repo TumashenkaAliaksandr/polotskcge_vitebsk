@@ -2472,7 +2472,7 @@ section#clocks-two {
 .post-slide{
     margin: 0 10px;
     border-bottom: 1px solid #dadada;
-    box-shadow: 0 10px 10px rgba(167, 197, 167, 0.8);
+    /*box-shadow: 0 10px 10px rgba(167, 197, 167, 0.8);*/
     transition: all 0.4s ease-in-out 0s;
 
 }
