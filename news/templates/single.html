@@ -64,7 +64,7 @@
                                         <ul>
                                             <li><a href="{% url 'news:single' pk=main_litle_news.id %}"><span
                                                     class="fa fa-user-doctor"
-                                                    aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
+                                                    aria-hidden="true"></span> {{ main_litle_news.author }} <label>|</label> {{ main_litle_news.pub_date|date:"d.m.Y" }}</a></li>
                                         </ul>
                                     </div>
                                     <div class="clearfix"></div>

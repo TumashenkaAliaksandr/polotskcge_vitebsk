@@ -1227,13 +1227,13 @@ ul.list6 li a:hover,.res6 a{
 /*-- //video-bottom-grids --*/
 /*-- news-and-events --*/
 .news{
-	margin:3em 0;
+	margin:1em 0;
 }
 .news-grid-left h3{
 	font-size: 1.1em;
     color: #fff;
     margin: 0;
-    background: #000;
+    background: #3fbbc0;
     padding: .8em 1em;
     text-transform: uppercase;
     font-weight: 400;
@@ -1265,16 +1265,16 @@ ul.list6 li a:hover,.res6 a{
 	font-weight:400;
 }
 .news-grid-right1 h4 a:hover{
-	color:#27b311;
+	color:#098388;
 }
 .news-grid-right1 h5{
-	color: #000;
+	color: #098388;
     font-size: .8em;
     margin: 0.8em 0 1em;
     font-weight: 400;
 }
 .news-grid-right1 h5 a{
-	color:#27b311;
+	color:#3fbbc0;
 	text-transform: uppercase;
 	text-decoration:none;
 	font-weight: 400;
@@ -1944,6 +1944,21 @@ ul.wmuSliderPagination {
     object-fit: cover; /* Этот свойство сохраняет соотношение сторон и обрезает изображение по нужным размерам */
 }
 
+.img-fixed-size-unp {
+  width: 120px;
+  height: 105px;
+  object-fit: cover;
+  margin-left: 105px;
+}
+
+.img-fixed-size-unp-two {
+  width: 67px;
+  height: 47px;
+  object-fit: cover;
+  margin-left: 115px;
+  margin-bottom: 21px;
+}
+
 .breaking-news-grid-right ul li{
 	list-style-type:none;
 	margin:1.76em 0;
@@ -2204,7 +2219,7 @@ li.list-group-item1 {
     left: 0; /* Располагаем псевдоэлемент слева */
     width: 100%; /* Растягиваем псевдоэлемент на всю ширину */
     height: 100%; /* Растягиваем псевдоэлемент на всю высоту */
-    background-color: rgba(255, 255, 255, 0.77); /* Устанавливаем цвет фона с опасити */
+    background-color: rgba(255, 255, 255, 0.65); /* Устанавливаем цвет фона с опасити */
     z-index: 1; /* Устанавливаем z-index выше других элементов */
 }
 
@@ -2215,7 +2230,7 @@ li.list-group-item1 {
 
 .tab-content-weather h4 {
     /* Стили для h4 тегов внутри .tab-content-weather */
-    color: #3fbbc0; /* Цвет текста */
+    color: #6d6d6d; /* Цвет текста */
     font-size: 27px; /* Размер шрифта */
     /*font-weight: bold; !* Жирный текст *!*/
     margin-top: 15px;
@@ -2228,7 +2243,7 @@ li.list-group-item1 {
 
 .tab-content-weather p {
     /* Стили для p тегов внутри .tab-content-weather */
-    color: #3fbbc0; /* Цвет текста */
+    color: #6d6d6d; /* Цвет текста */
     font-size: 20px; /* Размер шрифта */
     line-height: 1.5; /* Межстрочный интервал */
     margin-top: 20px;
@@ -2242,6 +2257,9 @@ li.list-group-item1 {
 
 
 .news-grid-rght1{
+    margin-top: 50px;
+}
+.news-grid-left{
     margin-top: 50px;
 }
 
@@ -3125,7 +3143,7 @@ img.mobile1 {
 		width: 78%;
 		margin-left: 0%;
 		font-size: 1em;
-		padding: 11px 0;
+		padding: 5px 0;
 	}
 	.tab_list1 {
 		margin: 3em 0 0;

@@ -1,6 +1,6 @@
 from django.shortcuts import render
-
-from news.models import Interactive
+from news.models import Interactive, ModelNews
+from news.utils import get_weather
 from webapp.models import *
 
 
@@ -27,6 +27,10 @@ def index(request):
     questions = Question.objects.all()
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
+    model_blog_main = ModelNews.objects.all().order_by('-pub_date')
+    # Получаем данные о погоде
+    weather = get_weather()
+    interactiv = Interactive.objects.all()
 
     context = {
         'desc_services_title': desc_services_title,
@@ -37,6 +41,9 @@ def index(request):
         'questions': questions,
         'ansvers': ansvers,
         'title_desc_queans': title_desc_queans,
+        'weather': weather,
+        'model_blog_main': model_blog_main,
+        'interactiv': interactiv,
     }
 
     return render(request, 'webapp/index.html', context=context)
@@ -69,9 +76,13 @@ def news_main(request):
 def structure(request):
     """About us Structure template"""
     features = Featured.objects.all()
+    questions = Question.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
 
     context = {
         'features': features,
+        'questions': questions,
+        'title_desc_queans': title_desc_queans,
     }
 
     return render(request, 'webapp/about_us/structure.html', context=context)

@@ -745,6 +745,37 @@ h6 {
   }
 }
 
+
+.my-column {
+    /* Ваши стили для колонки */
+    position: relative;
+}
+
+.my-column::after {
+    content: '';
+    position: absolute;
+    top: 50%; /* Располагаем от середины колонки */
+    left: 120%; /* Располагаем относительно центра колонки */
+    width: 5px; /* Задаем ширину вертикального разделителя */
+    background-color: #3fbbc0; /* Цвет вертикального разделителя */
+    height: 55%; /* Задаем высоту, равную высоте колонки */
+    transform: translateX(-50%) translateY(-50%); /* Сдвигаем в центр */
+}
+
+.my-column::before {
+    content: '';
+    position: absolute;
+    bottom: 50%; /* Располагаем от нижней точки */
+    left: 120%; /* Располагаем относительно центра колонки */
+    width: 5px; /* Задаем ширину вертикального разделителя */
+    background-color: #3fbbc0; /* Цвет вертикального разделителя */
+    height: 35%; /* Задаем высоту, равную высоте колонки */
+    transform: translateX(-50%) translateY(50%); /* Сдвигаем в центр */
+}
+
+
+
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -760,9 +791,19 @@ section {
 }
 
 .section-bg-erip {
-  padding: 35px 0 35px;
+    padding: 20px 0; /* Измените в соответствии с вашими требованиями */
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.98)), url('../img/gigi_bg_ERIP.png') center/cover;
+    background-attachment: fixed;
+    /* Задаем размеры фона */
+    background-size: 98% auto; /* Размеры: ширина высота */
+}
+
+
+.section-bg-unp {
+  padding: 20px 0 20px;
   background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.98)), url('../img/gigi_bg_ERIP.png') center/cover;
   background-attachment: fixed;
+  background-size: 98% auto; /* Размеры: ширина высота */
 }
 
 .section-bg-qwest {
@@ -777,9 +818,15 @@ section#contact {
     background-attachment: fixed;
 }
 
-.doctors {
+.main-bg {
     padding: 35px 0 35px;
     background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/epi_gigi_polock_contact.png') center/cover;
+    background-attachment: fixed;
+}
+
+.news-main {
+    padding: 35px 0 35px;
+    background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.98)), url('../img/gigi_centr_news2.jpg') center/cover;
     background-attachment: fixed;
 }
 
@@ -2091,7 +2138,7 @@ section#clocks-two {
 # Frequently Asked Questioins
 --------------------------------------------------------------*/
 .faq {
-  padding: 60px 0;
+  padding: 20px 0;
 }
 
 .faq .faq-list {
@@ -2481,6 +2528,7 @@ section#clocks-two {
     padding: 25px 20px 5px;
     background: #fff;
     position: relative;
+    opacity: 0.9;
 }
 .post-slide .post-title{
     margin: 0;
