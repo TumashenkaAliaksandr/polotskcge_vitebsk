@@ -808,7 +808,7 @@ section {
 
 .section-bg-qwest {
   padding: 35px 0 35px;
-  background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/gigi_centr_vopros.jpg') center/cover;
+  background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/gigi_centr_questions.jpg') center/cover;
   background-attachment: fixed;
 }
 
