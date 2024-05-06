@@ -216,59 +216,62 @@
                         <div class="clearfix"></div>
                     </div>
                 </div>
-                <div class="video-grids">
+                <div class="video-grids"><div class="news">
                     <div class="col-md-8 video-grids-left">
-                        <div class="video-grids-left1">
-                            <img src="{% static 'images/9.jpg' %}" alt=" " class="img-responsive">
-                            <a class="play-icon popup-with-zoom-anim" href="#small-dialog">
-                                <span> </span>
-                            </a>
-                            <div class="video-grid-pos">
-                                <h3><span>Hurricanes</span> produce storm surges, tornadoes, and often the most deadly
-                                    of all -inland flooding.</h3>
-                                <ul>
-                                    <li>9:32 <label>|</label></li>
-                                    <li><i>Adom Smith</i> <label>|</label></li>
-                                    <li><span>Politics</span></li>
-                                </ul>
-                            </div>
+                     <h3>Наше видео о Главном</h3>
+                        {% for main_video in model_video %}
+                            <div class="video-grids-left1">
+                                <img src="{{ main_video.video_file.url }}" type="video/mp4" alt=" " class="img-responsive">
+                                    <span> </span>
+                                </a>
+                                <div class="video-grid-pos">
+                                    <h3><span>{{ main_video.title }}</span></h3>
+                                    <ul>
+                                        <li>{{ main_video.timestamp|date:"d.m.Y" }} <label>|</label></li>
+                                        <li><i>{{ main_video.author }}</i> <label>|</label></li>
+                                        <li><span>{{ main_video.category }}</span></li>
+                                    </ul>
+                                </div>
 
-                            <!-- pop-up-box -->
-                            <script type="text/javascript" src="{% static 'js/modernizr.custom.min.js' %}"></script>
-                            <link href="{% static 'css/popuo-box.css' %}" rel="stylesheet" type="text/css" media="all">
-                            <script src="{% static 'js/jquery.magnific-popup.js' %}" type="text/javascript"></script>
-                            <!--//pop-up-box -->
-                            <div id="small-dialog" class="mfp-hide">
-                                <iframe src="https://player.vimeo.com/video/145787219" width="500" height="281"
-                                        frameborder="0" webkitallowfullscreen="" mozallowfullscreen=""
-                                        allowfullscreen=""></iframe>
-                            </div>
+                                <!-- pop-up-box -->
+                                <script type="text/javascript" src="{% static 'js/modernizr.custom.min.js' %}"></script>
+                                <link href="{% static 'css/popuo-box.css' %}" rel="stylesheet" type="text/css"
+                                      media="all">
+                                <script src="{% static 'js/jquery.magnific-popup.js' %}"
+                                        type="text/javascript"></script>
+                                <!--//pop-up-box -->
 
-                            <script>
-                                $(document).ready(function () {
-                                    $('.popup-with-zoom-anim').magnificPopup({
-                                        type: 'inline',
-                                        fixedContentPos: false,
-                                        fixedBgPos: true,
-                                        overflowY: 'hidden',
-                                        closeBtnInside: true,
-                                        preloader: false,
-                                        midClick: true,
-                                        removalDelay: 300,
-                                        mainClass: 'my-mfp-zoom-in'
+                                <div class="video-container">
+                                    <video controls>
+                                        <source src="{{ main_video.video_file.url }}" type="video/mp4">
+                                        Ваш браузер не поддерживает видео тег.
+                                    </video>
+                                </div>
+
+                                <script>
+                                    $(document).ready(function () {
+                                        $('.popup-with-zoom-anim').magnificPopup({
+                                            type: 'inline',
+                                            fixedContentPos: false,
+                                            fixedBgPos: true,
+                                            overflowY: 'hidden',
+                                            closeBtnInside: true,
+                                            preloader: false,
+                                            midClick: true,
+                                            removalDelay: 300,
+                                            mainClass: 'my-mfp-zoom-in'
+                                        });
+
                                     });
-
-                                });
-                            </script>
-                        </div>
+                                </script>
+                            </div>
+                        {% endfor %}
                         <div class="video-grids-left2">
                             <div class="course_demo1">
                                 <div class="nbs-flexisel-container">
                                     <div class="nbs-flexisel-inner">
                                         <ul id="flexiselDemo1" class="nbs-flexisel-ul"
                                             style="left: -243px; display: block;">
-
-
                                             <li class="nbs-flexisel-item" style="width: 243px;">
                                                 <div class="item">
                                                     <img src="{% static 'images/10.jpg' %}" alt=" "
@@ -451,6 +454,8 @@
                             <script type="text/javascript" src="{% static 'js/jquery.flexisel.js' %}"></script>
                         </div>
                     </div>
+                </div>
+                </div>
                     <div class="col-md-4 video-grids-right">
                         <div class="sap_tabs">
                             <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">

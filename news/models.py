@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from ckeditor.fields import RichTextField
 
 
 class ModelNews(models.Model):
@@ -56,3 +57,19 @@ class PreviewNews(models.Model):
     class Meta:
         verbose_name = 'Превью новостей'
         verbose_name_plural = 'Превью новостей'
+
+
+class Video(models.Model):
+    title = models.CharField(max_length=100, verbose_name='Название видео')
+    video_file = models.FileField(upload_to='videos/', verbose_name='Видео файл')
+    description = RichTextField(verbose_name='Краткое описание')
+    timestamp = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время')
+    author = models.CharField(max_length=100, verbose_name='Автор')
+    category = models.CharField(max_length=100, verbose_name='Название рубрики')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Видео Новости'
+        verbose_name_plural = 'Видео Новости'

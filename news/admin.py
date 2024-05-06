@@ -61,3 +61,14 @@ class PreviewNewsAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.TextField: {'widget': CKEditorWidget}
     }
+
+
+@admin.register(Video)
+class VideoAdmin(admin.ModelAdmin):
+    list_display = ('title', 'author', 'timestamp')
+    search_fields = ('title', 'author', 'category')
+    fieldsets = (
+        (None, {
+            'fields': ('title', 'video_file', 'description', 'author', 'category')
+        }),
+    )

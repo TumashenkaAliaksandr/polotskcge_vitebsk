@@ -2370,6 +2370,41 @@ section#clocks-two {
   }
 }
 
+/*video*/
+/* Общий контейнер для видео */
+.video-container {
+    width: 100%;
+    height: 517px; /* Высота вашего видео */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Стили для видео */
+.video-container video {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Перекрывающее изображение приостановки видео */
+.video-container::before {
+    content: "";
+    background-image: url('../../../../../media/videos');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*end video*/
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
