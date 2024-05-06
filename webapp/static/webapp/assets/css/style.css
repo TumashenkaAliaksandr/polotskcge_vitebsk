@@ -808,7 +808,7 @@ section {
 
 .section-bg-qwest {
   padding: 35px 0 35px;
-  background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/gigi_centr_questions.jpg') center/cover;
+  background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/gigi_centr_qwes.png') center/cover;
   background-attachment: fixed;
 }
 .section-bg-structure {
@@ -820,6 +820,11 @@ section {
 section#contact {
     padding: 35px 0 35px;
     background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/epi_gigi_polock_contact.png') center/cover;
+    background-attachment: fixed;
+}
+section#footer {
+    padding: 35px 0 35px;
+    background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/virusus_polock.jpg') center/cover;
     background-attachment: fixed;
 }
 
@@ -2369,15 +2374,24 @@ section#clocks-two {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #eeeeee;
+  background: #e4f2f6;
   padding: 0 0 30px 0;
   color: #555555;
   font-size: 14px;
-}
+ }
+
+/*.footer-bg {*/
+/*    padding: 35px 0 35px;*/
+/*    background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/virusus_polock.jpg') center/cover;*/
+/*    background-attachment: fixed;*/
+/*}*/
 
 #footer .footer-top {
-  background: #f6f6f6;
+  /*  background: #f6f6f6;*/
   padding: 60px 0 30px 0;
+  /*padding: 35px 0 35px;*/
+  background: linear-gradient(rgba(255, 255, 255, 0.83), rgb(236, 248, 249, 0.88)), url('../img/gigi_centr_footer.jpg') center/cover;
+  background-attachment: fixed;
 }
 
 #footer .footer-top .footer-info {
@@ -2508,6 +2522,8 @@ section#clocks-two {
   text-align: center;
   font-size: 13px;
 }
+
+/*End Footer*/
 
 /*slider carusel*/
 

@@ -304,6 +304,7 @@ def maintenance_schedule(request):
 
 def services(request):
     """Services - services template"""
+    main_services = Services.objects.all()
     features = Featured.objects.all()
     questions = Question.objects.all()
     ansvers = Answer.objects.all()
@@ -314,6 +315,7 @@ def services(request):
         'questions': questions,
         'ansvers': ansvers,
         'title_desc_queans': title_desc_queans,
+        'main_services': main_services,
     }
 
     return render(request, 'webapp/services/services.html', context=context)
