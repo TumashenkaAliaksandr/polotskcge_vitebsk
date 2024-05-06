@@ -13,6 +13,8 @@ def news(request):
     all_news = ModelNews.objects.all().order_by('-pub_date')
     paginator = Paginator(all_news, 10)  # По 10 новостей на страницу
     model_video = Video.objects.all()
+    # Получаем данные о погоде
+    weather = get_weather()
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -23,6 +25,7 @@ def news(request):
         'preview': preview,
         'page_obj': page_obj,
         'model_video': model_video,
+        'weather': weather,
     }
     return render(request, 'breaking.html', context=context)
 
