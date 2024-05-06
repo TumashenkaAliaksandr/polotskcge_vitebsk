@@ -1,6 +1,7 @@
 from news.models import *
 from django.shortcuts import render
 from .utils import get_weather
+from django.core.paginator import Paginator
 
 
 
@@ -9,8 +10,18 @@ def news(request):
     model_blog_main = ModelNews.objects.all().order_by('-pub_date')
     interactiv = Interactive.objects.all()
     preview = PreviewNews.objects.all()
+    all_news = ModelNews.objects.all().order_by('-pub_date')
+    paginator = Paginator(all_news, 10)  # По 10 новостей на страницу
 
-    context = locals()
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        'model_blog_main': model_blog_main,
+        'interactiv': interactiv,
+        'preview': preview,
+        'page_obj': page_obj,
+    }
     return render(request, 'breaking.html', context=context)
 
 
