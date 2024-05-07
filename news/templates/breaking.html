@@ -3,22 +3,22 @@
 
 
 {% block content %}
-              <!-- ======= Breadcrumbs Section ======= -->
-      <!-- pagebanner -->
-      <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_centr.png' %}{% endif %}')">
-      </section>
-      <!-- End Pagebanner -->
-      <section class="breadcrumbs_contacts">
-          <div class="container">
+    <!-- ======= Breadcrumbs Section ======= -->
+    <!-- pagebanner -->
+    <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_centr.png' %}{% endif %}')">
+    </section>
+    <!-- End Pagebanner -->
+    <section class="breadcrumbs_contacts">
+        <div class="container">
 
-              <div class="d-flex justify-content-between align-items-center">
-                  <ol>
-                      <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                      <li>Наши Новости</li>
-                  </ol>
-              </div>
-          </div>
-      </section>
+            <div class="d-flex justify-content-between align-items-center">
+                <ol>
+                    <li><a href="{% url 'webapp:home' %}">Главная</a></li>
+                    <li>Наши Новости</li>
+                </ol>
+            </div>
+        </div>
+    </section>
     <!-- breaking-news -->
     <div id="single" class="single main-bg">
         <div class="breaking-news">
@@ -88,7 +88,9 @@
                                             <ul>
                                                 <li><a href="{% url 'news:single' pk=main_litle_news.id %}"><span
                                                         class="fa fa-user-doctor"
-                                                        aria-hidden="true"></span> {{ main_litle_news.author }} <label>|</label> {{ main_litle_news.pub_date|date:"d.m.Y" }}</a></li>
+                                                        aria-hidden="true"></span> {{ main_litle_news.author }}
+                                                    <label>|</label> {{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
+                                                </li>
                                             </ul>
                                         </div>
                                         <div class="clearfix"></div>
@@ -216,23 +218,122 @@
                         <div class="clearfix"></div>
                     </div>
                 </div>
-                <div class="video-grids"><div class="news">
-                    <div class="col-md-8 video-grids-left">
-                     <h3>Наше видео о главном</h3>
-                        {% for main_video in model_video %}
-                            <div class="video-grids-left1">
-                                <img src="{{ main_video.video_file.url }}" type="video/mp4" alt=" " class="img-responsive">
+                <div class="video-grids">
+                    <div class="news">
+                        <div class="col-md-8 video-grids-left">
+                            <h3>Видео о главном</h3>
+                            {% for main_video in model_video|slice:":1" %}
+                                <div class="video-grids-left1">
+                                    <img src="{{ main_video.video_file.url }}" type="video/mp4" alt=" "
+                                         class="img-responsive">
                                     <span> </span>
-                                </a>
-                                <div class="video-grid-pos">
-                                    <h3><span>{{ main_video.title }}</span></h3>
-                                    <ul>
-                                        <li>{{ main_video.timestamp|date:"d.m.Y" }} <label>|</label></li>
-                                        <li><i>{{ main_video.author }}</i> <label>|</label></li>
-                                        <li><span>{{ main_video.category }}</span></li>
-                                    </ul>
-                                </div>
+                                    </a>
+                                    <div class="video-grid-pos">
+                                        <h3><span>{{ main_video.title }}</span></h3>
+                                        <ul>
+                                            <li>{{ main_video.timestamp|date:"d.m.Y" }} <label>|</label></li>
+                                            <li><i>{{ main_video.author }}</i> <label>|</label></li>
+                                            <li><span>{{ main_video.category }}</span></li>
+                                        </ul>
+                                    </div>
 
+                                    <!-- pop-up-box -->
+                                    <script type="text/javascript"
+                                            src="{% static 'js/modernizr.custom.min.js' %}"></script>
+                                    <link href="{% static 'css/popuo-box.css' %}" rel="stylesheet" type="text/css"
+                                          media="all">
+                                    <script src="{% static 'js/jquery.magnific-popup.js' %}"
+                                            type="text/javascript"></script>
+                                    <!--//pop-up-box -->
+
+                                    <div class="video-container">
+                                        <video controls>
+                                            <source src="{{ main_video.video_file.url }}" type="video/mp4">
+                                            Ваш браузер не поддерживает видео тег.
+                                        </video>
+                                    </div>
+
+                                    <script>
+                                        $(document).ready(function () {
+                                            $('.popup-with-zoom-anim').magnificPopup({
+                                                type: 'inline',
+                                                fixedContentPos: false,
+                                                fixedBgPos: true,
+                                                overflowY: 'hidden',
+                                                closeBtnInside: true,
+                                                preloader: false,
+                                                midClick: true,
+                                                removalDelay: 300,
+                                                mainClass: 'my-mfp-zoom-in'
+                                            });
+
+                                        });
+                                    </script>
+                                </div>
+                            {% endfor %}
+
+                        <!-- //код для блока видео в слайдере -->
+                            <!-- //Для воспроизведения видео -->
+                            <script>
+                                $(document).ready(function () {
+                                    {% for main_video in model_video %}
+                                        var video{{ forloop.counter }} = document.getElementById('video{{ forloop.counter }}');
+                                        var videoContainer{{ forloop.counter }} = document.getElementById('video-container{{ forloop.counter }}');
+
+                                        // Дождитесь, пока видео будет загружено
+                                        video{{ forloop.counter }}.addEventListener('loadedmetadata', function () {
+                                            // Получите первый кадр видео как изображение
+                                            var canvas = document.createElement('canvas');
+                                            canvas.width = video{{ forloop.counter }}.videoWidth;
+                                            canvas.height = video{{ forloop.counter }}.videoHeight;
+                                            canvas.getContext('2d').drawImage(video{{ forloop.counter }}, 0, 0, canvas.width, canvas.height);
+                                            var imageSrc = canvas.toDataURL(); // Получите base64 строку с изображением
+
+                                            // Установите изображение в качестве фона контейнера видео
+                                            videoContainer{{ forloop.counter }}.style.backgroundImage = 'url(' + imageSrc + ')';
+                                        });
+                                    {% endfor %}
+                                });
+                            </script>
+
+                            <!-- //Конец скрипта воспр видео -->
+                            <div class="video-grids-left2">
+                                <div class="course_demo1">
+                                    <div class="nbs-flexisel-container">
+                                        <div class="nbs-flexisel-inner">
+                                            <ul id="flexiselDemo1" class="nbs-flexisel-ul"
+                                                style="left: -243px; display: block;">
+                                                {% for main_video in model_video %}
+                                                    <li class="nbs-flexisel-item" style="width: 243px;">
+                                                        <div class="item">
+                                                            <!-- Добавлен класс popup-with-zoom-anim -->
+                                                            <a href="{{ main_video.video_file.url }}" target="_blank"
+                                                               class="popup-with-zoom-anim">
+                                                                <div id="video-container{{ forloop.counter }}">
+                                                                    <video id="video{{ forloop.counter }}" controls
+                                                                           style="width: 100%;">
+                                                                        <source src="{{ main_video.video_file.url }}"
+                                                                                type="video/mp4">
+                                                                        Ваш браузер не поддерживает видео тег.
+                                                                    </video>
+                                                                </div>
+                                                            </a>
+
+                                                            <div class="floods-text">
+                                                                <h3>{{ main_video.title }}
+                                                                    <span>{{ main_video.category }} <label>|</label> <i>{{ main_video.author }}</i></span>
+                                                                </h3>
+                                                                <p>{{ main_video.timestamp|date:"d.m.Y" }}</p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                            <div class="nbs-flexisel-nav-left" style="top: 91px;"></div>
+                                            <div class="nbs-flexisel-nav-right" style="top: 91px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <!-- pop-up-box -->
                                 <script type="text/javascript" src="{% static 'js/modernizr.custom.min.js' %}"></script>
                                 <link href="{% static 'css/popuo-box.css' %}" rel="stylesheet" type="text/css"
@@ -240,387 +341,219 @@
                                 <script src="{% static 'js/jquery.magnific-popup.js' %}"
                                         type="text/javascript"></script>
                                 <!--//pop-up-box -->
-
-                                <div class="video-container">
-                                    <video controls>
-                                        <source src="{{ main_video.video_file.url }}" type="video/mp4">
-                                        Ваш браузер не поддерживает видео тег.
-                                    </video>
-                                </div>
-
                                 <script>
                                     $(document).ready(function () {
                                         $('.popup-with-zoom-anim').magnificPopup({
                                             type: 'inline',
                                             fixedContentPos: false,
                                             fixedBgPos: true,
-                                            overflowY: 'hidden',
+                                            overflowY: 'auto',
                                             closeBtnInside: true,
                                             preloader: false,
                                             midClick: true,
                                             removalDelay: 300,
                                             mainClass: 'my-mfp-zoom-in'
                                         });
-
                                     });
                                 </script>
-                            </div>
-                        {% endfor %}
-                        <div class="video-grids-left2">
-                            <div class="course_demo1">
-                                <div class="nbs-flexisel-container">
-                                    <div class="nbs-flexisel-inner">
-                                        <ul id="flexiselDemo1" class="nbs-flexisel-ul"
-                                            style="left: -243px; display: block;">
-                                            <li class="nbs-flexisel-item" style="width: 243px;">
-                                                <div class="item">
-                                                    <img src="{% static 'images/10.jpg' %}" alt=" "
-                                                         class="img-responsive">
-                                                    <a class="play-icon popup-with-zoom-anim" href="#small-dialog">
-                                                        <i> </i>
-                                                    </a>
-                                                    <div id="small-dialog" class="mfp-hide">
-                                                        <iframe src="https://player.vimeo.com/video/145787219"
-                                                                width="500" height="281" frameborder="0"
-                                                                webkitallowfullscreen="" mozallowfullscreen=""
-                                                                allowfullscreen=""></iframe>
-                                                    </div>
-                                                    <div class="floods-text">
-                                                        <h3>The fed and inequality <span>Politics <label>|</label> <i>Adom Smith</i></span>
-                                                        </h3>
-                                                        <p>5:56</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="nbs-flexisel-item" style="width: 243px;">
-                                                <div class="item">
-                                                    <img src="{% static 'images/11.jpg' %}" alt=" "
-                                                         class="img-responsive">
-                                                    <a class="play-icon popup-with-zoom-anim" href="#small-dialog">
-                                                        <i> </i>
-                                                    </a>
-                                                    <div id="small-dialog" class="mfp-hide">
-                                                        <iframe src="https://player.vimeo.com/video/145787219"
-                                                                width="500" height="281" frameborder="0"
-                                                                webkitallowfullscreen="" mozallowfullscreen=""
-                                                                allowfullscreen=""></iframe>
-                                                    </div>
-                                                    <div class="floods-text">
-                                                        <h3>The fastest insect in the world
-                                                            <span>Politics <label>|</label> <i>Adom Smith</i></span>
-                                                        </h3>
-                                                        <p>5:56</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="nbs-flexisel-item" style="width: 243px;">
-                                                <div class="item">
-                                                    <img src="{% static 'images/12.jpg' %}" alt=" "
-                                                         class="img-responsive">
-                                                    <a class="play-icon popup-with-zoom-anim" href="#small-dialog">
-                                                        <i> </i>
-                                                    </a>
-                                                    <div id="small-dialog" class="mfp-hide">
-                                                        <iframe src="https://player.vimeo.com/video/145787219"
-                                                                width="500" height="281" frameborder="0"
-                                                                webkitallowfullscreen="" mozallowfullscreen=""
-                                                                allowfullscreen=""></iframe>
-                                                    </div>
-                                                    <div class="floods-text">
-                                                        <h3>Billionaires versus
-                                                            Millionaires<span>Politics <label>|</label> <i>Adom Smith</i></span>
-                                                        </h3>
-                                                        <p>5:56</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="nbs-flexisel-item" style="width: 243px;">
-                                                <div class="item">
-                                                    <img src="{% static 'images/10.jpg' %}" alt=" "
-                                                         class="img-responsive">
-                                                    <a class="play-icon popup-with-zoom-anim" href="#small-dialog">
-                                                        <i> </i>
-                                                    </a>
-                                                    <div id="small-dialog" class="mfp-hide">
-                                                        <iframe src="https://player.vimeo.com/video/145787219"
-                                                                width="500" height="281" frameborder="0"
-                                                                webkitallowfullscreen="" mozallowfullscreen=""
-                                                                allowfullscreen=""></iframe>
-                                                    </div>
-                                                    <div class="floods-text">
-                                                        <h3>The fed and inequality <span>Politics <label>|</label> <i>Adom Smith</i></span>
-                                                        </h3>
-                                                        <p>5:56</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="nbs-flexisel-item" style="width: 243px;">
-                                                <div class="item">
-                                                    <img src="{% static 'images/11.jpg' %}" alt=" "
-                                                         class="img-responsive">
-                                                    <a class="play-icon popup-with-zoom-anim" href="#small-dialog">
-                                                        <i> </i>
-                                                    </a>
-                                                    <div id="small-dialog" class="mfp-hide">
-                                                        <iframe src="https://player.vimeo.com/video/145787219"
-                                                                width="500" height="281" frameborder="0"
-                                                                webkitallowfullscreen="" mozallowfullscreen=""
-                                                                allowfullscreen=""></iframe>
-                                                    </div>
-                                                    <div class="floods-text">
-                                                        <h3>The fastest insect in the world
-                                                            <span>Politics <label>|</label> <i>Adom Smith</i></span>
-                                                        </h3>
-                                                        <p>5:56</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="nbs-flexisel-item" style="width: 243px;">
-                                                <div class="item">
-                                                    <img src="{% static 'images/12.jpg' %}" alt=" "
-                                                         class="img-responsive">
-                                                    <a class="play-icon popup-with-zoom-anim" href="#small-dialog">
-                                                        <i> </i>
-                                                    </a>
-                                                    <div id="small-dialog" class="mfp-hide">
-                                                        <iframe src="https://player.vimeo.com/video/145787219"
-                                                                width="500" height="281" frameborder="0"
-                                                                webkitallowfullscreen="" mozallowfullscreen=""
-                                                                allowfullscreen=""></iframe>
-                                                    </div>
-                                                    <div class="floods-text">
-                                                        <h3>Billionaires versus
-                                                            Millionaires<span>Politics <label>|</label> <i>Adom Smith</i></span>
-                                                        </h3>
-                                                        <p>5:56</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <div class="nbs-flexisel-nav-left" style="top: 91px;"></div>
-                                        <div class="nbs-flexisel-nav-right" style="top: 91px;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- pop-up-box -->
-                            <script type="text/javascript" src="{% static 'js/modernizr.custom.min.js' %}"></script>
-                            <link href="{% static 'css/popuo-box.css' %}" rel="stylesheet" type="text/css" media="all">
-                            <script src="{% static 'js/jquery.magnific-popup.js' %}" type="text/javascript"></script>
-                            <!--//pop-up-box -->
-                            <script>
-                                $(document).ready(function () {
-                                    $('.popup-with-zoom-anim').magnificPopup({
-                                        type: 'inline',
-                                        fixedContentPos: false,
-                                        fixedBgPos: true,
-                                        overflowY: 'auto',
-                                        closeBtnInside: true,
-                                        preloader: false,
-                                        midClick: true,
-                                        removalDelay: 300,
-                                        mainClass: 'my-mfp-zoom-in'
-                                    });
-
-                                });
-                            </script>
-                            <!-- requried-jsfiles-for owl -->
-                            <script type="text/javascript">
-                                $(window).load(function () {
-                                    $("#flexiselDemo1").flexisel({
-                                        visibleItems: 3,
-                                        animationSpeed: 1000,
-                                        autoPlay: true,
-                                        autoPlaySpeed: 3000,
-                                        pauseOnHover: true,
-                                        enableResponsiveBreakpoints: true,
-                                        responsiveBreakpoints: {
-                                            portrait: {
-                                                changePoint: 480,
-                                                visibleItems: 1
-                                            },
-                                            landscape: {
-                                                changePoint: 640,
-                                                visibleItems: 2
-                                            },
-                                            tablet: {
-                                                changePoint: 768,
-                                                visibleItems: 3
-                                            }
-                                        }
-                                    });
-
-                                });
-                            </script>
-                            <script type="text/javascript" src="{% static 'js/jquery.flexisel.js' %}"></script>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                    <div class="col-md-4 video-grids-right">
-                        <div class="sap_tabs">
-                            <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
-                                <ul class="nav resp-tabs-list">
-                                    <li class="resp-tab-item grid1 resp-tab-active" aria-controls="tab_item-0"
-                                        role="tab"><span>Популярные Новости</span></li>
-                                    <li class="resp-tab-item grid2" aria-controls="tab_item-1" role="tab"><span>Новости О природе</span>
-                                    </li>
-                                    <div class="clear"></div>
-                                </ul>
-                                <div class="resp-tabs-container">
-                                    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
-                                        <div class="facts">
-                                            <div class="tab_list">
-                                                <img src="{% static 'images/10.jpg' %}" alt=" " class="img-responsive">
-                                            </div>
-                                            <div class="tab_list1">
-                                                <ul>
-                                                    <li><a href="#">Politics</a> <label>|</label></li>
-                                                    <li>31.12.2015</li>
-                                                </ul>
-                                                <p><a href="#">Nam libero tempore, cum soluta nobis.</a></p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="facts">
-                                            <div class="tab_list">
-                                                <img src="{% static 'images/11.jpg' %}" alt=" " class="img-responsive">
-                                            </div>
-                                            <div class="tab_list1">
-                                                <ul>
-                                                    <li><a href="#" class="green">international</a> <label>|</label>
-                                                    </li>
-                                                    <li>31.12.2015</li>
-                                                </ul>
-                                                <p><a href="#">Nam libero tempore, cum soluta nobis.</a></p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="facts">
-                                            <div class="tab_list">
-                                                <img src="{% static 'images/12.jpg' %}" alt=" " class="img-responsive">
-                                            </div>
-                                            <div class="tab_list1">
-                                                <ul>
-                                                    <li><a href="#" class="orange">general</a> <label>|</label></li>
-                                                    <li>31.12.2015</li>
-                                                </ul>
-                                                <p><a href="#">Nam libero tempore, cum soluta nobis.</a></p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="facts">
-                                            <div class="tab_list">
-                                                <img src="{% static 'images/10.jpg' %}" alt=" " class="img-responsive">
-                                            </div>
-                                            <div class="tab_list1">
-                                                <ul>
-                                                    <li><a href="#" class="orange1">business</a> <label>|</label></li>
-                                                    <li>31.12.2015</li>
-                                                </ul>
-                                                <p><a href="#">Nam libero tempore, cum soluta nobis.</a></p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="facts">
-                                            <div class="tab_list">
-                                                <img src="{% static 'images/12.jpg' %}" alt=" " class="img-responsive">
-                                            </div>
-                                            <div class="tab_list1">
-                                                <ul>
-                                                    <li><a href="#" class="orange2">world</a> <label>|</label></li>
-                                                    <li>31.12.2015</li>
-                                                </ul>
-                                                <p><a href="#">Nam libero tempore, cum soluta nobis.</a></p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
-                                        <div class="facts">
-                                            <div class="tab_list">
-                                                <img src="{% static 'images/12.jpg' %}" alt=" " class="img-responsive">
-                                            </div>
-                                            <div class="tab_list1">
-                                                <ul>
-                                                    <li><a href="#">Politics</a> <label>|</label></li>
-                                                    <li>31.12.2015</li>
-                                                </ul>
-                                                <p><a href="#">Nam libero tempore, cum soluta nobis.</a></p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="facts">
-                                            <div class="tab_list">
-                                                <img src="{% static 'images/11.jpg' %}" alt=" " class="img-responsive">
-                                            </div>
-                                            <div class="tab_list1">
-                                                <ul>
-                                                    <li><a href="#" class="orange1">business</a> <label>|</label></li>
-                                                    <li>31.12.2015</li>
-                                                </ul>
-                                                <p><a href="#">Nam libero tempore, cum soluta nobis.</a></p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="facts">
-                                            <div class="tab_list">
-                                                <img src="{% static 'images/10.jpg' %}" alt=" " class="img-responsive">
-                                            </div>
-                                            <div class="tab_list1">
-                                                <ul>
-                                                    <li><a href="#" class="orange2">world</a> <label>|</label></li>
-                                                    <li>31.12.2015</li>
-                                                </ul>
-                                                <p><a href="#">Nam libero tempore, cum soluta nobis.</a></p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="facts">
-                                            <div class="tab_list">
-                                                <img src="{% static 'images/12.jpg' %}" alt=" " class="img-responsive">
-                                            </div>
-                                            <div class="tab_list1">
-                                                <ul>
-                                                    <li><a href="#" class="green">international</a> <label>|</label>
-                                                    </li>
-                                                    <li>31.12.2015</li>
-                                                </ul>
-                                                <p><a href="#">Nam libero tempore, cum soluta nobis.</a></p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                        <div class="facts">
-                                            <div class="tab_list">
-                                                <img src="{% static 'images/11.jpg' %}" alt=" " class="img-responsive">
-                                            </div>
-                                            <div class="tab_list1">
-                                                <ul>
-                                                    <li><a href="#" class="orange">general</a> <label>|</label></li>
-                                                    <li>31.12.2015</li>
-                                                </ul>
-                                                <p><a href="#">Nam libero tempore, cum soluta nobis.</a></p>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <script src="{% static 'js/easyResponsiveTabs.js' %}" type="text/javascript"></script>
+                                <!-- requried-jsfiles-for owl -->
                                 <script type="text/javascript">
                                     $(document).ready(function () {
-                                        $('#horizontalTab').easyResponsiveTabs({
-                                            type: 'default', //Types: default, vertical, accordion
-                                            width: 'auto', //auto or any width like 600px
-                                            fit: true   // 100% fit in a container
+                                        $("#flexiselDemo1").flexisel({
+                                            visibleItems: 3,
+                                            animationSpeed: 1000,
+                                            autoPlay: true,
+                                            autoPlaySpeed: 3000,
+                                            pauseOnHover: true,
+                                            enableResponsiveBreakpoints: true,
+                                            responsiveBreakpoints: {
+                                                portrait: {
+                                                    changePoint: 480,
+                                                    visibleItems: 1
+                                                },
+                                                landscape: {
+                                                    changePoint: 640,
+                                                    visibleItems: 2
+                                                },
+                                                tablet: {
+                                                    changePoint: 768,
+                                                    visibleItems: 3
+                                                }
+                                            }
                                         });
                                     });
                                 </script>
+                                <script type="text/javascript" src="{% static 'js/jquery.flexisel.js' %}"></script>
                             </div>
+                            <!-- //Конец блока видео в сл -->
                         </div>
                     </div>
-                    <div class="clearfix"></div>
                 </div>
+                <div class="col-md-4 video-grids-right">
+                    <div class="sap_tabs">
+                        <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+                            <ul class="nav resp-tabs-list">
+                                <li class="resp-tab-item grid1 resp-tab-active" aria-controls="tab_item-0"
+                                    role="tab"><span>Популярные Новости</span></li>
+                                <li class="resp-tab-item grid2" aria-controls="tab_item-1" role="tab"><span>Новости О природе</span>
+                                </li>
+                                <div class="clear"></div>
+                            </ul>
+                            <div class="resp-tabs-container">
+                                <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
+                                    <div class="facts">
+                                        <div class="tab_list">
+                                            <img src="{% static 'images/10.jpg' %}" alt=" " class="img-responsive">
+                                        </div>
+                                        <div class="tab_list1">
+                                            <ul>
+                                                <li><a href="#">Politics</a> <label>|</label></li>
+                                                <li>31.12.2015</li>
+                                            </ul>
+                                            <p><a href="#">Nam libero tempore, cum soluta nobis.</a></p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="facts">
+                                        <div class="tab_list">
+                                            <img src="{% static 'images/11.jpg' %}" alt=" " class="img-responsive">
+                                        </div>
+                                        <div class="tab_list1">
+                                            <ul>
+                                                <li><a href="#" class="green">international</a> <label>|</label>
+                                                </li>
+                                                <li>31.12.2015</li>
+                                            </ul>
+                                            <p><a href="#">Nam libero tempore, cum soluta nobis.</a></p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="facts">
+                                        <div class="tab_list">
+                                            <img src="{% static 'images/12.jpg' %}" alt=" " class="img-responsive">
+                                        </div>
+                                        <div class="tab_list1">
+                                            <ul>
+                                                <li><a href="#" class="orange">general</a> <label>|</label></li>
+                                                <li>31.12.2015</li>
+                                            </ul>
+                                            <p><a href="#">Nam libero tempore, cum soluta nobis.</a></p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="facts">
+                                        <div class="tab_list">
+                                            <img src="{% static 'images/10.jpg' %}" alt=" " class="img-responsive">
+                                        </div>
+                                        <div class="tab_list1">
+                                            <ul>
+                                                <li><a href="#" class="orange1">business</a> <label>|</label></li>
+                                                <li>31.12.2015</li>
+                                            </ul>
+                                            <p><a href="#">Nam libero tempore, cum soluta nobis.</a></p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="facts">
+                                        <div class="tab_list">
+                                            <img src="{% static 'images/12.jpg' %}" alt=" " class="img-responsive">
+                                        </div>
+                                        <div class="tab_list1">
+                                            <ul>
+                                                <li><a href="#" class="orange2">world</a> <label>|</label></li>
+                                                <li>31.12.2015</li>
+                                            </ul>
+                                            <p><a href="#">Nam libero tempore, cum soluta nobis.</a></p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                                <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
+                                    <div class="facts">
+                                        <div class="tab_list">
+                                            <img src="{% static 'images/12.jpg' %}" alt=" " class="img-responsive">
+                                        </div>
+                                        <div class="tab_list1">
+                                            <ul>
+                                                <li><a href="#">Politics</a> <label>|</label></li>
+                                                <li>31.12.2015</li>
+                                            </ul>
+                                            <p><a href="#">Nam libero tempore, cum soluta nobis.</a></p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="facts">
+                                        <div class="tab_list">
+                                            <img src="{% static 'images/11.jpg' %}" alt=" " class="img-responsive">
+                                        </div>
+                                        <div class="tab_list1">
+                                            <ul>
+                                                <li><a href="#" class="orange1">business</a> <label>|</label></li>
+                                                <li>31.12.2015</li>
+                                            </ul>
+                                            <p><a href="#">Nam libero tempore, cum soluta nobis.</a></p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="facts">
+                                        <div class="tab_list">
+                                            <img src="{% static 'images/10.jpg' %}" alt=" " class="img-responsive">
+                                        </div>
+                                        <div class="tab_list1">
+                                            <ul>
+                                                <li><a href="#" class="orange2">world</a> <label>|</label></li>
+                                                <li>31.12.2015</li>
+                                            </ul>
+                                            <p><a href="#">Nam libero tempore, cum soluta nobis.</a></p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="facts">
+                                        <div class="tab_list">
+                                            <img src="{% static 'images/12.jpg' %}" alt=" " class="img-responsive">
+                                        </div>
+                                        <div class="tab_list1">
+                                            <ul>
+                                                <li><a href="#" class="green">international</a> <label>|</label>
+                                                </li>
+                                                <li>31.12.2015</li>
+                                            </ul>
+                                            <p><a href="#">Nam libero tempore, cum soluta nobis.</a></p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="facts">
+                                        <div class="tab_list">
+                                            <img src="{% static 'images/11.jpg' %}" alt=" " class="img-responsive">
+                                        </div>
+                                        <div class="tab_list1">
+                                            <ul>
+                                                <li><a href="#" class="orange">general</a> <label>|</label></li>
+                                                <li>31.12.2015</li>
+                                            </ul>
+                                            <p><a href="#">Nam libero tempore, cum soluta nobis.</a></p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <script src="{% static 'js/easyResponsiveTabs.js' %}" type="text/javascript"></script>
+                            <script type="text/javascript">
+                                $(document).ready(function () {
+                                    $('#horizontalTab').easyResponsiveTabs({
+                                        type: 'default', //Types: default, vertical, accordion
+                                        width: 'auto', //auto or any width like 600px
+                                        fit: true   // 100% fit in a container
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
             </div>
         </div>
+    </div>
     </div>
     <!-- //breaking-news -->
     <!-- news-and-events -->
@@ -639,15 +572,9 @@
                                                 class="img-responsive"/></a>
                                     </div>
                                     <div class="news-grid-right1">
-                                        <h4>
-                                            <a href="{% url 'news:single' pk=main_litle_news.id %}">{{ main_litle_news.title|wordwrap:30|truncatechars_html:58 }}</a>
-                                        </h4>
-                                        <h5 class="fa fa-user-doctor"><label>|</label><a
-                                                href="{% url 'news:single' pk=main_litle_news.id %}"> {{ main_litle_news.author }}</a>
-                                            <label>|</label> <i>{{ main_litle_news.pub_date|date:"d.m.Y" }}</i></h5>
-                                        <a href="{% url 'news:single' pk=main_litle_news.id %}">
-                                            <p>{{ main_litle_news.description_small|wordwrap:40|truncatechars_html:132|safe }}</p>
-                                        </a>
+                                        <h4><a href="{% url 'news:single' pk=main_litle_news.id %}">{{ main_litle_news.title|wordwrap:30|truncatechars_html:58 }}</a></h4>
+                                      <h5 class="fa fa-user-doctor"><label>|</label><a href="{% url 'news:single' pk=main_litle_news.id %}"> {{ main_litle_news.author }}</a> <label>|</label> <i>{{ main_litle_news.pub_date|date:"d.m.Y" }}</i></h5>
+                                      <a href="{% url 'news:single' pk=main_litle_news.id %}"><p>{{ main_litle_news.description_small|wordwrap:40|truncatechars_html:132|safe }}</p></a>
                                     </div>
                                     <div class="clearfix"></div>
                                 </li>

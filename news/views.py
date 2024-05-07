@@ -12,7 +12,7 @@ def news(request):
     preview = PreviewNews.objects.all()
     all_news = ModelNews.objects.all().order_by('-pub_date')
     paginator = Paginator(all_news, 10)  # По 10 новостей на страницу
-    model_video = Video.objects.all()
+    model_video = Video.objects.all().order_by('-timestamp')
     # Получаем данные о погоде
     weather = get_weather()
 
