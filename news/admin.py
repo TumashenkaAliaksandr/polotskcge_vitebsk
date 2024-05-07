@@ -5,6 +5,7 @@ from django import forms
 
 
 class ModelNewsAdminForm(forms.ModelForm):
+    """Форма администратора для модели ModelNews."""
     class Meta:
         model = ModelNews
         fields = '__all__'
@@ -18,9 +19,11 @@ class ModelNewsAdminForm(forms.ModelForm):
 
 @admin.register(ModelNews)
 class BlogNewsAdmin(admin.ModelAdmin):
+    """Администратор модели ModelNews."""
     form = ModelNewsAdminForm
     list_display = ('title', 'description_small', 'description', 'description_company', 'location', 'photo', 'logo_photo',
-                    'pub_date', 'author', 'comment_author')
+                    'pub_date', 'author', 'comment_author', 'is_popular', 'is_nature_news', 'is_health_news', 'is_sport_news',
+                    'is_economic_news', 'is_main_news')
 
     def author(self, obj):
         return obj.author.username if obj.author else '-'
@@ -35,6 +38,7 @@ class BlogNewsAdmin(admin.ModelAdmin):
 
 @admin.register(Interactive)
 class InteractiveAdmin(admin.ModelAdmin):
+    """Администратор интерактивной модели."""
     list_display = ('name', 'description', 'description_two')
     search_fields = ('name',)
     list_filter = ('name',)
@@ -50,6 +54,7 @@ class InteractiveAdmin(admin.ModelAdmin):
 
 @admin.register(PreviewNews)
 class PreviewNewsAdmin(admin.ModelAdmin):
+    """Администратор предварительных новостей."""
     list_display = ('title', 'description', 'photo', 'link')
     search_fields = ('title',)
     list_filter = ('title',)
@@ -65,10 +70,11 @@ class PreviewNewsAdmin(admin.ModelAdmin):
 
 @admin.register(Video)
 class VideoAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'timestamp', 'is_featured')  # Добавлено поле is_featured в список отображаемых полей
+    """Администратор видео."""
+    list_display = ('title', 'author', 'timestamp', 'is_featured')
     search_fields = ('title', 'author', 'category')
     fieldsets = (
         (None, {
-            'fields': ('title', 'video_file', 'description', 'author', 'category', 'is_featured')  # Добавлено поле is_featured в fieldset
+            'fields': ('title', 'video_file', 'description', 'author', 'category', 'is_featured')
         }),
     )

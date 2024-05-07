@@ -19,6 +19,13 @@ class ModelNews(models.Model):
     comment_author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
                                        verbose_name='Комментарий автора', related_name='comments', null=True, blank=True)
     comment = models.TextField(verbose_name='Примечание', default='Примечание')
+    # Добавлены поля для "Популярные" и "Новости о природе"
+    is_popular = models.BooleanField(verbose_name='Популярные', default=False, blank=True)
+    is_nature_news = models.BooleanField(verbose_name='Новости о природе', default=False, blank=True)
+    is_health_news = models.BooleanField(verbose_name='Новости о здоровье', default=False, blank=True)
+    is_sport_news = models.BooleanField(verbose_name='Новости спорта', default=False, blank=True)
+    is_economic_news = models.BooleanField(verbose_name='Новости экономики', default=False, blank=True)
+    is_main_news = models.BooleanField(verbose_name='Важное', default=False, blank=True)
 
     def __str__(self):
         return self.title
