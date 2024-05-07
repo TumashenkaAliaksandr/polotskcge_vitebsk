@@ -65,10 +65,10 @@ class PreviewNewsAdmin(admin.ModelAdmin):
 
 @admin.register(Video)
 class VideoAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'timestamp')
+    list_display = ('title', 'author', 'timestamp', 'is_featured')  # Добавлено поле is_featured в список отображаемых полей
     search_fields = ('title', 'author', 'category')
     fieldsets = (
         (None, {
-            'fields': ('title', 'video_file', 'description', 'author', 'category')
+            'fields': ('title', 'video_file', 'description', 'author', 'category', 'is_featured')  # Добавлено поле is_featured в fieldset
         }),
     )

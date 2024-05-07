@@ -66,6 +66,7 @@ class Video(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время')
     author = models.CharField(max_length=100, verbose_name='Автор')
     category = models.CharField(max_length=100, verbose_name='Название рубрики')
+    is_featured = models.BooleanField(default=False, verbose_name='На главный экран')
 
     def __str__(self):
         return self.title
@@ -73,3 +74,4 @@ class Video(models.Model):
     class Meta:
         verbose_name = 'Видео Новости'
         verbose_name_plural = 'Видео Новости'
+
