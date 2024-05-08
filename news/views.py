@@ -9,8 +9,8 @@ def news(request):
     """these are views for Blog News list"""
     model_blog_main = ModelNews.objects.all().order_by('-pub_date')
     all_news = ModelNews.objects.all()
-    popular_news = all_news.filter(is_popular=True)[:5]
-    nature_news = all_news.filter(is_nature_news=True)[:5]
+    popular_news = all_news.filter(is_popular=True)[:4]
+    nature_news = all_news.filter(is_nature_news=True)[:4]
     interactiv = Interactive.objects.all()
     preview = PreviewNews.objects.all()
     all_news = ModelNews.objects.all().order_by('-pub_date')
