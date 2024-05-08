@@ -204,15 +204,17 @@ body a:hover{
 	background: #ff1800;
 	border: 2px solid #FFFFFF;
 }
-/*------------------ Slider Part ends Here----------*/
-.banner{
-	background:url(../images/banner.jpg) no-repeat 0px 0px;
-	background-size:cover;
-	-webkit-background-size:cover;
-	-moz-background-size:cover;
-	-o-background-size:cover;
-	min-height:700px;
-}
+/*!*------------------ Slider Part ends Here----------*!*/
+/*.banner{*/
+/*	background:url(../../../webapp/static/webapp/assets/img/gigi_centr_video_banner.png) no-repeat 0px 0px;*/
+/*	background-size:cover;*/
+/*	-webkit-background-size:cover;*/
+/*	-moz-background-size:cover;*/
+/*	-o-background-size:cover;*/
+/*	min-height:auto;*/
+/*}*/
+
+
 .banner1{
 	background:url(../images/banner.jpg) no-repeat 0px 0px;
 	background-size:cover;
@@ -1013,7 +1015,7 @@ h2.resp-accordion:hover{
 }
 @media only screen and (max-width:480px) {
 .sap_tabs{
-	padding-top:0;
+	padding-top:10px;
 }
 .resp-tabs-container{
 	padding:10px;
@@ -1821,7 +1823,7 @@ h4.panel-title a span{
 	margin-bottom:1.5em;
 }
 .gallery {
-    margin: 0 0 3em;
+    margin: 0 0 0em;
 }
 .gallery-right1-right p a{
 	color:#27b311;
@@ -1988,6 +1990,24 @@ ul.wmuSliderPagination {
 	line-height:1.6em;
 	margin:0 0 30px;
 }
+
+/*@media (min-width: 767px) {*/
+/*    .breaking-news-grid-right-gridr {*/
+/*        float: right;*/
+/*        width: 50%;*/
+/*    }*/
+/*}*/
+
+/*@media (min-width: 767px) {*/
+/*    .breaking-news-grid-right-gridr h4 {*/
+/*        text-transform: uppercase;*/
+/*        font-size: .7em;*/
+/*        color: #000;*/
+/*        line-height: 1.6em;*/
+/*        margin: 0 24px 30px;*/
+/*    }*/
+/*}*/
+
 .breaking-news-grid-right-gridr h4 a{
 	font-weight:400;
 	color:#000;
@@ -3458,6 +3478,7 @@ img.mobile1 {
 	}
 	.br-bm-gd-lt, .br-bm-gd-lt1, .br-bm-gd-lt2, .br-bm-gd-lt3, .br-bm-gd-lt4, .br-bm-gd-lt5, .br-bm-gd-lt6, .br-bm-gd-lt7 {
 		min-height: auto;
+        height: 30%;
 	}
 	.com-heart ul li a {
 		font-size: 13px;
@@ -3485,7 +3506,7 @@ img.mobile1 {
 		left: 2%;
 	}
 	.video-grid-pos ul li {
-		font-size: 14px;
+		font-size: 10px;
 	}
 	.tab_list1 {
 		margin: 0.5em 0 0;
@@ -3505,6 +3526,9 @@ img.mobile1 {
 	.news-grid-left h3 {
 		font-size: 1em;
 	}
+    .news-grid-left{
+    margin-top: 15px;
+    }
 	.news-grid-right1 h4 {
 		font-size: 14px;
 		line-height: 1.5em;
@@ -3592,10 +3616,10 @@ img.mobile1 {
 		font-size: 1.1em;
 	}
 	.breaking-news-grids {
-		margin: 2em 0;
+		margin: 4em 0;
 	}
 	.baner-beaking p {
-		margin: 2em 0 0 1em;
+		margin: 2em 0 0 1.2em;
 		width: 90%;
 		padding: .5em;
 	}
@@ -3607,10 +3631,13 @@ img.mobile1 {
 		height: 10px;
 	}
 	.breaking-news {
-		padding: 2em 0 0;
+		padding: 0.5em 0 0;
 	}
 	.breaking-news-grid-right-gridr {
 		margin: 1em 0 0;
+        width: 50%;
+        font-size: 0.75em;
+        padding-top: 10px;
 	}
 	.slicebox-slider-grid {
 		margin: 2em 0 0;
@@ -3635,8 +3662,67 @@ img.mobile1 {
 		margin: 2em 0 0;
 	}
 	.breaking-news-grid-right {
-		margin: 1em 0 0;
+		margin: 3em 0 0;
 	}
+    .video-container {
+    width: 100%;
+    height: 266px; /* Высота вашего видео */
+    position: relative;
+    overflow: hidden;
+    }
+
+    .video-grid-pos ul {
+        padding: 3.7em 5px 0px;
+        text-align: left;
+        width: 121%;
+    }
+
+    .news-grid-right1 h5{
+	color: #098388;
+    font-size: .6em;
+    margin: 0.8em 0 1em;
+    /*! font-weight: 400; */
+    }
+
+    .img-fixed-size-erip {
+    width: 90%; /* Установите желаемую ширину */
+    height: 200px;
+    /*! margin-right: 8px; */
+    object-fit: cover; /* Этот свойство сохраняет соотношение сторон и обрезает изображение по нужным размерам */
+    padding-left: 14%;
+    }
+
+    .img-fixed-size-unp {
+        /*! width: 120px; */
+        height: 105px;
+        object-fit: cover;
+        margin-left: 105px;
+        display: none;
+    }
+    .img-fixed-size-unp-two {
+        display: none;
+    }
+    .section-bg-unp {
+        padding: 0px 0 90px;
+    }
+
+    .features .icon-box i {
+        font-size: 48px;
+        float: left;
+        color: #3fbbc0;
+        padding-right: 10px;
+    }
+
+    .features .icon-box h4 {
+        font-size: 15px;
+        font-weight: 700;
+        margin: 85px 0 10px 45px;
+    }
+
+    .my-column::after {
+        display: none;
+    }
+
 	.albums-grid1:nth-child(2) {
 		margin: 1em 0 0;
 	}
@@ -3644,8 +3730,12 @@ img.mobile1 {
 		font-size: 1.2em;
 	}
 	.typo, .contact, .slicebox-slider, .single {
-		padding: 2em 0;
+		padding: 1em 0;
 	}
+
+    .main-bg {
+        padding: 35px 0 10px;
+    }
 	.map iframe {
 		min-height: 200px;
 	}
@@ -3684,7 +3774,7 @@ img.mobile1 {
 	}
 	.banner-bottom-grid-left {
 		float: none;
-		width: 80%;
+		width: 94%;
 	}
 	.health ul li a {
 		padding: 0em 0.5em;
@@ -3693,7 +3783,8 @@ img.mobile1 {
 		margin: 2.5em 0 0;
 	}
 	.com-heart {
-		margin: 7.2em 0 0;
+		margin: auto;
+        padding-top: 5%;
 	}
 	.marquee {
 		width: 100%;
