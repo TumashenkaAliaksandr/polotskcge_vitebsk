@@ -1274,7 +1274,7 @@ ul.list6 li a:hover,.res6 a{
     font-weight: 400;
 	color:#000;
 	margin:0;
-	font-size:1.1em;
+	font-size:0.9em;
 }
 .news-grid-right1 h4 a{
 	color:#000;
@@ -1961,6 +1961,13 @@ ul.wmuSliderPagination {
     object-fit: cover; /* Этот свойство сохраняет соотношение сторон и обрезает изображение по нужным размерам */
 }
 
+.img-fixed-size-kvit {
+    width: 160px; /* Установите желаемую ширину */
+    height: 200px;
+    margin-right: 20px;
+    object-fit: cover; /* Этот свойство сохраняет соотношение сторон и обрезает изображение по нужным размерам */
+}
+
 .img-fixed-size-unp {
   width: 120px;
   height: 105px;
@@ -2291,13 +2298,20 @@ li.list-group-item1 {
 }
 
 
-.news-grid-rght1{
-    margin-top: 50px;
+/*.news-grid-rght1{*/
+/*    margin-top: 50px;*/
+/*}*/
+/*.news-grid-left{*/
+/*    margin-top: 50px;*/
+/*}*/
+/*.news-grid-left1{*/
+/*    margin-top: 50px;*/
+/*}*/
+.news-grid-right2{
+	float:right;
+	width:68%;
+	margin:2.2em 0 0;
 }
-.news-grid-left{
-    margin-top: 50px;
-}
-
 
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
   z-index: 0;
@@ -3421,7 +3435,19 @@ img.mobile1 {
 	}
 	.wom-right {
 		margin: 3em 0 0;
-	}
+    }
+
+    .section-title {
+        text-align: center;
+        padding-bottom: 35px;
+        padding-top: 10px;
+    }
+
+    .about .content h3 {
+        font-weight: 600;
+        font-size: 26px;
+        margin-top: 10px;
+    }
 }
 @media (max-width: 600px){
 	.news-grid-rght2:before, .news-grid-rght2:after {
@@ -3684,6 +3710,14 @@ img.mobile1 {
     /*! font-weight: 400; */
     }
 
+    .img-fixed-size-kvit {
+    width: 121px; /* Установите желаемую ширину */
+    height: 200px;
+    margin-right: 20px;
+    object-fit: cover; /* Этот свойство сохраняет соотношение сторон и обрезает изображение по нужным размерам */
+    }
+
+
     .img-fixed-size-erip {
     width: 90%; /* Установите желаемую ширину */
     height: 200px;
@@ -3716,7 +3750,13 @@ img.mobile1 {
     .features .icon-box h4 {
         font-size: 15px;
         font-weight: 700;
-        margin: 85px 0 10px 45px;
+        margin: 38px 0 10px 45px;
+    }
+    .features .icon-box-two h4 {
+        font-size: 21px;
+        font-weight: 700;
+        margin: 50px 0 10px 45px;
+        padding-right: 11%;
     }
 
     .my-column::after {
@@ -3732,6 +3772,16 @@ img.mobile1 {
 	.typo, .contact, .slicebox-slider, .single {
 		padding: 1em 0;
 	}
+    .my-column::before {
+    content: '';
+    position: absolute;
+    /*! bottom: 50%; */ /* Располагаем от нижней точки */
+    left: 120%; /* Располагаем относительно центра колонки */
+    width: 5px; /* Задаем ширину вертикального разделителя */
+    background-color: #3fbbc0; /* Цвет вертикального разделителя */
+    height: 25%; /* Задаем высоту, равную высоте колонки */
+    transform: translateX(-50%) translateY(50%); /* Сдвигаем в центр */
+    }
 
     .main-bg {
         padding: 35px 0 10px;

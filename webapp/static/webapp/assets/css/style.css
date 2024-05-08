@@ -754,25 +754,53 @@ h6 {
 .my-column::after {
     content: '';
     position: absolute;
-    top: 50%; /* Располагаем от середины колонки */
-    left: 120%; /* Располагаем относительно центра колонки */
+    top: 31%; /* Располагаем от середины колонки */
+    left: 105%; /* Располагаем относительно центра колонки */
     width: 5px; /* Задаем ширину вертикального разделителя */
     background-color: #3fbbc0; /* Цвет вертикального разделителя */
     height: 55%; /* Задаем высоту, равную высоте колонки */
     transform: translateX(-50%) translateY(-50%); /* Сдвигаем в центр */
 }
 
-.my-column::before {
-    content: '';
-    position: absolute;
-    bottom: 50%; /* Располагаем от нижней точки */
-    left: 120%; /* Располагаем относительно центра колонки */
-    width: 5px; /* Задаем ширину вертикального разделителя */
-    background-color: #3fbbc0; /* Цвет вертикального разделителя */
-    height: 35%; /* Задаем высоту, равную высоте колонки */
-    transform: translateX(-50%) translateY(50%); /* Сдвигаем в центр */
+/*.my-column::before {*/
+/*    content: '';*/
+/*    position: absolute;*/
+/*    !*bottom: 50%; !* Располагаем от нижней точки *!*!*/
+/*    left: 120%; !* Располагаем относительно центра колонки *!*/
+/*    width: 5px; !* Задаем ширину вертикального разделителя *!*/
+/*    background-color: #3fbbc0; !* Цвет вертикального разделителя *!*/
+/*    height: 35%; !* Задаем высоту, равную высоте колонки *!*/
+/*    transform: translateX(-50%) translateY(50%); !* Сдвигаем в центр *!*/
+/*}*/
+
+/*.news-grid-right1 {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    margin-left: 20px; !* Добавлено для отступа текста от изображения *!*/
+/*}*/
+
+/*.news-grid-right1 h4 {*/
+/*    margin-bottom: 0; !* Убираем нижний отступ у h4 *!*/
+/*}*/
+.news-grid-right2 h4{
+	text-transform: uppercase;
+    font-weight: 400;
+	color:#000;
+	margin:0;
+	font-size:0.9em;
+	/*! left: 10%; */
+	/*margin-left: 95%;*/
 }
 
+.news-grid-right2 h4 {
+    margin-bottom: 0; /* Убираем нижний отступ у h4 */
+}
+
+.news-grid-right2{
+	float:right;
+	width:90%;
+	margin:1.2em 27px 0px;
+}
 
 
 
@@ -818,7 +846,7 @@ section {
 }
 
 section#contact {
-    padding: 35px 0 35px;
+    padding: 15px 0 35px;
     background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/epi_gigi_polock_contact.png') center/cover;
     background-attachment: fixed;
 }
