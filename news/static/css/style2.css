@@ -3553,7 +3553,7 @@ img.mobile1 {
 		font-size: 1em;
 	}
     .news-grid-left{
-    margin-top: 15px;
+    margin-top: 0px;
     }
 	.news-grid-right1 h4 {
 		font-size: 14px;
@@ -3702,6 +3702,11 @@ img.mobile1 {
         text-align: left;
         width: 121%;
     }
+    .news-grid-right2{
+	float:right;
+	width:65%;
+	margin:0.2em -5px 0px;
+    }
 
     .news-grid-right1 h5{
 	color: #098388;
@@ -3712,10 +3717,11 @@ img.mobile1 {
 
     .img-fixed-size-kvit {
     width: 121px; /* Установите желаемую ширину */
-    height: 200px;
+    height: 0px;
     margin-right: 20px;
     object-fit: cover; /* Этот свойство сохраняет соотношение сторон и обрезает изображение по нужным размерам */
     }
+
 
 
     .img-fixed-size-erip {
