@@ -754,8 +754,8 @@ h6 {
 .my-column::after {
     content: '';
     position: absolute;
-    top: 31%; /* Располагаем от середины колонки */
-    left: 105%; /* Располагаем относительно центра колонки */
+    top: 30%; /* Располагаем от середины колонки */
+    left: 117%; /* Располагаем относительно центра колонки */
     width: 5px; /* Задаем ширину вертикального разделителя */
     background-color: #3fbbc0; /* Цвет вертикального разделителя */
     height: 55%; /* Задаем высоту, равную высоте колонки */
@@ -789,7 +789,7 @@ h6 {
 	margin:0;
 	font-size:0.9em;
 	/*! left: 10%; */
-	/*margin-left: 95%;*/
+	margin-left: 5%;
 }
 
 .news-grid-right2 h4 {
@@ -1577,7 +1577,7 @@ section#clocks-two {
 .features .icon-box h4 {
   font-size: 20px;
   font-weight: 700;
-  margin: 5px 0 10px 60px;
+  margin: 7px 0px 15px 50px;
 }
 
 .features .icon-box i {

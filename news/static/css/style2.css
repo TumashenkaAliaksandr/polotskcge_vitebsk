@@ -1962,25 +1962,36 @@ ul.wmuSliderPagination {
 }
 
 .img-fixed-size-kvit {
-    width: 160px; /* Установите желаемую ширину */
-    height: 200px;
-    margin-right: 20px;
-    object-fit: cover; /* Этот свойство сохраняет соотношение сторон и обрезает изображение по нужным размерам */
+    width: 180px;
+    height: 132px;
+    margin-right: 10px;
+    object-fit: cover;
+    margin-top: 8%;
 }
 
 .img-fixed-size-unp {
-  width: 120px;
-  height: 105px;
-  object-fit: cover;
-  margin-left: 105px;
+    width: 157px;
+    height: 105px;
+    object-fit: cover;
+    margin-left: -16px;
+    margin-right: 20px;
+    margin-top: 2px;
 }
 
 .img-fixed-size-unp-two {
   width: 67px;
   height: 47px;
   object-fit: cover;
-  margin-left: 115px;
-  margin-bottom: 21px;
+  margin-left: 100px;
+  margin-bottom: 10px;
+}
+
+.img-fixed-size-unp-three {
+    width: 157px;
+    height: 105px;
+    object-fit: cover;
+    margin-left: 55px;
+    margin-right: 20px;
 }
 
 .breaking-news-grid-right ul li{
@@ -2310,7 +2321,7 @@ li.list-group-item1 {
 .news-grid-right2{
 	float:right;
 	width:68%;
-	margin:2.2em 0 0;
+	margin:3.6em 0 0;
 }
 
 .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
@@ -3948,6 +3959,15 @@ img.mobile1 {
 	.breaking-news-grid-right ul li {
 		margin: 1.5em 0;
 	}
+    .news-grid-right2 h4{
+	text-transform: uppercase;
+    font-weight: 400;
+	color:#000;
+	margin:0;
+	font-size:0.9em;
+	margin-left: -37%;
+	margin-right: 25%;
+    }
 }
 @media (max-width:384px){
 	.news-grid-rght2:before, .news-grid-rght2:after {
