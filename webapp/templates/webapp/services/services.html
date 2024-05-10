@@ -37,7 +37,7 @@
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="icon"><i class="{{ main_features.icon_class }}"></i></div>
                             <h4 class="title"><a href="{{ main_features.link }}">{{ main_features.name }}</a></h4>
-                            <p class="description">{{ main_features.description }}</p>
+                            <p class="description">{{ main_features.description|safe }}</p>
                         </div>
                     </div>
                 {% endfor %}

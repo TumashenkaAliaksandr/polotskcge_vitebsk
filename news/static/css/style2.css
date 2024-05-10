@@ -3697,6 +3697,13 @@ img.mobile1 {
 	.upcoming-events-right {
 		margin: 1em 0 0;
 	}
+
+    .contact .info-box p {
+        padding: 0;
+        line-height: 24px;
+        font-size: 17px;
+        margin-bottom: 0;
+    }
 	.news {
 		margin: 1em 0 2em;
 	}
