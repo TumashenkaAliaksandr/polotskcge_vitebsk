@@ -106,9 +106,6 @@ class AboutUs(models.Model):
         return self.name
 
 
-    def __str__(self):
-        return self.name
-
 
 from django.db import models
 

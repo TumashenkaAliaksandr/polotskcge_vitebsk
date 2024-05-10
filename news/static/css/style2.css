@@ -1313,6 +1313,58 @@ ul.list6 li a:hover,.res6 a{
 	font-size:.9em;
 	line-height:1.8em;
 }
+
+
+.news-grid-right4{
+	/*float:right;*/
+	width:100%;
+	margin:3.1em 0 0;
+}
+.news-grid-right4 h4{
+	text-transform: uppercase;
+    font-weight: 400;
+	color:#000;
+	margin:0;
+	font-size:0.9em;
+}
+.news-grid-right4 h4 a{
+	color:#000;
+	text-decoration:none;
+	font-weight:400;
+}
+.news-grid-right4 h4 a:hover{
+	color:#098388;
+}
+.news-grid-right4 h5{
+	color: #098388;
+    font-size: .9em;
+    margin: 0.8em 0 1em;
+    /*font-weight: 400;*/
+}
+.news-grid-right4 h5 a{
+	color:#3fbbc0;
+	text-transform: uppercase;
+	text-decoration:none;
+	font-weight: 400;
+}
+.news-grid-right4 h5 a:hover{
+	color:#000;
+}
+.news-grid-right4 h5 label{
+	color:#D2D2D2;
+	padding:0 .5em;
+}
+.news-grid-right4 h5 i{
+	font-style:normal;
+	color:#C0C0C0;
+}
+.news-grid-right4 p{
+	color:#000;
+	margin:0;
+	font-size:.9em;
+	line-height:1.8em;
+}
+
 .nav-tabs {
     border-bottom:none;
     background: #8b8e8b;
@@ -3733,6 +3785,14 @@ img.mobile1 {
     object-fit: cover; /* Этот свойство сохраняет соотношение сторон и обрезает изображение по нужным размерам */
     }
 
+    .img-fixed-size-unp-two {
+        width: 67px;
+        height: 47px;
+        object-fit: cover;
+        margin-left: 100px;
+        margin-bottom: 10px;
+        display: none;
+    }
 
 
     .img-fixed-size-erip {
@@ -3801,7 +3861,7 @@ img.mobile1 {
     }
 
     .main-bg {
-        padding: 35px 0 10px;
+        padding: 21px 0 10px;
     }
 	.map iframe {
 		min-height: 200px;

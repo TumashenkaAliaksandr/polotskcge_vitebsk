@@ -44,6 +44,9 @@ class FeaturedForm(forms.ModelForm):
     class Meta:
         model = Featured
         fields = '__all__'
+        widgets = {
+            'description': CKEditorWidget(),
+        }
 
 
 class ReceptionHoursForm(forms.ModelForm):
