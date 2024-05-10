@@ -243,20 +243,20 @@
                   <div class="col-lg-2 col-md-6 footer-links">
                       <h4>Главное меню</h4>
                       <ul>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Главная</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">О Центре</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Обращения</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Новости</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:home' %}">Главная</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:working_mode' %}">О Центре</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:paid_services' %}">Обращения</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="{% url 'news:news' %}">Новости</a></li>
                       </ul>
                   </div>
 
                   <div class="col-lg-3 col-md-6 footer-links">
                       <h4>Услуги</h4>
                       <ul>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Платные Услуги</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Гигиенические услуги</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Лабораторные услуги</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="#">Гигиеническое обучение</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:services' %}">Платные Услуги</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:hygienic' %}">Гигиенические услуги</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:laboratory_services' %}">Лабораторные услуги</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:hygiene_education' %}">Гигиеническое обучение</a></li>
                       </ul>
                   </div>
 
