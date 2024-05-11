@@ -3173,7 +3173,7 @@ img.mobile1 {
 		padding: 3em 2em 0;
 	}
 	.baner-beaking h3 {
-		width: 90%;
+		width: 100%;
 	}
 	.wrapper1 {
 		padding: 0 43px;
@@ -3582,12 +3582,12 @@ img.mobile1 {
 		margin: 6.3em 0 0;
 	}
 	.breaking_news {
-		padding: 6px 5px 9px 10px;
+		padding: 10px 5px 10px 10px;
         width: 100%;
 	}
 
 	.marquee {
-		width: 74%;
+		width: 100%;
 		font-size: 14px;
 		padding: 6px 0;
 	}
@@ -3712,15 +3712,15 @@ img.mobile1 {
 		font-size: 1.1em;
 	}
 	.breaking-news-grids {
-		margin: 4em 0;
+		margin: 2.7em 0;
 	}
 	.baner-beaking p {
-		margin: 2em 0 0 1.2em;
-		width: 90%;
+		margin: 2em 0 0 0.2em;
+		width: 100%;
 		padding: .5em;
 	}
 	.baner-beaking, .baner-beaking1 {
-		min-height: 300px;
+		min-height: 450px;
 	}
 	.wmuSliderPagination a {
 		width: 10px;
@@ -3998,7 +3998,7 @@ img.mobile1 {
 		margin: 0;
 	}
 	.baner-beaking, .baner-beaking1 {
-		padding: 1em 1em 0;
+		padding: 3.7em 2em 0;
 	}
 	.breaking-news-grid-right-gridr {
 		margin: 0;

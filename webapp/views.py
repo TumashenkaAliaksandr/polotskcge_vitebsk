@@ -61,16 +61,16 @@ def info_main(request):
     return render(request, 'webapp/informations/info_main.html')
 
 
-def news_main(request):
-    """Main News Clinic"""
-
-    features = Featured.objects.all()
-
-    context = {
-        'features': features,
-    }
-
-    return render(request, 'webapp/news/news_main.html', context=context)
+# def news_main(request):
+#     """Main News Clinic"""
+#
+#     features = Featured.objects.all()
+#
+#     context = {
+#         'features': features,
+#     }
+#
+#     return render(request, 'webapp/news/news_main.html', context=context)
 
 
 def structure(request):
