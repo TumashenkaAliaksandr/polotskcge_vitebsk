@@ -7,17 +7,22 @@
 <main id="main">
 
     <!-- ======= Breadcrumbs Section ======= -->
-    <section class="breadcrumbs">
-      <div class="container">
+    <!-- pagebanner -->
+    <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_centr.png' %}{% endif %}')">
+    </section>
+    <!-- End Pagebanner -->
+    <section class="breadcrumbs_contacts">
+        <div class="container">
 
-        <div class="d-flex justify-content-between align-items-center">
-          <ol>
-            <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-            <li>Порядок и сроки обжалования</li>
-          </ol>
+            <div class="d-flex justify-content-between align-items-center">
+                <ol>
+                    <li><a href="{% url 'webapp:home' %}">Главная</a></li>
+                    <li>Порядок и сроки обжалования</li>
+                </ol>
+            </div>
         </div>
-      </div>
-    </section><!-- End Breadcrumbs Section -->
+    </section>
+    <!-- End Breadcrumbs Section -->
 
     <!-- ======= Featured Services Section ======= -->
     <section id="featured-services" class="featured-services">
