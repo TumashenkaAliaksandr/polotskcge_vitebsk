@@ -2021,6 +2021,14 @@ ul.wmuSliderPagination {
     object-fit: cover;
     margin-top: 8%;
 }
+.img-fixed-size-struc {
+  width: 50%;
+  height: 87%;
+  margin-right: 50%;
+  object-fit: cover;
+  margin-top: 0;
+  margin-left: 35%;
+}
 
 .img-fixed-size-unp {
     width: 157px;
