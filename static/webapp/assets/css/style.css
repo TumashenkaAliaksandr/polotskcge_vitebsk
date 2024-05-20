@@ -847,7 +847,7 @@ section {
 
 section#contact {
     padding: 15px 0 35px;
-    background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/epi_gigi_polock_contact.png') center/cover;
+    background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.97)), url('../img/epi_gigi_polock_contact.png') center/cover;
     background-attachment: fixed;
 }
 section#footer {
@@ -1121,6 +1121,7 @@ section#clocks-two {
     margin-bottom: 10px;
     margin-top: 10px;
     padding-top: 10px;
+    padding-left: 3px;
   }
 
   .header-icons-mobile i {
