@@ -58,3 +58,11 @@ class GeneralInfoForm(forms.ModelForm):
     class Meta:
         model = GeneralInfo
         fields = ['title', 'description']  # Включаем поле description в форму
+
+
+class EducationalResourceAdminForm(forms.ModelForm):
+    description = forms.CharField(widget=CKEditorWidget())
+
+    class Meta:
+        model = EducationalResource
+        fields = '__all__'

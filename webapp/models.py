@@ -33,6 +33,19 @@ class Featured(models.Model):
     def __str__(self):
         return self.name
 
+class EducationalResource(models.Model):
+    name = models.CharField(max_length=100, verbose_name="Имя")
+    description = RichTextField(verbose_name="Описание")
+    pdf_file = models.FileField(upload_to='pdfs/', verbose_name="Прикрепить PDF")
+    icon_class = models.CharField(max_length=100, default='fas fa-heartbeat')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Образовательный ресурс"
+        verbose_name_plural = "Образовательные ресурсы"
+
 
 class Doctor(models.Model):
     first_name = models.CharField(max_length=100, default='Имя')

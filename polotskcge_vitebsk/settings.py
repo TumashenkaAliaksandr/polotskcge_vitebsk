@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'webapp',
     'ckeditor',
+    'ckeditor_uploader',
     'news',
 ]
 
@@ -131,6 +132,7 @@ STATICFILES_DIRS = [
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

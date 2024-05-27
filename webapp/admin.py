@@ -3,7 +3,8 @@ from django.contrib import admin
 from django.utils.safestring import mark_safe
 
 from .models import *
-from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm, ReceptionHoursForm, GeneralInfoForm
+from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm, ReceptionHoursForm, GeneralInfoForm, \
+    EducationalResourceAdminForm
 
 
 class DoctorAdmin(admin.ModelAdmin):
@@ -113,3 +114,10 @@ class Question_Ansver_titleAdmin(admin.ModelAdmin):
     search_fields = ('name',)
     list_per_page = 20
 
+
+
+class EducationalResourceAdmin(admin.ModelAdmin):
+    form = EducationalResourceAdminForm
+    list_display = ('name', 'description', 'pdf_file', 'icon_class')
+
+admin.site.register(EducationalResource, EducationalResourceAdmin)

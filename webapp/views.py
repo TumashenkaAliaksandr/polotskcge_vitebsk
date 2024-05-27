@@ -578,9 +578,13 @@ def health_days(request):
 def educational_resources(request):
     """Healthy_lifestyle - educational_resources template"""
     features = Featured.objects.all()
+    interactiv = Interactive.objects.all()
+    see_pdf = EducationalResource.objects.all()
 
     context = {
         'features': features,
+        'interactiv': interactiv,
+        'see_pdf': see_pdf,
     }
 
     return render(request, 'webapp/healthy_lifestyle/educational_resources.html', context=context)
