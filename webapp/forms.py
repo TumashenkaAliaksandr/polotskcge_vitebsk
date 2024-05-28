@@ -18,6 +18,21 @@ class AboutUsForm(forms.ModelForm):
             'name_li_five': CKEditorWidget(),
         }
 
+class ZojForm(forms.ModelForm):
+    class Meta:
+        model = Zoj
+        fields = '__all__'
+        widgets = {
+            'description': CKEditorWidget(),
+            'description_two': CKEditorWidget(),
+            'description_three': CKEditorWidget(),
+            'name_li_one': CKEditorWidget(),
+            'name_li_two': CKEditorWidget(),
+            'name_li_three': CKEditorWidget(),
+            'name_li_four': CKEditorWidget(),
+            'name_li_five': CKEditorWidget(),
+        }
+
 
 class ResearchesForm(forms.ModelForm):
     class Meta:

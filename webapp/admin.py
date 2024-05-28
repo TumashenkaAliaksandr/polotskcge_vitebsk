@@ -4,7 +4,7 @@ from django.utils.safestring import mark_safe
 
 from .models import *
 from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm, ReceptionHoursForm, GeneralInfoForm, \
-    EducationalResourceAdminForm
+    EducationalResourceAdminForm, ZojForm
 
 
 class DoctorAdmin(admin.ModelAdmin):
@@ -49,6 +49,20 @@ admin.site.register(Services, ServicesAdmin)
 @admin.register(AboutUs)
 class AboutUsAdmin(admin.ModelAdmin):
     form = AboutUsForm
+    list_display = ['name', 'photo_display']  # Добавляем поле для отображения фотографии в списке
+
+    def photo_display(self, obj):
+        if obj.photo:
+            return mark_safe(f'<img src="{obj.photo.url}" width="100">')
+        else:
+            return "No photo"
+
+    photo_display.short_description = 'Photo'  # Заголовок колонки в списке
+
+
+@admin.register(Zoj)
+class ZojUsAdmin(admin.ModelAdmin):
+    form = ZojForm
     list_display = ['name', 'photo_display']  # Добавляем поле для отображения фотографии в списке
 
     def photo_display(self, obj):

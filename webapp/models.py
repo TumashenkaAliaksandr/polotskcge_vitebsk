@@ -208,3 +208,30 @@ class Question_Ansver_title(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Zoj(models.Model):
+    name = models.CharField(max_length=100, default='Zoj Us Name One')
+    description = models.TextField(default='Zoj Us Description One')
+    name_two = models.CharField(max_length=100, default='Zoj Us Name Two')
+    description_two = models.TextField(default='Zoj Us Description Two')
+    name_li_one = models.CharField(max_length=100, default='Zoj Us Name Li-One')
+    name_li_two = models.CharField(max_length=100, default='Zoj Us Name Li-Two')
+    name_li_three = models.CharField(max_length=100, default='Zoj Us Name Li-Three')
+    name_li_four = models.CharField(max_length=100, default='Zoj Us Name Li-Four')
+    name_li_five = models.CharField(max_length=100, default='Zoj Us Name Li-Five')
+    description_three = models.TextField(default='Zoj Us Description Three')
+    photo = models.ImageField(upload_to='Zoj/', null=True, blank=True)
+    icon_class = models.CharField(max_length=100, default='bi bi-check-circle')  # Для основного описания
+    icon_class_li_one = models.CharField(max_length=100, default='bi bi-check-circle')  # Для первого элемента списка
+    icon_class_li_two = models.CharField(max_length=100, default='bi bi-check-circle')  # Для второго элемента списка
+    icon_class_li_three = models.CharField(max_length=100, default='bi bi-check-circle')  # Для третьего элемента списка
+    icon_class_li_four = models.CharField(max_length=100, default='bi bi-check-circle')  # Для четвертого элемента списка
+    icon_class_li_five = models.CharField(max_length=100, default='bi bi-check-circle')  # Для пятого элемента списка
+
+    class Meta:
+        verbose_name = 'Здоровый Образ Жизни'
+        verbose_name_plural = 'Здоровый Образ Жизни'
+
+    def __str__(self):
+        return self.name

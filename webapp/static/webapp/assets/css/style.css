@@ -861,6 +861,11 @@ section#footer {
     background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.97)), url('../img/epi_gigi_polock_contact.png') center/cover;
     background-attachment: fixed;
 }
+.main-bg-health_days {
+    padding: 0px 0 35px;
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.97)), url('../img/gigi_centr_zoj.jpg') center/cover;
+    background-attachment: fixed;
+}
 
 .news-main {
     padding: 35px 0 35px;

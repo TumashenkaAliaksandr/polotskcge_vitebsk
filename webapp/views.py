@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from news.models import Interactive, ModelNews
+from news.models import Interactive, ModelNews, PreviewNews
 from news.utils import get_weather
 from webapp.models import *
 
@@ -545,9 +545,17 @@ def analytical_newsletter(request):
 def healthy_lifestyle(request):
     """Healthy_lifestyle - healthy_lifestyle template"""
     features = Featured.objects.all()
+    preview = PreviewNews.objects.filter(is_health_news=True)
+    interactiv = Interactive.objects.all()
+    model_blog_main = ModelNews.objects.filter(is_health_news=True).order_by('-pub_date')
+    zoj = Zoj.objects.all()
 
     context = {
         'features': features,
+        'preview': preview,
+        'interactiv': interactiv,
+        'model_blog_main': model_blog_main,
+        'zoj': zoj,
     }
 
     return render(request, 'webapp/healthy_lifestyle/healthy_lifestyle.html', context=context)
@@ -567,9 +575,13 @@ def preventive_measures(request):
 def health_days(request):
     """Healthy_lifestyle - health_days template"""
     features = Featured.objects.all()
+    interactiv = Interactive.objects.all()
+    preview = PreviewNews.objects.all()
 
     context = {
         'features': features,
+        'interactiv': interactiv,
+        'preview': preview,
     }
 
     return render(request, 'webapp/healthy_lifestyle/health_days.html', context=context)

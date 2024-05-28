@@ -55,12 +55,14 @@ class InteractiveAdmin(admin.ModelAdmin):
 @admin.register(PreviewNews)
 class PreviewNewsAdmin(admin.ModelAdmin):
     """Администратор предварительных новостей."""
-    list_display = ('title', 'description', 'photo', 'link')
+    list_display = ('title', 'description', 'photo', 'is_popular', 'is_nature_news', 'is_health_news', 'is_sport_news',
+                    'is_economic_news', 'is_main_news')
     search_fields = ('title',)
     list_filter = ('title',)
     fieldsets = (
         (None, {
-            'fields': ('title', 'description', 'photo', 'link')
+            'fields': ('title', 'description', 'photo', 'is_popular', 'is_nature_news', 'is_health_news', 'is_sport_news',
+                    'is_economic_news', 'is_main_news')
         }),
     )
     formfield_overrides = {

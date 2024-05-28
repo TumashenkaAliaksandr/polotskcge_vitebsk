@@ -7,6 +7,11 @@
 <main id="main">
 
     <!-- ======= Breadcrumbs Section ======= -->
+    <!-- pagebanner -->
+    <section id="pagebanner" style="background-image:
+            url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_breadcr_recurces.jpeg' %}{% endif %}')">
+    </section>
+    <!-- End Pagebanner -->
     <section class="breadcrumbs">
       <div class="container">
 
@@ -19,24 +24,36 @@
       </div>
     </section><!-- End Breadcrumbs Section -->
 
-    <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services">
-        <div class="container" data-aos="fade-up">
-
-            <div class="row">
-                {% for main_features in features %}
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="{{ main_features.icon_class }}"></i></div>
-                            <h4 class="title"><a href="{{ main_features.link }}">{{ main_features.name }}</a></h4>
-                            <p class="description">{{ main_features.description|safe }}</p>
+    <!-- breaking-news -->
+    <div id="single" class="single main-bg">
+        <div class="breaking-news">
+            <div class="container">
+                {% for main_interactiv_string in interactiv %}
+                    <div class="move-text">
+                        <div class="breaking_news">
+                            <h2>Новости Центра</h2>
                         </div>
+                        <div class="marquee">
+                            <div class="marquee1"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description | safe }}</a>
+                            </div>
+                            <div class="marquee2"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <script type="text/javascript" src="{% static 'js/jquery.marquee.js' %}"></script>
+                        <script>
+                            $('.marquee').marquee({pauseOnHover: true});
+                            //@ sourceURL=pen.js
+                        </script>
                     </div>
                 {% endfor %}
             </div>
         </div>
-    </section>
-    <!-- End Featured Services Section -->
+    </div>
+    <!-- //breaking-news -->
 
   </main><!-- End #main -->
 
