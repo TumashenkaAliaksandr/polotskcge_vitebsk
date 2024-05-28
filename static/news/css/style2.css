@@ -3890,7 +3890,7 @@ img.mobile1 {
         padding: 21px 0 10px;
     }
 
-    .main-bg {
+    .main-bg-contact {
         /*padding: 35px 0 35px;*/
         background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.97)), url('../../webapp/assets/img/epi_gigi_polock_contact.png') center/cover;
         background-attachment: fixed;

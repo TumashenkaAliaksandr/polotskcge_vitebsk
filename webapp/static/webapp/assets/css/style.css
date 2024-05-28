@@ -980,7 +980,12 @@ section#clocks-two {
   padding: 20px 0;
   background-color: #ecf8f9;
   min-height: 40px;
-  margin-top: 120px;
+  /*margin-top: 120px;*/
+}
+.main-bg-recurces {
+    padding: 35px 0 35px;
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.97)), url('../img/epi_gigi_centr_info_recurces.png') center/cover;
+    background-attachment: fixed;
 }
 
 @media (max-width: 992px) {
@@ -2598,6 +2603,11 @@ section#clocks-two {
     /*box-shadow: 0 10px 10px rgba(167, 197, 167, 0.8);*/
     transition: all 0.4s ease-in-out 0s;
 
+}
+
+.post-slide a{
+  color: #f1f1f1;
+  text-decoration: none;
 }
 
 .resurces-sliider{
