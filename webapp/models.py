@@ -37,7 +37,8 @@ class EducationalResource(models.Model):
     name = models.CharField(max_length=100, verbose_name="Имя")
     description = RichTextField(verbose_name="Описание")
     pdf_file = models.FileField(upload_to='pdfs/', verbose_name="Прикрепить PDF")
-    icon_class = models.CharField(max_length=100, default='fas fa-heartbeat')
+    icon_class = models.CharField(max_length=100, default='fas fa-file-pdf')
+    pub_date = models.DateTimeField(verbose_name='Дата Публикации', blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -45,6 +46,7 @@ class EducationalResource(models.Model):
     class Meta:
         verbose_name = "Образовательный ресурс"
         verbose_name_plural = "Образовательные ресурсы"
+        ordering = ['-pub_date']
 
 
 class Doctor(models.Model):
@@ -118,9 +120,6 @@ class AboutUs(models.Model):
     def __str__(self):
         return self.name
 
-
-
-from django.db import models
 
 class Researches(models.Model):
     name = models.CharField(max_length=100, default='Researches Name One')
