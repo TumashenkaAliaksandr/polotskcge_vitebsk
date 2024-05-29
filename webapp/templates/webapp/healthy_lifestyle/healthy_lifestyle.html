@@ -55,17 +55,18 @@
                             </div>
                         {% endfor %}
                     </div>
-                    <div class="breaking-news-grids">
-                        <div class="section-title">
-                            <h2>Здоровый Образ Жизни</h2>
-                            <p>Здоровый образ жизни (ЗОЖ) — образ жизни отдельного человека с целью профилактики
-                                болезней и укрепления здоровья.<br>
+                    {% for main_zoj in zoj %}
+                            <section id="about" class="about main-bg-health_days">
+                                <div class="container" data-aos="fade-up">
+                                    <div class="section-title-health">
+                                        <h2>{{ main_zoj.name }}</h2>
+                                        <p>{{ main_zoj.description | safe }}</p>
+                                    </div>
+                                </div>
+                            </section>
+                    {% endfor %}
 
-                                Здоровый образ жизни является предпосылкой для развития других сторон жизнедеятельности
-                                человека, достижения им активного долголетия и полноценного выполнения социальных
-                                функций. Как говорится: «Здоровье — это ещё не всё, но всё без здоровья — это ничто».
-                            </p>
-                        </div>
+                    <div class="breaking-news-grids-health">
                         <div class="col-md-8 breaking-news-grid-left">
                             <div class="wmuSlider example1">
                                 {% for main_preview in preview %}
@@ -122,14 +123,13 @@
                         <div class="clearfix"></div>
 
 
-                        <!-- ======= About Us Section ======= -->
+                        <!-- ======= About health Section ======= -->
                         {% for main_zoj in zoj %}
-                            <section id="about" class="about main-bg">
+                            <section id="about" class="about main-bg-health_days">
                                 <div class="container" data-aos="fade-up">
 
-                                    <div class="section-title">
-                                        <h2>{{ main_zoj.name }}</h2>
-                                        <p>{{ main_zoj.description | safe }}</p>
+                                    <div class="section-title-health">
+                                        <h2>{{ main_zoj.name_two }}</h2>
                                     </div>
 
                                     <div class="row">
@@ -138,8 +138,6 @@
                                                  alt="">
                                         </div>
                                         <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
-                                            <h3>{{ main_zoj.name_two }}</h3>
-                                            <p class="fst-italic">{{ main_zoj.description_two | safe }}</p>
                                             <ul class="icon-list">
                                                 <li>
                                                     <i class="{{ main_zoj.icon_class_li_one }}"></i> {{ main_zoj.name_li_one | safe }}
@@ -157,7 +155,6 @@
                                                     <i class="{{ main_zoj.icon_class_li_five }}"></i> {{ main_zoj.name_li_five | safe }}
                                                 </li>
                                             </ul>
-                                            <p>{{ main_zoj.description_three | safe }}</p>
                                         </div>
                                     </div>
 
@@ -165,31 +162,27 @@
                             </section>
                         {% endfor %}
                         <!-- End About Us Section -->
-
-
-                        <div class="col-md-8 breaking-news-grid-left">
-                            <p>Основными элементами здорового образа жизни являются:
-
-                                - окружающая среда: безопасная и благоприятная для обитания, знания о влиянии окружающих
-                                предметов на здоровье;
-
-                                - отказ от вредных привычек: курения, употребления алкоголя, употребления наркотиков;
-
-                                - питание: умеренное, соответствующее физиологическим особенностям конкретного человека,
-                                информированность о качестве употребляемых продуктов;
-
-                                - движение: физически активная жизнь, включая специальные физические упражнения с учётом
-                                возрастных, физиологических особенностей;
-
-                                - гигиена организма: соблюдение правил личной и общественной гигиены, владение навыками
-                                первой помощи;
-
-                                - закаливание.</p>
-                        </div>
-                        <div class="col-md-4 breaking-news-grid-right">
-                            <p>photo</p>
-                        </div>
                     </div>
+                    <!-- ======= Features Section ======= -->
+                    <section id="features" class="features main-bg-health_days">
+                        <div class="container" data-aos="fade-up">
+                            {% for main_zoj_two in zoj %}
+                                <div class="row">
+                                <p>{{ main_zoj_two.description_three | safe }}</p>
+                                    <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
+                                        <div class="icon-box-health mt-5 mt-lg-0">
+                                            <p>{{ main_zoj_two.description_two | safe }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="image col-lg-6 order-1 order-lg-2"
+                                         style='background-image: url({{ main_zoj_two.photo_two.url }});'
+                                         data-aos="zoom-in"></div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </section>
+                    <!-- End Features Section -->
                     <div class="breaking-news-grids-bottom">
                         <div class="banner-bottom-grids">
                             <div class="col-md-3 banner-bottom-grid-left">

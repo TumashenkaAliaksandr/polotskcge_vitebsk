@@ -916,6 +916,11 @@ section#clocks-two {
   padding-bottom: 35px;
   padding-top: 35px;
 }
+.section-title-health {
+  text-align: center;
+  padding-bottom: 20px;
+  padding-top: 70px;
+}
 
 .news-more p{
   text-align: right;

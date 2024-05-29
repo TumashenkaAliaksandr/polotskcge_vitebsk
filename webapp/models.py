@@ -215,13 +215,14 @@ class Zoj(models.Model):
     description = models.TextField(default='Zoj Us Description One')
     name_two = models.CharField(max_length=100, default='Zoj Us Name Two')
     description_two = models.TextField(default='Zoj Us Description Two')
-    name_li_one = models.CharField(max_length=100, default='Zoj Us Name Li-One')
-    name_li_two = models.CharField(max_length=100, default='Zoj Us Name Li-Two')
-    name_li_three = models.CharField(max_length=100, default='Zoj Us Name Li-Three')
-    name_li_four = models.CharField(max_length=100, default='Zoj Us Name Li-Four')
-    name_li_five = models.CharField(max_length=100, default='Zoj Us Name Li-Five')
+    name_li_one = models.CharField(max_length=150, default='Zoj Us Name Li-One')
+    name_li_two = models.CharField(max_length=150, default='Zoj Us Name Li-Two')
+    name_li_three = models.CharField(max_length=150, default='Zoj Us Name Li-Three')
+    name_li_four = models.CharField(max_length=150, default='Zoj Us Name Li-Four')
+    name_li_five = models.CharField(max_length=150, default='Zoj Us Name Li-Five')
     description_three = models.TextField(default='Zoj Us Description Three')
     photo = models.ImageField(upload_to='Zoj/', null=True, blank=True)
+    photo_two = models.ImageField(upload_to='Zoj/', null=True, blank=True)
     icon_class = models.CharField(max_length=100, default='bi bi-check-circle')  # Для основного описания
     icon_class_li_one = models.CharField(max_length=100, default='bi bi-check-circle')  # Для первого элемента списка
     icon_class_li_two = models.CharField(max_length=100, default='bi bi-check-circle')  # Для второго элемента списка

@@ -911,6 +911,11 @@ section#clocks-two {
   padding-bottom: 35px;
   padding-top: 35px;
 }
+.section-title-health {
+  text-align: center;
+  padding-bottom: 10px;
+  padding-top: 70px;
+}
 
 .news-more p{
   text-align: right;
@@ -1591,6 +1596,11 @@ section#clocks-two {
   font-size: 15px;
   color: #848484;
   margin-left: 60px;
+}
+.features .icon-box-health p {
+  font-size: 15px;
+  color: #848484;
+  margin-left: 0px;
 }
 
 .features .image {
