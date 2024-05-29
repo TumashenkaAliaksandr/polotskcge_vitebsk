@@ -585,11 +585,19 @@ def health_days(request):
     features = Featured.objects.all()
     interactiv = Interactive.objects.all()
     preview = PreviewNews.objects.all()
+    model_blog_main = ModelNews.objects.filter(is_health_news=True).order_by('-pub_date')
+    title_desc_queans = Question_Ansver_title.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
+    ansvers = Answer.objects.all()
 
     context = {
         'features': features,
         'interactiv': interactiv,
         'preview': preview,
+        'model_blog_main': model_blog_main,
+        'title_desc_queans': title_desc_queans,
+        'questions': questions,
+        'ansvers': ansvers,
     }
 
     return render(request, 'webapp/healthy_lifestyle/health_days.html', context=context)
