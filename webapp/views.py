@@ -564,9 +564,17 @@ def healthy_lifestyle(request):
 def preventive_measures(request):
     """Healthy_lifestyle - preventive_measures template"""
     features = Featured.objects.all()
+    model_blog_main = ModelNews.objects.filter(is_health_news=True).order_by('-pub_date')
+    title_desc_queans = Question_Ansver_title.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
+    ansvers = Answer.objects.all()
 
     context = {
         'features': features,
+        'model_blog_main': model_blog_main,
+        'title_desc_queans': title_desc_queans,
+        'questions': questions,
+        'ansvers': ansvers,
     }
 
     return render(request, 'webapp/healthy_lifestyle/preventive_measures.html', context=context)
