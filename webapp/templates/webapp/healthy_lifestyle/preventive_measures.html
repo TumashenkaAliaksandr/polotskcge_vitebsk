@@ -36,7 +36,7 @@
                             <div class="col-md-3 banner-bottom-grid-left">
                                 <div class="br-bm-gd-lt-fon">
                                     <a href="{% url 'news:single' pk=main_litle_news.id %}"><img
-                                                        src="{{ main_litle_news.logo_photo.url }}" alt=" "
+                                                        src="{{ main_litle_news.photo.url }}" alt=" "
                                                         class="img-responsive"/></a>
                                     <div class="overlay">
                                         <div class="arrow-left"></div>
@@ -55,7 +55,7 @@
                                         <div class="com-heart-health">
                                             <ul>
                                                 <li><a href="{% url 'news:single' pk=main_litle_news.id %}"><span class="fa fa-user-doctor"
-                                                                      aria-hidden="true"></span>{{ main_litle_news.author }}</a></li>
+                                                                      aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
                                             </ul>
                                         </div>
                                     </div>

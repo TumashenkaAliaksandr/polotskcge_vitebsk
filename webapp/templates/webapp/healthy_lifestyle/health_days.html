@@ -56,14 +56,14 @@
     <!-- //breaking-news -->
 
     <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services main-bg">
-        <div class="container" data-aos="fade-up">
-            <div class="section-title">
-                <h2>Единые дни здоровья</h2>
-            </div>
-            {% for main_litle_news in model_blog_main|slice:":3" %}
+        <section id="featured-services" class="featured-services main-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2>Единые дни здоровья</h2>
+                </div>
                 <div class="breaking-news-grids-bottom">
                     <div class="banner-bottom-grids">
+                        {% for main_litle_news in model_blog_main|slice:":3" %}
                         <div class="col-md-3 banner-bottom-grid-left">
                             <div class="br-bm-gd-lt-fon">
                                 <a href="{% url 'news:single' pk=main_litle_news.id %}"><img
@@ -89,18 +89,18 @@
                                         <ul>
                                             <li><a href="{% url 'news:single' pk=main_litle_news.id %}"><span
                                                     class="fa fa-user-doctor"
-                                                    aria-hidden="true"></span>{{ main_litle_news.author }}</a></li>
+                                                    aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="clearfix"></div>
+                        {% endfor %}
+                    <div class="clearfix"></div>
                     </div>
                 </div>
-            {% endfor %}
-        </div>
-    </section>
+            </div>
+        </section>
     <!-- End Featured Services Section -->
 
     <!-- ======= Frequently Asked Questioins Section ======= -->

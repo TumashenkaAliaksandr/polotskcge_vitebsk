@@ -564,7 +564,7 @@ def healthy_lifestyle(request):
 def preventive_measures(request):
     """Healthy_lifestyle - preventive_measures template"""
     features = Featured.objects.all()
-    model_blog_main = ModelNews.objects.filter(is_health_news=True).order_by('-pub_date')
+    model_blog_main = ModelNews.objects.filter(is_main_measures=True).order_by('-pub_date')
     title_desc_queans = Question_Ansver_title.objects.all()
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()

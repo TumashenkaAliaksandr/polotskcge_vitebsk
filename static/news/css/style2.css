@@ -513,9 +513,14 @@ body a:hover{
     position: relative;
 	height: 300px;
 }
+
 .br-bm-gd-lt-fon img {
     width: 100%;
+    height: 100%;
+    object-fit: cover; /* Масштабирует изображение, сохраняя пропорции, и заполняет весь контейнер */
+    object-position: center; /* Центрирует изображение внутри контейнера */
 }
+
 .dropdown-menu {
     min-width: 105px;
 	padding:0;
@@ -673,11 +678,11 @@ body a:hover{
 	border:2px solid #fff;
 }
 .banner-bottom-grid-left h3{
-	margin: .5em 0 0;
+	margin: .3em 0 0;
     color: #fff;
     font-size: 1.5em;
     letter-spacing: 1px;
-    line-height: 1.4em;
+    line-height: 1.3em;
 }
 .com-heart{
 	margin:5.4em 0 0;
@@ -715,6 +720,9 @@ body a:hover{
 	-moz-transition:.4s ease-out;
 	-o-transition:.4s ease-out;
 	-ms-transition:.4s ease-out;
+    position: absolute; /* Установлено абсолютное позиционирование */
+    top: 240px; /* Позиционирование от низа */
+    width: 100%; /* Для правильного выравнивания */
 }
 .com-heart-health ul{
 	padding:.3em 1em;
@@ -2084,7 +2092,7 @@ ul.wmuSliderPagination {
 
 .img-fixed-size-three {
     width: 140px; /* Установите желаемую ширину */
-    height: 15px; /* Установите желаемую высоту */
+    height: auto; /* Установите желаемую высоту */
     object-fit: cover; /* Этот свойство сохраняет соотношение сторон и обрезает изображение по нужным размерам */
 }
 .img-fixed-size-erip {
@@ -2603,10 +2611,17 @@ h2.typoh2{
 	.alert,p {
 		font-size: 14px;
 	}
+
 	.pagination {
 		margin: 20px 0 0px;
 	}
 }
+@media (max-width: 320px) {
+    .health, p {
+        font-size: 25px;
+    }
+}
+
 @media (max-width: 320px){
 	.caption span {
 		margin: 0 0 1.5em;
@@ -2618,7 +2633,7 @@ h2.typoh2{
 		font-size: 1.6em;
 	}
 	.alert, p,ol.breadcrumb li, .grid_3 p,.well, ul.list-group li, li.list-group-item1,a.list-group-item {
-		font-size: 13px;
+		font-size: 21px;
 	}
 	.alert {
 		padding: 10px;

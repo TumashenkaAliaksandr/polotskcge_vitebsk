@@ -26,6 +26,8 @@ class ModelNews(models.Model):
     is_sport_news = models.BooleanField(verbose_name='Новости спорта', default=False, blank=True)
     is_economic_news = models.BooleanField(verbose_name='Новости экономики', default=False, blank=True)
     is_main_news = models.BooleanField(verbose_name='Важное', default=False, blank=True)
+    is_main_measures = models.BooleanField(verbose_name='Профилактитческие мероприятия', default=False, blank=True)
+    is_main_days_health = models.BooleanField(verbose_name='Единые дни здоровья', default=False, blank=True)
 
     def __str__(self):
         return self.title
