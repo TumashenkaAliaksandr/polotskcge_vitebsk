@@ -168,7 +168,7 @@
                         <div class="container" data-aos="fade-up">
                             {% for main_zoj_two in zoj %}
                                 <div class="row">
-                                <p>{{ main_zoj_two.description_three | safe }}</p>
+                                    <p>{{ main_zoj_two.description_three | safe }}</p>
                                     <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
                                         <div class="icon-box-health mt-5 mt-lg-0">
                                             <p>{{ main_zoj_two.description_two | safe }}</p>
@@ -184,46 +184,58 @@
                     </section>
                     <!-- End Hl Section -->
 
-                {% for main_litle_news in model_blog_main|slice:":3" %}
-                    <div class="breaking-news-grids-bottom">
-                        <div class="banner-bottom-grids">
-                            <div class="col-md-3 banner-bottom-grid-left">
-                                <div class="br-bm-gd-lt-fon">
-                                    <a href="{% url 'news:single' pk=main_litle_news.id %}"><img
-                                                        src="{{ main_litle_news.logo_photo.url }}" alt=" "
-                                                        class="img-responsive"/></a>
-                                    <div class="overlay">
-                                        <div class="arrow-left"></div>
-                                        <div class="rectangle"></div>
-                                    </div>
-                                    <div class="health-pos">
-                                        <div class="health">
-                                            <ul>
-                                                <li><a href="{% url 'news:single' pk=main_litle_news.id %}">{{ main_litle_news.title|wordwrap:30|truncatechars_html:58 }}</a></li>
-                                                <li>{{ main_litle_news.pub_date|date:"d.m.Y" }}</li>
-                                            </ul>
-                                        </div>
-                                        <h3>{{ main_litle_news.description_company|safe|wordwrap:10|truncatechars_html:58 }}</h3>
-                                        <div class="dummy">
-                                        </div>
-                                        <div class="com-heart-health">
-                                            <ul>
-                                                <li><a href="{% url 'news:single' pk=main_litle_news.id %}"><span class="fa fa-user-doctor"
-                                                                      aria-hidden="true"></span>{{ main_litle_news.author }}</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                {% endfor %}
                 </div>
             </div>
         </div>
     </section>
     <!-- //breaking-news -->
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services main-bg">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Статьи о здоровье</h2>
+            </div>
+            <div class="breaking-news-grids-bottom">
+                <div class="banner-bottom-grids">
+                    {% for main_litle_news in model_blog_main|slice:":3" %}
+                        <div class="col-md-3 banner-bottom-grid-left">
+                            <div class="br-bm-gd-lt-fon">
+                                <a href="{% url 'news:single' pk=main_litle_news.id %}"><img
+                                        src="{{ main_litle_news.logo_photo.url }}" alt=" "
+                                        class="img-responsive"/></a>
+                                <div class="overlay">
+                                    <div class="arrow-left"></div>
+                                    <div class="rectangle"></div>
+                                </div>
+                                <div class="health-pos">
+                                    <div class="health">
+                                        <ul>
+                                            <li>
+                                                <a href="{% url 'news:single' pk=main_litle_news.id %}">{{ main_litle_news.title|wordwrap:30|truncatechars_html:58 }}</a>
+                                            </li>
+                                            <li>{{ main_litle_news.pub_date|date:"d.m.Y" }}</li>
+                                        </ul>
+                                    </div>
+                                    <h3>{{ main_litle_news.description_company|safe|wordwrap:10|truncatechars_html:58 }}</h3>
+                                    <div class="dummy">
+                                    </div>
+                                    <div class="com-heart-health">
+                                        <ul>
+                                            <li><a href="{% url 'news:single' pk=main_litle_news.id %}"><span
+                                                    class="fa fa-user-doctor"
+                                                    aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Featured Services Section -->
 
   </main><!-- End #main -->
 

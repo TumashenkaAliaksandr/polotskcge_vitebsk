@@ -595,7 +595,7 @@ body a:hover{
     background: #7acee7;
     display: block;
     background-size: cover; /* или любой другой размер, который вам нужен */
-    width: 300px; /* задайте ширину */
+    width: auto; /* задайте ширину */
     height: 42.2%; /* задайте высоту */
 }
 .br-bm-gd-lt1 {
