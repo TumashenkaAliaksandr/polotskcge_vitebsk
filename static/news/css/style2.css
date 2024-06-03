@@ -179,6 +179,10 @@ body a:hover{
     top: 47%;
     }
 }
+
+.banner-padd{
+    padding-bottom: 25px;
+}
 /*----*/
 .callbacks_tabs a{
  visibility: hidden;
@@ -468,7 +472,7 @@ body a:hover{
 	-webkit-transform: rotateX(0deg);
 	transform: rotateX(0deg);
 	background:#ff1800;
-	
+
 }
 
 .type-1:hover span:first-of-type {
@@ -596,7 +600,7 @@ body a:hover{
     display: block;
     background-size: cover; /* или любой другой размер, который вам нужен */
     width: auto; /* задайте ширину */
-    height: 42.2%; /* задайте высоту */
+    /*height: 42.2%;*/
 }
 .br-bm-gd-lt1 {
     background: url(../images/gigi_centr_sport2.jpg) no-repeat 0px 0px;
@@ -642,7 +646,7 @@ body a:hover{
     left: 0%;
 }
 .health{
-	padding:1em 1em 0;
+	padding:1.4em 1em 0;
 }
 .banner-bottom-grid-left h3{
 	padding:0 1em;
@@ -650,8 +654,8 @@ body a:hover{
 .health ul li{
 	padding:.2em 0.4em;
     background: #ff1800;
-	border:2px solid #ff1800;
-    font-size: 1em;
+	/*border:2px solid #ff1800;*/
+    font-size: 0.9em;
     text-transform: uppercase;
     color: #fff;
     text-decoration: none;
@@ -662,20 +666,20 @@ body a:hover{
 }
 .health ul li a{
 	color: #fff;
-    background: #0042ff;
+    background: #007cff;
 	padding: .1em 0.2em;
-	border:2px solid #0042ff;
+	border:2px solid #007cff;
 	text-decoration:none;
 }
 .health ul li:nth-child(1){
-	margin-left:0;
-	padding:0;
+	margin-left:10px;
+	padding:2px;
 	border:none;
 	background: none;
 }
 .health ul li:nth-child(2){
 	background:none;
-	border:2px solid #fff;
+	/*border:2px solid #fff;*/
 }
 .banner-bottom-grid-left h3{
 	margin: .3em 0 0;
