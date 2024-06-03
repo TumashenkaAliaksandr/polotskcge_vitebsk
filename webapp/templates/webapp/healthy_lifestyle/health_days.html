@@ -63,7 +63,7 @@
                 </div>
                 <div class="breaking-news-grids-bottom">
                     <div class="banner-bottom-grids">
-                        {% for main_litle_news in model_blog_main|slice:":3" %}
+                        {% for main_litle_news in model_blog_main %}
                         <div class="col-md-3 banner-bottom-grid-left">
                             <div class="br-bm-gd-lt-fon">
                                 <a href="{% url 'news:single' pk=main_litle_news.id %}"><img
@@ -79,10 +79,10 @@
                                             <li>
                                                 <a href="{% url 'news:single' pk=main_litle_news.id %}">{{ main_litle_news.title|wordwrap:30|truncatechars_html:58 }}</a>
                                             </li>
-                                            <li>{{ main_litle_news.pub_date|date:"d.m.Y" }}</li>
+                                            <li><a href="{% url 'news:single' pk=main_litle_news.id %}">{{ main_litle_news.pub_date|date:"d.m.Y" }}</a></li>
                                         </ul>
                                     </div>
-                                    <h3>{{ main_litle_news.description_company|safe|wordwrap:10|truncatechars_html:58 }}</h3>
+{#                                    <h3>{{ main_litle_news.description_company|safe|wordwrap:10|truncatechars_html:58 }}</h3>#}
                                     <div class="dummy">
                                     </div>
                                     <div class="com-heart-health">
