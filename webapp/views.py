@@ -585,7 +585,7 @@ def health_days(request):
     features = Featured.objects.all()
     interactiv = Interactive.objects.all()
     preview = PreviewNews.objects.all()
-    model_blog_main = ModelNews.objects.filter(is_health_news=True).order_by('-pub_date')
+    model_blog_main = ModelNews.objects.filter(is_main_days_health=True).order_by('-pub_date')
     title_desc_queans = Question_Ansver_title.objects.all()
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()
