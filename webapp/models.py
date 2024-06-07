@@ -39,7 +39,6 @@ class Book_complaint(models.Model):
 
     name = models.CharField(max_length=100, default='Book Name')
     description = models.TextField(default='Book Description')
-    icon_class = models.CharField(max_length=100, default='fas fa-heartbeat')
 
     class Meta:
         verbose_name = 'Книга жалоб и предложений'

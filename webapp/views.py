@@ -220,12 +220,15 @@ def book_of_comments(request):
     title_desc_queans = Question_Ansver_title.objects.all()
     questions = Question.objects.all().order_by('-pub_date')
     book_info = Book_complaint.objects.all()
+    interactiv = Interactive.objects.all()
+
 
     context = {
         'features': features,
         'title_desc_queans': title_desc_queans,
         'questions': questions,
         'book_info': book_info,
+        'interactiv': interactiv,
     }
 
     return render(request, 'webapp/appeals/book_of_comments.html', context=context)
