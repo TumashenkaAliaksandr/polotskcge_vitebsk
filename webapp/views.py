@@ -217,9 +217,15 @@ def hotline(request):
 def book_of_comments(request):
     """Appeals - book_of_comments template"""
     features = Featured.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
+    book_info = Book_complaint.objects.all()
 
     context = {
         'features': features,
+        'title_desc_queans': title_desc_queans,
+        'questions': questions,
+        'book_info': book_info,
     }
 
     return render(request, 'webapp/appeals/book_of_comments.html', context=context)

@@ -4,7 +4,7 @@ from django.utils.safestring import mark_safe
 
 from .models import *
 from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm, ReceptionHoursForm, GeneralInfoForm, \
-    EducationalResourceAdminForm, ZojForm
+    EducationalResourceAdminForm, ZojForm, Book_complaintForm
 
 
 class DoctorAdmin(admin.ModelAdmin):
@@ -95,6 +95,10 @@ class LogoAdmin(admin.ModelAdmin):
 @admin.register(Featured)
 class FeaturedAdmin(admin.ModelAdmin):
     form = FeaturedForm
+
+@admin.register(Book_complaint)
+class Book_complaintAdmin(admin.ModelAdmin):
+    form = Book_complaintForm
 
 @admin.register(ReceptionHours)
 class ReceptionHoursAdmin(admin.ModelAdmin):

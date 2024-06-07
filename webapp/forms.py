@@ -63,6 +63,14 @@ class FeaturedForm(forms.ModelForm):
             'description': CKEditorWidget(),
         }
 
+class Book_complaintForm(forms.ModelForm):
+    class Meta:
+        model = Book_complaint
+        fields = '__all__'
+        widgets = {
+            'description': CKEditorWidget(),
+        }
+
 
 class ReceptionHoursForm(forms.ModelForm):
     class Meta:

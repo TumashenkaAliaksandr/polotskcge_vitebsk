@@ -33,6 +33,21 @@ class Featured(models.Model):
     def __str__(self):
         return self.name
 
+
+class Book_complaint(models.Model):
+    """This Model for Book_complaint block on the main page"""
+
+    name = models.CharField(max_length=100, default='Book Name')
+    description = models.TextField(default='Book Description')
+    icon_class = models.CharField(max_length=100, default='fas fa-heartbeat')
+
+    class Meta:
+        verbose_name = 'Книга жалоб и предложений'
+        verbose_name_plural = 'Книга жалоб и предложений'
+
+    def __str__(self):
+        return self.name
+
 class EducationalResource(models.Model):
     name = models.CharField(max_length=100, verbose_name="Имя")
     description = RichTextField(verbose_name="Описание")
