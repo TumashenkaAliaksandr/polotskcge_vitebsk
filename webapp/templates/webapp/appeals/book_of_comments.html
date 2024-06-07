@@ -23,8 +23,8 @@
         </div>
     </section>
     <!-- End Breadcrumbs Section -->
-
-    <div id="single" class="single main-bg">
+    <!-- ======= Book NEWS text Section ======= -->
+    <div id="single" class="single main-bg-book-of">
         <div class="breaking-news">
             <div class="container">
                 {% for main_interactiv_string in interactiv %}
@@ -52,18 +52,18 @@
             </div>
         </div>
     </div>
+    <!-- ======= End Book News text Section ======= -->
 
     <!-- ======= Book text Section ======= -->
-
     <section id="featured-services" class="featured-services main-bg-book-of">
-        <div class="container" data-aos="fade-up">
+        <div class="container book_info" data-aos="fade-up">
             <div class="row">
                 {% for main_book in book_info %}
                     <div class="section-title">
                         <h2>{{ main_book.name }}</h2>
                     </div>
                     <div class="gslide-description">
-                    <p>{{ main_book.description|safe }}</p>
+                        <p>{{ main_book.description|safe }}</p>
                     </div>
 
                 {% endfor %}
@@ -71,6 +71,7 @@
         </div>
     </section>
     <!-- End Book text Section -->
+
     <!-- ======= Frequently Asked Questioins Section ======= -->
     <section id="faq" class="faq main-bg-book-of">
         <div class="container" data-aos="fade-up">

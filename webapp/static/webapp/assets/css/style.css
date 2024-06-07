@@ -889,7 +889,16 @@ section#clocks-two {
     background: linear-gradient(rgba(255, 255, 255, 0.99), rgb(236, 248, 249, 0.99)), url('../img/gigi_centr_back.jpg') center/cover;
     background-attachment: fixed;
 }
-
+.book_info{
+  display: block;
+  width: auto;
+  height: auto;
+  /*border: 10px outset lightblue;*/
+  border: 5px solid rgba(0, 0, 0, 0) !important; /* Прозрачная рамка */
+  box-shadow: 0 0 15px rgba(193, 215, 213, 0.5) !important; /* Бирюзовая тень */
+  padding: 20px !important; /* Отступы внутри секции для более красивого отображения */
+  border-radius: 10px !important; /* Радиус для закругленных углов (по желанию) */
+}
 
 /*styles for map*/
 
