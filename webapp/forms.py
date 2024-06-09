@@ -108,3 +108,12 @@ class HotlineHours_TitleForm(forms.ModelForm):
     class Meta:
         model = HotlineHours_Title
         fields = ('name', 'description')
+
+
+class HotlineHours_Title_descForm(forms.ModelForm):
+    name = forms.CharField(widget=CKEditorWidget())
+    description = forms.CharField(widget=CKEditorWidget())
+
+    class Meta:
+        model = HotlineHours_Title
+        fields = ('name', 'description')

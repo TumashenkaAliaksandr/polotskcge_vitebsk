@@ -4,7 +4,8 @@ from django.utils.safestring import mark_safe
 
 from .models import *
 from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm, ReceptionHoursForm, GeneralInfoForm, \
-    EducationalResourceAdminForm, ZojForm, Book_complaintForm, HotlineHoursForm, HotlineHours_TitleForm
+    EducationalResourceAdminForm, ZojForm, Book_complaintForm, HotlineHoursForm, HotlineHours_TitleForm, \
+    HotlineHours_Title_descForm
 
 
 class DoctorAdmin(admin.ModelAdmin):
@@ -130,9 +131,18 @@ class HotlineHours_TitleAdmin(admin.ModelAdmin):
 
 admin.site.register(HotlineHours_Title, HotlineHours_TitleAdmin)
 
+
+class HotlineHours_Title_descAdmin(admin.ModelAdmin):
+    form = HotlineHours_Title_descForm
+    list_display = ('name', 'description')
+    search_fields = ('name', 'description')
+
+
+admin.site.register(HotlineHours_Title_desc, HotlineHours_Title_descAdmin)
 class AnswerInline(admin.TabularInline):
     model = Answer
     extra = 1
+
 
 class QuestionAdmin(admin.ModelAdmin):
     inlines = [AnswerInline]
@@ -145,7 +155,6 @@ class Question_Ansver_titleAdmin(admin.ModelAdmin):
     list_display = ('name', 'description')
     search_fields = ('name',)
     list_per_page = 20
-
 
 
 class EducationalResourceAdmin(admin.ModelAdmin):

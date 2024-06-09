@@ -208,11 +208,13 @@ def hotline(request):
     features = Featured.objects.all()
     clocks = HotlineHours.objects.all()
     title_desc = HotlineHours_Title.objects.all()
+    title_desc_two = HotlineHours_Title_desc.objects.all()
 
     context = {
         'features': features,
         'clocks': clocks,
         'title_desc': title_desc,
+        'title_desc_two': title_desc_two,
     }
 
     return render(request, 'webapp/appeals/hotline.html', context=context)

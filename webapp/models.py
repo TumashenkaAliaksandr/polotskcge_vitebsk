@@ -214,6 +214,18 @@ class HotlineHours_Title(models.Model):
         return self.name
 
 
+class HotlineHours_Title_desc(models.Model):
+    name = models.CharField(max_length=300, default='Порядок проведения')
+    description = models.CharField(max_length=3000, default='Описание проведения')
+
+    class Meta:
+        verbose_name = 'Порядок проведения тайтл и описание'
+        verbose_name_plural = 'Порядок проведения тайтл и описание'
+
+    def __str__(self):
+        return self.name
+
+
 class Question(models.Model):
     question_text = models.CharField(max_length=255, default='вопрос')
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', blank=True, null=True)  # Added publication date field
