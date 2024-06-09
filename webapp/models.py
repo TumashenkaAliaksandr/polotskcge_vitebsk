@@ -188,6 +188,32 @@ class ReceptionHours(models.Model):
         return self.name
 
 
+class HotlineHours(models.Model):
+    name = models.CharField(max_length=100, default='Фамилия Имя и Отчество')
+    post = models.CharField(max_length=100, default='Должность')
+    phone = models.CharField(max_length=100)
+    reception_time = models.CharField(max_length=100, default='Время проведения прямой линии')
+    date_hotline = models.CharField(max_length=100, default='Дата Проведения прям линии')
+
+    class Meta:
+        verbose_name = 'Прямая линия'
+        verbose_name_plural = 'Прямая линия'
+
+    def __str__(self):
+        return self.name
+
+class HotlineHours_Title(models.Model):
+    name = models.CharField(max_length=100, default='Прямая Телефонная Линия')
+    description = models.CharField(max_length=300, default='График проведения "прямой телефонной линии" в Государственном учреждении "Полоцкий зональный центр гигиены и эпидемиологии"')
+
+    class Meta:
+        verbose_name = 'Прямая линия тайтл и описание'
+        verbose_name_plural = 'Прямая линия тайтл и описание'
+
+    def __str__(self):
+        return self.name
+
+
 class Question(models.Model):
     question_text = models.CharField(max_length=255, default='вопрос')
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', blank=True, null=True)  # Added publication date field

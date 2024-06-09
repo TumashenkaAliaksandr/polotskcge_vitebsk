@@ -8,7 +8,7 @@
 
     <!-- ======= Breadcrumbs Section ======= -->
     <!-- pagebanner -->
-    <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_centr.png' %}{% endif %}')">
+    <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_phoneline.jpg' %}{% endif %}')">
     </section>
     <!-- End Pagebanner -->
     <section class="breadcrumbs_contacts">
@@ -25,32 +25,48 @@
     <!-- End Breadcrumbs Section -->
 
     <!-- Hotline Section -->
-          <section id="featured-services" class="featured-services main-bg">
-            <div class="container" data-aos="fade-up">
-                <div class="section-title">
-                    <h2>Прямая Телефонная Линия</h2>
-                </div>
-            </div>
-          </section>
-    <!-- End Hotline Section -->
-    <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services">
+    <section id="featured-services" class="featured-services main-bg-hotline">
         <div class="container" data-aos="fade-up">
-
+        {% for main_title in title_desc %}
+            <div class="section-title">
+                <h2>{{ main_title.name|safe }}</h2>
+                <p>{{ main_title.description|safe }}</p>
+            </div>
+        {% endfor %}
             <div class="row">
-                {% for main_features in features %}
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="{{ main_features.icon_class }}"></i></div>
-                            <h4 class="title"><a href="{{ main_features.link }}">{{ main_features.name }}</a></h4>
-                            <p class="description">{{ main_features.description|safe }}</p>
+                <section class="hotline">
+                    <div class="table-info">
+                        <div class="box" data-aos="fade-up" data-aos-delay="300">
+                            <table class="iksweb">
+                                <thead>
+                                <tr>
+                                    <th>Дата проведения</th>
+                                    <th>ФИО</th>
+                                    <th>Должность</th>
+                                    <th>Время работы прямой линии</th>
+                                    <th>Телефон</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for main_clock in clocks %}
+                                    <tr>
+                                        <td>{{ main_clock.date_hotline|safe }}</td>
+                                        <td>{{ main_clock.name|safe }}</td>
+                                        <td>{{ main_clock.post|safe }}</td>
+                                        <td>{{ main_clock.reception_time|safe }}</td>
+                                        <td>{{ main_clock.phone|safe }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                {% endfor %}
+                </section>
             </div>
         </div>
     </section>
-    <!-- End Featured Services Section -->
+    <!-- End Hotline Section -->
+
 
   </main><!-- End #main -->
 

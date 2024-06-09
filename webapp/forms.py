@@ -89,3 +89,22 @@ class EducationalResourceAdminForm(forms.ModelForm):
     class Meta:
         model = EducationalResource
         fields = '__all__'
+
+class HotlineHoursForm(forms.ModelForm):
+    reception_time = forms.CharField(widget=CKEditorWidget())
+    post = forms.CharField(widget=CKEditorWidget())
+    name = forms.CharField(widget=CKEditorWidget())
+    phone = forms.CharField(widget=CKEditorWidget())
+    date_hotline = forms.CharField(widget=CKEditorWidget())
+
+    class Meta:
+        model = HotlineHours
+        fields = ('name', 'post', 'phone', 'reception_time', 'date_hotline')
+
+class HotlineHours_TitleForm(forms.ModelForm):
+    name = forms.CharField(widget=CKEditorWidget())
+    description = forms.CharField(widget=CKEditorWidget())
+
+    class Meta:
+        model = HotlineHours_Title
+        fields = ('name', 'description')

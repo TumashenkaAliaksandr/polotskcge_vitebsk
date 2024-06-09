@@ -206,9 +206,13 @@ def electronic_appeals(request):
 def hotline(request):
     """Appeals - hotline template"""
     features = Featured.objects.all()
+    clocks = HotlineHours.objects.all()
+    title_desc = HotlineHours_Title.objects.all()
 
     context = {
         'features': features,
+        'clocks': clocks,
+        'title_desc': title_desc,
     }
 
     return render(request, 'webapp/appeals/hotline.html', context=context)

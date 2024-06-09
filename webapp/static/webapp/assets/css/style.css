@@ -29,7 +29,12 @@ a:hover {
   text-decoration: none;
 }
 
-
+.hotline {
+  padding: 20px 0;
+  padding-right: 0px;
+  padding-left: 0px;
+  overflow: hidden;
+}
 
 .haderphone a:hover {
   color: #a3f9fd;
@@ -861,6 +866,14 @@ section#footer {
     background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.97)), url('../img/epi_gigi_polock_contact.png') center/cover;
     background-attachment: fixed;
 }
+
+.main-bg-hotline {
+    padding: 35px 0 35px;
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.97)), url('../img/gigi_centr_phone_child.jpg') center/cover;
+    background-attachment: fixed;
+}
+
+
 .main-bg-book-of {
     padding: 35px 0 35px;
     background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.97)), url('../img/gigi_centr_book2.jpg') center/cover;
