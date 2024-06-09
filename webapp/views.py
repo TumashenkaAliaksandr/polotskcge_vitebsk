@@ -209,12 +209,18 @@ def hotline(request):
     clocks = HotlineHours.objects.all()
     title_desc = HotlineHours_Title.objects.all()
     title_desc_two = HotlineHours_Title_desc.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
+    ansvers = Answer.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
 
     context = {
         'features': features,
         'clocks': clocks,
         'title_desc': title_desc,
         'title_desc_two': title_desc_two,
+        'questions': questions,
+        'ansvers': ansvers,
+        'title_desc_queans': title_desc_queans,
     }
 
     return render(request, 'webapp/appeals/hotline.html', context=context)
