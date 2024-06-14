@@ -195,9 +195,19 @@ def normative_documents_ap(request):
 def electronic_appeals(request):
     """Appeals - electronic_appeals template"""
     features = Featured.objects.all()
+    title_desc = HotlineHours_Title.objects.all()
+    title_desc_two = Electronic_appeals_Title_desc.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
+    ansvers = Answer.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
 
     context = {
         'features': features,
+        'title_desc': title_desc,
+        'title_desc_two': title_desc_two,
+        'questions': questions,
+        'ansvers': ansvers,
+        'title_desc_queans': title_desc_queans,
     }
 
     return render(request, 'webapp/appeals/electronic_appeals.html', context=context)
