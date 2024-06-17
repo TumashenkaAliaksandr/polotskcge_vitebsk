@@ -200,6 +200,7 @@ def electronic_appeals(request):
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
+    interactiv = Interactive.objects.all()
 
     context = {
         'features': features,
@@ -208,6 +209,7 @@ def electronic_appeals(request):
         'questions': questions,
         'ansvers': ansvers,
         'title_desc_queans': title_desc_queans,
+        'interactiv': interactiv,
     }
 
     return render(request, 'webapp/appeals/electronic_appeals.html', context=context)
