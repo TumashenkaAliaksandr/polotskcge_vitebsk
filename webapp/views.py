@@ -262,9 +262,11 @@ def higher_authority(request):
     """Appeals - higher_authority template"""
     interactiv = Interactive.objects.all()
     title_organ = Organ_Title_desc.objects.all()
+    table =Up_Organ.objects.all()
     context = {
         'interactiv': interactiv,
         'title_organ': title_organ,
+        'table': table,
     }
 
     return render(request, 'webapp/appeals/higher_authority.html', context=context)

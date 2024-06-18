@@ -79,12 +79,12 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {% for main_clock in clocks %}
+                                    {% for main_table in table %}
                                         <tr>
-                                            <td>{{ main_clock.name|safe }}</td>
-                                            <td>{{ main_clock.post|safe }}</td>
-                                            <td>{{ main_clock.reception_time|safe }}</td>
-                                            <td>{{ main_clock.phone|safe }}</td>
+                                            <td>{{ main_table.name|safe }}</td>
+                                            <td>{{ main_table.post|safe }}</td>
+                                            <td>{{ main_table.reception_time|safe }}</td>
+                                            <td>{{ main_table.phone|safe }}</td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>

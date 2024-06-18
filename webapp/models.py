@@ -250,6 +250,21 @@ class Organ_Title_desc(models.Model):
         return self.name
 
 
+class Up_Organ(models.Model):
+    name = models.CharField(max_length=100, default='Фамилия Имя и Отчество')
+    post = models.CharField(max_length=100, default='Должность')
+    phone = models.CharField(max_length=100)
+    reception_time = models.CharField(max_length=200, default='Время Приема')
+
+    class Meta:
+        verbose_name = 'Вышестоящий орган данные'
+        verbose_name_plural = 'Вышестоящий орган данные'
+
+    def __str__(self):
+        return self.name
+
+
+
 class Question(models.Model):
     question_text = models.CharField(max_length=255, default='вопрос')
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', blank=True, null=True)  # Added publication date field
