@@ -263,10 +263,16 @@ def higher_authority(request):
     interactiv = Interactive.objects.all()
     title_organ = Organ_Title_desc.objects.all()
     table =Up_Organ.objects.all()
+    title_desc_inf = Up_Organ_inf.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
     context = {
         'interactiv': interactiv,
         'title_organ': title_organ,
         'table': table,
+        'title_desc_queans': title_desc_queans,
+        'questions': questions,
+        'title_desc_inf': title_desc_inf,
     }
 
     return render(request, 'webapp/appeals/higher_authority.html', context=context)

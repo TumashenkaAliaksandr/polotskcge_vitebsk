@@ -137,6 +137,15 @@ class Organ_Title_descForm(forms.ModelForm):
         fields = ('name', 'description')
 
 
+class Up_Organ_infForm(forms.ModelForm):
+    name = forms.CharField(widget=CKEditorWidget())
+    description = forms.CharField(widget=CKEditorWidget())
+
+    class Meta:
+        model = Organ_Title_desc
+        fields = ('name', 'description')
+
+
 class Up_Organ_Form(forms.ModelForm):
     reception_time = forms.CharField(widget=CKEditorWidget())
     post = forms.CharField(widget=CKEditorWidget())

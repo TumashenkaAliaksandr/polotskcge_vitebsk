@@ -237,6 +237,17 @@ class Electronic_appeals_Title_desc(models.Model):
     def __str__(self):
         return self.name
 
+class Up_Organ_inf(models.Model):
+    name = models.CharField(max_length=300, default='Телефон горячей линии')
+    description = models.CharField(max_length=3000, default='Время работы')
+
+    class Meta:
+        verbose_name = 'Информация (низ стр) Вышестоящий Орган'
+        verbose_name_plural = 'Информация (низ стр) Вышестоящий Орган'
+
+    def __str__(self):
+        return self.name
+
 
 class Organ_Title_desc(models.Model):
     name = models.CharField(max_length=300, default='Тайтл')
