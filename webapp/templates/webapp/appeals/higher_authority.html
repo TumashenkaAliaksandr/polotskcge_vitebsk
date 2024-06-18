@@ -8,7 +8,7 @@
 
     <!-- ======= Breadcrumbs Section ======= -->
     <!-- pagebanner -->
-    <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_centr.png' %}{% endif %}')">
+    <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_vitebck.png' %}{% endif %}')">
     </section>
     <!-- End Pagebanner -->
     <section class="breadcrumbs_contacts">
@@ -25,7 +25,7 @@
     <!-- End Breadcrumbs Section -->
 
     <!-- ======= Book NEWS text Section ======= -->
-    <div id="single" class="single main-bg-hotline">
+    <div id="single" class="single main-bg-vitebck">
         <div class="breaking-news">
             <div class="container">
                 {% for main_interactiv_string in interactiv %}
@@ -56,7 +56,7 @@
     <!-- ======= End Book News text Section ======= -->
 
     <!-- Hotline Section -->
-    <section id="featured-services" class="featured-services main-bg-hotline">
+    <section id="featured-services" class="featured-services main-bg-vitebck">
         <div class="container book_info" data-aos="fade-up">
             <div class="row">
                 {% for main_title in title_organ %}
@@ -92,31 +92,21 @@
                             </div>
                         </div>
                     </section>
+                    <div class="row">
+                        {% for main_title_inf in title_desc_inf %}
+                            <div class="description-left">
+                                <p>{{ main_title_inf.description|safe }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- End Hotline Section -->
 
-    <!-- Hotline Title and desc Section -->
-    <section id="featured-services" class="featured-services main-bg-hotline">
-        <div class="container book_info" data-aos="fade-up">
-            <div class="row">
-                {% for main_title_inf in title_desc_inf %}
-{#                    <div class="section-title">#}
-{#                        <h3>{{ main_title_inf.name|safe }}</h3>#}
-{#                    </div>#}
-                    <div class="description-left">
-                        <p>{{ main_title_inf.description|safe }}</p>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-    <!-- End Hotline Title and desc Section -->
-
     <!-- ======= Frequently Asked Questioins Section ======= -->
-    <section id="faq" class="faq main-bg-hotline">
+    <section id="faq" class="faq main-bg-vitebck">
         <div class="container book_info" data-aos="fade-up">
             {% for title_desc in title_desc_queans %}
                 <div class="section-title">
