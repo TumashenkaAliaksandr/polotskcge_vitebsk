@@ -5,7 +5,7 @@ from django.utils.safestring import mark_safe
 from .models import *
 from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm, ReceptionHoursForm, GeneralInfoForm, \
     EducationalResourceAdminForm, ZojForm, Book_complaintForm, HotlineHoursForm, HotlineHours_TitleForm, \
-    HotlineHours_Title_descForm, Electronic_appeals_Title_descForm
+    HotlineHours_Title_descForm, Electronic_appeals_Title_descForm, Organ_Title_descForm
 
 
 class DoctorAdmin(admin.ModelAdmin):
@@ -149,6 +149,15 @@ class Electronic_appeals_Title_descAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Electronic_appeals_Title_desc, Electronic_appeals_Title_descAdmin)
+
+
+class Organ_Title_descAdmin(admin.ModelAdmin):
+    form = Organ_Title_descForm
+    list_display = ('name', 'description')
+    search_fields = ('name', 'description')
+
+
+admin.site.register(Organ_Title_desc, Organ_Title_descAdmin)
 
 
 class AnswerInline(admin.TabularInline):

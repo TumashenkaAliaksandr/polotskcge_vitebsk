@@ -24,24 +24,128 @@
     </section>
     <!-- End Breadcrumbs Section -->
 
-    <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services">
-        <div class="container" data-aos="fade-up">
-
-            <div class="row">
-                {% for main_features in features %}
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="{{ main_features.icon_class }}"></i></div>
-                            <h4 class="title"><a href="{{ main_features.link }}">{{ main_features.name }}</a></h4>
-                            <p class="description">{{ main_features.description|safe }}</p>
+    <!-- ======= Book NEWS text Section ======= -->
+    <div id="single" class="single main-bg-hotline">
+        <div class="breaking-news">
+            <div class="container">
+                {% for main_interactiv_string in interactiv %}
+                    <div class="move-text">
+                        <div class="breaking_news">
+                            <h2>Новости Центра</h2>
                         </div>
+                        <div class="marquee">
+                            <div class="marquee1"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description | safe }}</a>
+                            </div>
+                            <div class="marquee2"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <script type="text/javascript" src="{% static 'js/jquery.marquee.js' %}"></script>
+                        <script>
+                            $('.marquee').marquee({pauseOnHover: true});
+                            //@ sourceURL=pen.js
+                        </script>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- ======= End Book News text Section ======= -->
+
+    <!-- Hotline Section -->
+    <section id="featured-services" class="featured-services main-bg-hotline">
+        <div class="container book_info" data-aos="fade-up">
+            <div class="row">
+                {% for main_title in title_organ %}
+                    <div class="section-title">
+                        <p>{{ main_title.name|safe }}</p>
+                        <p>{{ main_title.description|safe }}</p>
+                    </div>
+                {% endfor %}
+                <div class="row">
+                    <section class="hotline">
+                        <div class="table-info">
+                            <div class="box" data-aos="fade-up" data-aos-delay="300">
+                                <table class="iksweb">
+                                    <thead>
+                                    <tr>
+                                        <th>ФИО</th>
+                                        <th>Должность</th>
+                                        <th>Время работы</th>
+                                        <th>Телефон</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for main_clock in clocks %}
+                                        <tr>
+                                            <td>{{ main_clock.name|safe }}</td>
+                                            <td>{{ main_clock.post|safe }}</td>
+                                            <td>{{ main_clock.reception_time|safe }}</td>
+                                            <td>{{ main_clock.phone|safe }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Hotline Section -->
+
+    <!-- Hotline Title and desc Section -->
+    <section id="featured-services" class="featured-services main-bg-hotline">
+        <div class="container book_info" data-aos="fade-up">
+            <div class="row">
+                {% for main_title_two in title_desc_two %}
+                    <div class="section-title">
+                        <h3>{{ main_title_two.name|safe }}</h3>
+                    </div>
+                    <div class="description-left">
+                        <p>{{ main_title_two.description|safe }}</p>
                     </div>
                 {% endfor %}
             </div>
         </div>
     </section>
-    <!-- End Featured Services Section -->
+    <!-- End Hotline Title and desc Section -->
+
+    <!-- ======= Frequently Asked Questioins Section ======= -->
+    <section id="faq" class="faq main-bg-hotline">
+        <div class="container book_info" data-aos="fade-up">
+            {% for title_desc in title_desc_queans %}
+                <div class="section-title">
+                    <h2>{{ title_desc.name }}</h2>
+                    <p>{{ title_desc.description | safe }}</p>
+                </div>
+            {% endfor %}
+
+            <ul class="faq-list">
+                {% for question in questions|slice:":6" %}
+                    <li>
+                        <div data-bs-toggle="collapse" class="collapsed question"
+                             href="#{{ question.id }}"> {{ question.question_text }} <i
+                                class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
+                        </div>
+                        <div id="{{ question.id }}" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                {% for ansver in question.answers.all %}
+                                    {{ ansver.answer_text }}
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </section>
+    <!-- End Frequently Asked Questioins Section -->
 
   </main><!-- End #main -->
 

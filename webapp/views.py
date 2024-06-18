@@ -260,10 +260,11 @@ def book_of_comments(request):
 
 def higher_authority(request):
     """Appeals - higher_authority template"""
-    features = Featured.objects.all()
-
+    interactiv = Interactive.objects.all()
+    title_organ = Organ_Title_desc.objects.all()
     context = {
-        'features': features,
+        'interactiv': interactiv,
+        'title_organ': title_organ,
     }
 
     return render(request, 'webapp/appeals/higher_authority.html', context=context)

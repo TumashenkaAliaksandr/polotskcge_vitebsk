@@ -238,6 +238,18 @@ class Electronic_appeals_Title_desc(models.Model):
         return self.name
 
 
+class Organ_Title_desc(models.Model):
+    name = models.CharField(max_length=300, default='Тайтл')
+    description = models.CharField(max_length=3000, default='Описание')
+
+    class Meta:
+        verbose_name = 'Вышестоящий орган тайтл и описание'
+        verbose_name_plural = 'Вышестоящий орган тайтл и описание'
+
+    def __str__(self):
+        return self.name
+
+
 class Question(models.Model):
     question_text = models.CharField(max_length=255, default='вопрос')
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', blank=True, null=True)  # Added publication date field
