@@ -3,6 +3,7 @@ from ckeditor.widgets import CKEditorWidget
 from .models import *
 
 
+
 class AboutUsForm(forms.ModelForm):
     class Meta:
         model = AboutUs
@@ -17,6 +18,7 @@ class AboutUsForm(forms.ModelForm):
             'name_li_four': CKEditorWidget(),
             'name_li_five': CKEditorWidget(),
         }
+
 
 class ZojForm(forms.ModelForm):
     class Meta:
@@ -55,6 +57,7 @@ class LogoForm(forms.ModelForm):
         model = Logo
         fields = '__all__'
 
+
 class FeaturedForm(forms.ModelForm):
     class Meta:
         model = Featured
@@ -62,6 +65,7 @@ class FeaturedForm(forms.ModelForm):
         widgets = {
             'description': CKEditorWidget(),
         }
+
 
 class Book_complaintForm(forms.ModelForm):
     class Meta:
@@ -77,6 +81,7 @@ class ReceptionHoursForm(forms.ModelForm):
         model = ReceptionHours
         fields = '__all__'
 
+
 class GeneralInfoForm(forms.ModelForm):
     class Meta:
         model = GeneralInfo
@@ -90,6 +95,7 @@ class EducationalResourceAdminForm(forms.ModelForm):
         model = EducationalResource
         fields = '__all__'
 
+
 class HotlineHoursForm(forms.ModelForm):
     reception_time = forms.CharField(widget=CKEditorWidget())
     post = forms.CharField(widget=CKEditorWidget())
@@ -100,6 +106,7 @@ class HotlineHoursForm(forms.ModelForm):
     class Meta:
         model = HotlineHours
         fields = ('name', 'post', 'phone', 'reception_time', 'date_hotline')
+
 
 class HotlineHours_TitleForm(forms.ModelForm):
     name = forms.CharField(widget=CKEditorWidget())
@@ -153,7 +160,7 @@ class Expertise_Form(forms.ModelForm):
     description_three = forms.CharField(widget=CKEditorWidget())
 
     class Meta:
-        model = Organ_Title_desc
+        model = Expertise
         fields = ('name', 'description', 'description_two', 'description_three')
 
 
@@ -162,7 +169,16 @@ class Duties_Form(forms.ModelForm):
     description = forms.CharField(widget=CKEditorWidget())
 
     class Meta:
-        model = Organ_Title_desc
+        model = Duties
+        fields = ('name', 'description')
+
+
+class MaintenanceSh_Form(forms.ModelForm):
+    name = forms.CharField(widget=CKEditorWidget())
+    description = forms.CharField(widget=CKEditorWidget())
+
+    class Meta:
+        model = MaintenanceSchedule
         fields = ('name', 'description')
 
 
@@ -173,5 +189,5 @@ class Up_Organ_Form(forms.ModelForm):
     phone = forms.CharField(widget=CKEditorWidget())
 
     class Meta:
-        model = HotlineHours
+        model = Up_Organ
         fields = ('name', 'post', 'phone', 'reception_time')

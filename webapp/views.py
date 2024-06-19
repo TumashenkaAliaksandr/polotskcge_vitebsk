@@ -347,10 +347,16 @@ def rights_duties(request):
 
 def maintenance_schedule(request):
     """AP - maintenance_schedule template"""
-    features = Featured.objects.all()
+    interactiv = Interactive.objects.all()
+    maintenanceSch_inf = MaintenanceSchedule.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
 
     context = {
-        'features': features,
+        'interactiv': interactiv,
+        'maintenanceSch_inf': maintenanceSch_inf,
+        'title_desc_queans': title_desc_queans,
+        'questions': questions,
     }
 
     return render(request, 'webapp/ap/maintenance_schedule.html', context=context)

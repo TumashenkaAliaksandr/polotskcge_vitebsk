@@ -263,9 +263,21 @@ class Expertise(models.Model):
         return self.name
 
 
+class MaintenanceSchedule(models.Model):
+    name = models.CharField(max_length=300, default='Тайтл')
+    description = models.CharField(max_length=3000, default='Большое описание')
+
+    class Meta:
+        verbose_name = 'Порядок и Сроки Обжалования'
+        verbose_name_plural = 'Порядок и Сроки Обжалования'
+
+    def __str__(self):
+        return self.name
+
+
 class Duties(models.Model):
     name = models.CharField(max_length=300, default='Тайтл')
-    description = models.CharField(max_length=3000, default='Первое большое описание')
+    description = models.CharField(max_length=7000, default='Большое описание')
 
     class Meta:
         verbose_name = 'Права и обязанности'

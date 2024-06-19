@@ -6,7 +6,7 @@ from .models import *
 from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm, ReceptionHoursForm, GeneralInfoForm, \
     EducationalResourceAdminForm, ZojForm, Book_complaintForm, HotlineHoursForm, HotlineHours_TitleForm, \
     HotlineHours_Title_descForm, Electronic_appeals_Title_descForm, Organ_Title_descForm, Up_Organ_Form, \
-    Up_Organ_infForm, Expertise_Form, Duties_Form
+    Up_Organ_infForm, Expertise_Form, Duties_Form, MaintenanceSh_Form
 
 
 class DoctorAdmin(admin.ModelAdmin):
@@ -193,6 +193,15 @@ class DutiesAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Duties, DutiesAdmin)
+
+
+class MaintenanceShAdmin(admin.ModelAdmin):
+    form = MaintenanceSh_Form
+    list_display = ('name', 'description')
+    search_fields = ('name', 'description')
+
+
+admin.site.register(MaintenanceSchedule, MaintenanceShAdmin)
 
 
 class AnswerInline(admin.TabularInline):
