@@ -287,6 +287,20 @@ class Duties(models.Model):
         return self.name
 
 
+class Vacancies(models.Model):
+    name = models.CharField(max_length=300, default='Тайтл')
+    vacancy = models.CharField(max_length=7000, default='Вакансия 1')
+    vacancy_two = models.CharField(max_length=7000, default='Вакансия 2')
+    vacancy_three = models.CharField(max_length=7000, default='Вакансия 3')
+
+    class Meta:
+        verbose_name = 'Вакансии'
+        verbose_name_plural = 'Вакансии'
+
+    def __str__(self):
+        return self.name
+
+
 class Organ_Title_desc(models.Model):
     name = models.CharField(max_length=300, default='Тайтл')
     description = models.CharField(max_length=3000, default='Описание')

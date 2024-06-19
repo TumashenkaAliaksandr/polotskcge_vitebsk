@@ -182,6 +182,17 @@ class MaintenanceSh_Form(forms.ModelForm):
         fields = ('name', 'description')
 
 
+class Vacancies_Form(forms.ModelForm):
+    name = forms.CharField(widget=CKEditorWidget())
+    vacancy = forms.CharField(widget=CKEditorWidget())
+    vacancy_two = forms.CharField(widget=CKEditorWidget())
+    vacancy_three = forms.CharField(widget=CKEditorWidget())
+
+    class Meta:
+        model = Vacancies
+        fields = ('name', 'vacancy', 'vacancy_two', 'vacancy_three')
+
+
 class Up_Organ_Form(forms.ModelForm):
     reception_time = forms.CharField(widget=CKEditorWidget())
     post = forms.CharField(widget=CKEditorWidget())
