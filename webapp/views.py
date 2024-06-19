@@ -151,13 +151,13 @@ def trade_union(request):
 def vacancies(request):
     """Trade union template"""
     interactiv = Interactive.objects.all()
-    maintenanceSch_inf = MaintenanceSchedule.objects.all()
+    vacancies_inf = Vacancies.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
     questions = Question.objects.all().order_by('-pub_date')
 
     context = {
         'interactiv': interactiv,
-        'maintenanceSch_inf': maintenanceSch_inf,
+        'vacancies_inf': vacancies_inf,
         'title_desc_queans': title_desc_queans,
         'questions': questions,
     }
