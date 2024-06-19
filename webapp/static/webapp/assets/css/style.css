@@ -872,6 +872,13 @@ section#footer {
     background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.98)), url('../img/J4o.gif') center/cover;
     background-attachment: fixed;
 }
+
+.main-bg-expertise {
+    padding: 15px 0 15px;
+    background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.98)), url('../img/gigi_centr_expertise_bg.png') center/cover;
+    background-attachment: fixed;
+}
+
 .main-bg-vitebck {
     padding: 15px 0 15px;
     background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.98)), url('../img/gigi_centr_vitebck.png') center/cover;

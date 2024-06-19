@@ -292,9 +292,17 @@ def ap(request):
 def expertise(request):
     """AP - expertise template"""
     features = Featured.objects.all()
+    interactiv = Interactive.objects.all()
+    expertise_inf = Expertise.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
 
     context = {
         'features': features,
+        'interactiv': interactiv,
+        'expertise_inf': expertise_inf,
+        'title_desc_queans': title_desc_queans,
+        'questions': questions,
     }
 
     return render(request, 'webapp/ap/expertise.html', context=context)

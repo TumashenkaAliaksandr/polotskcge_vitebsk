@@ -249,6 +249,20 @@ class Up_Organ_inf(models.Model):
         return self.name
 
 
+class Expertise(models.Model):
+    name = models.CharField(max_length=300, default='Тайтл')
+    description = models.CharField(max_length=3000, default='Первое большое описание')
+    description_two = models.CharField(max_length=3000, default='Второе описание')
+    description_three = models.CharField(max_length=3000, default='Третье описание')
+
+    class Meta:
+        verbose_name = 'Экспертиза'
+        verbose_name_plural = 'Экспертиза'
+
+    def __str__(self):
+        return self.name
+
+
 class Organ_Title_desc(models.Model):
     name = models.CharField(max_length=300, default='Тайтл')
     description = models.CharField(max_length=3000, default='Описание')
