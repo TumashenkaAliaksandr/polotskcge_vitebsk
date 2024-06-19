@@ -263,6 +263,18 @@ class Expertise(models.Model):
         return self.name
 
 
+class Duties(models.Model):
+    name = models.CharField(max_length=300, default='Тайтл')
+    description = models.CharField(max_length=3000, default='Первое большое описание')
+
+    class Meta:
+        verbose_name = 'Права и обязанности'
+        verbose_name_plural = 'Права и обязанности'
+
+    def __str__(self):
+        return self.name
+
+
 class Organ_Title_desc(models.Model):
     name = models.CharField(max_length=300, default='Тайтл')
     description = models.CharField(max_length=3000, default='Описание')

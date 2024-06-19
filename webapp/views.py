@@ -291,14 +291,12 @@ def ap(request):
 
 def expertise(request):
     """AP - expertise template"""
-    features = Featured.objects.all()
     interactiv = Interactive.objects.all()
     expertise_inf = Expertise.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
     questions = Question.objects.all().order_by('-pub_date')
 
     context = {
-        'features': features,
         'interactiv': interactiv,
         'expertise_inf': expertise_inf,
         'title_desc_queans': title_desc_queans,
@@ -332,10 +330,16 @@ def relation_to_citizens(request):
 
 def rights_duties(request):
     """AP - rights_duties template"""
-    features = Featured.objects.all()
+    interactiv = Interactive.objects.all()
+    duties_inf = Duties.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
 
     context = {
-        'features': features,
+        'interactiv': interactiv,
+        'duties_inf': duties_inf,
+        'title_desc_queans': title_desc_queans,
+        'questions': questions,
     }
 
     return render(request, 'webapp/ap/rights_duties.html', context=context)
