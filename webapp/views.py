@@ -168,7 +168,7 @@ def vacancies(request):
 def appeals(request):
     """Appeals template"""
     title_desc = HotlineHours_Title.objects.all()
-    title_desc_two = Electronic_appeals_Title_desc.objects.all()
+    main_appeals_inf = MainAppeals.objects.all()
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
@@ -176,7 +176,7 @@ def appeals(request):
 
     context = {
         'title_desc': title_desc,
-        'title_desc_two': title_desc_two,
+        'main_appeals_inf': main_appeals_inf,
         'questions': questions,
         'ansvers': ansvers,
         'title_desc_queans': title_desc_queans,
