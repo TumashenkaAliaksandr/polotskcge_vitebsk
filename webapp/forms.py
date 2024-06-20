@@ -192,6 +192,19 @@ class Vacancies_Form(forms.ModelForm):
         model = Vacancies
         fields = ('name', 'vacancy', 'vacancy_two', 'vacancy_three')
 
+class Appeals_Form(forms.ModelForm):
+    name = forms.CharField(widget=CKEditorWidget())
+    name_two = forms.CharField(widget=CKEditorWidget())
+    name_three = forms.CharField(widget=CKEditorWidget())
+    appeals_desc = forms.CharField(widget=CKEditorWidget())
+    appeals_desc_two = forms.CharField(widget=CKEditorWidget())
+    appeals_desc_three = forms.CharField(widget=CKEditorWidget())
+    appeals_desc_four = forms.CharField(widget=CKEditorWidget())
+
+    class Meta:
+        model = MainAppeals
+        fields = ('name', 'name_two', 'name_three', 'appeals_desc', 'appeals_desc_two', 'appeals_desc_three', 'appeals_desc_four')
+
 
 class Up_Organ_Form(forms.ModelForm):
     reception_time = forms.CharField(widget=CKEditorWidget())

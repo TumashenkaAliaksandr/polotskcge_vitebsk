@@ -301,6 +301,23 @@ class Vacancies(models.Model):
         return self.name
 
 
+class MainAppeals(models.Model):
+    name = models.CharField(max_length=300, default='Тайтл')
+    name_two = models.CharField(max_length=300, default='Тайтл 2')
+    name_three = models.CharField(max_length=300, default='Тайтл 3')
+    appeals_desc = models.CharField(max_length=300, default='Описание под тайтл')
+    appeals_desc_two = models.CharField(max_length=7000, default='Описание')
+    appeals_desc_three = models.CharField(max_length=7000, default='Описание 2')
+    appeals_desc_four = models.CharField(max_length=7000, default='Описание 3')
+
+    class Meta:
+        verbose_name = 'Обращения главная'
+        verbose_name_plural = 'Обращения главная'
+
+    def __str__(self):
+        return self.name
+
+
 class Organ_Title_desc(models.Model):
     name = models.CharField(max_length=300, default='Тайтл')
     description = models.CharField(max_length=3000, default='Описание')
