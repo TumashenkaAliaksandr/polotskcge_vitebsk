@@ -62,9 +62,14 @@
                 {% for main_title_two in main_appeals_inf %}
                     <div class="section-title">
                         <h3>{{ main_title_two.name|safe }}</h3>
+                        <p>{{ main_title_two.appeals_desc|safe }}</p>
                     </div>
                     <div class="description-left">
-                        <p>{{ main_title_two.appeals_desc|safe }}</p>
+                        <p>{{ main_title_two.appeals_desc_two|safe }}</p>
+                        <p>{{ main_title_two.name_two|safe }}</p>
+                        <p>{{ main_title_two.appeals_desc_three|safe }}</p>
+                        <p>{{ main_title_two.name_three|safe }}</p>
+                        <p>{{ main_title_two.appeals_desc_four|safe }}</p>
                     </div>
                 {% endfor %}
             </div>
