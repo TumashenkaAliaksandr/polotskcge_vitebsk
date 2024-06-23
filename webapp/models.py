@@ -33,6 +33,35 @@ class Featured(models.Model):
     def __str__(self):
         return self.name
 
+class AnticorrTitle(models.Model):
+    """This Model for Anticorr Title block on the anticorruptions page"""
+
+    name = models.CharField(max_length=200, default='Тайтл Анткоррупция')
+    desc_anticorr = models.CharField(max_length=500, default='Описание под тайтл Анткоррупция')
+
+    class Meta:
+        verbose_name = 'Антикоррупция тайтл'
+        verbose_name_plural = 'Антикоррупция тайтл'
+
+    def __str__(self):
+        return self.name
+
+
+class Anticorr(models.Model):
+    """This Model for Anticorr block on the anticorruptions page"""
+
+    name = models.CharField(max_length=300, default='Тайтл в карточку Анткоррупция')
+    description = models.TextField(default='Featured Description')
+    link = models.URLField()  # Поле для хранения ссылки
+    icon_class = models.CharField(max_length=100, default='fas fa-heartbeat')
+
+    class Meta:
+        verbose_name = 'Антикоррупция'
+        verbose_name_plural = 'Антикоррупция'
+
+    def __str__(self):
+        return self.name
+
 
 class Book_complaint(models.Model):
     """This Model for Book_complaint block on the main page"""

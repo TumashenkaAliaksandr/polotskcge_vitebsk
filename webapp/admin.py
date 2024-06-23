@@ -6,7 +6,8 @@ from .models import *
 from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm, ReceptionHoursForm, GeneralInfoForm, \
     EducationalResourceAdminForm, ZojForm, Book_complaintForm, HotlineHoursForm, HotlineHours_TitleForm, \
     HotlineHours_Title_descForm, Electronic_appeals_Title_descForm, Organ_Title_descForm, Up_Organ_Form, \
-    Up_Organ_infForm, Expertise_Form, Duties_Form, MaintenanceSh_Form, Vacancies_Form, Appeals_Form
+    Up_Organ_infForm, Expertise_Form, Duties_Form, MaintenanceSh_Form, Vacancies_Form, Appeals_Form, AnticorrForm, \
+    AnticorrTitleForm
 
 
 class DoctorAdmin(admin.ModelAdmin):
@@ -223,6 +224,24 @@ admin.site.register(MainAppeals, AppealsAdmin)
 class AnswerInline(admin.TabularInline):
     model = Answer
     extra = 1
+
+
+class AnticorrTitleAdmin(admin.ModelAdmin):
+    form = AnticorrTitleForm
+    list_display = ('name', 'desc_anticorr')
+    list_filter = ('name',)
+    search_fields = ('name', 'desc_anticorr')
+
+admin.site.register(AnticorrTitle, AnticorrTitleAdmin)
+
+
+class AnticorrAdmin(admin.ModelAdmin):
+    form = AnticorrForm
+    list_display = ('name', 'description', 'link', 'icon_class')
+    list_filter = ('name',)
+    search_fields = ('name', 'description')
+
+admin.site.register(Anticorr, AnticorrAdmin)
 
 
 class QuestionAdmin(admin.ModelAdmin):

@@ -106,10 +106,18 @@ def working_mode(request):
 
 def anti_corruption(request):
     """Anti-corruption template"""
-    features = Featured.objects.all()
+    anticorr_title = AnticorrTitle.objects.all()
+    corruptions = Anticorr.objects.all()
+    interactiv = Interactive.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
 
     context = {
-        'features': features,
+        'anticorr_title': anticorr_title,
+        'corruptions': corruptions,
+        'interactiv': interactiv,
+        'title_desc_queans': title_desc_queans,
+        'questions': questions,
     }
 
     return render(request, 'webapp/about_us/anti_corruption.html', context=context)

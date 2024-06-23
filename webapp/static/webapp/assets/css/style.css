@@ -885,6 +885,12 @@ section#footer {
     background-attachment: fixed;
 }
 
+.main-bg-anticorrup {
+    padding: 15px 0 15px;
+    background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.98)), url('../img/gigi_centr_no_corrup_bg.png') center/cover;
+    background-attachment: fixed;
+}
+
 .main-bg-vitebck {
     padding: 15px 0 15px;
     background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.98)), url('../img/gigi_centr_vitebck.png') center/cover;
@@ -921,6 +927,11 @@ section#clocks-two {
     background: linear-gradient(rgba(255, 255, 255, 0.99), rgb(236, 248, 249, 0.99)), url('../img/gigi_centr_back.jpg') center/cover;
     background-attachment: fixed;
 }
+
+.col-with {
+  width: 20%;
+}
+
 .book_info{
   display: block;
   width: auto;
@@ -1496,6 +1507,77 @@ section#clocks-two {
 
 .featured-services .icon-box:hover .icon i {
   color: #fff;
+}
+/*featured 2*/
+.featured-services-two .icon-box {
+  padding: 23px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(247, 252, 252, 0.5);
+  box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  z-index: 1;
+  width: 20%;
+}
+
+.featured-services-two .icon-box::before {
+  content: "";
+  position: absolute;
+  background: #d9f1f2;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 100%;
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+
+.featured-services-two .icon-box:hover::before {
+  background: #3fbbc0;
+  top: 0;
+  border-radius: 0px;
+}
+
+.featured-services-two .icon-two {
+  margin-bottom: 15px;
+}
+
+.featured-services-two .icon-two i {
+  font-size: 48px;
+  line-height: 1;
+  color: #3fbbc0;
+  transition: all 0.3s ease-in-out;
+}
+
+.featured-services-two .title-two {
+  font-weight: 670;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.featured-services-two .title-two a {
+  color: #111;
+}
+
+.featured-services-two .description {
+  font-size: 13px;
+  line-height: 25px;
+  margin-bottom: 0;
+}
+
+.featured-services-two .icon-box:hover .title-two a,
+.featured-services-two .icon-box:hover .description {
+  color: #fff;
+}
+
+.featured-services-two .icon-box:hover .icon-two i {
+  color: #fff;
+}
+
+.featured-services-two p {
+  font-size: 13px;
 }
 
 /*--------------------------------------------------------------

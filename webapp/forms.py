@@ -205,6 +205,25 @@ class Appeals_Form(forms.ModelForm):
         model = MainAppeals
         fields = ('name', 'name_two', 'name_three', 'appeals_desc', 'appeals_desc_two', 'appeals_desc_three', 'appeals_desc_four')
 
+class AnticorrTitleForm(forms.ModelForm):
+
+    name = forms.CharField(label='Имя', widget=CKEditorWidget())
+    desс_anticorr = forms.CharField(label='Описание под тайтл Анткоррупция', widget=CKEditorWidget())
+
+    class Meta:
+        model = AnticorrTitle
+        fields = ('name', 'desс_anticorr')
+
+class AnticorrForm(forms.ModelForm):
+    name = forms.CharField(label='Имя', widget=CKEditorWidget())
+    description = forms.CharField(widget=CKEditorWidget())
+    link = forms.URLField(label='Ссылка')
+    icon_class = forms.CharField(max_length=100, label='Класс иконки')
+
+    class Meta:
+        model = Anticorr
+        fields = ('name', 'description', 'link', 'icon_class')
+
 
 class Up_Organ_Form(forms.ModelForm):
     reception_time = forms.CharField(widget=CKEditorWidget())
