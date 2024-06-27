@@ -347,6 +347,18 @@ class MainAppeals(models.Model):
         return self.name
 
 
+class NormativeDocuments(models.Model):
+    name = models.CharField(max_length=300, default='Тайтл')
+    normative_desc = models.CharField(max_length=300, default='Описание под тайтл')
+
+    class Meta:
+        verbose_name = 'Нормативные документы'
+        verbose_name_plural = 'Нормативные документы'
+
+    def __str__(self):
+        return self.name
+
+
 class Organ_Title_desc(models.Model):
     name = models.CharField(max_length=300, default='Тайтл')
     description = models.CharField(max_length=3000, default='Описание')

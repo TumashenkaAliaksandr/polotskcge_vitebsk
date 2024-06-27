@@ -234,3 +234,11 @@ class Up_Organ_Form(forms.ModelForm):
     class Meta:
         model = Up_Organ
         fields = ('name', 'post', 'phone', 'reception_time')
+
+class NormativeDocuments_Form(forms.ModelForm):
+    name = forms.CharField(widget=CKEditorWidget())
+    normative_desc = forms.CharField(widget=CKEditorWidget())
+
+    class Meta:
+        model = NormativeDocuments
+        fields = ('name', 'normative_desc')

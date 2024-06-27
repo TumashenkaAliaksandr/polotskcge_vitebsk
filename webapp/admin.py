@@ -7,7 +7,7 @@ from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm, Receptio
     EducationalResourceAdminForm, ZojForm, Book_complaintForm, HotlineHoursForm, HotlineHours_TitleForm, \
     HotlineHours_Title_descForm, Electronic_appeals_Title_descForm, Organ_Title_descForm, Up_Organ_Form, \
     Up_Organ_infForm, Expertise_Form, Duties_Form, MaintenanceSh_Form, Vacancies_Form, Appeals_Form, AnticorrForm, \
-    AnticorrTitleForm
+    AnticorrTitleForm, NormativeDocuments_Form
 
 
 class DoctorAdmin(admin.ModelAdmin):
@@ -176,6 +176,13 @@ class Up_OrganAdmin(admin.ModelAdmin):
     list_display = ('name', 'post', 'phone', 'reception_time')
 
 admin.site.register(Up_Organ, Up_OrganAdmin)
+
+
+class NormativeDocumentsAdmin(admin.ModelAdmin):
+    form = NormativeDocuments_Form
+    list_display = ('name', 'normative_desc')
+
+admin.site.register(NormativeDocuments, NormativeDocumentsAdmin)
 
 
 class ExpertiseAdmin(admin.ModelAdmin):

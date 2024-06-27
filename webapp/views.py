@@ -194,10 +194,18 @@ def appeals(request):
 
 def normative_documents(request):
     """Appeals - normative_documents template"""
-    features = Featured.objects.all()
+    main_appeals_inf = MainAppeals.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
+    ansvers = Answer.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
+    interactiv = Interactive.objects.all()
 
     context = {
-        'features': features,
+        'main_appeals_inf': main_appeals_inf,
+        'questions': questions,
+        'ansvers': ansvers,
+        'title_desc_queans': title_desc_queans,
+        'interactiv': interactiv,
     }
 
     return render(request, 'webapp/appeals/normative_documents.html', context=context)
