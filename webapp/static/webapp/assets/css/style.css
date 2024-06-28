@@ -720,6 +720,24 @@ h6 {
   background: #65c9cd;
 }
 
+.btn-get-normative {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 4px;
+  transition: 0.5s;
+  line-height: 1;
+  color: #fff;
+  background: #3fbbc0;
+}
+
+.btn-get-normative:hover {
+  background: #65c9cd;
+}
+
 @media (max-width: 992px) {
   #hero {
     height: 100vh;
@@ -876,6 +894,12 @@ section#footer {
 .main-bg-expertise {
     padding: 15px 0 15px;
     background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.98)), url('../img/gigi_centr_expertise_bg.png') center/cover;
+    background-attachment: fixed;
+}
+
+.main-bg-laboratory {
+    padding: 15px 0 15px;
+    background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.98)), url('../img/gigi_centr_expertise1.jpg') center/cover;
     background-attachment: fixed;
 }
 

@@ -436,10 +436,14 @@ def hygienic_services(request):
 
 def laboratory_services(request):
     """Services - laboratory_services template"""
-    features = Featured.objects.all()
+    main_normative_doc_inf = NormativeDocuments.objects.all()
+    interactiv = Interactive.objects.all()
+    laba_obj = Laboratory.objects.all()
 
     context = {
-        'features': features,
+        'main_normative_doc_inf': main_normative_doc_inf,
+        'interactiv': interactiv,
+        'laba_obj': laba_obj,
     }
 
     return render(request, 'webapp/services/laboratory_services.html', context=context)

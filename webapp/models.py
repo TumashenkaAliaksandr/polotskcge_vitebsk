@@ -135,8 +135,6 @@ class Services(models.Model):
         return self.name
 
 
-from django.db import models
-
 class AboutUs(models.Model):
     name = models.CharField(max_length=100, default='About Us Name One')
     description = models.TextField(default='About Us Description One')
@@ -445,6 +443,36 @@ class Zoj(models.Model):
     class Meta:
         verbose_name = 'Здоровый Образ Жизни'
         verbose_name_plural = 'Здоровый Образ Жизни'
+
+    def __str__(self):
+        return self.name
+
+
+class Laboratory(models.Model):
+    name = models.CharField(max_length=150, default='Тайтл')
+    description = models.TextField(default='Описание')
+    name_two = models.CharField(max_length=200, default='Второе название')
+    name_three = models.CharField(max_length=200, default='Третье название')
+    description_two = models.TextField(default='Второе описание')
+    name_li_one = models.CharField(max_length=200, default='Первое имя с тегом li')
+    name_li_two = models.CharField(max_length=200, default='Второе имя с тегом li')
+    name_li_three = models.CharField(max_length=200, default='Третье имя с тегом li')
+    name_li_four = models.CharField(max_length=200, default='Четвертое имя с тегом li')
+    name_li_five = models.CharField(max_length=200, default='Пятое имя с тегом li')
+    name_li_six = models.CharField(max_length=200, default='Шестое имя с тегом li')
+    description_three = models.TextField(default='Третье описание')
+    photo = models.ImageField(upload_to='laboratory/', null=True, blank=True)
+    icon_class = models.CharField(max_length=100, default='bi bi-check-circle')  # Для основного описания
+    icon_class_li_one = models.CharField(max_length=100, default='bi bi-check-circle')  # Для первого элемента списка
+    icon_class_li_two = models.CharField(max_length=100, default='bi bi-check-circle')  # Для второго элемента списка
+    icon_class_li_three = models.CharField(max_length=100, default='bi bi-check-circle')  # Для третьего элемента списка
+    icon_class_li_four = models.CharField(max_length=100, default='bi bi-check-circle')  # Для четвертого элемента списка
+    icon_class_li_five = models.CharField(max_length=100, default='bi bi-check-circle')  # Для пятого элемента списка
+    icon_class_li_six = models.CharField(max_length=100, default='bi bi-check-circle')  # Для пятого элемента списка
+
+    class Meta:
+        verbose_name = 'Лабораторные услуги'
+        verbose_name_plural = 'Лабораторные услуги'
 
     def __str__(self):
         return self.name

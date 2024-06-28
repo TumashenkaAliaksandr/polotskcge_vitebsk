@@ -7,7 +7,7 @@ from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm, Receptio
     EducationalResourceAdminForm, ZojForm, Book_complaintForm, HotlineHoursForm, HotlineHours_TitleForm, \
     HotlineHours_Title_descForm, Electronic_appeals_Title_descForm, Organ_Title_descForm, Up_Organ_Form, \
     Up_Organ_infForm, Expertise_Form, Duties_Form, MaintenanceSh_Form, Vacancies_Form, Appeals_Form, AnticorrForm, \
-    AnticorrTitleForm, NormativeDocuments_Form
+    AnticorrTitleForm, NormativeDocuments_Form, LabaForm
 
 
 class DoctorAdmin(admin.ModelAdmin):
@@ -62,6 +62,18 @@ class AboutUsAdmin(admin.ModelAdmin):
 
     photo_display.short_description = 'Photo'  # Заголовок колонки в списке
 
+@admin.register(Laboratory)
+class LabaAdmin(admin.ModelAdmin):
+    form = LabaForm
+    list_display = ['name', 'photo_display']  # Добавляем поле для отображения фотографии в списке
+
+    def photo_display(self, obj):
+        if obj.photo:
+            return mark_safe(f'<img src="{obj.photo.url}" width="100">')
+        else:
+            return "No photo"
+
+    photo_display.short_description = 'Photo'  # Заголовок колонки в списке
 
 @admin.register(Zoj)
 class ZojUsAdmin(admin.ModelAdmin):

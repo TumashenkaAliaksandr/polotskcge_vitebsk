@@ -192,6 +192,7 @@ class Vacancies_Form(forms.ModelForm):
         model = Vacancies
         fields = ('name', 'vacancy', 'vacancy_two', 'vacancy_three')
 
+
 class Appeals_Form(forms.ModelForm):
     name = forms.CharField(widget=CKEditorWidget())
     name_two = forms.CharField(widget=CKEditorWidget())
@@ -205,6 +206,7 @@ class Appeals_Form(forms.ModelForm):
         model = MainAppeals
         fields = ('name', 'name_two', 'name_three', 'appeals_desc', 'appeals_desc_two', 'appeals_desc_three', 'appeals_desc_four')
 
+
 class AnticorrTitleForm(forms.ModelForm):
 
     name = forms.CharField(label='Имя', widget=CKEditorWidget())
@@ -213,6 +215,7 @@ class AnticorrTitleForm(forms.ModelForm):
     class Meta:
         model = AnticorrTitle
         fields = ('name', 'desс_anticorr')
+
 
 class AnticorrForm(forms.ModelForm):
     name = forms.CharField(label='Имя', widget=CKEditorWidget())
@@ -235,6 +238,7 @@ class Up_Organ_Form(forms.ModelForm):
         model = Up_Organ
         fields = ('name', 'post', 'phone', 'reception_time')
 
+
 class NormativeDocuments_Form(forms.ModelForm):
     name = forms.CharField(widget=CKEditorWidget())
     normative_desc = forms.CharField(widget=CKEditorWidget())
@@ -242,3 +246,22 @@ class NormativeDocuments_Form(forms.ModelForm):
     class Meta:
         model = NormativeDocuments
         fields = ('name', 'normative_desc')
+
+
+class LabaForm(forms.ModelForm):
+    class Meta:
+        model = Laboratory
+        fields = '__all__'
+        widgets = {
+            'description': CKEditorWidget(),
+            'description_two': CKEditorWidget(),
+            'description_three': CKEditorWidget(),
+            'name_li_one': CKEditorWidget(),
+            'name_li_two': CKEditorWidget(),
+            'name_li_three': CKEditorWidget(),
+            'name_li_four': CKEditorWidget(),
+            'name_li_five': CKEditorWidget(),
+            'name_li_six': CKEditorWidget(),
+            'name_two': CKEditorWidget(),
+            'name_three': CKEditorWidget(),
+        }

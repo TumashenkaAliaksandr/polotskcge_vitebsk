@@ -7,6 +7,10 @@
 <main id="main">
 
     <!-- ======= Breadcrumbs Section ======= -->
+    <!-- pagebanner -->
+    <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_labor.png' %}{% endif %}')">
+    </section>
+    <!-- End Pagebanner -->
     <section class="breadcrumbs">
       <div class="container">
 
@@ -19,25 +23,118 @@
       </div>
     </section><!-- End Breadcrumbs Section -->
 
-    <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services">
-        <div class="container" data-aos="fade-up">
-
-            <div class="row">
-                {% for main_features in features %}
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="{{ main_features.icon_class }}"></i></div>
-                            <h4 class="title"><a href="{{ main_features.link }}">{{ main_features.name }}</a></h4>
-                            <p class="description">{{ main_features.description|safe }}</p>
+    <!-- Interactiv  News -->
+    <div id="single" class="single main-bg-laboratory">
+        <div class="breaking-news">
+            <div class="container">
+                {% for main_interactiv_string in interactiv %}
+                    <div class="move-text">
+                        <div class="breaking_news">
+                            <h2>Новости Центра</h2>
                         </div>
+                        <div class="marquee">
+                            <div class="marquee1"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description | safe }}</a>
+                            </div>
+                            <div class="marquee2"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <script type="text/javascript" src="{% static 'js/jquery.marquee.js' %}"></script>
+                        <script>
+                            $('.marquee').marquee({pauseOnHover: true});
+                            //@ sourceURL=pen.js
+                        </script>
                     </div>
                 {% endfor %}
             </div>
         </div>
-    </section>
-    <!-- End Featured Services Section -->
+    </div>
+    <!-- End Interactiv  News -->
 
-  </main><!-- End #main -->
+    <!-- ======= About Us Section ======= -->
+    {% for main_lab in laba_obj %}
+        <section id="about" class="about main-bg-laboratory">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>{{ main_lab.name }}</h2>
+                    <p>{{ main_lab.description | safe }}</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <img src="{{ main_lab.photo.url }}" class="img-fluid"
+                             alt="">
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+                        <h3>{{ main_lab.name_two|safe }}</h3>
+                        <p class="fst-italic">{{ main_lab.description_two | safe }}</p>
+                        <ul class="icon-list">
+                            <li><i class="{{ main_lab.icon_class_li_one }}"></i> {{ main_lab.name_li_one | safe }}
+                            </li>
+                            <li><i class="{{ main_lab.icon_class_li_two }}"></i> {{ main_lab.name_li_two | safe }}
+                            </li>
+                            <li>
+                                <i class="{{ main_lab.icon_class_li_three }}"></i> {{ main_lab.name_li_three | safe }}
+                            </li>
+                            <li>
+                                <i class="{{ main_lab.icon_class_li_four }}"></i> {{ main_lab.name_li_four | safe }}
+                            </li>
+                            <li>
+                                <i class="{{ main_lab.icon_class_li_five }}"></i> {{ main_lab.name_li_five | safe }}
+                            </li>
+                        </ul>
+                        <h3>{{ main_lab.name_three|safe }}</h3>
+                        <p>{{ main_lab.description_three | safe }}</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    {% endfor %}
+    <!-- End About Us Section -->
+
+{#    <!-- ======= Features Section ======= -->#}
+{#    <section id="features" class="features main-bg-laboratory">#}
+{#        <div class="container" data-aos="fade-up">#}
+{#            {% for main_innovations in innovations %}#}
+{#                <div class="row">#}
+{#                    <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">#}
+{#                        <div class="icon-box mt-5 mt-lg-0">#}
+{#                            <i class="{{ main_innovations.icon_class }}"></i>#}
+{#                            <h4>{{ main_innovations.name }}</h4>#}
+{#                            <p>{{ main_innovations.description | safe }}</p>#}
+{#                        </div>#}
+{#                        <div class="icon-box mt-5">#}
+{#                            <i class="{{ main_innovations.icon_class_two }}"></i>#}
+{#                            <h4>{{ main_innovations.name_two }}</h4>#}
+{#                            <p>{{ main_innovations.description_two | safe }}</p>#}
+{#                        </div>#}
+{#                        <div class="icon-box mt-5">#}
+{#                            <i class="{{ main_innovations.icon_class_three }}"></i>#}
+{#                            <h4>{{ main_innovations.name_three }}</h4>#}
+{#                            <p>{{ main_innovations.description_three | safe }}</p>#}
+{#                        </div>#}
+{#                        <div class="icon-box mt-5">#}
+{#                            <i class="{{ main_innovations.icon_class_four }}"></i>#}
+{#                            <h4>{{ main_innovations.name_four }}</h4>#}
+{#                            <p>{{ main_innovations.description_four | safe }}</p>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="image col-lg-6 order-1 order-lg-2"#}
+{#                         style='background-image: url({{ main_innovations.photo.url }});'#}
+{#                         data-aos="zoom-in"></div>#}
+{#                </div>#}
+{#            {% endfor %}#}
+{##}
+{#        </div>#}
+{#    </section>#}
+{#    <!-- End Features Section -->#}
+
+
+</main><!-- End #main -->
 
 {% endblock %}
