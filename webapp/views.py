@@ -440,12 +440,18 @@ def laboratory_services(request):
     interactiv = Interactive.objects.all()
     laba_obj = Laboratory.objects.all()
     laboratory_two = Laboratories.objects.all()
+    questions = Question.objects.all()
+    ansvers = Answer.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
 
     context = {
         'main_normative_doc_inf': main_normative_doc_inf,
         'interactiv': interactiv,
         'laba_obj': laba_obj,
         'laboratory_two': laboratory_two,
+        'questions': questions,
+        'ansvers': ansvers,
+        'title_desc_queans': title_desc_queans,
     }
 
     return render(request, 'webapp/services/laboratory_services.html', context=context)
