@@ -903,6 +903,14 @@ section#footer {
     background-attachment: fixed;
 }
 
+.main-bg-laba {
+    padding: 15px 0 15px;
+    background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.98)), url('../img/5Gp9.gif') center/cover no-repeat;
+    background-size: 30% 100vh; /* added sizes */
+    background-attachment: fixed;
+}
+
+
 .main-bg-appeals {
     padding: 15px 0 15px;
     background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.98)), url('../img/gigi_centr_book3.jpg') center/cover;

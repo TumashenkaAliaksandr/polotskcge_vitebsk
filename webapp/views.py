@@ -439,11 +439,13 @@ def laboratory_services(request):
     main_normative_doc_inf = NormativeDocuments.objects.all()
     interactiv = Interactive.objects.all()
     laba_obj = Laboratory.objects.all()
+    laboratory_two = Laboratories.objects.all()
 
     context = {
         'main_normative_doc_inf': main_normative_doc_inf,
         'interactiv': interactiv,
         'laba_obj': laba_obj,
+        'laboratory_two': laboratory_two,
     }
 
     return render(request, 'webapp/services/laboratory_services.html', context=context)

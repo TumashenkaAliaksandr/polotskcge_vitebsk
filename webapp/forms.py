@@ -253,6 +253,7 @@ class LabaForm(forms.ModelForm):
         model = Laboratory
         fields = '__all__'
         widgets = {
+            'name': CKEditorWidget(),
             'description': CKEditorWidget(),
             'description_two': CKEditorWidget(),
             'description_three': CKEditorWidget(),
@@ -264,4 +265,14 @@ class LabaForm(forms.ModelForm):
             'name_li_six': CKEditorWidget(),
             'name_two': CKEditorWidget(),
             'name_three': CKEditorWidget(),
+        }
+
+
+class LaboratoriesForm(forms.ModelForm):
+    class Meta:
+        model = Laboratories
+        fields = '__all__'
+        widgets = {
+            'name': CKEditorWidget(),
+            'description': CKEditorWidget(),
         }

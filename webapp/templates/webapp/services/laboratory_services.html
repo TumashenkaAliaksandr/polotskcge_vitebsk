@@ -60,7 +60,7 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>{{ main_lab.name }}</h2>
+                    <h2>{{ main_lab.name|safe }}</h2>
                     <p>{{ main_lab.description | safe }}</p>
                 </div>
 
@@ -87,52 +87,42 @@
                                 <i class="{{ main_lab.icon_class_li_five }}"></i> {{ main_lab.name_li_five | safe }}
                             </li>
                         </ul>
-                        <h3>{{ main_lab.name_three|safe }}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="container book_info main-bg-laba" data-aos="fade-up">
+                <div class="row">
+                    <div class="description-left">
+                        <h2><p>{{ main_lab.name_three|safe }}</h2>
                         <p>{{ main_lab.description_three | safe }}</p>
                     </div>
                 </div>
-
             </div>
         </section>
     {% endfor %}
     <!-- End About Us Section -->
 
-{#    <!-- ======= Features Section ======= -->#}
-{#    <section id="features" class="features main-bg-laboratory">#}
-{#        <div class="container" data-aos="fade-up">#}
-{#            {% for main_innovations in innovations %}#}
-{#                <div class="row">#}
-{#                    <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">#}
-{#                        <div class="icon-box mt-5 mt-lg-0">#}
-{#                            <i class="{{ main_innovations.icon_class }}"></i>#}
-{#                            <h4>{{ main_innovations.name }}</h4>#}
-{#                            <p>{{ main_innovations.description | safe }}</p>#}
-{#                        </div>#}
-{#                        <div class="icon-box mt-5">#}
-{#                            <i class="{{ main_innovations.icon_class_two }}"></i>#}
-{#                            <h4>{{ main_innovations.name_two }}</h4>#}
-{#                            <p>{{ main_innovations.description_two | safe }}</p>#}
-{#                        </div>#}
-{#                        <div class="icon-box mt-5">#}
-{#                            <i class="{{ main_innovations.icon_class_three }}"></i>#}
-{#                            <h4>{{ main_innovations.name_three }}</h4>#}
-{#                            <p>{{ main_innovations.description_three | safe }}</p>#}
-{#                        </div>#}
-{#                        <div class="icon-box mt-5">#}
-{#                            <i class="{{ main_innovations.icon_class_four }}"></i>#}
-{#                            <h4>{{ main_innovations.name_four }}</h4>#}
-{#                            <p>{{ main_innovations.description_four | safe }}</p>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="image col-lg-6 order-1 order-lg-2"#}
-{#                         style='background-image: url({{ main_innovations.photo.url }});'#}
-{#                         data-aos="zoom-in"></div>#}
-{#                </div>#}
-{#            {% endfor %}#}
-{##}
-{#        </div>#}
-{#    </section>#}
-{#    <!-- End Features Section -->#}
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features main-bg-laboratory">
+        <div class="container" data-aos="fade-up">
+            {% for main_labos in laboratory_two %}
+                <div class="row">
+                    <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
+                        <div class="icon-box mt-5 mt-lg-0">
+                            <p>{{ main_labos.name|safe }}</p>
+                            <p>{{ main_labos.description | safe }}</p>
+                        </div>
+                    </div>
+                    <div class="image col-lg-6 order-1 order-lg-2"
+                         style='background-image: url({{ main_labos.photo.url }});'
+                         data-aos="zoom-in">
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </section>
+    <!-- End Features Section -->
 
 
 </main><!-- End #main -->

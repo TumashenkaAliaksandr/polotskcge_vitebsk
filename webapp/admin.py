@@ -1,13 +1,13 @@
 from ckeditor.widgets import CKEditorWidget
 from django.contrib import admin
 from django.utils.safestring import mark_safe
-
 from .models import *
 from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm, ReceptionHoursForm, GeneralInfoForm, \
     EducationalResourceAdminForm, ZojForm, Book_complaintForm, HotlineHoursForm, HotlineHours_TitleForm, \
     HotlineHours_Title_descForm, Electronic_appeals_Title_descForm, Organ_Title_descForm, Up_Organ_Form, \
     Up_Organ_infForm, Expertise_Form, Duties_Form, MaintenanceSh_Form, Vacancies_Form, Appeals_Form, AnticorrForm, \
-    AnticorrTitleForm, NormativeDocuments_Form, LabaForm
+    AnticorrTitleForm, NormativeDocuments_Form, LabaForm, LaboratoriesForm
+
 
 
 class DoctorAdmin(admin.ModelAdmin):
@@ -62,6 +62,7 @@ class AboutUsAdmin(admin.ModelAdmin):
 
     photo_display.short_description = 'Photo'  # Заголовок колонки в списке
 
+
 @admin.register(Laboratory)
 class LabaAdmin(admin.ModelAdmin):
     form = LabaForm
@@ -74,6 +75,21 @@ class LabaAdmin(admin.ModelAdmin):
             return "No photo"
 
     photo_display.short_description = 'Photo'  # Заголовок колонки в списке
+
+
+@admin.register(Laboratories)
+class LaboratoriesAdmin(admin.ModelAdmin):
+    form = LaboratoriesForm
+    list_display = ['name', 'photo_display']  # Добавляем поле для отображения фотографии в списке
+
+    def photo_display(self, obj):
+        if obj.photo:
+            return mark_safe(f'<img src="{obj.photo.url}" width="100">')
+        else:
+            return "No photo"
+
+    photo_display.short_description = 'Photo'  # Заголовок колонки в списке
+
 
 @admin.register(Zoj)
 class ZojUsAdmin(admin.ModelAdmin):
@@ -107,18 +123,22 @@ class ResearchesAdmin(admin.ModelAdmin):
 class LogoAdmin(admin.ModelAdmin):
     form = LogoForm
 
+
 @admin.register(Featured)
 class FeaturedAdmin(admin.ModelAdmin):
     form = FeaturedForm
+
 
 @admin.register(Book_complaint)
 class Book_complaintAdmin(admin.ModelAdmin):
     form = Book_complaintForm
 
+
 @admin.register(ReceptionHours)
 class ReceptionHoursAdmin(admin.ModelAdmin):
     form = ReceptionHoursForm
     list_display = ['name', 'last_name', 'family_name', 'office', 'phone', 'reception_time']
+
 
 @admin.register(GeneralInfo)
 class GeneralInfoAdmin(admin.ModelAdmin):
@@ -129,6 +149,7 @@ class GeneralInfoAdmin(admin.ModelAdmin):
         return obj.description[:50]  # Предположим, что вы хотите отображать только первые 50 символов описания
 
     description_preview.short_description = 'Описание'
+
 
 class HotlineHoursAdmin(admin.ModelAdmin):
     form = HotlineHoursForm
@@ -153,7 +174,6 @@ class HotlineHours_Title_descAdmin(admin.ModelAdmin):
 
 
 admin.site.register(HotlineHours_Title_desc, HotlineHours_Title_descAdmin)
-
 
 
 class Electronic_appeals_Title_descAdmin(admin.ModelAdmin):
@@ -187,12 +207,14 @@ class Up_OrganAdmin(admin.ModelAdmin):
     form = Up_Organ_Form
     list_display = ('name', 'post', 'phone', 'reception_time')
 
+
 admin.site.register(Up_Organ, Up_OrganAdmin)
 
 
 class NormativeDocumentsAdmin(admin.ModelAdmin):
     form = NormativeDocuments_Form
     list_display = ('name', 'normative_desc')
+
 
 admin.site.register(NormativeDocuments, NormativeDocumentsAdmin)
 
@@ -223,6 +245,7 @@ class MaintenanceShAdmin(admin.ModelAdmin):
 
 admin.site.register(MaintenanceSchedule, MaintenanceShAdmin)
 
+
 class VacanciesAdmin(admin.ModelAdmin):
     form = Vacancies_Form
     list_display = ('name', 'vacancy', 'vacancy_two', 'vacancy_three')
@@ -240,6 +263,7 @@ class AppealsAdmin(admin.ModelAdmin):
 
 admin.site.register(MainAppeals, AppealsAdmin)
 
+
 class AnswerInline(admin.TabularInline):
     model = Answer
     extra = 1
@@ -251,6 +275,7 @@ class AnticorrTitleAdmin(admin.ModelAdmin):
     list_filter = ('name',)
     search_fields = ('name', 'desc_anticorr')
 
+
 admin.site.register(AnticorrTitle, AnticorrTitleAdmin)
 
 
@@ -260,11 +285,13 @@ class AnticorrAdmin(admin.ModelAdmin):
     list_filter = ('name',)
     search_fields = ('name', 'description')
 
+
 admin.site.register(Anticorr, AnticorrAdmin)
 
 
 class QuestionAdmin(admin.ModelAdmin):
     inlines = [AnswerInline]
+
 
 admin.site.register(Question, QuestionAdmin)
 
@@ -288,5 +315,6 @@ class EducationalResourceAdmin(admin.ModelAdmin):
             'fields': ('name', 'description', 'pdf_file', 'icon_class', 'pub_date')
         }),
     )
+
 
 admin.site.register(EducationalResource, EducationalResourceAdmin)

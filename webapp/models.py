@@ -476,3 +476,16 @@ class Laboratory(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Laboratories(models.Model):
+    name = models.CharField(max_length=150, default='Тайтл')
+    description = models.TextField(default='Описание')
+    photo = models.ImageField(upload_to='Laboratory/', null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Лабораторные услуги (2ая половина)'
+        verbose_name_plural = 'Лабораторные услуги (2ая половина)'
+
+    def __str__(self):
+        return self.name
