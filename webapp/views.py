@@ -339,9 +339,11 @@ def expertise(request):
 def registrations(request):
     """AP - registrations template"""
     features = Featured.objects.all()
+    interactiv = Interactive.objects.all()
 
     context = {
         'features': features,
+        'interactiv': interactiv,
     }
 
     return render(request, 'webapp/ap/registration.html', context=context)
