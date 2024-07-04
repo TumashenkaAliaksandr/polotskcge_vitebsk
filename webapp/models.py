@@ -489,3 +489,17 @@ class Laboratories(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Registration(models.Model):
+    name = models.CharField(max_length=150, default='Тайтл')
+    description = models.TextField(default='Описание')
+    description_two = models.TextField(default='Описание 2')
+    description_three = models.TextField(default='Описание 3')
+
+    class Meta:
+        verbose_name = 'АП Регистрация'
+        verbose_name_plural = 'АП Регистрация'
+
+    def __str__(self):
+        return self.name

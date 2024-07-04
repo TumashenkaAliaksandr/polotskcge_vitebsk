@@ -25,7 +25,7 @@
     <!-- End Breadcrumbs Section -->
 
     <!-- ======= Book NEWS text Section ======= -->
-    <div id="single" class="single main-bg-hotline">
+    <div id="single" class="single main-bg-book-of">
         <div class="breaking-news">
             <div class="container">
                 {% for main_interactiv_string in interactiv %}
@@ -56,24 +56,25 @@
     <!-- ======= End Book News text Section ======= -->
 
 
-    <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services">
-        <div class="container" data-aos="fade-up">
-
+    <!-- Hotline Title and desc Section -->
+    <section id="featured-services" class="featured-services main-bg-book-of">
+        <div class="container book_info" data-aos="fade-up">
             <div class="row">
-                {% for main_features in features %}
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="{{ main_features.icon_class }}"></i></div>
-                            <h4 class="title"><a href="{{ main_features.link }}">{{ main_features.name }}</a></h4>
-                            <p class="description">{{ main_features.description|safe }}</p>
-                        </div>
+                {% for main_reg in reg_inf %}
+                    <div class="section-title">
+                        <h3>{{ main_reg.name|safe }}</h3>
+                    </div>
+                    <div class="description-left">
+                        <p>{{ main_reg.description|safe }}</p>
+                        <p>{{ main_reg.description_two|safe }}</p>
+                        <p>{{ main_reg.description_three|safe }}</p>
                     </div>
                 {% endfor %}
             </div>
         </div>
     </section>
-    <!-- End Featured Services Section -->
+    <!-- End Hotline Title and desc Section -->
+
 
   </main><!-- End #main -->
 

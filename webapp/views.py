@@ -338,11 +338,11 @@ def expertise(request):
 
 def registrations(request):
     """AP - registrations template"""
-    features = Featured.objects.all()
+    reg_inf = Registration.objects.all()
     interactiv = Interactive.objects.all()
 
     context = {
-        'features': features,
+        'reg_inf': reg_inf,
         'interactiv': interactiv,
     }
 

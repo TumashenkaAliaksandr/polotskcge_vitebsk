@@ -276,3 +276,15 @@ class LaboratoriesForm(forms.ModelForm):
             'name': CKEditorWidget(),
             'description': CKEditorWidget(),
         }
+
+
+class ApRegistrationForm(forms.ModelForm):
+    class Meta:
+        model = Registration
+        fields = '__all__'
+        widgets = {
+            'name': CKEditorWidget(),
+            'description': CKEditorWidget(),
+            'description_two': CKEditorWidget(),
+            'description_three': CKEditorWidget(),
+        }
