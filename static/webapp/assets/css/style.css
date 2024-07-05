@@ -1365,11 +1365,13 @@ section#clocks-two {
 }
 
 @media (max-width: 767px) {
-    #pagebanner {
-        background-size: cover;
-        height: 100px;
-        width: 100%;
-    }
+  #pagebanner {
+    background-size: cover;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: bottom;
+    height: 300px;
+  }
 }
 
 /*End page banner*/

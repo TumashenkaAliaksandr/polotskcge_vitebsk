@@ -235,7 +235,7 @@ h6 {
         transition: all 0.5s;
         z-index: 997;
         padding: 16px 0;
-        top: 141px; /* Добавлено значение высоты хедера */
+        top: 18%; /* Добавлено значение высоты хедера */
         box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
         opacity: 0.95;
         position: fixed;
@@ -741,10 +741,27 @@ h6 {
 @media (max-width: 992px) {
   #hero {
     height: 100vh;
+    display: none;
   }
 
   #hero .container {
     margin-top: 100px;
+  }
+
+  .featured-services {
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    background: #f7fcfc;
+    box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+    transition: all 0.3s ease-in-out;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    border-radius: 8px;
+    z-index: 1;
+    display: none;
   }
 }
 
@@ -1156,7 +1173,14 @@ section#clocks-two {
 
 @media (max-width: 992px) {
   .breadcrumbs_contacts {
-    margin-top: 31%;
+    margin-top: 33%;
+  }
+
+  .breadcrumbs_index {
+    margin-top: 55%;
+    padding: 15px 0;
+    background-color: #ecf8f9;
+    min-height: 40px;
   }
 }
 
@@ -1409,6 +1433,25 @@ section#clocks-two {
 
 /**/
 /*page banner*/
+#pagebanner_main{
+  background-size:100%;
+  background-attachment: fixed;
+  background-position: bottom;
+  height: 300px;
+  width: 100%;
+  display: none;
+}
+
+@media only screen and(max-width: 992px) {
+  .pagebanner_main {
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: bottom;
+    height: 300px;
+    width: 100%;
+  }
+}
+
 #pagebanner{
   background: url(../img/pagebanner.jpg) no-repeat;
   background-size:100%;
