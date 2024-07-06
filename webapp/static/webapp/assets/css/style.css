@@ -1020,7 +1020,7 @@ section#clocks-two {
 .section-title {
   text-align: center;
   padding-bottom: 35px;
-  padding-top: 35px;
+  padding-top: 15px;
 }
 .section-title-health {
   text-align: center;
@@ -1106,7 +1106,8 @@ section#clocks-two {
 
 @media (max-width: 992px) {
   .breadcrumbs {
-    margin-top: 70px;
+    /*margin-top: 70px;*/
+    /*margin-bottom: 30%;*/
   }
 }
 
@@ -1253,7 +1254,7 @@ section#clocks-two {
   }
 
   .header-icons-mobile i {
-    font-size: 26px;
+    font-size: 27px;
     margin-right: 2px;
     margin-left: 5px;
     position: relative;
@@ -1351,20 +1352,42 @@ section#clocks-two {
 /**/
 @media (max-width: 768px) {
   #topbar {
-    background: #3fbbc0;
+    background-image: url('../img/gigi_centr_laboratory1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(20, 58, 59, 0.9); /* bluish color with 0.7 opacity */
+    background-blend-mode: overlay;
     color: #fff;
-    height: 60px;
+    height: auto;
     font-size: initial;
     font-weight: 600;
     z-index: 996;
     transition: all 0.5s;
-    padding-bottom: 36%;
+    padding-bottom: 3%;
     padding-top: 3%;
-    display: flex;
+    /*display: flex;*/
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    /*align-items: center;*/
+    /*justify-content: center;*/
   }
+
+
+
+  /*#topbar {*/
+  /*  background: #3fbbc0;*/
+  /*  color: #fff;*/
+  /*  height: auto;*/
+  /*  font-size: initial;*/
+  /*  font-weight: 600;*/
+  /*  z-index: 996;*/
+  /*  transition: all 0.5s;*/
+  /*  padding-bottom: 3%;*/
+  /*  padding-top: 3%;*/
+  /*  display: flex;*/
+  /*  flex-direction: column;*/
+  /*  align-items: center;*/
+  /*  justify-content: center;*/
+  /*}*/
 
   #topbar i {
     padding: 2px;
@@ -1377,12 +1400,12 @@ section#clocks-two {
 
 
   .haderphone {
-    margin-top: 27%;
+    margin-top: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
+    text-align: left;
     margin-bottom: 2px;
   }
 
@@ -1395,16 +1418,16 @@ section#clocks-two {
     margin-top: 12%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    text-align: left;
     margin-bottom: 2px;
   }
 
-  .haderphone-mobile a {
-    margin-top: 3px; /* добавляем отступ между элементами */
-    margin-bottom: 2px;
-  }
+  /*.haderphone-mobile a {*/
+  /*  margin-top: 3px; !* добавляем отступ между элементами *!*/
+  /*  margin-bottom: 2px;*/
+  /*}*/
 }
 
 .haderphone-mobile {
@@ -1416,18 +1439,22 @@ section#clocks-two {
     margin-top: 2%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    text-align: left;
     margin-bottom: 0px;
     padding: 2px;
   }
 
+
   .haderphone-mobile a {
-    margin-top: 2px; /* добавляем отступ между элементами */
+    margin-top: 0px;
     margin-bottom: 0px;
     color: #ffffff;
-    font-size: 14px;
+    font-size: 17px; /* increased font size to 24px */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    font-weight: bold;
   }
 }
 

@@ -720,9 +720,9 @@ body a:hover{
     position: relative;
 }
 .marquee {
-    width: 80%;
-    margin-left: 17.8%;
-    color: #777;
+    /*width: 80%;*/
+    /*margin-left: 17.8%;*/
+    /*color: #777;*/
     font-size: 1em;
     padding: 8px 0;
     color: #84754E;
