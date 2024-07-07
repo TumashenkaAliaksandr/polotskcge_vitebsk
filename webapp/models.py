@@ -549,6 +549,18 @@ class HumanResources(models.Model):
         return self.number_ap
 
 
+class AccountingDesc(models.Model):
+    name = models.CharField(max_length=150, default='Тайтл')
+    description = models.TextField(default='Описание')
+
+    class Meta:
+        verbose_name = 'АП Бухгалтерия'
+        verbose_name_plural = 'АП Бухгалтерия'
+
+    def __str__(self):
+        return self.name
+
+
 class Accounting(models.Model):
     name = models.CharField(max_length=150, default='Тайтл')
     number_ap = models.CharField(max_length=300, default='Номер административной процедуры')

@@ -306,11 +306,7 @@ class HumanResourcesDescForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'name': CKEditorWidget(),
-            'number_ap': CKEditorWidget(),
             'description': CKEditorWidget(),
-            'name_ap': CKEditorWidget(),
-            'size_ap': CKEditorWidget(),
-            'doc_ap': CKEditorWidget(),
         }
 
 
@@ -325,6 +321,17 @@ class HumanResourcesForm(forms.ModelForm):
             'size_ap': CKEditorWidget(),
             'doc_ap': CKEditorWidget(),
         }
+
+
+class AccountingDescForm(forms.ModelForm):
+    class Meta:
+        model = AccountingDesc
+        fields = '__all__'
+        widgets = {
+            'name': CKEditorWidget(),
+            'description': CKEditorWidget(),
+        }
+
 
 class AccountingForm(forms.ModelForm):
     class Meta:

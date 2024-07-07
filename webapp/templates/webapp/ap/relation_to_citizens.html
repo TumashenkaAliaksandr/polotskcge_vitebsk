@@ -87,19 +87,19 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {% for main_accounting in hr_inf %}
+                                {% for main_accounting in accounting_desc %}
                                     <div class="description-left">
                                         <h3>{{ main_accounting.name|safe }}</h3>
                                         <p>{{ main_accounting.description|safe }}</p>
                                     </div>
                                 {% endfor %}
-                                {% for main_human_recurces in table_inf %}
+                                {% for main_accounting in accounting_inf %}
                                     <tr>
                                         <td>{{ main_accounting.number_ap|safe }}</td>
                                         <td>{{ main_accounting.name_ap|safe }}</td>
                                         <td>{{ main_accounting.doc_ap|safe }}</td>
                                         <td>{{ main_accounting.size_ap|safe }}</td>
-                                        <td>{{ main_accounting.size_ap|safe }}</td>
+                                        <td>{{ main_accounting.date_ap|safe }}</td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
