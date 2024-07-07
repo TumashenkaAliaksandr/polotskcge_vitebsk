@@ -24,6 +24,56 @@
     </section>
     <!-- End Breadcrumbs Section -->
 
+
+    <!-- Hotline Title and desc Section -->
+    <section id="featured-services" class="featured-services main-bg-book-of">
+        <div class="container book_info" data-aos="fade-up">
+            <div class="row">
+                {% for main_rel in rel_inf %}
+                    <div class="section-title">
+                        <h3>{{ main_rel.name|safe }}</h3>
+                        <p>{{ main_rel.description|safe }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+          <div class="row">
+                    <section class="hotline">
+                        <div class="table-info">
+                            <div class="box" data-aos="fade-up" data-aos-delay="300">
+                                <table class="iksweb">
+                                    <thead>
+                                    <tr>
+                                        <th>№</th>
+                                        <th>Наименование административной процедуры</th>
+                                        <th>Документы и (или) сведения, представляемые гражданином для осуществления административной процедуры</th>
+                                        <th>Размер платы, взимаемой при осуществлении административной процедуры</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for main_human_recurces in hr_inf %}
+                                        <div class="description-left">
+                                            <h3>{{ main_human_recurces.name|safe }}</h3>
+                                        </div>
+                                        <tr>
+                                            <td>{{ main_human_recurces.number_ap|safe }}</td>
+                                            <td>{{ main_human_recurces.name_ap|safe }}</td>
+                                            <td>{{ main_human_recurces.doc_ap|safe }}</td>
+                                            <td>{{ main_human_recurces.size_ap|safe }}</td>
+                                        </tr>
+                                        <div class="description-left">
+                                            <p>{{ main_human_recurces.description|safe }}</p>
+                                        </div>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+        </div>
+    </section>
+    <!-- End Hotline Title and desc Section -->
+
     <!-- ======= Featured Services Section ======= -->
     <section id="featured-services" class="featured-services">
         <div class="container" data-aos="fade-up">

@@ -288,3 +288,27 @@ class ApRegistrationForm(forms.ModelForm):
             'description_two': CKEditorWidget(),
             'description_three': CKEditorWidget(),
         }
+
+
+class RelationForm(forms.ModelForm):
+    class Meta:
+        model = Relation
+        fields = '__all__'
+        widgets = {
+            'name': CKEditorWidget(),
+            'description': CKEditorWidget(),
+        }
+
+
+class HumanResourcesForm(forms.ModelForm):
+    class Meta:
+        model = HumanResources
+        fields = '__all__'
+        widgets = {
+            'name': CKEditorWidget(),
+            'number_ap': CKEditorWidget(),
+            'description': CKEditorWidget(),
+            'name_ap': CKEditorWidget(),
+            'size_ap': CKEditorWidget(),
+            'doc_ap': CKEditorWidget(),
+        }

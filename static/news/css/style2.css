@@ -3162,6 +3162,27 @@ img.mobile1 {
     .move-text {
         width: 92.3%;
         margin-left: 0.8em;
+        /*padding-top: 47%;*/
+    }
+}
+@media only screen and (max-width: 768px) {
+  .section-title h2 {
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+
+.move-text-index {
+    width: 97.9%;
+    margin-left: 0.8em;
+    height: 47.5px;
+}
+
+@media (max-width: 768px) {
+    .move-text-index {
+        width: 92.3%;
+        margin-left: 0.8em;
         padding-top: 47%;
     }
 }
@@ -3636,7 +3657,15 @@ img.mobile1 {
         text-align: center;
         padding-bottom: 35px;
         padding-top: 10px;
-        font-size: 19px;
+        /*font-size: 17px;*/
+    }
+
+    .main-bg-laba {
+        padding: 15px 0 15px;
+        background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.98)), url('../../../webapp/static/webapp/assets/img/5Gp9.gif') center/cover no-repeat;
+        background-attachment: scroll, scroll;
+        /*background-size: 20% 100vh;*/
+        background-attachment: fixed;
     }
 
     .about .content h3 {

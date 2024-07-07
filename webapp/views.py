@@ -351,10 +351,13 @@ def registrations(request):
 
 def relation_to_citizens(request):
     """AP - relation_to_citizens template"""
-    features = Featured.objects.all()
+
+    rel_inf = Relation.objects.all()
+    hr_inf =HumanResources.objects.all()
 
     context = {
-        'features': features,
+        'rel_inf': rel_inf,
+        'hr_inf': hr_inf,
     }
 
     return render(request, 'webapp/ap/relation_to_citizens.html', context=context)

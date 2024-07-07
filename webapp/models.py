@@ -503,3 +503,31 @@ class Registration(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Relation(models.Model):
+    name = models.CharField(max_length=150, default='Тайтл')
+    description = models.TextField(default='Описание')
+
+    class Meta:
+        verbose_name = 'АП в отношении граждан'
+        verbose_name_plural = 'АП в отношении граждан'
+
+    def __str__(self):
+        return self.name
+
+
+class HumanResources(models.Model):
+    name = models.CharField(max_length=150, default='Тайтл')
+    description = models.TextField(default='Описание')
+    number_ap = models.CharField(max_length=300, default='Номер административной процедуры')
+    name_ap = models.CharField(max_length=300, default='Наименование административной процедуры')
+    doc_ap = models.CharField(max_length=300, default='Документы и (или) сведения АП')
+    size_ap = models.CharField(max_length=300, default='Размер Платы взымаемой при АП')
+
+    class Meta:
+        verbose_name = 'АП Кадровая Служба'
+        verbose_name_plural = 'АП Кадровая Служба'
+
+    def __str__(self):
+        return self.name

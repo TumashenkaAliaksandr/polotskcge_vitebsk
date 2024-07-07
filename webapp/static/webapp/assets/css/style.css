@@ -449,7 +449,7 @@ h6 {
 .navbar .dropdown .dropdown ul {
   top: 0;
   left: calc(100% - 30px);
-  visibility: hidden;
+  /*visibility: hidden;*/
 }
 
 .navbar .dropdown .dropdown:hover>ul {
@@ -494,6 +494,7 @@ h6 {
   .navbar ul {
     display: none;
   }
+
 }
 
 .navbar-mobile {
@@ -761,7 +762,7 @@ h6 {
     transition-delay: 0s;
     border-radius: 8px;
     z-index: 1;
-    display: none;
+    /*display: none;*/
   }
 }
 
@@ -1022,6 +1023,8 @@ section#clocks-two {
   padding-bottom: 35px;
   padding-top: 15px;
 }
+
+
 .section-title-health {
   text-align: center;
   padding-bottom: 20px;
@@ -1063,6 +1066,7 @@ section#clocks-two {
   padding-bottom: 20px;
   position: relative;
 }
+
 
 .section-title h2::after {
   content: "";
