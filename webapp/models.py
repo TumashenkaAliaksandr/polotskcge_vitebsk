@@ -33,6 +33,7 @@ class Featured(models.Model):
     def __str__(self):
         return self.name
 
+
 class AnticorrTitle(models.Model):
     """This Model for Anticorr Title block on the anticorruptions page"""
 
@@ -75,6 +76,7 @@ class Book_complaint(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class EducationalResource(models.Model):
     name = models.CharField(max_length=100, verbose_name="Имя")
@@ -196,6 +198,7 @@ class GeneralInfo(models.Model):
     def __str__(self):
         return self.title
 
+
 class ReceptionHours(models.Model):
     name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100, default='Имя и Отчество')
@@ -228,6 +231,7 @@ class HotlineHours(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class HotlineHours_Title(models.Model):
     name = models.CharField(max_length=100, default='Прямая Телефонная Линия')
@@ -506,6 +510,7 @@ class Registration(models.Model):
 
 
 class Relation(models.Model):
+    """Model Relation"""
     name = models.CharField(max_length=150, default='Тайтл')
     description = models.TextField(default='Описание')
 
@@ -517,13 +522,9 @@ class Relation(models.Model):
         return self.name
 
 
-class HumanResources(models.Model):
+class HumanResourcesDesc(models.Model):
     name = models.CharField(max_length=150, default='Тайтл')
     description = models.TextField(default='Описание')
-    number_ap = models.CharField(max_length=300, default='Номер административной процедуры')
-    name_ap = models.CharField(max_length=300, default='Наименование административной процедуры')
-    doc_ap = models.CharField(max_length=300, default='Документы и (или) сведения АП')
-    size_ap = models.CharField(max_length=300, default='Размер Платы взымаемой при АП')
 
     class Meta:
         verbose_name = 'АП Кадровая Служба'
@@ -531,3 +532,17 @@ class HumanResources(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class HumanResources(models.Model):
+    number_ap = models.CharField(max_length=300, default='Номер административной процедуры')
+    name_ap = models.CharField(max_length=300, default='Наименование административной процедуры')
+    doc_ap = models.CharField(max_length=300, default='Документы и (или) сведения АП')
+    size_ap = models.CharField(max_length=300, default='Размер Платы взымаемой при АП')
+
+    class Meta:
+        verbose_name = 'АП Кадровая Служба таблица'
+        verbose_name_plural = 'АП Кадровая Служба таблица'
+
+    def __str__(self):
+        return self.number_ap

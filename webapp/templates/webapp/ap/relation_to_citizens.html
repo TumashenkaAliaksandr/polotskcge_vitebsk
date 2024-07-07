@@ -53,16 +53,16 @@
                                     {% for main_human_recurces in hr_inf %}
                                         <div class="description-left">
                                             <h3>{{ main_human_recurces.name|safe }}</h3>
+                                            <p>{{ main_human_recurces.description|safe }}</p>
                                         </div>
+                                    {% endfor %}
+                                    {% for main_human_recurces in table_inf %}
                                         <tr>
                                             <td>{{ main_human_recurces.number_ap|safe }}</td>
                                             <td>{{ main_human_recurces.name_ap|safe }}</td>
                                             <td>{{ main_human_recurces.doc_ap|safe }}</td>
                                             <td>{{ main_human_recurces.size_ap|safe }}</td>
                                         </tr>
-                                        <div class="description-left">
-                                            <p>{{ main_human_recurces.description|safe }}</p>
-                                        </div>
                                     {% endfor %}
                                     </tbody>
                                 </table>

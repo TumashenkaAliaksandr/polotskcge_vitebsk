@@ -300,9 +300,9 @@ class RelationForm(forms.ModelForm):
         }
 
 
-class HumanResourcesForm(forms.ModelForm):
+class HumanResourcesDescForm(forms.ModelForm):
     class Meta:
-        model = HumanResources
+        model = HumanResourcesDesc
         fields = '__all__'
         widgets = {
             'name': CKEditorWidget(),
@@ -312,3 +312,16 @@ class HumanResourcesForm(forms.ModelForm):
             'size_ap': CKEditorWidget(),
             'doc_ap': CKEditorWidget(),
         }
+
+
+class HumanResourcesForm(forms.ModelForm):
+    class Meta:
+        model = HumanResources
+        fields = '__all__'
+        widgets = {
+            'number_ap': CKEditorWidget(),
+            'name_ap': CKEditorWidget(),
+            'size_ap': CKEditorWidget(),
+            'doc_ap': CKEditorWidget(),
+        }
+
