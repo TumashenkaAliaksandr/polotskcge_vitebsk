@@ -535,6 +535,7 @@ class HumanResourcesDesc(models.Model):
 
 
 class HumanResources(models.Model):
+    name = models.CharField(max_length=150, default='Тайтл')
     number_ap = models.CharField(max_length=300, default='Номер административной процедуры')
     name_ap = models.CharField(max_length=300, default='Наименование административной процедуры')
     doc_ap = models.CharField(max_length=300, default='Документы и (или) сведения АП')
@@ -543,6 +544,22 @@ class HumanResources(models.Model):
     class Meta:
         verbose_name = 'АП Кадровая Служба таблица'
         verbose_name_plural = 'АП Кадровая Служба таблица'
+
+    def __str__(self):
+        return self.number_ap
+
+
+class Accounting(models.Model):
+    name = models.CharField(max_length=150, default='Тайтл')
+    number_ap = models.CharField(max_length=300, default='Номер административной процедуры')
+    name_ap = models.CharField(max_length=300, default='Наименование административной процедуры')
+    doc_ap = models.TextField(default='Документы и (или) сведения АП')
+    size_ap = models.CharField(max_length=300, default='Размер Платы взымаемой при АП')
+    date_ap = models.CharField(max_length=300, default='Сроки выполнения АП')
+
+    class Meta:
+        verbose_name = 'АП Кадровая Служба таблица Бухгалтерия'
+        verbose_name_plural = 'АП Кадровая Служба таблица Бухгалтерия'
 
     def __str__(self):
         return self.number_ap

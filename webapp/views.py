@@ -355,11 +355,13 @@ def relation_to_citizens(request):
     rel_inf = Relation.objects.all()
     table_inf =HumanResources.objects.all()
     hr_inf =HumanResourcesDesc.objects.all()
+    accounting_inf =HumanResourcesDesc.objects.all()
 
     context = {
         'rel_inf': rel_inf,
         'hr_inf': hr_inf,
         'table_inf': table_inf,
+        'accounting_inf': accounting_inf,
     }
 
     return render(request, 'webapp/ap/relation_to_citizens.html', context=context)
