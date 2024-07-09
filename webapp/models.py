@@ -587,3 +587,19 @@ class UnionDesc(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Union(models.Model):
+    name = models.CharField(max_length=150, default='Тайтл')
+    number_ap = models.CharField(max_length=500, default='Номер профсоюзной процедуры')
+    name_ap = models.CharField(max_length=500, default='Наименование профсоюзной процедуры')
+    doc_ap = models.TextField(default='Документы и (или) сведения АП')
+    size_ap = models.CharField(max_length=500, default='Размер Платы взымаемой при АП')
+    date_ap = models.CharField(max_length=500, default='Сроки выполнения АП')
+
+    class Meta:
+        verbose_name = 'АП Профсоюз таблица'
+        verbose_name_plural = 'АП Профсоюз таблица'
+
+    def __str__(self):
+        return self.number_ap
