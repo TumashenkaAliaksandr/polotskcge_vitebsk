@@ -357,6 +357,8 @@ def relation_to_citizens(request):
     hr_inf =HumanResourcesDesc.objects.all()
     accounting_inf = Accounting.objects.all()
     accounting_desc = AccountingDesc.objects.all()
+    union_desc = UnionDesc.objects.all()
+    union_inf = Union.objects.all()
 
     context = {
         'rel_inf': rel_inf,
@@ -364,6 +366,8 @@ def relation_to_citizens(request):
         'table_inf': table_inf,
         'accounting_inf': accounting_inf,
         'accounting_desc': accounting_desc,
+        'union_desc': union_desc,
+        'union_inf': union_inf,
     }
 
     return render(request, 'webapp/ap/relation_to_citizens.html', context=context)

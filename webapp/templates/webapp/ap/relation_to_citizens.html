@@ -81,7 +81,9 @@
                                 <tr>
                                     <th>№</th>
                                     <th>Наименование административной процедуры</th>
-                                    <th>Документы и (или) сведения, представляемые гражданином для осуществления административной процедуры</th>
+                                    <th>Документы и (или) сведения, представляемые гражданином для осуществления
+                                        административной процедуры
+                                    </th>
                                     <th>Размер платы, взимаемой при осуществлении административной процедуры</th>
                                     <th>Сроки выполнения административной процедуры</th>
                                 </tr>
@@ -100,6 +102,44 @@
                                         <td>{{ main_accounting.doc_ap|safe }}</td>
                                         <td>{{ main_accounting.size_ap|safe }}</td>
                                         <td>{{ main_accounting.date_ap|safe }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="row">
+                <section class="hotline">
+                    <div class="table-info">
+                        <div class="box" data-aos="fade-up" data-aos-delay="300">
+                            <table class="iksweb">
+                                <thead>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Наименование административной процедуры</th>
+                                    <th>Документы и (или) сведения, представляемые гражданином для осуществления
+                                        административной процедуры
+                                    </th>
+                                    <th>Размер платы, взимаемой при осуществлении административной процедуры</th>
+                                    <th>Сроки выполнения административной процедуры</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for main_union in union_desc %}
+                                    <div class="description-left">
+                                        <h3>{{ main_union.name|safe }}</h3>
+                                        <p>{{ main_union.description|safe }}</p>
+                                    </div>
+                                {% endfor %}
+                                {% for main_union in union_inf %}
+                                    <tr>
+                                        <td>{{ main_union.number_ap|safe }}</td>
+                                        <td>{{ main_union.name_ap|safe }}</td>
+                                        <td>{{ main_union.doc_ap|safe }}</td>
+                                        <td>{{ main_union.size_ap|safe }}</td>
+                                        <td>{{ main_union.date_ap|safe }}</td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
