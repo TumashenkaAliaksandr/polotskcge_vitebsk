@@ -554,8 +554,8 @@ class AccountingDesc(models.Model):
     description = models.TextField(default='Описание')
 
     class Meta:
-        verbose_name = 'АП Бухгалтерия'
-        verbose_name_plural = 'АП Бухгалтерия'
+        verbose_name = 'АП Бухгалтерия тайтл'
+        verbose_name_plural = 'АП Бухгалтерия тайтл'
 
     def __str__(self):
         return self.name
@@ -563,11 +563,11 @@ class AccountingDesc(models.Model):
 
 class Accounting(models.Model):
     name = models.CharField(max_length=150, default='Тайтл')
-    number_ap = models.CharField(max_length=300, default='Номер административной процедуры')
-    name_ap = models.CharField(max_length=300, default='Наименование административной процедуры')
+    number_ap = models.CharField(max_length=500, default='Номер административной процедуры')
+    name_ap = models.CharField(max_length=500, default='Наименование административной процедуры')
     doc_ap = models.TextField(default='Документы и (или) сведения АП')
-    size_ap = models.CharField(max_length=300, default='Размер Платы взымаемой при АП')
-    date_ap = models.CharField(max_length=300, default='Сроки выполнения АП')
+    size_ap = models.CharField(max_length=500, default='Размер Платы взымаемой при АП')
+    date_ap = models.CharField(max_length=500, default='Сроки выполнения АП')
 
     class Meta:
         verbose_name = 'АП Кадровая Служба таблица Бухгалтерия'
@@ -575,3 +575,15 @@ class Accounting(models.Model):
 
     def __str__(self):
         return self.number_ap
+
+
+class UnionDesc(models.Model):
+    name = models.CharField(max_length=150, default='Тайтл')
+    description = models.TextField(default='Описание')
+
+    class Meta:
+        verbose_name = 'АП Профсоюз'
+        verbose_name_plural = 'АП Профсоюз'
+
+    def __str__(self):
+        return self.name

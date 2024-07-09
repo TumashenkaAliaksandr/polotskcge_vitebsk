@@ -345,3 +345,13 @@ class AccountingForm(forms.ModelForm):
             'doc_ap': CKEditorWidget(),
             'date_ap': CKEditorWidget(),
         }
+
+
+class UnionDescForm(forms.ModelForm):
+    class Meta:
+        model = UnionDesc
+        fields = '__all__'
+        widgets = {
+            'name': CKEditorWidget(),
+            'description': CKEditorWidget(),
+        }

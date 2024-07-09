@@ -7,7 +7,7 @@ from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm, Receptio
     HotlineHours_Title_descForm, Electronic_appeals_Title_descForm, Organ_Title_descForm, Up_Organ_Form, \
     Up_Organ_infForm, Expertise_Form, Duties_Form, MaintenanceSh_Form, Vacancies_Form, Appeals_Form, AnticorrForm, \
     AnticorrTitleForm, NormativeDocuments_Form, LabaForm, LaboratoriesForm, ApRegistrationForm, RelationForm, \
-    HumanResourcesDescForm, HumanResourcesForm, AccountingForm, AccountingDescForm
+    HumanResourcesDescForm, HumanResourcesForm, AccountingForm, AccountingDescForm, UnionDescForm
 
 
 class DoctorAdmin(admin.ModelAdmin):
@@ -160,6 +160,11 @@ class AccountingDescAdmin(admin.ModelAdmin):
 @admin.register(Book_complaint)
 class Book_complaintAdmin(admin.ModelAdmin):
     form = Book_complaintForm
+
+
+@admin.register(UnionDesc)
+class UnionDescAdmin(admin.ModelAdmin):
+    form = UnionDescForm
 
 
 @admin.register(ReceptionHours)
