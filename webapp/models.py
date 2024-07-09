@@ -606,7 +606,7 @@ class Union(models.Model):
 
 
 class ListingDecreeDesc(models.Model):
-    name = models.CharField(max_length=150, default='Тайтл')
+    name = models.CharField(max_length=350, default='Тайтл')
     description = models.TextField(default='Описание')
 
     class Meta:
@@ -618,11 +618,11 @@ class ListingDecreeDesc(models.Model):
 
 
 class ListingDecree(models.Model):
-    name = models.CharField(max_length=150, default='Наименование АП')
-    number_ap = models.CharField(max_length=500, default='Номер профсоюзной процедуры')
-    name_ap = models.CharField(max_length=500, default='Гос орган для обращения')
+    name = models.CharField(max_length=350, default='Наименование АП')
+    number_ap = models.CharField(max_length=100, default='Номер профсоюзной процедуры')
+    name_ap = models.CharField(max_length=1000, default='Гос орган для обращения')
     doc_ap = models.TextField(default='Документы и (или) сведения')
-    size_ap = models.CharField(max_length=500, default='Максимальный срок')
+    size_ap = models.CharField(max_length=500, default='Максимальный срок выполнения')
     date_ap = models.CharField(max_length=500, default='Сроки действия')
 
     class Meta:

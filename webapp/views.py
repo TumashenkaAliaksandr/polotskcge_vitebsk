@@ -351,7 +351,7 @@ def registrations(request):
 
 def relation_to_citizens(request):
     """AP - relation_to_citizens template"""
-
+    interactiv = Interactive.objects.all()
     rel_inf = Relation.objects.all()
     table_inf =HumanResources.objects.all()
     hr_inf =HumanResourcesDesc.objects.all()
@@ -359,6 +359,8 @@ def relation_to_citizens(request):
     accounting_desc = AccountingDesc.objects.all()
     union_desc = UnionDesc.objects.all()
     union_inf = Union.objects.all()
+    degree_desc = ListingDecreeDesc.objects.all()
+    degree_inf = ListingDecree.objects.all()
 
     context = {
         'rel_inf': rel_inf,
@@ -368,6 +370,9 @@ def relation_to_citizens(request):
         'accounting_desc': accounting_desc,
         'union_desc': union_desc,
         'union_inf': union_inf,
+        'degree_desc': degree_desc,
+        'degree_inf': degree_inf,
+        'interactiv': interactiv,
     }
 
     return render(request, 'webapp/ap/relation_to_citizens.html', context=context)
