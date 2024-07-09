@@ -603,3 +603,31 @@ class Union(models.Model):
 
     def __str__(self):
         return self.number_ap
+
+
+class ListingDecreeDesc(models.Model):
+    name = models.CharField(max_length=150, default='Тайтл')
+    description = models.TextField(default='Описание')
+
+    class Meta:
+        verbose_name = 'АП Указ (в отношении граждан)'
+        verbose_name_plural = 'АП Указ (в отношении граждан)'
+
+    def __str__(self):
+        return self.name
+
+
+class ListingDecree(models.Model):
+    name = models.CharField(max_length=150, default='Наименование АП')
+    number_ap = models.CharField(max_length=500, default='Номер профсоюзной процедуры')
+    name_ap = models.CharField(max_length=500, default='Гос орган для обращения')
+    doc_ap = models.TextField(default='Документы и (или) сведения')
+    size_ap = models.CharField(max_length=500, default='Максимальный срок')
+    date_ap = models.CharField(max_length=500, default='Сроки действия')
+
+    class Meta:
+        verbose_name = 'АП указ таблица'
+        verbose_name_plural = 'АП указ таблица'
+
+    def __str__(self):
+        return self.number_ap

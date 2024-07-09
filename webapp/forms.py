@@ -348,6 +348,7 @@ class AccountingForm(forms.ModelForm):
 
 
 class UnionDescForm(forms.ModelForm):
+
     class Meta:
         model = UnionDesc
         fields = '__all__'
@@ -360,6 +361,30 @@ class UnionDescForm(forms.ModelForm):
 class UnionForm(forms.ModelForm):
     class Meta:
         model = Union
+        fields = '__all__'
+        widgets = {
+            'name': CKEditorWidget(),
+            'number_ap': CKEditorWidget(),
+            'name_ap': CKEditorWidget(),
+            'size_ap': CKEditorWidget(),
+            'doc_ap': CKEditorWidget(),
+            'date_ap': CKEditorWidget(),
+        }
+
+
+class ListingDecreeDescForm(forms.ModelForm):
+    class Meta:
+        model = UnionDesc
+        fields = '__all__'
+        widgets = {
+            'name': CKEditorWidget(),
+            'description': CKEditorWidget(),
+        }
+
+
+class ListingDecreeForm(forms.ModelForm):
+    class Meta:
+        model = ListingDecree
         fields = '__all__'
         widgets = {
             'name': CKEditorWidget(),
