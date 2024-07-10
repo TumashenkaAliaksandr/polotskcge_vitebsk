@@ -401,7 +401,6 @@ class ProfsouzForm(forms.ModelForm):
         model = Profsouz
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
             'number': CKEditorWidget(),
             'name_doctors': CKEditorWidget(),
             'status': CKEditorWidget(),
@@ -414,7 +413,6 @@ class ProfsouzDescForm(forms.ModelForm):
         model = ProfsouzDesc
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
             'description': CKEditorWidget(),
             'description_two': CKEditorWidget(),
             'package': CKEditorWidget(),

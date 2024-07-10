@@ -21,7 +21,7 @@ class ModelNewsAdminForm(forms.ModelForm):
 class BlogNewsAdmin(admin.ModelAdmin):
     """Администратор модели ModelNews."""
     form = ModelNewsAdminForm
-    list_display = ('title', 'description_small', 'description', 'description_company', 'location', 'photo', 'logo_photo',
+    list_display = ('title', 'location', 'photo', 'logo_photo',
                     'pub_date', 'author', 'comment_author', 'is_popular', 'is_nature_news', 'is_health_news', 'is_sport_news',
                     'is_economic_news', 'is_main_news', 'is_main_measures', 'is_main_days_health')
 
@@ -55,13 +55,13 @@ class InteractiveAdmin(admin.ModelAdmin):
 @admin.register(PreviewNews)
 class PreviewNewsAdmin(admin.ModelAdmin):
     """Администратор предварительных новостей."""
-    list_display = ('title', 'description', 'photo', 'is_popular', 'is_nature_news', 'is_health_news', 'is_sport_news',
+    list_display = ('title', 'photo', 'is_popular', 'is_nature_news', 'is_health_news', 'is_sport_news',
                     'is_economic_news', 'is_main_news')
     search_fields = ('title',)
     list_filter = ('title',)
     fieldsets = (
         (None, {
-            'fields': ('title', 'description', 'photo', 'is_popular', 'is_nature_news', 'is_health_news', 'is_sport_news',
+            'fields': ('title', 'photo', 'is_popular', 'is_nature_news', 'is_health_news', 'is_sport_news',
                     'is_economic_news', 'is_main_news')
         }),
     )

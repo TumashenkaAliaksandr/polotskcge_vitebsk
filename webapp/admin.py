@@ -144,6 +144,7 @@ class RelationAdmin(admin.ModelAdmin):
 class HumanResourcesDescAdmin(admin.ModelAdmin):
     form = HumanResourcesDescForm
 
+
 @admin.register(HumanResources)
 class HumanResourcesAdmin(admin.ModelAdmin):
     form = HumanResourcesForm
@@ -157,6 +158,7 @@ class AccountingAdmin(admin.ModelAdmin):
 @admin.register(AccountingDesc)
 class AccountingDescAdmin(admin.ModelAdmin):
     form = AccountingDescForm
+
 
 @admin.register(Book_complaint)
 class Book_complaintAdmin(admin.ModelAdmin):
@@ -186,11 +188,17 @@ class UnionAdmin(admin.ModelAdmin):
 @admin.register(Profsouz)
 class ProfsouzAdmin(admin.ModelAdmin):
     form = ProfsouzForm
+    list_display = ['name']
 
 
-@admin.register(ProfsouzDesc)
 class ProfsouzDescAdmin(admin.ModelAdmin):
     form = ProfsouzDescForm
+
+    def get_changeform_initial_data(self, request):
+        return {"name": "custom_initial_value"}
+
+
+admin.site.register(ProfsouzDesc, ProfsouzDescAdmin)
 
 
 @admin.register(ReceptionHours)
