@@ -148,9 +148,11 @@ def charter(request):
 def trade_union(request):
     """Trade union template"""
     interactiv = Interactive.objects.all()
+    profsouz_inf = ProfsouzDesc.objects.all()
 
     context = {
         'interactiv': interactiv,
+        'profsouz_inf': profsouz_inf,
     }
 
     return render(request, 'webapp/about_us/trade_union.html', context=context)

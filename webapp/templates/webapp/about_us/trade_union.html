@@ -60,10 +60,9 @@
     <section id="featured-services" class="featured-services main-bg-profsouz">
         <div class="container book_info" data-aos="fade-up">
             <div class="row">
-                {% for main_rel in rel_inf %}
+                {% for main_profsouz in profsouz_inf %}
                     <div class="section-title">
-                        <h3>{{ main_rel.name|safe }}</h3>
-                        <p>{{ main_rel.description|safe }}</p>
+                        <h2>{{ main_profsouz.name|safe }}</h2>
                     </div>
                 {% endfor %}
             </div>
@@ -74,18 +73,17 @@
                             <table class="iksweb">
                                 {% for main_profsouz in profsouz_inf %}
                                     <div class="description-left">
-                                        <h3>{{ main_profsouz.name|safe }}</h3>
                                         <p>{{ main_profsouz.description|safe }}</p>
+                                        <p>{{ main_profsouz.package|safe }}</p>
+                                        <p>{{ main_profsouz.description_two|safe }}</p>
                                     </div>
                                 {% endfor %}
                                 <thead>
                                 <tr>
                                     <th>№</th>
-                                    <th>Наименование административной процедуры</th>
-                                    <th>Документы и (или) сведения, представляемые гражданином для осуществления
-                                        аминистративной процедуры
-                                    </th>
-                                    <th>Размер платы, взимаемой при осуществлении административной процедуры</th>
+                                    <th>ФИО</th>
+                                    <th>Занимаемая должность</th>
+                                    <th>Телефон</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -111,17 +109,9 @@
                                 <thead>
                                 <tr>
                                     <th>№</th>
-                                    <th>Наименование административной процедуры</th>
-                                    <th>Государственный орган (иная организация), в который гражданин должен
-                                        обратиться
-                                    </th>
-                                    <th>Документы, и (или) сведения, предостав-ляемые граждани-ном для осуществле-ния
-                                        административ-ной процедуры
-                                    </th>
-                                    <th>Максимальный срок осуществления административной процедуры</th>
-                                    <th>Срок действия справки, другого документа (решения), выдаваемых (принимаемого)
-                                        при осуществлении административной процедуры
-                                    </th>
+                                    <th>ФИО</th>
+                                    <th>Занимаемая должность</th>
+                                    <th>Телефон</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -137,8 +127,6 @@
                                         <td>{{ main_degree.name|safe }}</td>
                                         <td>{{ main_degree.name_ap|safe }}</td>
                                         <td>{{ main_degree.doc_ap|safe }}</td>
-                                        <td>{{ main_degree.size_ap|safe }}</td>
-                                        <td>{{ main_degree.date_ap|safe }}</td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
