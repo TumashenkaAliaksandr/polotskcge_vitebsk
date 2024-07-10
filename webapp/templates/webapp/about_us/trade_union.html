@@ -8,7 +8,7 @@
 
     <!-- ======= Breadcrumbs Section ======= -->
     <!-- pagebanner -->
-    <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_centr.png' %}{% endif %}')">
+    <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_profsouz_vasilki.jpg' %}{% endif %}')">
     </section>
     <!-- End Pagebanner -->
     <section class="breadcrumbs_contacts">
@@ -24,25 +24,146 @@
     </section>
     <!-- End Breadcrumbs Section -->
 
-    <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services">
-        <div class="container" data-aos="fade-up">
 
-            <div class="row">
-                {% for main_features in features %}
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="{{ main_features.icon_class }}"></i></div>
-                            <h4 class="title"><a href="{{ main_features.link }}">{{ main_features.name }}</a></h4>
-                            <p class="description">{{ main_features.description|safe }}</p>
+    <!-- ======= Book NEWS text Section ======= -->
+    <div id="single" class="single main-bg-profsouz">
+        <div class="breaking-news">
+            <div class="container">
+                {% for main_interactiv_string in interactiv %}
+                    <div class="move-text">
+                        <div class="breaking_news">
+                            <h2>Новости Центра</h2>
                         </div>
+                        <div class="marquee">
+                            <div class="marquee1"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description | safe }}</a>
+                            </div>
+                            <div class="marquee2"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <script type="text/javascript" src="{% static 'js/jquery.marquee.js' %}"></script>
+                        <script>
+                            $('.marquee').marquee({pauseOnHover: true});
+                            //@ sourceURL=pen.js
+                        </script>
                     </div>
                 {% endfor %}
             </div>
         </div>
-    </section>
-    <!-- End Featured Services Section -->
+    </div>
+    <!-- ======= End Book News text Section ======= -->
 
-  </main><!-- End #main -->
+    <!-- Hotline Title and desc Section -->
+    <section id="featured-services" class="featured-services main-bg-profsouz">
+        <div class="container book_info" data-aos="fade-up">
+            <div class="row">
+                {% for main_rel in rel_inf %}
+                    <div class="section-title">
+                        <h3>{{ main_rel.name|safe }}</h3>
+                        <p>{{ main_rel.description|safe }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <section class="hotline">
+                    <div class="table-info">
+                        <div class="box" data-aos="fade-up" data-aos-delay="300">
+                            <table class="iksweb">
+                                {% for main_profsouz in profsouz_inf %}
+                                    <div class="description-left">
+                                        <h3>{{ main_profsouz.name|safe }}</h3>
+                                        <p>{{ main_profsouz.description|safe }}</p>
+                                    </div>
+                                {% endfor %}
+                                <thead>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Наименование административной процедуры</th>
+                                    <th>Документы и (или) сведения, представляемые гражданином для осуществления
+                                        аминистративной процедуры
+                                    </th>
+                                    <th>Размер платы, взимаемой при осуществлении административной процедуры</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for main_human_recurces in table_inf %}
+                                    <tr>
+                                        <td>{{ main_human_recurces.number_ap|safe }}</td>
+                                        <td>{{ main_human_recurces.name_ap|safe }}</td>
+                                        <td>{{ main_human_recurces.doc_ap|safe }}</td>
+                                        <td>{{ main_human_recurces.size_ap|safe }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="row">
+                <section class="hotline">
+                    <div class="table-info">
+                        <div class="box" data-aos="fade-up" data-aos-delay="300">
+                            <table class="iksweb">
+                                <thead>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Наименование административной процедуры</th>
+                                    <th>Государственный орган (иная организация), в который гражданин должен
+                                        обратиться
+                                    </th>
+                                    <th>Документы, и (или) сведения, предостав-ляемые граждани-ном для осуществле-ния
+                                        административ-ной процедуры
+                                    </th>
+                                    <th>Максимальный срок осуществления административной процедуры</th>
+                                    <th>Срок действия справки, другого документа (решения), выдаваемых (принимаемого)
+                                        при осуществлении административной процедуры
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for main_degree in degree_desc %}
+                                    <div class="description-left">
+                                        <h5>{{ main_degree.name|safe }}</h5>
+                                        <p>{{ main_degree.description|safe }}</p>
+                                    </div>
+                                {% endfor %}
+                                {% for main_degree in degree_inf %}
+                                    <tr>
+                                        <td>{{ main_degree.number_ap|safe }}</td>
+                                        <td>{{ main_degree.name|safe }}</td>
+                                        <td>{{ main_degree.name_ap|safe }}</td>
+                                        <td>{{ main_degree.doc_ap|safe }}</td>
+                                        <td>{{ main_degree.size_ap|safe }}</td>
+                                        <td>{{ main_degree.date_ap|safe }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="footer-top">
+                                    <div class="footer-info">
+                                        <div class="social-links mt-3">
+                                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                                            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+    <!-- End Hotline Title and desc Section -->
+
+</main><!-- End #main -->
 
 {% endblock %}

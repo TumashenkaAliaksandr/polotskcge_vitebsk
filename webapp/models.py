@@ -268,6 +268,7 @@ class Electronic_appeals_Title_desc(models.Model):
     def __str__(self):
         return self.name
 
+
 class Up_Organ_inf(models.Model):
     name = models.CharField(max_length=300, default='Телефон горячей линии')
     description = models.CharField(max_length=3000, default='Время работы')
@@ -631,3 +632,40 @@ class ListingDecree(models.Model):
 
     def __str__(self):
         return self.number_ap
+
+
+class Profsouz(models.Model):
+    name = models.CharField(max_length=350, default='Тайтл')
+    number = models.CharField(max_length=350, default='Номер строки(ячейки в таблице)')
+    name_doctors = models.TextField(default='ФИО Доктор')
+    status = models.TextField(default='Должность')
+    phone = models.TextField(default='Телефон')
+    icon_telegram = models.CharField(max_length=100, default='bx bxl-telegram')
+    link_telegram = models.URLField(max_length=200, default='https://telegram.com')
+    icon_facebook = models.CharField(max_length=100, default='bx bxl-facebook')
+    link_facebook = models.URLField(max_length=200, default='https://facebook.com')
+    icon_vk = models.CharField(max_length=100, default='bx bxl-vkontakte')
+    link_vk = models.URLField(max_length=200, default='https://vk.com')
+    icon_instagram = models.CharField(max_length=100, default='bx bxl-instagram')
+    link_instagram = models.URLField(max_length=200, default='https://instagram.com')
+
+    class Meta:
+        verbose_name = 'О центре Профсоюз таблицы'
+        verbose_name_plural = 'О центре Профсоюз таблицы'
+
+    def __str__(self):
+        return self.name
+
+
+class ProfsouzDesc(models.Model):
+    name = models.CharField(max_length=350, default='Тайтл')
+    description = models.TextField(default='Описание - 1')
+    description_two = models.TextField(default='Описание - 2')
+    package = models.TextField(default='Состав')
+
+    class Meta:
+        verbose_name = 'О центре Профсоюз верхнее описание'
+        verbose_name_plural = 'О центре Профсоюз верхнее описание'
+
+    def __str__(self):
+        return self.name

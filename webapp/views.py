@@ -147,10 +147,10 @@ def charter(request):
 
 def trade_union(request):
     """Trade union template"""
-    features = Featured.objects.all()
+    interactiv = Interactive.objects.all()
 
     context = {
-        'features': features,
+        'interactiv': interactiv,
     }
 
     return render(request, 'webapp/about_us/trade_union.html', context=context)

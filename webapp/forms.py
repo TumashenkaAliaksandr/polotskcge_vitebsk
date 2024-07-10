@@ -394,3 +394,28 @@ class ListingDecreeForm(forms.ModelForm):
             'doc_ap': CKEditorWidget(),
             'date_ap': CKEditorWidget(),
         }
+
+
+class ProfsouzForm(forms.ModelForm):
+    class Meta:
+        model = Profsouz
+        fields = '__all__'
+        widgets = {
+            'name': CKEditorWidget(),
+            'number': CKEditorWidget(),
+            'name_doctors': CKEditorWidget(),
+            'status': CKEditorWidget(),
+            'phone': CKEditorWidget(),
+        }
+
+
+class ProfsouzDescForm(forms.ModelForm):
+    class Meta:
+        model = ProfsouzDesc
+        fields = '__all__'
+        widgets = {
+            'name': CKEditorWidget(),
+            'description': CKEditorWidget(),
+            'description_two': CKEditorWidget(),
+            'package': CKEditorWidget(),
+        }

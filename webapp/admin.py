@@ -8,7 +8,7 @@ from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm, Receptio
     Up_Organ_infForm, Expertise_Form, Duties_Form, MaintenanceSh_Form, Vacancies_Form, Appeals_Form, AnticorrForm, \
     AnticorrTitleForm, NormativeDocuments_Form, LabaForm, LaboratoriesForm, ApRegistrationForm, RelationForm, \
     HumanResourcesDescForm, HumanResourcesForm, AccountingForm, AccountingDescForm, UnionDescForm, UnionForm, \
-    ListingDecreeForm, ListingDecreeDescForm
+    ListingDecreeForm, ListingDecreeDescForm, ProfsouzForm, ProfsouzDescForm
 
 
 class DoctorAdmin(admin.ModelAdmin):
@@ -183,6 +183,16 @@ class UnionAdmin(admin.ModelAdmin):
     form = UnionForm
 
 
+@admin.register(Profsouz)
+class ProfsouzAdmin(admin.ModelAdmin):
+    form = ProfsouzForm
+
+
+@admin.register(ProfsouzDesc)
+class ProfsouzDescAdmin(admin.ModelAdmin):
+    form = ProfsouzDescForm
+
+
 @admin.register(ReceptionHours)
 class ReceptionHoursAdmin(admin.ModelAdmin):
     form = ReceptionHoursForm
@@ -192,7 +202,7 @@ class ReceptionHoursAdmin(admin.ModelAdmin):
 @admin.register(GeneralInfo)
 class GeneralInfoAdmin(admin.ModelAdmin):
     form = GeneralInfoForm
-    list_display = ['title', 'description']
+    list_display = ['title']
 
     def description_preview(self, obj):
         return obj.description[:50]  # Предположим, что вы хотите отображать только первые 50 символов описания
