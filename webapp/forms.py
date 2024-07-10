@@ -405,6 +405,8 @@ class ProfsouzForm(forms.ModelForm):
             'name_doctors': CKEditorWidget(),
             'status': CKEditorWidget(),
             'phone': CKEditorWidget(),
+            'description': CKEditorWidget(),
+            'description_two': CKEditorWidget(),
         }
 
 

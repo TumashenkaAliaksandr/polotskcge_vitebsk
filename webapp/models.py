@@ -636,6 +636,8 @@ class ListingDecree(models.Model):
 
 class Profsouz(models.Model):
     name = models.CharField(max_length=350, default='Тайтл')
+    description = models.TextField(default='Описание - 1')
+    description_two = models.TextField(default='Описание - 2')
     number = models.CharField(max_length=350, default='Номер строки(ячейки в таблице)')
     name_doctors = models.TextField(default='ФИО Доктор')
     status = models.TextField(default='Должность')

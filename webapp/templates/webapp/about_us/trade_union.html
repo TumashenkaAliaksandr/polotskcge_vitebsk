@@ -87,12 +87,12 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {% for main_human_recurces in table_inf %}
+                                {% for main_profsouz in profsouz_infall %}
                                     <tr>
-                                        <td>{{ main_human_recurces.number_ap|safe }}</td>
-                                        <td>{{ main_human_recurces.name_ap|safe }}</td>
-                                        <td>{{ main_human_recurces.doc_ap|safe }}</td>
-                                        <td>{{ main_human_recurces.size_ap|safe }}</td>
+                                        <td>{{ main_profsouz.number|safe }}</td>
+                                        <td>{{ main_profsouz.name_doctors|safe }}</td>
+                                        <td>{{ main_profsouz.status|safe }}</td>
+                                        <td>{{ main_profsouz.phone|safe }}</td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>

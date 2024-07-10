@@ -149,10 +149,12 @@ def trade_union(request):
     """Trade union template"""
     interactiv = Interactive.objects.all()
     profsouz_inf = ProfsouzDesc.objects.all()
+    profsouz_infall = Profsouz.objects.all()
 
     context = {
         'interactiv': interactiv,
         'profsouz_inf': profsouz_inf,
+        'profsouz_infall': profsouz_infall,
     }
 
     return render(request, 'webapp/about_us/trade_union.html', context=context)
