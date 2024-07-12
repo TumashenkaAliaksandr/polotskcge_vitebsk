@@ -410,11 +410,47 @@ class ProfsouzForm(forms.ModelForm):
         }
 
 
+class ProfsouzTwoForm(forms.ModelForm):
+    class Meta:
+        model = ProfsouzTwo
+        fields = '__all__'
+        widgets = {
+            'number': CKEditorWidget(),
+            'name_doctors': CKEditorWidget(),
+            'status': CKEditorWidget(),
+            'phone': CKEditorWidget(),
+            'description': CKEditorWidget(),
+            'description_two': CKEditorWidget(),
+        }
+
+
 class ProfsouzDescForm(forms.ModelForm):
     class Meta:
         model = ProfsouzDesc
         fields = '__all__'
         widgets = {
+            'description': CKEditorWidget(),
+            'description_two': CKEditorWidget(),
+            'package': CKEditorWidget(),
+        }
+
+
+class ProfsouzIconsForm(forms.ModelForm):
+    class Meta:
+        model = ProfsouzIcons
+        fields = '__all__'
+        widgets = {
+            'description': CKEditorWidget(),
+            'description_two': CKEditorWidget(),
+        }
+
+
+class ProfsouzDescOneForm(forms.ModelForm):
+    class Meta:
+        model = ProfsouzDescOne
+        fields = '__all__'
+        widgets = {
+            'name_main': CKEditorWidget(),
             'description': CKEditorWidget(),
             'description_two': CKEditorWidget(),
             'package': CKEditorWidget(),

@@ -8,7 +8,8 @@ from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm, Receptio
     Up_Organ_infForm, Expertise_Form, Duties_Form, MaintenanceSh_Form, Vacancies_Form, Appeals_Form, AnticorrForm, \
     AnticorrTitleForm, NormativeDocuments_Form, LabaForm, LaboratoriesForm, ApRegistrationForm, RelationForm, \
     HumanResourcesDescForm, HumanResourcesForm, AccountingForm, AccountingDescForm, UnionDescForm, UnionForm, \
-    ListingDecreeForm, ListingDecreeDescForm, ProfsouzForm, ProfsouzDescForm
+    ListingDecreeForm, ListingDecreeDescForm, ProfsouzForm, ProfsouzDescForm, ProfsouzDescOneForm, ProfsouzIconsForm, \
+    ProfsouzTwoForm
 
 
 class DoctorAdmin(admin.ModelAdmin):
@@ -188,6 +189,24 @@ class UnionAdmin(admin.ModelAdmin):
 @admin.register(Profsouz)
 class ProfsouzAdmin(admin.ModelAdmin):
     form = ProfsouzForm
+    list_display = ['name']
+
+
+@admin.register(ProfsouzTwo)
+class ProfsouzTwoAdmin(admin.ModelAdmin):
+    form = ProfsouzTwoForm
+    list_display = ['name']
+
+
+@admin.register(ProfsouzDescOne)
+class ProfsouzDescOneAdmin(admin.ModelAdmin):
+    form = ProfsouzDescOneForm
+    list_display = ['name']
+
+
+@admin.register(ProfsouzIcons)
+class ProfsouzIconsAdmin(admin.ModelAdmin):
+    form = ProfsouzIconsForm
     list_display = ['name']
 
 
