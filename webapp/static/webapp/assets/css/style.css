@@ -2451,6 +2451,12 @@ section#clocks-two {
     color: #354251;
 }
 
+.iksweb p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.3rem;
+}
+
 .iksweb td, table.iksweb th {
     white-space: pre-wrap;
     padding: 10px 5px;
@@ -2469,6 +2475,7 @@ section#clocks-two {
 }
 
 .table-info {
+    padding-top: 1%;
     padding-bottom: 1%;
 }
 

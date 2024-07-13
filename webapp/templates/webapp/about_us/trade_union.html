@@ -78,7 +78,23 @@
                                         <p>{{ main_profsouz.description_two|safe }}</p>
                                     </div>
                                 {% endfor %}
-                                <div class="row">
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+    <!-- End Hotline Title and desc Section -->
+
+    <!-- Hotline Title and desc Section -->
+    <section id="featured-services" class="featured-services main-bg-profsouz">
+        <div class="container book_info" data-aos="fade-up">
+            <div class="row">
+                <section class="hotline">
+                    <div class="table-info">
+                        <div class="box" data-aos="fade-up" data-aos-delay="300">
+                            <table class="iksweb">
                                     {% for main_profsouz in profsouz_inf_two %}
                                         <div class="section-title">
                                             <h2>{{ main_profsouz.name_main|safe }}</h2>
@@ -89,7 +105,6 @@
                                             <p>{{ main_degree.description|safe }}</p>
                                         </div>
                                     {% endfor %}
-                                </div>
                                 <thead>
                                 <tr>
                                     <th>№</th>
@@ -115,8 +130,10 @@
                                 </div>
                                 <div class="social-links mt-3">
                                     <a href="{{ main_profsouz.link_telegram }}"><i class="bx bxl-telegram"></i></a>
-                                    <a href="{{ main_profsouz.link_facebook }}" class="facebook"><i class="bx bxl-facebook"></i></a>
-                                    <a href="{{ main_profsouz.link_instagram }}" class="instagram"><i class="bx bxl-instagram"></i></a>
+                                    <a href="{{ main_profsouz.link_facebook }}" class="facebook"><i
+                                            class="bx bxl-facebook"></i></a>
+                                    <a href="{{ main_profsouz.link_instagram }}" class="instagram"><i
+                                            class="bx bxl-instagram"></i></a>
                                     <a href="{{ main_profsouz.link_vk }}" class="linkedin"><i class="bx bxl-vk"></i></a>
                                 </div>
                             {% endfor %}
@@ -125,17 +142,15 @@
                 </section>
             </div>
             <div class="row">
-                {% for main_degree in profsouz_inf_two %}
-                    <div class="section-title">
-                        <p>{{ main_degree.package|safe }}</p>
-                    </div>
-                {% endfor %}
-            </div>
-            <div class="row">
                 <section class="hotline">
                     <div class="table-info">
                         <div class="box" data-aos="fade-up" data-aos-delay="300">
                             <table class="iksweb">
+                                {% for main_degree in profsouz_inf_two %}
+                                    <div class="description-left">
+                                        <p>{{ main_degree.package|safe }}</p>
+                                    </div>
+                                {% endfor %}
                                 <thead>
                                 <tr>
                                     <th>№</th>
