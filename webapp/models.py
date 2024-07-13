@@ -724,6 +724,7 @@ class Disinfection(models.Model):
     name = models.CharField(max_length=350, default='Тайтл для админки')
     name_main = models.CharField(max_length=350, default='Тайтл')
     description = models.TextField(default='Описание')
+    description_two = models.TextField(default='Описание 2')
 
     class Meta:
         verbose_name = 'Дезинфекция главное'

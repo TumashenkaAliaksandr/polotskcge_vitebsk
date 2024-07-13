@@ -463,5 +463,6 @@ class DisinfectionForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'description': CKEditorWidget(),
+            'description_two': CKEditorWidget(),
             'name_main': CKEditorWidget(),
         }

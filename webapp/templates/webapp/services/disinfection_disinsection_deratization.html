@@ -97,6 +97,11 @@
                         </h4>
                     </div>
                 </div>
+                {% for main_disinfection in disinfection_info %}
+                    <div class="description-right">
+                        <p>{{ main_disinfection.description_two|safe }}</p>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </section>
