@@ -732,3 +732,35 @@ class Disinfection(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Deratization(models.Model):
+
+    name = models.CharField(max_length=350, default='Тайтл для админки')
+    name_main = models.CharField(max_length=350, default='Тайтл')
+    description = models.TextField(default='Описание')
+    description_two = models.TextField(default='Описание 2')
+    photo = models.ImageField(upload_to='Deratization/', null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Дератизация описание'
+        verbose_name_plural = 'Дератизация описание'
+
+    def __str__(self):
+        return self.name
+
+
+class Disinsection(models.Model):
+
+    name = models.CharField(max_length=350, default='Тайтл для админки')
+    name_main = models.CharField(max_length=350, default='Тайтл')
+    description = models.TextField(default='Описание')
+    description_two = models.TextField(default='Описание 2')
+    photo = models.ImageField(upload_to='Disinsection/', null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Дезинсекция описание'
+        verbose_name_plural = 'Дезинсекция описание'
+
+    def __str__(self):
+        return self.name
