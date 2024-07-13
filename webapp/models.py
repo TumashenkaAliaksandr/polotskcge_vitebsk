@@ -764,3 +764,19 @@ class Disinsection(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class DisinfectionDesc(models.Model):
+
+    name = models.CharField(max_length=350, default='Тайтл для админки')
+    name_main = models.CharField(max_length=350, default='Тайтл')
+    description = models.TextField(default='Описание')
+    description_two = models.TextField(default='Описание 2')
+    photo = models.ImageField(upload_to='Disinfection/', null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Дезинфекция описание'
+        verbose_name_plural = 'Дезинфекция описание'
+
+    def __str__(self):
+        return self.name

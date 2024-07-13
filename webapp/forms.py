@@ -487,3 +487,14 @@ class DisinsectionForm(forms.ModelForm):
             'description_two': CKEditorWidget(),
             'name_main': CKEditorWidget(),
         }
+
+
+class DisinfectionDescForm(forms.ModelForm):
+    class Meta:
+        model = DisinfectionDesc
+        fields = '__all__'
+        widgets = {
+            'description': CKEditorWidget(),
+            'description_two': CKEditorWidget(),
+            'name_main': CKEditorWidget(),
+        }
