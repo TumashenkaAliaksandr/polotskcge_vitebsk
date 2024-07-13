@@ -23,24 +23,56 @@
     </section>
     <!-- End Breadcrumbs Section -->
 
-    <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services">
-        <div class="container" data-aos="fade-up">
 
-            <div class="row">
-                {% for main_features in features %}
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="{{ main_features.icon_class }}"></i></div>
-                            <h4 class="title"><a href="{{ main_features.link }}">{{ main_features.name }}</a></h4>
-                            <p class="description">{{ main_features.description|safe }}</p>
+    <!-- ======= Book NEWS text Section ======= -->
+    <div id="single" class="single main-bg-book-of">
+        <div class="breaking-news">
+            <div class="container">
+                {% for main_interactiv_string in interactiv %}
+                    <div class="move-text">
+                        <div class="breaking_news">
+                            <h2>Новости Центра</h2>
                         </div>
+                        <div class="marquee">
+                            <div class="marquee1"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description | safe }}</a>
+                            </div>
+                            <div class="marquee2"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <script type="text/javascript" src="{% static 'js/jquery.marquee.js' %}"></script>
+                        <script>
+                            $('.marquee').marquee({pauseOnHover: true});
+                            //@ sourceURL=pen.js
+                        </script>
                     </div>
                 {% endfor %}
             </div>
         </div>
+    </div>
+    <!-- ======= End Book News text Section ======= -->
+
+
+    <!-- ======= Desinfection text Section ======= -->
+    <section id="featured-services" class="featured-services main-bg-book-of">
+        <div class="container book_info" data-aos="fade-up">
+            <div class="row">
+                {% for main_desinfection in disinfection_info %}
+                    <div class="section-title">
+                        <h2>{{ main_desinfection.name_main|safe }}</h2>
+                    </div>
+                    <div class="gslide-description">
+                        <p>{{ main_desinfection.description|safe }}</p>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
     </section>
-    <!-- End Featured Services Section -->
+    <!-- End Desinfection text Section -->
 
   </main><!-- End #main -->
 

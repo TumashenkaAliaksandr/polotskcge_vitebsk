@@ -455,3 +455,13 @@ class ProfsouzDescOneForm(forms.ModelForm):
             'description_two': CKEditorWidget(),
             'package': CKEditorWidget(),
         }
+
+
+class DisinfectionForm(forms.ModelForm):
+    class Meta:
+        model = Disinfection
+        fields = '__all__'
+        widgets = {
+            'description': CKEditorWidget(),
+            'name_main': CKEditorWidget(),
+        }

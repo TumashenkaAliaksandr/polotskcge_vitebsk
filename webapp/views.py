@@ -61,18 +61,6 @@ def info_main(request):
     return render(request, 'webapp/informations/info_main.html')
 
 
-# def news_main(request):
-#     """Main News Clinic"""
-#
-#     features = Featured.objects.all()
-#
-#     context = {
-#         'features': features,
-#     }
-#
-#     return render(request, 'webapp/news/news_main.html', context=context)
-
-
 def structure(request):
     """About us Structure template"""
     features = Featured.objects.all()
@@ -93,10 +81,8 @@ def working_mode(request):
 
     info_clocks = GeneralInfo.objects.all()
     clocks = ReceptionHours.objects.all()
-    features = Featured.objects.all()
 
     context = {
-        'features': features,
         'clocks': clocks,
         'info_clocks': info_clocks,
     }
@@ -501,10 +487,12 @@ def hygiene_education(request):
 
 def disinfection_disinsection_deratization(request):
     """Services - disinfection_disinsection_deratization template"""
-    features = Featured.objects.all()
+    interactiv = Interactive.objects.all()
+    disinfection_info = Disinfection.objects.all()
 
     context = {
-        'features': features,
+        'interactiv': interactiv,
+        'disinfection_info': disinfection_info,
     }
 
     return render(request, 'webapp/services/disinfection_disinsection_deratization.html', context=context)

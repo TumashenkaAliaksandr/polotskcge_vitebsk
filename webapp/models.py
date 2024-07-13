@@ -717,3 +717,17 @@ class ProfsouzIcons(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Disinfection(models.Model):
+
+    name = models.CharField(max_length=350, default='Тайтл для админки')
+    name_main = models.CharField(max_length=350, default='Тайтл')
+    description = models.TextField(default='Описание')
+
+    class Meta:
+        verbose_name = 'Дезинфекция главное'
+        verbose_name_plural = 'Дезинфекция главное'
+
+    def __str__(self):
+        return self.name
