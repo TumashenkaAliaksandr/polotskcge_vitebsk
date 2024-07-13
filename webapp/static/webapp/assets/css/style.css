@@ -803,6 +803,25 @@ h6 {
     transform: translateX(-50%) translateY(-50%); /* Сдвигаем в центр */
 }
 
+
+.my-column-two {
+    /* Ваши стили для колонки */
+    position: relative;
+}
+
+
+.my-column-two::after {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 117%;
+  width: 5px;
+  background-color: #3fbbc0;
+  height: 90%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+
 /*.my-column::before {*/
 /*    content: '';*/
 /*    position: absolute;*/
