@@ -9,7 +9,7 @@ from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm, Receptio
     AnticorrTitleForm, NormativeDocuments_Form, LabaForm, LaboratoriesForm, ApRegistrationForm, RelationForm, \
     HumanResourcesDescForm, HumanResourcesForm, AccountingForm, AccountingDescForm, UnionDescForm, UnionForm, \
     ListingDecreeForm, ListingDecreeDescForm, ProfsouzForm, ProfsouzDescForm, ProfsouzDescOneForm, ProfsouzIconsForm, \
-    ProfsouzTwoForm, DisinfectionForm, DeratizationForm, DisinsectionForm, DisinfectionDescForm
+    ProfsouzTwoForm, DisinfectionForm, DeratizationForm, DisinsectionForm, DisinfectionDescForm, InventoryForm
 
 
 class DoctorAdmin(admin.ModelAdmin):
@@ -427,4 +427,10 @@ class DeratizationAdmin(admin.ModelAdmin):
 @admin.register(DisinfectionDesc)
 class DeratizationAdmin(admin.ModelAdmin):
     form = DisinfectionDescForm
+    list_display = ['name']\
+
+
+@admin.register(Inventory)
+class InventoryAdmin(admin.ModelAdmin):
+    form = InventoryForm
     list_display = ['name']

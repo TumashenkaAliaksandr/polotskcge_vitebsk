@@ -780,3 +780,18 @@ class DisinfectionDesc(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Inventory(models.Model):
+
+    name = models.CharField(max_length=350, default='Тайтл для админки')
+    name_main = models.CharField(max_length=350, default='Тайтл')
+    description = models.TextField(default='Описание')
+    description_two = models.TextField(default='Описание 2')
+
+    class Meta:
+        verbose_name = 'АП перечень'
+        verbose_name_plural = 'АП перечень'
+
+    def __str__(self):
+        return self.name
