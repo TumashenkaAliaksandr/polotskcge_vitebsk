@@ -307,10 +307,10 @@ def higher_authority(request):
 
 def ap(request):
     """AP template"""
-    features = Featured.objects.all()
+    inventory_info = Inventory.objects.all()
 
     context = {
-        'features': features,
+        'inventory_info': inventory_info,
     }
 
     return render(request, 'webapp/ap/ap.html', context=context)

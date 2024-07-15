@@ -25,24 +25,26 @@
     </section>
     <!-- End Breadcrumbs Section -->
 
-    <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services">
-        <div class="container" data-aos="fade-up">
-
+    <!-- ======= AP text Section ======= -->
+    <section id="featured-services" class="featured-services ap-bg">
+        <div class="container book_info" data-aos="fade-up">
             <div class="row">
-                {% for main_features in features %}
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="{{ main_features.icon_class }}"></i></div>
-                            <h4 class="title"><a href="{{ main_features.link }}">{{ main_features.name }}</a></h4>
-                            <p class="description">{{ main_features.description|safe }}</p>
-                        </div>
+                {% for main_inventory in inventory_info %}
+                    <div class="section-title">
+                        <h2>{{ main_inventory.name_main|safe }}</h2>
                     </div>
+                    <div class="gslide-description">
+                        <p>{{ main_inventory.description|safe }}</p>
+                    </div>
+                    <div class="description">
+                    <p>{{ main_inventory.description_two|safe }}</p>
+                    </div>
+
                 {% endfor %}
             </div>
         </div>
     </section>
-    <!-- End Featured Services Section -->
+    <!-- End AP text Section -->
 
   </main><!-- End #main -->
 
