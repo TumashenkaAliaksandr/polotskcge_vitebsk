@@ -24,33 +24,48 @@
 
     <!-- End Breadcrumbs Section -->
 
-    <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services section-bg-structure">
-        <div class="container" data-aos="fade-up">
 
-            <div class="row">
-                {% for main_features in features %}
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="{{ main_features.icon_class }}"></i></div>
-                            <h4 class="title"><a href="{{ main_features.link }}">{{ main_features.name }}</a></h4>
-                            <p class="description">{{ main_features.description|safe }}</p>
+    <!-- ======= Book NEWS text Section ======= -->
+    <div id="single" class="single section-bg-structure">
+        <div class="breaking-news">
+            <div class="container">
+                {% for main_interactiv_string in interactiv %}
+                    <div class="move-text">
+                        <div class="breaking_news">
+                            <h2>Новости Центра</h2>
                         </div>
+                        <div class="marquee">
+                            <div class="marquee1"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description | safe }}</a>
+                            </div>
+                            <div class="marquee2"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <script type="text/javascript" src="{% static 'js/jquery.marquee.js' %}"></script>
+                        <script>
+                            $('.marquee').marquee({pauseOnHover: true});
+                            //@ sourceURL=pen.js
+                        </script>
                     </div>
                 {% endfor %}
             </div>
         </div>
-    </section>
-    <!-- End Featured Services Section -->
+    </div>
+    <!-- ======= End Book News text Section ======= -->
+
     <!-- Structure Section -->
     <section class="section-bg-structure">
         <div class="container" data-aos="fade-left">
             <div class="section-title">
                 <h2>Структура</h2>
+                <h3>Наша система иерархических связей между подразделениями</h3>
             </div>
         </div>
          <div class="img-fixed-size-struc">
-                <img src="{% static 'webapp/assets/img/gigi_centr_structure-nbg.png' %}" alt=" " class="img-responsive"/>
+                <img src="{% static 'webapp/assets/img/gigi_centr_structure.png' %}" alt=" " class="img-responsive"/>
             </div>
     </section>
     <!-- End Structure Section -->
@@ -87,56 +102,56 @@
     </section>
     <!-- End Frequently Asked Questioins Section -->
 
-    <!-- ======= Gallery Section ======= -->
-    <section id="gallery" class="gallery section-bg-structure">
-        <div class="container" data-aos="fade-up">
-
-            <div class="section-title">
-                <h2>Наши фото </h2>
+{#    <!-- ======= Gallery Section ======= -->#}
+{#    <section id="gallery" class="gallery section-bg-structure">#}
+{#        <div class="container" data-aos="fade-up">#}
+{##}
+{#            <div class="section-title">#}
+{#                <h2>Наши фото </h2>#}
                 {#          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>#}
-            </div>
-
-            <div class="gallery-slider swiper">
-                <div class="swiper-wrapper align-items-center">
-                    <div class="swiper-slide"><a class="gallery-lightbox"
-                                                 href="{% static 'webapp/assets/img/gallery/gallery-1.jpg' %}"><img
-                            src="{% static 'webapp/assets/img/gallery/gallery-1.jpg' %}" class="img-fluid" alt=""></a>
-                    </div>
-                    <div class="swiper-slide"><a class="gallery-lightbox"
-                                                 href="{% static 'webapp/assets/img/gallery/gallery-2.jpg' %}"><img
-                            src="{% static 'webapp/assets/img/gallery/gallery-2.jpg' %}" class="img-fluid" alt=""></a>
-                    </div>
-                    <div class="swiper-slide"><a class="gallery-lightbox"
-                                                 href="{% static 'webapp/assets/img/gallery/gallery-3.jpg' %}"><img
-                            src="{% static 'webapp/assets/img/gallery/gallery-3.jpg' %}" class="img-fluid" alt=""></a>
-                    </div>
-                    <div class="swiper-slide"><a class="gallery-lightbox"
-                                                 href="{% static 'webapp/assets/img/gallery/gallery-4.jpg' %}"><img
-                            src="{% static 'webapp/assets/img/gallery/gallery-4.jpg' %}" class="img-fluid" alt=""></a>
-                    </div>
-                    <div class="swiper-slide"><a class="gallery-lightbox"
-                                                 href="{% static 'webapp/assets/img/gallery/gallery-5.jpg' %}"><img
-                            src="{% static 'webapp/assets/img/gallery/gallery-5.jpg' %}" class="img-fluid" alt=""></a>
-                    </div>
-                    <div class="swiper-slide"><a class="gallery-lightbox"
-                                                 href="{% static 'webapp/assets/img/gallery/gallery-6.jpg' %}"><img
-                            src="{% static 'webapp/assets/img/gallery/gallery-6.jpg' %}" class="img-fluid" alt=""></a>
-                    </div>
-                    <div class="swiper-slide"><a class="gallery-lightbox"
-                                                 href="{% static 'webapp/assets/img/gallery/gallery-7.jpg' %}"><img
-                            src="{% static 'webapp/assets/img/gallery/gallery-7.jpg' %}" class="img-fluid" alt=""></a>
-                    </div>
-                    <div class="swiper-slide"><a class="gallery-lightbox"
-                                                 href="{% static 'webapp/assets/img/gallery/gallery-8.jpg' %}"><img
-                            src="{% static 'webapp/assets/img/gallery/gallery-8.jpg' %}" class="img-fluid" alt=""></a>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-
-        </div>
-    </section>
-    <!-- End Gallery Section -->
+{#            </div>#}
+{##}
+{#            <div class="gallery-slider swiper">#}
+{#                <div class="swiper-wrapper align-items-center">#}
+{#                    <div class="swiper-slide"><a class="gallery-lightbox"#}
+{#                                                 href="{% static 'webapp/assets/img/gallery/gallery-1.jpg' %}"><img#}
+{#                            src="{% static 'webapp/assets/img/gallery/gallery-1.jpg' %}" class="img-fluid" alt=""></a>#}
+{#                    </div>#}
+{#                    <div class="swiper-slide"><a class="gallery-lightbox"#}
+{#                                                 href="{% static 'webapp/assets/img/gallery/gallery-2.jpg' %}"><img#}
+{#                            src="{% static 'webapp/assets/img/gallery/gallery-2.jpg' %}" class="img-fluid" alt=""></a>#}
+{#                    </div>#}
+{#                    <div class="swiper-slide"><a class="gallery-lightbox"#}
+{#                                                 href="{% static 'webapp/assets/img/gallery/gallery-3.jpg' %}"><img#}
+{#                            src="{% static 'webapp/assets/img/gallery/gallery-3.jpg' %}" class="img-fluid" alt=""></a>#}
+{#                    </div>#}
+{#                    <div class="swiper-slide"><a class="gallery-lightbox"#}
+{#                                                 href="{% static 'webapp/assets/img/gallery/gallery-4.jpg' %}"><img#}
+{#                            src="{% static 'webapp/assets/img/gallery/gallery-4.jpg' %}" class="img-fluid" alt=""></a>#}
+{#                    </div>#}
+{#                    <div class="swiper-slide"><a class="gallery-lightbox"#}
+{#                                                 href="{% static 'webapp/assets/img/gallery/gallery-5.jpg' %}"><img#}
+{#                            src="{% static 'webapp/assets/img/gallery/gallery-5.jpg' %}" class="img-fluid" alt=""></a>#}
+{#                    </div>#}
+{#                    <div class="swiper-slide"><a class="gallery-lightbox"#}
+{#                                                 href="{% static 'webapp/assets/img/gallery/gallery-6.jpg' %}"><img#}
+{#                            src="{% static 'webapp/assets/img/gallery/gallery-6.jpg' %}" class="img-fluid" alt=""></a>#}
+{#                    </div>#}
+{#                    <div class="swiper-slide"><a class="gallery-lightbox"#}
+{#                                                 href="{% static 'webapp/assets/img/gallery/gallery-7.jpg' %}"><img#}
+{#                            src="{% static 'webapp/assets/img/gallery/gallery-7.jpg' %}" class="img-fluid" alt=""></a>#}
+{#                    </div>#}
+{#                    <div class="swiper-slide"><a class="gallery-lightbox"#}
+{#                                                 href="{% static 'webapp/assets/img/gallery/gallery-8.jpg' %}"><img#}
+{#                            src="{% static 'webapp/assets/img/gallery/gallery-8.jpg' %}" class="img-fluid" alt=""></a>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="swiper-pagination"></div>#}
+{#            </div>#}
+{##}
+{#        </div>#}
+{#    </section>#}
+{#    <!-- End Gallery Section -->#}
 
   </main><!-- End #main -->
 

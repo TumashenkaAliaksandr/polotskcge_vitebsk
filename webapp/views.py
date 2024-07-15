@@ -66,11 +66,13 @@ def structure(request):
     features = Featured.objects.all()
     questions = Question.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
+    interactiv = Interactive.objects.all()
 
     context = {
         'features': features,
         'questions': questions,
         'title_desc_queans': title_desc_queans,
+        'interactiv': interactiv,
     }
 
     return render(request, 'webapp/about_us/structure.html', context=context)
