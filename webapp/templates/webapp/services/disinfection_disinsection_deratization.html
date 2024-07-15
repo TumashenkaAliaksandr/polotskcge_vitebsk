@@ -132,7 +132,7 @@
       <!-- End deratisation Section -->
 
 
-    <!-- ======= disinfection Section ======= -->
+    <!-- ======= disinsection Section ======= -->
     <section id="features" class="features disinfection-bg">
         <div class="container" data-aos="fade-up">
             {% for main_disinsection in disinsection_info %}
@@ -156,7 +156,31 @@
             {% endfor %}
         </div>
     </section>
-    <!-- End disinfection Section -->
+    <!-- End disinsection Section -->
+
+    {% for main_disinfection_desc in disinfection_desc %}
+        <section id="about" class="about disinfection-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>{{ main_disinfection_desc.name|safe }}</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3" data-aos="fade-right">
+                        <img src="{{ main_disinfection_desc.photo.url }}" class="img-fluid img-fixed-size-disinfection"
+                             alt="">
+                    </div>
+                    <div class="col-lg-9 pt-4 pt-lg-0 content" data-aos="fade-left">
+                        <p>{{ main_disinfection_desc.description|safe }}</p>
+                        <p>{{ main_disinfection_desc.description_two|safe }}</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    {% endfor %}
+    <!-- End deratisation Section -->
 
   </main><!-- End #main -->
 

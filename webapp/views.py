@@ -491,12 +491,14 @@ def disinfection_disinsection_deratization(request):
     disinfection_info = Disinfection.objects.all()
     deratisation_info = Deratization.objects.all()
     disinsection_info = Disinsection.objects.all()
+    disinfection_desc = DisinfectionDesc.objects.all()
 
     context = {
         'interactiv': interactiv,
         'disinfection_info': disinfection_info,
         'deratisation_info': deratisation_info,
         'disinsection_info': disinsection_info,
+        'disinfection_desc': disinfection_desc,
     }
 
     return render(request, 'webapp/services/disinfection_disinsection_deratization.html', context=context)
