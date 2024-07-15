@@ -7,7 +7,7 @@
 <main id="main">
     <!-- ======= Breadcrumbs Section ======= -->
     <!-- pagebanner -->
-    <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_st.jpg' %}{% endif %}')">
+    <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_dezinfekcziya.jpg' %}{% endif %}')">
     </section>
     <!-- End Pagebanner -->
     <section class="breadcrumbs_contacts">
@@ -25,7 +25,7 @@
 
 
     <!-- ======= Book NEWS text Section ======= -->
-    <div id="single" class="single main-bg-book-of">
+    <div id="single" class="single disinfection-bg">
         <div class="breaking-news">
             <div class="container">
                 {% for main_interactiv_string in interactiv %}
@@ -57,7 +57,7 @@
 
 
     <!-- ======= Desinfection text Section ======= -->
-    <section id="featured-services" class="featured-services main-bg-book-of">
+    <section id="featured-services" class="featured-services disinfection-bg">
         <div class="container book_info" data-aos="fade-up">
             <div class="row">
                 {% for main_desinfection in disinfection_info %}
@@ -106,6 +106,57 @@
         </div>
     </section>
     <!-- End Features Section -->
+
+     {% for main_deratisation in deratisation_info %}
+          <section id="about" class="about disinfection-bg">
+              <div class="container" data-aos="fade-up">
+
+                  <div class="section-title">
+                      <h2>{{ main_deratisation.name|safe }}</h2>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-lg-3" data-aos="fade-right">
+                          <img src="{{ main_deratisation.photo.url }}" class="img-fluid img-fixed-size-deratisation"
+                               alt="">
+                      </div>
+                      <div class="col-lg-9 pt-4 pt-lg-0 content" data-aos="fade-left">
+                          <p>{{ main_deratisation.description|safe }}</p>
+                          <p>{{ main_deratisation.description_two|safe }}</p>
+                      </div>
+                  </div>
+
+              </div>
+          </section>
+      {% endfor %}
+      <!-- End deratisation Section -->
+
+
+    <!-- ======= disinfection Section ======= -->
+    <section id="features" class="features disinfection-bg">
+        <div class="container" data-aos="fade-up">
+            {% for main_disinsection in disinsection_info %}
+                <div class="section-title">
+                <h2>{{ main_disinsection.name|safe }}</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-9 order-2 order-lg-1" data-aos="fade-right">
+                        <div class="icon-box mt-5 mt-lg-0">
+                            <p>{{ main_disinsection.description | safe }}</p>
+                            <p>{{ main_disinsection.description_two | safe }}</p>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3 order-1 order-lg-2"
+                         data-aos="zoom-in">
+                        <img src="{{ main_disinsection.photo.url }}" class="img-fluid img-fixed-size-disinsection"
+                               alt="">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    <!-- End disinfection Section -->
 
   </main><!-- End #main -->
 

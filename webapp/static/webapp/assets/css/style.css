@@ -884,6 +884,12 @@ section {
     background-attachment: fixed;
 }
 
+.disinfection-bg {
+    padding: 35px 0 35px;
+    background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/gigi_centr_bg_disinfection.jpg') center/cover;
+    background-attachment: fixed;
+}
+
 
 .section-bg-erip {
     padding: 20px 0; /* Измените в соответствии с вашими требованиями */
@@ -1891,7 +1897,6 @@ section#clocks-two {
     background-size: cover;
     min-height: 400px;
 }
-
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/

@@ -2130,6 +2130,26 @@ ul.wmuSliderPagination {
     object-fit: cover;
     margin-top: 8%;
 }
+.img-fixed-size-deratisation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 70%;
+    object-fit: cover;
+}
+.img-fixed-size-disinsection {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 57%;
+    width: 80%;
+    object-fit: cover;
+    margin-top: 18px;
+
+}
 .img-fixed-size-struc {
   width: 50%;
   height: 87%;

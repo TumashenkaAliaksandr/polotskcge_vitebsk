@@ -489,10 +489,14 @@ def disinfection_disinsection_deratization(request):
     """Services - disinfection_disinsection_deratization template"""
     interactiv = Interactive.objects.all()
     disinfection_info = Disinfection.objects.all()
+    deratisation_info = Deratization.objects.all()
+    disinsection_info = Disinsection.objects.all()
 
     context = {
         'interactiv': interactiv,
         'disinfection_info': disinfection_info,
+        'deratisation_info': deratisation_info,
+        'disinsection_info': disinsection_info,
     }
 
     return render(request, 'webapp/services/disinfection_disinsection_deratization.html', context=context)
