@@ -4,34 +4,42 @@ from .utils import get_weather
 from django.core.paginator import Paginator
 
 
-
 def news(request):
     """these are views for Blog News list"""
+
     model_blog_main = ModelNews.objects.all().order_by('-pub_date')
-    all_news = ModelNews.objects.all()
+
+    # Получаем все новости, отсортированные по дате
+    all_news = ModelNews.objects.all().order_by('-pub_date')
+
+    # Получаем популярные и природные новости
     popular_news = all_news.filter(is_popular=True)[:4]
     nature_news = all_news.filter(is_nature_news=True)[:4]
+
+    # Получаем интерактивные элементы, превью новостей и видео
     interactiv = Interactive.objects.all()
     preview = PreviewNews.objects.all()
-    all_news = ModelNews.objects.all().order_by('-pub_date')
-    paginator = Paginator(all_news, 10)  # По 10 новостей на страницу
     model_video = Video.objects.all().order_by('-timestamp')
-    # Получаем данные о погоде
-    weather = get_weather()
 
+    # Пагинация: разбиваем новости на страницы по 10 новостей на страницу
+    paginator = Paginator(all_news, 3)  # По 10 новостей на страницу
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
+
+    # Получаем данные о погоде
+    weather = get_weather()
 
     context = {
         'model_blog_main': model_blog_main,
         'interactiv': interactiv,
         'preview': preview,
-        'page_obj': page_obj,
+        'page_obj': page_obj,  # Страница новостей для отображения
         'model_video': model_video,
         'weather': weather,
         'popular_news': popular_news,
         'nature_news': nature_news,
     }
+
     return render(request, 'breaking.html', context=context)
 
 
