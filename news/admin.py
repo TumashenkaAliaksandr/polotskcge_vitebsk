@@ -1,4 +1,7 @@
 from django.contrib import admin
+from django.utils.html import format_html
+
+from .forms import ModelNewsForm
 from .models import *
 from ckeditor.widgets import CKEditorWidget
 from django import forms
@@ -19,21 +22,30 @@ class ModelNewsAdminForm(forms.ModelForm):
 
 @admin.register(ModelNews)
 class BlogNewsAdmin(admin.ModelAdmin):
-    """Администратор модели ModelNews."""
-    form = ModelNewsAdminForm
-    list_display = ('title', 'location', 'photo', 'logo_photo',
-                    'pub_date', 'author', 'comment_author', 'is_popular', 'is_nature_news', 'is_health_news', 'is_sport_news',
-                    'is_economic_news', 'is_main_news', 'is_main_measures', 'is_main_days_health')
+    form = ModelNewsForm
+    list_display = ('title', 'location', 'display_photo', 'display_logo_photo', 'pub_date', 'author', 'comment_author', 'is_popular', 'is_nature_news', 'is_health_news', 'is_sport_news', 'is_economic_news', 'is_main_news', 'is_main_measures', 'is_main_days_health')
 
     def author(self, obj):
         return obj.author.username if obj.author else '-'
-
     author.short_description = 'Author'
 
     def comment_author(self, obj):
         return obj.comment_author.username if obj.comment_author else '-'
-
     comment_author.short_description = 'Comment Author'
+
+    def display_photo(self, obj):
+        if obj.photo:
+            return format_html('<img src="{}" style="max-width: 100px; height: auto;" />', obj.photo.url)
+        return "No Photo"
+    display_photo.short_description = 'Фото Главное'
+
+    def display_logo_photo(self, obj):
+        if obj.logo_photo:
+            return format_html('<img src="{}" style="max-width: 100px; height: auto;" />', obj.logo_photo.url)
+        return "No Logo Photo"
+
+    display_logo_photo.short_description = 'Маленькое Фото'
+
 
 
 @admin.register(Interactive)
