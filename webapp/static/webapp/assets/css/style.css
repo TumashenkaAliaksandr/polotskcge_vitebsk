@@ -1897,6 +1897,73 @@ section#clocks-two {
     background-size: cover;
     min-height: 400px;
 }
+
+/* Стили для десктопной версии */
+@media (min-width: 769px) {
+    .header-icons-mobile {
+        display: none; /* Скрываем мобильную версию на десктопной */
+    }
+
+    .align-items-center-mobile {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+    }
+
+    .align-items-center-mobile {
+        display: none;
+    }
+
+    .header-icons {
+        display: flex; /* Оставляем иконки видимыми на десктопной версии */
+        align-items: center;
+        margin-right: 22%;
+        margin-left: 10px;
+    }
+
+    .header-icons a {
+        font-size: 25px;
+        margin-right: 10px;
+        position: relative;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .header-icons a::after {
+        content: attr(title);
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        /*background-color: rgba(0, 0, 0, 0.7);*/
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 14px;
+        width: auto;
+        max-width: 200px;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .header-icons a:hover::after {
+        opacity: 1;
+    }
+
+    .icon-description {
+        display: none;
+    }
+}
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
