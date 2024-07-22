@@ -509,3 +509,19 @@ class InventoryForm(forms.ModelForm):
             'description_two': CKEditorWidget(),
             'name_main': CKEditorWidget(),
         }
+
+
+class ControlNadzorForm(forms.ModelForm):
+    class Meta:
+        model = ControlNadzor
+        fields = '__all__'
+        widgets = {
+            'number': CKEditorWidget(),
+            'objects_control': CKEditorWidget(),
+            'typical_violations': CKEditorWidget(),
+            'name_typical_violations': CKEditorWidget(),
+            'description': CKEditorWidget(),
+            'description_two': CKEditorWidget(),
+            'description_three': CKEditorWidget(),
+            'name': CKEditorWidget(),
+        }

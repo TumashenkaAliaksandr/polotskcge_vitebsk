@@ -795,3 +795,22 @@ class Inventory(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ControlNadzor(models.Model):
+
+    name = models.CharField(max_length=350, default='Тайтл')
+    description = models.TextField(default='Заголовок таблицы - 1')
+    description_two = models.TextField(default='Заголовок таблицы - 2')
+    description_three = models.TextField(default='Заголовок таблицы - 3')
+    number = models.CharField(max_length=350, default='Номер строки(ячейки в таблице)')
+    objects_control = models.TextField(default='Объекты контроля')
+    typical_violations = models.TextField(default='Типичные нарушения')
+    name_typical_violations = models.TextField(default='Наименования технических регламентов')
+
+    class Meta:
+        verbose_name = 'Контрольно надзорная деятельность(таблица)'
+        verbose_name_plural = 'Контрольно надзорная деятельность(таблица)'
+
+    def __str__(self):
+        return self.name
