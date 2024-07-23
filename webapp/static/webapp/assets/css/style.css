@@ -988,6 +988,14 @@ section#footer {
     background-attachment: fixed;
 }
 
+
+.main-bg-farm {
+    padding: 35px 0 35px;
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.97)), url('../img/gigi_centr_farm.png') center/cover;
+    background-attachment: fixed;
+}
+
+
 .main-bg-profsouz {
     padding: 15px 0 15px;
     background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.98)), url('../img/gigi_centr_vasilki.jpg') center/cover no-repeat;
@@ -1573,6 +1581,47 @@ section#clocks-two {
 
 #pagebanner .page-title h2 {
     color: #4d483e;
+}
+
+.pagebanner_three {
+    background: url(../img/gigi_centr_hoz.png) no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    height: 310px;
+    width: 100%;
+}
+
+
+.pagebanner-three:before {
+    content: '';
+    background: #00000068;
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.pagebanner-three .page-title {
+    padding-top: 120px;
+    position: relative;
+    z-index: 1;
+}
+
+.pagebanner-three .page-title h2 {
+    color: #4d483e;
+}
+
+.pagebanner-three:before {
+    content: '';
+    background: #00000068;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 
 @media (max-width: 911px) {
