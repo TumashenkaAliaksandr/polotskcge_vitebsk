@@ -818,3 +818,17 @@ class ControlNadzorTipical(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class CNadTipicalName(models.Model):
+
+    name = models.CharField(max_length=350, default='Тайтл для админки')
+    name_typical = models.CharField(max_length=350, default='Тайтл')
+
+    class Meta:
+        verbose_name = 'Контрольно надзорная деятельность Типичные нарушения (Тайтл)'
+        verbose_name_plural = 'Контрольно надзорная деятельность Типичные нарушения(Тайтл)'
+
+    def __str__(self):
+        return self.name
+

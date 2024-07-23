@@ -60,13 +60,16 @@
     <section id="featured-services" class="featured-services main-bg-book-of">
         <div class="container book_info" data-aos="fade-up">
             <div class="row">
-                {% for main_typical_inf in all_typical_news %}
+                {% for main_typical_title in typical_title %}
                     <div class="section-title">
-                        <h2>{{ main_typical_inf.name|safe }}</h2>
+                        <h2>{{ main_typical_title.name_typical|safe }}</h2>
                     </div>
+                {% endfor %}
+                {% for main_typical_inf in all_typical_news %}
                     <div class="description-left">
                         <h5>{{ main_typical_inf.name_typical|safe }}</h5>
-                        <a href="{%  url 'webapp:typical_violations_single' pk=main_typical_inf.id %}" class="btn-get-normative scrollto">Узнать
+                        <a href="{% url 'webapp:typical_violations_single' pk=main_typical_inf.id %}"
+                           class="btn-get-normative scrollto">Узнать
                             Больше</a>
                     </div>
                 {% endfor %}

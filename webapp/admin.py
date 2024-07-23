@@ -433,3 +433,9 @@ class InventoryAdmin(admin.ModelAdmin):
 class ControlNadzorAdmin(admin.ModelAdmin):
     form = ControlNadzorTipicalForm
     list_display = ['name']
+
+
+@admin.register(CNadTipicalName)
+class CNadTipicalNameAdmin(admin.ModelAdmin):
+    form = CNadTipicalNameForm
+    list_display = ['name']

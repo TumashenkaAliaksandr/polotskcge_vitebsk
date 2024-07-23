@@ -570,6 +570,7 @@ def typical_violations_list(request):
     title_desc_queans = Question_Ansver_title.objects.all()
 
     all_typical_news = ControlNadzorTipical.objects.all().order_by('-pub_date')
+    typical_title = CNadTipicalName.objects.all()
 
     context = {
         'features': features,
@@ -578,6 +579,7 @@ def typical_violations_list(request):
         'ansvers': ansvers,
         'title_desc_queans': title_desc_queans,
         'all_typical_news': all_typical_news,
+        'typical_title': typical_title,
     }
 
     return render(request, 'webapp/activity/typical_violations.html', context=context)

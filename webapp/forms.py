@@ -527,3 +527,12 @@ class ControlNadzorTipicalForm(forms.ModelForm):
             'description_three': CKEditorWidget(),
             'name_typical': CKEditorWidget(),
         }
+
+
+class CNadTipicalNameForm(forms.ModelForm):
+    class Meta:
+        model = CNadTipicalName
+        fields = '__all__'
+        widgets = {
+            'name_typical': CKEditorWidget(),
+        }
