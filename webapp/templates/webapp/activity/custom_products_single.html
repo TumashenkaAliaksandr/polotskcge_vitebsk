@@ -67,30 +67,9 @@
             </div>
             <div class="row">
                 <section class="hotline">
-                    <div class="table-info">
-                        <div class="box" data-aos="fade-up" data-aos-delay="300">
-                            {% for main_typical_inf in typical_inf %}
-                                <table class="iksweb">
-                                    <thead>
-                                    <tr>
-                                        <th>№</th>
-                                        <th>{{ main_typical_inf.description|safe }}</th>
-                                        <th>{{ main_typical_inf.description_two|safe }}</th>
-                                        <th>{{ main_typical_inf.description_three|safe }}</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>{{ main_typical_inf.number|safe }}</td>
-                                        <td>{{ main_typical_inf.objects_control|safe }}</td>
-                                        <td>{{ main_typical_inf.typical_violations|safe }}</td>
-                                        <td>{{ main_typical_inf.name_typical_violations|safe }}</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            {% endfor %}
-                        </div>
-                    </div>
+                    {% for main_typical_inf in typical_inf %}
+                        <p>{{ main_typical_inf.description|safe }}</p>
+                    {% endfor %}
                 </section>
             </div>
         </div>

@@ -445,3 +445,21 @@ class ControlNadzorAdmin(admin.ModelAdmin):
 class CNadTipicalNameAdmin(admin.ModelAdmin):
     form = CNadTipicalNameForm
     list_display = ['name']
+
+
+@admin.register(CustomProductsInf)
+class CustomProductsInfAdmin(admin.ModelAdmin):
+    form = CustomProductsInfForm
+
+    # Кастомное поле для отображения очищенного текста
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+
+    list_display = ['clean_name']
+
+@admin.register(CustomProductsName)
+class CustomProductsNameAdmin(admin.ModelAdmin):
+    form = CustomProductsNameForm
+    list_display = ['name']

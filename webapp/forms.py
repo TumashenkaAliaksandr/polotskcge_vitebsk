@@ -537,3 +537,23 @@ class CNadTipicalNameForm(forms.ModelForm):
         widgets = {
             'name_typical': CKEditorWidget(),
         }
+
+
+class CustomProductsInfForm(forms.ModelForm):
+    class Meta:
+        model = CustomProductsInf
+        fields = '__all__'
+        widgets = {
+            'description': CKEditorWidget(),
+            'name_typical': CKEditorWidget(),
+            'name': CKEditorWidget(),
+        }
+
+
+class CustomProductsNameForm(forms.ModelForm):
+    class Meta:
+        model = CustomProductsName
+        fields = '__all__'
+        widgets = {
+            'name_typical': CKEditorWidget(),
+        }

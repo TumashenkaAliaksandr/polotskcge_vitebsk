@@ -832,3 +832,30 @@ class CNadTipicalName(models.Model):
     def __str__(self):
         return self.name
 
+
+class CustomProductsInf(models.Model):
+
+    name = models.CharField(max_length=350, default='Тайтл (для админ)')
+    name_typical = models.CharField(max_length=350, default='Тайтл')
+    description = models.TextField(default='Описание')
+    pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
+
+    class Meta:
+        verbose_name = 'Контрольно надзорная деятельность Нестандартная продукция (таблица)'
+        verbose_name_plural = 'Контрольно надзорная деятельность Нестандартная продукция(таблица)'
+
+    def __str__(self):
+        return self.name
+
+
+class CustomProductsName(models.Model):
+
+    name = models.CharField(max_length=350, default='Тайтл для админки')
+    name_typical = models.CharField(max_length=350, default='Тайтл')
+
+    class Meta:
+        verbose_name = 'Контрольно надзорная деятельность Нестандартная продукция (Тайтл)'
+        verbose_name_plural = 'Контрольно надзорная деятельность Нестандартная продукция(Тайтл)'
+
+    def __str__(self):
+        return self.name

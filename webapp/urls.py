@@ -47,6 +47,7 @@ urlpatterns = [
     path('typical_violations_single/<int:pk>/', typical_violations_single, name='typical_violations_single'),
     path('check_lists/', check_lists, name='check_lists'),
     path('custom_products/', custom_products, name='custom_products'),
+    path('custom_products_single/<int:pk>/', custom_products_single, name='custom_products_single'),
     path('healthy_cities_towns/', healthy_cities_towns, name='healthy_cities_towns'),
     path('eurasian_economic_union/', eurasian_economic_union, name='eurasian_economic_union'),
     path('sanitary_quarantine_points/', sanitary_quarantine_points, name='sanitary_quarantine_points'),
