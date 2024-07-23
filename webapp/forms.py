@@ -511,9 +511,9 @@ class InventoryForm(forms.ModelForm):
         }
 
 
-class ControlNadzorForm(forms.ModelForm):
+class ControlNadzorTipicalForm(forms.ModelForm):
     class Meta:
-        model = ControlNadzor
+        model = ControlNadzorTipical
         fields = '__all__'
         widgets = {
             'number': CKEditorWidget(),

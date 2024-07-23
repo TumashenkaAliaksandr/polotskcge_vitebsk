@@ -797,7 +797,7 @@ class Inventory(models.Model):
         return self.name
 
 
-class ControlNadzor(models.Model):
+class ControlNadzorTipical(models.Model):
 
     name = models.CharField(max_length=350, default='Тайтл')
     description = models.TextField(default='Заголовок таблицы - 1')
