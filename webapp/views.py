@@ -592,6 +592,7 @@ def typical_violations_single(request, pk):
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
+    typical_inf = ControlNadzorTipical.objects.all()
 
     all_typical_news = ControlNadzorTipical.objects.all().order_by('-pub_date')
 
@@ -606,6 +607,7 @@ def typical_violations_single(request, pk):
         'ansvers': ansvers,
         'title_desc_queans': title_desc_queans,
         'all_typical_news': all_typical_news,
+        'typical_inf': typical_inf,
     }
     return render(request, 'webapp/activity/single_typical.html', context=context)
 

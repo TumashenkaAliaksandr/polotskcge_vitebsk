@@ -526,6 +526,7 @@ class ControlNadzorTipicalForm(forms.ModelForm):
             'description_two': CKEditorWidget(),
             'description_three': CKEditorWidget(),
             'name_typical': CKEditorWidget(),
+            'name': CKEditorWidget(),
         }
 
 

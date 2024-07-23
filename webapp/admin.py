@@ -1,7 +1,7 @@
 from ckeditor.widgets import CKEditorWidget
 from django.contrib import admin
 from django.utils.safestring import mark_safe
-from .models import *
+from django.utils.html import strip_tags
 from .forms import *
 
 
@@ -432,8 +432,14 @@ class InventoryAdmin(admin.ModelAdmin):
 @admin.register(ControlNadzorTipical)
 class ControlNadzorAdmin(admin.ModelAdmin):
     form = ControlNadzorTipicalForm
-    list_display = ['name']
 
+    # Кастомное поле для отображения очищенного текста
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+
+    list_display = ['clean_name']
 
 @admin.register(CNadTipicalName)
 class CNadTipicalNameAdmin(admin.ModelAdmin):

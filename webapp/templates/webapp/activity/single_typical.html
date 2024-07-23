@@ -59,10 +59,9 @@
     <section id="featured-services" class="featured-services main-bg-farm">
         <div class="container book_info" data-aos="fade-up">
             <div class="row">
-                {% for main_rel in rel_inf %}
+                {% for main_typical_title in typical_inf %}
                     <div class="section-title">
-                        <h3>{{ main_rel.name|safe }}</h3>
-                        <p>{{ main_rel.description|safe }}</p>
+                        <h2>{{ main_typical_title.name|safe }}</h2>
                     </div>
                 {% endfor %}
             </div>
@@ -70,32 +69,26 @@
                 <section class="hotline">
                     <div class="table-info">
                         <div class="box" data-aos="fade-up" data-aos-delay="300">
-                            <table class="iksweb">
-                                {% for main_human_recurces in hr_inf %}
-                                    <div class="description-left">
-                                        <h3>{{ main_human_recurces.name|safe }}</h3>
-                                        <p>{{ main_human_recurces.description|safe }}</p>
-                                    </div>
-                                {% endfor %}
-                                <thead>
-                                <tr>
-                                    <th>№</th>
-                                    <th>Объекты контроля (надзора), виды деятельности</th>
-                                    <th>Типичные нарушения</th>
-                                    <th>Наименование технических регламентов, требований, норм и правил</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {% for main_human_recurces in table_inf %}
+                            {% for main_typical_inf in typical_inf %}
+                                <table class="iksweb">
+                                    <thead>
                                     <tr>
-                                        <td>{{ main_human_recurces.number_ap|safe }}</td>
-                                        <td>{{ main_human_recurces.name_ap|safe }}</td>
-                                        <td>{{ main_human_recurces.doc_ap|safe }}</td>
-                                        <td>{{ main_human_recurces.size_ap|safe }}</td>
+                                        <th>№</th>
+                                        <th>{{ main_typical_inf.description|safe }}</th>
+                                        <th>{{ main_typical_inf.description_two|safe }}</th>
+                                        <th>{{ main_typical_inf.description_three|safe }}</th>
                                     </tr>
-                                {% endfor %}
-                                </tbody>
-                            </table>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>{{ main_typical_inf.number|safe }}</td>
+                                        <td>{{ main_typical_inf.objects_control|safe }}</td>
+                                        <td>{{ main_typical_inf.typical_violations|safe }}</td>
+                                        <td>{{ main_typical_inf.name_typical_violations|safe }}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            {% endfor %}
                         </div>
                     </div>
                 </section>
@@ -104,7 +97,132 @@
     </section>
     <!-- End Hotline Title and desc Section -->
 
+    <!-- breaking-news -->
+    <div id="single" class="single main-bg-farm">
+        <div class="breaking-news">
+            <div class="container">
+                <div class="breaking-news-grids-bottom">
+                    <div class="banner-bottom-grids">
+                        <div class="col-md-3 banner-bottom-grid-left">
+                            <div class="br-bm-gd-lt">
+                                <div class="overlay">
+                                    <div class="arrow-left"></div>
+                                    <div class="rectangle"></div>
+                                </div>
+                                <div class="health-pos">
+                                    <div class="health">
+                                        <ul>
+                                            <li><a href="{% url 'webapp:healthy_lifestyle' %}">Здоровье</a></li>
+                                            <li>28 Мая 2024</li>
+                                        </ul>
+                                    </div>
+                                    <h3>Наши Статьи о том как беречь своё Здоровье.</h3>
+                                    <div class="dummy">
+                                        <p>Тут мы расскажем вам о правильном питании и сне.</p>
+                                    </div>
+                                    <div class="com-heart">
+                                        <ul>
+                                            <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span>
+                                                Центр Гигиены</a></li>
+                                            <li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span>
+                                                11,536</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 banner-bottom-grid-left">
+                            <div class="br-bm-gd-lt br-bm-gd-lt1">
+                                <div class="overlay">
+                                    <div class="arrow-left"></div>
+                                    <div class="rectangle"></div>
+                                </div>
+                                <div class="health-pos">
+                                    <div class="health">
+                                        <ul>
+                                            <li><a href="#" class="sport">Спорт</a></li>
+                                            <li>28 Мая 2024</li>
+                                        </ul>
+                                    </div>
+                                    <h3>Почему и как нужно заниматься спортом.</h3>
+                                    <div class="dummy">
+                                        <p>Популярные статьи о спорте.</p>
+                                    </div>
+                                    <div class="com-heart">
+                                        <ul>
+                                            <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span>
+                                                Центр Гигиены</a></li>
+                                            <li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span>
+                                                13,536</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 banner-bottom-grid-left">
+                            <div class="br-bm-gd-lt br-bm-gd-lt2">
+                                <div class="overlay">
+                                    <div class="arrow-left"></div>
+                                    <div class="rectangle"></div>
+                                </div>
+                                <div class="health-pos">
+                                    <div class="health">
+                                        <ul>
+                                            <li><a href="#" class="plane">Экономика</a></li>
+                                            <li>28 Мая 2024</li>
+                                        </ul>
+                                    </div>
+                                    <h3>Новости мира Экономики в 2024 году.</h3>
+                                    <div class="dummy">
+                                        <p>Популярные статьи об экономике.</p>
+                                    </div>
+                                    <div class="com-heart">
+                                        <ul>
+                                            <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span>
+                                                Центр Гигиены</a></li>
+                                            <li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span> 7,536</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 banner-bottom-grid-left">
+                            <div class="br-bm-gd-lt br-bm-gd-lt3">
+                                <div class="overlay">
+                                    <div class="arrow-left"></div>
+                                    <div class="rectangle"></div>
+                                </div>
+                                <div class="health-pos">
+                                    <div class="health">
+                                        <ul>
+                                            <li><a href="" class="general">Важное</a></li>
+                                            <li>28 Мая 2024</li>
+                                        </ul>
+                                    </div>
+                                    <h3>Новости о природе Беларуси, леса и водоемы.</h3>
+                                    <div class="dummy">
+                                        <p>Что нужно знать посещая лесополосу и отдыхая рядом с водой.</p>
+                                    </div>
+                                    <div class="com-heart">
+                                        <ul>
+                                            <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span>
+                                                Центр Гигиены</a></li>
+                                            <li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span>
+                                                15,536</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  </main><!-- End #main -->
+
+</main><!-- End #main -->
 
 {% endblock %}
