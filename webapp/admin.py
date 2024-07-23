@@ -2,15 +2,7 @@ from ckeditor.widgets import CKEditorWidget
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 from .models import *
-from .forms import AboutUsForm, ResearchesForm, LogoForm, FeaturedForm, ReceptionHoursForm, GeneralInfoForm, \
-    EducationalResourceAdminForm, ZojForm, Book_complaintForm, HotlineHoursForm, HotlineHours_TitleForm, \
-    HotlineHours_Title_descForm, Electronic_appeals_Title_descForm, Organ_Title_descForm, Up_Organ_Form, \
-    Up_Organ_infForm, Expertise_Form, Duties_Form, MaintenanceSh_Form, Vacancies_Form, Appeals_Form, AnticorrForm, \
-    AnticorrTitleForm, NormativeDocuments_Form, LabaForm, LaboratoriesForm, ApRegistrationForm, RelationForm, \
-    HumanResourcesDescForm, HumanResourcesForm, AccountingForm, AccountingDescForm, UnionDescForm, UnionForm, \
-    ListingDecreeForm, ListingDecreeDescForm, ProfsouzForm, ProfsouzDescForm, ProfsouzDescOneForm, ProfsouzIconsForm, \
-    ProfsouzTwoForm, DisinfectionForm, DeratizationForm, DisinsectionForm, DisinfectionDescForm, InventoryForm, \
-    ControlNadzorTipicalForm
+from .forms import *
 
 
 class DoctorAdmin(admin.ModelAdmin):

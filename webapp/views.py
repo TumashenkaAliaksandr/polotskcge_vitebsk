@@ -561,15 +561,51 @@ def monitoring_plan(request):
     return render(request, 'webapp/activity/monitoring_plan.html', context=context)
 
 
-def typical_violations(request):
+def typical_violations_list(request):
     """Activity - typical_violations template"""
     features = Featured.objects.all()
+    interactiv = Interactive.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
+    ansvers = Answer.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
+
+    all_typical_news = ControlNadzorTipical.objects.all().order_by('-pub_date')
 
     context = {
         'features': features,
+        'interactiv': interactiv,
+        'questions': questions,
+        'ansvers': ansvers,
+        'title_desc_queans': title_desc_queans,
+        'all_typical_news': all_typical_news,
     }
 
     return render(request, 'webapp/activity/typical_violations.html', context=context)
+
+
+def typical_violations_single(request, pk):
+    """Views for News details"""
+    news_typical = ControlNadzorTipical.objects.filter(pk=pk)
+    interactiv = Interactive.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
+    ansvers = Answer.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
+
+    all_typical_news = ControlNadzorTipical.objects.all().order_by('-pub_date')
+
+    # Получаем данные о погоде
+    weather = get_weather()
+
+    context = {
+        'news_typical': news_typical,
+        'interactiv': interactiv,
+        'weather': weather,  # Передаем данные о погоде в контекст
+        'questions': questions,
+        'ansvers': ansvers,
+        'title_desc_queans': title_desc_queans,
+        'all_typical_news': all_typical_news,
+    }
+    return render(request, 'webapp/activity/single_typical.html', context=context)
 
 
 def check_lists(request):

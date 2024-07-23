@@ -1,3 +1,5 @@
+from django.utils import timezone
+
 from ckeditor.fields import RichTextField
 from django.db import models
 from django.contrib.auth.models import User
@@ -799,7 +801,8 @@ class Inventory(models.Model):
 
 class ControlNadzorTipical(models.Model):
 
-    name = models.CharField(max_length=350, default='Тайтл')
+    name = models.CharField(max_length=350, default='Тайтл для админки')
+    name_typical = models.CharField(max_length=350, default='Тайтл')
     description = models.TextField(default='Заголовок таблицы - 1')
     description_two = models.TextField(default='Заголовок таблицы - 2')
     description_three = models.TextField(default='Заголовок таблицы - 3')
@@ -807,10 +810,11 @@ class ControlNadzorTipical(models.Model):
     objects_control = models.TextField(default='Объекты контроля')
     typical_violations = models.TextField(default='Типичные нарушения')
     name_typical_violations = models.TextField(default='Наименования технических регламентов')
+    pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
 
     class Meta:
-        verbose_name = 'Контрольно надзорная деятельность(таблица)'
-        verbose_name_plural = 'Контрольно надзорная деятельность(таблица)'
+        verbose_name = 'Контрольно надзорная деятельность Типичные нарушения(таблица)'
+        verbose_name_plural = 'Контрольно надзорная деятельность Типичные нарушения(таблица)'
 
     def __str__(self):
         return self.name

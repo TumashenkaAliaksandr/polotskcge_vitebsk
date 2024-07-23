@@ -1,0 +1,111 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <!-- pagebanner -->
+    <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_centr.png' %}{% endif %}')">
+    </section>
+    <!-- End Pagebanner -->
+    <section class="breadcrumbs_contacts">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <ol>
+                    <li><a href="{% url 'webapp:home' %}">Главная</a></li>
+                    <li>О типичных нарушениях</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <!-- End Breadcrumbs Section -->
+
+    <!-- ======= Book NEWS text Section ======= -->
+    <div id="single" class="single main-bg-book-of">
+        <div class="breaking-news">
+            <div class="container">
+                {% for main_interactiv_string in interactiv %}
+                    <div class="move-text">
+                        <div class="breaking_news">
+                            <h2>Новости Центра</h2>
+                        </div>
+                        <div class="marquee">
+                            <div class="marquee1"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description | safe }}</a>
+                            </div>
+                            <div class="marquee2"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <script type="text/javascript" src="{% static 'js/jquery.marquee.js' %}"></script>
+                        <script>
+                            $('.marquee').marquee({pauseOnHover: true});
+                            //@ sourceURL=pen.js
+                        </script>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- ======= End Book News text Section ======= -->
+
+
+    <!-- Hotline Title and desc Section -->
+    <section id="featured-services" class="featured-services main-bg-book-of">
+        <div class="container book_info" data-aos="fade-up">
+            <div class="row">
+                {% for main_rel in rel_inf %}
+                    <div class="section-title">
+                        <h3>{{ main_rel.name|safe }}</h3>
+                        <p>{{ main_rel.description|safe }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <section class="hotline">
+                    <div class="table-info">
+                        <div class="box" data-aos="fade-up" data-aos-delay="300">
+                            <table class="iksweb">
+                                {% for main_human_recurces in hr_inf %}
+                                    <div class="description-left">
+                                        <h3>{{ main_human_recurces.name|safe }}</h3>
+                                        <p>{{ main_human_recurces.description|safe }}</p>
+                                    </div>
+                                {% endfor %}
+                                <thead>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Объекты контроля (надзора), виды деятельности</th>
+                                    <th>Типичные нарушения</th>
+                                    <th>Наименование технических регламентов Таможенного союза,<br>Евразийского экономического союза<br>общих санитарно-эпидемиологических требований,<br>установленных Президентом РБ,<br>специфических санитарно-эпидемиологических требований,<br>установленных Советом Министров РБ,<br>санитарных норм и правил,<br>гигиенических нормативов с указанием структурного элемента документа,<br>регламентирующего требования</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for main_human_recurces in table_inf %}
+                                    <tr>
+                                        <td>{{ main_human_recurces.number_ap|safe }}</td>
+                                        <td>{{ main_human_recurces.name_ap|safe }}</td>
+                                        <td>{{ main_human_recurces.doc_ap|safe }}</td>
+                                        <td>{{ main_human_recurces.size_ap|safe }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+    <!-- End Hotline Title and desc Section -->
+
+
+  </main><!-- End #main -->
+
+{% endblock %}

@@ -1,5 +1,7 @@
 from django import forms
 from ckeditor.widgets import CKEditorWidget
+from django_ckeditor_5.widgets import CKEditor5Widget
+
 from .models import *
 
 
@@ -523,5 +525,5 @@ class ControlNadzorTipicalForm(forms.ModelForm):
             'description': CKEditorWidget(),
             'description_two': CKEditorWidget(),
             'description_three': CKEditorWidget(),
-            'name': CKEditorWidget(),
+            'name_typical': CKEditorWidget(),
         }
