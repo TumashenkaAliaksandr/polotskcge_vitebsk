@@ -399,6 +399,23 @@ class EducationalResourceAdmin(admin.ModelAdmin):
 admin.site.register(EducationalResource, EducationalResourceAdmin)
 
 
+class InformationAnalyticalAdmin(admin.ModelAdmin):
+    form = InformationAnalyticalForm
+    list_display = ('name', 'pub_date', 'pdf_file', 'icon_class')
+    list_filter = ('pub_date',)
+    search_fields = ('name', 'description')
+    ordering = ['-pub_date']
+
+    fieldsets = (
+        (None, {
+            'fields': ('name', 'description', 'pdf_file', 'icon_class', 'pub_date')
+        }),
+    )
+
+
+admin.site.register(InformationAnalytical, InformationAnalyticalAdmin)
+
+
 @admin.register(Disinfection)
 class DisinfectionAdmin(admin.ModelAdmin):
     form = DisinfectionForm

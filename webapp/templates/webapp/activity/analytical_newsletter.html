@@ -24,65 +24,49 @@
     </section>
     <!-- End Breadcrumbs Section -->
 
-    <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts main-bg">
-        <div class="container" data-aos="fade-up">
-
-            <div class="row no-gutters">
-
-                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-                    <div class="count-box">
-                        <i class="fas fa-award"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="98" data-purecounter-duration="1"
-                              class="purecounter"></span>
-                        <p><strong>Санитарная служба Полотчины</strong> начинает свою службу с 1926 года.</p>
+    <div id="single" class="single main-bg-recurces">
+        <div class="breaking-news">
+            <div class="container">
+                {% for main_interactiv_string in interactiv %}
+                    <div class="move-text">
+                        <div class="breaking_news">
+                            <h2>Новости Центра</h2>
+                        </div>
+                        <div class="marquee">
+                            <div class="marquee1"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description | safe }}</a>
+                            </div>
+                            <div class="marquee2"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <script type="text/javascript" src="{% static 'js/jquery.marquee.js' %}"></script>
+                        <script>
+                            $('.marquee').marquee({pauseOnHover: true});
+                            //@ sourceURL=pen.js
+                        </script>
                     </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-                    <div class="count-box">
-                        <i class="fas fa-hospital"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="126" data-purecounter-duration="1"
-                              class="purecounter"></span>
-
-                        <p><strong>В Полоцком ЦГЭ</strong> работают 126 человек</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-                    <div class="count-box">
-                        <i class="fas fa-user-md"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="87" data-purecounter-duration="1"
-                              class="purecounter"></span>
-                        <p><strong>Наши Врачи</strong> имеющие квалификационную категорию.</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-                    <div class="count-box">
-                        <i class="fas fa-medkit"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="110000" data-purecounter-duration="1"
-                              class="purecounter"></span>
-                        <p><strong>ЦГЭ</strong> обслуживает население г.Полоцка и Полоцкого района.</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
-
         </div>
-    </section>
-    <!-- End Counts Section -->
+    </div>
 
     <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services">
+    <section id="featured-services" class="featured-services main-bg-recurces">
         <div class="container" data-aos="fade-up">
-
+            <div class="section-title">
+                <h2>Информационно-образовательные материалы</h2>
+            </div>
             <div class="row">
-                {% for main_features in features %}
+                {% for main_pdf in see_pdf %}
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="{{ main_features.icon_class }}"></i></div>
-                            <h4 class="title"><a href="{{ main_features.link }}">{{ main_features.name }}</a></h4>
-                            <p class="description">{{ main_features.description|safe }}</p>
+                            <div class="icon"><i class="{{ main_pdf.icon_class }}"></i></div>
+                            <h4 class="title"><a href="{{ main_pdf.pdf_file.url }}">{{ main_pdf.name }}</a></h4>
+                            <p class="description">Скачать PDF<a
+                                    href="{{ main_pdf.pdf_file.url }}"><br>{{ main_pdf.description|safe }}</a></p>
                         </div>
                     </div>
                 {% endfor %}
@@ -90,6 +74,40 @@
         </div>
     </section>
     <!-- End Featured Services Section -->
+
+    <!-- ======= Frequently Asked Questioins Section ======= -->
+    <section id="faq" class="faq main-bg-recurces">
+        <div class="container" data-aos="fade-up">
+            {% for title_desc in title_desc_queans %}
+                <div class="section-title">
+                    <h2>{{ title_desc.name }}</h2>
+                    <p>{{ title_desc.description | safe }}</p>
+                </div>
+            {% endfor %}
+
+            <ul class="faq-list">
+                {% for question in questions|slice:":6" %}
+                    <li>
+                        <div data-bs-toggle="collapse" class="collapsed question"
+                             href="#{{ question.id }}"> {{ question.question_text }} <i
+                                class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
+                        </div>
+                        <div id="{{ question.id }}" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                {% for ansver in question.answers.all %}
+                                    {{ ansver.answer_text }}
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </section>
+    <!-- End Frequently Asked Questioins Section -->
+
+    {% include 'slider/recurces_slider2.html' %}
 
   </main><!-- End #main -->
 

@@ -98,6 +98,14 @@ class EducationalResourceAdminForm(forms.ModelForm):
         fields = '__all__'
 
 
+class InformationAnalyticalForm(forms.ModelForm):
+    description = forms.CharField(widget=CKEditorWidget())
+
+    class Meta:
+        model = InformationAnalytical
+        fields = '__all__'
+
+
 class HotlineHoursForm(forms.ModelForm):
     reception_time = forms.CharField(widget=CKEditorWidget())
     post = forms.CharField(widget=CKEditorWidget())

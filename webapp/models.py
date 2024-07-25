@@ -859,3 +859,19 @@ class CustomProductsName(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class InformationAnalytical(models.Model):
+    name = models.CharField(max_length=100, verbose_name="Имя")
+    description = RichTextField(verbose_name="Описание")
+    pdf_file = models.FileField(upload_to='pdfs/', verbose_name="Прикрепить PDF")
+    icon_class = models.CharField(max_length=100, default='fas fa-file-pdf')
+    pub_date = models.DateTimeField(verbose_name='Дата Публикации', blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Информационно-аналитический бюллетень"
+        verbose_name_plural = "Информационно-аналитический бюллетень"
+        ordering = ['-pub_date']

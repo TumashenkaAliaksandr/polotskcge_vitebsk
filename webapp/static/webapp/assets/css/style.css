@@ -1652,6 +1652,7 @@ section#clocks-two {
     transition: all 0.3s ease-in-out;
     border-radius: 8px;
     z-index: 1;
+    margin-bottom: 10%;
 }
 
 .featured-services .icon-box::before {
