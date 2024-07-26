@@ -863,7 +863,6 @@ class CustomProductsName(models.Model):
 
 class InformationAnalytical(models.Model):
     name = models.CharField(max_length=100, verbose_name="Имя")
-    description = RichTextField(verbose_name="Описание")
     pdf_file = models.FileField(upload_to='pdfs/', verbose_name="Прикрепить PDF")
     icon_class = models.CharField(max_length=100, default='fas fa-file-pdf')
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', blank=True, null=True)

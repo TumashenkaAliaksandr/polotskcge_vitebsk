@@ -403,12 +403,12 @@ class InformationAnalyticalAdmin(admin.ModelAdmin):
     form = InformationAnalyticalForm
     list_display = ('name', 'pub_date', 'pdf_file', 'icon_class')
     list_filter = ('pub_date',)
-    search_fields = ('name', 'description')
+    search_fields = ('name', )
     ordering = ['-pub_date']
 
     fieldsets = (
         (None, {
-            'fields': ('name', 'description', 'pdf_file', 'icon_class', 'pub_date')
+            'fields': ('name', 'pdf_file', 'icon_class', 'pub_date')
         }),
     )
 

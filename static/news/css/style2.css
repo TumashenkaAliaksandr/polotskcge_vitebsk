@@ -601,6 +601,7 @@ body a:hover{
     background-size: cover; /* или любой другой размер, который вам нужен */
     width: auto; /* задайте ширину */
     /*height: 42.2%;*/
+    margin-bottom: 10%;
 }
 .br-bm-gd-lt1 {
     background: url(../images/gigi_centr_sport2.jpg) no-repeat 0px 0px;

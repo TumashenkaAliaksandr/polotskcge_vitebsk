@@ -99,7 +99,6 @@ class EducationalResourceAdminForm(forms.ModelForm):
 
 
 class InformationAnalyticalForm(forms.ModelForm):
-    description = forms.CharField(widget=CKEditorWidget())
 
     class Meta:
         model = InformationAnalytical

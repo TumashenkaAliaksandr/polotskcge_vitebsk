@@ -10,9 +10,6 @@
     <!-- ======= Breadcrumbs Section ======= -->
     <!-- pagebanner -->
     <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_brcr_main.png' %}{% endif %}')">
-        {#          <div class="page-title">#}
-        {#              <h2 class="white text-center">Режим работы</h2>#}
-        {#          </div>#}
     </section>
     <!-- End Pagebanner -->
     <section class="breadcrumbs_contacts">
@@ -73,7 +70,7 @@
     <!-- End Services Section -->
 
     <!-- ======= Frequently Asked Questioins Section ======= -->
-    <section id="faq" class="faq section-bg-qwest">
+    <section id="faq" class="faq main-bg">
         <div class="container" data-aos="fade-up">
             {% for title_desc in title_desc_queans %}
                 <div class="section-title">
