@@ -236,7 +236,7 @@ h6 {
         transition: all 0.5s;
         z-index: 997;
         padding: 16px 0;
-        top: 18%; /* Добавлено значение высоты хедера */
+        top: 30%; /* Добавлено значение высоты хедера */
         box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
         opacity: 0.95;
         position: fixed;
@@ -1258,6 +1258,7 @@ section#clocks-two {
 @media (max-width: 992px) {
     .breadcrumbs_contacts {
         margin-top: 33%;
+        /*display: none;*/
     }
 
     .breadcrumbs_index {
@@ -1441,7 +1442,7 @@ section#clocks-two {
         background-color: rgba(20, 58, 59, 0.9); /* bluish color with 0.7 opacity */
         background-blend-mode: overlay;
         color: #fff;
-        height: auto;
+        height: 30%;
         font-size: initial;
         font-weight: 600;
         z-index: 996;
@@ -1511,33 +1512,96 @@ section#clocks-two {
     /*  margin-bottom: 2px;*/
     /*}*/
 }
+@media (max-width: 320px) {
+    #topbar {
+        background-image: url('../img/gigi_centr_laboratory1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-color: rgba(20, 58, 59, 0.9); /* bluish color with 0.7 opacity */
+        background-blend-mode: overlay;
+        color: #fff;
+        height: 40%;
+        font-size: initial;
+        font-weight: 600;
+        z-index: 996;
+        transition: all 0.5s;
+        padding-bottom: 3%;
+        padding-top: 3%;
+        /*display: flex;*/
+        flex-direction: column;
+        /*align-items: center;*/
+        /*justify-content: center;*/
+    }
+}
 
 .haderphone-mobile {
     display: none;
 }
 
+@media (max-width: 320px) {
+    .haderphone-mobile {
+        margin-top: 4%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 0px;
+        padding: 21px 0;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .haderphone-mobile a {
+        margin-top: 5px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        color: #ffffff;
+        font-size: 14px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        font-weight: bold;
+    }
+}
+
+
 @media (max-width: 768px) {
     .haderphone-mobile {
-        margin-top: 2%;
+        margin-top: 4%;
         display: flex;
         flex-direction: column;
         /*align-items: center;*/
         /*justify-content: center;*/
         text-align: left;
         margin-bottom: 0px;
-        padding: 2px;
+        padding: 21px 0;
     }
 
 
     .haderphone-mobile a {
-        margin-top: 0px;
+        margin-top: 5px;
         margin-bottom: 0px;
+        margin-left: 0px;
         color: #ffffff;
-        font-size: 17px; /* increased font size to 24px */
+        font-size: 17px;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-        text-align: left;
+        text-align: center;
         font-weight: bold;
     }
+}
+@media (max-width: 320px) {
+  #header {
+    background: #fff;
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 16px 0;
+    top: 40%;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
+    opacity: 0.95;
+    position: fixed;
+    width: 100%;
+  }
 }
 
 /**/

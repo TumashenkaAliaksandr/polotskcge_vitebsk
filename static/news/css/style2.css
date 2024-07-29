@@ -2723,7 +2723,7 @@ h2.typoh2{
 		font-size: 1.6em;
 	}
 	.alert, p,ol.breadcrumb li, .grid_3 p,.well, ul.list-group li, li.list-group-item1,a.list-group-item {
-		font-size: 21px;
+		font-size: 13px;
 	}
 	.alert {
 		padding: 10px;
@@ -3967,7 +3967,7 @@ img.mobile1 {
 		height: 10px;
 	}
 	.breaking-news {
-		padding: 1em 0 15px;
+		padding: 7.5em 0 15px;
 	}
 	.breaking-news-grid-right-gridr {
 		margin: 1em 0 0;
