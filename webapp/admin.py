@@ -480,3 +480,16 @@ class CustomProductsInfAdmin(admin.ModelAdmin):
 class CustomProductsNameAdmin(admin.ModelAdmin):
     form = CustomProductsNameForm
     list_display = ['name']
+
+
+@admin.register(EconimicSouz)
+class EconimicSouzAdmin(admin.ModelAdmin):
+    form = EconimicSouz_Form
+
+    # Кастомное поле для отображения очищенного текста
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+
+    list_display = ['clean_name']

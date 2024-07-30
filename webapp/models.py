@@ -364,6 +364,20 @@ class NormativeDocuments(models.Model):
         return self.name
 
 
+class EconimicSouz(models.Model):
+    name = models.CharField(max_length=300, default='Тайтл')
+    desc = models.CharField(max_length=300, default='Описание под тайтл')
+    pdf_file = models.FileField(upload_to='pdfs/', blank=True)
+    link = models.URLField(blank=True)
+
+    class Meta:
+        verbose_name = 'Еврозийский экономичекский союз'
+        verbose_name_plural = 'Еврозийский экономичекский союз'
+
+    def __str__(self):
+        return self.name
+
+
 class Organ_Title_desc(models.Model):
     name = models.CharField(max_length=300, default='Тайтл')
     description = models.CharField(max_length=3000, default='Описание')

@@ -257,6 +257,15 @@ class NormativeDocuments_Form(forms.ModelForm):
         fields = ('name', 'normative_desc')
 
 
+class EconimicSouz_Form(forms.ModelForm):
+    name = forms.CharField(widget=CKEditorWidget())
+    desc = forms.CharField(widget=CKEditorWidget())
+
+    class Meta:
+        model = EconimicSouz
+        fields = ('name', 'desc', 'pdf_file', 'link')
+
+
 class LabaForm(forms.ModelForm):
     class Meta:
         model = Laboratory
