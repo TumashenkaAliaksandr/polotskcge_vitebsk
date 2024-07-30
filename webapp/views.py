@@ -748,10 +748,23 @@ def immunoprophylaxis(request):
 
 def sustainable_development_goals(request):
     """Activity - sustainable_development_goals template"""
-    features = Featured.objects.all()
+    interactiv = Interactive.objects.all()
+    objectives = Objectives.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
+    ansvers = Answer.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
+
+    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
+    typical_title = CustomProductsName.objects.all()
 
     context = {
-        'features': features,
+        'interactiv': interactiv,
+        'questions': questions,
+        'ansvers': ansvers,
+        'title_desc_queans': title_desc_queans,
+        'all_typical_news': all_typical_news,
+        'typical_title': typical_title,
+        'objectives': objectives,
     }
 
     return render(request, 'webapp/activity/sustainable_development_goals.html', context=context)

@@ -574,3 +574,13 @@ class CustomProductsNameForm(forms.ModelForm):
         widgets = {
             'name_typical': CKEditorWidget(),
         }
+
+
+class ObjectivesForm(forms.ModelForm):
+    class Meta:
+        model = Objectives
+        fields = '__all__'
+        widgets = {
+            'description': CKEditorWidget(),
+            'name': CKEditorWidget(),
+        }

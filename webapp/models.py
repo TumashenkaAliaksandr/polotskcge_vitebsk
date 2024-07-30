@@ -890,3 +890,16 @@ class InformationAnalytical(models.Model):
         verbose_name = "Информационно-аналитический бюллетень"
         verbose_name_plural = "Информационно-аналитический бюллетень"
         ordering = ['-pub_date']
+
+
+class Objectives(models.Model):
+    name = models.CharField(max_length=300, verbose_name="Имя")
+    description = models.TextField(default='Описание')
+    icon_class = models.CharField(max_length=100, default='fas fa-file-pdf')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Цели устойчивого развития"
+        verbose_name_plural = "Цели устойчивого развития"
