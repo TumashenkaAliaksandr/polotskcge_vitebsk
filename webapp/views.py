@@ -768,11 +768,33 @@ def sustainable_development_goals(request):
     }
 
     return render(request, 'webapp/activity/sustainable_development_goals.html', context=context)
+def ticks(request):
+    """Activity - sustainable_development_goals template"""
+
+    interactiv = Interactive.objects.all()
+    ticks_inf = Ticks.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
+    ansvers = Answer.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
+
+    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
+    typical_title = CustomProductsName.objects.all()
+
+    context = {
+        'interactiv': interactiv,
+        'questions': questions,
+        'ansvers': ansvers,
+        'title_desc_queans': title_desc_queans,
+        'all_typical_news': all_typical_news,
+        'typical_title': typical_title,
+        'ticks_inf': ticks_inf,
+    }
+
+    return render(request, 'webapp/activity/ticks.html', context=context)
 
 
 def analytical_newsletter(request):
     """Activity - analytical_newsletter template"""
-    features = Featured.objects.all()
     interactiv = Interactive.objects.all()
     see_pdf = InformationAnalytical.objects.all().order_by('-pub_date')
     title_desc_queans = Question_Ansver_title.objects.all()
@@ -780,7 +802,6 @@ def analytical_newsletter(request):
     ansvers = Answer.objects.all()
 
     context = {
-        'features': features,
         'interactiv': interactiv,
         'see_pdf': see_pdf,
         'title_desc_queans': title_desc_queans,

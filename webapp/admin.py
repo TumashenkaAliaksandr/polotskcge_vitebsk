@@ -506,3 +506,16 @@ class ObjectivesAdmin(admin.ModelAdmin):
     clean_name.short_description = 'name'
 
     list_display = ['clean_name']
+
+
+@admin.register(Ticks)
+class TicksAdmin(admin.ModelAdmin):
+    form = TicksForm
+
+    # Кастомное поле для отображения очищенного текста
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'name'
+
+    list_display = ['clean_name']

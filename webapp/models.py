@@ -903,3 +903,18 @@ class Objectives(models.Model):
     class Meta:
         verbose_name = "Цели устойчивого развития"
         verbose_name_plural = "Цели устойчивого развития"
+
+
+class Ticks(models.Model):
+    name = models.CharField(max_length=300, verbose_name="Имя")
+    name_map = models.CharField(max_length=700, default="Имя для карт")
+    description = models.TextField(default='Описание')
+    description_two = models.TextField(default='Описание 2')
+    google_map_embed_code = models.TextField(blank=True, null=True, verbose_name="Код вставки Google Карт")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Внимание клещи"
+        verbose_name_plural = "Внимание клещи"

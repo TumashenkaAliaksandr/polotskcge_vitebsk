@@ -584,3 +584,15 @@ class ObjectivesForm(forms.ModelForm):
             'description': CKEditorWidget(),
             'name': CKEditorWidget(),
         }
+
+
+class TicksForm(forms.ModelForm):
+    class Meta:
+        model = Ticks
+        fields = '__all__'
+        widgets = {
+            'description': CKEditorWidget(),
+            'description_two': CKEditorWidget(),
+            'name': CKEditorWidget(),
+            'name_map': CKEditorWidget(),
+        }

@@ -52,6 +52,7 @@ urlpatterns = [
     path('eurasian_economic_union/', eurasian_economic_union, name='eurasian_economic_union'),
     path('sanitary_quarantine_points/', sanitary_quarantine_points, name='sanitary_quarantine_points'),
     path('epidemiology/', epidemiology, name='epidemiology'),
+    path('ticks/', ticks, name='ticks'),
     path('immunoprophylaxis/', immunoprophylaxis, name='immunoprophylaxis'),
     path('sustainable_development_goals/', sustainable_development_goals, name='sustainable_development_goals'),
     path('analytical_newsletter/', analytical_newsletter, name='analytical_newsletter'),
