@@ -55,24 +55,29 @@
     </div>
     <!-- ======= End Book News text Section ======= -->
 
-    <!-- Hotline Title and desc Section -->
-    <section id="featured-services" class="featured-services main-bg-economic-souz">
-        <div class="container book_info" data-aos="fade-up">
+    <!-- EVROZES Title and desc Section -->
+    <section id="featured-services-two" class="featured-services-two main-bg-economic-souz">
+        <div class="container" data-aos="fade-up">
+            {% for main_econimic_inf in evrz_econom_inf %}
+                {% if forloop.first %}
+                    <div class="section-title">
+                        <p>{{ main_econimic_inf.name_main|default:main_econimic_inf.name|safe }}</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
             <div class="row">
                 {% for main_econimic_inf in evrz_econom_inf %}
-                    <div class="section-title">
-                        <h3>{{ main_econimic_inf.name|safe }}</h3>
-                    </div>
-                    <div class="description-left">
-                        <p>{{ main_econimic_inf.desc|safe }}</p>
-                        <a href="{{ main_econimic_inf.link }}" class="btn-get-normative scrollto">Узнать
-                            Больше</a>
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <div class="icon-two"><i class="{{ main_econimic_inf.icon_class }}"></i></div>
+                        <h4 class="title-two"><a
+                                href="{{ main_econimic_inf.link }}">{{ main_econimic_inf.name|safe }}</a></h4>
+                        <p class="description">{{ main_econimic_inf.desc|safe }}</p>
                     </div>
                 {% endfor %}
             </div>
         </div>
     </section>
-    <!-- End Hotline Title and desc Section -->
+    <!-- End  EVROZES Title and desc Section -->
 
 
     <!-- ======= Frequently Asked Questioins Section ======= -->

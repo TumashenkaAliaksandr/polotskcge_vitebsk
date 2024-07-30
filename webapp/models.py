@@ -365,10 +365,12 @@ class NormativeDocuments(models.Model):
 
 
 class EconimicSouz(models.Model):
-    name = models.CharField(max_length=300, default='Тайтл')
-    desc = models.CharField(max_length=300, default='Описание под тайтл')
+    name_main = models.CharField(max_length=300, default='Тайтл заглавный', blank=True)
+    name = models.CharField(max_length=500, default='Тайтл')
+    desc = models.CharField(max_length=1000, default='Описание под тайтл')
     pdf_file = models.FileField(upload_to='pdfs/', blank=True)
     link = models.URLField(blank=True)
+    icon_class = models.CharField(max_length=100, default='fas fa-heartbeat')
 
     class Meta:
         verbose_name = 'Еврозийский экономичекский союз'
