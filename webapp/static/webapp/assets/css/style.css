@@ -57,6 +57,21 @@ a:hover {
     }
 }
 
+@media (max-width: 320px) {
+    .header-search a {
+        color: #3fbbc0;
+        text-decoration: none;
+        margin-left: 17px;
+    }
+
+    .header-search {
+        color: #3fbbc0;
+        text-decoration: none;
+        /*margin-left: 10%;*/
+        margin-right: 13px;
+    }
+}
+
 @media (max-width: 768px) {
     .header-search {
         color: #3fbbc0;
@@ -1595,7 +1610,7 @@ section#clocks-two {
 
 @media (max-width: 768px) {
     .haderphone-mobile {
-        margin-top: 4%;
+        margin-top: 3%;
         display: flex;
         flex-direction: column;
         /*align-items: center;*/
