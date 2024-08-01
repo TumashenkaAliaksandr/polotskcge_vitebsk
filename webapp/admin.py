@@ -484,7 +484,7 @@ class CustomProductsNameAdmin(admin.ModelAdmin):
 
 @admin.register(EpidemialogyName)
 class EpidemialogyNameAdmin(admin.ModelAdmin):
-    form = CNadTipicalNameForm
+    form = EpidemialogyNameForm
 
     def clean_name(self, obj):
         return strip_tags(obj.name)
@@ -495,7 +495,31 @@ class EpidemialogyNameAdmin(admin.ModelAdmin):
 
 @admin.register(EpidemialogyInf)
 class EpidemialogyInfAdmin(admin.ModelAdmin):
-    form = CustomProductsInfForm
+    form = EpidemialogyInfForm
+
+    # Кастомное поле для отображения очищенного текста
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+
+    list_display = ['clean_name']
+
+
+@admin.register(EpidemialogyTipical)
+class EpidemialogyNameAdmin(admin.ModelAdmin):
+    form = EpidemialogyTipicalForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+
+    list_display = ['clean_name']
+
+@admin.register(ImmunoprophylaxisInf)
+class ImmunoprophylaxisInfAdmin(admin.ModelAdmin):
+    form = ImmunoprophylaxisInfForm
 
     # Кастомное поле для отображения очищенного текста
     def clean_name(self, obj):
@@ -507,9 +531,21 @@ class EpidemialogyInfAdmin(admin.ModelAdmin):
 
 
 
-@admin.register(EpidemialogyTipical)
-class EpidemialogyTipicalAdmin(admin.ModelAdmin):
-    form = EpidemialogyTipicalForm
+@admin.register(ImmunoprophylaxisTipical)
+class ImmunoprophylaxisTipicalAdmin(admin.ModelAdmin):
+    form = ImmunoprophylaxisTipicalForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+
+    list_display = ['clean_name']
+
+
+@admin.register(ImmunoprophylaxisName)
+class ImmunoprophylaxisTipicalAdmin(admin.ModelAdmin):
+    form = ImmunoprophylaxisNameForm
 
     def clean_name(self, obj):
         return strip_tags(obj.name)

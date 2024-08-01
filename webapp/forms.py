@@ -610,6 +610,40 @@ class EpidemialogyTipicalForm(forms.ModelForm):
         }
 
 
+class ImmunoprophylaxisNameForm(forms.ModelForm):
+    class Meta:
+        model = ImmunoprophylaxisName
+        fields = '__all__'
+        widgets = {
+            'name': CKEditorWidget(),
+        }
+
+
+class ImmunoprophylaxisInfForm(forms.ModelForm):
+    class Meta:
+        model = ImmunoprophylaxisInf
+        fields = '__all__'
+        widgets = {
+            'description': CKEditorWidget(),
+            'name': CKEditorWidget(),
+        }
+
+
+
+class ImmunoprophylaxisTipicalForm(forms.ModelForm):
+    class Meta:
+        model = ImmunoprophylaxisTipical
+        fields = '__all__'
+        widgets = {
+            'name': CKEditorWidget(),
+            'name_two': CKEditorWidget(),
+            'name_three': CKEditorWidget(),
+            'description': CKEditorWidget(),
+            'description_two': CKEditorWidget(),
+            'description_three': CKEditorWidget(),
+        }
+
+
 class ObjectivesForm(forms.ModelForm):
     class Meta:
         model = Objectives

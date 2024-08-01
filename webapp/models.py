@@ -924,6 +924,53 @@ class EpidemialogyTipical(models.Model):
         return self.name
 
 
+class ImmunoprophylaxisName(models.Model):
+
+    name = models.CharField(max_length=350, default='Тайтл')
+
+    class Meta:
+        verbose_name = 'Иммунопрофилактика (Тайтл)'
+        verbose_name_plural = 'Иммунопрофилактика (Тайтл)'
+
+    def __str__(self):
+        return self.name
+
+
+class ImmunoprophylaxisInf(models.Model):
+
+    name = models.CharField(max_length=350, default='Тайтл')
+    description = models.TextField(default='Описание')
+    pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
+
+    class Meta:
+        verbose_name = 'Иммунопрофилактика (название и краткое описание статьи)'
+        verbose_name_plural = 'Иммунопрофилактика (название и краткое описание статьи)'
+
+    def __str__(self):
+        return self.name
+
+
+
+class ImmunoprophylaxisTipical(models.Model):
+
+    name = models.CharField(max_length=350, default='Тайтл')
+    name_two = models.CharField(max_length=200, default='Второе название')
+    name_three = models.CharField(max_length=200, default='Третье название')
+    description = models.TextField(default='Описание')
+    description_two = models.TextField(default='Второе описание')
+    description_three = models.TextField(default='Третье описание')
+    photo = models.ImageField(upload_to='Immunoprofilactixs/', null=True, blank=True)
+    photo_two = models.ImageField(upload_to='Immunoprofilactixs/', null=True, blank=True)
+    pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
+
+    class Meta:
+        verbose_name = 'Иммунопрофилактика (статьи)'
+        verbose_name_plural = 'Иммунопрофилактика (статьи)'
+
+    def __str__(self):
+        return self.name
+
+
 class InformationAnalytical(models.Model):
     name = models.CharField(max_length=100, verbose_name="Имя")
     pdf_file = models.FileField(upload_to='pdfs/', verbose_name="Прикрепить PDF")
