@@ -55,6 +55,7 @@ urlpatterns = [
     path('epidemiology/', epidemiology, name='epidemiology'),
     path('ticks/', ticks, name='ticks'),
     path('immunoprophylaxis/', immunoprophylaxis, name='immunoprophylaxis'),
+    path('immunoprophylaxis_single/<int:pk>/', immunoprophylaxis_typical, name='immunoprophylaxis_typical'),
     path('sustainable_development_goals/', sustainable_development_goals, name='sustainable_development_goals'),
     path('analytical_newsletter/', analytical_newsletter, name='analytical_newsletter'),
     path('healthy_lifestyle/', healthy_lifestyle, name='healthy_lifestyle'),

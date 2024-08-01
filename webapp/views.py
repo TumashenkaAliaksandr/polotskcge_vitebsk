@@ -816,10 +816,10 @@ def immunoprophylaxis_typical(request, pk):
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
-    typical_inf = EpidemialogyTipical.objects.all()
-    epidem_title = EpidemialogyName.objects.all()
+    typical_inf = ImmunoprophylaxisTipical.objects.all()
+    epidem_title = ImmunoprophylaxisName.objects.all()
 
-    all_typical_news = EpidemialogyInf.objects.all().order_by('-pub_date')
+    all_typical_news = ImmunoprophylaxisInf.objects.all().order_by('-pub_date')
 
     # Получаем данные о погоде
     weather = get_weather()
