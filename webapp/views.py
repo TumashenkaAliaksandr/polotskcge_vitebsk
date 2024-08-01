@@ -726,13 +726,59 @@ def sanitary_quarantine_points(request):
 
 def epidemiology(request):
     """Activity - epidemiology template"""
-    features = Featured.objects.all()
+    interactiv = Interactive.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
+    ansvers = Answer.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
+    typical_inf = EpidemialogyInf.objects.all()
+    epidem_title = EpidemialogyName.objects.all()
+
+    all_typical_news = EpidemialogyInf.objects.all().order_by('-pub_date')
+
+    # Получаем данные о погоде
+    weather = get_weather()
 
     context = {
-        'features': features,
+        'interactiv': interactiv,
+        'epidem_title': epidem_title,
+        'weather': weather,  # Передаем данные о погоде в контекст
+        'questions': questions,
+        'ansvers': ansvers,
+        'title_desc_queans': title_desc_queans,
+        'all_typical_news': all_typical_news,
+        'typical_inf': typical_inf,
     }
 
     return render(request, 'webapp/activity/epidemiology.html', context=context)
+
+def epidemiology_typical(request, pk):
+    """Activity - epidemiology template"""
+    interactiv = Interactive.objects.all()
+    news_typical = ControlNadzorTipical.objects.filter(pk=pk)
+    questions = Question.objects.all().order_by('-pub_date')
+    ansvers = Answer.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
+    typical_inf = EpidemialogyTipical.objects.all()
+    epidem_title = EpidemialogyName.objects.all()
+
+    all_typical_news = EpidemialogyInf.objects.all().order_by('-pub_date')
+
+    # Получаем данные о погоде
+    weather = get_weather()
+
+    context = {
+        'interactiv': interactiv,
+        'news_typical': news_typical,
+        'epidem_title': epidem_title,
+        'weather': weather,  # Передаем данные о погоде в контекст
+        'questions': questions,
+        'ansvers': ansvers,
+        'title_desc_queans': title_desc_queans,
+        'all_typical_news': all_typical_news,
+        'typical_inf': typical_inf,
+    }
+
+    return render(request, 'webapp/activity/epidemialogy_single.html', context=context)
 
 
 def immunoprophylaxis(request):

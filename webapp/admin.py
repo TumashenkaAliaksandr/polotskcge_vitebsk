@@ -482,6 +482,43 @@ class CustomProductsNameAdmin(admin.ModelAdmin):
     list_display = ['name']
 
 
+@admin.register(EpidemialogyName)
+class EpidemialogyNameAdmin(admin.ModelAdmin):
+    form = CNadTipicalNameForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+
+    list_display = ['clean_name']
+
+@admin.register(EpidemialogyInf)
+class EpidemialogyInfAdmin(admin.ModelAdmin):
+    form = CustomProductsInfForm
+
+    # Кастомное поле для отображения очищенного текста
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+
+    list_display = ['clean_name']
+
+
+
+@admin.register(EpidemialogyTipical)
+class EpidemialogyTipicalAdmin(admin.ModelAdmin):
+    form = EpidemialogyTipicalForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+
+    list_display = ['clean_name']
+
+
 @admin.register(EconimicSouz)
 class EconimicSouzAdmin(admin.ModelAdmin):
     form = EconimicSouz_Form

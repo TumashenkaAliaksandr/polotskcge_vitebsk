@@ -576,6 +576,40 @@ class CustomProductsNameForm(forms.ModelForm):
         }
 
 
+class EpidemialogyNameForm(forms.ModelForm):
+    class Meta:
+        model = CNadTipicalName
+        fields = '__all__'
+        widgets = {
+            'name': CKEditorWidget(),
+        }
+
+
+class EpidemialogyInfForm(forms.ModelForm):
+    class Meta:
+        model = CustomProductsInf
+        fields = '__all__'
+        widgets = {
+            'description': CKEditorWidget(),
+            'name': CKEditorWidget(),
+        }
+
+
+
+class EpidemialogyTipicalForm(forms.ModelForm):
+    class Meta:
+        model = EpidemialogyTipical
+        fields = '__all__'
+        widgets = {
+            'name': CKEditorWidget(),
+            'name_two': CKEditorWidget(),
+            'name_three': CKEditorWidget(),
+            'description': CKEditorWidget(),
+            'description_two': CKEditorWidget(),
+            'description_three': CKEditorWidget(),
+        }
+
+
 class ObjectivesForm(forms.ModelForm):
     class Meta:
         model = Objectives
