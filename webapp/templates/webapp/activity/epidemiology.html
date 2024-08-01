@@ -65,11 +65,17 @@
                     </div>
                 {% endfor %}
                 {% for main_typical_inf in all_typical_news %}
-                    <div class="description-left">
-                        <h5>{{ main_typical_inf.name|safe }}</h5>
-                        <a href="{% url 'webapp:epidemialogy_single' pk=main_typical_inf.id %}"
-                           class="btn-get-normative scrollto">Узнать
-                            Больше</a>
+                    <div class="row">
+                        <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
+                            <div class="icon-box mt-5 mt-lg-0">
+                                <a href="{% url 'webapp:epidemialogy_single' pk=main_typical_inf.id %}"><h4>{{ main_typical_inf.name|safe }}</h4></a>
+                                <a href="{% url 'webapp:epidemialogy_single' pk=main_typical_inf.id %}">
+                                    <p>{{ main_typical_inf.description | safe }}</p></a>
+                            </div>
+                        </div>
+                        <div class="image col-lg-6 order-1 order-lg-2"
+                             style='background-image: url({{ main_typical_inf.photo.url }});'
+                             data-aos="zoom-in"></div>
                     </div>
                 {% endfor %}
             </div>
