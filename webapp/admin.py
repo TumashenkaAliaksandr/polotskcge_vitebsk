@@ -568,6 +568,32 @@ class EconimicSouzAdmin(admin.ModelAdmin):
     list_display = ['clean_name']
 
 
+@admin.register(Quarantine)
+class QuarantineAdmin(admin.ModelAdmin):
+    form = QuarantineForm
+
+    # Кастомное поле для отображения очищенного текста
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+
+    list_display = ['clean_name']
+
+
+@admin.register(EpidemSituations)
+class EpidemSituationsAdmin(admin.ModelAdmin):
+    form = EpidemialSituationsForm
+
+    # Кастомное поле для отображения очищенного текста
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+
+    list_display = ['clean_name']
+
+
 @admin.register(Objectives)
 class ObjectivesAdmin(admin.ModelAdmin):
     form = ObjectivesForm

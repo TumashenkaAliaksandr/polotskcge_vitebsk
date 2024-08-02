@@ -380,6 +380,36 @@ class EconimicSouz(models.Model):
         return self.name
 
 
+class Quarantine(models.Model):
+
+    name_main = models.CharField(max_length=300, default='Тайтл заглавный', blank=True)
+    name = models.CharField(max_length=500, default='Тайтл')
+    desc = models.CharField(max_length=1000, default='Описание под тайтл')
+    desc_two = models.CharField(max_length=1000, default='СКП')
+    pdf_file = models.FileField(upload_to='pdfs/', blank=True)
+    link = models.URLField(blank=True)
+    icon_class = models.CharField(max_length=100, default='fas fa-heartbeat')
+
+    class Meta:
+        verbose_name = 'Санитарно - Карантинные пункты'
+        verbose_name_plural = 'Санитарно - Карантинные пункты'
+
+    def __str__(self):
+        return self.name
+
+class EpidemSituations(models.Model):
+
+    name = models.CharField(max_length=1000, default='Тайтл заглавный', blank=True)
+    desc = models.TextField(default='Описание под тайтл')
+
+    class Meta:
+        verbose_name = 'Эпидемиологическая Ситуация'
+        verbose_name_plural = 'Эпидемиологическая Ситуация'
+
+    def __str__(self):
+        return self.name
+
+
 class Organ_Title_desc(models.Model):
     name = models.CharField(max_length=300, default='Тайтл')
     description = models.CharField(max_length=3000, default='Описание')

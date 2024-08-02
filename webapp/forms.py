@@ -267,6 +267,27 @@ class EconimicSouz_Form(forms.ModelForm):
         fields = ('name_main', 'name', 'desc', 'pdf_file', 'link', 'icon_class')
 
 
+class QuarantineForm(forms.ModelForm):
+    name_main = forms.CharField(widget=CKEditorWidget())
+    name = forms.CharField(widget=CKEditorWidget())
+    desc = forms.CharField(widget=CKEditorWidget())
+    desc_two = forms.CharField(widget=CKEditorWidget())
+
+    class Meta:
+        model = EconimicSouz
+        fields = ('name_main', 'name', 'desc', 'desc_two', 'pdf_file', 'link', 'icon_class')
+
+
+class EpidemialSituationsForm(forms.ModelForm):
+    class Meta:
+        model = EpidemSituations
+        fields = '__all__'
+        widgets = {
+            'name': CKEditorWidget(),
+            'desc': CKEditorWidget(),
+        }
+
+
 class LabaForm(forms.ModelForm):
     class Meta:
         model = Laboratory
