@@ -591,6 +591,31 @@ class EpidemSituationsAdmin(admin.ModelAdmin):
 
     clean_name.short_description = 'Name'
 
+    list_display = ['clean_name']\
+
+@admin.register(CountryRegistry)
+class CountryRegistryAdmin(admin.ModelAdmin):
+    form = CountryRegistryForm
+
+    # Кастомное поле для отображения очищенного текста
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+
+    list_display = ['clean_name']
+
+
+@admin.register(Resolution)
+class ResolutionAdmin(admin.ModelAdmin):
+    form = ResolutionForm
+
+    # Кастомное поле для отображения очищенного текста
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+
     list_display = ['clean_name']
 
 

@@ -288,6 +288,26 @@ class EpidemialSituationsForm(forms.ModelForm):
         }
 
 
+class CountryRegistryForm(forms.ModelForm):
+    class Meta:
+        model = CountryRegistry
+        fields = '__all__'
+        widgets = {
+            'name': CKEditorWidget(),
+            'desc': CKEditorWidget(),
+        }
+
+
+class ResolutionForm(forms.ModelForm):
+    class Meta:
+        model = Resolution
+        fields = '__all__'
+        widgets = {
+            'name': CKEditorWidget(),
+            'desc': CKEditorWidget(),
+        }
+
+
 class LabaForm(forms.ModelForm):
     class Meta:
         model = Laboratory

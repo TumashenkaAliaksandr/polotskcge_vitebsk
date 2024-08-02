@@ -7,139 +7,111 @@
     <main id="main">
 
         <!-- ======= Breadcrumbs Section ======= -->
+        <!-- pagebanner -->
+        <section id="pagebanner" style="background-image:
+                url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_imunitet.jpg' %}{% endif %}')">
+        </section>
+        <!-- End Pagebanner -->
         <section class="breadcrumbs">
             <div class="container">
 
                 <div class="d-flex justify-content-between align-items-center">
                     <ol>
                         <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                        <li>Главный врач</li>
+                        <li>Деятельность</li>
                     </ol>
                 </div>
 
             </div>
         </section><!-- End Breadcrumbs Section -->
 
-        <!-- ======= Departments Section ======= -->
-        <section id="departments" class="departments">
-            <div class="container" data-aos="fade-up">
 
-                <div class="section-title">
-                    <h2>Главный врач Полоцкого зонального ЦГЭ</h2>
-                    {#          <p> Главный врач Полоцкого зонального ЦГЭ</p>#}
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="main-bg">
+            <div id="contact" class="contact">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Контакты</h2>
+                        {#          <p>Мы на карте</p>#}
+                    </div>
                 </div>
-
-                <div class="row" data-aos="fade-up" data-aos-delay="100">
-                    <div class="col-lg-8">
-                        <div class="tab-content">
-                            <div class="tab-pane active show" id="tab-1">
-                                <h3>Гуринович Михаил Евгеньевич</h3>
-                                <p class="fst-italic">Личный приём четверг с 8.00 до 12.00</p>
-                                <img src="{% static 'webapp/assets/img/gl_vrach.png' %}" alt="" class="img-fluid">
-                                <div class="content-info">
-                                    <p>Врач Высшей категории.<br>
-                                        <b>кабинет №3 (3-этаж)</b></p><br>
-                                    <h5>Записаться напримем:</h5>
-                                    <span><b>тел./факс:</b> <a href="tel:+375214494581">+375(214)49-45-81</a></span><br>
-                                    <span><b>Приёмная:</b> т. <a href="tel:+375214494581">+375(214)49-45-81</a></span>
+                <div class="map-container">
+                    <div class="map-wrapper">
+                        <iframe class="map-iframe"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2353.167571702526!2d28.785063615814045!3d55.48583038046348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c491fd7e6a28f5%3A0x6b860a7ba5f18ad1!2z0JTQmiDQodGC0LXQutC70L7QstC-0LvQvtC60L3Qviwg0JLQuNGC0LXQsdGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCDQkdC10LvQsNGA0YPRgdGM!5e0!3m2!1sru!2sby!4v1646779601928!5m2!1sru!2sby"
+                                frameborder="0" allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row mt-5">
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="info-box">
+                                        <i class="bx bx-map"></i>
+                                        <h3>Наш Адрес</h3>
+                                        <p>211400 г.Полоцк, ТЦ.Евролюкс
+                                            ул.Юбилейная, д.7(б), пом.2</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="info-box mt-4">
+                                        <i class="bx bx-envelope"></i>
+                                        <h3>Наша Почта</h3>
+                                        <p>polotzk_hyg@vitebsk.by</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="info-box mt-4">
+                                        <i class="bx bx-phone-call"></i>
+                                        <h3>Телефон Горячей линии</h3>
+                                        <p>+375(214)49-45-81</p>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="container">
-                            <p>Сюда что то можно добавить</p>
+
+                        <div class="col-lg-6">
+                            <form action="{% static 'webapp/forms/contact.php' %}" method="post" role="form"
+                                  class="php-email-form">
+                                <div class="row">
+                                    <div class="col-md-6 form-group">
+                                        <input type="text" name="name" class="form-control" id="name"
+                                               placeholder="Ваше Имя"
+                                               required="">
+                                    </div>
+                                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                                        <input type="email" class="form-control" name="email" id="email"
+                                               placeholder="Ваша Почта" required="">
+                                    </div>
+                                </div>
+                                {#              <div class="form-group mt-3">#}
+                                {#                <input type="text" class="form-control" name="subject" id="subject" placeholder="Телефон" required="">#}
+                                {#              </div>#}
+                                <div class="form-group mt-3">
+                              <textarea class="form-control" name="message" rows="7" placeholder="Сообщение"
+                                        required=""></textarea>
+                                </div>
+                                <div class="my-3">
+                                    <div class="loading">Loading</div>
+                                    <div class="error-message"></div>
+                                    <div class="sent-message">Ваше сообщение отправлено!</div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit">Отправить сообщение</button>
+                                </div>
+                            </form>
                         </div>
+
                     </div>
+
                 </div>
             </div>
-        </section><!-- End Departments Section -->
+        </section>
+        <!-- End Contact Section -->
 
     </main><!-- End #main -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-        <div class="container">
-
-            <div class="section-title">
-                <h2>Контакты</h2>
-                {#          <p>Мы на карте</p>#}
-            </div>
-        </div>
-        <div>
-            <iframe style="border:0; width: 100%; height: 350px;"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2353.167571702526!2d28.785063615814045!3d55.48583038046348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c491fd7e6a28f5%3A0x6b860a7ba5f18ad1!2z0JTQmiDQodGC0LXQutC70L7QstC-0LvQvtC60L3Qviwg0JLQuNGC0LXQsdGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCDQkdC10LvQsNGA0YPRgdGM!5e0!3m2!1sru!2sby!4v1646779601928!5m2!1sru!2sby"
-                    frameborder="0" allowfullscreen></iframe>
-        </div>
-
-
-        <div class="container">
-
-            <div class="row mt-5">
-
-                <div class="col-lg-6">
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="info-box">
-                                <i class="bx bx-map"></i>
-                                <h3>Наш Адрес</h3>
-                                <p>211400 г.Полоцк, ТЦ.Евролюкс
-                                    ул.Юбилейная, д.7(б), пом.2</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="info-box mt-4">
-                                <i class="bx bx-envelope"></i>
-                                <h3>Наша Почта</h3>
-                                <p>polotzk_hyg@vitebsk.by
-                                    <br>polotzk_hyg@mail.ru</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="info-box mt-4">
-                                <i class="bx bx-phone-call"></i>
-                                <h3>Телефон Горячей линии</h3>
-                                <p>+375(214)49-31-68<br>+375(214)49-31-68</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-lg-6">
-                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                        <div class="row">
-                            <div class="col-md-6 form-group">
-                                <input type="text" name="name" class="form-control" id="name" placeholder="Ваше Имя"
-                                       required="">
-                            </div>
-                            <div class="col-md-6 form-group mt-3 mt-md-0">
-                                <input type="email" class="form-control" name="email" id="email"
-                                       placeholder="Ваша Почта" required="">
-                            </div>
-                        </div>
-                        {#              <div class="form-group mt-3">#}
-                        {#                <input type="text" class="form-control" name="subject" id="subject" placeholder="Телефон" required="">#}
-                        {#              </div>#}
-                        <div class="form-group mt-3">
-                            <textarea class="form-control" name="message" rows="7" placeholder="Сообщение"
-                                      required=""></textarea>
-                        </div>
-                        <div class="my-3">
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Ваше сообщение отправлено!</div>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit">Отправить сообщение</button>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-
-        </div>
-    </section><!-- End Contact Section -->
 
 {% endblock %}

@@ -759,6 +759,42 @@ def epidemialogic_situations(request):
     return render(request, 'webapp/activity/epidemialogic_situations.html', context=context)
 
 
+def country_registry(request):
+    """Activity - sanitary_quarantine_points template"""
+    country_reg_inf = CountryRegistry.objects.all()
+    interactiv = Interactive.objects.all()
+    typical_inf = CustomProductsInf.objects.all()
+
+    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
+
+    context = {
+        'interactiv': interactiv,
+        'all_typical_news': all_typical_news,
+        'typical_inf': typical_inf,
+        'country_reg_inf': country_reg_inf,
+    }
+
+    return render(request, 'webapp/activity/country_registry.html', context=context)
+
+
+def resolution(request):
+    """Activity - sanitary_quarantine_points template"""
+    resolution_inf = Resolution.objects.all()
+    interactiv = Interactive.objects.all()
+    typical_inf = CustomProductsInf.objects.all()
+
+    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
+
+    context = {
+        'interactiv': interactiv,
+        'all_typical_news': all_typical_news,
+        'typical_inf': typical_inf,
+        'resolution_inf': resolution_inf,
+    }
+
+    return render(request, 'webapp/activity/resolution.html', context=context)
+
+
 def epidemiology(request):
     """Activity - epidemiology template"""
     interactiv = Interactive.objects.all()
