@@ -960,7 +960,6 @@ class ImmunoprophylaxisTipical(models.Model):
     description_two = models.TextField(default='Второе описание')
     description_three = models.TextField(default='Третье описание')
     photo = models.ImageField(upload_to='Immunoprofilactixs/', null=True, blank=True)
-    photo_two = models.ImageField(upload_to='Immunoprofilactixs/', null=True, blank=True)
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
 
     class Meta:

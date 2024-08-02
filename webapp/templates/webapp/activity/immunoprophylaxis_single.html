@@ -8,7 +8,7 @@
 
     <!-- ======= Breadcrumbs Section ======= -->
    <!-- pagebanner -->
-    <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_imuno.jpg' %}{% endif %}')">
+    <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_vaccination.jpg' %}{% endif %}')">
     </section>
     <!-- End Pagebanner -->
     <section class="breadcrumbs_contacts">
@@ -25,7 +25,7 @@
     <!-- End Breadcrumbs Section -->
 
     <!-- ======= Book NEWS text Section ======= -->
-    <div id="single" class="single main-bg-epidem">
+    <div id="single" class="single main-bg-imuno">
         <div class="breaking-news">
             <div class="container">
                 {% for main_interactiv_string in interactiv %}
@@ -57,7 +57,7 @@
 
     <!-- ======= About Us Section ======= -->
     {% for main_profilac in typical_inf %}
-        <section id="about" class="about main-bg-epidem">
+        <section id="about" class="about main-bg-imuno">
             <div class="container book_info" data-aos="fade-up">
                 <div class="row">
                     <div class="section-title">
@@ -72,9 +72,11 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="description-left main-bg-laba">
+                    <div class="description-left main-bg-imuno">
                         <h2><p>{{ main_profilac.name_three|safe }}</h2>
                         <p>{{ main_profilac.description_three | safe }}</p>
+                        <h3>{{ main_profilac.name_two|safe }}</h3>
+                        <p>{{ main_profilac.description_two | safe }}</p>
                     </div>
                 </div>
             </div>
@@ -82,30 +84,8 @@
     {% endfor %}
     <!-- End About Us Section -->
 
-    <!-- ======= Features Section ======= -->
-    <section id="features" class="features main-bg-epidem">
-        <div class="container book_info" data-aos="fade-up">
-            {% for main_profilac in typical_inf %}
-                <div class="row">
-                    <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
-                        <div class="mt-5 mt-lg-0">
-                            <h3>{{ main_profilac.name_two|safe }}</h3>
-                            <p>{{ main_profilac.description_two | safe }}</p>
-                        </div>
-                    </div>
-                    <div class="image col-lg-6 order-1 order-lg-2"
-                         style='background-image: url({{ main_profilac.photo_two.url }});'
-                         data-aos="zoom-in">
-                    </div>
-                </div>
-            {% endfor %}
-
-        </div>
-    </section>
-    <!-- End Features Section -->
-
     <!-- breaking-news -->
-    <div id="single" class="single main-bg-epidem">
+    <div id="single" class="single main-bg-imuno">
         <div class="breaking-news">
             <div class="container">
                 <div class="breaking-news-grids-bottom">
