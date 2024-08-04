@@ -1041,6 +1041,23 @@ class InformationAnalytical(models.Model):
         ordering = ['-pub_date']
 
 
+class Healthy(models.Model):
+    name = models.CharField(max_length=100, verbose_name="Имя")
+    name_taitle = models.CharField(max_length=100, verbose_name="Имя для Заголовка")
+    pdf_file = models.FileField(upload_to='pdfs/', verbose_name="Прикрепить PDF")
+    icon_class = models.CharField(max_length=100, default='fas fa-file-pdf')
+    pub_date = models.DateTimeField(verbose_name='Дата Публикации', blank=True, null=True)
+    link = models.URLField(verbose_name="Ссылка", blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Здоровые города и поселки"
+        verbose_name_plural = "Здоровые города и поселки"
+        ordering = ['-pub_date']
+
+
 class Objectives(models.Model):
     name = models.CharField(max_length=300, verbose_name="Имя")
     description = models.TextField(default='Описание')

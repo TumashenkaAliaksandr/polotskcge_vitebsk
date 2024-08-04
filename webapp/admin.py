@@ -606,6 +606,19 @@ class CountryRegistryAdmin(admin.ModelAdmin):
     list_display = ['clean_name']
 
 
+@admin.register(Healthy)
+class HealthyAdmin(admin.ModelAdmin):
+    form = HealthyForm
+
+    # Кастомное поле для отображения очищенного текста
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+
+    list_display = ['clean_name']
+
+
 @admin.register(Resolution)
 class ResolutionAdmin(admin.ModelAdmin):
     form = ResolutionForm

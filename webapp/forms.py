@@ -298,6 +298,17 @@ class CountryRegistryForm(forms.ModelForm):
         }
 
 
+class HealthyForm(forms.ModelForm):
+    class Meta:
+        model = Healthy
+        fields = '__all__'
+        widgets = {
+            'name': CKEditorWidget(),
+            'name_taitle': CKEditorWidget(),
+        }
+
+
+
 class ResolutionForm(forms.ModelForm):
     class Meta:
         model = Resolution
