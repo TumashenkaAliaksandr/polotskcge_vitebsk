@@ -24,6 +24,92 @@
     </section>
     <!-- End Breadcrumbs Section -->
 
+    <!-- ======= Interactiv News Section ======= -->
+    <div id="single" class="single main-bg-poselki">
+        <div class="breaking-news">
+            <div class="container">
+                {% for main_interactiv_string in interactiv %}
+                    <div class="move-text">
+                        <div class="breaking_news">
+                            <h2>Новости Центра</h2>
+                        </div>
+                        <div class="marquee">
+                            <div class="marquee1"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description | safe }}</a>
+                            </div>
+                            <div class="marquee2"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <script type="text/javascript" src="{% static 'js/jquery.marquee.js' %}"></script>
+                        <script>
+                            $('.marquee').marquee({pauseOnHover: true});
+                            //@ sourceURL=pen.js
+                        </script>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- ======= End Interactiv News Section ======= -->
+
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services main-bg-poselki">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Информационно-Аналитический бюллетень</h2>
+            </div>
+            <div class="row">
+                {% for main_pdf in see_pdf %}
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="icon"><i class="{{ main_pdf.icon_class }}"></i></div>
+                            <h4 class="title"><a href="{{ main_pdf.pdf_file.url }}">{{ main_pdf.name }}</a></h4>
+                            <a href="{{ main_pdf.pdf_file.url }}"><p class="description">Смотреть (Скачать) PDF</p></a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- End Featured Services Section -->
+
+    <!-- ======= Frequently Asked Questioins Section ======= -->
+    <section id="faq" class="faq main-bg-poselki">
+        <div class="container" data-aos="fade-up">
+            {% for title_desc in title_desc_queans %}
+                <div class="section-title">
+                    <h2>{{ title_desc.name }}</h2>
+                    <p>{{ title_desc.description | safe }}</p>
+                </div>
+            {% endfor %}
+
+            <ul class="faq-list">
+                {% for question in questions|slice:":6" %}
+                    <li>
+                        <div data-bs-toggle="collapse" class="collapsed question"
+                             href="#{{ question.id }}"> {{ question.question_text }} <i
+                                class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
+                        </div>
+                        <div id="{{ question.id }}" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                {% for ansver in question.answers.all %}
+                                    {{ ansver.answer_text }}
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </section>
+    <!-- End Frequently Asked Questioins Section -->
+
+    {% include 'slider/recurces_slider3.html' %}
+
     <!-- ======= Featured Services Section ======= -->
     <section id="featured-services" class="featured-services">
         <div class="container" data-aos="fade-up">

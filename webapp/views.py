@@ -677,10 +677,27 @@ def custom_products_single(request, pk):
 
 def healthy_cities_towns(request):
     """Activity - healthy_cities_towns template"""
-    features = Featured.objects.all()
+    evrz_econom_inf = EconimicSouz.objects.all()
+    interactiv = Interactive.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
+    ansvers = Answer.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
+    typical_inf = CustomProductsInf.objects.all()
+
+    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
+
+    # Получаем данные о погоде
+    weather = get_weather()
 
     context = {
-        'features': features,
+        'interactiv': interactiv,
+        'weather': weather,  # Передаем данные о погоде в контекст
+        'questions': questions,
+        'ansvers': ansvers,
+        'title_desc_queans': title_desc_queans,
+        'all_typical_news': all_typical_news,
+        'typical_inf': typical_inf,
+        'evrz_econom_inf': evrz_econom_inf,
     }
 
     return render(request, 'webapp/activity/healthy_cities_towns.html', context=context)

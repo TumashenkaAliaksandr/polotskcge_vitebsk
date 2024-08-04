@@ -979,7 +979,13 @@ section#footer {
 
 .main-bg-sroki {
     padding: 15px 0 15px;
-    background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.98)), url('../img/gigi_centr_back.jpg') center/cover;
+    background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.98)), url('../img/gigi_centr_book2.jpg') center/cover;
+    background-attachment: fixed;
+}
+
+.main-bg-poselki {
+    padding: 15px 0 15px;
+    background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.98)), url('../img/gigi_centr_zdorovie_goroda.jpg') center/cover;
     background-attachment: fixed;
 }
 
