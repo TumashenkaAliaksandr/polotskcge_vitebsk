@@ -8,8 +8,7 @@
 
     <!-- ======= Breadcrumbs Section ======= -->
     <!-- pagebanner -->
-    <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_centr.png' %}{% endif %}')">
-    </section>
+    <section class="pagebanner-city"></section>
     <!-- End Pagebanner -->
     <section class="breadcrumbs_contacts">
         <div class="container">
@@ -58,15 +57,17 @@
     <!-- ======= Featured Services Section ======= -->
     <section id="featured-services" class="featured-services main-bg-poselki">
         <div class="container" data-aos="fade-up">
-            <div class="section-title">
-                <h2>Информационно-Аналитический бюллетень</h2>
-            </div>
+            {% for main_title in heltitle_inf %}
+                <div class="section-title">
+                    <h2>{{ main_title.name|safe }}</h2>
+                </div>
+            {% endfor %}
             <div class="row">
-                {% for main_pdf in see_pdf %}
+                {% for main_pdf in health_inf %}
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="icon"><i class="{{ main_pdf.icon_class }}"></i></div>
-                            <h4 class="title"><a href="{{ main_pdf.pdf_file.url }}">{{ main_pdf.name }}</a></h4>
+                            <h4 class="title"><a href="{{ main_pdf.pdf_file.url }}" target="_blank">{{ main_pdf.name|safe }}</a></h4>
                             <a href="{{ main_pdf.pdf_file.url }}"><p class="description">Смотреть (Скачать) PDF</p></a>
                         </div>
                     </div>
@@ -107,27 +108,6 @@
         </div>
     </section>
     <!-- End Frequently Asked Questioins Section -->
-
-    {% include 'slider/recurces_slider3.html' %}
-
-    <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services">
-        <div class="container" data-aos="fade-up">
-
-            <div class="row">
-                {% for main_features in features %}
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="{{ main_features.icon_class }}"></i></div>
-                            <h4 class="title"><a href="{{ main_features.link }}">{{ main_features.name }}</a></h4>
-                            <p class="description">{{ main_features.description|safe }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-    <!-- End Featured Services Section -->
 
   </main><!-- End #main -->
 

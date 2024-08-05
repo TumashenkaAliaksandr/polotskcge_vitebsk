@@ -298,6 +298,16 @@ class CountryRegistryForm(forms.ModelForm):
         }
 
 
+class HealthyTitleForm(forms.ModelForm):
+    class Meta:
+        model = HealthyTitle
+        fields = '__all__'
+        widgets = {
+            'name': CKEditorWidget(),
+            'description': CKEditorWidget(),
+        }
+
+
 class HealthyForm(forms.ModelForm):
     class Meta:
         model = Healthy

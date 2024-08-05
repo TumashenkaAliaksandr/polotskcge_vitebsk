@@ -1041,9 +1041,21 @@ class InformationAnalytical(models.Model):
         ordering = ['-pub_date']
 
 
+class HealthyTitle(models.Model):
+    name = models.CharField(max_length=100, verbose_name="Имя Заголовка")
+    description = models.TextField(default='Описание')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Здоровые города и поселки (ТАЙТЛ и ОПИСАНИЕ)"
+        verbose_name_plural = "Здоровые города и поселки (ТАЙТЛ и ОПИСАНИЕ)"
+
+
 class Healthy(models.Model):
-    name = models.CharField(max_length=100, verbose_name="Имя")
-    name_taitle = models.CharField(max_length=100, verbose_name="Имя для Заголовка")
+    name = models.CharField(max_length=300, verbose_name="Имя")
+    name_taitle = models.CharField(max_length=100, verbose_name="Описание под тайтл")
     pdf_file = models.FileField(upload_to='pdfs/', verbose_name="Прикрепить PDF")
     icon_class = models.CharField(max_length=100, default='fas fa-file-pdf')
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', blank=True, null=True)
