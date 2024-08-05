@@ -51,6 +51,11 @@
           </div>
       </div>
 
+      <div class="desktop-news">
+          {% include 'main/mobile_news_index.html' %}
+      </div>
+
+
       <!-- ======= Featured Services Section ======= -->
       <section id="featured-services" class="featured-services main-bg">
           <div class="container" data-aos="fade-up">
@@ -291,75 +296,10 @@
       </section>
       <!-- End Features Section -->
 
-      <!-- news-and-events -->
-      <section id="about" class="about main-bg">
-          <div class="container" data-aos="fade-up">
-          <div class="section-title-news">
-                  <h2>Новости</h2>
-              </div>
-              <div class="news">
-                  <div class="news-grids">
-                      <div class="col-md-8 news-grid-left">
-                          <h3>Свежие новости</h3>
-                          <ul>
-                              {% for main_litle_news in model_blog_main|slice:":3" %}
-                              <li>
-                                  <div class="news-grid-left1">
-                                      <a href="{% url 'news:single' pk=main_litle_news.id %}"><img src="{{ main_litle_news.photo.url }}" alt=" " class="img-responsive"/></a>
-                                  </div>
-                                  <div class="news-grid-right1">
-                                      <h4><a href="{% url 'news:single' pk=main_litle_news.id %}">{{ main_litle_news.title|wordwrap:30|truncatechars_html:58 }}</a></h4>
-                                      <h5 class="fa fa-user-doctor"><label>|</label><a href="{% url 'news:single' pk=main_litle_news.id %}"> {{ main_litle_news.author }}</a> <label>|</label> <i>{{ main_litle_news.pub_date|date:"d.m.Y" }}</i></h5>
-                                      <a href="{% url 'news:single' pk=main_litle_news.id %}"><p>{{ main_litle_news.description_small|wordwrap:40|truncatechars_html:132|safe }}</p></a>
-                                  </div>
-                                  <div class="clearfix"></div>
-                              </li>
-                              {% endfor %}
-                          </ul>
-                      <div class="news-more">
-                          <a href="{% url 'news:news' %}"><p>Узнать больше..</p></a>
-                      </div>
-                      </div>
-                      <!-- Tab panes -->
-                      <div class="news">
-                          <div class="news-grids">
-                              <div class="col-md-4 breaking-news-grid-right">
-                                  <div class="news-grid-rght1">
-                                      <h3>Погода в Полоцке</h3>
-                                      <!-- Nav tabs -->
-                                      <div class="tab-content-weather-bg">
-                                          <div class="tab-content-weather">
-                                              <ul>
-                                                  <h4>{{ weather.month }} {{ weather.day_of_month }}, {{ weather.day }}</h4>
-                                                  <p><span
-                                                          class="fa fa-wind"> Ветер: {{ weather.wind_direction }}-ный | {{ weather.wind_speed }} м/с</span>
-                                                  </p>
-                                                  <p><span class="fas fa-thermometer-half">
-                                                Температура: {{ weather.temperature }}</span></p>
-                                                  <p><span class="fas fa-tachometer-alt">
-                                                Давление: {{ weather.pressure }} гПа</span></p>
-                                              </ul>
-                                          </div>
-                                      </div>
-                                  </div>
-                                  <div class="news-grid-rght3">
-                                      <img src="{% static 'images/gigi_centr_girispolkom.jpg' %}" alt=" "
-                                           class="img-responsive"/>
-                                      <div class="story">
-                                          <p>фото дня</p>
-                                          <h3><a href="single.html">Горисполком город Полоцк</a></h3>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="clearfix"></div>
-                          </div>
-                      </div>
-                      <div class="clearfix"></div>
-                  </div>
-              </div>
-          </div>
-      </section>
-      <!-- //news-and-events -->
+      <div class="mobile-news">
+          {% include 'main/mobile_news_index.html' %}
+      </div>
+
 
       <!-- ======= Frequently Asked Questioins Section ======= -->
       <section id="faq" class="faq main-bg">

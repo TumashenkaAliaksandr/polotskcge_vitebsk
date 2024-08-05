@@ -61,6 +61,17 @@ def info_main(request):
     return render(request, 'webapp/informations/info_main.html')
 
 
+def news_block(request):
+    """Main Page News Info of Clinic"""
+    model_blog_main = ModelNews.objects.all().order_by('-pub_date')
+
+    context = {
+        'model_blog_main': model_blog_main,
+    }
+
+    return render(request, 'main/mobile_news_index.html', context=context)
+
+
 def structure(request):
     """About us Structure template"""
     features = Featured.objects.all()
