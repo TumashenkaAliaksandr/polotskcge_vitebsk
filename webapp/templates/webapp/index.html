@@ -76,10 +76,9 @@
       <!-- End Featured Services Section -->
 
       <!-- ======= About Us Section ======= -->
-      {% for main_about in about_us %}
-          <section id="about" class="about main-bg">
-              <div class="container" data-aos="fade-up">
-
+      <section id="about" class="about main-bg">
+          <div class="container" data-aos="fade-up">
+              {% for main_about in about_us %}
                   <div class="section-title">
                       <h2>{{ main_about.name }}</h2>
                       <p>{{ main_about.description | safe }}</p>
@@ -94,9 +93,11 @@
                           <h3>{{ main_about.name_two }}</h3>
                           <p class="fst-italic">{{ main_about.description_two | safe }}</p>
                           <ul class="icon-list">
-                              <li><i class="{{ main_about.icon_class_li_one }}"></i> {{ main_about.name_li_one | safe }}
+                              <li>
+                                  <i class="{{ main_about.icon_class_li_one }}"></i> {{ main_about.name_li_one | safe }}
                               </li>
-                              <li><i class="{{ main_about.icon_class_li_two }}"></i> {{ main_about.name_li_two | safe }}
+                              <li>
+                                  <i class="{{ main_about.icon_class_li_two }}"></i> {{ main_about.name_li_two | safe }}
                               </li>
                               <li>
                                   <i class="{{ main_about.icon_class_li_three }}"></i> {{ main_about.name_li_three | safe }}
@@ -111,18 +112,15 @@
                           <p>{{ main_about.description_three | safe }}</p>
                       </div>
                   </div>
-
-              </div>
-          </section>
-      {% endfor %}
+              {% endfor %}
+          </div>
+      </section>
       <!-- End About Us Section -->
 
       <!-- ======= Counts Section ======= -->
       <section id="counts" class="counts main-bg">
           <div class="container" data-aos="fade-up">
-
               <div class="row no-gutters">
-
                   <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
                       <div class="count-box">
                           <i class="fas fa-award"></i>
