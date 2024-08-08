@@ -3967,8 +3967,29 @@ img.mobile1 {
 		height: 10px;
 	}
 	.breaking-news {
-		padding: 7.5em 0 15px;
+		padding: 4.5em 0 15px;
 	}
+
+    .breaking-news-index {
+        padding: 7.5em 0 15px;
+    }
+
+    .breaking-news-index {
+        float: left;
+        padding: 10px 18px 12px 21px;
+        background-color: #3fbbc0;
+        position: relative;
+        width: 100%;
+        margin-top: 15%;
+
+    }
+
+    .breaking-news-index h2 {
+        font-size: 1em;
+        color: #FFFFFF;
+        margin: 0;
+    }
+
 	.breaking-news-grid-right-gridr {
 		margin: 1em 0 0;
         width: 50%;
