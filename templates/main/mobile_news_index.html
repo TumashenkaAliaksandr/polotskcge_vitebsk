@@ -1,16 +1,17 @@
 {% load static %}
 
 
+
 <!-- news-and-events -->
 <section id="about" class="about main-bg">
     <div class="container" data-aos="fade-up">
-        <div class="section-title-news">
-            <h2>Новости</h2>
-        </div>
+{#        <div class="section-title-news">#}
+{#            <h2>Новости</h2>#}
+{#        </div>#}
         <div class="news">
             <div class="news-grids">
                 <div class="col-md-8 news-grid-left">
-                    <h3>Свежие новости</h3>
+{#                    <h3>Свежие новости</h3>#}
                     <ul>
                         {% for main_litle_news in model_blog_main|slice:":3" %}
                             <li>
@@ -64,7 +65,7 @@
                                      class="img-responsive"/>
                                 <div class="story">
                                     <p>фото дня</p>
-                                    <h3><a href="single.html">Горисполком город Полоцк</a></h3>
+                                    <h3><a href="{% url 'webapp:contacts' %}">Горисполком город Полоцк</a></h3>
                                 </div>
                             </div>
                         </div>
