@@ -778,7 +778,7 @@ h6 {
         transition-delay: 0s;
         border-radius: 8px;
         z-index: 1;
-        display: none;
+        /*display: none;*/
     }
 }
 
