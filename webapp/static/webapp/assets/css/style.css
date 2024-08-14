@@ -3351,7 +3351,7 @@ section#clocks-two {
     border-bottom: 1px solid #dadada;
     /*box-shadow: 0 10px 10px rgba(167, 197, 167, 0.8);*/
     transition: all 0.4s ease-in-out 0s;
-    width: 90%;
+    width: 85%;
 }
 
 .post-slide a {
@@ -3371,7 +3371,7 @@ section#clocks-two {
 
 .post-slide .post-img:before {
     content: "";
-    width: 50%;
+    width: 53%;
     height: 100%;
     position: absolute;
     top: 0;
@@ -3385,9 +3385,13 @@ section#clocks-two {
 }
 
 .post-slide .post-img img {
-    width: 50%;
+    width: 53%;
     height: 121px; /* Измените это значение на желаемую высоту */
     object-fit: cover;
+}
+
+.owl-item {
+    width: 50%;
 }
 
 .post-slide .category {
@@ -3403,6 +3407,7 @@ section#clocks-two {
     bottom: 0;
     left: -50%;
     transition: all 0.5s ease-in-out 0s;
+    display: none;
 }
 
 .post-slide:hover .category {
@@ -3414,7 +3419,7 @@ section#clocks-two {
     background: #fff;
     position: relative;
     opacity: 0.9;
-    width: 50%;
+    width: 53%;
 }
 
 .post-slide .post-title {
