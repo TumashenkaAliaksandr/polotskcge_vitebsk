@@ -1,0 +1,21 @@
+{% load static %}
+
+
+      <!-- ======= Featured Services Section ======= -->
+      <section id="featured-services" class="featured-services main-bg">
+          <div class="container" data-aos="fade-up">
+
+              <div class="row">
+                  {% for main_features in featured %}
+                  <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                      <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                          <div class="icon"><i class="{{ main_features.icon_class }}"></i></div>
+                          <h4 class="title"><a href="{{ main_features.link }}">{{ main_features.name }}</a></h4>
+                          <p class="description">{{ main_features.description|safe }}</p>
+                      </div>
+                  </div>
+                  {% endfor %}
+              </div>
+          </div>
+      </section>
+      <!-- End Featured Services Section -->

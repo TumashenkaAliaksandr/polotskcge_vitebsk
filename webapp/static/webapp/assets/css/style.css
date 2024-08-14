@@ -1924,6 +1924,13 @@ section#clocks-two {
     border-radius: 0px;
 }
 
+@media (max-width: 823px) {
+    .desctop-featured {
+        display: none; /* Скрывает элемент на мобильных устройствах */
+    }
+}
+
+
 .featured-services .icon {
     margin-bottom: 15px;
 }
