@@ -1375,11 +1375,11 @@ section#clocks-two {
     }
 }
 
-@media (max-width: 767px) {
-  .news-interactiv-mobile {
-    display: none;
-  }
-}
+/*@media (max-width: 767px) {*/
+/*  .news-interactiv-mobile {*/
+/*    display: none;*/
+/*  }*/
+/*}*/
 
 
 
@@ -3346,140 +3346,173 @@ section#clocks-two {
 
 /*slider carusel*/
 
-.post-slide {
-    margin: 0 10px;
-    border-bottom: 1px solid #dadada;
-    /*box-shadow: 0 10px 10px rgba(167, 197, 167, 0.8);*/
-    transition: all 0.4s ease-in-out 0s;
-    width: 85%;
-}
+/*.post-slide {*/
+/*    margin: 0 10px;*/
+/*    border-bottom: 1px solid #dadada;*/
+/*    !*box-shadow: 0 10px 10px rgba(167, 197, 167, 0.8);*!*/
+/*    transition: all 0.4s ease-in-out 0s;*/
+/*    width: 85%;*/
+/*}*/
 
-.post-slide a {
-    color: #f1f1f1;
-    text-decoration: none;
-}
+/*.post-slide a {*/
+/*    color: #f1f1f1;*/
+/*    text-decoration: none;*/
+/*}*/
 
-.resurces-sliider {
-    padding-bottom: 35px;
-}
+/*.resurces-sliider {*/
+/*    padding-bottom: 35px;*/
+/*}*/
 
-.post-slide .post-img {
-    position: relative;
-    overflow: hidden;
+/*.post-slide .post-img {*/
+/*    position: relative;*/
+/*    overflow: hidden;*/
 
-}
+/*}*/
 
-.post-slide .post-img:before {
-    content: "";
-    width: 53%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0);
-    transition: all 0.4s linear 0s;
-}
+/*.post-slide .post-img:before {*/
+/*    content: "";*/
+/*    width: 53%;*/
+/*    height: 100%;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    background: rgba(0, 0, 0, 0);*/
+/*    transition: all 0.4s linear 0s;*/
+/*}*/
 
-.post-slide:hover .post-img:before {
-    background: rgba(0, 0, 0, 0.6);
-}
+/*.post-slide:hover .post-img:before {*/
+/*    background: rgba(0, 0, 0, 0.6);*/
+/*}*/
 
-.post-slide .post-img img {
-    width: 53%;
-    height: 121px; /* Измените это значение на желаемую высоту */
-    object-fit: cover;
-}
+/*.post-slide .post-img img {*/
+/*    width: 53%;*/
+/*    height: 121px; !* Измените это значение на желаемую высоту *!*/
+/*    object-fit: cover;*/
+/*}*/
 
-.owl-item {
-    width: 50%;
-}
+/*.owl-item {*/
+/*    width: 50%;*/
+/*}*/
 
-.post-slide .category {
-    width: 20%;
-    font-size: 16px;
-    color: #fff;
-    line-height: 11px;
-    text-align: center;
-    text-transform: capitalize;
-    padding: 11px 0;
-    background: #3fbbc0;
-    position: absolute;
-    bottom: 0;
-    left: -50%;
-    transition: all 0.5s ease-in-out 0s;
-    display: none;
-}
+/*.post-slide .category {*/
+/*    width: 20%;*/
+/*    font-size: 16px;*/
+/*    color: #fff;*/
+/*    line-height: 11px;*/
+/*    text-align: center;*/
+/*    text-transform: capitalize;*/
+/*    padding: 11px 0;*/
+/*    background: #3fbbc0;*/
+/*    position: absolute;*/
+/*    bottom: 0;*/
+/*    left: -50%;*/
+/*    transition: all 0.5s ease-in-out 0s;*/
+/*    display: none;*/
+/*}*/
 
-.post-slide:hover .category {
-    left: 0;
-}
+/*.post-slide:hover .category {*/
+/*    left: 0;*/
+/*}*/
 
-.post-slide .post-review {
-    padding: 15px 15px 0;
-    background: #fff;
-    position: relative;
-    opacity: 0.9;
-    width: 53%;
-}
+/*.post-slide .post-review {*/
+/*    padding: 15px 15px 0;*/
+/*    background: #fff;*/
+/*    position: relative;*/
+/*    opacity: 0.9;*/
+/*    width: 53%;*/
+/*}*/
 
-.post-slide .post-title {
-    margin: 0;
-}
+/*.post-slide .post-title {*/
+/*    margin: 0;*/
+/*}*/
 
-.post-slide .post-title a {
-    display: inline-block;
-    font-size: 13px;
-    color: #3fbbc0;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 25px;
-    transition: all 0.30s linear 0s;
-}
+/*.post-slide .post-title a {*/
+/*    display: inline-block;*/
+/*    font-size: 13px;*/
+/*    color: #3fbbc0;*/
+/*    font-weight: bold;*/
+/*    letter-spacing: 2px;*/
+/*    text-transform: uppercase;*/
+/*    margin-bottom: 25px;*/
+/*    transition: all 0.30s linear 0s;*/
+/*}*/
 
-.post-slide .post-title a:hover {
-    text-decoration: none;
-    color: #555;
-}
+/*.post-slide .post-title a:hover {*/
+/*    text-decoration: none;*/
+/*    color: #555;*/
+/*}*/
 
-.post-slide .post-description {
-    font-size: 15px;
-    color: #555;
-    line-height: 26px;
-}
+/*.post-slide .post-description {*/
+/*    font-size: 15px;*/
+/*    color: #555;*/
+/*    line-height: 26px;*/
+/*}*/
 
-.post-review .post-bar {
-    margin-top: 20px;
-}
+/*.post-review .post-bar {*/
+/*    margin-top: 20px;*/
+/*}*/
 
-.post-bar span {
-    display: inline-block;
-    font-size: 14px;
-}
+/*.post-bar span {*/
+/*    display: inline-block;*/
+/*    font-size: 14px;*/
+/*}*/
 
-.post-bar span i {
-    margin-right: 5px;
-    color: #999;
-}
+/*.post-bar span i {*/
+/*    margin-right: 5px;*/
+/*    color: #999;*/
+/*}*/
 
-.post-bar span a {
-    color: #999;
-    text-transform: uppercase;
-}
+/*.post-bar span a {*/
+/*    color: #999;*/
+/*    text-transform: uppercase;*/
+/*}*/
 
-.post-bar span a:hover {
-    text-decoration: none;
-    color: #3fbbc0;
-}
+/*.post-bar span a:hover {*/
+/*    text-decoration: none;*/
+/*    color: #3fbbc0;*/
+/*}*/
 
-.post-bar span.comments {
-    float: right;
-}
+/*.post-bar span.comments {*/
+/*    float: right;*/
+/*}*/
 
-@media only screen and (max-width: 359px) {
-    .post-slide .category {
-        font-size: 13px;
-    }
-}
+/*@media only screen and (max-width: 359px) {*/
+/*    .post-slide .category {*/
+/*        font-size: 13px;*/
+/*    }*/
+/*}*/
 
 /*end slider carusel*/
+.partner-slider {
+  padding: 50px 0;
+  background-color: #f8f8f8;
+}
+
+.partner-slider-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.partner-slide {
+  margin: 0 20px; /* Отступы между изображениями */
+  transition: transform 0.5s ease; /* Плавный переход */
+}
+
+.partner-slide img {
+  max-width: 200px; /* Увеличьте размер изображений */
+  height: auto;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.partner-slide img:hover {
+  filter: grayscale(0%);
+}
+
+/* Стили для активного слайда */
+.active {
+  transform: scale(1.1); /* Увеличение активного слайда */
+}

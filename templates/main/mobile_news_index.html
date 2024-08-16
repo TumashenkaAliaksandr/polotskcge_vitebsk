@@ -1,45 +1,12 @@
 {% load static %}
 
 
-<div id="single" class="single main-bg">
-    <div class="breaking-news">
-        <div class="container">
-            {% for main_interactiv_string in interactiv %}
-                <div class="move-text-index">
-                    <div class="breaking-news-index">
-                        <h2>Новости Центра</h2>
-                    </div>
-                    <div class="marquee">
-                        <div class="marquee1"><a class="breaking"
-                                                 href="{% url 'news:news' %}">{{ main_interactiv_string.description | safe }}</a>
-                        </div>
-                        <div class="marquee2"><a class="breaking"
-                                                 href="{% url 'news:news' %}">{{ main_interactiv_string.description_two | safe }}</a>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <script type="text/javascript" src="{% static 'js/jquery.marquee.js' %}"></script>
-                    <script>
-                        $('.marquee').marquee({pauseOnHover: true});
-                        //@ sourceURL=pen.js
-                    </script>
-                </div>
-            {% endfor %}
-        </div>
-    </div>
-</div>
-
 <!-- news-and-events -->
 <section id="about" class="about main-bg">
     <div class="container" data-aos="fade-up">
-{#        <div class="section-title-news">#}
-{#            <h2>Новости</h2>#}
-{#        </div>#}
         <div class="news">
             <div class="news-grids">
                 <div class="col-md-8 news-grid-left">
-{#                    <h3>Свежие новости</h3>#}
                     <ul>
                         {% for main_litle_news in model_blog_main|slice:":3" %}
                             <li>
