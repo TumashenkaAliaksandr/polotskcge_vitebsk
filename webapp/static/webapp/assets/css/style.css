@@ -3502,9 +3502,9 @@ section#clocks-two {
 }
 
 .partner-slide img {
-  max-width: 200px; /* Увеличьте размер изображений */
+  max-width: 215px; /* Увеличьте размер изображений */
   height: auto;
-  filter: grayscale(100%);
+  /*filter: grayscale(70%);*/
   transition: filter 0.3s ease;
 }
 
