@@ -3499,18 +3499,34 @@ section#clocks-two {
 .partner-slide {
   margin: 0 20px; /* Отступы между изображениями */
   transition: transform 0.5s ease; /* Плавный переход */
+  position: relative; /* Для позиционирования рамки */
 }
 
 .partner-slide img {
   max-width: 215px; /* Увеличьте размер изображений */
   height: auto;
-  /*filter: grayscale(70%);*/
   transition: filter 0.3s ease;
+  border-radius: 5px; /* Скругление углов оконтовки */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Тень под изображением */
+
 }
 
 .partner-slide img:hover {
   filter: grayscale(0%);
 }
+
+/* Добавление рамки сверху */
+.partner-slide::before {
+  content: ""; /* Псевдоэлемент для рамки */
+  position: absolute; /* Абсолютное позиционирование */
+  top: -10px; /* Расположение рамки над изображением */
+  left: 0;
+  right: 0;
+  height: 5px; /* Высота рамки */
+  background-color: #007bff; /* Цвет рамки (можно изменить) */
+  border-radius: 5px; /* Скругление углов рамки */
+}
+
 
 /* Стили для активного слайда */
 .active {
