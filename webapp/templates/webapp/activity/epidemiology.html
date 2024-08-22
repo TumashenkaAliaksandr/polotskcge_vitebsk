@@ -55,33 +55,29 @@
     </div>
     <!-- ======= End Book News text Section ======= -->
 
-    <!-- Hotline Title and desc Section -->
-    <section id="featured-services" class="featured-services main-bg-epidem">
-        <div class="container book_info" data-aos="fade-up">
+
+    <!-- EVROZES Title and desc Section -->
+    <section id="featured-services-two" class="featured-services-two main-bg-economic-souz">
+        <div class="container" data-aos="fade-up">
+            {% for main_typical_title in epidem_title %}
+                <div class="section-title">
+                    <h2>{{ main_typical_title.name|safe }}</h2>
+                </div>
+            {% endfor %}
             <div class="row">
-                {% for main_typical_title in epidem_title %}
-                    <div class="section-title">
-                        <h2>{{ main_typical_title.name|safe }}</h2>
-                    </div>
-                {% endfor %}
                 {% for main_typical_inf in all_typical_news %}
-                    <div class="row">
-                        <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
-                            <div class="icon-box mt-5 mt-lg-0">
-                                <a href="{% url 'webapp:epidemialogy_single' pk=main_typical_inf.id %}"><h4>{{ main_typical_inf.name|safe }}</h4></a>
-                                <a href="{% url 'webapp:epidemialogy_single' pk=main_typical_inf.id %}">
-                                    <p>{{ main_typical_inf.description | safe }}</p></a>
-                            </div>
-                        </div>
-                        <div class="image col-lg-6 order-1 order-lg-2"
-                             style='background-image: url({{ main_typical_inf.photo.url }});'
-                             data-aos="zoom-in"></div>
+                    <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="title-two"><a
+                                href="{% url 'webapp:epidemialogy_single' pk=main_typical_inf.id %}">{{ main_typical_inf.name|safe }}</a>
+                        </h3>
+                        <p class="description">{{ main_typical_inf.description | safe }}</p>
                     </div>
                 {% endfor %}
             </div>
         </div>
     </section>
-    <!-- End Hotline Title and desc Section -->
+    <!-- End  EVROZES Title and desc Section -->
+
 
     <!-- ======= Frequently Asked Questioins Section ======= -->
     <section id="faq" class="faq main-bg-epidem">
@@ -110,7 +106,6 @@
                     </li>
                 {% endfor %}
             </ul>
-
         </div>
     </section>
     <!-- End Frequently Asked Questioins Section -->
