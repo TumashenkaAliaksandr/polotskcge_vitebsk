@@ -666,6 +666,7 @@ class EpidemialogyTipicalForm(forms.ModelForm):
             'name': CKEditorWidget(),
             'name_two': CKEditorWidget(),
             'name_three': CKEditorWidget(),
+            'description_small': CKEditorWidget(),
             'description': CKEditorWidget(),
             'description_two': CKEditorWidget(),
             'description_three': CKEditorWidget(),
