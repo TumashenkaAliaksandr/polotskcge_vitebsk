@@ -669,3 +669,16 @@ class TicksAdmin(admin.ModelAdmin):
     clean_name.short_description = 'name'
 
     list_display = ['clean_name']
+
+
+@admin.register(ContactInfoHad)
+class ContactInfoHadAdmin(admin.ModelAdmin):
+    form = ContactInfoHadForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+
+    list_display = ['clean_name']
+

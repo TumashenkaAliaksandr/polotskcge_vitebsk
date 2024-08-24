@@ -8,9 +8,11 @@ def base_main(request):
     """main base template"""
 
     logo_main = Logo.objects.all()
+    contact_info = ContactInfoHad.objects.first()
 
     context = {
         'logo_main': logo_main,
+        'contact_info': contact_info,
     }
 
     return render(request, 'main/base.html', context=context)

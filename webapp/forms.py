@@ -657,7 +657,6 @@ class EpidemialogyInfForm(forms.ModelForm):
         }
 
 
-
 class EpidemialogyTipicalForm(forms.ModelForm):
     class Meta:
         model = EpidemialogyTipical
@@ -671,6 +670,18 @@ class EpidemialogyTipicalForm(forms.ModelForm):
             'description': CKEditorWidget(),
             'description_two': CKEditorWidget(),
             'description_three': CKEditorWidget(),
+        }
+
+
+class ContactInfoHadForm(forms.ModelForm):
+    class Meta:
+        model = ContactInfoHad
+        fields = '__all__'
+        widgets = {
+            'working_days': CKEditorWidget(),
+            'lunch_time': CKEditorWidget(),
+            'phone_number': CKEditorWidget(),
+            'email_address': CKEditorWidget(),
         }
 
 

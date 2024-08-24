@@ -1097,3 +1097,24 @@ class Ticks(models.Model):
     class Meta:
         verbose_name = "Внимание клещи"
         verbose_name_plural = "Внимание клещи"
+
+
+class ContactInfoHad(models.Model):
+    """Модель для хранения контактной информации и часов работы."""
+
+    name = models.CharField(max_length=50, default='имя для админки')
+    # Часы работы
+    working_days = models.CharField(max_length=50, default="Пн - Пт, 8.00 - 17.00")
+    lunch_time = models.CharField(max_length=50, default="Обед: 13.00 - 14.00")
+
+    # Контактная информация
+    phone_number = models.CharField(max_length=25, default="+80214493168")
+    email_address = models.CharField(max_length=70, default="polotzk_hyg@vitebsk.by")
+
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Контактная информация для Had"
+        verbose_name_plural = "Контактная информация для Had"
