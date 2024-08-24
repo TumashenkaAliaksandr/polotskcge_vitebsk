@@ -76,33 +76,15 @@
                         <h2><p>{{ main_epidem.name_three|safe }}</h2>
                         <p>{{ main_epidem.description_three | safe }}</p>
                     </div>
+                    <div class="mt-5 mt-lg-0">
+                        <h3>{{ main_epidem.name_two|safe }}</h3>
+                        <p>{{ main_epidem.description_two | safe }}</p>
+                    </div>
                 </div>
             </div>
         </section>
     {% endfor %}
     <!-- End About Us Section -->
-
-    <!-- ======= Features Section ======= -->
-    <section id="features" class="features main-bg-epidem">
-        <div class="container book_info" data-aos="fade-up">
-            {% for main_epidem in typical_inf %}
-                <div class="row">
-                    <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
-                        <div class="mt-5 mt-lg-0">
-                            <h3>{{ main_epidem.name_two|safe }}</h3>
-                            <p>{{ main_epidem.description_two | safe }}</p>
-                        </div>
-                    </div>
-                    <div class="image col-lg-6 order-1 order-lg-2"
-                         style='background-image: url({{ main_epidem.photo_two.url }});'
-                         data-aos="zoom-in">
-                    </div>
-                </div>
-            {% endfor %}
-
-        </div>
-    </section>
-    <!-- End Features Section -->
 
     <!-- breaking-news -->
     <div id="single" class="single main-bg-epidem">

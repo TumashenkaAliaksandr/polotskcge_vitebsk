@@ -963,6 +963,7 @@ class EpidemialogyInf(models.Model):
 class EpidemialogyTipical(models.Model):
     description_small = models.TextField(default='Описание для стр. Эпидемиалогия')
     name = models.CharField(max_length=350, default='Тайтл')
+    name_epidem = models.CharField(max_length=350, default='Тайтл ля стр. Эпидемиалогия (h3)')
     name_two = models.CharField(max_length=200, default='Второе название')
     name_three = models.CharField(max_length=200, default='Третье название')
     description = models.TextField(default='Описание')

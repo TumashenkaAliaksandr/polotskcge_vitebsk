@@ -664,6 +664,7 @@ class EpidemialogyTipicalForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'name': CKEditorWidget(),
+            'name_epidem': CKEditorWidget(),
             'name_two': CKEditorWidget(),
             'name_three': CKEditorWidget(),
             'description_small': CKEditorWidget(),
