@@ -6,16 +6,16 @@ from webapp.models import *
 
 def base_main(request):
     """main base template"""
-
     logo_main = Logo.objects.all()
-    contact_info = ContactInfoHad.objects.first()
+    info_contact = ContactInfoHad.objects.first()
 
     context = {
         'logo_main': logo_main,
-        'contact_info': contact_info,
+        'info_contact': info_contact,
     }
 
     return render(request, 'main/base.html', context=context)
+
 
 
 def index(request):

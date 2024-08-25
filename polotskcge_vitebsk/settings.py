@@ -40,10 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webapp',
-    'ckeditor',
-    'ckeditor_uploader',
+    'tinymce',
     'news',
-    'django_ckeditor_5',
 ]
 
 MIDDLEWARE = [
@@ -132,6 +130,29 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static', 'news'),
     os.path.join(BASE_DIR, 'static', 'webapp'),
 ]
+
+
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': (
+        'advlist autolink lists link image charmap print preview anchor help '
+        'searchreplace visualblocks code fullscreen '
+        'insertdatetime media table paste wordcount '
+        'textcolor colorpicker code'
+    ),
+    'toolbar': (
+        'undo redo | formatselect | '
+        'bold italic underline forecolor backcolor | '
+        'alignleft aligncenter alignright alignjustify | '
+        'bullist numlist outdent indent | '
+        'link image | code | removeformat | help'
+    ),
+    'height': 500,
+    'menubar': False,
+    'branding': False,
+    'contextmenu': 'formats | link image | code',
+    'content_style': 'body { font-family: Arial, sans-serif; font-size: 14px; }',
+}
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

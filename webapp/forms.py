@@ -1,6 +1,5 @@
 from django import forms
-from ckeditor.widgets import CKEditorWidget
-from django_ckeditor_5.widgets import CKEditor5Widget
+from tinymce.widgets import TinyMCE
 
 from .models import *
 
@@ -11,14 +10,14 @@ class AboutUsForm(forms.ModelForm):
         model = AboutUs
         fields = '__all__'
         widgets = {
-            'description': CKEditorWidget(),
-            'description_two': CKEditorWidget(),
-            'description_three': CKEditorWidget(),
-            'name_li_one': CKEditorWidget(),
-            'name_li_two': CKEditorWidget(),
-            'name_li_three': CKEditorWidget(),
-            'name_li_four': CKEditorWidget(),
-            'name_li_five': CKEditorWidget(),
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
+            'description_three': TinyMCE(),
+            'name_li_one': TinyMCE(),
+            'name_li_two': TinyMCE(),
+            'name_li_three': TinyMCE(),
+            'name_li_four': TinyMCE(),
+            'name_li_five': TinyMCE(),
         }
 
 
@@ -27,14 +26,14 @@ class ZojForm(forms.ModelForm):
         model = Zoj
         fields = '__all__'
         widgets = {
-            'description': CKEditorWidget(),
-            'description_two': CKEditorWidget(),
-            'description_three': CKEditorWidget(),
-            'name_li_one': CKEditorWidget(),
-            'name_li_two': CKEditorWidget(),
-            'name_li_three': CKEditorWidget(),
-            'name_li_four': CKEditorWidget(),
-            'name_li_five': CKEditorWidget(),
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
+            'description_three': TinyMCE(),
+            'name_li_one': TinyMCE(),
+            'name_li_two': TinyMCE(),
+            'name_li_three': TinyMCE(),
+            'name_li_four': TinyMCE(),
+            'name_li_five': TinyMCE(),
         }
 
 
@@ -43,10 +42,10 @@ class ResearchesForm(forms.ModelForm):
         model = Researches
         fields = '__all__'
         widgets = {
-            'description': CKEditorWidget(),
-            'description_two': CKEditorWidget(),
-            'description_three': CKEditorWidget(),
-            'description_four': CKEditorWidget(),
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
+            'description_three': TinyMCE(),
+            'description_four': TinyMCE(),
             'icon_class': forms.TextInput(),
             'icon_class_two': forms.TextInput(),
             'icon_class_three': forms.TextInput(),
@@ -65,7 +64,7 @@ class FeaturedForm(forms.ModelForm):
         model = Featured
         fields = '__all__'
         widgets = {
-            'description': CKEditorWidget(),
+            'description': TinyMCE(),
         }
 
 
@@ -74,7 +73,7 @@ class Book_complaintForm(forms.ModelForm):
         model = Book_complaint
         fields = '__all__'
         widgets = {
-            'description': CKEditorWidget(),
+            'description': TinyMCE(),
         }
 
 
@@ -91,7 +90,7 @@ class GeneralInfoForm(forms.ModelForm):
 
 
 class EducationalResourceAdminForm(forms.ModelForm):
-    description = forms.CharField(widget=CKEditorWidget())
+    description = forms.CharField(widget=TinyMCE())
 
     class Meta:
         model = EducationalResource
@@ -106,11 +105,11 @@ class InformationAnalyticalForm(forms.ModelForm):
 
 
 class HotlineHoursForm(forms.ModelForm):
-    reception_time = forms.CharField(widget=CKEditorWidget())
-    post = forms.CharField(widget=CKEditorWidget())
-    name = forms.CharField(widget=CKEditorWidget())
-    phone = forms.CharField(widget=CKEditorWidget())
-    date_hotline = forms.CharField(widget=CKEditorWidget())
+    reception_time = forms.CharField(widget=TinyMCE())
+    post = forms.CharField(widget=TinyMCE())
+    name = forms.CharField(widget=TinyMCE())
+    phone = forms.CharField(widget=TinyMCE())
+    date_hotline = forms.CharField(widget=TinyMCE())
 
     class Meta:
         model = HotlineHours
@@ -118,8 +117,8 @@ class HotlineHoursForm(forms.ModelForm):
 
 
 class HotlineHours_TitleForm(forms.ModelForm):
-    name = forms.CharField(widget=CKEditorWidget())
-    description = forms.CharField(widget=CKEditorWidget())
+    name = forms.CharField(widget=TinyMCE())
+    description = forms.CharField(widget=TinyMCE())
 
     class Meta:
         model = HotlineHours_Title
@@ -127,8 +126,8 @@ class HotlineHours_TitleForm(forms.ModelForm):
 
 
 class HotlineHours_Title_descForm(forms.ModelForm):
-    name = forms.CharField(widget=CKEditorWidget())
-    description = forms.CharField(widget=CKEditorWidget())
+    name = forms.CharField(widget=TinyMCE())
+    description = forms.CharField(widget=TinyMCE())
 
     class Meta:
         model = HotlineHours_Title
@@ -136,8 +135,8 @@ class HotlineHours_Title_descForm(forms.ModelForm):
 
 
 class Electronic_appeals_Title_descForm(forms.ModelForm):
-    name = forms.CharField(widget=CKEditorWidget())
-    description = forms.CharField(widget=CKEditorWidget())
+    name = forms.CharField(widget=TinyMCE())
+    description = forms.CharField(widget=TinyMCE())
 
     class Meta:
         model = Electronic_appeals_Title_desc
@@ -145,8 +144,8 @@ class Electronic_appeals_Title_descForm(forms.ModelForm):
 
 
 class Organ_Title_descForm(forms.ModelForm):
-    name = forms.CharField(widget=CKEditorWidget())
-    description = forms.CharField(widget=CKEditorWidget())
+    name = forms.CharField(widget=TinyMCE())
+    description = forms.CharField(widget=TinyMCE())
 
     class Meta:
         model = Organ_Title_desc
@@ -154,8 +153,8 @@ class Organ_Title_descForm(forms.ModelForm):
 
 
 class Up_Organ_infForm(forms.ModelForm):
-    name = forms.CharField(widget=CKEditorWidget())
-    description = forms.CharField(widget=CKEditorWidget())
+    name = forms.CharField(widget=TinyMCE())
+    description = forms.CharField(widget=TinyMCE())
 
     class Meta:
         model = Organ_Title_desc
@@ -163,10 +162,10 @@ class Up_Organ_infForm(forms.ModelForm):
 
 
 class Expertise_Form(forms.ModelForm):
-    name = forms.CharField(widget=CKEditorWidget())
-    description = forms.CharField(widget=CKEditorWidget())
-    description_two = forms.CharField(widget=CKEditorWidget())
-    description_three = forms.CharField(widget=CKEditorWidget())
+    name = forms.CharField(widget=TinyMCE())
+    description = forms.CharField(widget=TinyMCE())
+    description_two = forms.CharField(widget=TinyMCE())
+    description_three = forms.CharField(widget=TinyMCE())
 
     class Meta:
         model = Expertise
@@ -174,8 +173,8 @@ class Expertise_Form(forms.ModelForm):
 
 
 class Duties_Form(forms.ModelForm):
-    name = forms.CharField(widget=CKEditorWidget())
-    description = forms.CharField(widget=CKEditorWidget())
+    name = forms.CharField(widget=TinyMCE())
+    description = forms.CharField(widget=TinyMCE())
 
     class Meta:
         model = Duties
@@ -183,8 +182,8 @@ class Duties_Form(forms.ModelForm):
 
 
 class MaintenanceSh_Form(forms.ModelForm):
-    name = forms.CharField(widget=CKEditorWidget())
-    description = forms.CharField(widget=CKEditorWidget())
+    name = forms.CharField(widget=TinyMCE())
+    description = forms.CharField(widget=TinyMCE())
 
     class Meta:
         model = MaintenanceSchedule
@@ -192,10 +191,10 @@ class MaintenanceSh_Form(forms.ModelForm):
 
 
 class Vacancies_Form(forms.ModelForm):
-    name = forms.CharField(widget=CKEditorWidget())
-    vacancy = forms.CharField(widget=CKEditorWidget())
-    vacancy_two = forms.CharField(widget=CKEditorWidget())
-    vacancy_three = forms.CharField(widget=CKEditorWidget())
+    name = forms.CharField(widget=TinyMCE())
+    vacancy = forms.CharField(widget=TinyMCE())
+    vacancy_two = forms.CharField(widget=TinyMCE())
+    vacancy_three = forms.CharField(widget=TinyMCE())
 
     class Meta:
         model = Vacancies
@@ -203,13 +202,13 @@ class Vacancies_Form(forms.ModelForm):
 
 
 class Appeals_Form(forms.ModelForm):
-    name = forms.CharField(widget=CKEditorWidget())
-    name_two = forms.CharField(widget=CKEditorWidget())
-    name_three = forms.CharField(widget=CKEditorWidget())
-    appeals_desc = forms.CharField(widget=CKEditorWidget())
-    appeals_desc_two = forms.CharField(widget=CKEditorWidget())
-    appeals_desc_three = forms.CharField(widget=CKEditorWidget())
-    appeals_desc_four = forms.CharField(widget=CKEditorWidget())
+    name = forms.CharField(widget=TinyMCE())
+    name_two = forms.CharField(widget=TinyMCE())
+    name_three = forms.CharField(widget=TinyMCE())
+    appeals_desc = forms.CharField(widget=TinyMCE())
+    appeals_desc_two = forms.CharField(widget=TinyMCE())
+    appeals_desc_three = forms.CharField(widget=TinyMCE())
+    appeals_desc_four = forms.CharField(widget=TinyMCE())
 
     class Meta:
         model = MainAppeals
@@ -218,8 +217,8 @@ class Appeals_Form(forms.ModelForm):
 
 class AnticorrTitleForm(forms.ModelForm):
 
-    name = forms.CharField(label='Имя', widget=CKEditorWidget())
-    desс_anticorr = forms.CharField(label='Описание под тайтл Анткоррупция', widget=CKEditorWidget())
+    name = forms.CharField(label='Имя', widget=TinyMCE())
+    desс_anticorr = forms.CharField(label='Описание под тайтл Анткоррупция', widget=TinyMCE())
 
     class Meta:
         model = AnticorrTitle
@@ -227,8 +226,8 @@ class AnticorrTitleForm(forms.ModelForm):
 
 
 class AnticorrForm(forms.ModelForm):
-    name = forms.CharField(label='Имя', widget=CKEditorWidget())
-    description = forms.CharField(widget=CKEditorWidget())
+    name = forms.CharField(label='Имя', widget=TinyMCE())
+    description = forms.CharField(widget=TinyMCE())
     link = forms.URLField(label='Ссылка')
     icon_class = forms.CharField(max_length=100, label='Класс иконки')
 
@@ -238,10 +237,10 @@ class AnticorrForm(forms.ModelForm):
 
 
 class Up_Organ_Form(forms.ModelForm):
-    reception_time = forms.CharField(widget=CKEditorWidget())
-    post = forms.CharField(widget=CKEditorWidget())
-    name = forms.CharField(widget=CKEditorWidget())
-    phone = forms.CharField(widget=CKEditorWidget())
+    reception_time = forms.CharField(widget=TinyMCE())
+    post = forms.CharField(widget=TinyMCE())
+    name = forms.CharField(widget=TinyMCE())
+    phone = forms.CharField(widget=TinyMCE())
 
     class Meta:
         model = Up_Organ
@@ -249,8 +248,8 @@ class Up_Organ_Form(forms.ModelForm):
 
 
 class NormativeDocuments_Form(forms.ModelForm):
-    name = forms.CharField(widget=CKEditorWidget())
-    normative_desc = forms.CharField(widget=CKEditorWidget())
+    name = forms.CharField(widget=TinyMCE())
+    normative_desc = forms.CharField(widget=TinyMCE())
 
     class Meta:
         model = NormativeDocuments
@@ -258,9 +257,9 @@ class NormativeDocuments_Form(forms.ModelForm):
 
 
 class EconimicSouz_Form(forms.ModelForm):
-    name_main = forms.CharField(widget=CKEditorWidget())
-    name = forms.CharField(widget=CKEditorWidget())
-    desc = forms.CharField(widget=CKEditorWidget())
+    name_main = forms.CharField(widget=TinyMCE())
+    name = forms.CharField(widget=TinyMCE())
+    desc = forms.CharField(widget=TinyMCE())
 
     class Meta:
         model = EconimicSouz
@@ -268,10 +267,10 @@ class EconimicSouz_Form(forms.ModelForm):
 
 
 class QuarantineForm(forms.ModelForm):
-    name_main = forms.CharField(widget=CKEditorWidget())
-    name = forms.CharField(widget=CKEditorWidget())
-    desc = forms.CharField(widget=CKEditorWidget())
-    desc_two = forms.CharField(widget=CKEditorWidget())
+    name_main = forms.CharField(widget=TinyMCE())
+    name = forms.CharField(widget=TinyMCE())
+    desc = forms.CharField(widget=TinyMCE())
+    desc_two = forms.CharField(widget=TinyMCE())
 
     class Meta:
         model = EconimicSouz
@@ -283,8 +282,8 @@ class EpidemialSituationsForm(forms.ModelForm):
         model = EpidemSituations
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
-            'desc': CKEditorWidget(),
+            'name': TinyMCE(),
+            'desc': TinyMCE(),
         }
 
 
@@ -293,8 +292,8 @@ class CountryRegistryForm(forms.ModelForm):
         model = CountryRegistry
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
-            'desc': CKEditorWidget(),
+            'name': TinyMCE(),
+            'desc': TinyMCE(),
         }
 
 
@@ -303,8 +302,8 @@ class HealthyTitleForm(forms.ModelForm):
         model = HealthyTitle
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
-            'description': CKEditorWidget(),
+            'name': TinyMCE(),
+            'description': TinyMCE(),
         }
 
 
@@ -313,8 +312,8 @@ class HealthyForm(forms.ModelForm):
         model = Healthy
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
-            'name_taitle': CKEditorWidget(),
+            'name': TinyMCE(),
+            'name_taitle': TinyMCE(),
         }
 
 
@@ -324,8 +323,8 @@ class ResolutionForm(forms.ModelForm):
         model = Resolution
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
-            'desc': CKEditorWidget(),
+            'name': TinyMCE(),
+            'desc': TinyMCE(),
         }
 
 
@@ -334,18 +333,18 @@ class LabaForm(forms.ModelForm):
         model = Laboratory
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
-            'description': CKEditorWidget(),
-            'description_two': CKEditorWidget(),
-            'description_three': CKEditorWidget(),
-            'name_li_one': CKEditorWidget(),
-            'name_li_two': CKEditorWidget(),
-            'name_li_three': CKEditorWidget(),
-            'name_li_four': CKEditorWidget(),
-            'name_li_five': CKEditorWidget(),
-            'name_li_six': CKEditorWidget(),
-            'name_two': CKEditorWidget(),
-            'name_three': CKEditorWidget(),
+            'name': TinyMCE(),
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
+            'description_three': TinyMCE(),
+            'name_li_one': TinyMCE(),
+            'name_li_two': TinyMCE(),
+            'name_li_three': TinyMCE(),
+            'name_li_four': TinyMCE(),
+            'name_li_five': TinyMCE(),
+            'name_li_six': TinyMCE(),
+            'name_two': TinyMCE(),
+            'name_three': TinyMCE(),
         }
 
 
@@ -354,8 +353,8 @@ class LaboratoriesForm(forms.ModelForm):
         model = Laboratories
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
-            'description': CKEditorWidget(),
+            'name': TinyMCE(),
+            'description': TinyMCE(),
         }
 
 
@@ -364,10 +363,10 @@ class ApRegistrationForm(forms.ModelForm):
         model = Registration
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
-            'description': CKEditorWidget(),
-            'description_two': CKEditorWidget(),
-            'description_three': CKEditorWidget(),
+            'name': TinyMCE(),
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
+            'description_three': TinyMCE(),
         }
 
 
@@ -376,8 +375,8 @@ class RelationForm(forms.ModelForm):
         model = Relation
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
-            'description': CKEditorWidget(),
+            'name': TinyMCE(),
+            'description': TinyMCE(),
         }
 
 
@@ -386,8 +385,8 @@ class HumanResourcesDescForm(forms.ModelForm):
         model = HumanResourcesDesc
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
-            'description': CKEditorWidget(),
+            'name': TinyMCE(),
+            'description': TinyMCE(),
         }
 
 
@@ -396,11 +395,11 @@ class HumanResourcesForm(forms.ModelForm):
         model = HumanResources
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
-            'number_ap': CKEditorWidget(),
-            'name_ap': CKEditorWidget(),
-            'size_ap': CKEditorWidget(),
-            'doc_ap': CKEditorWidget(),
+            'name': TinyMCE(),
+            'number_ap': TinyMCE(),
+            'name_ap': TinyMCE(),
+            'size_ap': TinyMCE(),
+            'doc_ap': TinyMCE(),
         }
 
 
@@ -409,8 +408,8 @@ class AccountingDescForm(forms.ModelForm):
         model = AccountingDesc
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
-            'description': CKEditorWidget(),
+            'name': TinyMCE(),
+            'description': TinyMCE(),
         }
 
 
@@ -419,12 +418,12 @@ class AccountingForm(forms.ModelForm):
         model = Accounting
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
-            'number_ap': CKEditorWidget(),
-            'name_ap': CKEditorWidget(),
-            'size_ap': CKEditorWidget(),
-            'doc_ap': CKEditorWidget(),
-            'date_ap': CKEditorWidget(),
+            'name': TinyMCE(),
+            'number_ap': TinyMCE(),
+            'name_ap': TinyMCE(),
+            'size_ap': TinyMCE(),
+            'doc_ap': TinyMCE(),
+            'date_ap': TinyMCE(),
         }
 
 
@@ -434,8 +433,8 @@ class UnionDescForm(forms.ModelForm):
         model = UnionDesc
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
-            'description': CKEditorWidget(),
+            'name': TinyMCE(),
+            'description': TinyMCE(),
         }
 
 
@@ -444,12 +443,12 @@ class UnionForm(forms.ModelForm):
         model = Union
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
-            'number_ap': CKEditorWidget(),
-            'name_ap': CKEditorWidget(),
-            'size_ap': CKEditorWidget(),
-            'doc_ap': CKEditorWidget(),
-            'date_ap': CKEditorWidget(),
+            'name': TinyMCE(),
+            'number_ap': TinyMCE(),
+            'name_ap': TinyMCE(),
+            'size_ap': TinyMCE(),
+            'doc_ap': TinyMCE(),
+            'date_ap': TinyMCE(),
         }
 
 
@@ -458,8 +457,8 @@ class ListingDecreeDescForm(forms.ModelForm):
         model = UnionDesc
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
-            'description': CKEditorWidget(),
+            'name': TinyMCE(),
+            'description': TinyMCE(),
         }
 
 
@@ -468,12 +467,12 @@ class ListingDecreeForm(forms.ModelForm):
         model = ListingDecree
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
-            'number_ap': CKEditorWidget(),
-            'name_ap': CKEditorWidget(),
-            'size_ap': CKEditorWidget(),
-            'doc_ap': CKEditorWidget(),
-            'date_ap': CKEditorWidget(),
+            'name': TinyMCE(),
+            'number_ap': TinyMCE(),
+            'name_ap': TinyMCE(),
+            'size_ap': TinyMCE(),
+            'doc_ap': TinyMCE(),
+            'date_ap': TinyMCE(),
         }
 
 
@@ -482,12 +481,12 @@ class ProfsouzForm(forms.ModelForm):
         model = Profsouz
         fields = '__all__'
         widgets = {
-            'number': CKEditorWidget(),
-            'name_doctors': CKEditorWidget(),
-            'status': CKEditorWidget(),
-            'phone': CKEditorWidget(),
-            'description': CKEditorWidget(),
-            'description_two': CKEditorWidget(),
+            'number': TinyMCE(),
+            'name_doctors': TinyMCE(),
+            'status': TinyMCE(),
+            'phone': TinyMCE(),
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
         }
 
 
@@ -496,12 +495,12 @@ class ProfsouzTwoForm(forms.ModelForm):
         model = ProfsouzTwo
         fields = '__all__'
         widgets = {
-            'number': CKEditorWidget(),
-            'name_doctors': CKEditorWidget(),
-            'status': CKEditorWidget(),
-            'phone': CKEditorWidget(),
-            'description': CKEditorWidget(),
-            'description_two': CKEditorWidget(),
+            'number': TinyMCE(),
+            'name_doctors': TinyMCE(),
+            'status': TinyMCE(),
+            'phone': TinyMCE(),
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
         }
 
 
@@ -510,9 +509,9 @@ class ProfsouzDescForm(forms.ModelForm):
         model = ProfsouzDesc
         fields = '__all__'
         widgets = {
-            'description': CKEditorWidget(),
-            'description_two': CKEditorWidget(),
-            'package': CKEditorWidget(),
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
+            'package': TinyMCE(),
         }
 
 
@@ -521,8 +520,8 @@ class ProfsouzIconsForm(forms.ModelForm):
         model = ProfsouzIcons
         fields = '__all__'
         widgets = {
-            'description': CKEditorWidget(),
-            'description_two': CKEditorWidget(),
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
         }
 
 
@@ -531,10 +530,10 @@ class ProfsouzDescOneForm(forms.ModelForm):
         model = ProfsouzDescOne
         fields = '__all__'
         widgets = {
-            'name_main': CKEditorWidget(),
-            'description': CKEditorWidget(),
-            'description_two': CKEditorWidget(),
-            'package': CKEditorWidget(),
+            'name_main': TinyMCE(),
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
+            'package': TinyMCE(),
         }
 
 
@@ -543,9 +542,9 @@ class DisinfectionForm(forms.ModelForm):
         model = Disinfection
         fields = '__all__'
         widgets = {
-            'description': CKEditorWidget(),
-            'description_two': CKEditorWidget(),
-            'name_main': CKEditorWidget(),
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
+            'name_main': TinyMCE(),
         }
 
 class DeratizationForm(forms.ModelForm):
@@ -553,9 +552,9 @@ class DeratizationForm(forms.ModelForm):
         model = Deratization
         fields = '__all__'
         widgets = {
-            'description': CKEditorWidget(),
-            'description_two': CKEditorWidget(),
-            'name_main': CKEditorWidget(),
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
+            'name_main': TinyMCE(),
         }
 
 
@@ -564,9 +563,9 @@ class DisinsectionForm(forms.ModelForm):
         model = Disinsection
         fields = '__all__'
         widgets = {
-            'description': CKEditorWidget(),
-            'description_two': CKEditorWidget(),
-            'name_main': CKEditorWidget(),
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
+            'name_main': TinyMCE(),
         }
 
 
@@ -575,9 +574,9 @@ class DisinfectionDescForm(forms.ModelForm):
         model = DisinfectionDesc
         fields = '__all__'
         widgets = {
-            'description': CKEditorWidget(),
-            'description_two': CKEditorWidget(),
-            'name_main': CKEditorWidget(),
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
+            'name_main': TinyMCE(),
         }
 
 
@@ -586,9 +585,9 @@ class InventoryForm(forms.ModelForm):
         model = Inventory
         fields = '__all__'
         widgets = {
-            'description': CKEditorWidget(),
-            'description_two': CKEditorWidget(),
-            'name_main': CKEditorWidget(),
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
+            'name_main': TinyMCE(),
         }
 
 
@@ -597,15 +596,15 @@ class ControlNadzorTipicalForm(forms.ModelForm):
         model = ControlNadzorTipical
         fields = '__all__'
         widgets = {
-            'number': CKEditorWidget(),
-            'objects_control': CKEditorWidget(),
-            'typical_violations': CKEditorWidget(),
-            'name_typical_violations': CKEditorWidget(),
-            'description': CKEditorWidget(),
-            'description_two': CKEditorWidget(),
-            'description_three': CKEditorWidget(),
-            'name_typical': CKEditorWidget(),
-            'name': CKEditorWidget(),
+            'number': TinyMCE(),
+            'objects_control': TinyMCE(),
+            'typical_violations': TinyMCE(),
+            'name_typical_violations': TinyMCE(),
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
+            'description_three': TinyMCE(),
+            'name_typical': TinyMCE(),
+            'name': TinyMCE(),
         }
 
 
@@ -614,7 +613,7 @@ class CNadTipicalNameForm(forms.ModelForm):
         model = CNadTipicalName
         fields = '__all__'
         widgets = {
-            'name_typical': CKEditorWidget(),
+            'name_typical': TinyMCE(),
         }
 
 
@@ -623,9 +622,9 @@ class CustomProductsInfForm(forms.ModelForm):
         model = CustomProductsInf
         fields = '__all__'
         widgets = {
-            'description': CKEditorWidget(),
-            'name_typical': CKEditorWidget(),
-            'name': CKEditorWidget(),
+            'description': TinyMCE(),
+            'name_typical': TinyMCE(),
+            'name': TinyMCE(),
         }
 
 
@@ -634,7 +633,7 @@ class CustomProductsNameForm(forms.ModelForm):
         model = CustomProductsName
         fields = '__all__'
         widgets = {
-            'name_typical': CKEditorWidget(),
+            'name_typical': TinyMCE(),
         }
 
 
@@ -643,7 +642,7 @@ class EpidemialogyNameForm(forms.ModelForm):
         model = CNadTipicalName
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
+            'name': TinyMCE(),
         }
 
 
@@ -652,8 +651,8 @@ class EpidemialogyInfForm(forms.ModelForm):
         model = CustomProductsInf
         fields = '__all__'
         widgets = {
-            'description': CKEditorWidget(),
-            'name': CKEditorWidget(),
+            'description': TinyMCE(),
+            'name': TinyMCE(),
         }
 
 
@@ -662,14 +661,14 @@ class EpidemialogyTipicalForm(forms.ModelForm):
         model = EpidemialogyTipical
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
-            'name_epidem': CKEditorWidget(),
-            'name_two': CKEditorWidget(),
-            'name_three': CKEditorWidget(),
-            'description_small': CKEditorWidget(),
-            'description': CKEditorWidget(),
-            'description_two': CKEditorWidget(),
-            'description_three': CKEditorWidget(),
+            'name': TinyMCE(),
+            'name_epidem': TinyMCE(),
+            'name_two': TinyMCE(),
+            'name_three': TinyMCE(),
+            'description_small': TinyMCE(),
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
+            'description_three': TinyMCE(),
         }
 
 
@@ -678,10 +677,10 @@ class ContactInfoHadForm(forms.ModelForm):
         model = ContactInfoHad
         fields = '__all__'
         widgets = {
-            'working_days': CKEditorWidget(),
-            'lunch_time': CKEditorWidget(),
-            'phone_number': CKEditorWidget(),
-            'email_address': CKEditorWidget(),
+            'working_days': TinyMCE(),
+            'lunch_time': TinyMCE(),
+            'phone_number': TinyMCE(),
+            'email_address': TinyMCE(),
         }
 
 
@@ -690,7 +689,7 @@ class ImmunoprophylaxisNameForm(forms.ModelForm):
         model = ImmunoprophylaxisName
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
+            'name': TinyMCE(),
         }
 
 
@@ -699,8 +698,8 @@ class ImmunoprophylaxisInfForm(forms.ModelForm):
         model = ImmunoprophylaxisInf
         fields = '__all__'
         widgets = {
-            'description': CKEditorWidget(),
-            'name': CKEditorWidget(),
+            'description': TinyMCE(),
+            'name': TinyMCE(),
         }
 
 
@@ -710,12 +709,12 @@ class ImmunoprophylaxisTipicalForm(forms.ModelForm):
         model = ImmunoprophylaxisTipical
         fields = '__all__'
         widgets = {
-            'name': CKEditorWidget(),
-            'name_two': CKEditorWidget(),
-            'name_three': CKEditorWidget(),
-            'description': CKEditorWidget(),
-            'description_two': CKEditorWidget(),
-            'description_three': CKEditorWidget(),
+            'name': TinyMCE(),
+            'name_two': TinyMCE(),
+            'name_three': TinyMCE(),
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
+            'description_three': TinyMCE(),
         }
 
 
@@ -724,8 +723,8 @@ class ObjectivesForm(forms.ModelForm):
         model = Objectives
         fields = '__all__'
         widgets = {
-            'description': CKEditorWidget(),
-            'name': CKEditorWidget(),
+            'description': TinyMCE(),
+            'name': TinyMCE(),
         }
 
 
@@ -734,8 +733,8 @@ class TicksForm(forms.ModelForm):
         model = Ticks
         fields = '__all__'
         widgets = {
-            'description': CKEditorWidget(),
-            'description_two': CKEditorWidget(),
-            'name': CKEditorWidget(),
-            'name_map': CKEditorWidget(),
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
+            'name': TinyMCE(),
+            'name_map': TinyMCE(),
         }

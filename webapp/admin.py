@@ -1,4 +1,4 @@
-from ckeditor.widgets import CKEditorWidget
+from tinymce.widgets import TinyMCE
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 from django.utils.html import strip_tags
@@ -7,7 +7,7 @@ from .forms import *
 
 class DoctorAdmin(admin.ModelAdmin):
     formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget}
+        models.TextField: {'widget': TinyMCE}
     }
 
     list_display = ['first_name', 'last_name', 'position', 'phone', 'department', 'appointment_time']
@@ -20,7 +20,7 @@ admin.site.register(Doctor, DoctorAdmin)
 
 class Services_titleAdmin(admin.ModelAdmin):
     formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget}
+        models.TextField: {'widget': TinyMCE}
     }
 
     list_display = ['name', 'description']
@@ -33,7 +33,7 @@ admin.site.register(Services_title, Services_titleAdmin)
 
 class ServicesAdmin(admin.ModelAdmin):
     formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget}
+        models.TextField: {'widget': TinyMCE}
     }
 
     list_display = ['name', 'description', 'link']
@@ -591,7 +591,7 @@ class EpidemSituationsAdmin(admin.ModelAdmin):
 
     clean_name.short_description = 'Name'
 
-    list_display = ['clean_name']\
+    list_display = ['clean_name']
 
 @admin.register(CountryRegistry)
 class CountryRegistryAdmin(admin.ModelAdmin):

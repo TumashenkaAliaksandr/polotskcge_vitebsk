@@ -1,6 +1,5 @@
 from django.utils import timezone
-
-from ckeditor.fields import RichTextField
+from tinymce.models import HTMLField
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -82,7 +81,7 @@ class Book_complaint(models.Model):
 
 class EducationalResource(models.Model):
     name = models.CharField(max_length=100, verbose_name="Имя")
-    description = RichTextField(verbose_name="Описание")
+    description = HTMLField(verbose_name="Описание")
     pdf_file = models.FileField(upload_to='pdfs/', verbose_name="Прикрепить PDF")
     icon_class = models.CharField(max_length=100, default='fas fa-file-pdf')
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', blank=True, null=True)
@@ -191,7 +190,7 @@ class Researches(models.Model):
 
 class GeneralInfo(models.Model):
     title = models.CharField(max_length=100, default='Тайтл')
-    description = RichTextField(max_length=200, default='Описание')
+    description = HTMLField(max_length=200, default='Описание')
 
     class Meta:
         verbose_name = 'Заголовок и описание для Часы Приёма'
@@ -489,7 +488,7 @@ class Answer(models.Model):
 class Question_Ansver_title(models.Model):
 
     name = models.CharField(max_length=255, default='Заголовок')
-    description = RichTextField(max_length=200, default='Описание')
+    description = HTMLField(max_length=200, default='Описание')
 
     class Meta:
         verbose_name = 'Заголовок и Описание Ответов'
@@ -1103,18 +1102,15 @@ class ContactInfoHad(models.Model):
     """Модель для хранения контактной информации и часов работы."""
 
     name = models.CharField(max_length=50, default='имя для админки')
-    # Часы работы
     working_days = models.CharField(max_length=50, default="Пн - Пт, 8.00 - 17.00")
     lunch_time = models.CharField(max_length=50, default="Обед: 13.00 - 14.00")
-
-    # Контактная информация
-    phone_number = models.CharField(max_length=25, default="+80214493168")
-    email_address = models.CharField(max_length=70, default="polotzk_hyg@vitebsk.by")
-
+    phone_number = models.CharField(max_length=50, default="Наш телефон: +80214493168")
+    email_address = models.CharField(max_length=70, default="Наша почта: polotzk_hyg@vitebsk.by")
 
     def __str__(self):
         return self.name
 
     class Meta:
-        verbose_name = "Контактная информация для Had"
-        verbose_name_plural = "Контактная информация для Had"
+        verbose_name = "Контактная информация для Top Bar"
+        verbose_name_plural = "Контактная информация для Top Bar"
+

@@ -3,7 +3,7 @@ from django.utils.html import format_html
 
 from .forms import ModelNewsForm
 from .models import *
-from ckeditor.widgets import CKEditorWidget
+from tinymce.widgets import TinyMCE
 from django import forms
 
 
@@ -13,10 +13,10 @@ class ModelNewsAdminForm(forms.ModelForm):
         model = ModelNews
         fields = '__all__'
         widgets = {
-            'description': CKEditorWidget(),
-            'description_company': CKEditorWidget(),
-            'description_small': CKEditorWidget(),
-            'comment': CKEditorWidget(),
+            'description': TinyMCE(),
+            'description_company': TinyMCE(),
+            'description_small': TinyMCE(),
+            'comment': TinyMCE(),
         }
 
 
@@ -60,7 +60,7 @@ class InteractiveAdmin(admin.ModelAdmin):
         }),
     )
     formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget}
+        models.TextField: {'widget': TinyMCE}
     }
 
 
@@ -78,7 +78,7 @@ class PreviewNewsAdmin(admin.ModelAdmin):
         }),
     )
     formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget}
+        models.TextField: {'widget': TinyMCE}
     }
 
 
