@@ -365,8 +365,8 @@ def relation_to_citizens(request):
     """AP - relation_to_citizens template"""
     interactiv = Interactive.objects.all()
     rel_inf = Relation.objects.all()
-    table_inf =HumanResources.objects.all()
-    hr_inf =HumanResourcesDesc.objects.all()
+    table_inf = HumanResources.objects.all()
+    hr_inf = HumanResourcesDesc.objects.all()
     accounting_inf = Accounting.objects.all()
     accounting_desc = AccountingDesc.objects.all()
     union_desc = UnionDesc.objects.all()

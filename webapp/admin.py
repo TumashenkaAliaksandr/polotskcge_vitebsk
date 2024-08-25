@@ -9,8 +9,11 @@ class DoctorAdmin(admin.ModelAdmin):
     formfield_overrides = {
         models.TextField: {'widget': TinyMCE}
     }
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
 
-    list_display = ['first_name', 'last_name', 'position', 'phone', 'department', 'appointment_time']
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name', 'last_name', 'position', 'phone', 'department', 'appointment_time']
     search_fields = ['first_name', 'last_name', 'position', 'phone', 'department', 'appointment_time']
     list_filter = ['department']
 
@@ -23,7 +26,11 @@ class Services_titleAdmin(admin.ModelAdmin):
         models.TextField: {'widget': TinyMCE}
     }
 
-    list_display = ['name', 'description']
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
     search_fields = ['name', 'description']
     list_filter = ['name']
 
@@ -36,7 +43,11 @@ class ServicesAdmin(admin.ModelAdmin):
         models.TextField: {'widget': TinyMCE}
     }
 
-    list_display = ['name', 'description', 'link']
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
     search_fields = ['name', 'description']
     list_filter = ['name']
 
@@ -47,7 +58,12 @@ admin.site.register(Services, ServicesAdmin)
 @admin.register(AboutUs)
 class AboutUsAdmin(admin.ModelAdmin):
     form = AboutUsForm
-    list_display = ['name', 'photo_display']  # Добавляем поле для отображения фотографии в списке
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name', 'photo_display']  # Добавляем поле для отображения фотографии в списке
 
     def photo_display(self, obj):
         if obj.photo:
@@ -61,7 +77,12 @@ class AboutUsAdmin(admin.ModelAdmin):
 @admin.register(Laboratory)
 class LabaAdmin(admin.ModelAdmin):
     form = LabaForm
-    list_display = ['name', 'photo_display']  # Добавляем поле для отображения фотографии в списке
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name', 'photo_display']  # Добавляем поле для отображения фотографии в списке
 
     def photo_display(self, obj):
         if obj.photo:
@@ -75,7 +96,12 @@ class LabaAdmin(admin.ModelAdmin):
 @admin.register(Laboratories)
 class LaboratoriesAdmin(admin.ModelAdmin):
     form = LaboratoriesForm
-    list_display = ['name', 'photo_display']  # Добавляем поле для отображения фотографии в списке
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name', 'photo_display']  # Добавляем поле для отображения фотографии в списке
 
     def photo_display(self, obj):
         if obj.photo:
@@ -89,7 +115,12 @@ class LaboratoriesAdmin(admin.ModelAdmin):
 @admin.register(Zoj)
 class ZojUsAdmin(admin.ModelAdmin):
     form = ZojForm
-    list_display = ['name', 'photo_display']  # Добавляем поле для отображения фотографии в списке
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name', 'photo_display']  # Добавляем поле для отображения фотографии в списке
 
     def photo_display(self, obj):
         if obj.photo:
@@ -103,7 +134,12 @@ class ZojUsAdmin(admin.ModelAdmin):
 @admin.register(Researches)
 class ResearchesAdmin(admin.ModelAdmin):
     form = ResearchesForm
-    list_display = ['name', 'name_two', 'name_three', 'name_four', 'photo_display']  # Добавляем поле для отображения фотографии в списке
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name', 'name_two', 'name_three', 'name_four', 'photo_display']  # Добавляем поле для отображения фотографии в списке
 
     def photo_display(self, obj):
         if obj.photo:
@@ -118,89 +154,187 @@ class ResearchesAdmin(admin.ModelAdmin):
 class LogoAdmin(admin.ModelAdmin):
     form = LogoForm
 
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
+
 
 @admin.register(Featured)
 class FeaturedAdmin(admin.ModelAdmin):
     form = FeaturedForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
 
 
 @admin.register(Registration)
 class RegistrationAdmin(admin.ModelAdmin):
     form = ApRegistrationForm
 
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
+
 
 @admin.register(Relation)
 class RelationAdmin(admin.ModelAdmin):
     form = RelationForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
 
 
 @admin.register(HumanResourcesDesc)
 class HumanResourcesDescAdmin(admin.ModelAdmin):
     form = HumanResourcesDescForm
 
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
+
 
 @admin.register(HumanResources)
 class HumanResourcesAdmin(admin.ModelAdmin):
     form = HumanResourcesForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
 
 
 @admin.register(Accounting)
 class AccountingAdmin(admin.ModelAdmin):
     form = AccountingForm
 
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
+
 
 @admin.register(AccountingDesc)
 class AccountingDescAdmin(admin.ModelAdmin):
     form = AccountingDescForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
 
 
 @admin.register(Book_complaint)
 class Book_complaintAdmin(admin.ModelAdmin):
     form = Book_complaintForm
 
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
+
 
 @admin.register(UnionDesc)
 class UnionDescAdmin(admin.ModelAdmin):
     form = UnionDescForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
 
 
 @admin.register(ListingDecree)
 class ListingDecreeAdmin(admin.ModelAdmin):
     form = ListingDecreeForm
 
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
+
 
 @admin.register(ListingDecreeDesc)
 class ListingDecreeDescAdmin(admin.ModelAdmin):
     form = ListingDecreeDescForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
 
 
 @admin.register(Union)
 class UnionAdmin(admin.ModelAdmin):
     form = UnionForm
 
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
+
 
 @admin.register(Profsouz)
 class ProfsouzAdmin(admin.ModelAdmin):
     form = ProfsouzForm
-    list_display = ['name']
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
 
 
 @admin.register(ProfsouzTwo)
 class ProfsouzTwoAdmin(admin.ModelAdmin):
     form = ProfsouzTwoForm
-    list_display = ['name']
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
 
 
 @admin.register(ProfsouzDescOne)
 class ProfsouzDescOneAdmin(admin.ModelAdmin):
     form = ProfsouzDescOneForm
-    list_display = ['name']
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
 
 
 @admin.register(ProfsouzIcons)
 class ProfsouzIconsAdmin(admin.ModelAdmin):
     form = ProfsouzIconsForm
-    list_display = ['name']
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
 
 
 class ProfsouzDescAdmin(admin.ModelAdmin):
@@ -216,7 +350,12 @@ admin.site.register(ProfsouzDesc, ProfsouzDescAdmin)
 @admin.register(ReceptionHours)
 class ReceptionHoursAdmin(admin.ModelAdmin):
     form = ReceptionHoursForm
-    list_display = ['name', 'last_name', 'family_name', 'office', 'phone', 'reception_time']
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
 
 
 @admin.register(GeneralInfo)
@@ -232,23 +371,40 @@ class GeneralInfoAdmin(admin.ModelAdmin):
 
 class HotlineHoursAdmin(admin.ModelAdmin):
     form = HotlineHoursForm
-    list_display = ('name', 'post', 'phone', 'reception_time', 'date_hotline')
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
     list_filter = ('date_hotline',)
+
 
 admin.site.register(HotlineHours, HotlineHoursAdmin)
 
 
 class HotlineHours_TitleAdmin(admin.ModelAdmin):
     form = HotlineHours_TitleForm
-    list_display = ('name', 'description')
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
     search_fields = ('name', 'description')
+
 
 admin.site.register(HotlineHours_Title, HotlineHours_TitleAdmin)
 
 
 class HotlineHours_Title_descAdmin(admin.ModelAdmin):
     form = HotlineHours_Title_descForm
-    list_display = ('name', 'description')
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
     search_fields = ('name', 'description')
 
 
@@ -257,7 +413,12 @@ admin.site.register(HotlineHours_Title_desc, HotlineHours_Title_descAdmin)
 
 class Electronic_appeals_Title_descAdmin(admin.ModelAdmin):
     form = Electronic_appeals_Title_descForm
-    list_display = ('name', 'description')
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
     search_fields = ('name', 'description')
 
 
@@ -266,7 +427,12 @@ admin.site.register(Electronic_appeals_Title_desc, Electronic_appeals_Title_desc
 
 class Organ_Title_descAdmin(admin.ModelAdmin):
     form = Organ_Title_descForm
-    list_display = ('name', 'description')
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
     search_fields = ('name', 'description')
 
 
@@ -275,7 +441,12 @@ admin.site.register(Organ_Title_desc, Organ_Title_descAdmin)
 
 class Up_Organ_inf_Admin(admin.ModelAdmin):
     form = Up_Organ_infForm
-    list_display = ('name', 'description')
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
     search_fields = ('name', 'description')
 
 
@@ -284,7 +455,12 @@ admin.site.register(Up_Organ_inf, Up_Organ_inf_Admin)
 
 class Up_OrganAdmin(admin.ModelAdmin):
     form = Up_Organ_Form
-    list_display = ('name', 'post', 'phone', 'reception_time')
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
 
 
 admin.site.register(Up_Organ, Up_OrganAdmin)
@@ -292,7 +468,12 @@ admin.site.register(Up_Organ, Up_OrganAdmin)
 
 class NormativeDocumentsAdmin(admin.ModelAdmin):
     form = NormativeDocuments_Form
-    list_display = ('name', 'normative_desc')
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
 
 
 admin.site.register(NormativeDocuments, NormativeDocumentsAdmin)
@@ -300,7 +481,12 @@ admin.site.register(NormativeDocuments, NormativeDocumentsAdmin)
 
 class ExpertiseAdmin(admin.ModelAdmin):
     form = Expertise_Form
-    list_display = ('name', 'description', 'description_two', 'description_three')
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
     search_fields = ('name', 'description', 'description_two', 'description_three')
 
 
@@ -309,7 +495,12 @@ admin.site.register(Expertise, ExpertiseAdmin)
 
 class DutiesAdmin(admin.ModelAdmin):
     form = Duties_Form
-    list_display = ('name', 'description')
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
     search_fields = ('name', 'description')
 
 
@@ -318,7 +509,12 @@ admin.site.register(Duties, DutiesAdmin)
 
 class MaintenanceShAdmin(admin.ModelAdmin):
     form = MaintenanceSh_Form
-    list_display = ('name', 'description')
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
     search_fields = ('name', 'description')
 
 
@@ -327,8 +523,13 @@ admin.site.register(MaintenanceSchedule, MaintenanceShAdmin)
 
 class VacanciesAdmin(admin.ModelAdmin):
     form = Vacancies_Form
-    list_display = ('name', 'vacancy', 'vacancy_two', 'vacancy_three')
-    search_fields = ('name', 'vacancy', 'vacancy_two', 'vacancy_three')
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
+    search_fields = ('name', 'vacancy')
 
 
 admin.site.register(Vacancies, VacanciesAdmin)
@@ -336,7 +537,12 @@ admin.site.register(Vacancies, VacanciesAdmin)
 
 class AppealsAdmin(admin.ModelAdmin):
     form = Appeals_Form
-    list_display = ('name', 'name_two', 'name_three', 'appeals_desc', 'appeals_desc_two', 'appeals_desc_three', 'appeals_desc_four')
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
     search_fields = ('name', 'name_two', 'name_three', 'appeals_desc', 'appeals_desc_two', 'appeals_desc_three', 'appeals_desc_four')
 
 
@@ -350,7 +556,12 @@ class AnswerInline(admin.TabularInline):
 
 class AnticorrTitleAdmin(admin.ModelAdmin):
     form = AnticorrTitleForm
-    list_display = ('name', 'desc_anticorr')
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
     list_filter = ('name',)
     search_fields = ('name', 'desc_anticorr')
 
@@ -360,7 +571,12 @@ admin.site.register(AnticorrTitle, AnticorrTitleAdmin)
 
 class AnticorrAdmin(admin.ModelAdmin):
     form = AnticorrForm
-    list_display = ('name', 'description', 'link', 'icon_class')
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
     list_filter = ('name',)
     search_fields = ('name', 'description')
 
@@ -377,14 +593,24 @@ admin.site.register(Question, QuestionAdmin)
 
 @admin.register(Question_Ansver_title)
 class Question_Ansver_titleAdmin(admin.ModelAdmin):
-    list_display = ('name', 'description')
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
     search_fields = ('name',)
     list_per_page = 20
 
 
 class EducationalResourceAdmin(admin.ModelAdmin):
     form = EducationalResourceAdminForm
-    list_display = ('name', 'pub_date', 'pdf_file', 'icon_class')
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
     list_filter = ('pub_date',)
     search_fields = ('name', 'description')
     ordering = ['-pub_date']
@@ -401,7 +627,12 @@ admin.site.register(EducationalResource, EducationalResourceAdmin)
 
 class InformationAnalyticalAdmin(admin.ModelAdmin):
     form = InformationAnalyticalForm
-    list_display = ('name', 'pub_date', 'pdf_file', 'icon_class')
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
     list_filter = ('pub_date',)
     search_fields = ('name', )
     ordering = ['-pub_date']
@@ -419,31 +650,56 @@ admin.site.register(InformationAnalytical, InformationAnalyticalAdmin)
 @admin.register(Disinfection)
 class DisinfectionAdmin(admin.ModelAdmin):
     form = DisinfectionForm
-    list_display = ['name']
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
 
 
 @admin.register(Deratization)
 class DeratizationAdmin(admin.ModelAdmin):
     form = DeratizationForm
-    list_display = ['name']
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
 
 
 @admin.register(Disinsection)
 class DeratizationAdmin(admin.ModelAdmin):
     form = DisinsectionForm
-    list_display = ['name']
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
 
 
 @admin.register(DisinfectionDesc)
 class DeratizationAdmin(admin.ModelAdmin):
     form = DisinfectionDescForm
-    list_display = ['name']\
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
 
 
 @admin.register(Inventory)
 class InventoryAdmin(admin.ModelAdmin):
     form = InventoryForm
-    list_display = ['name']
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
 
 
 @admin.register(ControlNadzorTipical)
@@ -455,13 +711,18 @@ class ControlNadzorAdmin(admin.ModelAdmin):
         return strip_tags(obj.name)
 
     clean_name.short_description = 'Name'
-
     list_display = ['clean_name']
+
 
 @admin.register(CNadTipicalName)
 class CNadTipicalNameAdmin(admin.ModelAdmin):
     form = CNadTipicalNameForm
-    list_display = ['name']
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
 
 
 @admin.register(CustomProductsInf)
@@ -473,13 +734,18 @@ class CustomProductsInfAdmin(admin.ModelAdmin):
         return strip_tags(obj.name)
 
     clean_name.short_description = 'Name'
-
     list_display = ['clean_name']
+
 
 @admin.register(CustomProductsName)
 class CustomProductsNameAdmin(admin.ModelAdmin):
     form = CustomProductsNameForm
-    list_display = ['name']
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
 
 
 @admin.register(EpidemialogyName)
@@ -490,8 +756,8 @@ class EpidemialogyNameAdmin(admin.ModelAdmin):
         return strip_tags(obj.name)
 
     clean_name.short_description = 'Name'
-
     list_display = ['clean_name']
+
 
 @admin.register(EpidemialogyInf)
 class EpidemialogyInfAdmin(admin.ModelAdmin):
@@ -502,7 +768,6 @@ class EpidemialogyInfAdmin(admin.ModelAdmin):
         return strip_tags(obj.name)
 
     clean_name.short_description = 'Name'
-
     list_display = ['clean_name']
 
 
@@ -514,8 +779,8 @@ class EpidemialogyNameAdmin(admin.ModelAdmin):
         return strip_tags(obj.name)
 
     clean_name.short_description = 'Name'
-
     list_display = ['clean_name']
+
 
 @admin.register(ImmunoprophylaxisInf)
 class ImmunoprophylaxisInfAdmin(admin.ModelAdmin):
@@ -526,9 +791,7 @@ class ImmunoprophylaxisInfAdmin(admin.ModelAdmin):
         return strip_tags(obj.name)
 
     clean_name.short_description = 'Name'
-
     list_display = ['clean_name']
-
 
 
 @admin.register(ImmunoprophylaxisTipical)
@@ -539,7 +802,6 @@ class ImmunoprophylaxisTipicalAdmin(admin.ModelAdmin):
         return strip_tags(obj.name)
 
     clean_name.short_description = 'Name'
-
     list_display = ['clean_name']
 
 
@@ -551,7 +813,6 @@ class ImmunoprophylaxisTipicalAdmin(admin.ModelAdmin):
         return strip_tags(obj.name)
 
     clean_name.short_description = 'Name'
-
     list_display = ['clean_name']
 
 
@@ -564,7 +825,6 @@ class EconimicSouzAdmin(admin.ModelAdmin):
         return strip_tags(obj.name)
 
     clean_name.short_description = 'Name'
-
     list_display = ['clean_name']
 
 
@@ -577,7 +837,6 @@ class QuarantineAdmin(admin.ModelAdmin):
         return strip_tags(obj.name)
 
     clean_name.short_description = 'Name'
-
     list_display = ['clean_name']
 
 
@@ -590,7 +849,6 @@ class EpidemSituationsAdmin(admin.ModelAdmin):
         return strip_tags(obj.name)
 
     clean_name.short_description = 'Name'
-
     list_display = ['clean_name']
 
 @admin.register(CountryRegistry)
@@ -602,7 +860,6 @@ class CountryRegistryAdmin(admin.ModelAdmin):
         return strip_tags(obj.name)
 
     clean_name.short_description = 'Name'
-
     list_display = ['clean_name']
 
 
@@ -615,7 +872,6 @@ class HealthyAdmin(admin.ModelAdmin):
         return strip_tags(obj.name)
 
     clean_name.short_description = 'Name'
-
     list_display = ['clean_name']
 
 
@@ -628,7 +884,6 @@ class HealthyTitleAdmin(admin.ModelAdmin):
         return strip_tags(obj.name)
 
     clean_name.short_description = 'Name'
-
     list_display = ['clean_name']
 
 
@@ -641,7 +896,6 @@ class ResolutionAdmin(admin.ModelAdmin):
         return strip_tags(obj.name)
 
     clean_name.short_description = 'Name'
-
     list_display = ['clean_name']
 
 
@@ -654,7 +908,6 @@ class ObjectivesAdmin(admin.ModelAdmin):
         return strip_tags(obj.name)
 
     clean_name.short_description = 'name'
-
     list_display = ['clean_name']
 
 
@@ -667,7 +920,6 @@ class TicksAdmin(admin.ModelAdmin):
         return strip_tags(obj.name)
 
     clean_name.short_description = 'name'
-
     list_display = ['clean_name']
 
 
@@ -679,6 +931,4 @@ class ContactInfoHadAdmin(admin.ModelAdmin):
         return strip_tags(obj.name)
 
     clean_name.short_description = 'Name'
-
     list_display = ['clean_name']
-
