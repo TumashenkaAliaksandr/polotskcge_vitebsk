@@ -1469,7 +1469,7 @@ ul.list6 li a:hover,.res6 a{
 
 .nav-tabs {
     border-bottom:none;
-    background: #8b8e8b;
+    background: #e3e3e3;
 }
 .nav-tabs > li > a {
     margin-right: 0;
@@ -1496,7 +1496,7 @@ ul.list6 li a:hover,.res6 a{
     border: none;
 }
 .nav > li > a:hover, .nav > li > a:focus {
-    background: #0fbd3b;
+    background: #d3fcfa;
 }
 a.high {
     padding: 10px 68px 10px 25px !important;
