@@ -742,9 +742,10 @@ class TicksForm(forms.ModelForm):
 
 class StudiesForm(forms.ModelForm):
     class Meta:
-        model = Ticks
+        model = Studies
         fields = '__all__'
         widgets = {
+            'desc': TinyMCE(),
             'indicators': TinyMCE(),
             'catering_workers': TinyMCE(),
             'name': TinyMCE(),

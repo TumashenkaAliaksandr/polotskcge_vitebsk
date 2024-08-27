@@ -221,6 +221,7 @@ class ReceptionHours(models.Model):
 
 class Studies(models.Model):
     name = models.CharField(max_length=100)
+    desc = models.CharField(max_length=100, default='Описание')
     indicators = models.CharField(max_length=100, default='Показатели')
     catering_workers = models.CharField(max_length=100, default='Работники торговли и общепита')
     after_workers = models.CharField(max_length=100, default='Работники водоснабжения')

@@ -31,7 +31,7 @@
             {% for main_title_studi in studi %}
                 <div class="section-title">
                     <h2>{{ main_title_studi.name }}</h2>
-                    <p>{{ main_title_studi | safe }}</p>
+                    <p>{{ main_title_studi.desc | safe }}</p>
                 </div>
             {% endfor %}
 
