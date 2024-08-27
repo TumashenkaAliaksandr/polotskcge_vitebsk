@@ -738,3 +738,16 @@ class TicksForm(forms.ModelForm):
             'name': TinyMCE(),
             'name_map': TinyMCE(),
         }
+
+
+class StudiesForm(forms.ModelForm):
+    class Meta:
+        model = Ticks
+        fields = '__all__'
+        widgets = {
+            'indicators': TinyMCE(),
+            'catering_workers': TinyMCE(),
+            'name': TinyMCE(),
+            'after_workers': TinyMCE(),
+            'employees_school': TinyMCE(),
+        }

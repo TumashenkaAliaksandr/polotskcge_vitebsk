@@ -932,3 +932,14 @@ class ContactInfoHadAdmin(admin.ModelAdmin):
 
     clean_name.short_description = 'Name'
     list_display = ['clean_name']
+
+
+@admin.register(Studies)
+class StudiesAdmin(admin.ModelAdmin):
+    form = StudiesForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']

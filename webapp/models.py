@@ -219,6 +219,21 @@ class ReceptionHours(models.Model):
         return self.name
 
 
+class Studies(models.Model):
+    name = models.CharField(max_length=100)
+    indicators = models.CharField(max_length=100, default='Показатели')
+    catering_workers = models.CharField(max_length=100, default='Работники торговли и общепита')
+    after_workers = models.CharField(max_length=100, default='Работники водоснабжения')
+    employees_school = models.CharField(max_length=100,  default='Работники водоснабжения')
+
+    class Meta:
+        verbose_name = 'О проведении обязательных и внеочередных медицинских осмотров работающих'
+        verbose_name_plural = 'О проведении обязательных и внеочередных медицинских осмотров работающих'
+
+    def __str__(self):
+        return self.name
+
+
 class HotlineHours(models.Model):
     name = models.CharField(max_length=100, default='Фамилия Имя и Отчество')
     post = models.CharField(max_length=100, default='Должность')
