@@ -445,10 +445,12 @@ def services(request):
 
 def paid_services(request):
     """Services - paid_services template"""
-    features = Featured.objects.all()
+    info_clocks = GeneralInfo.objects.all()
+    clocks = ReceptionHours.objects.all()
 
     context = {
-        'features': features,
+        'clocks': clocks,
+        'info_clocks': info_clocks,
     }
 
     return render(request, 'webapp/services/paid_services.html', context=context)
