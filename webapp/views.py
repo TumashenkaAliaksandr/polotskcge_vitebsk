@@ -446,10 +446,10 @@ def services(request):
 def paid_services(request):
     """Services - paid_services template"""
     info_clocks = GeneralInfo.objects.all()
-    clocks = ReceptionHours.objects.all()
+    studi = Studies.objects.all()
 
     context = {
-        'clocks': clocks,
+        'studi': studi,
         'info_clocks': info_clocks,
     }
 
