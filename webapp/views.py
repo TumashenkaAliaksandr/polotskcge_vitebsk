@@ -458,10 +458,25 @@ def paid_services(request):
 
 def hygienic_services(request):
     """Services - hygienic template"""
-    features = Featured.objects.all()
+    interactiv = Interactive.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
+    ansvers = Answer.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
+    epidem_title = EpidemialogyName.objects.all()
+
+    all_typical_news = EpidemialogyTipical.objects.all().order_by('-pub_date')
+
+    # Получаем данные о погоде
+    weather = get_weather()
 
     context = {
-        'features': features,
+        'interactiv': interactiv,
+        'epidem_title': epidem_title,
+        'weather': weather,  # Передаем данные о погоде в контекст
+        'questions': questions,
+        'ansvers': ansvers,
+        'title_desc_queans': title_desc_queans,
+        'all_typical_news': all_typical_news,
     }
 
     return render(request, 'webapp/services/hygienic.html', context=context)

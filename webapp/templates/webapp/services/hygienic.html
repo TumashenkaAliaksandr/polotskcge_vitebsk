@@ -25,6 +25,60 @@
       </div>
     </section><!-- End Breadcrumbs Section -->
 
+
+    <!-- ======= Book NEWS text Section ======= -->
+    <div id="single" class="single main-bg-epidem">
+        <div class="breaking-news">
+            <div class="container">
+                {% for main_interactiv_string in interactiv %}
+                    <div class="move-text">
+                        <div class="breaking_news">
+                            <h2>Новости Центра</h2>
+                        </div>
+                        <div class="marquee">
+                            <div class="marquee1"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description | safe }}</a>
+                            </div>
+                            <div class="marquee2"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <script type="text/javascript" src="{% static 'js/jquery.marquee.js' %}"></script>
+                        <script>
+                            $('.marquee').marquee({pauseOnHover: true});
+                            //@ sourceURL=pen.js
+                        </script>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- ======= End Book News text Section ======= -->
+
+
+    <!-- EVROZES Title and desc Section -->
+    <section id="featured-services-two" class="featured-services-two main-bg-economic-souz">
+        <div class="container" data-aos="fade-up">
+            {% for main_typical_title in epidem_title %}
+                <div class="section-title">
+                    <h2>{{ main_typical_title.name|safe }}</h2>
+                </div>
+            {% endfor %}
+            <div class="row">
+                {% for main_typical_inf in all_typical_news %}
+                    <div class="icon-box mt-5 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
+                        <a href="{% url 'webapp:epidemialogy_single' pk=main_typical_inf.id %}">{{ main_typical_inf.name_epidem|safe }}</a>
+                        <a href="{% url 'webapp:epidemialogy_single' pk=main_typical_inf.id %}"><p
+                                class="description">{{ main_typical_inf.description_small|safe }}</p></a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- End  EVROZES Title and desc Section -->
+
     <!-- ======= Featured Services Section ======= -->
     <section id="featured-services" class="featured-services">
         <div class="container" data-aos="fade-up">
