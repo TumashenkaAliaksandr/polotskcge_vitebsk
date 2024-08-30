@@ -767,3 +767,18 @@ class StudiesForm(forms.ModelForm):
             'after_workers': TinyMCE(),
             'employees_school': TinyMCE(),
         }
+
+
+class WaterQualitySafetyForm(forms.ModelForm):
+    class Meta:
+        model = Studies
+        fields = '__all__'
+        widgets = {
+            'desc': TinyMCE(),
+            'indicators': TinyMCE(),
+            'mine_well': TinyMCE(),
+            'name': TinyMCE(),
+            'basic': TinyMCE(),
+            'standart': TinyMCE(),
+            'standart_plus': TinyMCE(),
+        }

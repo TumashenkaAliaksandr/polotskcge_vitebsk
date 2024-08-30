@@ -447,9 +447,11 @@ def paid_services(request):
     """Services - paid_services template"""
     info_clocks = GeneralInfo.objects.all()
     studi = Studies.objects.all()
+    wqs = WaterQualitySafety.objects.all()
 
     context = {
         'studi': studi,
+        'wqs': wqs,
         'info_clocks': info_clocks,
     }
 

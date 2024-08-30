@@ -220,16 +220,61 @@ class ReceptionHours(models.Model):
 
 
 class Studies(models.Model):
-    name = models.CharField(max_length=100)
-    desc = models.CharField(max_length=100, default='Описание')
-    indicators = models.CharField(max_length=100, default='Показатели')
-    catering_workers = models.CharField(max_length=100, default='Работники торговли и общепита')
-    after_workers = models.CharField(max_length=100, default='Работники водоснабжения')
-    employees_school = models.CharField(max_length=100,  default='Работники водоснабжения')
+    name = models.CharField(max_length=500)
+    desc = models.CharField(max_length=500, default='Описание')
+    indicators = models.TextField(default='Показатели')
+    catering_workers = models.CharField(max_length=100, default='Работники торговли и общепита', blank=True, null=True)
+    after_workers = models.CharField(max_length=100, default='Работники водоснабжения', blank=True, null=True)
+    employees_school = models.CharField(max_length=100, default='Работники школ', blank=True, null=True)
+
+    @property
+    def catering_workers_display(self):
+        return self.catering_workers or ''
+
+    @property
+    def after_workers_display(self):
+        return self.after_workers or ''
+
+    @property
+    def employees_school_display(self):
+        return self.employees_school or ''
 
     class Meta:
         verbose_name = 'О проведении обязательных и внеочередных медицинских осмотров работающих'
         verbose_name_plural = 'О проведении обязательных и внеочередных медицинских осмотров работающих'
+
+    def __str__(self):
+        return self.name
+
+
+class WaterQualitySafety(models.Model):
+    name = models.CharField(max_length=500)
+    desc = models.CharField(max_length=500, default='Описание')
+    indicators = models.TextField(default='Показатели')
+    mine_well = models.CharField(max_length=300, default='Шахтный колодец', blank=True, null=True)
+    basic = models.CharField(max_length=300, default='Базовый', blank=True, null=True)
+    standart = models.CharField(max_length=300, default='Стандарт', blank=True, null=True)
+    standart_plus = models.CharField(max_length=300, default='Стандарт Плюс', blank=True, null=True)
+
+    @property
+    def mine_well_display(self):
+        return self.mine_well or ''
+
+    @property
+    def basic_display(self):
+        return self.basic or ''
+
+    @property
+    def standart_display(self):
+        return self.standart or ''
+
+    @property
+    def standart_plus_display(self):
+        return self.standart_plus or ''
+
+    class Meta:
+        verbose_name = 'Лабораторные исследования воды на качество и безопасность'
+        verbose_name_plural = 'Лабораторные исследования воды на качество и безопасность'
 
     def __str__(self):
         return self.name

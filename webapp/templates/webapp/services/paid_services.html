@@ -24,239 +24,118 @@
       </div>
     </section><!-- End Breadcrumbs Section -->
 
-    <section id="clocks" class="clocks">
-        <!-- ======= Doctors Section ======= -->
+
+    <!-- ======= Doctors Section ======= -->
+    <section class="ap-bg">
         <div class="container" data-aos="fade-up">
-            {% for main_title_studi in studi %}
-                <div class="section-title">
-                    <h2>{{ main_title_studi.name }}</h2>
-                    <p>{{ main_title_studi.desc | safe }}</p>
-                </div>
-            {% endfor %}
-
-            <div class="row">
-                <section id="clocks-two" class="clocks-two">
-                    <div class="table-info">
-                        <div class="box" data-aos="fade-up" data-aos-delay="300">
-                            <table class="iksweb">
-                                <thead>
-                                <tr>
-                                    <th>Должность</th>
-                                    <th>ФИО</th>
-                                    <th>Этаж | Кабинет</th>
-                                    <th>Дни и Время приёма</th>
-                                    <th>Телефон</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {% for main_clock in clocks %}
-                                    <tr>
-                                        <td>{{ main_clock.name }}</td>
-                                        <td>{{ main_clock.family_name }}</td>
-                                        <td>{{ main_clock.office }}</td>
-                                        <td>{{ main_clock.reception_time }}</td>
-                                        <td>{{ main_clock.phone }}</td>
-                                    </tr>
-                                {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </section>
-            </div>
-            {#                <div class="row">#}
-            {#                    {% for main_clocks in clocks %}#}
-            {#                        <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">#}
-            {#                            <div class="box" data-aos="fade-up" data-aos-delay="300">#}
-            {#                                <h3>{{ main_clocks.name }}</h3>#}
-            {#                                <ul>#}
-            {#                                    <li>{{ main_clocks.family_name }}</li>#}
-            {#                                    <li>{{ main_clocks.last_name }}</li>#}
-            {#                                    <li>{{ main_clocks.office }}</li>#}
-            {#                                    <li>{{ main_clocks.phone }}</li>#}
-            {#                                    <li>{{ main_clocks.reception_time }}</li>#}
-            {#                                </ul>#}
-            {#                            </div>#}
-            {#                        </div>#}
-            {#                    {% endfor %}#}
-            {#                </div>#}
-        </div>
-        <!-- End Doctors Section -->
-
-        <!-- ======= Doctors Section ======= -->
-        <section id="doctors" class="doctors">
-            <div id="contact" class="contact">
-                <div class="container" data-aos="fade-up">
-                    <div class="section-title">
-                        <h2>Наша Команда</h2>
-                        <p>Каждый наш сотрудник - мастер своего дела, обладающий неповторимым багажом знаний и
-                            опыта.</p>
-                    </div>
-
-                    <div class="row">
-
-                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                            <div class="member" data-aos="fade-up" data-aos-delay="100">
-                                <div class="member-img">
-                                    <img src="{% static 'webapp/assets/img/doctors/gigi_centr_user_man.png' %}"
-                                         class="img-fluid"
-                                         alt="">
-                                    <div class="social">
-                                        <a href="{% url 'webapp:chief-doctor' %}"><h4>Записаться на приём</h4></a>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h4>Гуринович<br>Михаил Евгеньевич</h4>
-                                    <span>Главный государственный<br>санитарный врач</span>
-                                    <span>города Полоцка и Полоцкого района</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                            <div class="member" data-aos="fade-up" data-aos-delay="400">
-                                <div class="member-img">
-                                    <img src="{% static 'webapp/assets/img/doctors/gigi_centr_user_women.jpg' %}"
-                                         class="img-fluid"
-                                         alt="">
-                                    <div class="social">
-                                        <a href=""><h4>Записаться на приём</h4></a>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h4>Гречуха Юлия<br>Владимировна</h4>
-                                    <span>Заместитель главного врача</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                            <div class="member" data-aos="fade-up" data-aos-delay="200">
-                                <div class="member-img">
-                                    <img src="{% static 'webapp/assets/img/doctors/gigi_centr_user_women.jpg' %}"
-                                         class="img-fluid"
-                                         alt="">
-                                    <div class="social">
-                                        <a href=""><h4>Отдел Гигиены</h4></a>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h4>Щербакова Ольга Александровна</h4>
-                                    <span>Заведующий отделом</span>
-                                    <span>каб. №12, 4-этаж</span>
-                                    <span>тел: +375(214)49-31-52</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                            <div class="member" data-aos="fade-up" data-aos-delay="300">
-                                <div class="member-img">
-                                    <img src="{% static 'webapp/assets/img/doctors/gigi_centr_user_man.png' %}"
-                                         class="img-fluid"
-                                         alt="">
-                                    <div class="social">
-                                        <a href=""><h4>Отдел Гигиены Питания</h4></a>
-                                    </div>
-                                </div>
-                                <div class="member-info">
-                                    <h4>Мороз Юрий<br>Олегович</h4>
-                                    <span>Заведующий отделением</span>
-                                    <span>каб. №14, 4-этаж</span>
-                                    <span>тел: +375(214)49-31-52</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- End Doctors Section -->
-    </section>
-
-
-    <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing">
-        <div class="container" data-aos="fade-up">
-
             <div class="section-title">
-                <h2>Прейскурант цен</h2>
-                <p>Платные услуги оказываемые ГУ "Полоцкий зональный центр гигиены и эпидемиологии"</p>
+                <h2>{{ studi.0.name|safe }}</h2>
+                <p>{{ studi.0.desc | safe }}</p>
             </div>
-
             <div class="row">
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="box" data-aos="fade-up" data-aos-delay="100">
-                        <h3>Санитарно-Эпидемиологические услуги</h3>
-                        <h4><sup>Br</sup>0<span> / месяц</span></h4>
-                        <ul>
-                            <li>Aida dere</li>
-                            <li>Nec feugiat nisl</li>
-                            <li>Nulla at volutpat dola</li>
-                            <li class="na">Pharetra massa</li>
-                            <li class="na">Massa ultricies mi</li>
-                        </ul>
-                        <div class="btn-wrap">
-                            <a href="#" class="btn-buy">Перейти</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
-                    <div class="box featured" data-aos="fade-up" data-aos-delay="200">
-                        <h3>Дезинфекция | Дезинсекция Дератизация</h3>
-                        <h4><sup>Br</sup>19<span> / месяц</span></h4>
-                        <ul>
-                            <li>Aida dere</li>
-                            <li>Nec feugiat nisl</li>
-                            <li>Nulla at volutpat dola</li>
-                            <li>Pharetra massa</li>
-                            <li class="na">Massa ultricies mi</li>
-                        </ul>
-                        <div class="btn-wrap">
-                            <a href="#" class="btn-buy">Перейти</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+                <div class="table-info">
                     <div class="box" data-aos="fade-up" data-aos-delay="300">
-                        <h3>Санитарно-Эпидемиологические услуги (АП)</h3>
-                        <h4><sup>Br</sup>29<span> / месяц</span></h4>
-                        <ul>
-                            <li>Aida dere</li>
-                            <li>Nec feugiat nisl</li>
-                            <li>Nulla at volutpat dola</li>
-                            <li>Pharetra massa</li>
-                            <li>Massa ultricies mi</li>
-                        </ul>
-                        <div class="btn-wrap">
-                            <a href="#" class="btn-buy">Перейти</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-                    <div class="box" data-aos="fade-up" data-aos-delay="400">
-                        <span class="advanced">АП</span>
-                        <h3>Санитарно-Эпидемиологические услуги (АП)</h3>
-                        <h4><sup>Br</sup>49<span> / месяц</span></h4>
-                        <ul>
-                            <li>Aida dere</li>
-                            <li>Nec feugiat nisl</li>
-                            <li>Nulla at volutpat dola</li>
-                            <li>Pharetra massa</li>
-                            <li>Massa ultricies mi</li>
-                        </ul>
-                        <div class="btn-wrap">
-                            <a href="#" class="btn-buy">Перейти</a>
-                        </div>
+                        <table class="iksweb">
+                            <thead>
+                            <tr>
+                                <th>Показатели</th>
+                                <th>Работники торговли и общепита</th>
+                                <th>Работники детских дошкольных учреждений</th>
+                                <th>Работники водоснабжения</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for main_studi in studi %}
+                                <tr>
+                                    <td>{{ main_studi.indicators|safe }}</td>
+                                    <td>{{ main_studi.catering_workers_display|safe }}</td>
+                                    <td>{{ main_studi.after_workers_display|safe }}</td>
+                                    <td>{{ main_studi.employees_school_display|safe }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End Pricing Section -->
+    <!-- End Doctors Section -->
+
+    <!-- ======= Doctors Section ======= -->
+    <section class="ap-bg">
+        <div class="container" data-aos="fade-up">
+            <div class="description-left">
+                <p>{{ wqs.0.desc | safe }}</p>
+            </div>
+            <div class="row">
+                <div class="table-info">
+                    <div class="box" data-aos="fade-up" data-aos-delay="300">
+                        <table class="iksweb">
+                            <thead>
+                            <tr>
+                                <th>Показатели</th>
+                                <th>Шахтный колодец</th>
+                                <th>Базовый</th>
+                                <th>Стандарт</th>
+                                <th>Стандарт Плюс</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for main_wqs in wqs %}
+                                <tr>
+                                    <td>{{ main_wqs.indicators|safe }}</td>
+                                    <td>{{ main_wqs.mine_well_display|safe }}</td>
+                                    <td>{{ main_wqs.basic_display|safe }}</td>
+                                    <td>{{ main_wqs.standart_display|safe }}</td>
+                                    <td>{{ main_wqs.standart_plus_display|safe }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Doctors Section -->
+
+    <!-- ======= Doctors Section ======= -->
+    <section class="ap-bg">
+        <div class="container" data-aos="fade-up">
+            <div class="description-left">
+                <p>{{ studi.0.desc | safe }}</p>
+            </div>
+            <div class="row">
+                <div class="table-info">
+                    <div class="box" data-aos="fade-up" data-aos-delay="300">
+                        <table class="iksweb">
+                            <thead>
+                            <tr>
+                                <th>Показатели</th>
+                                <th>Работники торговли и общепита</th>
+                                <th>Работники детских дошкольных учреждений</th>
+                                <th>Работники водоснабжения</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for main_studi in studi %}
+                                <tr>
+                                    <td>{{ main_studi.indicators|safe }}</td>
+                                    <td>{{ main_studi.catering_workers_display|safe }}</td>
+                                    <td>{{ main_studi.after_workers_display|safe }}</td>
+                                    <td>{{ main_studi.employees_school_display|safe }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Doctors Section -->
+
 
   </main><!-- End #main -->
 

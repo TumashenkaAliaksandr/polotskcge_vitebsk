@@ -954,3 +954,14 @@ class StudiesAdmin(admin.ModelAdmin):
 
     clean_name.short_description = 'Name'
     list_display = ['clean_name']
+
+
+@admin.register(WaterQualitySafety)
+class WaterQualitySafetyAdmin(admin.ModelAdmin):
+    form = WaterQualitySafetyForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
