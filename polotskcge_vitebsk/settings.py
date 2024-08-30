@@ -137,10 +137,11 @@ TINYMCE_DEFAULT_CONFIG = {
         'advlist autolink lists link image charmap print preview anchor help '
         'searchreplace visualblocks code fullscreen '
         'insertdatetime media table paste wordcount '
-        'textcolor colorpicker code'
+        'textcolor colorpicker code fontfamily fontsize'
     ),
     'toolbar': (
         'undo redo | formatselect | '
+        'fontfamily fontsize | '
         'bold italic underline forecolor backcolor | '
         'alignleft aligncenter alignright alignjustify | '
         'bullist numlist outdent indent | '
@@ -151,7 +152,11 @@ TINYMCE_DEFAULT_CONFIG = {
     'branding': False,
     'contextmenu': 'formats | link image | code',
     'content_style': 'body { font-family: Arial, sans-serif; font-size: 14px; }',
+    'fontfamily_formats': "Andale Mono=andale mono,times; Arial=arial,helvetica,sans-serif; Arial Black=arial black,avant garde; Book Antiqua=book antiqua,palatino; Comic Sans MS=comic sans ms,sans-serif; Courier New=courier new,courier; Georgia=georgia,palatino; Helvetica=helvetica; Impact=impact,chicago; Lucida Console=lucida console,monaco; Lucida Sans Unicode=lucida sans unicode,lucida sans; Microsoft Sans Serif=microsoft sans serif,sans-serif; Monotype Corsiva=monotype corsiva,cursive; MS Sans Serif=ms sans serif,sans-serif; MS Serif=ms serif,sans-serif; Palatino=palatino; Tahoma=tahoma,arial,helvetica,sans-serif; Terminal=terminal,monaco; Times New Roman=times new roman,times; Trebuchet MS=trebuchet ms,geneva; Verdana=verdana,geneva; Webdings=webdings; Wingdings=wingdings,zapf dingbats",
+    'fontsize_formats': "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
 }
+
+
 
 
 # Default primary key field type

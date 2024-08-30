@@ -759,11 +759,10 @@ class EpidemialogyNameAdmin(admin.ModelAdmin):
     list_display = ['clean_name']
 
 
-@admin.register(EpidemialogyInf)
-class EpidemialogyInfAdmin(admin.ModelAdmin):
-    form = EpidemialogyInfForm
+@admin.register(EpidemialogyTipical)
+class EpidemialogyNameAdmin(admin.ModelAdmin):
+    form = EpidemialogyTipicalForm
 
-    # Кастомное поле для отображения очищенного текста
     def clean_name(self, obj):
         return strip_tags(obj.name)
 
@@ -771,9 +770,21 @@ class EpidemialogyInfAdmin(admin.ModelAdmin):
     list_display = ['clean_name']
 
 
-@admin.register(EpidemialogyTipical)
-class EpidemialogyNameAdmin(admin.ModelAdmin):
-    form = EpidemialogyTipicalForm
+
+@admin.register(ServicesLawyerName)
+class ServicesLawyerNameAdmin(admin.ModelAdmin):
+    form = ServicesLawyerNameForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
+
+
+@admin.register(ServicesLawyerTipical)
+class ServicesLawyerTipicalNameAdmin(admin.ModelAdmin):
+    form = ServicesLawyerTipicalForm
 
     def clean_name(self, obj):
         return strip_tags(obj.name)

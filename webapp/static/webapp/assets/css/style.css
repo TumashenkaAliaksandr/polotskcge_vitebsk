@@ -1854,6 +1854,49 @@ section#clocks-two {
     right: 0;
 }
 
+
+.pagebanner-your {
+    background: url(../img/gigi_centr_uslugi_yr.jpg) no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    height: 310px;
+    width: 100%;
+}
+
+
+
+.pagebanner-your:before {
+    content: '';
+    background: #00000068;
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.pagebanner-your .page-title {
+    padding-top: 120px;
+    position: relative;
+    z-index: 1;
+}
+
+.pagebanner-your .page-title h2 {
+    color: #4d483e;
+}
+
+.pagebanner-your:before {
+    content: '';
+    background: #00000068;
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
 @media (max-width: 911px) {
     #pagebanner {
         background-attachment: initial;

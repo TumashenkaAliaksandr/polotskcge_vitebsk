@@ -646,12 +646,11 @@ class EpidemialogyNameForm(forms.ModelForm):
         }
 
 
-class EpidemialogyInfForm(forms.ModelForm):
+class ServicesLawyerNameForm(forms.ModelForm):
     class Meta:
-        model = CustomProductsInf
+        model = ServicesLawyerName
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
             'name': TinyMCE(),
         }
 
@@ -663,6 +662,22 @@ class EpidemialogyTipicalForm(forms.ModelForm):
         widgets = {
             'name': TinyMCE(),
             'name_epidem': TinyMCE(),
+            'name_two': TinyMCE(),
+            'name_three': TinyMCE(),
+            'description_small': TinyMCE(),
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
+            'description_three': TinyMCE(),
+        }
+
+
+class ServicesLawyerTipicalForm(forms.ModelForm):
+    class Meta:
+        model = ServicesLawyerTipical
+        fields = '__all__'
+        widgets = {
+            'name': TinyMCE(),
+            'name_lawyer': TinyMCE(),
             'name_two': TinyMCE(),
             'name_three': TinyMCE(),
             'description_small': TinyMCE(),

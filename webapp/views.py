@@ -456,15 +456,41 @@ def paid_services(request):
     return render(request, 'webapp/services/paid_services.html', context=context)
 
 
-def hygienic_services(request):
+def paid_services_lawyer(request):
     """Services - hygienic template"""
     interactiv = Interactive.objects.all()
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
+    lawyer_title = ServicesLawyerName.objects.all()
+
+    all_typical_news = ServicesLawyerTipical.objects.all().order_by('-pub_date')
+
+    # Получаем данные о погоде
+    weather = get_weather()
+
+    context = {
+        'interactiv': interactiv,
+        'lawyer_title': lawyer_title,
+        'weather': weather,  # Передаем данные о погоде в контекст
+        'questions': questions,
+        'ansvers': ansvers,
+        'title_desc_queans': title_desc_queans,
+        'all_typical_news': all_typical_news,
+    }
+
+    return render(request, 'webapp/services/paid_services_lawyer.html', context=context)
+
+
+def paid_services_lawyer_single(request, pk):
+    """Activity - epidemiology template"""
+    interactiv = Interactive.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
+    ansvers = Answer.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
+    typical_inf = ServicesLawyerTipical.objects.filter(pk=pk)
     epidem_title = EpidemialogyName.objects.all()
 
-    all_typical_news = EpidemialogyTipical.objects.all().order_by('-pub_date')
 
     # Получаем данные о погоде
     weather = get_weather()
@@ -476,11 +502,10 @@ def hygienic_services(request):
         'questions': questions,
         'ansvers': ansvers,
         'title_desc_queans': title_desc_queans,
-        'all_typical_news': all_typical_news,
+        'typical_inf': typical_inf,
     }
 
-    return render(request, 'webapp/services/hygienic.html', context=context)
-
+    return render(request, 'webapp/services/paid_services_lawyer_single.html', context=context)
 
 
 def laboratory_services(request):

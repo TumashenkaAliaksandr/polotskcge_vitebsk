@@ -17,7 +17,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <ol>
                     <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                    <li>Эпидемиалогия</li>
+                    <li>Платные услуги Юридическим лицам и ИП</li>
                 </ol>
             </div>
         </div>
@@ -25,7 +25,7 @@
     <!-- End Breadcrumbs Section -->
 
     <!-- ======= Book NEWS text Section ======= -->
-    <div id="single" class="single main-bg-epidem">
+    <div id="single" class="single ap-bg">
         <div class="breaking-news">
             <div class="container">
                 {% for main_interactiv_string in interactiv %}
@@ -56,29 +56,30 @@
     <!-- ======= End Book News text Section ======= -->
 
     <!-- ======= About Us Section ======= -->
-    {% for main_epidem in typical_inf %}
-        <section id="about" class="about main-bg-epidem">
+    {% for main_lawyer in typical_inf %}
+        <section id="about" class="about ap-bg">
             <div class="container book_info" data-aos="fade-up">
                 <div class="row">
                     <div class="section-title">
-                        <h2>{{ main_epidem.name|safe }}</h2>
+                        <h2>{{ main_lawyer.name|safe }}</h2>
                     </div>
                     <div class="col-lg-6" data-aos="fade-right">
-                        <img src="{{ main_epidem.photo.url }}" class="img-fluid"
+                        <img src="{{ main_lawyer.photo.url }}" class="img-fluid"
                              alt="">
+                        <p></p>
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
-                        <p class="fst-italic">{{ main_epidem.description | safe }}</p>
+                        <p class="fst-italic">{{ main_lawyer.description | safe }}</p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="description-left main-bg-epidem">
-                        <h3>{{ main_epidem.name_three|safe }}</h3>
-                        <p>{{ main_epidem.description_three | safe }}</p>
+                    <div class="description-left">
+                        <h3>{{ main_lawyer.name_three|safe }}</h3>
+                        <p>{{ main_lawyer.description_three | safe }}</p>
                     </div>
                     <div class="mt-5 mt-lg-0">
-                        <h3>{{ main_epidem.name_two|safe }}</h3>
-                        <p>{{ main_epidem.description_two | safe }}</p>
+                        <h3>{{ main_lawyer.name_two|safe }}</h3>
+                        <p>{{ main_lawyer.description_two | safe }}</p>
                     </div>
                 </div>
             </div>
@@ -87,7 +88,7 @@
     <!-- End About Us Section -->
 
     <!-- breaking-news -->
-    <div id="single" class="single main-bg-epidem">
+    <div id="single" class="single ap-bg">
         <div class="breaking-news">
             <div class="container">
                 <div class="breaking-news-grids-bottom">

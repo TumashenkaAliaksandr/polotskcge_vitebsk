@@ -9,7 +9,7 @@
     <!-- ======= Breadcrumbs Section ======= -->
 
     <!-- pagebanner -->
-    <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_gigiena.jpg' %}{% endif %}')">
+    <section class="pagebanner-your">
     </section>
     <!-- End Pagebanner -->
 
@@ -19,7 +19,7 @@
         <div class="d-flex justify-content-between align-items-center">
           <ol>
             <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-            <li>Гигиенические услуги</li>
+            <li>Платные услуги Юридическим лицам и ИП</li>
           </ol>
         </div>
       </div>
@@ -27,7 +27,7 @@
 
 
     <!-- ======= Book NEWS text Section ======= -->
-    <div id="single" class="single main-bg-epidem">
+    <div id="single" class="single ap-bg">
         <div class="breaking-news">
             <div class="container">
                 {% for main_interactiv_string in interactiv %}
@@ -59,19 +59,19 @@
 
 
     <!-- EVROZES Title and desc Section -->
-    <section id="featured-services-two" class="featured-services-two main-bg-economic-souz">
+    <section id="featured-services-two" class="featured-services-two ap-bg">
         <div class="container" data-aos="fade-up">
-            {% for main_typical_title in epidem_title %}
+            {% for main_lawyer_title in lawyer_title %}
                 <div class="section-title">
-                    <h2>{{ main_typical_title.name|safe }}</h2>
+                    <p>{{ main_lawyer_title.name|safe }}</p>
                 </div>
             {% endfor %}
             <div class="row">
-                {% for main_typical_inf in all_typical_news %}
+                {% for main_lawyer_inf in all_typical_news %}
                     <div class="icon-box mt-5 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
-                        <a href="{% url 'webapp:epidemialogy_single' pk=main_typical_inf.id %}">{{ main_typical_inf.name_epidem|safe }}</a>
-                        <a href="{% url 'webapp:epidemialogy_single' pk=main_typical_inf.id %}"><p
-                                class="description">{{ main_typical_inf.description_small|safe }}</p></a>
+                        <a href="{% url 'webapp:paid_services_lawyer_single' pk=main_lawyer_inf.id %}">{{ main_lawyer_inf.name_lawyer|safe }}</a>
+                        <a href="{% url 'webapp:paid_services_lawyer_single' pk=main_lawyer_inf.id %}"><p
+                                class="description">{{ main_lawyer_inf.description_small|safe }}</p></a>
                     </div>
                 {% endfor %}
             </div>
@@ -79,24 +79,37 @@
     </section>
     <!-- End  EVROZES Title and desc Section -->
 
-    <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services">
+    <!-- ======= Frequently Asked Questioins Section ======= -->
+    <section id="faq" class="faq ap-bg">
         <div class="container" data-aos="fade-up">
+            {% for title_desc in title_desc_queans %}
+                <div class="section-title">
+                    <h2>{{ title_desc.name }}</h2>
+                    <p>{{ title_desc.description | safe }}</p>
+                </div>
+            {% endfor %}
 
-            <div class="row">
-                {% for main_features in features %}
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="{{ main_features.icon_class }}"></i></div>
-                            <h4 class="title"><a href="{{ main_features.link }}">{{ main_features.name }}</a></h4>
-                            <p class="description">{{ main_features.description|safe }}</p>
+            <ul class="faq-list">
+                {% for question in questions|slice:":6" %}
+                    <li>
+                        <div data-bs-toggle="collapse" class="collapsed question"
+                             href="#{{ question.id }}"> {{ question.question_text }} <i
+                                class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
                         </div>
-                    </div>
+                        <div id="{{ question.id }}" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                {% for ansver in question.answers.all %}
+                                    {{ ansver.answer_text }}
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </li>
                 {% endfor %}
-            </div>
+            </ul>
+
         </div>
     </section>
-    <!-- End Featured Services Section -->
+    <!-- End Frequently Asked Questioins Section -->
 
   </main><!-- End #main -->
 

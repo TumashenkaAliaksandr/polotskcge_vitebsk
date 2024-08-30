@@ -960,24 +960,10 @@ class EpidemialogyName(models.Model):
         return self.name
 
 
-class EpidemialogyInf(models.Model):
-
-    name = models.CharField(max_length=350, default='Тайтл')
-    description = models.TextField(default='Описание')
-    pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
-
-    class Meta:
-        verbose_name = 'Эпидемиалогия (название и краткое описание статьи)'
-        verbose_name_plural = 'Эпидемиалогия (название и краткое описание статьи)'
-
-    def __str__(self):
-        return self.name
-
-
 
 class EpidemialogyTipical(models.Model):
     description_small = models.TextField(default='Описание для стр. Эпидемиалогия')
-    name = models.CharField(max_length=350, default='Тайтл')
+    name = models.CharField(max_length=350, default='Тайтл для админки')
     name_epidem = models.CharField(max_length=350, default='Тайтл ля стр. Эпидемиалогия (h3)')
     name_two = models.CharField(max_length=200, default='Второе название')
     name_three = models.CharField(max_length=200, default='Третье название')
@@ -991,6 +977,40 @@ class EpidemialogyTipical(models.Model):
     class Meta:
         verbose_name = 'Эпидемиалогия (статьи)'
         verbose_name_plural = 'Эпидемиалогия (статьи)'
+
+    def __str__(self):
+        return self.name
+
+
+class ServicesLawyerName(models.Model):
+
+    name = models.CharField(max_length=350, default='Тайтл')
+
+    class Meta:
+        verbose_name = 'Пл услуги Юр лицам и ИП (Тайтл)'
+        verbose_name_plural = 'Пл услуги Юр лицам и ИП (Тайтл)'
+
+    def __str__(self):
+        return self.name
+
+
+
+class ServicesLawyerTipical(models.Model):
+    description_small = models.TextField(default='Описание для стр. Юр лиц и ИП')
+    name = models.CharField(max_length=350, default='Тайтл для админки')
+    name_lawyer = models.CharField(max_length=350, default='Тайтл ля стр. Юр лиц и ИП (h3)')
+    name_two = models.CharField(max_length=200, default='Второе название')
+    name_three = models.CharField(max_length=200, default='Третье название')
+    description = models.TextField(default='Описание')
+    description_two = models.TextField(default='Второе описание')
+    description_three = models.TextField(default='Третье описание')
+    photo = models.ImageField(upload_to='Lawyer/', null=True, blank=True)
+    photo_two = models.ImageField(upload_to='Lawyer/', null=True, blank=True)
+    pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
+
+    class Meta:
+        verbose_name = 'Пл услуги Юр лицам и ИП (статьи)'
+        verbose_name_plural = 'Пл услуги Юр лицам и ИП (статьи)'
 
     def __str__(self):
         return self.name
