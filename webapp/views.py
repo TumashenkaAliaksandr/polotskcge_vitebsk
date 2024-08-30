@@ -448,10 +448,12 @@ def paid_services(request):
     info_clocks = GeneralInfo.objects.all()
     studi = Studies.objects.all()
     wqs = WaterQualitySafety.objects.all()
+    lfv = LaboratoryFruitVegetable.objects.all()
 
     context = {
         'studi': studi,
         'wqs': wqs,
+        'lfv': lfv,
         'info_clocks': info_clocks,
     }
 

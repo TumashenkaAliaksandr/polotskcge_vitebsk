@@ -965,3 +965,14 @@ class WaterQualitySafetyAdmin(admin.ModelAdmin):
 
     clean_name.short_description = 'Name'
     list_display = ['clean_name']
+
+
+@admin.register(LaboratoryFruitVegetable)
+class LaboratoryFruitVegetableAdmin(admin.ModelAdmin):
+    form = LaboratoryFruitVegetableForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']

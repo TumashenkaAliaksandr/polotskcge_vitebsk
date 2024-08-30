@@ -104,7 +104,7 @@
     <section class="ap-bg">
         <div class="container" data-aos="fade-up">
             <div class="description-left">
-                <p>{{ studi.0.desc | safe }}</p>
+                <p>{{ lfv.0.desc | safe }}</p>
             </div>
             <div class="row">
                 <div class="table-info">
@@ -112,19 +112,15 @@
                         <table class="iksweb">
                             <thead>
                             <tr>
-                                <th>Показатели</th>
-                                <th>Работники торговли и общепита</th>
-                                <th>Работники детских дошкольных учреждений</th>
-                                <th>Работники водоснабжения</th>
+                                <th>Пакет исследований</th>
+                                <th>Стоимость пакета с учетом<br>НДС и расходных материалов*</th>
                             </tr>
                             </thead>
                             <tbody>
-                            {% for main_studi in studi %}
+                            {% for main_lfv in lfv %}
                                 <tr>
-                                    <td>{{ main_studi.indicators|safe }}</td>
-                                    <td>{{ main_studi.catering_workers_display|safe }}</td>
-                                    <td>{{ main_studi.after_workers_display|safe }}</td>
-                                    <td>{{ main_studi.employees_school_display|safe }}</td>
+                                    <td>{{ main_lfv.paket|safe }}</td>
+                                    <td>{{ main_lfv.cost_display|safe }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>

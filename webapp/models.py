@@ -280,6 +280,24 @@ class WaterQualitySafety(models.Model):
         return self.name
 
 
+class LaboratoryFruitVegetable(models.Model):
+    name = models.CharField(max_length=500)
+    desc = models.CharField(max_length=500, default='Описание')
+    paket = models.TextField(default='Пакет исследований')
+    cost = models.CharField(max_length=300, default='Цена', blank=True, null=True)
+
+    @property
+    def cost_display(self):
+        return self.cost or ''
+
+    class Meta:
+        verbose_name = 'Лабораторные исследования плодоовощной продукции'
+        verbose_name_plural = 'Лабораторные исследования плодоовощной продукции'
+
+    def __str__(self):
+        return self.name
+
+
 class HotlineHours(models.Model):
     name = models.CharField(max_length=100, default='Фамилия Имя и Отчество')
     post = models.CharField(max_length=100, default='Должность')

@@ -771,7 +771,7 @@ class StudiesForm(forms.ModelForm):
 
 class WaterQualitySafetyForm(forms.ModelForm):
     class Meta:
-        model = Studies
+        model = WaterQualitySafety
         fields = '__all__'
         widgets = {
             'desc': TinyMCE(),
@@ -781,4 +781,16 @@ class WaterQualitySafetyForm(forms.ModelForm):
             'basic': TinyMCE(),
             'standart': TinyMCE(),
             'standart_plus': TinyMCE(),
+        }
+
+
+class LaboratoryFruitVegetableForm(forms.ModelForm):
+    class Meta:
+        model = LaboratoryFruitVegetable
+        fields = '__all__'
+        widgets = {
+            'desc': TinyMCE(),
+            'cost': TinyMCE(),
+            'name': TinyMCE(),
+            'paket': TinyMCE(),
         }
