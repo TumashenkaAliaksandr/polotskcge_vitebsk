@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Crawl-delay: 10
+Sitemap: https://polotskcge.by/sitemap.xml
