@@ -1249,3 +1249,18 @@ class PhotoDay(models.Model):
     class Meta:
         verbose_name = "Фото дня"
         verbose_name_plural = "Фото дня"
+
+
+class Contacts(models.Model):
+
+    name = models.CharField(max_length=255, verbose_name="Заголовок")
+    adres = models.TextField(verbose_name="Адрес")
+    mail = models.TextField(verbose_name="Почта")
+    phone = models.TextField(verbose_name="Телефон")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Контакты данные"
+        verbose_name_plural = "Контакты данные"

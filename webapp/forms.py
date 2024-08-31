@@ -818,3 +818,14 @@ class PhotoDayForm(forms.ModelForm):
             'description': TinyMCE(),
             'name': TinyMCE(),
         }
+
+
+class ContactsForm(forms.ModelForm):
+    class Meta:
+        model = Contacts
+        fields = '__all__'
+        widgets = {
+            'adres': TinyMCE(),
+            'mail': TinyMCE(),
+            'phone': TinyMCE(),
+        }
