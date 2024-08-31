@@ -979,8 +979,19 @@ class LaboratoryFruitVegetableAdmin(admin.ModelAdmin):
 
 
 @admin.register(EripPayment)
-class LaboratoryFruitVegetableAdmin(admin.ModelAdmin):
+class EripPayAdmin(admin.ModelAdmin):
     form = EripPaymentForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
+
+
+@admin.register(PhotoDay)
+class PhotoDayAdmin(admin.ModelAdmin):
+    form = PhotoDayForm
 
     def clean_name(self, obj):
         return strip_tags(obj.name)

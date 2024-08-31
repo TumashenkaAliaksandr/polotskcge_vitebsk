@@ -808,3 +808,13 @@ class EripPaymentForm(forms.ModelForm):
             'unp': TinyMCE(),
             'title_portal': TinyMCE(),
         }
+
+
+class PhotoDayForm(forms.ModelForm):
+    class Meta:
+        model = PhotoDay
+        fields = '__all__'
+        widgets = {
+            'description': TinyMCE(),
+            'name': TinyMCE(),
+        }

@@ -1231,3 +1231,21 @@ class EripPayment(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = "ЕРИП данные"
+        verbose_name_plural = "ЕРИП данные"
+
+
+class PhotoDay(models.Model):
+
+    name = models.CharField(max_length=255, verbose_name="Заголовок")
+    description = models.TextField(verbose_name="Описание")
+    image = models.ImageField(upload_to='photos_day/', verbose_name="для фото дня")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Фото дня"
+        verbose_name_plural = "Фото дня"
