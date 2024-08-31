@@ -805,4 +805,6 @@ class EripPaymentForm(forms.ModelForm):
             'description_two': TinyMCE(),
             'payment_methods': TinyMCE(),
             'name': TinyMCE(),
+            'unp': TinyMCE(),
+            'title_portal': TinyMCE(),
         }

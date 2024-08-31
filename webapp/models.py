@@ -1216,12 +1216,18 @@ class ContactInfoHad(models.Model):
 
 
 class EripPayment(models.Model):
+
     name = models.CharField(max_length=255, verbose_name="Заголовок")
     description = models.TextField(verbose_name="Описание")
     description_two = models.TextField(verbose_name="Описание два")
-    payment_methods = models.TextField(verbose_name="Методы оплаты")
+    payment_methods = models.TextField(verbose_name="Схема проведения платежа")
+    unp = models.TextField(verbose_name="УНП", blank=True)
+    title_portal = models.TextField(verbose_name="ПОРТАЛ РЕЙТИНГОВОЙ ОЦЕНКИ", blank=True)
     payment_scheme_image1 = models.ImageField(upload_to='payment_schemes/', verbose_name="Схема проведения платежа 1")
-    payment_scheme_image2 = models.ImageField(upload_to='payment_schemes/', verbose_name="Схема проведения платежа 2")
+    payment_scheme_image3 = models.ImageField(upload_to='payment_schemes/', verbose_name="Мальчик", blank=True)
+    payment_scheme_image4 = models.ImageField(upload_to='payment_schemes/', verbose_name="Книжка", blank=True)
+    payment_scheme_image5 = models.ImageField(upload_to='payment_schemes/', verbose_name="Стрелка", blank=True)
+    payment_scheme_image6 = models.ImageField(upload_to='payment_schemes/', verbose_name="токен поратл", blank=True)
 
     def __str__(self):
         return self.name
