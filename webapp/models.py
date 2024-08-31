@@ -1213,3 +1213,15 @@ class ContactInfoHad(models.Model):
         verbose_name = "Контактная информация для Top Bar"
         verbose_name_plural = "Контактная информация для Top Bar"
 
+
+
+class EripPayment(models.Model):
+    name = models.CharField(max_length=255, verbose_name="Заголовок")
+    description = models.TextField(verbose_name="Описание")
+    description_two = models.TextField(verbose_name="Описание два")
+    payment_methods = models.TextField(verbose_name="Методы оплаты")
+    payment_scheme_image1 = models.ImageField(upload_to='payment_schemes/', verbose_name="Схема проведения платежа 1")
+    payment_scheme_image2 = models.ImageField(upload_to='payment_schemes/', verbose_name="Схема проведения платежа 2")
+
+    def __str__(self):
+        return self.name

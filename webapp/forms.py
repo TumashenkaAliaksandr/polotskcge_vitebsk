@@ -794,3 +794,15 @@ class LaboratoryFruitVegetableForm(forms.ModelForm):
             'name': TinyMCE(),
             'paket': TinyMCE(),
         }
+
+
+class EripPaymentForm(forms.ModelForm):
+    class Meta:
+        model = EripPayment
+        fields = '__all__'
+        widgets = {
+            'description': TinyMCE(),
+            'description_two': TinyMCE(),
+            'payment_methods': TinyMCE(),
+            'name': TinyMCE(),
+        }

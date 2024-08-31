@@ -976,3 +976,14 @@ class LaboratoryFruitVegetableAdmin(admin.ModelAdmin):
 
     clean_name.short_description = 'Name'
     list_display = ['clean_name']
+
+
+@admin.register(EripPayment)
+class LaboratoryFruitVegetableAdmin(admin.ModelAdmin):
+    form = EripPaymentForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
