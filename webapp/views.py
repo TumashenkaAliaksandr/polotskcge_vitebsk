@@ -266,6 +266,7 @@ def hotline(request):
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
+    centre_news = CentreNews.objects.all()
 
     context = {
         'features': features,
@@ -275,6 +276,7 @@ def hotline(request):
         'questions': questions,
         'ansvers': ansvers,
         'title_desc_queans': title_desc_queans,
+        'centre_news': centre_news,
     }
 
     return render(request, 'webapp/appeals/hotline.html', context=context)

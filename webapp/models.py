@@ -1264,3 +1264,22 @@ class Contacts(models.Model):
     class Meta:
         verbose_name = "Контакты данные"
         verbose_name_plural = "Контакты данные"
+
+
+
+class CentreNews(models.Model):
+
+    name = models.CharField(max_length=255, verbose_name="ИМЯ")
+    pub_date = models.DateTimeField(verbose_name='Дата Публикации', blank=True, null=True)
+    link = models.URLField(verbose_name="Ссылка", blank=True, null=True)
+    desc = models.TextField(verbose_name="Описание")
+    desc_hover = models.TextField(verbose_name="Описание при наведении")
+    img = models.ImageField(verbose_name='photo', upload_to='CentreNews/')
+    author = models.TextField(verbose_name="Автор")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Блок с новостями(зелено-красный)"
+        verbose_name_plural = "Блок с новостями(зелено-красный)"

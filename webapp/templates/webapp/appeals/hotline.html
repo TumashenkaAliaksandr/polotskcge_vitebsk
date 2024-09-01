@@ -124,6 +124,7 @@
             <div class="container">
                 <div class="breaking-news-grids-bottom">
                     <div class="banner-bottom-grids">
+                        {% for main_centre_news in centre_news %}
                         <div class="col-md-3 banner-bottom-grid-left">
                             <div class="br-bm-gd-lt">
                                 <div class="overlay">
@@ -133,7 +134,7 @@
                                 <div class="health-pos">
                                     <div class="health">
                                         <ul>
-                                            <li><a href="{% url 'webapp:healthy_lifestyle' %}">Здоровье</a></li>
+                                            <li><a href="{% url 'webapp:healthy_lifestyle' %}">{{ main_centre_news|safe }}</a></li>
                                             <li>28 Мая 2024</li>
                                         </ul>
                                     </div>
@@ -152,6 +153,7 @@
                                 </div>
                             </div>
                         </div>
+                        {% endfor %}
                         <div class="col-md-3 banner-bottom-grid-left">
                             <div class="br-bm-gd-lt br-bm-gd-lt1">
                                 <div class="overlay">

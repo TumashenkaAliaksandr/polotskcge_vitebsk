@@ -829,3 +829,15 @@ class ContactsForm(forms.ModelForm):
             'mail': TinyMCE(),
             'phone': TinyMCE(),
         }
+
+
+class CentreNewsForm(forms.ModelForm):
+    class Meta:
+        model = CentreNews
+        fields = '__all__'
+        widgets = {
+            'name': TinyMCE(),
+            'desc': TinyMCE(),
+            'desc_hover': TinyMCE(),
+            'author': TinyMCE(),
+        }
