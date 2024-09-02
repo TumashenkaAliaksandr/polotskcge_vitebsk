@@ -1,7 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
 
-
 {% block content %}
 
 <main id="main">
@@ -134,18 +133,18 @@
                                 <div class="health-pos">
                                     <div class="health">
                                         <ul>
-                                            <li><a href="{% url 'webapp:healthy_lifestyle' %}">{{ main_centre_news|safe }}</a></li>
-                                            <li>28 Мая 2024</li>
+                                            <li><a href="{{ main_centre_news.link }}">{{ main_centre_news.name|safe }}</a></li>
+                                            <li>{{ main_centre_news.pub_date|date:"j F Y" }}</li>
                                         </ul>
                                     </div>
-                                    <h3>Наши Статьи о том как беречь своё Здоровье.</h3>
+                                    <h3>{{ main_centre_news.desc|safe }}</h3>
                                     <div class="dummy">
-                                        <p>Тут мы расскажем вам о правильном питании и сне.</p>
+                                        <p>{{ main_centre_news.desc_hover|safe }}</p>
                                     </div>
                                     <div class="com-heart">
                                         <ul>
                                             <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span>
-                                                Центр Гигиены</a></li>
+                                                {{ main_centre_news.author|safe }}</a></li>
                                             <li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span>
                                                 11,536</a></li>
                                         </ul>
