@@ -678,12 +678,8 @@ class ServicesLawyerTipicalForm(forms.ModelForm):
         widgets = {
             'name': TinyMCE(),
             'name_lawyer': TinyMCE(),
-            'name_two': TinyMCE(),
-            'name_three': TinyMCE(),
-            'description_small': TinyMCE(),
             'description': TinyMCE(),
             'description_two': TinyMCE(),
-            'description_three': TinyMCE(),
         }
 
 

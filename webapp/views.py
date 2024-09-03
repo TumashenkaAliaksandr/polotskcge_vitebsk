@@ -2,6 +2,9 @@ from django.shortcuts import render
 from news.models import Interactive, ModelNews, PreviewNews
 from news.utils import get_weather
 from webapp.models import *
+from django.http import JsonResponse
+from django.core.files.storage import default_storage
+from django.core.files.base import ContentFile
 
 
 def base_main(request):
@@ -1141,3 +1144,12 @@ def contacts(request):
     }
 
     return render(request, 'webapp/contacts.html', context=context)
+
+
+def upload_file(request):
+    if request.method == 'POST':
+        file = request.FILES['file']
+        filename = default_storage.save(file.name, ContentFile(file.read()))
+        url = default_storage.url(filename)
+        return JsonResponse({'location': url})
+    return JsonResponse({'error': 'Invalid request'}, status=400)

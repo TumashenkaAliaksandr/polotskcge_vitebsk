@@ -132,6 +132,7 @@ STATICFILES_DIRS = [
 ]
 
 
+
 TINYMCE_DEFAULT_CONFIG = {
     'plugins': (
         'advlist autolink lists link image charmap print preview anchor help '
@@ -154,7 +155,26 @@ TINYMCE_DEFAULT_CONFIG = {
     'content_style': 'body { font-family: Arial, sans-serif; font-size: 14px; }',
     'fontfamily_formats': "Andale Mono=andale mono,times; Arial=arial,helvetica,sans-serif; Arial Black=arial black,avant garde; Book Antiqua=book antiqua,palatino; Comic Sans MS=comic sans ms,sans-serif; Courier New=courier new,courier; Georgia=georgia,palatino; Helvetica=helvetica; Impact=impact,chicago; Lucida Console=lucida console,monaco; Lucida Sans Unicode=lucida sans unicode,lucida sans; Microsoft Sans Serif=microsoft sans serif,sans-serif; Monotype Corsiva=monotype corsiva,cursive; MS Sans Serif=ms sans serif,sans-serif; MS Serif=ms serif,sans-serif; Palatino=palatino; Tahoma=tahoma,arial,helvetica,sans-serif; Terminal=terminal,monaco; Times New Roman=times new roman,times; Trebuchet MS=trebuchet ms,geneva; Verdana=verdana,geneva; Webdings=webdings; Wingdings=wingdings,zapf dingbats",
     'fontsize_formats': "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
+    'file_picker_callback': 'function (callback, value, meta) {'
+                           'const input = document.createElement("input");'
+                           'input.setAttribute("type", "file");'
+                           'input.onchange = function () {'
+                           'const file = input.files[0];'
+                           'const reader = new FileReader();'
+                           'reader.addEventListener("load", function () {'
+                           'const id = "blobid" + (new Date()).getTime();'
+                           'const blobCache = tinymce.activeEditor.editorUpload.blobCache;'
+                           'const base64 = reader.result.split(",");'
+                           'const blobInfo = blobCache.create(id, file, base64);'
+                           'blobCache.add(blobInfo);'
+                           'callback(blobInfo.blobUri(), { title: file.name });'
+                           '});'
+                           'reader.readAsDataURL(file);'
+                           '};'
+                           'input.click();'
+                           '}',
 }
+
 
 
 
