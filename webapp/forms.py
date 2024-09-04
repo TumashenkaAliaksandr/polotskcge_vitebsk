@@ -662,12 +662,9 @@ class EpidemialogyTipicalForm(forms.ModelForm):
         widgets = {
             'name': TinyMCE(),
             'name_epidem': TinyMCE(),
-            'name_two': TinyMCE(),
-            'name_three': TinyMCE(),
             'description_small': TinyMCE(),
             'description': TinyMCE(),
-            'description_two': TinyMCE(),
-            'description_three': TinyMCE(),
+            'description2': TinyMCE(),
         }
 
 

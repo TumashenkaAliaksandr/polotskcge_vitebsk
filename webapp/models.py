@@ -1028,11 +1028,8 @@ class EpidemialogyTipical(models.Model):
     description_small = models.TextField(default='Описание для стр. Эпидемиалогия')
     name = models.CharField(max_length=350, default='Тайтл для админки')
     name_epidem = models.CharField(max_length=350, default='Тайтл ля стр. Эпидемиалогия (h3)')
-    name_two = models.CharField(max_length=200, default='Второе название')
-    name_three = models.CharField(max_length=200, default='Третье название')
     description = models.TextField(default='Описание')
-    description_two = models.TextField(default='Второе описание')
-    description_three = models.TextField(default='Третье описание')
+    description2 = models.TextField(default='Второе описание')
     photo = models.ImageField(upload_to='Epidemialogy/', null=True, blank=True)
     photo_two = models.ImageField(upload_to='Epidemialogy/', null=True, blank=True)
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
@@ -1209,7 +1206,6 @@ class ContactInfoHad(models.Model):
     class Meta:
         verbose_name = "Контактная информация для Top Bar"
         verbose_name_plural = "Контактная информация для Top Bar"
-
 
 
 class EripPayment(models.Model):
