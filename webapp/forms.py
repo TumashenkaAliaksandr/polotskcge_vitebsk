@@ -623,6 +623,7 @@ class CustomProductsInfForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'description': TinyMCE(),
+            'description_small': TinyMCE(),
             'name_typical': TinyMCE(),
             'name': TinyMCE(),
         }

@@ -55,27 +55,50 @@
     </div>
     <!-- ======= End Book News text Section ======= -->
 
-    <!-- Hotline Title and desc Section -->
-    <section id="featured-services" class="featured-services main-bg-farm">
-        <div class="container book_info" data-aos="fade-up">
+{##}
+{#    <!-- Hotline Title and desc Section -->#}
+{#    <section id="featured-services" class="featured-services main-bg-farm">#}
+{#        <div class="container book_info" data-aos="fade-up">#}
+{#            <div class="row">#}
+{#                {% for main_typical_title in typical_title %}#}
+{#                    <div class="section-title">#}
+{#                        <h2>{{ main_typical_title.name_typical|safe }}</h2>#}
+{#                    </div>#}
+{#                {% endfor %}#}
+{#                {% for main_typical_inf in all_typical_news %}#}
+{#                    <div class="description-left">#}
+{#                        <h5>{{ main_typical_inf.name_typical|safe }}</h5>#}
+{#                        <a href="{% url 'webapp:custom_products_single' pk=main_typical_inf.id %}"#}
+{#                           class="btn-get-normative scrollto">Узнать#}
+{#                            Больше</a>#}
+{#                    </div>#}
+{#                {% endfor %}#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
+{#    <!-- End Hotline Title and desc Section -->#}
+
+
+    <!-- EVROZES Title and desc Section -->
+    <section id="featured-services-two" class="featured-services-two main-bg-economic-souz">
+        <div class="container" data-aos="fade-up">
+            {% for main_typical_title in typical_title %}
+                <div class="section-title">
+                    <p>{{ main_typical_title.name_typical|safe }}</p>
+                </div>
+            {% endfor %}
             <div class="row">
-                {% for main_typical_title in typical_title %}
-                    <div class="section-title">
-                        <h2>{{ main_typical_title.name_typical|safe }}</h2>
-                    </div>
-                {% endfor %}
                 {% for main_typical_inf in all_typical_news %}
-                    <div class="description-left">
-                        <h5>{{ main_typical_inf.name_typical|safe }}</h5>
-                        <a href="{% url 'webapp:custom_products_single' pk=main_typical_inf.id %}"
-                           class="btn-get-normative scrollto">Узнать
-                            Больше</a>
+                    <div class="icon-box mt-5 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
+                        <a href="{% url 'webapp:custom_products_single' pk=main_typical_inf.id %}">{{ main_typical_inf.name_typical|safe }}</a>
+                        <a href="{% url 'webapp:custom_products_single' pk=main_typical_inf.id %}"><p
+                                class="description">{{ main_typical_inf.description_small|safe }}</p></a>
                     </div>
                 {% endfor %}
             </div>
         </div>
     </section>
-    <!-- End Hotline Title and desc Section -->
+    <!-- End  EVROZES Title and desc Section -->
 
     <!-- ======= Frequently Asked Questioins Section ======= -->
     <section id="faq" class="faq main-bg-farm">

@@ -59,7 +59,7 @@
     <section id="featured-services" class="featured-services main-bg-farm">
         <div class="container book_info" data-aos="fade-up">
             <div class="row">
-                {% for main_typical_title in typical_inf %}
+                {% for main_typical_title in news_typical %}
                     <div class="section-title">
                         <h2>{{ main_typical_title.name|safe }}</h2>
                     </div>
@@ -67,7 +67,7 @@
             </div>
             <div class="row">
                 <section class="hotline">
-                    {% for main_typical_inf in typical_inf %}
+                    {% for main_typical_inf in news_typical %}
                         <p>{{ main_typical_inf.description|safe }}</p>
                     {% endfor %}
                 </section>

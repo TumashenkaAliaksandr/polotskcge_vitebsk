@@ -987,6 +987,7 @@ class CustomProductsInf(models.Model):
 
     name = models.CharField(max_length=350, default='Тайтл (для админ)')
     name_typical = models.CharField(max_length=350, default='Тайтл')
+    description_small = models.TextField(default='Не большое описание для гл.стр. Не стандартная Продукция')
     description = models.TextField(default='Описание')
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
 

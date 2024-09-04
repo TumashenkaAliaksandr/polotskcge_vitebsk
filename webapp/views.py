@@ -307,6 +307,7 @@ def book_of_comments(request):
 
 def higher_authority(request):
     """Appeals - higher_authority template"""
+
     interactiv = Interactive.objects.all()
     title_organ = Organ_Title_desc.objects.all()
     table =Up_Organ.objects.all()
@@ -911,13 +912,9 @@ def epidemiology_typical(request, pk):
     epidem_title = EpidemialogyName.objects.all()
 
 
-    # Получаем данные о погоде
-    weather = get_weather()
-
     context = {
         'interactiv': interactiv,
         'epidem_title': epidem_title,
-        'weather': weather,  # Передаем данные о погоде в контекст
         'questions': questions,
         'ansvers': ansvers,
         'title_desc_queans': title_desc_queans,
