@@ -702,6 +702,17 @@ class InventoryAdmin(admin.ModelAdmin):
     list_display = ['clean_name']
 
 
+@admin.register(BlanksInventory)
+class BanksInventoryAdmin(admin.ModelAdmin):
+    form = BlanksInventoryForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
+
+
 @admin.register(ControlNadzorTipical)
 class ControlNadzorAdmin(admin.ModelAdmin):
     form = ControlNadzorTipicalForm

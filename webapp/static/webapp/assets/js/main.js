@@ -296,4 +296,3 @@
     window.addEventListener('scroll', topbarScrolled);
   }
 })();
-

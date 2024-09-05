@@ -1,8 +1,8 @@
 from django.urls import path
+
 from webapp.views import *
 from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib.auth import views as auth_views
 
 
 app_name = 'webapp'
@@ -68,7 +68,6 @@ urlpatterns = [
     path('health_days/', health_days, name='health_days'),
     path('educational_resources/', educational_resources, name='educational_resources'),
     path('contacts/', contacts, name='contacts'),
-    path('upload-file/', upload_file, name='upload_file'),
     ]
 
 

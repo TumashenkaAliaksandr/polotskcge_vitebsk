@@ -1,4 +1,5 @@
 from django import forms
+from django_summernote.widgets import SummernoteWidget
 from tinymce.widgets import TinyMCE
 
 from .models import *
@@ -10,14 +11,14 @@ class AboutUsForm(forms.ModelForm):
         model = AboutUs
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
-            'description_two': TinyMCE(),
-            'description_three': TinyMCE(),
-            'name_li_one': TinyMCE(),
-            'name_li_two': TinyMCE(),
-            'name_li_three': TinyMCE(),
-            'name_li_four': TinyMCE(),
-            'name_li_five': TinyMCE(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
+            'description_three': SummernoteWidget(),
+            'name_li_one': SummernoteWidget(),
+            'name_li_two': SummernoteWidget(),
+            'name_li_three': SummernoteWidget(),
+            'name_li_four': SummernoteWidget(),
+            'name_li_five': SummernoteWidget(),
         }
 
 
@@ -26,14 +27,14 @@ class ZojForm(forms.ModelForm):
         model = Zoj
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
-            'description_two': TinyMCE(),
-            'description_three': TinyMCE(),
-            'name_li_one': TinyMCE(),
-            'name_li_two': TinyMCE(),
-            'name_li_three': TinyMCE(),
-            'name_li_four': TinyMCE(),
-            'name_li_five': TinyMCE(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
+            'description_three': SummernoteWidget(),
+            'name_li_one': SummernoteWidget(),
+            'name_li_two': SummernoteWidget(),
+            'name_li_three': SummernoteWidget(),
+            'name_li_four': SummernoteWidget(),
+            'name_li_five': SummernoteWidget(),
         }
 
 
@@ -42,10 +43,10 @@ class ResearchesForm(forms.ModelForm):
         model = Researches
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
-            'description_two': TinyMCE(),
-            'description_three': TinyMCE(),
-            'description_four': TinyMCE(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
+            'description_three': SummernoteWidget(),
+            'description_four': SummernoteWidget(),
             'icon_class': forms.TextInput(),
             'icon_class_two': forms.TextInput(),
             'icon_class_three': forms.TextInput(),
@@ -64,7 +65,7 @@ class FeaturedForm(forms.ModelForm):
         model = Featured
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
+            'description': SummernoteWidget(),
         }
 
 
@@ -73,7 +74,7 @@ class Book_complaintForm(forms.ModelForm):
         model = Book_complaint
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
+            'description': SummernoteWidget(),
         }
 
 
@@ -282,8 +283,8 @@ class EpidemialSituationsForm(forms.ModelForm):
         model = EpidemSituations
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'desc': TinyMCE(),
+            'name': SummernoteWidget(),
+            'desc': SummernoteWidget(),
         }
 
 
@@ -292,8 +293,8 @@ class CountryRegistryForm(forms.ModelForm):
         model = CountryRegistry
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'desc': TinyMCE(),
+            'name': SummernoteWidget(),
+            'desc': SummernoteWidget(),
         }
 
 
@@ -302,8 +303,8 @@ class HealthyTitleForm(forms.ModelForm):
         model = HealthyTitle
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'description': TinyMCE(),
+            'name': SummernoteWidget(),
+            'description': SummernoteWidget(),
         }
 
 
@@ -312,8 +313,8 @@ class HealthyForm(forms.ModelForm):
         model = Healthy
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'name_taitle': TinyMCE(),
+            'name': SummernoteWidget(),
+            'name_taitle': SummernoteWidget(),
         }
 
 
@@ -323,8 +324,8 @@ class ResolutionForm(forms.ModelForm):
         model = Resolution
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'desc': TinyMCE(),
+            'name': SummernoteWidget(),
+            'desc': SummernoteWidget(),
         }
 
 
@@ -333,18 +334,18 @@ class LabaForm(forms.ModelForm):
         model = Laboratory
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'description': TinyMCE(),
-            'description_two': TinyMCE(),
-            'description_three': TinyMCE(),
-            'name_li_one': TinyMCE(),
-            'name_li_two': TinyMCE(),
-            'name_li_three': TinyMCE(),
-            'name_li_four': TinyMCE(),
-            'name_li_five': TinyMCE(),
-            'name_li_six': TinyMCE(),
-            'name_two': TinyMCE(),
-            'name_three': TinyMCE(),
+            'name': SummernoteWidget(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
+            'description_three': SummernoteWidget(),
+            'name_li_one': SummernoteWidget(),
+            'name_li_two': SummernoteWidget(),
+            'name_li_three': SummernoteWidget(),
+            'name_li_four': SummernoteWidget(),
+            'name_li_five': SummernoteWidget(),
+            'name_li_six': SummernoteWidget(),
+            'name_two': SummernoteWidget(),
+            'name_three': SummernoteWidget(),
         }
 
 
@@ -353,8 +354,8 @@ class LaboratoriesForm(forms.ModelForm):
         model = Laboratories
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'description': TinyMCE(),
+            'name': SummernoteWidget(),
+            'description': SummernoteWidget(),
         }
 
 
@@ -363,10 +364,10 @@ class ApRegistrationForm(forms.ModelForm):
         model = Registration
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'description': TinyMCE(),
-            'description_two': TinyMCE(),
-            'description_three': TinyMCE(),
+            'name': SummernoteWidget(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
+            'description_three': SummernoteWidget(),
         }
 
 
@@ -375,8 +376,8 @@ class RelationForm(forms.ModelForm):
         model = Relation
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'description': TinyMCE(),
+            'name': SummernoteWidget(),
+            'description': SummernoteWidget(),
         }
 
 
@@ -385,8 +386,8 @@ class HumanResourcesDescForm(forms.ModelForm):
         model = HumanResourcesDesc
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'description': TinyMCE(),
+            'name': SummernoteWidget(),
+            'description': SummernoteWidget(),
         }
 
 
@@ -395,11 +396,11 @@ class HumanResourcesForm(forms.ModelForm):
         model = HumanResources
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'number_ap': TinyMCE(),
-            'name_ap': TinyMCE(),
-            'size_ap': TinyMCE(),
-            'doc_ap': TinyMCE(),
+            'name': SummernoteWidget(),
+            'number_ap': SummernoteWidget(),
+            'name_ap': SummernoteWidget(),
+            'size_ap': SummernoteWidget(),
+            'doc_ap': SummernoteWidget(),
         }
 
 
@@ -408,8 +409,8 @@ class AccountingDescForm(forms.ModelForm):
         model = AccountingDesc
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'description': TinyMCE(),
+            'name': SummernoteWidget(),
+            'description': SummernoteWidget(),
         }
 
 
@@ -418,12 +419,12 @@ class AccountingForm(forms.ModelForm):
         model = Accounting
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'number_ap': TinyMCE(),
-            'name_ap': TinyMCE(),
-            'size_ap': TinyMCE(),
-            'doc_ap': TinyMCE(),
-            'date_ap': TinyMCE(),
+            'name': SummernoteWidget(),
+            'number_ap': SummernoteWidget(),
+            'name_ap': SummernoteWidget(),
+            'size_ap': SummernoteWidget(),
+            'doc_ap': SummernoteWidget(),
+            'date_ap': SummernoteWidget(),
         }
 
 
@@ -433,8 +434,8 @@ class UnionDescForm(forms.ModelForm):
         model = UnionDesc
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'description': TinyMCE(),
+            'name': SummernoteWidget(),
+            'description': SummernoteWidget(),
         }
 
 
@@ -443,12 +444,12 @@ class UnionForm(forms.ModelForm):
         model = Union
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'number_ap': TinyMCE(),
-            'name_ap': TinyMCE(),
-            'size_ap': TinyMCE(),
-            'doc_ap': TinyMCE(),
-            'date_ap': TinyMCE(),
+            'name': SummernoteWidget(),
+            'number_ap': SummernoteWidget(),
+            'name_ap': SummernoteWidget(),
+            'size_ap': SummernoteWidget(),
+            'doc_ap': SummernoteWidget(),
+            'date_ap': SummernoteWidget(),
         }
 
 
@@ -457,8 +458,8 @@ class ListingDecreeDescForm(forms.ModelForm):
         model = UnionDesc
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'description': TinyMCE(),
+            'name': SummernoteWidget(),
+            'description': SummernoteWidget(),
         }
 
 
@@ -467,12 +468,12 @@ class ListingDecreeForm(forms.ModelForm):
         model = ListingDecree
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'number_ap': TinyMCE(),
-            'name_ap': TinyMCE(),
-            'size_ap': TinyMCE(),
-            'doc_ap': TinyMCE(),
-            'date_ap': TinyMCE(),
+            'name': SummernoteWidget(),
+            'number_ap': SummernoteWidget(),
+            'name_ap': SummernoteWidget(),
+            'size_ap': SummernoteWidget(),
+            'doc_ap': SummernoteWidget(),
+            'date_ap': SummernoteWidget(),
         }
 
 
@@ -481,12 +482,12 @@ class ProfsouzForm(forms.ModelForm):
         model = Profsouz
         fields = '__all__'
         widgets = {
-            'number': TinyMCE(),
-            'name_doctors': TinyMCE(),
-            'status': TinyMCE(),
-            'phone': TinyMCE(),
-            'description': TinyMCE(),
-            'description_two': TinyMCE(),
+            'number': SummernoteWidget(),
+            'name_doctors': SummernoteWidget(),
+            'status': SummernoteWidget(),
+            'phone': SummernoteWidget(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
         }
 
 
@@ -495,12 +496,12 @@ class ProfsouzTwoForm(forms.ModelForm):
         model = ProfsouzTwo
         fields = '__all__'
         widgets = {
-            'number': TinyMCE(),
-            'name_doctors': TinyMCE(),
-            'status': TinyMCE(),
-            'phone': TinyMCE(),
-            'description': TinyMCE(),
-            'description_two': TinyMCE(),
+            'number': SummernoteWidget(),
+            'name_doctors': SummernoteWidget(),
+            'status': SummernoteWidget(),
+            'phone': SummernoteWidget(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
         }
 
 
@@ -509,9 +510,9 @@ class ProfsouzDescForm(forms.ModelForm):
         model = ProfsouzDesc
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
-            'description_two': TinyMCE(),
-            'package': TinyMCE(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
+            'package': SummernoteWidget(),
         }
 
 
@@ -520,8 +521,8 @@ class ProfsouzIconsForm(forms.ModelForm):
         model = ProfsouzIcons
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
-            'description_two': TinyMCE(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
         }
 
 
@@ -530,10 +531,10 @@ class ProfsouzDescOneForm(forms.ModelForm):
         model = ProfsouzDescOne
         fields = '__all__'
         widgets = {
-            'name_main': TinyMCE(),
-            'description': TinyMCE(),
-            'description_two': TinyMCE(),
-            'package': TinyMCE(),
+            'name_main': SummernoteWidget(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
+            'package': SummernoteWidget(),
         }
 
 
@@ -542,9 +543,9 @@ class DisinfectionForm(forms.ModelForm):
         model = Disinfection
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
-            'description_two': TinyMCE(),
-            'name_main': TinyMCE(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
+            'name_main': SummernoteWidget(),
         }
 
 class DeratizationForm(forms.ModelForm):
@@ -552,9 +553,9 @@ class DeratizationForm(forms.ModelForm):
         model = Deratization
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
-            'description_two': TinyMCE(),
-            'name_main': TinyMCE(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
+            'name_main': SummernoteWidget(),
         }
 
 
@@ -563,9 +564,9 @@ class DisinsectionForm(forms.ModelForm):
         model = Disinsection
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
-            'description_two': TinyMCE(),
-            'name_main': TinyMCE(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
+            'name_main': SummernoteWidget(),
         }
 
 
@@ -574,9 +575,9 @@ class DisinfectionDescForm(forms.ModelForm):
         model = DisinfectionDesc
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
-            'description_two': TinyMCE(),
-            'name_main': TinyMCE(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
+            'name_main': SummernoteWidget(),
         }
 
 
@@ -585,9 +586,19 @@ class InventoryForm(forms.ModelForm):
         model = Inventory
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
-            'description_two': TinyMCE(),
-            'name_main': TinyMCE(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
+            'name_main': SummernoteWidget(),
+        }
+
+
+class BlanksInventoryForm(forms.ModelForm):
+    class Meta:
+        model = BlanksInventory
+        fields = '__all__'
+        widgets = {
+            'name_for_blanks': SummernoteWidget(),
+            'blanks_all': SummernoteWidget(),
         }
 
 
@@ -596,15 +607,15 @@ class ControlNadzorTipicalForm(forms.ModelForm):
         model = ControlNadzorTipical
         fields = '__all__'
         widgets = {
-            'number': TinyMCE(),
-            'objects_control': TinyMCE(),
-            'typical_violations': TinyMCE(),
-            'name_typical_violations': TinyMCE(),
-            'description': TinyMCE(),
-            'description_two': TinyMCE(),
-            'description_three': TinyMCE(),
-            'name_typical': TinyMCE(),
-            'name': TinyMCE(),
+            'number': SummernoteWidget(),
+            'objects_control': SummernoteWidget(),
+            'typical_violations': SummernoteWidget(),
+            'name_typical_violations': SummernoteWidget(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
+            'description_three': SummernoteWidget(),
+            'name_typical': SummernoteWidget(),
+            'name': SummernoteWidget(),
         }
 
 
@@ -613,7 +624,7 @@ class CNadTipicalNameForm(forms.ModelForm):
         model = CNadTipicalName
         fields = '__all__'
         widgets = {
-            'name_typical': TinyMCE(),
+            'name_typical': SummernoteWidget(),
         }
 
 
@@ -622,10 +633,10 @@ class CustomProductsInfForm(forms.ModelForm):
         model = CustomProductsInf
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
-            'description_small': TinyMCE(),
-            'name_typical': TinyMCE(),
-            'name': TinyMCE(),
+            'description': SummernoteWidget(),
+            'description_small': SummernoteWidget(),
+            'name_typical': SummernoteWidget(),
+            'name': SummernoteWidget(),
         }
 
 
@@ -634,7 +645,7 @@ class CustomProductsNameForm(forms.ModelForm):
         model = CustomProductsName
         fields = '__all__'
         widgets = {
-            'name_typical': TinyMCE(),
+            'name_typical': SummernoteWidget(),
         }
 
 
@@ -643,7 +654,7 @@ class EpidemialogyNameForm(forms.ModelForm):
         model = CNadTipicalName
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
+            'name': SummernoteWidget(),
         }
 
 
@@ -652,7 +663,7 @@ class ServicesLawyerNameForm(forms.ModelForm):
         model = ServicesLawyerName
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
+            'name': SummernoteWidget(),
         }
 
 
@@ -661,11 +672,11 @@ class EpidemialogyTipicalForm(forms.ModelForm):
         model = EpidemialogyTipical
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'name_epidem': TinyMCE(),
-            'description_small': TinyMCE(),
-            'description': TinyMCE(),
-            'description2': TinyMCE(),
+            'name': SummernoteWidget(),
+            'name_epidem': SummernoteWidget(),
+            'description_small': SummernoteWidget(),
+            'description': SummernoteWidget(),
+            'description2': SummernoteWidget(),
         }
 
 
@@ -674,10 +685,10 @@ class ServicesLawyerTipicalForm(forms.ModelForm):
         model = ServicesLawyerTipical
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'name_lawyer': TinyMCE(),
-            'description': TinyMCE(),
-            'description_two': TinyMCE(),
+            'name': SummernoteWidget(),
+            'name_lawyer': SummernoteWidget(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
         }
 
 
@@ -686,10 +697,10 @@ class ContactInfoHadForm(forms.ModelForm):
         model = ContactInfoHad
         fields = '__all__'
         widgets = {
-            'working_days': TinyMCE(),
-            'lunch_time': TinyMCE(),
-            'phone_number': TinyMCE(),
-            'email_address': TinyMCE(),
+            'working_days': SummernoteWidget(),
+            'lunch_time': SummernoteWidget(),
+            'phone_number': SummernoteWidget(),
+            'email_address': SummernoteWidget(),
         }
 
 
@@ -698,7 +709,7 @@ class ImmunoprophylaxisNameForm(forms.ModelForm):
         model = ImmunoprophylaxisName
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
+            'name': SummernoteWidget(),
         }
 
 
@@ -707,8 +718,8 @@ class ImmunoprophylaxisInfForm(forms.ModelForm):
         model = ImmunoprophylaxisInf
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
-            'name': TinyMCE(),
+            'description': SummernoteWidget(),
+            'name': SummernoteWidget(),
         }
 
 
@@ -718,12 +729,12 @@ class ImmunoprophylaxisTipicalForm(forms.ModelForm):
         model = ImmunoprophylaxisTipical
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'name_two': TinyMCE(),
-            'name_three': TinyMCE(),
-            'description': TinyMCE(),
-            'description_two': TinyMCE(),
-            'description_three': TinyMCE(),
+            'name': SummernoteWidget(),
+            'name_two': SummernoteWidget(),
+            'name_three': SummernoteWidget(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
+            'description_three': SummernoteWidget(),
         }
 
 
@@ -732,8 +743,8 @@ class ObjectivesForm(forms.ModelForm):
         model = Objectives
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
-            'name': TinyMCE(),
+            'description': SummernoteWidget(),
+            'name': SummernoteWidget(),
         }
 
 
@@ -742,10 +753,10 @@ class TicksForm(forms.ModelForm):
         model = Ticks
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
-            'description_two': TinyMCE(),
-            'name': TinyMCE(),
-            'name_map': TinyMCE(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
+            'name': SummernoteWidget(),
+            'name_map': SummernoteWidget(),
         }
 
 
@@ -754,12 +765,12 @@ class StudiesForm(forms.ModelForm):
         model = Studies
         fields = '__all__'
         widgets = {
-            'desc': TinyMCE(),
-            'indicators': TinyMCE(),
-            'catering_workers': TinyMCE(),
-            'name': TinyMCE(),
-            'after_workers': TinyMCE(),
-            'employees_school': TinyMCE(),
+            'desc': SummernoteWidget(),
+            'indicators': SummernoteWidget(),
+            'catering_workers': SummernoteWidget(),
+            'name': SummernoteWidget(),
+            'after_workers': SummernoteWidget(),
+            'employees_school': SummernoteWidget(),
         }
 
 
@@ -768,13 +779,13 @@ class WaterQualitySafetyForm(forms.ModelForm):
         model = WaterQualitySafety
         fields = '__all__'
         widgets = {
-            'desc': TinyMCE(),
-            'indicators': TinyMCE(),
-            'mine_well': TinyMCE(),
-            'name': TinyMCE(),
-            'basic': TinyMCE(),
-            'standart': TinyMCE(),
-            'standart_plus': TinyMCE(),
+            'desc': SummernoteWidget(),
+            'indicators': SummernoteWidget(),
+            'mine_well': SummernoteWidget(),
+            'name': SummernoteWidget(),
+            'basic': SummernoteWidget(),
+            'standart': SummernoteWidget(),
+            'standart_plus': SummernoteWidget(),
         }
 
 
@@ -783,10 +794,10 @@ class LaboratoryFruitVegetableForm(forms.ModelForm):
         model = LaboratoryFruitVegetable
         fields = '__all__'
         widgets = {
-            'desc': TinyMCE(),
-            'cost': TinyMCE(),
-            'name': TinyMCE(),
-            'paket': TinyMCE(),
+            'desc': SummernoteWidget(),
+            'cost': SummernoteWidget(),
+            'name': SummernoteWidget(),
+            'paket': SummernoteWidget(),
         }
 
 
@@ -795,12 +806,12 @@ class EripPaymentForm(forms.ModelForm):
         model = EripPayment
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
-            'description_two': TinyMCE(),
-            'payment_methods': TinyMCE(),
-            'name': TinyMCE(),
-            'unp': TinyMCE(),
-            'title_portal': TinyMCE(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
+            'payment_methods': SummernoteWidget(),
+            'name': SummernoteWidget(),
+            'unp': SummernoteWidget(),
+            'title_portal': SummernoteWidget(),
         }
 
 
@@ -809,8 +820,8 @@ class PhotoDayForm(forms.ModelForm):
         model = PhotoDay
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
-            'name': TinyMCE(),
+            'description': SummernoteWidget(),
+            'name': SummernoteWidget(),
         }
 
 
@@ -819,9 +830,9 @@ class ContactsForm(forms.ModelForm):
         model = Contacts
         fields = '__all__'
         widgets = {
-            'adres': TinyMCE(),
-            'mail': TinyMCE(),
-            'phone': TinyMCE(),
+            'adres': SummernoteWidget(),
+            'mail': SummernoteWidget(),
+            'phone': SummernoteWidget(),
         }
 
 
@@ -830,8 +841,8 @@ class CentreNewsForm(forms.ModelForm):
         model = CentreNews
         fields = '__all__'
         widgets = {
-            'name': TinyMCE(),
-            'desc': TinyMCE(),
-            'desc_hover': TinyMCE(),
-            'author': TinyMCE(),
+            'name': SummernoteWidget(),
+            'desc': SummernoteWidget(),
+            'desc_hover': SummernoteWidget(),
+            'author': SummernoteWidget(),
         }

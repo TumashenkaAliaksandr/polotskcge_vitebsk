@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
+
 from news.models import Interactive, ModelNews, PreviewNews
 from news.utils import get_weather
 from webapp.models import *
@@ -329,9 +331,11 @@ def higher_authority(request):
 def ap(request):
     """AP template"""
     inventory_info = Inventory.objects.all()
+    blanks = BlanksInventory.objects.all()
 
     context = {
         'inventory_info': inventory_info,
+        'blanks': blanks,
     }
 
     return render(request, 'webapp/ap/ap.html', context=context)
@@ -1141,12 +1145,3 @@ def contacts(request):
     }
 
     return render(request, 'webapp/contacts.html', context=context)
-
-
-def upload_file(request):
-    if request.method == 'POST':
-        file = request.FILES['file']
-        filename = default_storage.save(file.name, ContentFile(file.read()))
-        url = default_storage.url(filename)
-        return JsonResponse({'location': url})
-    return JsonResponse({'error': 'Invalid request'}, status=400)

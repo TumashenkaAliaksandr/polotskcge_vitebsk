@@ -1,4 +1,5 @@
 from django import forms
+from django_summernote.widgets import SummernoteWidget
 from tinymce.widgets import TinyMCE
 from news.models import ModelNews
 
@@ -8,7 +9,7 @@ class ModelNewsForm(forms.ModelForm):
         model = ModelNews
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
-            'description_small': TinyMCE(),
-            'description_company': TinyMCE(),
+            'description': SummernoteWidget(),
+            'description_small': SummernoteWidget(),
+            'description_company': SummernoteWidget(),
         }

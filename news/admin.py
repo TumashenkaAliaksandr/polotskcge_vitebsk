@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
+from django_summernote.widgets import SummernoteWidget
 
 from .forms import ModelNewsForm
 from .models import *
@@ -13,10 +14,10 @@ class ModelNewsAdminForm(forms.ModelForm):
         model = ModelNews
         fields = '__all__'
         widgets = {
-            'description': TinyMCE(),
-            'description_company': TinyMCE(),
-            'description_small': TinyMCE(),
-            'comment': TinyMCE(),
+            'description': SummernoteWidget(),
+            'description_company': SummernoteWidget(),
+            'description_small': SummernoteWidget(),
+            'comment': SummernoteWidget(),
         }
 
 

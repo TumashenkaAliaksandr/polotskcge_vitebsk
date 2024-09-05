@@ -949,6 +949,21 @@ class Inventory(models.Model):
         return self.name
 
 
+class BlanksInventory(models.Model):
+
+    name = models.CharField(max_length=350, default='Тайтл для админки')
+    name_for_blanks = models.CharField(max_length=350, default='Тайтл для бланков(отображается один, первый)')
+    blanks_all = models.TextField(default='Бланк для Имени например (Бланк для Юр лица)')
+    up_file = models.FileField(upload_to='files/', default='Добавить файл')
+
+    class Meta:
+        verbose_name = 'АП Бланки (перечень)'
+        verbose_name_plural = 'АП Бланки (перечень)'
+
+    def __str__(self):
+        return self.name
+
+
 class ControlNadzorTipical(models.Model):
 
     name = models.CharField(max_length=350, default='Тайтл для админки')

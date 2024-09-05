@@ -34,6 +34,30 @@
                         <h2>{{ main_inventory.name_main|safe }}</h2>
                         <p>{{ main_inventory.description|safe }}</p>
                     </div>
+                    <!-- EVROZES Title and desc Section -->
+                    <section id="featured-services-two" class="featured-services-two ap-bg">
+                        <div class="container" data-aos="fade-up">
+                            <div class="description-left">
+                                {% for main_blanks in blanks %}
+                                    {% if forloop.first %}
+                                        <p>{{ main_blanks.name_for_blanks|safe }}</p>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <div class="row">
+                                {% for main_blanks in blanks %}
+                                    <div class="icon-box mt-5 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
+                                        <a href="{{ main_blanks.up_file.url }}" target="_blank">{{ main_blanks.blanks_all|safe }}</a>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+                    <!-- End  EVROZES Title and desc Section -->
+                    <div class="description-left">
+                        <a href="{{ main_inventory.up_file_fiz.url }}">{{ main_inventory.blanks|safe }}</a>
+                        <a href="{{ main.inventory.up_file_your.url }}">{{ main_inventory.blanks|safe }}</a>
+                    </div>
                     <div class="description">
                     <p>{{ main_inventory.description_two|safe }}</p>
                     </div>
