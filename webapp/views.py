@@ -1,12 +1,8 @@
 from django.shortcuts import render
-from django.views.decorators.csrf import csrf_exempt
 
 from news.models import Interactive, ModelNews, PreviewNews
 from news.utils import get_weather
 from webapp.models import *
-from django.http import JsonResponse
-from django.core.files.storage import default_storage
-from django.core.files.base import ContentFile
 
 
 def base_main(request):
@@ -20,7 +16,6 @@ def base_main(request):
     }
 
     return render(request, 'main/base.html', context=context)
-
 
 
 def index(request):
@@ -38,6 +33,7 @@ def index(request):
     # Получаем данные о погоде
     weather = get_weather()
     interactiv = Interactive.objects.all()
+    sliders = OurPartners.objects.all()
 
     context = {
         'desc_services_title': desc_services_title,
@@ -51,6 +47,7 @@ def index(request):
         'weather': weather,
         'model_blog_main': model_blog_main,
         'interactiv': interactiv,
+        'sliders': sliders,
     }
 
     return render(request, 'webapp/index.html', context=context)
@@ -906,6 +903,7 @@ def epidemiology(request):
 
     return render(request, 'webapp/activity/epidemiology.html', context=context)
 
+
 def epidemiology_typical(request, pk):
     """Activity - epidemiology template"""
     interactiv = Interactive.objects.all()
@@ -1008,6 +1006,8 @@ def sustainable_development_goals(request):
     }
 
     return render(request, 'webapp/activity/sustainable_development_goals.html', context=context)
+
+
 def ticks(request):
     """Activity - sustainable_development_goals template"""
 
@@ -1145,3 +1145,14 @@ def contacts(request):
     }
 
     return render(request, 'webapp/contacts.html', context=context)
+
+
+def resurces_slider(request):
+    """Recurces slider for main template"""
+    sliders = OurPartners.objects.all()
+
+    context = {
+        'sliders': sliders,
+    }
+
+    return render(request, 'slider/resurces_slider.html', context=context)

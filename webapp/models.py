@@ -1297,6 +1297,7 @@ class OurPartners (models.Model):
 
     name = models.CharField(max_length=200, verbose_name='Имя Слайдер партнеры')
     img = models.ImageField(verbose_name='Photo', upload_to='Slider-Partners/')
+    link = models.URLField(verbose_name="Ссылка", blank=True, null=True)
 
     def __str__(self):
         return self.name

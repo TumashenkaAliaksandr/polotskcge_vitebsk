@@ -1,37 +1,22 @@
 {% load static %}
 
-
 <section class="partner-slider main-bg">
     <div class="container">
         <div class="section-title">
-        <h2>Наши партнеры</h2>
+            {% for main_slider_name in sliders %}
+                {% if forloop.first %}
+                    <h2>{{ main_slider_name.name|safe }}</h2>
+                {% endif %}
+            {% endfor %}
         </div>
         <div class="partner-slider-wrapper">
-            <div class="partner-slide">
-                <a href="#" target="_blank">
-                    <img src="{% static 'webapp/assets/img/gigi_belfarm.png' %}" alt="Partner 1">
-                </a>
-            </div>
-            <div class="partner-slide">
-                <a href="#" target="_blank">
-                    <img src="{% static 'webapp/assets/img/gigi_centr_nadzor.png' %}" alt="Partner 2">
-                </a>
-            </div>
-            <div class="partner-slide">
-                <a href="#" target="_blank">
-                    <img src="{% static 'webapp/assets/img/gigi_resursy_profsoyuz.png' %}" alt="Partner 3">
-                </a>
-            </div>
-            <div class="partner-slide">
-                <a href="#" target="_blank">
-                    <img src="{% static 'webapp/assets/img/gigi_centr_slider_galery.png' %}" alt="Partner 4">
-                </a>
-            </div>
-            <div class="partner-slide">
-                <a href="#" target="_blank">
-                    <img src="{% static 'webapp/assets/img/gigi_belmedteh.png' %}" alt="Partner 5">
-                </a>
-            </div>
+            {% for main_slide in sliders %}
+                <div class="partner-slide">
+                    <a href="{{ main_slide.link }}" target="_blank">
+                        <img src="{{ main_slide.img.url }}">
+                    </a>
+                </div>
+            {% endfor %}
         </div>
     </div>
 
@@ -57,11 +42,10 @@
             currentIndex = (currentIndex + 1) % slides.length;
         }
 
-        // Запуск слайдера каждые 3 секунды
+        // Запуск слайдера каждые 4 секунды
         setInterval(showSlides, 4000);
 
         // Показать первые три слайда при загрузке
         showSlides();
     </script>
 </section>
-
