@@ -846,3 +846,12 @@ class CentreNewsForm(forms.ModelForm):
             'desc_hover': SummernoteWidget(),
             'author': SummernoteWidget(),
         }
+
+
+class OurPartnersForm(forms.ModelForm):
+    class Meta:
+        model = OurPartners
+        fields = '__all__'
+        widgets = {
+            'name': SummernoteWidget(),
+        }

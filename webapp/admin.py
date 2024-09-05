@@ -1,7 +1,7 @@
 from tinymce.widgets import TinyMCE
 from django.contrib import admin
 from django.utils.safestring import mark_safe
-from django.utils.html import strip_tags
+from django.utils.html import strip_tags, format_html
 from .forms import *
 
 
@@ -1031,3 +1031,22 @@ class CentreNewsAdmin(admin.ModelAdmin):
 
     clean_name.short_description = 'Name'
     list_display = ['clean_name']
+
+
+@admin.register(OurPartners)
+class OurPartnersAdmin(admin.ModelAdmin):
+    form = OurPartnersForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+
+    def img_tag(self, obj):
+        if obj.img:
+            return format_html('<img src="{}" style="width:50px;height:50px;" />'.format(obj.img.url))
+        return format_html('<span>No Image</span>')
+
+    img_tag.short_description = 'Image'
+
+    list_display = ['clean_name', 'img_tag']

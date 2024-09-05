@@ -61,7 +61,7 @@ class InteractiveAdmin(admin.ModelAdmin):
         }),
     )
     formfield_overrides = {
-        models.TextField: {'widget': TinyMCE}
+        models.TextField: {'widget': SummernoteWidget}
     }
 
 
@@ -79,7 +79,7 @@ class PreviewNewsAdmin(admin.ModelAdmin):
         }),
     )
     formfield_overrides = {
-        models.TextField: {'widget': TinyMCE}
+        models.TextField: {'widget': SummernoteWidget}
     }
 
 

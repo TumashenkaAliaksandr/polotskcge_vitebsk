@@ -1275,7 +1275,6 @@ class Contacts(models.Model):
         verbose_name_plural = "Контакты данные"
 
 
-
 class CentreNews(models.Model):
 
     name = models.CharField(max_length=255, verbose_name="ИМЯ")
@@ -1292,3 +1291,16 @@ class CentreNews(models.Model):
     class Meta:
         verbose_name = "Блок с новостями(зелено-красный)"
         verbose_name_plural = "Блок с новостями(зелено-красный)"
+
+
+class OurPartners (models.Model):
+
+    name = models.CharField(max_length=200, verbose_name='Имя Слайдер партнеры')
+    img = models.ImageField(verbose_name='Photo', upload_to='Slider-Partners/')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Слайдер Партнеры"
+        verbose_name_plural = "Слайдер Партнеры"
