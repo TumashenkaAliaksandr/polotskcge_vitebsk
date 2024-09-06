@@ -20,7 +20,6 @@ def base_main(request):
 
 def index(request):
     """Main, center"""
-
     main_services = Services.objects.all()
     desc_services_title = Services_title.objects.all()
     about_us = AboutUs.objects.all()
@@ -1040,6 +1039,7 @@ def analytical_newsletter(request):
     title_desc_queans = Question_Ansver_title.objects.all()
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()
+    sliders = OurPartners.objects.all()
 
     context = {
         'interactiv': interactiv,
@@ -1047,6 +1047,7 @@ def analytical_newsletter(request):
         'title_desc_queans': title_desc_queans,
         'questions': questions,
         'ansvers': ansvers,
+        'sliders': sliders,
     }
 
     return render(request, 'webapp/activity/analytical_newsletter.html', context=context)
@@ -1156,3 +1157,14 @@ def resurces_slider(request):
     }
 
     return render(request, 'slider/resurces_slider.html', context=context)
+
+
+def resurces_slider_three(request):
+    """Recurces slider for main template"""
+    sliders = OurPartners.objects.all()
+
+    context = {
+        'sliders': sliders,
+    }
+
+    return render(request, 'slider/recurces_slider3.html', context=context)
