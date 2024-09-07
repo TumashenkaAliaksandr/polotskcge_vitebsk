@@ -1,131 +1,51 @@
 {% load static %}
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css"/>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
-
-<section class="main-bg-recurces">
+<section class="partner-slider main-bg-recurces">
     <div class="container">
-    <div class="row">
-        <div class="col-md-12 main-bg-recurces">
-            <div class="section-title">
-                <h2>Полезные ресурсы</h2>
-                {#          <p>Мы на карте</p>#}
-            </div>
-            <div class="resurces-sliider">
-                <div id="news-slider" class="owl-carousel">
-                    <div class="post-slide">
-                        <div class="post-img">
-                            <img src="{% static 'webapp/assets/img/gigi_centr_slider_galery.png' %}"
-                                 alt=""/>
-                            <div class="category"><a href="https://rnpcmt.by/%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F/%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9-%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D1%81-%D0%BD%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B5-%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8-2024">Перейти</a></div>
-                        </div>
-                        <div class="post-review">
-                            <h3 class="post-title"><a href="https://rnpcmt.by/%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F/%D1%80%D0%B5%D1%81%D0%BF%D1%83%D0%B1%D0%BB%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9-%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D1%81-%D0%BD%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BC%D0%B5%D0%B4%D0%B8%D1%86%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B5-%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8-2024">Новые Медецинские Технологии</a></h3>
-                            {#                        <p class="post-description">#}
-                            {#                            Blocks for the Bootstrap slider OWL Carousel with automatic horizontal scrolling effect#}
-                            {#                            blocks. Ready for a site snippet.#}
-                            {#                        </p>#}
-                            {#                        <div class="post-bar">#}
-                            {#                            <span><i class="fa fa-user"></i> <a href="#">BootstrapTema</a></span>#}
-                            {#                            <span class="comments"><i class="fa fa-comments"></i> <a href="#">5 Комментариев</a></span>#}
-                            {#                        </div>#}
-                        </div>
-                    </div>
+        <div class="section-title">
+            {% for main_slider_name in sliders %}
+                {% if forloop.first %}
+                    <h2>{{ main_slider_name.name|safe }}</h2>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="partner-slider-wrapper">
+            {% for main_slide in sliders %}
+                <div class="partner-slide">
+                    <a href="{{ main_slide.link }}" target="_blank">
+                        <img src="{{ main_slide.img.url }}">
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 
-                    <div class="post-slide">
-                        <div class="post-img">
-                            <img src="{% static 'webapp/assets/img/gigi_resursy_profsoyuz.png' %}"
-                                 alt=""/>
-                            <div class="category"><a href="https://profmed.1prof.by/">Перейти</a></div>
-                        </div>
-                        <div class="post-review">
-                            <h3 class="post-title"><a href="https://profmed.1prof.by/">Профсоюз Работников</a></h3>
-                            {#                        <p class="post-description">#}
-                            {#                            Blocks for the Bootstrap slider OWL Carousel with automatic horizontal scrolling effect#}
-                            {#                            blocks. Ready for a site snippet.#}
-                            {#                        </p>#}
-                            {#                        <div class="post-bar">#}
-                            {#                            <span><i class="fa fa-user"></i> <a href="#">BootstrapTema</a></span>#}
-                            {#                            <span class="comments"><i class="fa fa-comments"></i> <a href="#">8 Комментариев</a></span>#}
-                            {#                        </div>#}
-                        </div>
-                    </div>
-
-                    <div class="post-slide">
-                        <div class="post-img">
-                            <img src="{% static 'webapp/assets/img/gigi_centr_nadzor.png' %}"
-                                 alt=""/>
-                            <div class="category"><a href="http://gospharmnadzor.by/">Перейти</a></div>
-                        </div>
-                        <div class="post-review">
-                            <h3 class="post-title"><a href="http://gospharmnadzor.by/">Госфармнадзор</a></h3>
-                            {#                        <p class="post-description">#}
-                            {#                            Blocks for the Bootstrap slider OWL Carousel with automatic horizontal scrolling effect#}
-                            {#                            blocks. Ready for a site snippet.#}
-                            {#                        </p>#}
-                            {#                        <div class="post-bar">#}
-                            {#                            <span><i class="fa fa-user"></i> <a href="#">BootstrapTema</a></span>#}
-                            {#                            <span class="comments"><i class="fa fa-comments"></i> <a href="#">13 Комментариев</a></span>#}
-                            {#                        </div>#}
-                        </div>
-                    </div>
-
-                    <div class="post-slide">
-                        <div class="post-img">
-                            <img src="{% static 'webapp/assets/img/gigi_belfarm.png' %}"
-                                 alt=""/>
-                            <div class="category"><a href="http://pharma.by/">Перейти</a></div>
-                        </div>
-                        <div class="post-review">
-                            <h3 class="post-title"><a href="http://pharma.by/">Белфармация</a></h3>
-                            {#                        <p class="post-description">#}
-                            {#                            Blocks for the Bootstrap slider OWL Carousel with automatic horizontal scrolling effect#}
-                            {#                            blocks. Ready for a site snippet.#}
-                            {#                        </p>#}
-                            {#                        <div class="post-bar">#}
-                            {#                            <span><i class="fa fa-user"></i> <a href="#">BootstrapTema</a></span>#}
-                            {#                            <span class="comments"><i class="fa fa-comments"></i> <a href="#">21 Комментарий</a></span>#}
-                            {#                        </div>#}
-                        </div>
-                    </div>
-                    <div class="post-slide">
-                        <div class="post-img">
-                            <img src="{% static 'webapp/assets/img/gigi_belmedteh.png' %}"
-                                 alt=""/>
-                            <div class="category"><a href="https://belmt.by/">Перейти</a></div>
-                        </div>
-                        <div class="post-review">
-                            <h3 class="post-title"><a href="https://belmt.by/">Белмедтехника</a></h3>
-                            {#                        <p class="post-description">#}
-                            {#                            Blocks for the Bootstrap slider OWL Carousel with automatic horizontal scrolling effect#}
-                            {#                            blocks. Ready for a site snippet.#}
-                            {#                        </p>#}
-                            {#                        <div class="post-bar">#}
-                            {#                            <span><i class="fa fa-user"></i> <a href="#">BootstrapTema</a></span>#}
-                            {#                            <span class="comments"><i class="fa fa-comments"></i> <a href="#">21 Комментарий</a></span>#}
-                            {#                        </div>#}
-                        </div>
-                    </div>
-
-                </div><!-- ./col-md-12 -->
-            </div>
-        </div><!-- ./row -->
-    </div><!-- ./container -->
     <script>
-        $(document).ready(function () {
-            $("#news-slider").owlCarousel({
-                items: 3,
-                itemsDesktop: [1199, 3],
-                itemsDesktopSmall: [1000, 2],
-                itemsMobile: [650, 1],
-                pagination: false,
-                navigationText: false,
-                autoPlay: true
+        const slides = document.querySelectorAll('.partner-slide');
+        let currentIndex = 0;
+
+        function showSlides() {
+            // Скрыть все слайды
+            slides.forEach((slide, index) => {
+                slide.style.display = "none";
+                slide.classList.remove('active');
             });
-        });
+
+            // Показать три центральных слайда
+            for (let i = 0; i < 4; i++) {
+                const index = (currentIndex + i) % slides.length;
+                slides[index].style.display = "block";
+                slides[index].classList.add('active');
+            }
+
+            // Переключить индекс для следующего показа
+            currentIndex = (currentIndex + 1) % slides.length;
+        }
+
+        // Запуск слайдера каждые 4 секунды
+        setInterval(showSlides, 4000);
+
+        // Показать первые три слайда при загрузке
+        showSlides();
     </script>
-</div>
 </section>

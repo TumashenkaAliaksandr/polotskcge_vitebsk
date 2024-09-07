@@ -544,9 +544,11 @@ def laboratory_services(request):
 def hygiene_education(request):
     """Services - hygiene_education template"""
     features = Featured.objects.all()
+    sliders = OurPartners.objects.all()
 
     context = {
         'features': features,
+        'sliders': sliders,
     }
 
     return render(request, 'webapp/services/hygiene_education.html', context=context)
@@ -1122,6 +1124,8 @@ def educational_resources(request):
     title_desc_queans = Question_Ansver_title.objects.all()
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()
+    sliders = OurPartners.objects.all()
+
 
     context = {
         'features': features,
@@ -1130,6 +1134,7 @@ def educational_resources(request):
         'title_desc_queans': title_desc_queans,
         'questions': questions,
         'ansvers': ansvers,
+        'sliders': sliders,
     }
 
     return render(request, 'webapp/healthy_lifestyle/educational_resources.html', context=context)
