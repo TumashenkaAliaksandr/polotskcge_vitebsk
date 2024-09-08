@@ -715,14 +715,6 @@ class ContactInfoHadForm(forms.ModelForm):
         }
 
 
-class ImmunoprophylaxisNameForm(forms.ModelForm):
-    class Meta:
-        model = ImmunoprophylaxisName
-        fields = '__all__'
-        widgets = {
-            'name': SummernoteWidget(),
-        }
-
 
 class ImmunoprophylaxisInfForm(forms.ModelForm):
     class Meta:
@@ -731,6 +723,7 @@ class ImmunoprophylaxisInfForm(forms.ModelForm):
         widgets = {
             'description': SummernoteWidget(),
             'name': SummernoteWidget(),
+            'name_page': SummernoteWidget(),
         }
 
 
@@ -852,10 +845,8 @@ class CentreNewsForm(forms.ModelForm):
         model = CentreNews
         fields = '__all__'
         widgets = {
-            'name': SummernoteWidget(),
             'desc': SummernoteWidget(),
             'desc_hover': SummernoteWidget(),
-            'author': SummernoteWidget(),
         }
 
 

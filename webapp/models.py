@@ -1106,21 +1106,10 @@ class ServicesLawyerTipical(models.Model):
         return self.name
 
 
-class ImmunoprophylaxisName(models.Model):
-
-    name = models.CharField(max_length=350, default='Тайтл')
-
-    class Meta:
-        verbose_name = 'Иммунопрофилактика (Тайтл)'
-        verbose_name_plural = 'Иммунопрофилактика (Тайтл)'
-
-    def __str__(self):
-        return self.name
-
-
 class ImmunoprophylaxisInf(models.Model):
 
     name = models.CharField(max_length=350, default='Тайтл')
+    name_page = models.CharField(max_length=350, default='Тайтл для страницы имунопрофилактика')
     description = models.TextField(default='Описание')
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
 

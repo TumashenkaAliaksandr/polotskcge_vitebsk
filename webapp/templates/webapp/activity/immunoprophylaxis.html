@@ -24,7 +24,7 @@
     </section>
     <!-- End Breadcrumbs Section -->
 
- <!-- ======= Book NEWS text Section ======= -->
+    <!-- ======= Book NEWS text Section ======= -->
     <div id="single" class="single main-bg-epidem">
         <div class="breaking-news">
             <div class="container">
@@ -59,11 +59,15 @@
     <section id="featured-services" class="featured-services main-bg-epidem">
         <div class="container book_info" data-aos="fade-up">
             <div class="row">
-                {% for main_typical_title in epidem_title %}
-                    <div class="section-title">
-                        <h2>{{ main_typical_title.name|safe }}</h2>
-                    </div>
+
+                {% for main_typical_title in all_typical_news %}
+                    {% if forloop.first %}
+                        <div class="section-title">
+                            <p>{{ main_typical_title.name_page|safe }}</p>
+                        </div>
+                    {% endif %}
                 {% endfor %}
+
                 {% for main_typical_inf in all_typical_news %}
                     <div class="row">
                         <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">

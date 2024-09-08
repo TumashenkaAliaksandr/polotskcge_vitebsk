@@ -267,7 +267,8 @@ def hotline(request):
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
-    centre_news = CentreNews.objects.all()
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
+    model_blog_main = ModelNews.objects.filter(is_main_days_health=True).order_by('-pub_date')
 
     context = {
         'features': features,
@@ -278,6 +279,7 @@ def hotline(request):
         'ansvers': ansvers,
         'title_desc_queans': title_desc_queans,
         'centre_news': centre_news,
+        'model_blog_main': model_blog_main,
     }
 
     return render(request, 'webapp/appeals/hotline.html', context=context)
@@ -432,18 +434,23 @@ def maintenance_schedule(request):
 
 def services(request):
     """Services - services template"""
+
+    desc_services_title = Services_title.objects.all()
     main_services = Services.objects.all()
     features = Featured.objects.all()
     questions = Question.objects.all()
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
+    interactiv = Interactive.objects.all()
 
     context = {
         'features': features,
         'questions': questions,
         'ansvers': ansvers,
         'title_desc_queans': title_desc_queans,
+        'desc_services_title': desc_services_title,
         'main_services': main_services,
+        'interactiv': interactiv,
     }
 
     return render(request, 'webapp/services/services.html', context=context)
@@ -547,11 +554,17 @@ def price_lists(request):
     price_lists = PriceLists.objects.all()
     sliders = OurPartners.objects.all()
     interactiv = Interactive.objects.all()
+    main_services = Services.objects.all()
+    desc_services_title = Services_title.objects.all()
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
 
     context = {
         'price_lists': price_lists,
         'sliders': sliders,
         'interactiv': interactiv,
+        'main_services': main_services,
+        'desc_services_title': desc_services_title,
+        'centre_news': centre_news,
     }
 
     return render(request, 'webapp/services/price_lists.html', context=context)
@@ -936,8 +949,6 @@ def immunoprophylaxis(request):
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
-    typical_inf = ImmunoprophylaxisInf.objects.all()
-    epidem_title = ImmunoprophylaxisName.objects.all()
 
     all_typical_news = ImmunoprophylaxisInf.objects.all().order_by('-pub_date')
 
@@ -946,13 +957,11 @@ def immunoprophylaxis(request):
 
     context = {
         'interactiv': interactiv,
-        'epidem_title': epidem_title,
         'weather': weather,  # Передаем данные о погоде в контекст
         'questions': questions,
         'ansvers': ansvers,
         'title_desc_queans': title_desc_queans,
         'all_typical_news': all_typical_news,
-        'typical_inf': typical_inf,
     }
 
     return render(request, 'webapp/activity/immunoprophylaxis.html', context=context)
@@ -965,8 +974,7 @@ def immunoprophylaxis_typical(request, pk):
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
-    typical_inf = ImmunoprophylaxisTipical.objects.all()
-    epidem_title = ImmunoprophylaxisName.objects.all()
+    typical_inf = ImmunoprophylaxisTipical.objects.filter(pk=pk)
 
     all_typical_news = ImmunoprophylaxisInf.objects.all().order_by('-pub_date')
 
@@ -976,7 +984,6 @@ def immunoprophylaxis_typical(request, pk):
     context = {
         'interactiv': interactiv,
         'news_typical': news_typical,
-        'epidem_title': epidem_title,
         'weather': weather,  # Передаем данные о погоде в контекст
         'questions': questions,
         'ansvers': ansvers,

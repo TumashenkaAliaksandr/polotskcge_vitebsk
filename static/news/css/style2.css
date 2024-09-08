@@ -541,7 +541,7 @@ body a:hover{
 .br-bm-gd-lt .overlay .arrow-left {
     position: relative;
     left: 0;
-    width: 0;
+    width: auto;
     height: 0;
     top: 0;
     bottom: 0;
@@ -562,7 +562,7 @@ body a:hover{
 .br-bm-gd-lt-fon .overlay .arrow-left {
     position: relative;
     left: 0;
-    width: 0;
+    width: auto;
     height: 0;
     top: 0;
     bottom: 0;

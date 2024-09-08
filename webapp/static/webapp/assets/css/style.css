@@ -953,6 +953,12 @@ section#footer {
     background-attachment: fixed;
 }
 
+.health-days-bg {
+    padding: 35px 0 35px;
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.97)), url('../img/gigi_centr_health.png') center/cover;
+    background-attachment: fixed;
+}
+
 .main-bg-economic-souz {
     padding: 35px 0 35px;
     background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(242, 251, 252, 0.97)), url('../img/gigi_centr_eurasia.png') center/cover;

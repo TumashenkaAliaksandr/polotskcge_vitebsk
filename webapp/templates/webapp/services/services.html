@@ -23,6 +23,38 @@
         </div>
     </section>
 
+
+    <!-- ======= Interactive News Section ======= -->
+    <div id="single" class="single price-bg">
+        <div class="breaking-news">
+            <div class="container">
+                {% for main_interactiv_string in interactiv %}
+                    <div class="move-text">
+                        <div class="breaking_news">
+                            <h2>Новости Центра</h2>
+                        </div>
+                        <div class="marquee">
+                            <div class="marquee1"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description | safe }}</a>
+                            </div>
+                            <div class="marquee2"><a class="breaking"
+                                                     href="{% url 'news:news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <script type="text/javascript" src="{% static 'js/jquery.marquee.js' %}"></script>
+                        <script>
+                            $('.marquee').marquee({pauseOnHover: true});
+                            //@ sourceURL=pen.js
+                        </script>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- ======= End Interactive News Section ======= -->
+
     <!-- ======= Featured Services Section ======= -->
     <section id="featured-services" class="featured-services main-bg">
         <div class="container" data-aos="fade-up">

@@ -7,7 +7,7 @@ from .forms import *
 
 class DoctorAdmin(admin.ModelAdmin):
     formfield_overrides = {
-        models.TextField: {'widget': TinyMCE}
+        models.TextField: {'widget': SummernoteWidget}
     }
     def clean_name(self, obj):
         return strip_tags(obj.name)
@@ -23,7 +23,7 @@ admin.site.register(Doctor, DoctorAdmin)
 
 class Services_titleAdmin(admin.ModelAdmin):
     formfield_overrides = {
-        models.TextField: {'widget': TinyMCE}
+        models.TextField: {'widget': SummernoteWidget}
     }
 
     def clean_name(self, obj):
@@ -40,7 +40,7 @@ admin.site.register(Services_title, Services_titleAdmin)
 
 class ServicesAdmin(admin.ModelAdmin):
     formfield_overrides = {
-        models.TextField: {'widget': TinyMCE}
+        models.TextField: {'widget': SummernoteWidget}
     }
 
     def clean_name(self, obj):
@@ -837,16 +837,6 @@ class ImmunoprophylaxisTipicalAdmin(admin.ModelAdmin):
     clean_name.short_description = 'Name'
     list_display = ['clean_name']
 
-
-@admin.register(ImmunoprophylaxisName)
-class ImmunoprophylaxisTipicalAdmin(admin.ModelAdmin):
-    form = ImmunoprophylaxisNameForm
-
-    def clean_name(self, obj):
-        return strip_tags(obj.name)
-
-    clean_name.short_description = 'Name'
-    list_display = ['clean_name']
 
 
 @admin.register(EconimicSouz)

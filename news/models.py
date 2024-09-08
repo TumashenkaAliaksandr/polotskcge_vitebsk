@@ -36,6 +36,7 @@ class ModelNews(models.Model):
         verbose_name = 'Главная модель Новости'
         verbose_name_plural = 'Главная модель Новости'
 
+
 class Interactive(models.Model):
     """Model for interactiv menu News"""
 
