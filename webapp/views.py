@@ -541,7 +541,7 @@ def laboratory_services(request):
     return render(request, 'webapp/services/laboratory_services.html', context=context)
 
 
-def hygiene_education(request):
+def price_lists(request):
     """Services - hygiene_education template"""
     features = Featured.objects.all()
     sliders = OurPartners.objects.all()
@@ -551,7 +551,7 @@ def hygiene_education(request):
         'sliders': sliders,
     }
 
-    return render(request, 'webapp/services/hygiene_education.html', context=context)
+    return render(request, 'webapp/services/price_lists.html', context=context)
 
 
 def disinfection_disinsection_deratization(request):
