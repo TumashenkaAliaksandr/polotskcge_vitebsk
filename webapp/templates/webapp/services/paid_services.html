@@ -137,6 +137,27 @@
     </section>
     <!-- End Doctors Section -->
 
+    <!-- ======= Price Lists Section ======= -->
+    <section id="featured-services" class="featured-services ap-bg">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row">
+                {% for main_price_lists in price_lists_fiz %}
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+                            <div class="icon"><a href="{{ main_price_lists.add_file }}"><i
+                                    class="{{ main_price_lists.icon_class }}"></i></a></div>
+                            <h4 class="title"><a
+                                    href="{{ main_price_lists.add_file }}">{{ main_price_lists.name|safe }}</a></h4>
+                            <a href="{{ main_price_lists.add_file }}"><p class="description">{{ main_price_lists.description|safe }}</p></a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- End Price Lists Section -->
+
 
   </main><!-- End #main -->
 

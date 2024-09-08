@@ -462,12 +462,14 @@ def paid_services(request):
     studi = Studies.objects.all()
     wqs = WaterQualitySafety.objects.all()
     lfv = LaboratoryFruitVegetable.objects.all()
+    price_lists_fiz = PriceListsFiz.objects.all()
 
     context = {
         'studi': studi,
         'wqs': wqs,
         'lfv': lfv,
         'info_clocks': info_clocks,
+        'price_lists_fiz': price_lists_fiz,
     }
 
     return render(request, 'webapp/services/paid_services.html', context=context)

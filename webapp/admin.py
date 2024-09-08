@@ -183,6 +183,17 @@ class PriceListsAdmin(admin.ModelAdmin):
     list_display = ['clean_name']
 
 
+@admin.register(PriceListsFiz)
+class PriceListsFizAdmin(admin.ModelAdmin):
+    form = PriceListsFizForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
+
+
 @admin.register(Registration)
 class RegistrationAdmin(admin.ModelAdmin):
     form = ApRegistrationForm

@@ -79,6 +79,16 @@ class PriceListsForm(forms.ModelForm):
         }
 
 
+class PriceListsFizForm(forms.ModelForm):
+    class Meta:
+        model = PriceListsFiz
+        fields = '__all__'
+        widgets = {
+            'name': SummernoteWidget(),
+            'description': SummernoteWidget(),
+        }
+
+
 class Book_complaintForm(forms.ModelForm):
 
     class Meta:
