@@ -543,12 +543,15 @@ def laboratory_services(request):
 
 def price_lists(request):
     """Services - hygiene_education template"""
-    features = Featured.objects.all()
+
+    price_lists = PriceLists.objects.all()
     sliders = OurPartners.objects.all()
+    interactiv = Interactive.objects.all()
 
     context = {
-        'features': features,
+        'price_lists': price_lists,
         'sliders': sliders,
+        'interactiv': interactiv,
     }
 
     return render(request, 'webapp/services/price_lists.html', context=context)

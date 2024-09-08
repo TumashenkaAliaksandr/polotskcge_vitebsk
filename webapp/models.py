@@ -35,6 +35,23 @@ class Featured(models.Model):
         return self.name
 
 
+class PriceLists(models.Model):
+    """This Model for Price Lists block on the main page"""
+
+    name = models.CharField(max_length=100, default='Name')
+    description = models.TextField(default='Description')
+    link = models.URLField(blank=True)  # Поле для хранения ссылки
+    icon_class = models.CharField(max_length=100, default='fas fa-file-invoice')
+    add_file = models.FileField(blank=True)
+
+    class Meta:
+        verbose_name = 'Прейскуранты'
+        verbose_name_plural = 'Прейскуранты'
+
+    def __str__(self):
+        return self.name
+
+
 class AnticorrTitle(models.Model):
     """This Model for Anticorr Title block on the anticorruptions page"""
 
