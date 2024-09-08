@@ -1027,6 +1027,12 @@ section#footer {
     background-attachment: fixed;
 }
 
+.prise-bg {
+    padding: 35px 0 35px;
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.97)), url('../img/gigi_centr_price_coin.jpg') center/cover;
+    background-attachment: fixed;
+}
+
 
 .main-bg-appeals {
     padding: 15px 0 15px;
