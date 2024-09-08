@@ -867,3 +867,16 @@ class OurPartnersForm(forms.ModelForm):
         widgets = {
             'name': SummernoteWidget(),
         }
+
+
+class CitiesForm(forms.ModelForm):
+    class Meta:
+        model = Cities
+        fields = '__all__'
+        widgets = {
+            'name': SummernoteWidget(),
+            'name_main': SummernoteWidget(),
+            'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
+            'description_three': SummernoteWidget(),
+        }

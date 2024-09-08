@@ -509,6 +509,7 @@ class Quarantine(models.Model):
     def __str__(self):
         return self.name
 
+
 class EpidemSituations(models.Model):
 
     name = models.CharField(max_length=1000, default='Тайтл заглавный', blank=True)
@@ -585,6 +586,7 @@ class Question(models.Model):
 
     def __str__(self):
         return self.question_text
+
 
 class Answer(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='answers')
@@ -1328,3 +1330,20 @@ class OurPartners (models.Model):
     class Meta:
         verbose_name = "Слайдер Партнеры"
         verbose_name_plural = "Слайдер Партнеры"
+
+
+class Cities(models.Model):
+
+    name = models.CharField(max_length=350, default='Тайтл')
+    name_main = models.CharField(max_length=350, default='Тайтл для Города')
+    description = models.TextField(default='Описание')
+    description_two = models.TextField(default='Описание при клике')
+    description_three = models.TextField(default='Развернутое Описание')
+    photo = models.ImageField(upload_to='Health_cities/', null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Здоровые города и поселки Инф для блока'
+        verbose_name_plural = 'Здоровые города и поселки Инф для блока'
+
+    def __str__(self):
+        return self.name

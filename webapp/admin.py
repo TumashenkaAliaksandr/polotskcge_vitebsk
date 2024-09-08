@@ -1062,3 +1062,14 @@ class OurPartnersAdmin(admin.ModelAdmin):
     img_tag.short_description = 'Image'
 
     list_display = ['clean_name', 'img_tag']
+
+
+@admin.register(Cities)
+class CitiesAdmin(admin.ModelAdmin):
+    form = CitiesForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']

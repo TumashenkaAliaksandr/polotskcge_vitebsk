@@ -768,6 +768,7 @@ def healthy_cities_towns(request):
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
     health_inf = Healthy.objects.all()
+    cities = Cities.objects.all()
 
     all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
 
@@ -783,6 +784,7 @@ def healthy_cities_towns(request):
         'all_typical_news': all_typical_news,
         'health_inf': health_inf,
         'heltitle_inf': heltitle_inf,
+        'cities': cities,
     }
 
     return render(request, 'webapp/activity/healthy_cities_towns.html', context=context)

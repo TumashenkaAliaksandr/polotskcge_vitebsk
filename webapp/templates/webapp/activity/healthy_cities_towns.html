@@ -80,73 +80,57 @@
     </section>
     <!-- End Featured Services Section -->
 
+
     <!-- ======= Departments Section ======= -->
     <section id="departments" class="departments main-bg-poselki">
         <div class="container" data-aos="fade-up">
-
-            <div class="description-left">
-                <h3>Список населенных пунктов</h3>
-            </div>
-
+            {% for city in cities %}
+                {% if forloop.first %}
+                    <div class="description-left">
+                        <h3>{{ city.name }}</h3>
+                    </div>
+                {% endif %}
+            {% endfor %}
             <div class="row" data-aos="fade-up" data-aos-delay="100">
                 <div class="col-lg-4 mb-5 mb-lg-0">
                     <ul class="nav nav-tabs flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
-                                <h4>Фариново</h4>
-                                <p>«Здоровый агрогородок»</p>
-                            </a>
-                        </li>
-                        <li class="nav-item mt-2">
-                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
-                                <h4>Ветрино</h4>
-                                <p>«Здоровый агрогородок»</p>
-                            </a>
-                        </li>
-                        <li class="nav-item mt-2">
-                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
-                                <h4>Заозерье</h4>
-                                <p>«Здоровый агрогородок»</p>
-                            </a>
-                        </li>
-                        <li class="nav-item mt-2">
-                            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
-                                <h4>Богатырская</h4>
-                                <p>«Здоровый агрогородок»</p>
-                            </a>
-                        </li>
+                        {% for city in cities %}
+                            <li class="nav-item">
+                                <a class="nav-link {% if forloop.first %}active show{% endif %}" data-bs-toggle="tab"
+                                   data-bs-target="#tab-{{ forloop.counter }}">
+                                    <h4>{{ city.name_main }}</h4>
+                                    <p>{{ city.description }}</p>
+                                </a>
+                            </li>
+                        {% endfor %}
                     </ul>
                 </div>
                 <div class="col-lg-8">
                     <div class="tab-content">
-                        <div class="tab-pane active show" id="tab-1">
-                            <img src="{% static 'assets/img/gigi_centr_farinava.png' %}" alt="" class="img-fluid">
-                            <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos
-                                ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet
-                                eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus
-                                nostrum rem vero</p>
-                        </div>
-                        <div class="tab-pane" id="tab-2">
-                            <img src="{% static 'assets/img/gigi_centr_vetrino.png' %}" alt="" class="img-fluid">
-                            <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos
-                                ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet
-                                eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus
-                                nostrum rem vero</p>
-                        </div>
-                        <div class="tab-pane" id="tab-3">
-                            <img src="{% static 'assets/img/gigi_centr_zaozere.png' %}" alt="" class="img-fluid">
-                            <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos
-                                ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet
-                                eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus
-                                nostrum rem vero</p>
-                        </div>
-                        <div class="tab-pane" id="tab-4">
-                            <img src="{% static 'assets/img/gigi_centr_bogat.png' %}" alt="" class="img-fluid">
-                            <p>Et nobis maiores eius. Voluptatibus ut enim blanditiis atque harum sint. Laborum eos
-                                ipsum ipsa odit magni. Incidunt hic ut molestiae aut qui. Est repellat minima eveniet
-                                eius et quis magni nihil. Consequatur dolorem quaerat quos qui similique accusamus
-                                nostrum rem vero</p>
-                        </div>
+                        {% for city in cities %}
+                            <div class="tab-pane {% if forloop.first %}active show{% endif %}"
+                                 id="tab-{{ forloop.counter }}">
+                                <img src="{{ city.photo.url }}" alt="" class="img-fluid">
+                                <ul class="faq-list">
+                                    {% for question in cities %}
+                                        {% if forloop.first %}
+                                            <div data-bs-toggle="collapse" class="collapsed question"
+                                                 href="#{{ question.id }}"> {{ question.description_two|safe }} <i
+                                                    class="bi bi-chevron-down icon-show"></i><i
+                                                    class="bi bi-chevron-up icon-close"></i>
+                                            </div>
+                                            <div id="{{ question.id }}" class="collapse" data-bs-parent=".faq-list">
+                                                <p>
+                                                    {% for answer in cities %}
+                                                        {{ answer.description_three|safe}}
+                                                    {% endfor %}
+                                                </p>
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -154,6 +138,7 @@
         </div>
     </section>
     <!-- End Departments Section -->
+
 
     <!-- ======= Frequently Asked Questioins Section ======= -->
     <section id="faq" class="faq main-bg-poselki">
