@@ -1183,8 +1183,8 @@ class HealthyTitle(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Здоровые города и поселки (ТАЙТЛ и ОПИСАНИЕ)"
-        verbose_name_plural = "Здоровые города и поселки (ТАЙТЛ и ОПИСАНИЕ)"
+        verbose_name = "Здоровые города и поселки (Верхний ТАЙТЛ и ОПИСАНИЕ)"
+        verbose_name_plural = "Здоровые города и поселки (Верхний ТАЙТЛ и ОПИСАНИЕ)"
 
 
 class Healthy(models.Model):
@@ -1199,8 +1199,8 @@ class Healthy(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Здоровые города и поселки"
-        verbose_name_plural = "Здоровые города и поселки"
+        verbose_name = "Здоровые города и поселки (ФАЙЛЫ)"
+        verbose_name_plural = "Здоровые города и поселки (ФАЙЛЫ)"
         ordering = ['-pub_date']
 
 
@@ -1332,18 +1332,42 @@ class OurPartners (models.Model):
         verbose_name_plural = "Слайдер Партнеры"
 
 
-class Cities(models.Model):
-
-    name = models.CharField(max_length=350, default='Тайтл')
-    name_main = models.CharField(max_length=350, default='Тайтл для Города')
-    description = models.TextField(default='Описание')
-    description_two = models.TextField(default='Описание при клике')
-    description_three = models.TextField(default='Развернутое Описание')
-    photo = models.ImageField(upload_to='Health_cities/', null=True, blank=True)
+class CitiesTitle(models.Model):
+    """Модель для населенных пунктов"""
+    name = models.CharField(max_length=350, default='Тайтл для блока города')
 
     class Meta:
-        verbose_name = 'Здоровые города и поселки Инф для блока'
-        verbose_name_plural = 'Здоровые города и поселки Инф для блока'
+        verbose_name = 'Здоровые города и поселки (Тайтл для блока Посёлка)'
+        verbose_name_plural = 'Здоровые города и поселки (Тайтл для блока Посёлка)'
 
     def __str__(self):
         return self.name
+
+
+class Cities(models.Model):
+    """Модель для населенных пунктов"""
+    name = models.CharField(max_length=350, default='Тайтл для Посёлка')
+    description = models.TextField(default='Описание')
+    photo = models.ImageField(upload_to='Health_cities/', null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Здоровые города и поселки (Тайтл описание фото)'
+        verbose_name_plural = 'Здоровые города и поселки (Тайтл описание фото)'
+
+    def __str__(self):
+        return self.name
+
+
+class CityDescription(models.Model):
+    """Модель для описаний городов"""
+    city = models.ForeignKey(Cities, on_delete=models.CASCADE, related_name='descriptions')
+    description_two = models.TextField(default='Описание при клике')
+    description_three = models.TextField(default='Развернутое Описание')
+    add_file = models.FileField(upload_to='pdfs/', verbose_name="Прикрепить PDF", blank=True)
+
+    class Meta:
+        verbose_name = 'Здоровые города и поселки - Главное Описание города при нажатии'
+        verbose_name_plural = 'Здоровые города и поселки - Главное Описания городов при нажатии'
+
+    def __str__(self):
+        return f"Описание {self.id}"

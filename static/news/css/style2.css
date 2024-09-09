@@ -562,7 +562,7 @@ body a:hover{
 .br-bm-gd-lt-fon .overlay .arrow-left {
     position: relative;
     left: 0;
-    width: auto;
+    /*width: auto;*/
     height: 0;
     top: 0;
     bottom: 0;
@@ -2620,8 +2620,13 @@ section#tables  p {
 
 .nav-tabs {
     margin-bottom: 1em;
-    margin-top: 21%;
+    /*margin-top: 21%;*/
 }
+
+.city-name-block {
+    margin-bottom: 2%;
+}
+
 .alert {
   font-size: 0.85em;
 }

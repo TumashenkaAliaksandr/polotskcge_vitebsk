@@ -1073,3 +1073,20 @@ class CitiesAdmin(admin.ModelAdmin):
 
     clean_name.short_description = 'Name'
     list_display = ['clean_name']
+
+
+class CityDescriptionAdmin(admin.ModelAdmin):
+    form = CityDescriptionForm
+    list_display = ('city', 'description_two', 'description_three')
+
+
+admin.site.register(CityDescription, CityDescriptionAdmin)
+
+
+@admin.register(CitiesTitle)
+class CitiesTitleAdmin(admin.ModelAdmin):
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']

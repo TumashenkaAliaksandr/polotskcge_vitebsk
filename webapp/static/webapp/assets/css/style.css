@@ -990,7 +990,7 @@ section#footer {
 }
 
 .main-bg-poselki {
-    padding: 15px 0 15px;
+    padding: 45px 0 45px;
     background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.98)), url('../img/gigi_centr_zdorovie_goroda.jpg') center/cover;
     background-attachment: fixed;
 }
@@ -2618,6 +2618,8 @@ section#clocks-two {
     float: left;
     max-width: 200px;
     padding: 0 15px 15px 25px;
+    margin-left: 35px;
+    margin-right: 25px;
 }
 
 @media (max-width: 768px) {
@@ -3049,6 +3051,7 @@ section#clocks-two {
     cursor: pointer;
     color: #32969a;
     transition: 0.3s;
+    margin-bottom: 10px;
 }
 
 .faq .faq-list i {

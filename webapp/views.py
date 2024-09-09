@@ -226,10 +226,12 @@ def normative_documents(request):
 
 def normative_documents_ap(request):
     """AP - normative_documents_ap template"""
-    features = Featured.objects.all()
+    interactiv = Interactive.objects.all()
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
 
     context = {
-        'features': features,
+        'interactiv': interactiv,
+        'centre_news': centre_news,
     }
 
     return render(request, 'webapp/ap/normative_documents_ap.html', context=context)
@@ -769,6 +771,8 @@ def healthy_cities_towns(request):
     title_desc_queans = Question_Ansver_title.objects.all()
     health_inf = Healthy.objects.all()
     cities = Cities.objects.all()
+    city_desc = CityDescription.objects.all()
+    city_title = CitiesTitle.objects.all()
 
     all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
 
@@ -785,6 +789,8 @@ def healthy_cities_towns(request):
         'health_inf': health_inf,
         'heltitle_inf': heltitle_inf,
         'cities': cities,
+        'city_desc': city_desc,
+        'city_title': city_title,
     }
 
     return render(request, 'webapp/activity/healthy_cities_towns.html', context=context)

@@ -84,10 +84,10 @@
     <!-- ======= Departments Section ======= -->
     <section id="departments" class="departments main-bg-poselki">
         <div class="container" data-aos="fade-up">
-            {% for city in cities %}
+            {% for city in city_title %}
                 {% if forloop.first %}
-                    <div class="description-left">
-                        <h3>{{ city.name }}</h3>
+                    <div class="description-left city-name-block">
+                        <h4>{{ city.name|safe }}</h4>
                     </div>
                 {% endif %}
             {% endfor %}
@@ -98,8 +98,8 @@
                             <li class="nav-item">
                                 <a class="nav-link {% if forloop.first %}active show{% endif %}" data-bs-toggle="tab"
                                    data-bs-target="#tab-{{ forloop.counter }}">
-                                    <h4>{{ city.name_main }}</h4>
-                                    <p>{{ city.description }}</p>
+                                    <h4>{{ city.name|safe }}</h4>
+                                    <p>{{ city.description|safe }}</p>
                                 </a>
                             </li>
                         {% endfor %}
@@ -111,30 +111,31 @@
                             <div class="tab-pane {% if forloop.first %}active show{% endif %}"
                                  id="tab-{{ forloop.counter }}">
                                 <img src="{{ city.photo.url }}" alt="" class="img-fluid">
-                                <ul class="faq-list">
-                                    {% for question in cities %}
-                                        {% if forloop.first %}
+                                <section class="faq">
+                                    <ul class="faq-list">
+                                        {% for description in city.descriptions.all %}
                                             <div data-bs-toggle="collapse" class="collapsed question"
-                                                 href="#{{ question.id }}"> {{ question.description_two|safe }} <i
+                                                 href="#description-{{ forloop.counter }}" style="cursor: pointer;">
+                                                {{ description.description_two|safe }} <i
                                                     class="bi bi-chevron-down icon-show"></i><i
                                                     class="bi bi-chevron-up icon-close"></i>
                                             </div>
-                                            <div id="{{ question.id }}" class="collapse" data-bs-parent=".faq-list">
-                                                <p>
-                                                    {% for answer in cities %}
-                                                        {{ answer.description_three|safe}}
-                                                    {% endfor %}
-                                                </p>
+                                            <div id="description-{{ forloop.counter }}" class="collapse"
+                                                 data-bs-parent=".faq-list">
+                                                {% if description.add_file %}
+                                                    <a href="{{ description.add_file.url }}" target="_blank">
+                                                        <p>{{ description.description_three|safe }}</p></a>
+                                                {% endif %}
                                             </div>
-                                        {% endif %}
-                                    {% endfor %}
-                                </ul>
+                                        {% endfor %}
+                                    </ul>
+                                </section>
+
                             </div>
                         {% endfor %}
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
     <!-- End Departments Section -->
