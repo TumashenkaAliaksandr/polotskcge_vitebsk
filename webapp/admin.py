@@ -1090,3 +1090,14 @@ class CitiesTitleAdmin(admin.ModelAdmin):
 
     clean_name.short_description = 'Name'
     list_display = ['clean_name']
+
+
+@admin.register(NormativeDoc)
+class NormativeDocAdmin(admin.ModelAdmin):
+    form = NormativeDocForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']

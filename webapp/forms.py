@@ -887,3 +887,13 @@ class CityDescriptionForm(forms.ModelForm):
             'description_two': SummernoteWidget(),
             'description_three': SummernoteWidget(),
         }
+
+
+class NormativeDocForm(forms.ModelForm):
+    class Meta:
+        model = NormativeDoc
+        fields = '__all__'
+        widgets = {
+            'description': SummernoteWidget(),
+            'name': SummernoteWidget(),
+        }

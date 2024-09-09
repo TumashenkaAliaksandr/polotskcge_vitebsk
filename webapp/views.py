@@ -228,10 +228,12 @@ def normative_documents_ap(request):
     """AP - normative_documents_ap template"""
     interactiv = Interactive.objects.all()
     centre_news = CentreNews.objects.all().order_by('-pub_date')
+    price_lists = NormativeDoc.objects.all()
 
     context = {
         'interactiv': interactiv,
         'centre_news': centre_news,
+        'price_lists': price_lists,
     }
 
     return render(request, 'webapp/ap/normative_documents_ap.html', context=context)
