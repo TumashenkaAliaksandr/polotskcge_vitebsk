@@ -1380,7 +1380,7 @@ class NormativeDoc(models.Model):
     description = models.TextField(default='Description')
     link = models.URLField(blank=True)  # Поле для хранения ссылки
     icon_class = models.CharField(max_length=100, default='fas fa-file-invoice')
-    add_file = models.FileField(blank=True)
+    add_file = models.FileField(upload_to='pdfs/', blank=True)
 
     class Meta:
         verbose_name = 'Нормативные документы (описание и файлы)'

@@ -2642,7 +2642,7 @@ section#clocks-two {
 }
 
 .departments .tab-pane p:last-child {
-    margin-bottom: 0;
+    margin-bottom: 15px;
 }
 
 @keyframes slide-down {
@@ -3048,6 +3048,7 @@ section#clocks-two {
     line-height: 24px;
     font-weight: 400;
     padding-left: 25px;
+    padding-bottom: 10px;
     cursor: pointer;
     color: #32969a;
     transition: 0.3s;
@@ -3062,8 +3063,8 @@ section#clocks-two {
 }
 
 .faq .faq-list p {
-    margin-bottom: 0;
-    padding: 10px 0 0 25px;
+    margin-bottom: 17px;
+    padding: 7px 0 0 25px;
 }
 
 .faq .faq-list .icon-show {

@@ -116,21 +116,23 @@
                                         {% for description in city.descriptions.all %}
                                             <div data-bs-toggle="collapse" class="collapsed question"
                                                  href="#description-{{ forloop.counter }}" style="cursor: pointer;">
-                                                {{ description.description_two|safe }} <i
-                                                    class="bi bi-chevron-down icon-show"></i><i
-                                                    class="bi bi-chevron-up icon-close"></i>
+                                                {{ description.description_two|safe }}
+                                                <i class="bi bi-chevron-down icon-show"></i>
+                                                <i class="bi bi-chevron-up icon-close"></i>
                                             </div>
                                             <div id="description-{{ forloop.counter }}" class="collapse"
                                                  data-bs-parent=".faq-list">
-                                                {% if description.add_file %}
-                                                    <a href="{{ description.add_file.url }}" target="_blank">
-                                                        <p>{{ description.description_three|safe }}</p></a>
-                                                {% endif %}
+                                                <p>
+                                                    {{ description.description_three|safe }}
+                                                    {% if description.add_file %}
+                                                        <a href="{{ description.add_file.url }}" target="_blank">(Посмотреть
+                                                            файл)</a>
+                                                    {% endif %}
+                                                </p>
                                             </div>
                                         {% endfor %}
                                     </ul>
                                 </section>
-
                             </div>
                         {% endfor %}
                     </div>
