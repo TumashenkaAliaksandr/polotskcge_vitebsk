@@ -3044,15 +3044,15 @@ section#clocks-two {
     display: block;
     position: relative;
     font-family: Roboto, sans-serif;
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 17px;
+    line-height: 23px;
     font-weight: 400;
-    padding-left: 25px;
-    padding-bottom: 10px;
+    padding-left: 23px;
+    padding-bottom: 9px;
     cursor: pointer;
     color: #32969a;
     transition: 0.3s;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .faq .faq-list i {
@@ -3063,8 +3063,8 @@ section#clocks-two {
 }
 
 .faq .faq-list p {
-    margin-bottom: 17px;
-    padding: 7px 0 0 25px;
+    margin-bottom: 0px;
+    padding: 2px 0 0 10px;
 }
 
 .faq .faq-list .icon-show {
