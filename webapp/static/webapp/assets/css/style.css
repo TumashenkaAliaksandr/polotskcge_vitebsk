@@ -936,7 +936,7 @@ section {
 }
 
 section#contact {
-    padding: 15px 0 35px;
+    padding: 15px 0 15px;
     background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.97)), url('../img/epi_gigi_polock_contact.png') center/cover;
     background-attachment: fixed;
 }
@@ -1660,7 +1660,7 @@ section#clocks-two {
 
 @media (max-width: 768px) {
     .haderphone-mobile {
-        margin-top: 1%;
+        margin-top: 0.5%;
         display: flex;
         flex-direction: column;
         /*align-items: center;*/
@@ -3623,4 +3623,147 @@ section#clocks-two {
 /* Стили для скрытого слайда */
 .hidden {
   transform: translateX(100%); /* Сдвиг вправо для скрытия */
+}
+
+@media (max-width: 768px) {
+    .partner-slide img {
+        max-width: 150px; /* Увеличьте размер изображений */
+        height: auto;
+        transition: filter 0.3s ease;
+        border-radius: 5px; /* Скругление углов оконтовки */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Тень под изображением */
+    }
+
+    .counts .count-box {
+        box-shadow: -10px -5px 40px 0 rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        width: 100%;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+    .partner-slide img {
+        max-width: 100px; /* Увеличьте размер изображений */
+        height: auto;
+        transition: filter 0.3s ease;
+        border-radius: 5px; /* Скругление углов оконтовки */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Тень под изображением */
+        margin: 0 3px;
+    }
+
+    .partner-slide h2 {
+        font-size: 25px;
+    }
+
+    .move-text-index {
+        width: 138%;
+        margin-left: -1.2em;
+        padding-top: 25%;
+    }
+
+    #header {
+        background: #fff;
+        transition: all 0.5s;
+        z-index: 997;
+        padding: 16px 0;
+        top: 40%;
+        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
+        opacity: 0.95;
+        position: fixed;
+        width: 100%;
+    }
+
+    #topbar {
+        background-image: url('../img/gigi_centr_laboratory1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-color: rgba(20, 58, 59, 0.9);
+        background-blend-mode: overlay;
+        color: #fff;
+        height: 40%;
+        font-size: initial;
+        font-weight: 600;
+        z-index: 996;
+        transition: all 0.5s;
+        padding-bottom: 5%;
+        /*padding-top: 3%;*/
+        flex-direction: column;
+    }
+
+    .haderphone-mobile a {
+        margin-top: 0px;
+        color: #ffffff;
+        font-size: 15px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        font-weight: bold;
+        /*margin-right: 250px;*/
+        text-align: center;
+    }
+
+    #header .logo img {
+        max-height: 40px;
+        margin-right: 0px;
+    }
+
+    .haderphone-mobile {
+        margin-top: 0.5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+        margin-bottom: 0px;
+        padding: 5px 0;
+    }
+
+    .news-grid-right2 h4 {
+        text-transform: uppercase;
+        font-weight: 400;
+        color: #000;
+        margin: -130px;
+
+        font-size: 0.9em;
+        margin-left: 5%;
+    }
+
+    .news-grid-right2 {
+        float: right;
+        width: 71%;
+        margin: 0.6em 0 0;
+    }
+
+    .img-fixed-size-unp-three {
+        width: 157px;
+        height: 105px;
+        object-fit: cover;
+        margin-left: 0px;
+        margin-right: 20px;
+        margin-bottom: 21px;
+    }
+
+    .img-fixed-size-unp-two {
+        width: 67px;
+        height: 47px;
+        object-fit: cover;
+        margin-left: 85px;
+        margin-bottom: 10px;
+    }
+    .display-none-landscape {
+        display: none;
+    }
+
+    .partner-slide {
+        margin: 0 10px; /* Отступы между изображениями */
+        transition: transform 0.5s ease; /* Плавный переход */
+        position: relative; /* Для позиционирования рамки */
+    }
+}
+
+/* Плоские экраны и планшеты */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .partner-slide img {
+        max-width: 120px; /* Установите максимальную ширину для планшетов */
+    }
 }

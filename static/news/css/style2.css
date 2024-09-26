@@ -2231,6 +2231,7 @@ ul.wmuSliderPagination {
     object-fit: cover;
     margin-left: 55px;
     margin-right: 20px;
+    margin-bottom: 21px;
 }
 
 .breaking-news-grid-right ul li{
@@ -3731,7 +3732,7 @@ img.mobile1 {
         text-align: center;
         padding-bottom: 35px;
         padding-top: 10px;
-        /*font-size: 17px;*/
+        font-size: 17px;
     }
 
     .main-bg-laba {
@@ -4099,9 +4100,9 @@ img.mobile1 {
     }
 
     .features .icon-box h4 {
-        font-size: 15px;
+        font-size: 14.3px;
         font-weight: 700;
-        margin: 38px 0 10px 78px;
+        margin: 38px 0 10px 59px;
     }
     .features .icon-box-two h4 {
         font-size: 21px;
@@ -4135,7 +4136,7 @@ img.mobile1 {
     }
 
     .main-bg {
-        padding: 21px 0 10px;
+        padding: 5px 0 21px;
     }
 
     .main-bg-contact {
@@ -4557,4 +4558,43 @@ img.mobile1 {
 	.navbar-nav .open .dropdown-menu > li > a:before,.navbar-nav .open .dropdown-menu > li > a:after {
 		display:none;
 	}
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+
+    .move-text-index {
+        width: 118%;
+        margin-left: -1.8em;
+        padding-top: 15%;
+    }
+    .marquee {
+        width: 60%;
+        margin-left: 0%;
+        font-size: 1em;
+        padding: 10px 0;
+    }
+
+    .img-fixed-size-unp {
+        width: 105px;
+        height: 55px;
+        object-fit: cover;
+        margin-left: -16px;
+        margin-right: 20px;
+        margin-top: 2px;
+    }
+
+    .img-fixed-size-kvit {
+        width: 125px;
+        height: 60px;
+        object-fit: cover;
+        margin-top: 1%;
+    }
+
+    .img-fixed-size-erip {
+        width: 120px;
+        height: 0px;
+        margin-right: 15px;
+        object-fit: cover;
+        display: none;
+    }
 }
