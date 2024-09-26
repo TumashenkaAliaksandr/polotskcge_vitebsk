@@ -112,17 +112,16 @@
           <ul>
               <li {% if request.resolver_match.url_name == 'home' %} class="active" {% endif %} ><a
                       class="nav-link scrollto active" href="{% url 'webapp:home' %}">Главная</a></li>
-              <li
-                      {% if request.resolver_match.url_name in "['structure', 'contacts', 'working_mode', 'anti_corruption', 'ideological_work', 'charter', 'trade_union', 'vacancies']" %}
-                          class="dropdown nav-link scrollto"{% else %} class="dropdown nav-link"{% endif %}><a
+              <li {% if request.resolver_match.url_name in "['structure', 'contacts', 'working_mode', 'anti_corruption', 'ideological_work', 'charter', 'trade_union', 'vacancies']" %}
+                          class="dropdown nav-link scrollto active"{% else %} class="dropdown nav-link scrollto active"{% endif %}><a
                       href="#about"><span>О Центре</span>
                   <i class="bi bi-chevron-down"></i></a>
                   <ul>
                       <li {% if request.resolver_match.url_name == 'structure' %}class="active"{% endif %}><a
                               href="{% url 'webapp:structure' %}">Структура</a></li>
-                      <li><a href="{% url 'webapp:contacts' %}">Контакты</a></li>
-                      <li><a href="{% url 'webapp:working_mode' %}">Режим Работы</a></li>
-                      <li><a href="{% url 'webapp:laboratory_services' %}">Лабораторный отдел</a></li>
+                      <li {% if request.resolver_match.url_name == 'contacts' %}class="active"{% endif %}><a href="{% url 'webapp:contacts' %}">Контакты</a></li>
+                      <li {% if request.resolver_match.url_name == 'working_mode' %}class="active"{% endif %}><a href="{% url 'webapp:working_mode' %}">Режим Работы</a></li>
+                      <li {% if request.resolver_match.url_name == 'laboratory_services' %}class="active"{% endif %}><a href="{% url 'webapp:laboratory_services' %}">Лабораторный отдел</a></li>
                       <li class="dropdown"><a href="{% url 'webapp:anti_corruption' %}"><span>Борьба с коррупцией</span>
                           <i class="bi bi-chevron-right"></i></a>
                           <ul>
@@ -137,15 +136,15 @@
                         </ul>
                       </li>
 {#                      <li><a href="{% url 'webapp:charter' %}">Устав</a></li>#}
-                      <li><a href="{% url 'webapp:trade_union' %}">Профсоюз</a></li>
-                      <li><a href="{% url 'webapp:vacancies' %}">Вакансии</a></li>
+                      <li {% if request.resolver_match.url_name == 'trade_union' %}class="active"{% endif %}><a href="{% url 'webapp:trade_union' %}">Профсоюз</a></li>
+                      <li {% if request.resolver_match.url_name == 'vacancies' %}class="active"{% endif %}><a href="{% url 'webapp:vacancies' %}">Вакансии</a></li>
                   </ul>
               </li>
 
 
-            <li class="dropdown"><a href="{% url 'webapp:appeals' %}"><span>Обращения</span> <i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a {% if request.resolver_match.url_name == 'appeals' %} class="nav-link scrollto active" {% endif %} href="{% url 'webapp:appeals' %}"><span>Обращения</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                    <li><a href="{% url 'webapp:normative_documents' %}">Нормативно-правовые акты</a></li>
+                    <li><a {% if request.resolver_match.url_name == 'normative_documents' %}class="active"{% endif %} href="{% url 'webapp:normative_documents' %}">Нормативно-правовые акты</a></li>
                     <li><a href="{% url 'webapp:electronic_appeals' %}">Обращения граждан и юридических лиц</a></li>
                     <li><a href="{% url 'webapp:hotline' %}">Прямая телефонная линия «горячая линия»</a></li>
                     <li><a href="{% url 'webapp:book_of_comments' %}">Книга Замечаний и Предложений</a></li>

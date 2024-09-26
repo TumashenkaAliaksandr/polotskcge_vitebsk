@@ -112,7 +112,7 @@ class GeneralInfoForm(forms.ModelForm):
 
 
 class EducationalResourceAdminForm(forms.ModelForm):
-    description = forms.CharField(widget=TinyMCE())
+    description = forms.CharField(widget=SummernoteWidget())
 
     class Meta:
         model = EducationalResource
@@ -127,11 +127,11 @@ class InformationAnalyticalForm(forms.ModelForm):
 
 
 class HotlineHoursForm(forms.ModelForm):
-    reception_time = forms.CharField(widget=TinyMCE())
-    post = forms.CharField(widget=TinyMCE())
-    name = forms.CharField(widget=TinyMCE())
-    phone = forms.CharField(widget=TinyMCE())
-    date_hotline = forms.CharField(widget=TinyMCE())
+    reception_time = forms.CharField(widget=SummernoteWidget())
+    post = forms.CharField(widget=SummernoteWidget())
+    name = forms.CharField(widget=SummernoteWidget())
+    phone = forms.CharField(widget=SummernoteWidget())
+    date_hotline = forms.CharField(widget=SummernoteWidget())
 
     class Meta:
         model = HotlineHours
@@ -139,8 +139,8 @@ class HotlineHoursForm(forms.ModelForm):
 
 
 class HotlineHours_TitleForm(forms.ModelForm):
-    name = forms.CharField(widget=TinyMCE())
-    description = forms.CharField(widget=TinyMCE())
+    name = forms.CharField(widget=SummernoteWidget())
+    description = forms.CharField(widget=SummernoteWidget())
 
     class Meta:
         model = HotlineHours_Title
@@ -148,8 +148,8 @@ class HotlineHours_TitleForm(forms.ModelForm):
 
 
 class HotlineHours_Title_descForm(forms.ModelForm):
-    name = forms.CharField(widget=TinyMCE())
-    description = forms.CharField(widget=TinyMCE())
+    name = forms.CharField(widget=SummernoteWidget())
+    description = forms.CharField(widget=SummernoteWidget())
 
     class Meta:
         model = HotlineHours_Title
@@ -157,8 +157,8 @@ class HotlineHours_Title_descForm(forms.ModelForm):
 
 
 class Electronic_appeals_Title_descForm(forms.ModelForm):
-    name = forms.CharField(widget=TinyMCE())
-    description = forms.CharField(widget=TinyMCE())
+    name = forms.CharField(widget=SummernoteWidget())
+    description = forms.CharField(widget=SummernoteWidget())
 
     class Meta:
         model = Electronic_appeals_Title_desc
@@ -166,8 +166,8 @@ class Electronic_appeals_Title_descForm(forms.ModelForm):
 
 
 class Organ_Title_descForm(forms.ModelForm):
-    name = forms.CharField(widget=TinyMCE())
-    description = forms.CharField(widget=TinyMCE())
+    name = forms.CharField(widget=SummernoteWidget())
+    description = forms.CharField(widget=SummernoteWidget())
 
     class Meta:
         model = Organ_Title_desc
@@ -175,8 +175,8 @@ class Organ_Title_descForm(forms.ModelForm):
 
 
 class Up_Organ_infForm(forms.ModelForm):
-    name = forms.CharField(widget=TinyMCE())
-    description = forms.CharField(widget=TinyMCE())
+    name = forms.CharField(widget=SummernoteWidget())
+    description = forms.CharField(widget=SummernoteWidget())
 
     class Meta:
         model = Organ_Title_desc
@@ -184,10 +184,10 @@ class Up_Organ_infForm(forms.ModelForm):
 
 
 class Expertise_Form(forms.ModelForm):
-    name = forms.CharField(widget=TinyMCE())
-    description = forms.CharField(widget=TinyMCE())
-    description_two = forms.CharField(widget=TinyMCE())
-    description_three = forms.CharField(widget=TinyMCE())
+    name = forms.CharField(widget=SummernoteWidget())
+    description = forms.CharField(widget=SummernoteWidget())
+    description_two = forms.CharField(widget=SummernoteWidget())
+    description_three = forms.CharField(widget=SummernoteWidget())
 
     class Meta:
         model = Expertise
@@ -195,8 +195,8 @@ class Expertise_Form(forms.ModelForm):
 
 
 class Duties_Form(forms.ModelForm):
-    name = forms.CharField(widget=TinyMCE())
-    description = forms.CharField(widget=TinyMCE())
+    name = forms.CharField(widget=SummernoteWidget())
+    description = forms.CharField(widget=SummernoteWidget())
 
     class Meta:
         model = Duties
@@ -204,8 +204,8 @@ class Duties_Form(forms.ModelForm):
 
 
 class MaintenanceSh_Form(forms.ModelForm):
-    name = forms.CharField(widget=TinyMCE())
-    description = forms.CharField(widget=TinyMCE())
+    name = forms.CharField(widget=SummernoteWidget())
+    description = forms.CharField(widget=SummernoteWidget())
 
     class Meta:
         model = MaintenanceSchedule
@@ -213,10 +213,10 @@ class MaintenanceSh_Form(forms.ModelForm):
 
 
 class Vacancies_Form(forms.ModelForm):
-    name = forms.CharField(widget=TinyMCE())
-    vacancy = forms.CharField(widget=TinyMCE())
-    vacancy_two = forms.CharField(widget=TinyMCE())
-    vacancy_three = forms.CharField(widget=TinyMCE())
+    name = forms.CharField(widget=SummernoteWidget())
+    vacancy = forms.CharField(widget=SummernoteWidget())
+    vacancy_two = forms.CharField(widget=SummernoteWidget())
+    vacancy_three = forms.CharField(widget=SummernoteWidget())
 
     class Meta:
         model = Vacancies
@@ -224,13 +224,14 @@ class Vacancies_Form(forms.ModelForm):
 
 
 class Appeals_Form(forms.ModelForm):
-    name = forms.CharField(widget=TinyMCE())
-    name_two = forms.CharField(widget=TinyMCE())
-    name_three = forms.CharField(widget=TinyMCE())
-    appeals_desc = forms.CharField(widget=TinyMCE())
-    appeals_desc_two = forms.CharField(widget=TinyMCE())
-    appeals_desc_three = forms.CharField(widget=TinyMCE())
-    appeals_desc_four = forms.CharField(widget=TinyMCE())
+    
+    name = forms.CharField(widget=SummernoteWidget())
+    name_two = forms.CharField(widget=SummernoteWidget())
+    name_three = forms.CharField(widget=SummernoteWidget())
+    appeals_desc = forms.CharField(widget=SummernoteWidget())
+    appeals_desc_two = forms.CharField(widget=SummernoteWidget())
+    appeals_desc_three = forms.CharField(widget=SummernoteWidget())
+    appeals_desc_four = forms.CharField(widget=SummernoteWidget())
 
     class Meta:
         model = MainAppeals
@@ -239,8 +240,8 @@ class Appeals_Form(forms.ModelForm):
 
 class AnticorrTitleForm(forms.ModelForm):
 
-    name = forms.CharField(label='Имя', widget=TinyMCE())
-    desс_anticorr = forms.CharField(label='Описание под тайтл Анткоррупция', widget=TinyMCE())
+    name = forms.CharField(label='Имя', widget=SummernoteWidget())
+    desс_anticorr = forms.CharField(label='Описание под тайтл Анткоррупция', widget=SummernoteWidget())
 
     class Meta:
         model = AnticorrTitle
@@ -248,8 +249,8 @@ class AnticorrTitleForm(forms.ModelForm):
 
 
 class AnticorrForm(forms.ModelForm):
-    name = forms.CharField(label='Имя', widget=TinyMCE())
-    description = forms.CharField(widget=TinyMCE())
+    name = forms.CharField(label='Имя', widget=SummernoteWidget())
+    description = forms.CharField(widget=SummernoteWidget())
     link = forms.URLField(label='Ссылка')
     icon_class = forms.CharField(max_length=100, label='Класс иконки')
 
@@ -259,10 +260,10 @@ class AnticorrForm(forms.ModelForm):
 
 
 class Up_Organ_Form(forms.ModelForm):
-    reception_time = forms.CharField(widget=TinyMCE())
-    post = forms.CharField(widget=TinyMCE())
-    name = forms.CharField(widget=TinyMCE())
-    phone = forms.CharField(widget=TinyMCE())
+    reception_time = forms.CharField(widget=SummernoteWidget())
+    post = forms.CharField(widget=SummernoteWidget())
+    name = forms.CharField(widget=SummernoteWidget())
+    phone = forms.CharField(widget=SummernoteWidget())
 
     class Meta:
         model = Up_Organ
@@ -270,8 +271,8 @@ class Up_Organ_Form(forms.ModelForm):
 
 
 class NormativeDocuments_Form(forms.ModelForm):
-    name = forms.CharField(widget=TinyMCE())
-    normative_desc = forms.CharField(widget=TinyMCE())
+    name = forms.CharField(widget=SummernoteWidget())
+    normative_desc = forms.CharField(widget=SummernoteWidget())
 
     class Meta:
         model = NormativeDocuments
@@ -279,9 +280,9 @@ class NormativeDocuments_Form(forms.ModelForm):
 
 
 class EconimicSouz_Form(forms.ModelForm):
-    name_main = forms.CharField(widget=TinyMCE())
-    name = forms.CharField(widget=TinyMCE())
-    desc = forms.CharField(widget=TinyMCE())
+    name_main = forms.CharField(widget=SummernoteWidget())
+    name = forms.CharField(widget=SummernoteWidget())
+    desc = forms.CharField(widget=SummernoteWidget())
 
     class Meta:
         model = EconimicSouz
@@ -289,10 +290,10 @@ class EconimicSouz_Form(forms.ModelForm):
 
 
 class QuarantineForm(forms.ModelForm):
-    name_main = forms.CharField(widget=TinyMCE())
-    name = forms.CharField(widget=TinyMCE())
-    desc = forms.CharField(widget=TinyMCE())
-    desc_two = forms.CharField(widget=TinyMCE())
+    name_main = forms.CharField(widget=SummernoteWidget())
+    name = forms.CharField(widget=SummernoteWidget())
+    desc = forms.CharField(widget=SummernoteWidget())
+    desc_two = forms.CharField(widget=SummernoteWidget())
 
     class Meta:
         model = EconimicSouz
