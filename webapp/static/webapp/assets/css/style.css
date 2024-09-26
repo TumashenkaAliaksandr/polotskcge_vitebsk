@@ -1104,13 +1104,13 @@ section#footer {
 }
 
 .news-main {
-    padding: 35px 0 35px;
+    padding: 0px 0 35px;
     background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.98)), url('../img/gigi_centr_news2.jpg') center/cover;
     background-attachment: fixed;
 }
 
 section#clocks {
-    padding: 35px 0 35px;
+    padding: 0px 0 25px;
     background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/gigi_centr_back.jpg') center/cover;
     background-attachment: fixed;
 }
@@ -1134,6 +1134,7 @@ section#clocks-two {
     box-shadow: 0 0 15px rgba(193, 215, 213, 0.5) !important; /* Бирюзовая тень */
     padding: 20px !important; /* Отступы внутри секции для более красивого отображения */
     border-radius: 10px !important; /* Радиус для закругленных углов (по желанию) */
+    margin-bottom: 13px;
 }
 
 /*styles for map*/
@@ -1705,7 +1706,7 @@ section#clocks-two {
     justify-content: center;
     text-align: left;
     margin-bottom: 0px;
-    padding: 19px 0;
+    padding: 13px 0;
   }
 }
 
@@ -3018,8 +3019,26 @@ section#clocks-two {
 .table-info {
     padding-top: 1%;
     padding-bottom: 1%;
+    width: 100%;
 }
 
+@media (max-width: 768px) {
+    .table-info {
+        padding-top: 1%;
+        padding-bottom: 1%;
+        width: 100%;
+        overflow-x: auto; /* Позволяет горизонтальную прокрутку */
+        -webkit-overflow-scrolling: touch; /* Улучшает прокрутку на мобильных устройствах */
+
+    }
+
+    .hotline {
+        padding: 5px 0;
+        padding-right: 0px;
+        padding-left: 13px;
+        overflow: hidden;
+    }
+}
 /*конец таблиц*/
 
 /*--------------------------------------------------------------
@@ -3692,10 +3711,20 @@ section#clocks-two {
         flex-direction: column;
     }
 
+    .header-icons-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 7px;
+        margin-top: 5px;
+        padding-top: 5px;
+        padding-left: 3px;
+    }
+
     .haderphone-mobile a {
         margin-top: 0px;
         color: #ffffff;
-        font-size: 15px;
+        font-size: 14px;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         font-weight: bold;
         /*margin-right: 250px;*/
@@ -3759,6 +3788,31 @@ section#clocks-two {
         transition: transform 0.5s ease; /* Плавный переход */
         position: relative; /* Для позиционирования рамки */
     }
+
+    .table-info {
+        padding-top: 1%;
+        padding-bottom: 1%;
+        width: 100%;
+        overflow-x: auto; /* Позволяет горизонтальную прокрутку */
+        -webkit-overflow-scrolling: touch; /* Улучшает прокрутку на мобильных устройствах */
+
+    }
+
+    .breadcrumbs_contacts {
+        margin-top: 33%;
+        display: none;
+    }
+
+    .book_info {
+        display: block;
+        width: auto;
+        height: auto;
+        border: 10px outset lightblue;
+    }
+    .main-bg-profsouz {
+  padding: 0px 0 0px;
+
+}
 }
 
 /* Плоские экраны и планшеты */

@@ -4415,7 +4415,7 @@ img.mobile1 {
 		padding: 1em 0.3em;
 	}
 	.marquee {
-		width: 61%;
+		width: 100%;
 	}
 	a.breaking,.blog-leftr p,.contact-grdr ul li,.albums-grid1 p,.panel-body,.footer-top-grid1 ul.tag2 li a,.wom-right p,.blog-right ul li a,.coment-form input[type="text"], .coment-form textarea, .coment-form input[type="email"],.admin-text-right p,.response-text-right p,.response-text-right ul li a,.response-text-right ul li {
 		font-size: 13px;
@@ -4596,5 +4596,11 @@ img.mobile1 {
         margin-right: 15px;
         object-fit: cover;
         display: none;
+    }
+
+    .section-title {
+        text-align: center;
+        padding-bottom: 15px;
+        padding-top: 15px;
     }
 }

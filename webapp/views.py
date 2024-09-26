@@ -97,10 +97,12 @@ def working_mode(request):
 
     info_clocks = GeneralInfo.objects.all()
     clocks = ReceptionHours.objects.all()
+    interactiv = Interactive.objects.all()
 
     context = {
         'clocks': clocks,
         'info_clocks': info_clocks,
+        'interactiv': interactiv,
     }
 
     return render(request, 'webapp/about_us/working_mode.html', context=context)
