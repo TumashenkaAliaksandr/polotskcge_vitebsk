@@ -4,7 +4,7 @@ from .utils import get_weather
 from django.core.paginator import Paginator
 
 
-def news(request):
+def cge_news(request):
     """these are views for Blog News list"""
 
     model_blog_main = ModelNews.objects.all().order_by('-pub_date')

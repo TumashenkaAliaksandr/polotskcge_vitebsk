@@ -4,6 +4,6 @@ from news.views import *
 app_name = 'news'
 
 urlpatterns = [
-    path('news/', news, name='news'),
+    path('cge_news/', cge_news, name='cge_news'),
     path('single/<int:pk>/', NewsDetailView, name='single'),
 ]

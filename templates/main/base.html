@@ -166,44 +166,44 @@
                     <li><a {% if request.resolver_match.url_name == 'price_lists' %}class="active"{% endif %} href="{% url 'webapp:price_lists' %}">Прейскуранты</a></li>
                 </ul>
             </li>
-            <li class="dropdown"><a href="{% url 'webapp:cge-info' %}"><span>Деятельность</span> <i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a {% if request.resolver_match.url_name in "'cge-info', 'control_supervisory_activities', 'custom_products', 'sustainable_development_goals', 'custom_products', 'healthy_lifestyle', 'monitoring_plan', 'typical_violations', 'preventive_measures', 'analytical_newsletter', 'health_days', 'educational_resources', 'healthy_cities_towns', 'ticks', 'immunoprophylaxis', 'epidemiology', 'eurasian_economic_union', 'sanitary_quarantine_points'" %} class="nav-link scrollto active" {% endif %} href="{% url 'webapp:cge-info' %}"><span>Деятельность</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                    <li class="dropdown"><a href="{% url 'webapp:control_supervisory_activities' %}"><span>Контрольно (надзорная) деятельность</span> <i
+                    <li class="dropdown"><a {% if request.resolver_match.url_name in "'control_supervisory_activities', 'monitoring_plan', 'typical_violations'" %}class="active"{% endif %} href="{% url 'webapp:control_supervisory_activities' %}"><span>Контрольно (надзорная) деятельность</span> <i
                             class="bi bi-chevron-right"></i></a>
                         <ul>
                             <li><a href="https://kgk.gov.by/ru/pvproverok-ru/">План Проверок</a></li>
-                            <li><a href="{% url 'webapp:monitoring_plan' %}">План Мониторинга</a></li>
-                            <li><a href="{% url 'webapp:typical_violations' %}">О типичных Нарушениях</a></li>
+                            <li><a {% if request.resolver_match.url_name == 'monitoring_plan' %}class="active"{% endif %} href="{% url 'webapp:monitoring_plan' %}">План Мониторинга</a></li>
+                            <li><a {% if request.resolver_match.url_name == 'typical_violations' %}class="active"{% endif %} href="{% url 'webapp:typical_violations' %}">О типичных Нарушениях</a></li>
                             <li><a href="https://www.rcheph.by/nadzor/chek-listy/">Чек-Листы</a></li>
                         </ul>
                     </li>
-                    <li><a class="nav-link scrollto" href="{% url 'webapp:custom_products' %}">Нестандартная Продукция</a></li>
-                    <li class="dropdown"><a href="{% url 'webapp:healthy_lifestyle' %}"><span>Здоровый Образ Жизни</span> <i
+                    <li><a {% if request.resolver_match.url_name == 'custom_products' %}class="active"{% endif %} href="{% url 'webapp:custom_products' %}">Нестандартная Продукция</a></li>
+                    <li class="dropdown"><a {% if request.resolver_match.url_name in "'healthy_lifestyle', 'preventive_measures', 'health_days', 'educational_resources'" %}class="active"{% endif %} href="{% url 'webapp:healthy_lifestyle' %}"><span>Здоровый Образ Жизни</span> <i
                             class="bi bi-chevron-right"></i></a>
                         <ul>
-                            <li><a href="{% url 'webapp:preventive_measures' %}">Профилактические мероприятия</a></li>
-                            <li><a href="{% url 'webapp:health_days' %}">Единые Дни Здоровья</a></li>
-                            <li><a href="{% url 'webapp:educational_resources' %}">Информационно-Образовательные<br>ресурсы</a></li>
+                            <li><a {% if request.resolver_match.url_name == 'preventive_measures' %}class="active"{% endif %} href="{% url 'webapp:preventive_measures' %}">Профилактические мероприятия</a></li>
+                            <li><a {% if request.resolver_match.url_name == 'health_days' %}class="active"{% endif %} href="{% url 'webapp:health_days' %}">Единые Дни Здоровья</a></li>
+                            <li><a {% if request.resolver_match.url_name == 'educational_resources' %}class="active"{% endif %} href="{% url 'webapp:educational_resources' %}">Информационно-Образовательные<br>ресурсы</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown"><a href="{% url 'webapp:sustainable_development_goals' %}"><span>Цели Устойчивого Развития</span> <i
+                    <li class="dropdown"><a {% if request.resolver_match.url_name in "'sustainable_development_goals', 'analytical_newsletter'" %}class="active"{% endif %} href="{% url 'webapp:sustainable_development_goals' %}"><span>Цели Устойчивого Развития</span> <i
                             class="bi bi-chevron-right"></i></a>
                         <ul>
-                            <li><a href="{% url 'webapp:analytical_newsletter' %}">Информационно-Аналитический<br>бюллетень</a></li>
+                            <li><a {% if request.resolver_match.url_name == 'analytical_newsletter' %}class="active"{% endif %} href="{% url 'webapp:analytical_newsletter' %}">Информационно-Аналитический<br>бюллетень</a></li>
                         </ul>
                     </li>
-                    <li><a href="{% url 'webapp:healthy_cities_towns' %}">Здоровые Города и Посёлки</a></li>
-                    <li class="dropdown"><a href="{% url 'webapp:epidemiology' %}"><span>Эпидемиология</span> <i class="bi bi-chevron-right"></i></a>
+                    <li><a {% if request.resolver_match.url_name == 'healthy_cities_towns' %}class="active"{% endif %} href="{% url 'webapp:healthy_cities_towns' %}">Здоровые Города и Посёлки</a></li>
+                    <li class="dropdown"><a {% if request.resolver_match.url_name in "'epidemiology', 'ticks', 'immunoprophylaxis'" %}class="active"{% endif %} href="{% url 'webapp:epidemiology' %}"><span>Эпидемиология</span> <i class="bi bi-chevron-right"></i></a>
                         <ul>
-                            <li><a href="{% url 'webapp:ticks' %}">Внимание Клещи</a></li>
-                            <li><a href="{% url 'webapp:immunoprophylaxis' %}">Иммунопрофилактика</a></li>
+                            <li><a {% if request.resolver_match.url_name == 'ticks' %}class="active"{% endif %} href="{% url 'webapp:ticks' %}">Внимание Клещи</a></li>
+                            <li><a {% if request.resolver_match.url_name == 'immunoprophylaxis' %}class="active"{% endif %} href="{% url 'webapp:immunoprophylaxis' %}">Иммунопрофилактика</a></li>
                         </ul>
                     </li>
-                    <li><a class="nav-link scrollto" href="{% url 'webapp:eurasian_economic_union' %}">Евразийский экономический союз</a></li>
-                    <li><a class="nav-link scrollto" href="{% url 'webapp:sanitary_quarantine_points' %}">Санитарно-Карантинные пункты</a></li>
+                    <li><a {% if request.resolver_match.url_name == 'eurasian_economic_union' %}class="active"{% endif %} href="{% url 'webapp:eurasian_economic_union' %}">Евразийский экономический союз</a></li>
+                    <li><a {% if request.resolver_match.url_name == 'sanitary_quarantine_points' %}class="active"{% endif %} href="{% url 'webapp:sanitary_quarantine_points' %}">Санитарно-Карантинные пункты</a></li>
                 </ul>
             </li>
-            <li><a {% if request.resolver_match.url_name == 'news' %}class="active"{% endif %} href="{% url 'news:news' %}">Новости</a></li>
+            <li><a {% if request.resolver_match.url_name == 'cge_news' %}class="active"{% endif %} href="{% url 'news:cge_news' %}">Новости</a></li>
             <li><a class="nav-link scrollto " href="https://www.rcheph.by/nadzor/npa/">НПА</a></li>
         </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
@@ -252,7 +252,7 @@
                           <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:home' %}">Главная</a></li>
                           <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:working_mode' %}">О Центре</a></li>
                           <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:paid_services' %}">Обращения</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="{% url 'news:news' %}">Новости</a></li>
+                          <li><i class="bx bx-chevron-right"></i> <a href="{% url 'news:cge_news' %}">Новости</a></li>
                       </ul>
                   </div>
 
