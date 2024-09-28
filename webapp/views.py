@@ -332,7 +332,7 @@ def higher_authority(request):
     return render(request, 'webapp/appeals/higher_authority.html', context=context)
 
 
-def ap(request):
+def regulations(request):
     """AP template"""
     inventory_info = Inventory.objects.all()
     blanks = BlanksInventory.objects.all()
