@@ -3821,3 +3821,9 @@ section#clocks-two {
         max-width: 120px; /* Установите максимальную ширину для планшетов */
     }
 }
+
+
+.archive {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
