@@ -142,38 +142,54 @@
     </section>
     <!-- End Departments Section -->
 
-
-    <!-- ======= Frequently Asked Questioins Section ======= -->
-    <section id="faq" class="faq main-bg-poselki">
+    <!-- ======= breaking-news Section ======= -->
+    <section id="featured-services" class="featured-services main-bg-poselki">
         <div class="container" data-aos="fade-up">
-            {% for title_desc in title_desc_queans %}
-                <div class="section-title">
-                    <h2>{{ title_desc.name }}</h2>
-                    <p>{{ title_desc.description | safe }}</p>
+            <div class="breaking-news-grids-bottom">
+                <div class="banner-bottom-grids">
+                    {% for main_litle_news in centre_news %}
+                        <div class="col-md-3 banner-bottom-grid-left">
+                            <div class="br-bm-gd-lt-fon">
+                                <a href="{{ main_litle_news.link }}"><img
+                                        src="{{ main_litle_news.img.url }}" alt=" "
+                                        class="img-responsive"/></a>
+                                <div class="overlay">
+                                    <div class="arrow-left"></div>
+                                    <div class="rectangle"></div>
+                                </div>
+                                <div class="health-pos">
+                                    <div class="health">
+                                        <ul>
+                                            <li>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|wordwrap:30|truncatechars_html:58 }}</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <h3>{{ main_litle_news.desc|safe|wordwrap:10|truncatechars_html:58 }}</h3>
+                                    <div class="dummy">
+                                        <a href="{{ main_litle_news.link }}">
+                                            <p>{{ main_litle_news.desc_hover|safe }}</p></a>
+                                    </div>
+                                    <div class="com-heart-health">
+                                        <ul>
+                                            <li><a href="{{ main_litle_news.link }}"><span
+                                                    class="fa fa-user-doctor"
+                                                    aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <div class="clearfix"></div>
                 </div>
-            {% endfor %}
-
-            <ul class="faq-list">
-                {% for question in questions|slice:":6" %}
-                    <li>
-                        <div data-bs-toggle="collapse" class="collapsed question"
-                             href="#{{ question.id }}"> {{ question.question_text }} <i
-                                class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
-                        </div>
-                        <div id="{{ question.id }}" class="collapse" data-bs-parent=".faq-list">
-                            <p>
-                                {% for ansver in question.answers.all %}
-                                    {{ ansver.answer_text }}
-                                {% endfor %}
-                            </p>
-                        </div>
-                    </li>
-                {% endfor %}
-            </ul>
-
+            </div>
         </div>
     </section>
-    <!-- End Frequently Asked Questioins Section -->
+    <!-- End Featured Services Section -->
 
   </main><!-- End #main -->
 
