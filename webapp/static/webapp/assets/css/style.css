@@ -1127,7 +1127,7 @@ section#clocks-two {
 
 .book_info {
     display: block;
-    width: auto;
+    width: 100%;
     height: auto;
     /*border: 10px outset lightblue;*/
     border: 5px solid rgba(0, 0, 0, 0) !important; /* Прозрачная рамка */
@@ -3826,4 +3826,17 @@ section#clocks-two {
 .archive {
     padding-top: 6px;
     padding-bottom: 6px;
+}
+
+.img-container {
+    width: 100%; /* Ширина контейнера */
+    max-width: 90%; /* Максимальная ширина для изображения */
+    margin: 0 auto; /* Центрирование контейнера */
+    overflow: hidden; /* Скрытие лишнего содержимого */
+}
+
+.img-container img {
+    width: 100%; /* Изображение занимает всю ширину контейнера */
+    height: auto; /* Соотношение сторон сохраняется */
+    display: block; /* Убирает пробелы под изображением */
 }

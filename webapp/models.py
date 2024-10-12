@@ -1388,3 +1388,17 @@ class NormativeDoc(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class AboutHistory(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    quantity = models.IntegerField(default=0)
+    icon_class = models.CharField(max_length=50)
+
+    class Meta:
+        verbose_name = 'История - Описание'
+        verbose_name_plural = 'История - Описание'
+
+    def __str__(self):
+        return self.name

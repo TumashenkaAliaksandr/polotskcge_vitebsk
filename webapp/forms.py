@@ -898,3 +898,13 @@ class NormativeDocForm(forms.ModelForm):
             'description': SummernoteWidget(),
             'name': SummernoteWidget(),
         }
+
+
+class AboutHistoryForm(forms.ModelForm):
+    class Meta:
+        model = AboutHistory
+        fields = '__all__'
+        widgets = {
+            'description': SummernoteWidget(),
+            'name': SummernoteWidget(),
+        }

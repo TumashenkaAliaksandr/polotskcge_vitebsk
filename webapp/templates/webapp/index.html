@@ -36,91 +36,86 @@
         </div>
 
       <!-- ======= About Us Section ======= -->
-      <section id="about" class="about main-bg">
-          <div class="container" data-aos="fade-up">
-              {% for main_about in about_us %}
-                  <div class="section-title">
-                      <h2>{{ main_about.name }}</h2>
-                      <p>{{ main_about.description | safe }}</p>
-                  </div>
 
-                  <div class="row">
-                      <div class="col-lg-6" data-aos="fade-right">
-                          <img src="{{ main_about.photo.url }}" class="img-fluid"
-                               alt="">
-                      </div>
-                      <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
-                          <h3>{{ main_about.name_two }}</h3>
-                          <p class="fst-italic">{{ main_about.description_two | safe }}</p>
-                          <ul class="icon-list">
-                              <li>
-                                  <i class="{{ main_about.icon_class_li_one }}"></i> {{ main_about.name_li_one | safe }}
-                              </li>
-                              <li>
-                                  <i class="{{ main_about.icon_class_li_two }}"></i> {{ main_about.name_li_two | safe }}
-                              </li>
-                              <li>
-                                  <i class="{{ main_about.icon_class_li_three }}"></i> {{ main_about.name_li_three | safe }}
-                              </li>
-                              <li>
-                                  <i class="{{ main_about.icon_class_li_four }}"></i> {{ main_about.name_li_four | safe }}
-                              </li>
-                              <li>
-                                  <i class="{{ main_about.icon_class_li_five }}"></i> {{ main_about.name_li_five | safe }}
-                              </li>
-                          </ul>
-                          <p>{{ main_about.description_three | safe }}</p>
-                      </div>
-                  </div>
-              {% endfor %}
-          </div>
-      </section>
+        <!-- Structure Section -->
+        <section class="main-bg">
+            <div class="container book_info img-container" data-aos="fade-left">
+                {% for main_about in about_us %}
+                    <div class="section-title">
+                        <h2>{{ main_about.name }}</h2>
+                        <p>{{ main_about.description | safe }}</p>
+
+                        <!-- Контейнер для изображения -->
+                        <div class="book_info" data-aos="fade-right">
+                            <img src="{{ main_about.photo.url }}" class="book_info">
+                        </div>
+                    </div>
+                {% empty %}
+                    <p>No information available.</p>  <!-- Сообщение, если список пуст -->
+                {% endfor %}
+            </div>
+        </section>
+        <!-- End Structure Section -->
+{##}
+{#      <section id="about" class="about main-bg">#}
+{#          <div class="container" data-aos="fade-up">#}
+{#              {% for main_about in about_us %}#}
+{#                  <div class="section-title">#}
+{#                      <h2>{{ main_about.name }}</h2>#}
+{#                      <p>{{ main_about.description | safe }}</p>#}
+{#                  </div>#}
+{##}
+{#                  <div class="row">#}
+{#                      <div class="col-lg-6" data-aos="fade-right">#}
+{#                          <img src="{{ main_about.photo.url }}" class="img-fluid"#}
+{#                               alt="">#}
+{#                      </div>#}
+{#                      <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">#}
+{#                          <h3>{{ main_about.name_two }}</h3>#}
+{#                          <p class="fst-italic">{{ main_about.description_two | safe }}</p>#}
+{#                          <ul class="icon-list">#}
+{#                              <li>#}
+{#                                  <i class="{{ main_about.icon_class_li_one }}"></i> {{ main_about.name_li_one | safe }}#}
+{#                              </li>#}
+{#                              <li>#}
+{#                                  <i class="{{ main_about.icon_class_li_two }}"></i> {{ main_about.name_li_two | safe }}#}
+{#                              </li>#}
+{#                              <li>#}
+{#                                  <i class="{{ main_about.icon_class_li_three }}"></i> {{ main_about.name_li_three | safe }}#}
+{#                              </li>#}
+{#                              <li>#}
+{#                                  <i class="{{ main_about.icon_class_li_four }}"></i> {{ main_about.name_li_four | safe }}#}
+{#                              </li>#}
+{#                              <li>#}
+{#                                  <i class="{{ main_about.icon_class_li_five }}"></i> {{ main_about.name_li_five | safe }}#}
+{#                              </li>#}
+{#                          </ul>#}
+{#                          <p>{{ main_about.description_three | safe }}</p>#}
+{#                      </div>#}
+{#                  </div>#}
+{#              {% endfor %}#}
+{#          </div>#}
+{#      </section>#}
       <!-- End About Us Section -->
 
       <!-- ======= Counts Section ======= -->
-      <section id="counts" class="counts main-bg">
-          <div class="container" data-aos="fade-up">
-              <div class="row no-gutters">
-                  <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-                      <div class="count-box">
-                          <i class="fas fa-award"></i>
-                          <span data-purecounter-start="0" data-purecounter-end="98" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                          <p><strong>Санитарная служба Полотчины</strong> начинает свою службу с 1926 года.</p>
-                      </div>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-                      <div class="count-box">
-                          <i class="fas fa-hospital"></i>
-                          <span data-purecounter-start="0" data-purecounter-end="126" data-purecounter-duration="1"
-                                class="purecounter"></span>
-
-                          <p><strong>В Полоцком ЦГЭ</strong> работают 126 человек</p>
-                      </div>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-                      <div class="count-box">
-                          <i class="fas fa-user-md"></i>
-                          <span data-purecounter-start="0" data-purecounter-end="87" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                          <p><strong>Наши Врачи</strong> имеющие квалификационную категорию.</p>
-                      </div>
-                  </div>
-
-                  <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-                      <div class="count-box">
-                          <i class="fas fa-medkit"></i>
-                          <span data-purecounter-start="0" data-purecounter-end="110000" data-purecounter-duration="1"
-                                class="purecounter"></span>
-                          <p><strong>ЦГЭ</strong> обслуживает население г.Полоцка и Полоцкого района.</p>
-                      </div>
-                  </div>
-              </div>
-
-          </div>
-      </section>
+        <section id="counts" class="counts main-bg">
+            <div class="container" data-aos="fade-up">
+                <div class="row no-gutters">
+                    {% for main_ab_his in about_history %}
+                        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+                            <div class="count-box">
+                                <i class="{{ main_ab_his.icon_class }}"></i>
+                                <span data-purecounter-start="0" data-purecounter-end="{{ main_ab_his.quantity }}"
+                                      data-purecounter-duration="1"
+                                      class="purecounter"></span>
+                                <p><strong>{{ main_ab_his.name|safe }}</strong> {{ main_ab_his.description|safe }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
       <!-- End Counts Section -->
 
       <!-- ======= Features Section ======= -->

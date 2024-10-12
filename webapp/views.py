@@ -33,6 +33,7 @@ def index(request):
     weather = get_weather()
     interactiv = Interactive.objects.all()
     sliders = OurPartners.objects.all()
+    about_history = AboutHistory.objects.all()
 
     context = {
         'desc_services_title': desc_services_title,
@@ -47,6 +48,7 @@ def index(request):
         'model_blog_main': model_blog_main,
         'interactiv': interactiv,
         'sliders': sliders,
+        'about_history': about_history,
     }
 
     return render(request, 'webapp/index.html', context=context)
