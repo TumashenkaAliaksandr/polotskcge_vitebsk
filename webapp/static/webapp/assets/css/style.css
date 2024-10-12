@@ -1165,7 +1165,7 @@ section#clocks-two {
 .section-title {
     text-align: center;
     padding-bottom: 20px;
-    padding-top: 15px;
+    padding-top: 25px;
 }
 
 
@@ -2335,7 +2335,7 @@ section#clocks-two {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 400px;
+    /*min-height: 400px;*/
 }
 
 /* Стили для десктопной версии */
