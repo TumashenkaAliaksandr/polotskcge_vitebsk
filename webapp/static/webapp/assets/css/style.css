@@ -1164,8 +1164,8 @@ section#clocks-two {
 
 .section-title {
     text-align: center;
-    padding-bottom: 20px;
-    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-top: 35px;
 }
 
 
@@ -1817,6 +1817,49 @@ section#clocks-two {
     content: '';
     background: #00000068;
     height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+
+.pagebanner-city-bogat {
+    background: url(../img/gigi_centr_three_bogat.jpg) no-repeat; /* gigi_centr_three_bogat.jpg */
+    background-size: 100%;
+    background-attachment: fixed;
+    height: 310px;
+    width: 100%;
+}
+
+
+
+.pagebanner-city-bogat:before {
+    content: '';
+    background: #00000068;
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.pagebanner-city-bogat .page-title {
+    padding-top: 120px;
+    position: relative;
+    z-index: 1;
+}
+
+.pagebanner-city-bogat .page-title h2 {
+    color: #4d483e;
+}
+
+.pagebanner-city_bogat:before {
+    content: '';
+    background: #00000068;
+    height: auto;
     width: 100%;
     position: absolute;
     top: 0;
@@ -3829,14 +3872,17 @@ section#clocks-two {
 }
 
 .img-container {
-    width: 100%; /* Ширина контейнера */
-    max-width: 90%; /* Максимальная ширина для изображения */
+    /*width: 100%; !* Ширина контейнера *!*/
+    max-width: 85%; /* Максимальная ширина для изображения */
     margin: 0 auto; /* Центрирование контейнера */
     overflow: hidden; /* Скрытие лишнего содержимого */
+    text-align: center;
 }
 
+
 .img-container img {
-    width: 100%; /* Изображение занимает всю ширину контейнера */
-    height: auto; /* Соотношение сторон сохраняется */
-    display: block; /* Убирает пробелы под изображением */
+    width: 95%; /* Ширина изображения */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    display: inline-block; /* Используйте inline-block для центрирования */
+    margin-top: 21px; /* Отступ сверху */
 }
