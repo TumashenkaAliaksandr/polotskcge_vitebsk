@@ -26,7 +26,7 @@
     <!-- End Breadcrumbs Section -->
 
     <!-- ======= Book NEWS text Section ======= -->
-    <div id="single" class="single disinfection-bg">
+    <div id="single" class="single main-bg-monitoring_plan">
         <div class="breaking-news">
             <div class="container">
                 {% for main_interactiv_string in interactiv %}
@@ -56,22 +56,21 @@
     </div>
     <!-- ======= End Book News text Section ======= -->
 
-    {% for main_deratisation in deratisation_info %}
-        <section id="about" class="about disinfection-bg">
+    {% for main_monitoring_plan in monitoring_plan_info %}
+        <section id="about" class="about main-bg-monitoring_plan">
             <div class="container book_info" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>{{ main_deratisation.name|safe }}</h2>
+                    <h2>{{ main_monitoring_plan.name|safe }}</h2>
                 </div>
 
                 <div class="row">
                     <div class="col-lg-3" data-aos="fade-right">
-                        <img src="{{ main_deratisation.photo.url }}" class="img-fluid img-fixed-size-deratisation"
+                        <img src="{{ main_monitoring_plan.photo.url }}" class="img-fluid img-fixed-size-monitoring-plan"
                              alt="">
                     </div>
                     <div class="col-lg-9 pt-4 pt-lg-0 content" data-aos="fade-left">
-                        <p>{{ main_deratisation.description|safe }}</p>
-                        <p>{{ main_deratisation.description_two|safe }}</p>
+                        <p>{{ main_monitoring_plan.description|safe }}</p>
                     </div>
                 </div>
 
@@ -79,6 +78,58 @@
         </section>
     {% endfor %}
     <!-- End deratisation Section -->
+
+    <!-- ======= Breaking-news Section ======= -->
+    <section id="featured-services" class="featured-services main-bg-monitoring_plan">
+        <div class="container" data-aos="fade-up">
+            <div class="section-title">
+                <h2>Наши Новости</h2>
+            </div>
+            <div class="breaking-news-grids-bottom">
+                <div class="banner-bottom-grids">
+                    {% for main_litle_news in centre_news %}
+                        <div class="col-md-3 banner-bottom-grid-left">
+                            <div class="br-bm-gd-lt-fon">
+                                <a href="{{ main_litle_news.link }}"><img
+                                        src="{{ main_litle_news.img.url }}" alt=" "
+                                        class="img-responsive"/></a>
+                                <div class="overlay">
+                                    <div class="arrow-left"></div>
+                                    <div class="rectangle"></div>
+                                </div>
+                                <div class="health-pos">
+                                    <div class="health">
+                                        <ul>
+                                            <li>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|wordwrap:30|truncatechars_html:58 }}</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <h3>{{ main_litle_news.desc|safe|wordwrap:10|truncatechars_html:58 }}</h3>
+                                    <div class="dummy">
+                                        <a href="{{ main_litle_news.link }}">
+                                            <p>{{ main_litle_news.desc_hover|safe }}</p></a>
+                                    </div>
+                                    <div class="com-heart-health">
+                                        <ul>
+                                            <li><a href="{{ main_litle_news.link }}"><span
+                                                    class="fa fa-user-doctor"
+                                                    aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End breaking-news Section -->
 
 
   </main><!-- End #main -->

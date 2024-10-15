@@ -1115,7 +1115,7 @@ class AboutHistoryAdmin(admin.ModelAdmin):
 
 
 @admin.register(MonitoringPlan)
-class DeratizationAdmin(admin.ModelAdmin):
+class MonitoringPlanAdmin(admin.ModelAdmin):
     form = MonitoringPlanForm
 
     def clean_name(self, obj):
