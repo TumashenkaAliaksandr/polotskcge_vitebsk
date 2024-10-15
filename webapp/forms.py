@@ -570,6 +570,17 @@ class DisinfectionForm(forms.ModelForm):
             'name_main': SummernoteWidget(),
         }
 
+
+class MonitoringPlanForm(forms.ModelForm):
+    class Meta:
+        model = MonitoringPlan
+        fields = '__all__'
+        widgets = {
+            'description': SummernoteWidget(),
+            'name_main': SummernoteWidget(),
+        }
+
+
 class DeratizationForm(forms.ModelForm):
     class Meta:
         model = Deratization

@@ -1112,3 +1112,14 @@ class AboutHistoryAdmin(admin.ModelAdmin):
 
     clean_name.short_description = 'Name'
     list_display = ['clean_name']
+
+
+@admin.register(MonitoringPlan)
+class DeratizationAdmin(admin.ModelAdmin):
+    form = MonitoringPlanForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']

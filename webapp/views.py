@@ -645,10 +645,18 @@ def inspection_plan(request):
 
 def monitoring_plan(request):
     """Activity - monitoring_plan template"""
-    features = Featured.objects.all()
+    interactiv = Interactive.objects.all()
+    disinfection_info = Disinfection.objects.all()
+    deratisation_info = Deratization.objects.all()
+    disinsection_info = Disinsection.objects.all()
+    disinfection_desc = DisinfectionDesc.objects.all()
 
     context = {
-        'features': features,
+        'interactiv': interactiv,
+        'disinfection_info': disinfection_info,
+        'deratisation_info': deratisation_info,
+        'disinsection_info': disinsection_info,
+        'disinfection_desc': disinfection_desc,
     }
 
     return render(request, 'webapp/activity/monitoring_plan.html', context=context)
