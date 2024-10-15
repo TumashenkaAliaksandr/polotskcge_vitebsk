@@ -953,6 +953,21 @@ class MonitoringPlan(models.Model):
         return self.name
 
 
+class MonitoringPlanArkhive(models.Model):
+
+    name = models.CharField(max_length=350, default='Тайтл для админки')
+    name_main = models.CharField(max_length=350, default='Тайтл')
+    description = models.TextField(default='Описание')
+    photo = models.ImageField(upload_to='MonitoringPlanArkhive/', null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'План Мониторинга Архив'
+        verbose_name_plural = 'План Мониторинга Архив'
+
+    def __str__(self):
+        return self.name
+
+
 class Disinsection(models.Model):
 
     name = models.CharField(max_length=350, default='Тайтл для админки')

@@ -804,37 +804,6 @@ def healthy_cities_towns(request):
     return render(request, 'webapp/activity/healthy_cities_towns.html', context=context)
 
 
-def healthy_cities_bogat(request):
-    """Activity - healthy_cities_towns template"""
-    heltitle_inf = HealthyTitle.objects.all()
-    interactiv = Interactive.objects.all()
-    title_desc_queans = Question_Ansver_title.objects.all()
-    health_inf = Healthy.objects.all()
-    cities = Cities.objects.all()
-    city_desc = CityDescription.objects.all()
-    city_title = CitiesTitle.objects.all()
-    centre_news = CentreNews.objects.all().order_by('-pub_date')
-
-    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
-
-    # Получаем данные о погоде
-    weather = get_weather()
-
-    context = {
-        'interactiv': interactiv,
-        'weather': weather,  # Передаем данные о погоде в контекст
-        'title_desc_queans': title_desc_queans,
-        'all_typical_news': all_typical_news,
-        'health_inf': health_inf,
-        'heltitle_inf': heltitle_inf,
-        'cities': cities,
-        'city_desc': city_desc,
-        'city_title': city_title,
-        'centre_news': centre_news,
-    }
-
-    return render(request, 'webapp/cities/bogatyrskaya.html', context=context)
-
 
 def eurasian_economic_union(request):
     """Activity - eurasian_economic_union template"""
@@ -1238,4 +1207,27 @@ def resurces_slider_three(request):
 def bogatyrscaya(request):
     """City Bogatyrskaya"""
 
-    return render(request, 'webapp/cities/bogatyrskaya.html')
+    interactiv = Interactive.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
+    monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
+    questions = Question.objects.all().order_by('-pub_date')
+    answers = Answer.objects.all()
+
+    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
+
+    # Получаем данные о погоде
+    weather = get_weather()
+
+    context = {
+        'interactiv': interactiv,
+        'weather': weather,  # Передаем данные о погоде в контекст
+        'title_desc_queans': title_desc_queans,
+        'all_typical_news': all_typical_news,
+        'centre_news': centre_news,
+        'questions': questions,
+        'answers': answers,
+        'monitoring_plan_arkhive': monitoring_plan_arkhive,
+    }
+
+    return render(request, 'webapp/cities/bogatyrskaya.html', context=context)

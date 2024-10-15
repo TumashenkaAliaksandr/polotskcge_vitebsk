@@ -2151,6 +2151,16 @@ ul.wmuSliderPagination {
     object-fit: cover;
 }
 
+.img-fixed-size-monitoring-plan-arhi {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    width: 50%;
+    object-fit: cover;
+}
+
 @media (min-width: 320px) and (max-width: 768px) {
     .img-fixed-size-deratisation {
         position: absolute;

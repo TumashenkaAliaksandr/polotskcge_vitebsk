@@ -23,8 +23,9 @@
     </section>
     <!-- End Breadcrumbs Section -->
 
+
     <!-- ======= Interactiv News Section ======= -->
-    <div id="single" class="single main-bg-poselki">
+    <div id="single" class="single main-bg-bogatyrskaya">
         <div class="breaking-news">
             <div class="container">
                 {% for main_interactiv_string in interactiv %}
@@ -54,101 +55,67 @@
     </div>
     <!-- ======= End Interactiv News Section ======= -->
 
-    <!-- ======= Featured Services Section ======= -->
-    <section id="featured-services" class="featured-services main-bg-poselki">
+    <!-- ======= Frequently Asked Questioins Section ======= -->
+    <section id="faq" class="faq main-bg-bogatyrskaya">
         <div class="container" data-aos="fade-up">
-            {% for main_title in heltitle_inf %}
+            {% for title_desc in title_desc_queans %}
                 <div class="section-title">
-                    <h2>{{ main_title.name|safe }}</h2>
-                </div>
-                <div class="description-left">
-                <p>{{ main_title.description|safe }}</p>
+                    <h2>{{ title_desc.name }}</h2>
+                    <p>{{ title_desc.description | safe }}</p>
                 </div>
             {% endfor %}
-            <div class="row">
-                {% for main_pdf in health_inf %}
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                        <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><i class="{{ main_pdf.icon_class }}"></i></div>
-                            <h4 class="title"><a href="{{ main_pdf.pdf_file.url }}" target="_blank">{{ main_pdf.name|safe }}</a></h4>
-                            <a href="{{ main_pdf.pdf_file.url }}"><p class="description">Смотреть (Скачать) PDF</p></a>
+
+            <ul class="faq-list">
+                {% for question in questions|slice:":6" %}
+                    <li>
+                        <div data-bs-toggle="collapse" class="collapsed question"
+                             href="#{{ question.id }}"> {{ question.question_text }} <i
+                                class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
+                        </div>
+                        <div id="{{ question.id }}" class="collapse" data-bs-parent=".faq-list">
+                            <p>
+                                {% for ansver in question.answers.all %}
+                                    {{ ansver.answer_text }}
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+    </section>
+    <!-- End Frequently Asked Questioins Section -->
+
+    {% for main_monitoring_arkhive in monitoring_plan_arkhive %}
+        <section id="about" class="about main-bg-bogatyrskaya">
+            <div class="container book_info" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>{{ main_monitoring_arkhive.description|safe }}</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3" data-aos="fade-right">
+                        <img src="{{ main_monitoring_arkhive.photo.url }}" class="img-fluid img-fixed-size-monitoring-plan-arhi"
+                             alt="">
+                    </div>
+                    <div class="col-lg-9 pt-4 pt-lg-0 content" data-aos="fade-left">
+                        <div class="archive">
+                            <a href="" target="_blank">
+                                <li class="fa fa-calendar-plus"> {{ main_monitoring_arkhive.name|safe }}</li>
+                            </a>
                         </div>
                     </div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="archive">
-            <a href="" target="_blank">
-                <li class="fa fa-calendar-plus"> Архив</li>
-            </a>
-        </div>
-    </section>
-    <!-- End Featured Services Section -->
+                </div>
 
-    <!-- ======= Departments Section ======= -->
-    <section id="departments" class="departments main-bg-poselki">
-        <div class="container" data-aos="fade-up">
-            {% for city in city_title %}
-                {% if forloop.first %}
-                    <div class="description-left city-name-block">
-                        <h4>{{ city.name|safe }}</h4>
-                    </div>
-                {% endif %}
-            {% endfor %}
-            <div class="row" data-aos="fade-up" data-aos-delay="100">
-                <div class="col-lg-4 mb-5 mb-lg-0">
-                    <ul class="nav nav-tabs flex-column">
-                        {% for city in cities %}
-                            <li class="nav-item">
-                                <a class="nav-link {% if forloop.first %}active show{% endif %}" data-bs-toggle="tab"
-                                   data-bs-target="#tab-{{ forloop.counter }}">
-                                    <h4>{{ city.name|safe }}</h4>
-                                    <p>{{ city.description|safe }}</p>
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <div class="col-lg-8">
-                    <div class="tab-content">
-                        {% for city in cities %}
-                            <div class="tab-pane {% if forloop.first %}active show{% endif %}"
-                                 id="tab-{{ forloop.counter }}">
-                                <img src="{{ city.photo.url }}" alt="" class="img-fluid">
-                                <section class="faq">
-                                    <ul class="faq-list">
-                                        {% for description in city.descriptions.all %}
-                                            <div data-bs-toggle="collapse" class="collapsed question"
-                                                 href="#description-{{ forloop.counter }}" style="cursor: pointer;">
-                                                {{ description.description_two|safe }}
-                                                <i class="bi bi-chevron-down icon-show"></i>
-                                                <i class="bi bi-chevron-up icon-close"></i>
-                                            </div>
-                                            <div id="description-{{ forloop.counter }}" class="collapse"
-                                                 data-bs-parent=".faq-list">
-                                                <p>
-                                                    {{ description.description_three|safe }}
-                                                    {% if description.add_file %}
-                                                        <a href="{{ description.add_file.url }}" target="_blank">(Посмотреть
-                                                            файл)</a>
-                                                    {% endif %}
-                                                </p>
-                                            </div>
-                                        {% endfor %}
-                                    </ul>
-                                    <a href="" target="_blank"><li class="fa fa-calendar-plus"> Архив</li></a>
-                                </section>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
             </div>
-        </div>
-    </section>
-    <!-- End Departments Section -->
+        </section>
+    {% endfor %}
+    <!-- End deratisation Section -->
 
     <!-- ======= breaking-news Section ======= -->
-    <section id="featured-services" class="featured-services main-bg-poselki">
+    <section id="featured-services" class="featured-services main-bg-bogatyrskaya">
         <div class="container" data-aos="fade-up">
             <div class="breaking-news-grids-bottom">
                 <div class="banner-bottom-grids">

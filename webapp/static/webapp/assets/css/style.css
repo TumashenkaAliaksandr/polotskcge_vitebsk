@@ -1001,6 +1001,12 @@ section#footer {
     background-attachment: fixed;
 }
 
+.main-bg-bogatyrskaya {
+    padding: 45px 0 45px;
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.97)), url('../img/gigi_centr_bogatyrskaya.png') center/cover;
+    background-attachment: fixed;
+}
+
 
 .main-bg-prava {
     padding: 15px 0 15px;

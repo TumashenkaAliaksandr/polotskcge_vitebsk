@@ -581,6 +581,16 @@ class MonitoringPlanForm(forms.ModelForm):
         }
 
 
+class MonitoringPlanArkhiveForm(forms.ModelForm):
+    class Meta:
+        model = MonitoringPlanArkhive
+        fields = '__all__'
+        widgets = {
+            'description': SummernoteWidget(),
+            'name_main': SummernoteWidget(),
+        }
+
+
 class DeratizationForm(forms.ModelForm):
     class Meta:
         model = Deratization
