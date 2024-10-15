@@ -1364,6 +1364,7 @@ class Cities(models.Model):
     name = models.CharField(max_length=350, default='Тайтл для Посёлка')
     description = models.TextField(default='Описание')
     photo = models.ImageField(upload_to='Health_cities/', null=True, blank=True)
+    url = models.URLField(null=True, blank=True)
 
     class Meta:
         verbose_name = 'Здоровые города и поселки (Тайтл описание фото)'

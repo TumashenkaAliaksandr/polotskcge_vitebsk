@@ -69,6 +69,7 @@ urlpatterns = [
     path('health_days/', health_days, name='health_days'),
     path('educational_resources/', educational_resources, name='educational_resources'),
     path('contacts/', contacts, name='contacts'),
+    path('bogatyrckaya/', bogatyrscaya, name='bogatyrckaya'),
     ]
 
 

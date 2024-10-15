@@ -1233,3 +1233,9 @@ def resurces_slider_three(request):
     }
 
     return render(request, 'slider/recurces_slider3.html', context=context)
+
+
+def bogatyrscaya(request):
+    """City Bogatyrskaya"""
+
+    return render(request, 'webapp/cities/bogatyrskaya.html')

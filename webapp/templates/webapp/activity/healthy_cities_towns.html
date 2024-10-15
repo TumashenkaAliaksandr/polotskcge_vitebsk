@@ -131,14 +131,9 @@
                                             </div>
                                         {% endfor %}
                                     </ul>
-                                    <div class="archive">
-                                        <a href="" target="_blank">
-                                            <li class="fa fa-calendar-plus"> Архив</li>
-                                        </a>
-                                    </div>
                                     <div class="eye">
-                                        <a href="" target="_blank">
-                                            <li class="fa fa-eye"> Посмотреть больше..</li>
+                                        <a href="{{ city.url }}" target="_blank">
+                                            <li class="fa fa-running"> Перейти на стр. {{ city.name|safe }}..</li>
                                         </a>
                                     </div>
                                 </section>
