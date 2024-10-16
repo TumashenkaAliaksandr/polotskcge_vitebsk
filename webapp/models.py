@@ -1435,15 +1435,29 @@ class AboutHistory(models.Model):
         return self.name
 
 
-class CityDocument(models.Model):
+class CityDocumenBtogatyr(models.Model):
     name = models.CharField(max_length=100)  # Поле для имени
     description = models.TextField(default='Description')           # Поле для описания
     file_desc = models.TextField(default='Description file')           # Поле для описания
     pdf_file = models.FileField(upload_to='city_documents/')  # Поле для загрузки PDF-файла
 
     class Meta:
-        verbose_name = 'Города/Поселок - (страница прикрепить ПДФ, архив)'
-        verbose_name_plural = 'Города/Поселок - (страница прикрепить ПДФ, архив)'
+        verbose_name = 'Поселок - Богатырский (страница прикрепить ПДФ, архив)'
+        verbose_name_plural = 'Поселок - Богатырский (страница прикрепить ПДФ, архив)'
+
+    def __str__(self):
+        return self.name
+
+
+class CityDocumenFarinovo(models.Model):
+    name = models.CharField(max_length=100)  # Поле для имени
+    description = models.TextField(default='Description')           # Поле для описания
+    file_desc = models.TextField(default='Description file')           # Поле для описания
+    pdf_file = models.FileField(upload_to='city_documents/')  # Поле для загрузки PDF-файла
+
+    class Meta:
+        verbose_name = 'Поселок - Фариново (страница прикрепить ПДФ, архив)'
+        verbose_name_plural = 'Поселок - Фариново (страница прикрепить ПДФ, архив)'
 
     def __str__(self):
         return self.name

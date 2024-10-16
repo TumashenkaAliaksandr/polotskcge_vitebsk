@@ -931,9 +931,20 @@ class AboutHistoryForm(forms.ModelForm):
         }
 
 
-class CityDocumentForm(forms.ModelForm):
+class CityDocumentBogatyrForm(forms.ModelForm):
     class Meta:
-        model = CityDocument
+        model = CityDocumenBtogatyr
+        fields = '__all__'
+        widgets = {
+            'description': SummernoteWidget(),
+            'file_desc': SummernoteWidget(),
+            'name': SummernoteWidget(),
+        }
+
+
+class CityDocumentFarinovoForm(forms.ModelForm):
+    class Meta:
+        model = CityDocumenFarinovo
         fields = '__all__'
         widgets = {
             'description': SummernoteWidget(),

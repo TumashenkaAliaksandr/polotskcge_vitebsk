@@ -1007,6 +1007,12 @@ section#footer {
     background-attachment: fixed;
 }
 
+.main-bg-farinovo {
+    padding: 45px 0 45px;
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.97)), url('../img/gigi_centr_farm.png') center/cover;
+    background-attachment: fixed;
+}
+
 
 .main-bg-prava {
     padding: 15px 0 15px;
@@ -1843,6 +1849,49 @@ section#clocks-two {
 }
 
 
+.pagebanner-city-farin {
+    background: url(../img/gigi_centr_far_city.jpg) no-repeat; /* gigi_centr_three_bogat.jpg */
+    background-size: 100%;
+    background-attachment: fixed;
+    height: 310px;
+    width: 100%;
+}
+
+
+
+.pagebanner-city-farin:before {
+    content: '';
+    background: #00000068;
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.pagebanner-city-farin .page-title {
+    padding-top: 120px;
+    position: relative;
+    z-index: 1;
+}
+
+.pagebanner-city-farin .page-title h2 {
+    color: #4d483e;
+}
+
+.pagebanner-city_farin:before {
+    content: '';
+    background: #00000068;
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+
 .pagebanner-city-bogat {
     background: url(../img/gigi_centr_three_bg.jpg) no-repeat; /* gigi_centr_three_bogat.jpg */
     background-size: 100%;
@@ -1887,7 +1936,7 @@ section#clocks-two {
 
 
 .pagebanner-city {
-    background: url(../img/gigi_centr_citybrcr.png) no-repeat;
+    background: url(../img/gigi_centr_heath_city_land.jpg) no-repeat;
     background-size: 100%;
     background-attachment: fixed;
     height: 310px;
@@ -3182,7 +3231,7 @@ section#clocks-two {
 .img-fix-two {
   max-width: 12%;
   height: auto;
-  margin-left: 75%;
+  margin-left: 80%;
 }
 
 /*--------------------------------------------------------------

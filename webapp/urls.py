@@ -70,6 +70,8 @@ urlpatterns = [
     path('contacts/', contacts, name='contacts'),
     path('bogatyrckaya/', bogatyrscaya, name='bogatyrckaya'),
     path('bogatyrckaya-archive/', bogatyrscaya_archive, name='bogatyrckaya-archive'),
+    path('farinava/', farinava, name='farinava'),
+    path('farinava-archive/', farinava_archive, name='farinava-archive'),
     ]
 
 
