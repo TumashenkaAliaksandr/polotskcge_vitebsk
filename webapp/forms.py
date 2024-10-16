@@ -929,3 +929,14 @@ class AboutHistoryForm(forms.ModelForm):
             'description': SummernoteWidget(),
             'name': SummernoteWidget(),
         }
+
+
+class CityDocumentForm(forms.ModelForm):
+    class Meta:
+        model = CityDocument
+        fields = '__all__'
+        widgets = {
+            'description': SummernoteWidget(),
+            'file_desc': SummernoteWidget(),
+            'name': SummernoteWidget(),
+        }

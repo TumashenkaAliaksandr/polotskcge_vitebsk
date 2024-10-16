@@ -2154,7 +2154,7 @@ ul.wmuSliderPagination {
 .img-fixed-size-monitoring-plan-arhi {
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 37%;
     transform: translate(-50%, -50%);
     height: auto;
     width: 50%;
@@ -2171,7 +2171,18 @@ ul.wmuSliderPagination {
         width: 21%;
         object-fit: cover;
     }
+
+    .img-fixed-size-monitoring-plan-arhi {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: auto;
+        width: 25%;
+        object-fit: cover;
+    }
 }
+
 
 .img-fixed-size-disinfection {
     position: absolute;
@@ -2323,7 +2334,7 @@ ul.wmuSliderPagination {
 /*-- contact --*/
 .typo,.contact,.slicebox-slider,.single{
 	padding:2em 0 5px;
-    opacity: 0.77;
+    opacity: 0.95;
 }
 h3.title,.map h3{
 	font-size:1.7em;
@@ -2747,8 +2758,11 @@ h2.typoh2{
 	h3.title {
 		font-size: 1.6em;
 	}
-	.alert, p,ol.breadcrumb li, .grid_3 p,.well, ul.list-group li, li.list-group-item1,a.list-group-item {
+	.alert, ol.breadcrumb li, .grid_3 p,.well, ul.list-group li, li.list-group-item1,a.list-group-item {
 		font-size: 13px;
+	}
+    .alert, p {
+		font-size: 18px;
 	}
 	.alert {
 		padding: 10px;
@@ -3261,7 +3275,7 @@ img.mobile1 {
 }
 @media only screen and (max-width: 768px) {
   .section-title h2 {
-    font-size: 25px;
+    font-size: 15px;
     font-weight: bold;
     text-transform: uppercase;
   }
@@ -3463,7 +3477,7 @@ img.mobile1 {
 	.banner-bottom-grid-left {
 		float: left;
 		width: 100%;
-		margin: 0 auto 2em;
+		margin: 0 auto 1em;
 	}
 	.banner-bottom-grid-left img{
 		width:100%;
@@ -3819,7 +3833,7 @@ img.mobile1 {
 		/*border: 1px solid #fff;*/
 	}
 	.banner-bottom-grid-left h3 {
-		font-size: 1.3em;
+		font-size: 1em;
 	}
 	.br-bm-gd-lt, .br-bm-gd-lt1, .br-bm-gd-lt2, .br-bm-gd-lt3, .br-bm-gd-lt4, .br-bm-gd-lt5, .br-bm-gd-lt6, .br-bm-gd-lt7 {
 		min-height: auto;
@@ -3879,6 +3893,21 @@ img.mobile1 {
 		font-size: 14px;
 		line-height: 1.5em;
 	}
+
+    .br-bm-gd-lt-fon {
+        overflow: hidden;
+        display: inline-block;
+        position: relative;
+        height: 260px;
+    }
+
+    .com-heart-health {
+        margin: 0.5em 0 0;
+        -webkit-transition: .4s ease-out;
+        position: absolute;
+        top: 200px;
+        width: 100%;
+    }
 	a.high {
 		padding: 10px 70px 10px 70px !important;
 	}
@@ -3991,9 +4020,11 @@ img.mobile1 {
 		width: 10px;
 		height: 10px;
 	}
-	.breaking-news {
-		padding: 4.5em 0 15px;
-	}
+
+    .breaking-news {
+        padding: 4.5em 0 15px;
+        margin-top: 27%;
+    }
 
     .breaking-news-index {
         padding: 7.5em 0 15px;
@@ -4143,6 +4174,7 @@ img.mobile1 {
 	.typo, .contact, .slicebox-slider, .single {
 		padding: 1em 0;
 	}
+
     .my-column::before {
     content: '';
     position: absolute;
@@ -4355,6 +4387,7 @@ img.mobile1 {
 	}
 	.banner-bottom-grid-left {
 		width: 100%;
+        margin-top: 10%;
 	}
 	.com-heart {
 		margin: 5.5em 0 0;

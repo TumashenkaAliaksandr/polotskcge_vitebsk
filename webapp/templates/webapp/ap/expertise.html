@@ -90,7 +90,9 @@
                     <li>
                         <div data-bs-toggle="collapse" class="collapsed question"
                              href="#{{ question.id }}"> {{ question.question_text }} <i
-                                class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i>
+                                class="bi bi-chevron-down icon-show"><img src="{% static 'webapp/assets/img/gigi_centr_marker-nbg.png' %}" class="img-fix"
+                                 alt=""></i><i class="bi bi-chevron-up icon-close"><img src="{% static 'webapp/assets/img/gigi_centr_marker-nbg.png' %}" class="img-fix"
+                                 alt=""></i>
                         </div>
                         <div id="{{ question.id }}" class="collapse" data-bs-parent=".faq-list">
                             <p>

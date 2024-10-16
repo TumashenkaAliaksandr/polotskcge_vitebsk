@@ -1423,13 +1423,27 @@ class NormativeDoc(models.Model):
 
 class AboutHistory(models.Model):
     name = models.CharField(max_length=100)
-    description = models.TextField()
+    description = models.TextField(default='Description')
     quantity = models.IntegerField(default=0)
     icon_class = models.CharField(max_length=50)
 
     class Meta:
         verbose_name = 'История - Описание'
         verbose_name_plural = 'История - Описание'
+
+    def __str__(self):
+        return self.name
+
+
+class CityDocument(models.Model):
+    name = models.CharField(max_length=100)  # Поле для имени
+    description = models.TextField(default='Description')           # Поле для описания
+    file_desc = models.TextField(default='Description file')           # Поле для описания
+    pdf_file = models.FileField(upload_to='city_documents/')  # Поле для загрузки PDF-файла
+
+    class Meta:
+        verbose_name = 'Города/Поселок - (страница прикрепить ПДФ, архив)'
+        verbose_name_plural = 'Города/Поселок - (страница прикрепить ПДФ, архив)'
 
     def __str__(self):
         return self.name

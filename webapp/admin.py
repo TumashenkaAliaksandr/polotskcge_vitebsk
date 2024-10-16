@@ -1134,3 +1134,14 @@ class MonitoringPlanArkhiveAdmin(admin.ModelAdmin):
 
     clean_name.short_description = 'Name'
     list_display = ['clean_name']
+
+
+@admin.register(CityDocument)
+class CityDocumentAdmin(admin.ModelAdmin):
+    form = CityDocumentForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']

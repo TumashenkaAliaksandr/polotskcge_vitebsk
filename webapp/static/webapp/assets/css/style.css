@@ -1612,9 +1612,15 @@ section#clocks-two {
 
 @media (max-width: 320px) {
    #topbar i {
-    padding: 3px;
-    margin-right: 7px;
-  }
+       padding: 3px;
+       margin-right: 7px;
+   }
+
+    .main-bg-bogatyrskaya {
+        padding: 5px 0 21px;
+        background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.97)), url('../img/gigi_centr_bogatyrskaya.png') center/cover;
+        background-attachment: fixed;
+    }
 }
 
 
@@ -3121,7 +3127,7 @@ section#clocks-two {
     font-size: 17px;
     line-height: 23px;
     font-weight: 400;
-    padding-left: 23px;
+    padding-left: 50px;
     padding-bottom: 9px;
     cursor: pointer;
     color: #32969a;
@@ -3133,7 +3139,7 @@ section#clocks-two {
     font-size: 16px;
     position: absolute;
     left: 0;
-    top: -2px;
+    top: -4px;
 }
 
 .faq .faq-list p {
@@ -3161,6 +3167,22 @@ section#clocks-two {
 .faq .faq-list .collapsed .icon-close {
     display: none;
     transition: 0.6s;
+}
+
+.margin-custom{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.img-fix {
+  max-width: 20%;
+  height: auto;
+}
+
+.img-fix-two {
+  max-width: 12%;
+  height: auto;
+  margin-left: 75%;
 }
 
 /*--------------------------------------------------------------
@@ -3609,11 +3631,27 @@ section#clocks-two {
 /*    float: right;*/
 /*}*/
 
-/*@media only screen and (max-width: 359px) {*/
-/*    .post-slide .category {*/
-/*        font-size: 13px;*/
-/*    }*/
-/*}*/
+@media only screen and (max-width: 359px) {
+    /*.post-slide .category {*/
+    /*    font-size: 13px;*/
+    /*}*/
+    .faq .faq-list .question {
+        font-family: Roboto, sans-serif;
+        font-size: 11.5px;
+        line-height: 15px;
+        font-weight: 400;
+        cursor: pointer;
+        color: #32969a;
+    }
+
+    .pagebanner-city-bogat {
+        display: none;
+    }
+    .bogatyrskaya h2 {
+        font-size: 18px;
+        padding-bottom: 15px;
+    }
+}
 
 /*end slider carusel*/
 .partner-slider {
@@ -3715,6 +3753,11 @@ section#clocks-two {
         margin-bottom: 5px;
         margin-top: 5px;
     }
+
+    .img-fix-two {
+        display: none;
+    }
+
 }
 
 @media (max-width: 768px) and (orientation: landscape) {

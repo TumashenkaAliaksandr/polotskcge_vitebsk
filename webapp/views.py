@@ -1208,26 +1208,41 @@ def bogatyrscaya(request):
     """City Bogatyrskaya"""
 
     interactiv = Interactive.objects.all()
-    title_desc_queans = Question_Ansver_title.objects.all()
+    city_docum = CityDocument.objects.all()
     monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
     centre_news = CentreNews.objects.all().order_by('-pub_date')
-    questions = Question.objects.all().order_by('-pub_date')
-    answers = Answer.objects.all()
 
     all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
 
-    # Получаем данные о погоде
-    weather = get_weather()
 
     context = {
         'interactiv': interactiv,
-        'weather': weather,  # Передаем данные о погоде в контекст
-        'title_desc_queans': title_desc_queans,
+        'city_docum': city_docum,
         'all_typical_news': all_typical_news,
         'centre_news': centre_news,
-        'questions': questions,
-        'answers': answers,
         'monitoring_plan_arkhive': monitoring_plan_arkhive,
     }
 
     return render(request, 'webapp/cities/bogatyrskaya.html', context=context)
+
+
+def bogatyrscaya_archive(request):
+    """City Bogatyrskaya"""
+
+    interactiv = Interactive.objects.all()
+    city_docum = CityDocument.objects.all()
+    monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
+
+    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
+
+
+    context = {
+        'interactiv': interactiv,
+        'city_docum': city_docum,
+        'all_typical_news': all_typical_news,
+        'centre_news': centre_news,
+        'monitoring_plan_arkhive': monitoring_plan_arkhive,
+    }
+
+    return render(request, 'webapp/cities/bogatyrskaya_archive.html', context=context)
