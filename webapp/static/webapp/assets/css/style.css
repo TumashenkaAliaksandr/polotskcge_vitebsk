@@ -1880,7 +1880,7 @@ section#clocks-two {
     color: #4d483e;
 }
 
-.pagebanner-city_farin:before {
+.pagebanner-city-farin:before {
     content: '';
     background: #00000068;
     height: auto;
@@ -1923,7 +1923,94 @@ section#clocks-two {
     color: #4d483e;
 }
 
-.pagebanner-city_bogat:before {
+.pagebanner-city-bogat:before {
+    content: '';
+    background: #00000068;
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+
+.pagebanner-city-vetrino {
+    background: url(../img/gigi_centr_vetrino_bg.png) no-repeat; /* gigi_centr_three_bogat.jpg */
+    background-size: 100%;
+    background-attachment: fixed;
+    height: 310px;
+    width: 100%;
+}
+
+
+
+.pagebanner-city-vetrino:before {
+    content: '';
+    background: #00000068;
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.pagebanner-city-vetrino .page-title {
+    padding-top: 120px;
+    position: relative;
+    z-index: 1;
+}
+
+.pagebanner-city-vetrino .page-title h2 {
+    color: #4d483e;
+}
+
+.pagebanner-city-vetrino:before {
+    content: '';
+    background: #00000068;
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+
+
+.pagebanner-city-zaozerie {
+    background: url(../img/gigi_centr_ozera.jpg) no-repeat; /* gigi_centr_three_bogat.jpg */
+    background-size: 100%;
+    background-attachment: fixed;
+    height: 310px;
+    width: 100%;
+}
+
+
+
+.pagebanner-city-zaozerie:before {
+    content: '';
+    background: #00000068;
+    height: auto;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.pagebanner-city-zaozerie .page-title {
+    padding-top: 120px;
+    position: relative;
+    z-index: 1;
+}
+
+.pagebanner-city-zaozerie .page-title h2 {
+    color: #4d483e;
+}
+
+.pagebanner-city-zaozerie:before {
     content: '';
     background: #00000068;
     height: auto;
