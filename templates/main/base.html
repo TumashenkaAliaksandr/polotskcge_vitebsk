@@ -111,8 +111,8 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
           <ul>
               <li><a {% if request.resolver_match.url_name == 'home' %} class="active" {% endif %} href="{% url 'webapp:home' %}">Главная</a></li>
-              <li class="dropdown"><a {% if request.resolver_match.url_name in "['structure', 'contacts', 'working_mode', 'anti_corruption', 'ideological_work', 'charter', 'trade_union', 'vacancies']" %}
-                  class="nav-link scrollto active"{% endif %} href="#about"><span>О Центре</span>
+              <li class="dropdown"><a {% if request.resolver_match.url_name in "['structure', 'contacts', 'working_mode', 'anti_corruption', 'ideological_work', 'charter', 'trade_union', 'vacancies', 'laboratory_services']" %}
+                  class="nav-link scrollto active"{% endif %} href="{% url 'webapp:structure' %}"><span>О Центре</span>
                   <i class="bi bi-chevron-down"></i></a>
                   <ul>
                       <li><a {% if request.resolver_match.url_name == 'structure' %}class="active"{% endif %} href="{% url 'webapp:structure' %}">Структура</a></li>
@@ -166,7 +166,7 @@
                     <li><a {% if request.resolver_match.url_name == 'price_lists' %}class="active"{% endif %} href="{% url 'webapp:price_lists' %}">Прейскуранты</a></li>
                 </ul>
             </li>
-            <li class="dropdown"><a {% if request.resolver_match.url_name in "'cge-info', 'control_supervisory_activities', 'custom_products', 'sustainable_development_goals', 'custom_products', 'healthy_lifestyle', 'monitoring_plan', 'typical_violations', 'preventive_measures', 'analytical_newsletter', 'health_days', 'educational_resources', 'healthy_cities_towns', 'ticks', 'immunoprophylaxis', 'epidemiology', 'eurasian_economic_union', 'sanitary_quarantine_points', 'bogatyrckaya', 'bogatyrckaya-archive', 'farinava', 'farinava-archive'" %} class="nav-link scrollto active" {% endif %} href="{% url 'webapp:cge-info' %}"><span>Деятельность</span> <i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a {% if request.resolver_match.url_name in "'cge-info', 'control_supervisory_activities', 'custom_products', 'sustainable_development_goals', 'custom_products', 'healthy_lifestyle', 'monitoring_plan', 'typical_violations', 'preventive_measures', 'analytical_newsletter', 'health_days', 'educational_resources', 'healthy_cities_towns', 'ticks', 'immunoprophylaxis', 'epidemiology', 'eurasian_economic_union', 'sanitary_quarantine_points', 'bogatyrckaya', 'bogatyrckaya-archive', 'farinava', 'farinava-archive', 'vetrino', 'vetrino-archive', 'zaozerie', 'zaozerie_archive'" %} class="nav-link scrollto active" {% endif %} href="{% url 'webapp:cge-info' %}"><span>Деятельность</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
                     <li class="dropdown"><a {% if request.resolver_match.url_name in "'control_supervisory_activities', 'monitoring_plan', 'typical_violations'" %}class="active"{% endif %} href="{% url 'webapp:control_supervisory_activities' %}"><span>Контрольно (надзорная) деятельность</span> <i
                             class="bi bi-chevron-right"></i></a>
@@ -192,7 +192,7 @@
                             <li><a {% if request.resolver_match.url_name == 'analytical_newsletter' %}class="active"{% endif %} href="{% url 'webapp:analytical_newsletter' %}">Информационно-Аналитический<br>бюллетень</a></li>
                         </ul>
                     </li>
-                    <li><a {% if request.resolver_match.url_name in "'healthy_cities_towns', 'bogatyrckaya', 'farinava', 'farinava-archive', 'bogatyrckaya-archive', 'bogatyrckaya', 'bogatyrckaya-archive'" %}class="active"{% endif %} href="{% url 'webapp:healthy_cities_towns' %}">Здоровые Города и Посёлки</a></li>
+                    <li><a {% if request.resolver_match.url_name in "'healthy_cities_towns', 'bogatyrckaya-archive', 'bogatyrckaya', 'bogatyrckaya-archive', 'zaozerie', 'zaozerie_archive', 'farinava', 'farinava-archive', 'vetrino', 'vetrino-archive'" %}class="active"{% endif %} href="{% url 'webapp:healthy_cities_towns' %}">Здоровые Города и Посёлки</a></li>
                     <li class="dropdown"><a {% if request.resolver_match.url_name in "'epidemiology', 'ticks', 'immunoprophylaxis'" %}class="active"{% endif %} href="{% url 'webapp:epidemiology' %}"><span>Эпидемиология</span> <i class="bi bi-chevron-right"></i></a>
                         <ul>
                             <li><a {% if request.resolver_match.url_name == 'ticks' %}class="active"{% endif %} href="{% url 'webapp:ticks' %}">Внимание Клещи</a></li>

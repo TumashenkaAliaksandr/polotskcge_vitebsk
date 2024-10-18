@@ -1251,7 +1251,7 @@ def bogatyrscaya_archive(request):
 
 
 def farinava(request):
-    """City Bogatyrskaya"""
+    """City Farinava"""
 
     interactiv = Interactive.objects.all()
     city_docum = CityDocumenFarinovo.objects.all()
@@ -1273,7 +1273,7 @@ def farinava(request):
 
 
 def farinava_archive(request):
-    """City Bogatyrskaya"""
+    """City Farinava archive"""
 
     interactiv = Interactive.objects.all()
     city_docum = CityDocumenFarinovo.objects.all()
@@ -1292,3 +1292,91 @@ def farinava_archive(request):
     }
 
     return render(request, 'webapp/cities/farinovo_archive.html', context=context)
+
+
+def vetrino(request):
+    """City Vetrino"""
+
+    interactiv = Interactive.objects.all()
+    city_docum = CityDocumenFarinovo.objects.all()
+    monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
+
+    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
+
+
+    context = {
+        'interactiv': interactiv,
+        'city_docum': city_docum,
+        'all_typical_news': all_typical_news,
+        'centre_news': centre_news,
+        'monitoring_plan_arkhive': monitoring_plan_arkhive,
+    }
+
+    return render(request, 'webapp/cities/vetrino.html', context=context)
+
+
+def vetrino_archive(request):
+    """City Vetrino archive"""
+
+    interactiv = Interactive.objects.all()
+    city_docum = CityDocumenFarinovo.objects.all()
+    monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
+
+    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
+
+
+    context = {
+        'interactiv': interactiv,
+        'city_docum': city_docum,
+        'all_typical_news': all_typical_news,
+        'centre_news': centre_news,
+        'monitoring_plan_arkhive': monitoring_plan_arkhive,
+    }
+
+    return render(request, 'webapp/cities/vetrino_archive.html', context=context)
+
+
+def zaozerie(request):
+    """City Zaozerie"""
+
+    interactiv = Interactive.objects.all()
+    city_docum = CityDocumenFarinovo.objects.all()
+    monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
+
+    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
+
+
+    context = {
+        'interactiv': interactiv,
+        'city_docum': city_docum,
+        'all_typical_news': all_typical_news,
+        'centre_news': centre_news,
+        'monitoring_plan_arkhive': monitoring_plan_arkhive,
+    }
+
+    return render(request, 'webapp/cities/zaozerie.html', context=context)
+
+
+def zaozerie_archive(request):
+    """City Zaozerie archive"""
+
+    interactiv = Interactive.objects.all()
+    city_docum = CityDocumenFarinovo.objects.all()
+    monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
+
+    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
+
+
+    context = {
+        'interactiv': interactiv,
+        'city_docum': city_docum,
+        'all_typical_news': all_typical_news,
+        'centre_news': centre_news,
+        'monitoring_plan_arkhive': monitoring_plan_arkhive,
+    }
+
+    return render(request, 'webapp/cities/zaozerie_archive.html', context=context)

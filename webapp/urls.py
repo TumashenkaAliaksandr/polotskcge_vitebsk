@@ -72,6 +72,10 @@ urlpatterns = [
     path('bogatyrckaya-archive/', bogatyrscaya_archive, name='bogatyrckaya-archive'),
     path('farinava/', farinava, name='farinava'),
     path('farinava-archive/', farinava_archive, name='farinava-archive'),
+    path('vetrino/', vetrino, name='vetrino'),
+    path('vetrino-archive/', vetrino_archive, name='vetrino-archive'),
+    path('zaozerie/', zaozerie, name='zaozerie'),
+    path('zaozerie-archive/', zaozerie_archive, name='zaozerie-archive'),
     ]
 
 
