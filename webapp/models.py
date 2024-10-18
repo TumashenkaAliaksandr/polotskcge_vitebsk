@@ -1283,7 +1283,6 @@ class EripPayment(models.Model):
 
     name = models.CharField(max_length=255, verbose_name="Заголовок")
     description = models.TextField(verbose_name="Описание")
-    description_two = models.TextField(verbose_name="Описание два")
     payment_methods = models.TextField(verbose_name="Схема проведения платежа")
     unp = models.TextField(verbose_name="УНП", blank=True)
     title_portal = models.TextField(verbose_name="ПОРТАЛ РЕЙТИНГОВОЙ ОЦЕНКИ", blank=True)
@@ -1379,7 +1378,7 @@ class Cities(models.Model):
     name = models.CharField(max_length=350, default='Тайтл для Посёлка')
     description = models.TextField(default='Описание')
     photo = models.ImageField(upload_to='Health_cities/', null=True, blank=True)
-    url = models.URLField(null=True, blank=True)
+    rl = models.URLField(null=True, blank=True)
 
     class Meta:
         verbose_name = 'Здоровые города и поселки (Тайтл описание фото)'

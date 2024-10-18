@@ -23,7 +23,7 @@
     <main id="main">
 
         <div class="news-interactiv-mobile">
-        {% include 'main/news-interactiv-desctop.html' %}
+            {% include 'main/news-interactiv-desctop.html' %}
         </div>
 
 
@@ -32,7 +32,7 @@
         </div>
 
         <div class="desctop-featured">
-        {% include 'main/featured-services.html' %}
+            {% include 'main/featured-services.html' %}
         </div>
 
       <!-- ======= About Us Section ======= -->
@@ -151,7 +151,6 @@
                            data-aos="zoom-in"></div>
                   </div>
               {% endfor %}
-
           </div>
       </section>
       <!-- End Features Section -->
@@ -182,39 +181,35 @@
       </section>
       <!-- End Services Section -->
 
-      <!-- Erip -->
-      <section id="about" class="about section-bg-erip">
-          <div class="container" data-aos="fade-up">
+        <!-- Erip -->
+        <section id="about" class="about section-bg-erip">
+            <div class="container" data-aos="fade-up">
+                {% for main_info_erip in erip_info %}
+                    <div class="section-title">
+                        <h2>{{ main_info_erip.name|safe }}</h2>
+                        <p>{{ main_info_erip.description|safe }}</p>
+                    </div>
 
-              <div class="section-title">
-                  <h2>Оплата в ЕРИП</h2>
-                  <p>Оплатить услуги Полоцкого зонального ЦГЭ Вы можете через систему "Расчет ЕРИП"</p>
-              </div>
-
-              <div class="row">
-                  <div class="col-lg-6 img-fixed-size-erip" data-aos="fade-right">
-                      <img src="{% static 'webapp/assets/img/gigi_erip-removebg-preview.png' %}" class="img-fluid"
-                           alt="">
-                  </div>
-                  <div class="col-lg-10 pt-4 pt-lg-0 content" data-aos="fade-left">
-                      <p class="fst-italic">Вы можете это сделать в любом удобном для Вас месте, в удобное для Вас
-                          время, в удобном для Вас пункте банковского обслуживания - интернет-банке, с помощью
-                          мобильного банкинга, инфокиоске, кассе банков, банкомате и т.д.
-                          Совершить оплату можно с использованием наличных денежных средств, электронных деньги
-                          банковских платежных карточек в пунктах банковского обслуживания банков, которые оказывают
-                          услуги по приему платежей, а также посредством инструментов дистанционного банковского
-                          обслуживания.</p>
-                      <p class="fst-italic"><a href="{% static 'webapp/assets/img/gigi_centr_oplata_erip.jpg' %}" target="_blank">Схема проведения платежа</a></p>
-                  </div>
-              </div>
-
-          </div>
-      </section>
-      <!-- End Erip -->
+                    <div class="row">
+                        <div class="col-lg-6 img-fixed-size-erip" data-aos="fade-right">
+                            <img src="{% static 'webapp/assets/img/gigi_erip-removebg-preview.png' %}" class="img-fluid"
+                                 alt="">
+                        </div>
+                        <div class="col-lg-10 pt-4 pt-lg-0 content" data-aos="fade-left">
+                            <p class="fst-italic">{{ main_info_erip.payment_methods|safe }}</p>
+                            <p class="fst-italic"><a href="{% static 'webapp/assets/img/gigi_centr_oplata_erip.jpg' %}"
+                                                     target="_blank">Схема проведения платежа</a></p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+        <!-- End Erip -->
 
       <!-- ======= Features Section ======= -->
       <section id="features" class="news-grid-left features section-bg-unp">
           <div class="container" data-aos="fade-up">
+              {% for main_info_erip in erip_info %}
               <div class="row">
                   <!-- Первая колонка -->
                   <div class="col-lg-6" data-aos="fade-right">
@@ -222,12 +217,11 @@
                       <div class="col-lg-4 img-fixed-size-kvit my-column">
 {#                          <img src="{% static 'webapp/assets/img/gigi_centr_kvitanciya-nbg.png' %}" class="img-fluid"#}
 {#                               alt="">#}
-                          <img src="{% static 'webapp/assets/img/gigi_boy.gif' %}" class="img-fixed-size-unp" alt="gigi_boy.gif">
+                          <img src="{{ main_info_erip.payment_scheme_image3.url }}" class="img-fixed-size-unp" alt="gigi_boy.gif">
                       </div>
                           <div class="news-grid-right2">
                           <h4>
-                              УНН 300250571 ОКПО 05562961<br>Расчетный счет: BY16 AKBB 3632 0002 1011 9230 0000<br>ОАО
-                              «АСБ «Беларусбанк»<br>г. Полоцк, БИК AKBBBY2Х
+                              {{ main_info_erip.unp|safe }}
                           </h4>
                       </div>
                   </div>
@@ -235,17 +229,18 @@
                   <div class="col-lg-4 display-none-landscape" data-aos="fade-right">
                       <div class="icon-box mt-5 mt-lg-0">
                           <!-- Текст для второй колонки -->
-                          <h4>ПОРТАЛ РЕЙТИНГОВОЙ ОЦЕНКИ</h4>
-                          <img src="{% static 'webapp/assets/img/Ybin.gif' %}" class="img-fixed-size-unp-three" alt="Ybin.gif">
-                          <img src="{% static 'webapp/assets/img/2r5t.gif' %}" class="img-fixed-size-unp-two" alt="2r5t.gif">
+                          <h4>{{ main_info_erip.title_portal|safe }}</h4>
+                          <img src="{{ main_info_erip.payment_scheme_image4.url }}" class="img-fixed-size-unp-three" alt="Ybin.gif">
+                          <img src="{{ main_info_erip.payment_scheme_image5.url }}" class="img-fixed-size-unp-two" alt="2r5t.gif">
                       </div>
                   </div>
                   <!-- Изображение для второй колонки -->
                   <div class="col-lg-4 img-fixed-size-erip">
-                      <img src="{% static 'webapp/assets/img/gigi_centr_portal.png' %}" class="img-fluid"
+                      <img src="{{ main_info_erip.payment_scheme_image6.url }}" class="img-fluid"
                            alt="">
                   </div>
               </div>
+              {% endfor %}
           </div>
       </section>
       <!-- End Features Section -->

@@ -34,6 +34,7 @@ def index(request):
     interactiv = Interactive.objects.all()
     sliders = OurPartners.objects.all()
     about_history = AboutHistory.objects.all()
+    erip_info = EripPayment.objects.all()
 
     context = {
         'desc_services_title': desc_services_title,
@@ -49,6 +50,7 @@ def index(request):
         'interactiv': interactiv,
         'sliders': sliders,
         'about_history': about_history,
+        'erip_info': erip_info,
     }
 
     return render(request, 'webapp/index.html', context=context)

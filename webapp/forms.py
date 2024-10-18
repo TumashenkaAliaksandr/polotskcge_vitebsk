@@ -843,7 +843,6 @@ class EripPaymentForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'description': SummernoteWidget(),
-            'description_two': SummernoteWidget(),
             'payment_methods': SummernoteWidget(),
             'name': SummernoteWidget(),
             'unp': SummernoteWidget(),
