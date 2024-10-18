@@ -1156,3 +1156,25 @@ class CityDocumentFarinovoAdmin(admin.ModelAdmin):
 
     clean_name.short_description = 'Name'
     list_display = ['clean_name']
+
+
+@admin.register(CityDocumenVetrino)
+class CityDocumentVetrinoAdmin(admin.ModelAdmin):
+    form = CityDocumentVetrinoForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']
+
+
+@admin.register(CityDocumenZaozerie)
+class CityDocumentZaozerieAdmin(admin.ModelAdmin):
+    form = CityDocumentZaozerieForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']

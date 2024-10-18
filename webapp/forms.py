@@ -950,3 +950,25 @@ class CityDocumentFarinovoForm(forms.ModelForm):
             'file_desc': SummernoteWidget(),
             'name': SummernoteWidget(),
         }
+
+
+class CityDocumentVetrinoForm(forms.ModelForm):
+    class Meta:
+        model = CityDocumenVetrino
+        fields = '__all__'
+        widgets = {
+            'description': SummernoteWidget(),
+            'file_desc': SummernoteWidget(),
+            'name': SummernoteWidget(),
+        }
+
+
+class CityDocumentZaozerieForm(forms.ModelForm):
+    class Meta:
+        model = CityDocumenZaozerie
+        fields = '__all__'
+        widgets = {
+            'description': SummernoteWidget(),
+            'file_desc': SummernoteWidget(),
+            'name': SummernoteWidget(),
+        }

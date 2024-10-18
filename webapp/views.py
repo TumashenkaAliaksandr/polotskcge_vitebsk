@@ -1298,7 +1298,7 @@ def vetrino(request):
     """City Vetrino"""
 
     interactiv = Interactive.objects.all()
-    city_docum = CityDocumenFarinovo.objects.all()
+    city_docum = CityDocumenVetrino.objects.all()
     monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
     centre_news = CentreNews.objects.all().order_by('-pub_date')
 
@@ -1320,7 +1320,7 @@ def vetrino_archive(request):
     """City Vetrino archive"""
 
     interactiv = Interactive.objects.all()
-    city_docum = CityDocumenFarinovo.objects.all()
+    city_docum = CityDocumenVetrino.objects.all()
     monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
     centre_news = CentreNews.objects.all().order_by('-pub_date')
 
@@ -1342,7 +1342,7 @@ def zaozerie(request):
     """City Zaozerie"""
 
     interactiv = Interactive.objects.all()
-    city_docum = CityDocumenFarinovo.objects.all()
+    city_docum = CityDocumenZaozerie.objects.all()
     monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
     centre_news = CentreNews.objects.all().order_by('-pub_date')
 
@@ -1364,7 +1364,7 @@ def zaozerie_archive(request):
     """City Zaozerie archive"""
 
     interactiv = Interactive.objects.all()
-    city_docum = CityDocumenFarinovo.objects.all()
+    city_docum = CityDocumenZaozerie.objects.all()
     monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
     centre_news = CentreNews.objects.all().order_by('-pub_date')
 

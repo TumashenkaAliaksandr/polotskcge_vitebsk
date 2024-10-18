@@ -112,6 +112,7 @@
                                 <img src="{{ city.photo.url }}" alt="" class="img-fluid">
                                 <section class="faq">
                                     <ul class="faq-list">
+                                        <li><h5>Интерактивная доска:</h5></li>
                                         {% for description in city.descriptions.all %}
                                             <div data-bs-toggle="collapse" class="collapsed question"
                                                  href="#description-{{ forloop.counter }}" style="cursor: pointer;">

@@ -1460,3 +1460,31 @@ class CityDocumenFarinovo(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class CityDocumenVetrino(models.Model):
+    name = models.CharField(max_length=100)  # Поле для имени
+    description = models.TextField(default='Description')           # Поле для описания
+    file_desc = models.TextField(default='Description file')           # Поле для описания
+    pdf_file = models.FileField(upload_to='city_documents/')  # Поле для загрузки PDF-файла
+
+    class Meta:
+        verbose_name = 'Поселок - Ветрино (страница прикрепить ПДФ, архив)'
+        verbose_name_plural = 'Поселок - Ветрино (страница прикрепить ПДФ, архив)'
+
+    def __str__(self):
+        return self.name
+
+
+class CityDocumenZaozerie(models.Model):
+    name = models.CharField(max_length=100)  # Поле для имени
+    description = models.TextField(default='Description')           # Поле для описания
+    file_desc = models.TextField(default='Description file')           # Поле для описания
+    pdf_file = models.FileField(upload_to='city_documents/')  # Поле для загрузки PDF-файла
+
+    class Meta:
+        verbose_name = 'Поселок - Заозерье (страница прикрепить ПДФ, архив)'
+        verbose_name_plural = 'Поселок - Заозерье (страница прикрепить ПДФ, архив)'
+
+    def __str__(self):
+        return self.name
