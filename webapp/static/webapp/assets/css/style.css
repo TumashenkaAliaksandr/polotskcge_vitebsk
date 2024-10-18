@@ -737,6 +737,7 @@ h6 {
     background: #65c9cd;
 }
 
+
 .btn-get-normative {
     font-family: "Roboto", sans-serif;
     font-weight: 500;
@@ -753,6 +754,28 @@ h6 {
 
 .btn-get-normative:hover {
     background: #65c9cd;
+}
+
+.btn-get-city {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 4px;
+    transition: 0.5s;
+    line-height: 1;
+    color: #fff;
+    background: #3fbbc0;
+}
+
+.btn-get-city:hover {
+    background: #45d0d9;
+}
+
+.btn-get-city li {
+    color: #FFFFFF;
 }
 
 @media (max-width: 992px) {
