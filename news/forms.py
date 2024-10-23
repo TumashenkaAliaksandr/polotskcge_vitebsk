@@ -1,6 +1,5 @@
 from django import forms
 from django_summernote.widgets import SummernoteWidget
-from tinymce.widgets import TinyMCE
 from news.models import ModelNews
 
 

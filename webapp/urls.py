@@ -68,14 +68,8 @@ urlpatterns = [
     path('health_days/', health_days, name='health_days'),
     path('educational_resources/', educational_resources, name='educational_resources'),
     path('contacts/', contacts, name='contacts'),
-    path('bogatyrckaya/', bogatyrscaya, name='bogatyrckaya'),
-    path('bogatyrckaya-archive/', bogatyrscaya_archive, name='bogatyrckaya-archive'),
-    path('farinava/', farinava, name='farinava'),
-    path('farinava-archive/', farinava_archive, name='farinava-archive'),
-    path('vetrino/', vetrino, name='vetrino'),
-    path('vetrino-archive/', vetrino_archive, name='vetrino-archive'),
-    path('zaozerie/', zaozerie, name='zaozerie'),
-    path('zaozerie-archive/', zaozerie_archive, name='zaozerie-archive'),
+    path('city/<int:pk>/', city_single, name='city_single'),
+    path('archive/<int:pk>/', archive_single, name='archive_single'),
     ]
 
 

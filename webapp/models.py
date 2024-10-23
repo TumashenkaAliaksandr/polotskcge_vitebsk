@@ -1376,9 +1376,13 @@ class CitiesTitle(models.Model):
 class Cities(models.Model):
     """Модель для населенных пунктов"""
     name = models.CharField(max_length=350, default='Тайтл для Посёлка')
-    description = models.TextField(default='Описание')
+    name_city = models.CharField(max_length=350, default='Тайтл для Посёлка на странице посёлка')
+    description = models.TextField(default='Описание для страницы Города/Посёлки')
+    description_two = models.TextField(default='Описание для страницы Поселка')
     photo = models.ImageField(upload_to='Health_cities/', null=True, blank=True)
     url = models.URLField(null=True, blank=True)
+    file_desc = models.TextField(default='Description file')  # Поле для описания
+    pdf_file = models.FileField(upload_to='city_documents/', blank=True, null=True)
 
     class Meta:
         verbose_name = 'Здоровые города и поселки (Тайтл описание фото)'

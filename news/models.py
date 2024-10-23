@@ -21,6 +21,7 @@ class ModelNews(models.Model):
     comment = models.TextField(verbose_name='Примечание', default='Примечание')
     # Добавлены поля для "Популярные" и "Новости о природе"
     is_popular = models.BooleanField(verbose_name='Популярные', default=False, blank=True)
+    is_city = models.BooleanField(verbose_name='Города/Посёлки', default=False, blank=True)
     is_nature_news = models.BooleanField(verbose_name='Новости о природе', default=False, blank=True)
     is_health_news = models.BooleanField(verbose_name='Новости о здоровье', default=False, blank=True)
     is_sport_news = models.BooleanField(verbose_name='Новости спорта', default=False, blank=True)

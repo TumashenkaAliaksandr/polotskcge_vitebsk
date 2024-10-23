@@ -133,7 +133,7 @@
                                         {% endfor %}
                                     </ul>
                                     <div class="btn-get-city eye">
-                                        <a href="{{ city.url }}" target="_blank">
+                                        <a href="{% url 'webapp:city_single' pk=city.id %}" target="_blank">
                                             <li class="fa fa-arrow-right"> Перейти на стр. {{ city.name|safe }}</li>
                                         </a>
                                     </div>

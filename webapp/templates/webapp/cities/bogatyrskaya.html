@@ -55,7 +55,7 @@
     </div>
     <!-- ======= End Interactiv News Section ======= -->
 
-    <!-- ======= Frequently Asked Questions Section ======= -->
+    <!-- ======= Frequently Interactive Section ======= -->
     <section id="faq" class="faq main-bg-bogatyrskaya">
         <div class="container" data-aos="fade-up">
             <div class="margin-custom">
@@ -96,8 +96,100 @@
             </ul>
         </div>
     </section>
-    <!-- End Frequently Asked Questions Section -->
+    <!-- End Frequently Interactive Section -->
 
+    <!-- news-and-events -->
+    <section id="about" class="about main-bg">
+        <div class="container" data-aos="fade-up">
+            <div class="news">
+                <div class="news-grids">
+                    <div class="col-md-8 news-grid-left">
+                        <h3>Наши новости</h3>
+                        <ul>
+                            {% for news_item in page_obj %}
+                                <li>
+                                    <div class="news-grid-left1">
+                                        <a href="{% url 'news:single' pk=news_item.id %}">
+                                            <img src="{{ news_item.photo.url }}" alt=" "
+                                                 class="img-responsive"/>
+                                        </a>
+                                    </div>
+                                    <div class="news-grid-right1">
+                                        <h4>
+                                            <a href="{% url 'news:single' pk=news_item.id %}">{{ news_item.title|wordwrap:30|truncatechars_html:58 }}</a>
+                                        </h4>
+                                        <h5 class="fa fa-user-doctor">
+                                            <label>|</label>
+                                            <a href="{% url 'news:single' pk=news_item.id %}">{{ news_item.author }}</a>
+                                            <label>|</label>
+                                            <i>{{ news_item.pub_date|date:"d.m.Y" }}</i>
+                                        </h5>
+                                        <a href="{% url 'news:single' pk=news_item.id %}">
+                                            <p>{{ news_item.description_small|wordwrap:40|truncatechars_html:132|safe }}</p>
+                                        </a>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <div class="pagination">
+                                        <span class="step-links">
+                                            {% if page_obj.has_previous %}
+                                                <a href="?page=1">&laquo; первая</a>
+                                                <a href="?page={{ page_obj.previous_page_number }}"> предыдущая </a>
+                                            {% endif %}
+
+                                            <span class="current">
+                                                Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+                                            </span>
+
+                                            {% if page_obj.has_next %}
+                                                <a href="?page={{ page_obj.next_page_number }}"> следующая </a>
+                                                <a href="?page={{ page_obj.paginator.num_pages }}"> последняя &raquo;</a>
+                                            {% endif %}
+                                        </span>
+                        </div>
+                    </div>
+                    <!-- Tab panes -->
+                    <div class="news">
+                        <div class="news-grids">
+                            <div class="col-md-4 breaking-news-grid-right">
+                                <div class="news-grid-rght1">
+                                    <h3>Погода в Полоцке</h3>
+                                    <!-- Nav tabs -->
+                                    <div class="tab-content-weather-bg">
+                                        <div class="tab-content-weather">
+                                            <ul>
+                                                <h4>{{ weather.month }} {{ weather.day_of_month }}, {{ weather.day }}</h4>
+                                                <p><span
+                                                        class="fa fa-wind"> Ветер: {{ weather.wind_direction }}-ный | {{ weather.wind_speed }} м/с</span>
+                                                </p>
+                                                <p><span class="fas fa-thermometer-half">
+                                                Температура: {{ weather.temperature }}</span></p>
+                                                <p><span class="fas fa-tachometer-alt">
+                                                Давление: {{ weather.pressure }} гПа</span></p>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="news-grid-rght3">
+                                    <img src="{% static 'images/gigi_centr_girispolkom.jpg' %}" alt=" "
+                                         class="img-responsive"/>
+                                    <div class="story">
+                                        <p>фото дня</p>
+                                        <h3><a href="single.html">Горисполком город Полоцк</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //news-and-events -->
 
     {% for main_monitoring_arkhive in monitoring_plan_arkhive %}
         <section id="about" class="about main-bg-bogatyrskaya">

@@ -1,0 +1,283 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <!-- pagebanner -->
+    <section class="pagebanner-city-bogat"></section>
+    <!-- End Pagebanner -->
+    <section class="breadcrumbs_contacts">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+
+                <ol>
+                    <li><a href="{% url 'webapp:home' %}">Главная</a></li>
+                    <li>{{ city_name|safe }}</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <!-- End Breadcrumbs Section -->
+
+    <!-- ======= Interactiv News Section ======= -->
+    <div id="single" class="single main-bg-bogatyrskaya">
+        <div class="breaking-news">
+            <div class="container">
+                {% for main_interactiv_string in interactiv %}
+                    <div class="move-text">
+                        <div class="breaking_news">
+                            <h2>Новости Центра</h2>
+                        </div>
+                        <div class="marquee">
+                            <div class="marquee1"><a class="breaking"
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description | safe }}</a>
+                            </div>
+                            <div class="marquee2"><a class="breaking"
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <script type="text/javascript" src="{% static 'js/jquery.marquee.js' %}"></script>
+                        <script>
+                            $('.marquee').marquee({pauseOnHover: true});
+                            //@ sourceURL=pen.js
+                        </script>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <!-- ======= End Interactiv News Section ======= -->
+
+    <!-- ======= Frequently Interactive Section ======= -->
+    <section id="faq" class="faq main-bg-bogatyrskaya">
+        <div class="container" data-aos="fade-up">
+            <div class="margin-custom">
+                <div class="row">
+                    <div class="col-lg-3" data-aos="fade-right">
+                        <img src="{% static 'webapp/assets/img/gigi_centr_busel_nbg.png' %}" class="img-fluid" alt="">
+                    </div>
+                    {% for main_inf in city_docum %}
+                        <div class="col-lg-9 pt-4 pt-lg-0 content bogatyrskaya description-left" data-aos="fade-left">
+                            <h2>{{ main_inf.name_city | safe }}</h2>
+                            <p>{{ main_inf.description_two | safe }}</p>
+                            <div class="col-lg-13" data-aos="fade-left">
+                                <img src="{% static 'webapp/assets/img/gigi_centr_dir_nbg.png' %}" class="img-fix-two"
+                                     alt="">
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <ul class="faq-list">
+    {% for main_inf in city_docum %}
+        <li>
+            <div class="collapsed question">
+                {% if main_inf.pdf_file %}
+                    <a href="{{ main_inf.pdf_file.url }}" target="_blank">
+                        <i class="bi bi-chevron-right icon-show">
+                            <img src="{% static 'webapp/assets/img/gigi_centr_marker-nbg.png' %}" class="img-fix" alt="">
+                        </i>
+                        {{ main_inf.file_desc | safe }}
+                    </a>
+                {% else %}
+                    <p>No PDF file available.</p> <!-- Сообщение, если файла нет -->
+                {% endif %}
+            </div>
+        </li>
+    {% empty %}
+        <p>No documents available.</p> <!-- Сообщение, если данных нет -->
+    {% endfor %}
+</ul>
+        </div>
+    </section>
+    <!-- End Frequently Interactive Section -->
+
+    <!-- news-and-events -->
+    <section id="about" class="about main-bg">
+        <div class="container" data-aos="fade-up">
+            <div class="news">
+                <div class="news-grids">
+                    <div class="col-md-8 news-grid-left">
+                        <h3>Наши новости</h3>
+                        <ul>
+                            {% for news_item in page_obj %}
+                                <li>
+                                    <div class="news-grid-left1">
+                                        <a href="{% url 'news:single' pk=news_item.id %}">
+                                            <img src="{{ news_item.photo.url }}" alt=" "
+                                                 class="img-responsive"/>
+                                        </a>
+                                    </div>
+                                    <div class="news-grid-right1">
+                                        <h4>
+                                            <a href="{% url 'news:single' pk=news_item.id %}">{{ news_item.title|wordwrap:30|truncatechars_html:58 }}</a>
+                                        </h4>
+                                        <h5 class="fa fa-user-doctor">
+                                            <label>|</label>
+                                            <a href="{% url 'news:single' pk=news_item.id %}">{{ news_item.author }}</a>
+                                            <label>|</label>
+                                            <i>{{ news_item.pub_date|date:"d.m.Y" }}</i>
+                                        </h5>
+                                        <a href="{% url 'news:single' pk=news_item.id %}">
+                                            <p>{{ news_item.description_small|wordwrap:40|truncatechars_html:132|safe }}</p>
+                                        </a>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </li>
+                                {% empty %}
+                            <li>
+                                <div class="no-news">
+                                    <img src="{% static 'images/gigi_centr_no_news.png' %}" alt="Нет новостей" class="img-responsive"/>
+                                    <p>В данный момент нет доступных новостей.</p>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <div class="pagination">
+                                        <span class="step-links">
+                                            {% if page_obj.has_previous %}
+                                                <a href="?page=1">&laquo; первая</a>
+                                                <a href="?page={{ page_obj.previous_page_number }}"> предыдущая </a>
+                                            {% endif %}
+
+                                            <span class="current">
+                                                Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+                                            </span>
+
+                                            {% if page_obj.has_next %}
+                                                <a href="?page={{ page_obj.next_page_number }}"> следующая </a>
+                                                <a href="?page={{ page_obj.paginator.num_pages }}"> последняя &raquo;</a>
+                                            {% endif %}
+                                        </span>
+                        </div>
+                    </div>
+                    <!-- Tab panes -->
+                    <div class="news">
+                        <div class="news-grids">
+                            <div class="col-md-4 breaking-news-grid-right">
+                                <div class="news-grid-rght1">
+                                    <h3>Погода в Полоцке</h3>
+                                    <!-- Nav tabs -->
+                                    <div class="tab-content-weather-bg">
+                                        <div class="tab-content-weather">
+                                            <ul>
+                                                <h4>{{ weather.month }} {{ weather.day_of_month }}, {{ weather.day }}</h4>
+                                                <p><span
+                                                        class="fa fa-wind"> Ветер: {{ weather.wind_direction }}-ный | {{ weather.wind_speed }} м/с</span>
+                                                </p>
+                                                <p><span class="fas fa-thermometer-half">
+                                                Температура: {{ weather.temperature }}</span></p>
+                                                <p><span class="fas fa-tachometer-alt">
+                                                Давление: {{ weather.pressure }} гПа</span></p>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="news-grid-rght3">
+                                    <img src="{% static 'images/gigi_centr_girispolkom.jpg' %}" alt=" "
+                                         class="img-responsive"/>
+                                    <div class="story">
+                                        <p>фото дня</p>
+                                        <h3><a href="">Горисполком город Полоцк</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //news-and-events -->
+
+    {% for main_monitoring_arkhive in monitoring_plan_arkhive %}
+        <section id="about" class="about main-bg-bogatyrskaya">
+            <div class="container book_info" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>{{ main_monitoring_arkhive.description|safe }}</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-3" data-aos="fade-right">
+                        <img src="{{ main_monitoring_arkhive.photo.url }}" class="img-fluid img-fixed-size-monitoring-plan-arhi"
+                             alt="">
+                    </div>
+                    <div class="col-lg-9 pt-4 pt-lg-0 content" data-aos="fade-left">
+                        {% for city in city_page %}
+                            <div class="archive">
+                                <a href="{% url 'webapp:archive_single' pk=city.id %}" target="_blank">
+                                    <li class="fa fa-calendar-plus"> {{ main_monitoring_arkhive.name|safe }}</li>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    {% endfor %}
+    <!-- End deratisation Section -->
+
+    <!-- ======= breaking-news Section ======= -->
+    <section id="featured-services" class="featured-services main-bg-bogatyrskaya">
+        <div class="container" data-aos="fade-up">
+            <div class="breaking-news-grids-bottom">
+                <div class="banner-bottom-grids">
+                    {% for main_litle_news in centre_news %}
+                        <div class="col-md-3 banner-bottom-grid-left">
+                            <div class="br-bm-gd-lt-fon">
+                                <a href="{{ main_litle_news.link }}"><img
+                                        src="{{ main_litle_news.img.url }}" alt=" "
+                                        class="img-responsive"/></a>
+                                <div class="overlay">
+                                    <div class="arrow-left"></div>
+                                    <div class="rectangle"></div>
+                                </div>
+                                <div class="health-pos">
+                                    <div class="health">
+                                        <ul>
+                                            <li>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|wordwrap:30|truncatechars_html:58 }}</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <h3>{{ main_litle_news.desc|safe|wordwrap:10|truncatechars_html:58 }}</h3>
+                                    <div class="dummy">
+                                        <a href="{{ main_litle_news.link }}">
+                                            <p>{{ main_litle_news.desc_hover|safe }}</p></a>
+                                    </div>
+                                    <div class="com-heart-health">
+                                        <ul>
+                                            <li><a href="{{ main_litle_news.link }}"><span
+                                                    class="fa fa-user-doctor"
+                                                    aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Featured Services Section -->
+
+  </main><!-- End #main -->
+
+{% endblock %}

@@ -896,7 +896,10 @@ class CitiesForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'name': SummernoteWidget(),
+            'name_city': SummernoteWidget(),
             'description': SummernoteWidget(),
+            'description_two': SummernoteWidget(),
+            'file_desc': SummernoteWidget(),
         }
 
 

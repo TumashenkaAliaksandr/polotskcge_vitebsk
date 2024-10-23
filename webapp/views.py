@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.core.paginator import Paginator
+from django.shortcuts import render, get_object_or_404
 
 from news.models import Interactive, ModelNews, PreviewNews
 from news.utils import get_weather
@@ -1206,143 +1207,42 @@ def resurces_slider_three(request):
     return render(request, 'slider/recurces_slider3.html', context=context)
 
 
-def bogatyrscaya(request):
-    """City Bogatyrskaya"""
+def city_single(request, pk):
+    """City Single"""
 
     interactiv = Interactive.objects.all()
-    city_docum = CityDocumenBtogatyr.objects.all()
+    city_docum = Cities.objects.filter(pk=pk)
     monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
     centre_news = CentreNews.objects.all().order_by('-pub_date')
-
-    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
-
+    all_news = ModelNews.objects.filter(is_city=True).order_by('-pub_date')
+    paginator = Paginator(all_news, 3)  # По 10 новостей на страницу
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    city_name = get_object_or_404(Cities, pk=pk)
+    city_page = Cities.objects.filter(pk=pk)
+    # Получаем данные о погоде
+    weather = get_weather()
 
     context = {
         'interactiv': interactiv,
         'city_docum': city_docum,
-        'all_typical_news': all_typical_news,
         'centre_news': centre_news,
         'monitoring_plan_arkhive': monitoring_plan_arkhive,
+        'page_obj': page_obj,
+        'city_name': city_name,
+        'city_page': city_page,
+        'weather': weather,
     }
 
-    return render(request, 'webapp/cities/bogatyrskaya.html', context=context)
+    return render(request, 'webapp/cities/city_single.html', context=context)
 
 
-def bogatyrscaya_archive(request):
-    """City Bogatyrskaya"""
-
-    interactiv = Interactive.objects.all()
-    city_docum = CityDocumenBtogatyr.objects.all()
-    monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
-    centre_news = CentreNews.objects.all().order_by('-pub_date')
-
-    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
-
-
-    context = {
-        'interactiv': interactiv,
-        'city_docum': city_docum,
-        'all_typical_news': all_typical_news,
-        'centre_news': centre_news,
-        'monitoring_plan_arkhive': monitoring_plan_arkhive,
-    }
-
-    return render(request, 'webapp/cities/bogatyrskaya_archive.html', context=context)
-
-
-def farinava(request):
-    """City Farinava"""
-
-    interactiv = Interactive.objects.all()
-    city_docum = CityDocumenFarinovo.objects.all()
-    monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
-    centre_news = CentreNews.objects.all().order_by('-pub_date')
-
-    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
-
-
-    context = {
-        'interactiv': interactiv,
-        'city_docum': city_docum,
-        'all_typical_news': all_typical_news,
-        'centre_news': centre_news,
-        'monitoring_plan_arkhive': monitoring_plan_arkhive,
-    }
-
-    return render(request, 'webapp/cities/farinovo.html', context=context)
-
-
-def farinava_archive(request):
-    """City Farinava archive"""
-
-    interactiv = Interactive.objects.all()
-    city_docum = CityDocumenFarinovo.objects.all()
-    monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
-    centre_news = CentreNews.objects.all().order_by('-pub_date')
-
-    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
-
-
-    context = {
-        'interactiv': interactiv,
-        'city_docum': city_docum,
-        'all_typical_news': all_typical_news,
-        'centre_news': centre_news,
-        'monitoring_plan_arkhive': monitoring_plan_arkhive,
-    }
-
-    return render(request, 'webapp/cities/farinovo_archive.html', context=context)
-
-
-def vetrino(request):
-    """City Vetrino"""
-
-    interactiv = Interactive.objects.all()
-    city_docum = CityDocumenVetrino.objects.all()
-    monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
-    centre_news = CentreNews.objects.all().order_by('-pub_date')
-
-    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
-
-
-    context = {
-        'interactiv': interactiv,
-        'city_docum': city_docum,
-        'all_typical_news': all_typical_news,
-        'centre_news': centre_news,
-        'monitoring_plan_arkhive': monitoring_plan_arkhive,
-    }
-
-    return render(request, 'webapp/cities/vetrino.html', context=context)
-
-
-def vetrino_archive(request):
-    """City Vetrino archive"""
-
-    interactiv = Interactive.objects.all()
-    city_docum = CityDocumenVetrino.objects.all()
-    monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
-    centre_news = CentreNews.objects.all().order_by('-pub_date')
-
-    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
-
-
-    context = {
-        'interactiv': interactiv,
-        'city_docum': city_docum,
-        'all_typical_news': all_typical_news,
-        'centre_news': centre_news,
-        'monitoring_plan_arkhive': monitoring_plan_arkhive,
-    }
-
-    return render(request, 'webapp/cities/vetrino_archive.html', context=context)
-
-
-def zaozerie(request):
-    """City Zaozerie"""
+def archive_single(request, pk):
+    """City archive single """
 
     interactiv = Interactive.objects.all()
     city_docum = CityDocumenZaozerie.objects.all()
+    city_page = Cities.objects.filter(pk=pk)
     monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
     centre_news = CentreNews.objects.all().order_by('-pub_date')
 
@@ -1355,28 +1255,7 @@ def zaozerie(request):
         'all_typical_news': all_typical_news,
         'centre_news': centre_news,
         'monitoring_plan_arkhive': monitoring_plan_arkhive,
+        'city_page': city_page,
     }
 
-    return render(request, 'webapp/cities/zaozerie.html', context=context)
-
-
-def zaozerie_archive(request):
-    """City Zaozerie archive"""
-
-    interactiv = Interactive.objects.all()
-    city_docum = CityDocumenZaozerie.objects.all()
-    monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
-    centre_news = CentreNews.objects.all().order_by('-pub_date')
-
-    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
-
-
-    context = {
-        'interactiv': interactiv,
-        'city_docum': city_docum,
-        'all_typical_news': all_typical_news,
-        'centre_news': centre_news,
-        'monitoring_plan_arkhive': monitoring_plan_arkhive,
-    }
-
-    return render(request, 'webapp/cities/zaozerie_archive.html', context=context)
+    return render(request, 'webapp/cities/archive_single.html', context=context)
