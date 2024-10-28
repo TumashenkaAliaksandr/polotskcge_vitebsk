@@ -53,8 +53,9 @@
     <!-- ======= End Interactiv News Section ======= -->
 
 
-    {% for main_monitoring_arkhive in monitoring_plan_arkhive %}
-        <section id="about" class="about main-bg-bogatyrskaya">
+    <!-- Monitoring plan archive Section -->
+    <section id="about" class="about main-bg-bogatyrskaya">
+        {% for main_monitoring_arkhive in monitoring_plan_arkhive %}
             <div class="container book_info" data-aos="fade-up">
 
                 <div class="section-title">
@@ -63,7 +64,8 @@
 
                 <div class="row">
                     <div class="col-lg-3" data-aos="fade-right">
-                        <img src="{{ main_monitoring_arkhive.photo.url }}" class="img-fluid img-fixed-size-monitoring-plan-arhi"
+                        <img src="{{ main_monitoring_arkhive.photo.url }}"
+                             class="img-fluid img-fixed-size-monitoring-plan-arhi"
                              alt="">
                     </div>
                     <div class="col-lg-9 pt-4 pt-lg-0 content" data-aos="fade-left">
@@ -76,9 +78,9 @@
                 </div>
 
             </div>
-        </section>
-    {% endfor %}
-    <!-- End deratisation Section -->
+        {% endfor %}
+    </section>
+    <!-- End Monitoring plan archive Section -->
 
     <!-- ======= breaking-news Section ======= -->
     <section id="featured-services" class="featured-services main-bg-bogatyrskaya">
