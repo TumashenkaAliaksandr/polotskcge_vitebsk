@@ -977,6 +977,14 @@ section#footer {
     background-attachment: fixed;
 }
 
+@media (max-width: 767px) {
+    .main-bg {
+    padding: 35px 0 35px;
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.97)), url('../img/epi_gigi_polock_contact.png') center/cover;
+    background-attachment: fixed;
+}
+}
+
 .health-days-bg {
     padding: 35px 0 35px;
     background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.97)), url('../img/gigi_centr_health.png') center/cover;

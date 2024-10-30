@@ -3275,7 +3275,7 @@ img.mobile1 {
 }
 @media only screen and (max-width: 768px) {
   .section-title h2 {
-    font-size: 15px;
+    font-size: 25px;
     font-weight: bold;
     text-transform: uppercase;
   }
@@ -3292,6 +3292,71 @@ img.mobile1 {
         width: 92.3%;
         margin-left: 0.8em;
         padding-top: 40%;
+    }
+}
+
+@media (min-width: 366px) and (max-width: 667px) {
+    .move-text-index {
+        /* Стили для экранов от 366px до 667px */
+        width: 92.3%;
+        margin-left: 0.8em;
+        padding-top: 25%;
+    }
+}
+
+@media (min-width: 428px) and (max-width: 926px) {
+    .move-text-index {
+        /* Стили для экранов от 366px до 667px */
+        width: 92.3%;
+        margin-left: 0.8em;
+        padding-top: 35%;
+    }
+}
+
+
+@media (min-width: 412px) and (max-width: 915px) {
+    .move-text-index {
+        /* Стили для экранов от 366px до 667px */
+        width: 92.3%;
+        margin-left: 0.8em;
+        padding-top: 35%;
+    }
+}
+
+
+@media (min-width: 375px) and (max-width: 812px) {
+    .move-text-index {
+        /* Стили для экранов от 366px до 667px */
+        width: 92.3%;
+        margin-left: 0.8em;
+        padding-top: 35%;
+    }
+}
+
+@media (min-width: 375px) and (max-width: 667px) {
+    .move-text-index {
+        /* Стили для экранов от 366px до 667px */
+        width: 92.3%;
+        margin-left: 0.8em;
+        padding-top: 27%;
+    }
+}
+
+@media (min-width: 810px) and (max-width: 1080px) {
+    .move-text-index {
+        /* Стили для экранов от 366px до 667px */
+        width: 92.3%;
+        margin-left: 0.8em;
+        padding-top: 10%;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1280px) {
+    .move-text-index {
+        /* Стили для экранов от 366px до 667px */
+        width: 92.3%;
+        margin-left: 0.8em;
+        padding-top: 10%;
     }
 }
 /*@media (max-width:1680px){*/
