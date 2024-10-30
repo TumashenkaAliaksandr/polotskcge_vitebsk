@@ -2556,7 +2556,7 @@ section#clocks-two {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    /*min-height: 400px;*/
+    height: 240px;
 }
 
 /* Стили для десктопной версии */
@@ -3342,7 +3342,7 @@ section#clocks-two {
 .img-fix-two {
   max-width: 12%;
   height: auto;
-  margin-left: 80%;
+  margin: -7% 70%;
 }
 
 /*--------------------------------------------------------------
@@ -3916,6 +3916,14 @@ section#clocks-two {
 
     .img-fix-two {
         display: none;
+    }
+
+    .features .image {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        /*min-height: 400px;*/
+        height: 121px;
     }
 
 }

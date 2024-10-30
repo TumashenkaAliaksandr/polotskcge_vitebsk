@@ -60,17 +60,20 @@
         <div class="container" data-aos="fade-up">
             <div class="margin-custom">
                 <div class="row">
-                    <div class="col-lg-3" data-aos="fade-right">
-                        <img src="{% static 'webapp/assets/img/gigi_centr_busel_nbg.png' %}" class="img-fluid" alt="">
-                    </div>
                     {% for main_inf in city_docum %}
+                        <div class="col-lg-3" data-aos="fade-right">
+                            <img src="{% static 'webapp/assets/img/gigi_centr_busel_nbg.png' %}" class="img-fluid"
+                                 alt="">
+                        </div>
                         <div class="col-lg-9 pt-4 pt-lg-0 content bogatyrskaya description-left" data-aos="fade-left">
                             <h2>{{ main_inf.name_city | safe }}</h2>
                             <p>{{ main_inf.description_two | safe }}</p>
-                            <div class="col-lg-13" data-aos="fade-left">
-                                <img src="{% static 'webapp/assets/img/gigi_centr_dir_nbg.png' %}" class="img-fix-two"
+                            <img src="{{ main_inf.photo.url }}" class="img-fix-two"
                                      alt="">
-                            </div>
+{#                            <div class="col-lg-14" data-aos="fade-left">#}
+{#                                <img src="{{ main_inf.photo.url }}" class="img-fix-two"#}
+{#                                     alt="">#}
+{#                            </div>#}
                         </div>
                     {% endfor %}
                 </div>

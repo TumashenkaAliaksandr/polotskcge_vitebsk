@@ -220,7 +220,7 @@ body a:hover{
 
 
 .banner1{
-	background:url(../images/banner.jpg) no-repeat 0px 0px;
+	background:url(../images/gigi_centr_gazeta.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -626,19 +626,19 @@ body a:hover{
     height: 100px; /* задайте высоту */
 }
 .br-bm-gd-lt4{
-	background:url(../images/5.jpg) no-repeat 0px 0px;
+	background:url(../../webapp/assets/img/istoriya_evolyucii_ofisa_eicenter_polock.png) no-repeat 0px 0px;
 	display:block;
 }
 .br-bm-gd-lt5{
-	background:url(../images/6.jpg) no-repeat 0px 0px;
+	background:url(../../webapp/assets/img/istoriya_evolyucii_ofisa_eicenter_polock.png) no-repeat 0px 0px;
 	display:block;
 }
 .br-bm-gd-lt6{
-	background:url(../images/7.jpg) no-repeat 0px 0px;
+	background:url(../../webapp/assets/img/istoriya_evolyucii_ofisa_eicenter_polock.png) no-repeat 0px 0px;
 	display:block;
 }
 .br-bm-gd-lt7{
-	background:url(../images/8.jpg) no-repeat 0px 0px;
+	background:url(../../webapp/assets/img/istoriya_evolyucii_ofisa_eicenter_polock.png) no-repeat 0px 0px;
 	display:block;
 }
 .health-pos {
@@ -2062,7 +2062,7 @@ ul.wmuSliderPagination {
 	padding: 9em 2em 0;
 }
 .baner-beaking{
-	background:url(../images/22.jpg) no-repeat 0px 0px;
+	background:url(../images/gigi_centr_globus.png) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -2070,7 +2070,7 @@ ul.wmuSliderPagination {
 	-ms-background-size:cover;
 }
 .baner-beaking1{
-	background:url(../images/23.jpg) no-repeat 0px 0px;
+	background:url(../images/gigi_centr_globus.png) no-repeat 0px 0px;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -3291,7 +3291,7 @@ img.mobile1 {
     .move-text-index {
         width: 92.3%;
         margin-left: 0.8em;
-        padding-top: 47%;
+        padding-top: 40%;
     }
 }
 /*@media (max-width:1680px){*/

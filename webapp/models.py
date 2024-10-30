@@ -1385,8 +1385,8 @@ class Cities(models.Model):
     pdf_file = models.FileField(upload_to='city_documents/', blank=True, null=True)
 
     class Meta:
-        verbose_name = 'Здоровые города и поселки (Тайтл описание фото)'
-        verbose_name_plural = 'Здоровые города и поселки (Тайтл описание фото)'
+        verbose_name = 'Здоровые города и поселки (Тайтл описание фото, добавить посёлок)'
+        verbose_name_plural = 'Здоровые города и поселки (Тайтл описание фото, добавить посёлок)'
 
     def __str__(self):
         return self.name
@@ -1400,8 +1400,8 @@ class CityDescription(models.Model):
     add_file = models.FileField(upload_to='pdfs/', verbose_name="Прикрепить PDF", blank=True)
 
     class Meta:
-        verbose_name = 'Здоровые города и поселки - Главное Описание города при нажатии'
-        verbose_name_plural = 'Здоровые города и поселки - Главное Описания городов при нажатии'
+        verbose_name = 'Здоровые города и поселки - Интерактивная Доска'
+        verbose_name_plural = 'Здоровые города и поселки - Интерактивная Доска'
 
     def __str__(self):
         return f"Описание {self.id}"
@@ -1438,57 +1438,3 @@ class AboutHistory(models.Model):
         return self.name
 
 
-class CityDocumenBtogatyr(models.Model):
-    name = models.CharField(max_length=100)  # Поле для имени
-    description = models.TextField(default='Description')           # Поле для описания
-    file_desc = models.TextField(default='Description file')           # Поле для описания
-    pdf_file = models.FileField(upload_to='city_documents/')  # Поле для загрузки PDF-файла
-
-    class Meta:
-        verbose_name = 'Поселок - Богатырский (страница прикрепить ПДФ, архив)'
-        verbose_name_plural = 'Поселок - Богатырский (страница прикрепить ПДФ, архив)'
-
-    def __str__(self):
-        return self.name
-
-
-class CityDocumenFarinovo(models.Model):
-    name = models.CharField(max_length=100)  # Поле для имени
-    description = models.TextField(default='Description')           # Поле для описания
-    file_desc = models.TextField(default='Description file')           # Поле для описания
-    pdf_file = models.FileField(upload_to='city_documents/')  # Поле для загрузки PDF-файла
-
-    class Meta:
-        verbose_name = 'Поселок - Фариново (страница прикрепить ПДФ, архив)'
-        verbose_name_plural = 'Поселок - Фариново (страница прикрепить ПДФ, архив)'
-
-    def __str__(self):
-        return self.name
-
-
-class CityDocumenVetrino(models.Model):
-    name = models.CharField(max_length=100)  # Поле для имени
-    description = models.TextField(default='Description')           # Поле для описания
-    file_desc = models.TextField(default='Description file')           # Поле для описания
-    pdf_file = models.FileField(upload_to='city_documents/')  # Поле для загрузки PDF-файла
-
-    class Meta:
-        verbose_name = 'Поселок - Ветрино (страница прикрепить ПДФ, архив)'
-        verbose_name_plural = 'Поселок - Ветрино (страница прикрепить ПДФ, архив)'
-
-    def __str__(self):
-        return self.name
-
-
-class CityDocumenZaozerie(models.Model):
-    name = models.CharField(max_length=100)  # Поле для имени
-    description = models.TextField(default='Description')           # Поле для описания
-    file_desc = models.TextField(default='Description file')           # Поле для описания
-    pdf_file = models.FileField(upload_to='city_documents/')  # Поле для загрузки PDF-файла
-
-    class Meta:
-        verbose_name = 'Поселок - Заозерье (страница прикрепить ПДФ, архив)'
-        verbose_name_plural = 'Поселок - Заозерье (страница прикрепить ПДФ, архив)'
-
-    def __str__(self):
-        return self.name
