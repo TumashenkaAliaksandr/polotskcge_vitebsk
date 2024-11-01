@@ -1,0 +1,122 @@
+<style>
+body{
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    text-align: center;
+    overflow: hidden;
+}
+.image-container{
+    position:relative;
+    width:200px;
+    height:200px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform 0.7s;
+}
+.image-container span{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+}
+.image-container span img{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    border-radius: 5px;
+}
+
+.btn-container{
+    position:relative;
+    width:80%;
+}
+.btn{
+    position: absolute;
+    bottom:-80px;
+    background-color: orangered;
+    color:white;
+    padding:10px 20px;
+    border-radius: 5px;
+    border:none;
+    cursor: pointer;
+}
+.btn:hover{
+    filter:brightness(1.5);
+}
+#prev{
+    left:20%;
+}
+#next{
+    right:20%;
+}
+</style>
+
+    <div class="image-container">
+        {% for main_slide in sliders %}
+        <span style="--i: 1">
+            <img src="{{ main_slide.img.url }}" title="image">
+        </span>
+        <span style="--i: 2">
+            <img src="{{ main_slide.img.url }}" title="image">
+        </span>
+        <span style="--i: 3">
+            <img src="{{ main_slide.img.url }}" title="image">
+        </span>
+        <span style="--i: 4">
+            <img src="{{ main_slide.img.url }}" title="image">
+        </span>
+        <span style="--i: 5">
+            <img src="{{ main_slide.img.url }}" title="image">
+        </span>
+        <span style="--i: 6">
+            <img src="{{ main_slide.img.url }}" title="image">
+        </span>
+        <span style="--i: 7">
+            <img src="{{ main_slide.img.url }}" title="image">
+        </span>
+        <span style="--i: 8">
+            <img src="{{ main_slide.img.url }}" title="image">
+        </span>
+        {% endfor %}
+    </div>
+
+    <div class="btn-container">
+        <button class="btn" id="prev">Prev</button>
+        <button class="btn" id="next">Next</button>
+    </div>
+
+<script>
+const imageCon = document.querySelector(".image-container");
+
+const prevEl = document.getElementById("prev");
+const nextEl = document.getElementById("next");
+
+let x=0;
+let timer=0;
+
+prevEl.addEventListener("click",()=>{
+    x=x+45;
+    clearTimeout(timer);
+    updateImage();
+});
+nextEl.addEventListener("click",()=>{
+    x=x-45;
+    clearTimeout(timer);
+    updateImage();
+});
+
+function updateImage(){
+    imageCon.style.transform=`perspective(1000px) rotateY(${x}deg)`;
+    timer=setTimeout(()=>{
+        x=x-45;
+        updateImage();
+    },3000);
+}
+updateImage();
+</script>
