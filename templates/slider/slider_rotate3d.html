@@ -57,7 +57,7 @@
             {% for main_slide in sliders %}
                 {% if forloop.counter <= 20 %}  <!-- Проверяем, чтобы отображать не более 8 элементов -->
                     <span style="--i: {{ forloop.counter }}">
-                <img src="{{ main_slide.img.url }}" title="image">
+                        <a href="{{ main_slide.link }}"><img src="{{ main_slide.img.url }}" title="image"></a>
             </span>
                 {% endif %}
             {% endfor %}
