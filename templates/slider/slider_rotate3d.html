@@ -21,7 +21,7 @@
     position:absolute;
     left:0;
     top:0;
-    width:80%;
+    width:100%;
     border-radius: 5px;
 }
 
@@ -44,12 +44,12 @@
     filter:brightness(1.5);
 }
 #prev{
-    left:14%;
-    margin-bottom: 6%;
+    left:0%;
+    margin-bottom: 23%;
 }
 #next{
-    right:14%;
-    margin-bottom: 6%;
+    right:0%;
+    margin-bottom: 23%;
 }
 </style>
     <section class="partner-slider main-bg">
@@ -57,7 +57,7 @@
             {% for main_slide in sliders %}
                 {% if forloop.counter <= 20 %}  <!-- Проверяем, чтобы отображать не более 8 элементов -->
                     <span style="--i: {{ forloop.counter }}">
-                        <a href="{{ main_slide.link }}"><img src="{{ main_slide.img.url }}" title="image"></a>
+                        <a href="{{ main_slide.link }}" target="_blank"><img src="{{ main_slide.img.url }}" title="image"></a>
             </span>
                 {% endif %}
             {% endfor %}
