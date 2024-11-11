@@ -70,18 +70,26 @@
                     </div>
                     <div class="col-lg-9 pt-4 pt-lg-0 content" data-aos="fade-left">
                         <div class="archive">
-                            <select id="year-dropdown" class="year-dropdown fix-years">
+                            <select id="year-dropdown" class="year-dropdown fix-years" onchange="redirectToUrl(this)">
                                 <option value="" disabled selected>💼 {{ main_monitoring_arkhive.name|safe }}</option>
                                 {% for main_city_years in city_docum %}
-                                    <option value="{{ main_city_years.pub_date }}">{{ main_city_years.title }} {{ main_city_years.pub_date }}</option>
+                                    <option value="{% url 'news:single' pk=main_city_years.id %}">
+                                        {{ main_city_years.title }} {{ main_city_years.pub_date }}
+                                    </option>
                                 {% endfor %}
-                                <!-- Добавьте другие годы по мере необходимости -->
                             </select>
                         </div>
 
+                        <script>
+                            function redirectToUrl(selectElement) {
+                                const selectedValue = selectElement.value;
+                                if (selectedValue) {
+                                    window.location.href = selectedValue; // Перенаправление на выбранный URL
+                                }
+                            }
+                        </script>
                     </div>
                 </div>
-
             </div>
         {% endfor %}
     </section>
