@@ -3,7 +3,7 @@
 <style>
 .image-container{
     position:relative;
-    width:180px;
+    width:150px;
     height:150px;
     transform-style: preserve-3d;
     transform: perspective(1000px) rotateY(0deg);
@@ -51,6 +51,19 @@
     right:0%;
     margin-bottom: 23%;
 }
+
+@media (min-width: 375px) and (max-width: 667px) {
+    .image-container {
+        position: relative;
+        width: 125px;
+        height: 125px;
+        transform-style: preserve-3d;
+        transform: perspective(1000px) rotateY(0deg);
+        transition: transform 0.7s;
+        margin: 7% auto;
+    }
+}
+
 </style>
     <section class="partner-slider main-bg">
         <div class="image-container">

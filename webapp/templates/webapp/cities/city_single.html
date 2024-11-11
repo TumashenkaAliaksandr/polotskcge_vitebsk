@@ -80,25 +80,26 @@
             </div>
 
             <ul class="faq-list">
-    {% for main_inf in city_docum %}
-        <li>
-            <div class="collapsed question">
-                {% if main_inf.pdf_file %}
-                    <a href="{{ main_inf.pdf_file.url }}" target="_blank">
-                        <i class="bi bi-chevron-right icon-show">
-                            <img src="{% static 'webapp/assets/img/gigi_centr_marker-nbg.png' %}" class="img-fix" alt="">
-                        </i>
-                        {{ main_inf.file_desc | safe }}
-                    </a>
-                {% else %}
-                    <p>No PDF file available.</p> <!-- Сообщение, если файла нет -->
-                {% endif %}
-            </div>
-        </li>
-    {% empty %}
-        <p>No documents available.</p> <!-- Сообщение, если данных нет -->
-    {% endfor %}
-</ul>
+                {% for main_inf in city_docum %}
+                    <li>
+                        <div class="collapsed question">
+                            {% if main_inf.pdf_file %}
+                                <a href="{{ main_inf.pdf_file.url }}" target="_blank">
+                                    <i class="bi bi-chevron-right icon-show">
+                                        <img src="{% static 'webapp/assets/img/gigi_centr_marker-nbg.png' %}"
+                                             class="img-fix" alt="">
+                                    </i>
+                                    {{ main_inf.file_desc | safe }}
+                                </a>
+                            {% else %}
+                                <p>No PDF file available.</p> <!-- Сообщение, если файла нет -->
+                            {% endif %}
+                        </div>
+                    </li>
+                {% empty %}
+                    <p>No documents available.</p> <!-- Сообщение, если данных нет -->
+                {% endfor %}
+            </ul>
         </div>
     </section>
     <!-- End Frequently Interactive Section -->

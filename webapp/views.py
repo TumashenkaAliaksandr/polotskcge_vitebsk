@@ -4,6 +4,8 @@ from django.shortcuts import render, get_object_or_404
 from news.models import Interactive, ModelNews, PreviewNews
 from news.utils import get_weather
 from webapp.models import *
+from django.utils import timezone
+from datetime import timedelta
 
 
 def base_main(request):
@@ -1214,12 +1216,21 @@ def city_single(request, pk):
     city_docum = Cities.objects.filter(pk=pk)
     monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
     centre_news = CentreNews.objects.all().order_by('-pub_date')
-    all_news = ModelNews.objects.filter(is_city=True).order_by('-pub_date')
-    paginator = Paginator(all_news, 3)  # По 10 новостей на страницу
+
+    # Получаем текущую дату и дату месяца назад
+    now = timezone.now()
+    one_month_ago = now - timedelta(days=30)
+
+    # Фильтруем новости, чтобы исключить те, что старше месяца
+    all_news = ModelNews.objects.filter(is_city=True, pub_date__gte=one_month_ago).order_by('-pub_date')
+
+    paginator = Paginator(all_news, 3)  # По 3 новости на страницу
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
+
     city_name = get_object_or_404(Cities, pk=pk)
     city_page = Cities.objects.filter(pk=pk)
+
     # Получаем данные о погоде
     weather = get_weather()
 
@@ -1241,7 +1252,7 @@ def archive_single(request, pk):
     """City archive single """
 
     interactiv = Interactive.objects.all()
-    city_docum = CityDocumenZaozerie.objects.all()
+    city_docum = ModelNews.objects.filter(is_city=True).order_by('-pub_date')
     city_page = Cities.objects.filter(pk=pk)
     monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
     centre_news = CentreNews.objects.all().order_by('-pub_date')

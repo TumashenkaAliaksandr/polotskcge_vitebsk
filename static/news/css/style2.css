@@ -3348,7 +3348,7 @@ img.mobile1 {
         /* Стили для экранов от 366px до 667px */
         width: 92.3%;
         margin-left: 0.8em;
-        padding-top: 27%;
+        padding-top: 61%;
     }
 }
 
@@ -3960,6 +3960,7 @@ img.mobile1 {
 	}
 	.news-grid-left h3 {
 		font-size: 1em;
+        display: none;
 	}
     .news-grid-left{
     margin-top: 0px;
@@ -4096,10 +4097,10 @@ img.mobile1 {
 		height: 10px;
 	}
 
-    .breaking-news {
-        padding: 4.5em 0 15px;
-        margin-top: 27%;
-    }
+    /*.breaking-news {*/
+    /*    padding: 4.5em 0 15px;*/
+    /*    margin-top: 27%;*/
+    /*}*/
 
     .breaking-news-index {
         padding: 7.5em 0 15px;
@@ -4729,5 +4730,10 @@ img.mobile1 {
         text-align: center;
         padding-bottom: 15px;
         padding-top: 15px;
+    }
+
+    .breaking-news {
+        padding: 4.5em 0 15px;
+        margin-top: 27%;
     }
 }

@@ -70,10 +70,15 @@
                     </div>
                     <div class="col-lg-9 pt-4 pt-lg-0 content" data-aos="fade-left">
                         <div class="archive">
-                            <a href="" target="_blank">
-                                <li class="fa fa-calendar-plus"> {{ main_monitoring_arkhive.name|safe }}</li>
-                            </a>
+                            <select id="year-dropdown" class="year-dropdown fix-years">
+                                <option value="" disabled selected>💼 {{ main_monitoring_arkhive.name|safe }}</option>
+                                {% for main_city_years in city_docum %}
+                                    <option value="{{ main_city_years.pub_date }}">{{ main_city_years.title }} {{ main_city_years.pub_date }}</option>
+                                {% endfor %}
+                                <!-- Добавьте другие годы по мере необходимости -->
+                            </select>
                         </div>
+
                     </div>
                 </div>
 
