@@ -88,12 +88,14 @@ def structure(request):
     questions = Question.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
     interactiv = Interactive.objects.all()
+    info_struc = Structure.objects.all()
 
     context = {
         'features': features,
         'questions': questions,
         'title_desc_queans': title_desc_queans,
         'interactiv': interactiv,
+        'info_struc': info_struc,
     }
 
     return render(request, 'webapp/about_us/structure.html', context=context)
@@ -665,6 +667,7 @@ def monitoring_plan(request):
 
 def typical_violations_list(request):
     """Activity - typical_violations template"""
+
     features = Featured.objects.all()
     interactiv = Interactive.objects.all()
     questions = Question.objects.all().order_by('-pub_date')
@@ -776,7 +779,6 @@ def custom_products_single(request, pk):
     return render(request, 'webapp/activity/custom_products_single.html', context=context)
 
 
-
 def healthy_cities_towns(request):
     """Activity - healthy_cities_towns template"""
     heltitle_inf = HealthyTitle.objects.all()
@@ -807,7 +809,6 @@ def healthy_cities_towns(request):
     }
 
     return render(request, 'webapp/activity/healthy_cities_towns.html', context=context)
-
 
 
 def eurasian_economic_union(request):

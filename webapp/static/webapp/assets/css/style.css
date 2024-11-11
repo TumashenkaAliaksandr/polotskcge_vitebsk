@@ -4123,3 +4123,13 @@ section#clocks-two {
     display: inline-block; /* Используйте inline-block для центрирования */
     margin-top: 21px; /* Отступ сверху */
 }
+
+
+.icon-animation {
+    margin-left: 10px; /* Отступ между текстом и иконкой */
+    transition: transform 0.3s ease; /* Плавный переход при наведении */
+}
+
+.icon-animation:hover {
+    transform: rotate(180deg); /* Поворачиваем иконку при наведении */
+}

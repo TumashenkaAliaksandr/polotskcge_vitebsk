@@ -1135,3 +1135,13 @@ class MonitoringPlanArkhiveAdmin(admin.ModelAdmin):
     clean_name.short_description = 'Name'
     list_display = ['clean_name']
 
+
+@admin.register(Structure)
+class StructureAdmin(admin.ModelAdmin):
+    form = StructureForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']

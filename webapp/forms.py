@@ -931,3 +931,13 @@ class AboutHistoryForm(forms.ModelForm):
             'description': SummernoteWidget(),
             'name': SummernoteWidget(),
         }
+
+
+class StructureForm(forms.ModelForm):
+    class Meta:
+        model = Structure
+        fields = '__all__'
+        widgets = {
+            'description': SummernoteWidget(),
+            'name': SummernoteWidget(),
+        }

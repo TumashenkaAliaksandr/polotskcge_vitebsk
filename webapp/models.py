@@ -1438,3 +1438,16 @@ class AboutHistory(models.Model):
         return self.name
 
 
+class Structure(models.Model):
+    """Structure page main model"""
+
+    name = models.CharField(max_length=100, default='Name')
+    description = models.TextField(default='Description')
+    photo = models.ImageField(upload_to='Structure/', null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Структура'
+        verbose_name_plural = 'Структура'
+
+    def __str__(self):
+        return self.name

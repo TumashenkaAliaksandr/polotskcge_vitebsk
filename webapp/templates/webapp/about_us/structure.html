@@ -59,11 +59,15 @@
     <!-- Structure Section -->
     <section class="section-bg-structure">
         <div class="container book_info" data-aos="fade-left">
-            <div class="description-left">
-                <h3>Структура <i class="fas fa-angles-down"></i></h3>
-            </div>
-            <img src="{% static 'webapp/assets/img/gigi_centr_structura.png' %}" alt=" "
-                 class="img-responsive img-fixed-size-struc">
+            {% for main_info_struc in info_struc %}
+                <div class="description-left">
+                    <h3>
+                        <i class="fas fa-copyright icon-animation"></i>{{ main_info_struc.name|safe }}
+                    </h3>
+                </div>
+                <img src="{{ main_info_struc.photo.url }}" alt=" "
+                     class="img-responsive img-fixed-size-struc">
+            {% endfor %}
         </div>
     </section>
     <!-- End Structure Section -->
