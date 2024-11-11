@@ -2566,6 +2566,12 @@ section#clocks-two {
     background-size: cover;
     height: 240px;
 }
+.features .image-two {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*height: 240px;*/
+}
 
 /* Стили для десктопной версии */
 @media (min-width: 769px) {
