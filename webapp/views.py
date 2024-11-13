@@ -1,6 +1,7 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
-
+from django.db.models import Count
+from django.db.models.functions import ExtractYear
 from news.models import Interactive, ModelNews, PreviewNews
 from news.utils import get_weather
 from webapp.models import *
@@ -1250,7 +1251,7 @@ def city_single(request, pk):
 
 
 def archive_single(request, pk):
-    """City archive single """
+    """City archive single"""
 
     interactiv = Interactive.objects.all()
     city_docum = ModelNews.objects.filter(is_city=True).order_by('-pub_date')
@@ -1258,8 +1259,24 @@ def archive_single(request, pk):
     monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
     centre_news = CentreNews.objects.all().order_by('-pub_date')
 
-    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
+    # Получаем все статьи с ненулевыми датами публикации
+    all_typical_news = CustomProductsInf.objects.filter(pub_date__isnull=False)
 
+    # Группировка новостей по годам и фильтрация только тех годов, где есть статьи
+    articles_by_year = (
+        city_docum
+        .annotate(year=ExtractYear('pub_date'))
+        .values('year')
+        .annotate(count=Count('id'))
+        .filter(count__gt=0)  # Фильтруем только те годы, где есть статьи
+        .order_by('-year')
+    )
+
+    # Создание словаря для хранения статей по годам
+    articles_dict = {}
+    for year in articles_by_year:
+        year_articles = city_docum.filter(pub_date__year=year['year']).order_by('-pub_date')
+        articles_dict[year['year']] = year_articles
 
     context = {
         'interactiv': interactiv,
@@ -1268,6 +1285,7 @@ def archive_single(request, pk):
         'centre_news': centre_news,
         'monitoring_plan_arkhive': monitoring_plan_arkhive,
         'city_page': city_page,
+        'articles_by_year': articles_dict,  # Передаем статьи по годам
     }
 
     return render(request, 'webapp/cities/archive_single.html', context=context)

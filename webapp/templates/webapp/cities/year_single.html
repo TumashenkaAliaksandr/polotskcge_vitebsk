@@ -70,63 +70,21 @@
                     </div>
                     <div class="col-lg-9 pt-4 pt-lg-0 content" data-aos="fade-left">
                         <div class="archive">
-                            <select id="year-dropdown" class="year-dropdown fix-years" onchange="showArticles(this)">
+                            <select id="year-dropdown" class="year-dropdown fix-years" onchange="redirectToUrl(this)">
                                 <option value="" disabled selected>💼 {{ main_monitoring_arkhive.name|safe }}</option>
-                                {% for year, articles in articles_by_year.items %}
-                                    <option value="{{ year }}">{{ year }}</option>
+                                {% for main_city_years in city_docum %}
+                                    <option value="{% url 'news:single' pk=main_city_years.id %}">
+                                        {{ main_city_years.title }} {{ main_city_years.pub_date }}
+                                    </option>
                                 {% endfor %}
                             </select>
                         </div>
 
-                        <div id="articles-container" style="display: none;">
-                            <h3>Статьи за <span id="selected-year"></span>:</h3>
-                            <ul id="articles-list"></ul>
-                        </div>
-
                         <script>
-                            // Создаем объект с данными статей по годам
-                            const articlesByYear = {
-                                {% for year, articles in articles_by_year.items %}
-                                    "{{ year }}": [
-                                        {% for article in articles %}
-                                            {
-                                                "title": "{{ article.title|escapejs }}",  // Экранируем заголовки для JS
-                                                "url": "{% url 'news:single' pk=article.id %}"
-                                            }{% if not forloop.last %},{% endif %}
-                                        {% endfor %}
-                                    ]{% if not forloop.last %},{% endif %}
-                                {% endfor %}
-                            };
-
-                            function showArticles(selectElement) {
-                                const selectedYear = selectElement.value;
-                                const articlesList = document.getElementById("articles-list");
-                                const articlesContainer = document.getElementById("articles-container");
-                                const selectedYearText = document.getElementById("selected-year");
-
-                                // Очищаем предыдущий список статей
-                                articlesList.innerHTML = '';
-
-                                if (selectedYear) {
-                                    // Устанавливаем текст выбранного года
-                                    selectedYearText.textContent = selectedYear;
-
-                                    // Получаем статьи за выбранный год
-                                    const articles = articlesByYear[selectedYear];
-
-                                    // Заполняем список статьями
-                                    if (articles && articles.length > 0) {
-                                        articles.forEach(article => {
-                                            const listItem = document.createElement("li");
-                                            listItem.innerHTML = `<a href="${article.url}">${article.title}</a>`;
-                                            articlesList.appendChild(listItem);
-                                        });
-                                        articlesContainer.style.display = "block"; // Показываем контейнер со статьями
-                                    } else {
-                                        articlesContainer.style.display = "none"; // Скрываем, если нет статей
-                                    }
-                                } else {
-                                    articlesContainer.style.display = "none"; // Скрываем, если ничего не выбрано
+                            function redirectToUrl(selectElement) {
+                                const selectedValue = selectElement.value;
+                                if (selectedValue) {
+                                    window.location.href = selectedValue; // Перенаправление на выбранный URL
                                 }
                             }
                         </script>
