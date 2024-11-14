@@ -3360,7 +3360,7 @@ section#clocks-two {
 }
 
 .fix-years {
-  max-width: 13%;
+  max-width: 30%;
   height: auto;
   margin: -2% -5% 5%;
 }
@@ -4095,16 +4095,33 @@ section#clocks-two {
         height: auto;
         border: 10px outset lightblue;
     }
-    .main-bg-profsouz {
-  padding: 0px 0 0px;
 
-}
+    .main-bg-profsouz {
+        padding: 0px 0 0px;
+
+    }
+
+    .archive-positions h3 {
+        margin-left: 21%;
+    }
+
+    .archive-positions li {
+        margin-left: 12%;
+    }
+
 }
 
 /* Плоские экраны и планшеты */
 @media (min-width: 769px) and (max-width: 1024px) {
     .partner-slide img {
         max-width: 120px; /* Установите максимальную ширину для планшетов */
+    }
+    .archive-positions h3 {
+        margin-left: 21%;
+    }
+
+    .archive-positions li {
+        margin-left: 12%;
     }
 }
 
@@ -4138,4 +4155,32 @@ section#clocks-two {
 
 .icon-animation:hover {
     transform: rotate(180deg); /* Поворачиваем иконку при наведении */
+}
+
+.archive-positions h3{
+    margin-left: 23%;
+}
+
+.archive-positions li{
+    margin-left: 19%;
+}
+
+@media (max-width: 667px) {
+    .archive-positions h3 {
+        margin-left: 23%;
+    }
+
+    .archive-positions li {
+        margin-left: 12%;
+    }
+}
+
+@media (max-width: 320px) {
+    .archive-positions h3 {
+        margin-left: 15%;
+    }
+
+    .archive-positions li {
+        margin-left: -4%;
+    }
 }
