@@ -804,6 +804,9 @@ h6 {
         z-index: 1;
         /*display: none;*/
     }
+    .mobile-font-size p {
+        font-size: 13px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -861,6 +864,21 @@ h6 {
   transform: translateX(-50%) translateY(-50%);
 }
 
+.my-column-three {
+    /* Ваши стили для колонки */
+    position: relative;
+}
+
+.my-column-three::after {
+    content: '';
+    position: absolute;
+    top: 48%;
+    left: 110%;
+    width: 5px;
+    background-color: #3fbbc0;
+    height: 100%;
+    transform: translateX(-50%) translateY(-50%); /* Сдвигаем в центр */
+}
 
 /*.my-column::before {*/
 /*    content: '';*/
@@ -2187,7 +2205,7 @@ section#clocks-two {
     transition: all 0.3s ease-in-out;
     border-radius: 8px;
     z-index: 1;
-    margin-bottom: 10%;
+    /*margin-bottom: 10%;*/
 }
 
 .featured-services .icon-box::before {

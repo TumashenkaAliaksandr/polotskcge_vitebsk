@@ -159,6 +159,64 @@
     <!-- End Price Lists Section -->
 
 
+    <!-- Erip -->
+    <section id="about" class="about section-bg-erip">
+        <div class="container" data-aos="fade-up">
+            {% for main_info_erip in erip_info %}
+                <div class="section-title">
+                    <h2>{{ main_info_erip.name|safe }}</h2>
+                    <p>{{ main_info_erip.description|safe }}</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 img-fixed-size-erip" data-aos="fade-right">
+                        <img src="{% static 'webapp/assets/img/gigi_erip-removebg-preview.png' %}" class="img-fluid"
+                             alt="">
+                    </div>
+                    <div class="col-lg-10 pt-4 pt-lg-0 content" data-aos="fade-left">
+                        <p class="mobile-font-size">{{ main_info_erip.payment_where|safe }}</p>
+{#                        <p class="fst-italic"><a href="{% static 'webapp/assets/img/gigi_centr_oplata_erip.jpg' %}"#}
+{#                                                 target="_blank">Схема проведения платежа</a></p>#}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    <!-- End Erip -->
+    <!-- ======= ERIP Section ======= -->
+    <section id="features" class="news-grid-left features section-bg-unp">
+        <div class="container" data-aos="fade-up">
+            {% for main_info_erip in erip_info %}
+                <div class="row">
+                    <!-- Первая колонка -->
+                    <div class="col-lg-5" data-aos="fade-right">
+                        <!-- Изображение для первой колонки -->
+                        <div class="col-lg-4 txt-fixed-size my-column-three">
+                            <p>
+                                {{ main_info_erip.unp|safe }}
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Вторая колонка -->
+                    <div class="col-lg-5 img-fixed-size-cheme">
+                        <p>
+                            {{ main_info_erip.payment_methods|safe }}
+                        </p>
+                    </div>
+                    <div class="col-lg-4 display-none-landscape" data-aos="fade-right">
+                        <div class="img-positions-fiz-erip mt-4 mt-lg-0">
+                            <!-- Текст для второй колонки -->
+                            <p>{{ main_info_erip.title_qr|safe }}</p>
+                            <img src="{{ main_info_erip.qr_img.url }}" class="img-fixed-size-unp-qrblrbnk">
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    <!-- End ERIP Section -->
+
+
   </main><!-- End #main -->
 
 {% endblock %}

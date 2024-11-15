@@ -479,6 +479,8 @@ def paid_services(request):
     wqs = WaterQualitySafety.objects.all()
     lfv = LaboratoryFruitVegetable.objects.all()
     price_lists_fiz = PriceListsFiz.objects.all()
+    erip_info = EnyPayment.objects.all()
+
 
     context = {
         'studi': studi,
@@ -486,6 +488,7 @@ def paid_services(request):
         'lfv': lfv,
         'info_clocks': info_clocks,
         'price_lists_fiz': price_lists_fiz,
+        'erip_info': erip_info,
     }
 
     return render(request, 'webapp/services/paid_services.html', context=context)

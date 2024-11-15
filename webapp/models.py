@@ -1451,3 +1451,21 @@ class Structure(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class EnyPayment(models.Model):
+
+    name = models.CharField(max_length=255, verbose_name="Заголовок")
+    description = models.TextField(verbose_name="Описание")
+    payment_where = models.TextField(verbose_name="Где сделать платёж")
+    payment_methods = models.TextField(verbose_name="Схема проведения платежа")
+    unp = models.TextField(verbose_name="УНП", blank=True)
+    title_qr = models.TextField(verbose_name="Тайтл QR-кода Cashew", blank=True)
+    qr_img = models.ImageField(upload_to='payment_schemes/', verbose_name="QR photo Токен", blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "ЕРИП платные услуги физ лицам"
+        verbose_name_plural = "ЕРИП платные услуги физ лицам"

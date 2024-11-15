@@ -2132,12 +2132,34 @@ ul.wmuSliderPagination {
     margin-top: 8%;
 }
 
+.txt-fixed-size {
+    width: 75%;
+    /*height: 132px;*/
+    margin-right: 10px;
+    object-fit: cover;
+    /*margin-top: 8%;*/
+}
+
+.txt-fixed-size p {
+    font-size: 15px;
+    margin-bottom: 1px;
+}
+
+.img-fixed-size-unp-qrblrbnk {
+    width: 45.4%;
+    /*height: 105px;*/
+    object-fit: cover;
+    margin-left: 45px;
+
+}
+
 .img-fixed-size-prapors-had {
     width: 26px;
     height: 19px;
     margin-right: 0px;
     object-fit: cover;
     margin-top: 8%;
+    border-radius: 5px;
 }
 
 
@@ -2191,6 +2213,10 @@ ul.wmuSliderPagination {
         width: 25%;
         object-fit: cover;
     }
+
+    .img-fixed-size-cheme {
+        width: 100%;
+    }
 }
 
 
@@ -2214,6 +2240,9 @@ ul.wmuSliderPagination {
         height: 80px;
         width: 21%;
         object-fit: cover;
+    }
+    .img-fixed-size-cheme {
+        width: 100%;
     }
 }
 
@@ -2272,6 +2301,19 @@ ul.wmuSliderPagination {
     margin-left: 55px;
     margin-right: 20px;
     margin-bottom: 21px;
+}
+
+.img-fixed-size-cheme {
+    width: 28%;
+    /*height: 105px;*/
+    object-fit: cover;
+    margin-left: -40px;
+
+}
+.img-fixed-size-cheme p{
+    font-size: 13.1px;
+    padding-bottom: 2px;
+    padding-top: 0px;
 }
 
 .breaking-news-grid-right ul li{
@@ -2704,6 +2746,9 @@ h2.typoh2{
 	.grid_3 {
 		margin-bottom: 0em;
 	}
+    .img-fixed-size-cheme {
+        width: 100%;
+    }
 }
 @media (max-width:640px){
 	h1, .h1, h2, .h2, h3, .h3 {
@@ -2730,6 +2775,22 @@ h2.typoh2{
 	h2.typoh2 {
 		font-size: 1.5em;
 	}
+    .img-fixed-size-cheme {
+        width: 100%;
+    }
+
+    .featured-services .icon-box {
+        padding: 30px;
+        position: relative;
+        overflow: hidden;
+        background: #f7fcfc;
+        box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+        transition: all 0.3s ease-in-out;
+        border-radius: 8px;
+        z-index: 1;
+        /*margin-bottom: 10%;*/
+        width: inherit;
+    }
 }
 @media (max-width:480px){
 	.table h1 {
@@ -2751,10 +2812,62 @@ h2.typoh2{
 	.pagination {
 		margin: 20px 0 0px;
 	}
+    .img-fixed-size-cheme {
+        width: 100%;
+        left: 10%;
+    }
+
+    .img-positions-fiz-erip {
+        display: block; /* Убедитесь, что элемент блочный */
+        margin-left: auto; /* Автоматические отступы слева */
+        margin-right: auto; /* Автоматические отступы справа */
+        width: 80%; /* Задайте ширину по желанию */
+        max-width: 300px; /* Ограничьте максимальную ширину (по желанию) */
+        height: auto; /* Сохраняем пропорции изображения */
+    }
+
+    .img-fixed-size-unp-qrblrbnk {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        margin-left: auto; /* Автоматические отступы слева */
+        margin-right: auto; /* Автоматические отступы справа */
+    }
+
+    .featured-services .icon-box {
+        padding: 30px;
+        position: relative;
+        overflow: hidden;
+        background: #f7fcfc;
+        box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+        transition: all 0.3s ease-in-out;
+        border-radius: 8px;
+        z-index: 1;
+        /*margin-bottom: 10%;*/
+        width: inherit;
+    }
+
 }
+
 @media (max-width: 320px) {
     .health, p {
         font-size: 25px;
+    }
+
+    .featured-services .icon-box {
+        padding: 30px;
+        position: relative;
+        overflow: hidden;
+        background: #f7fcfc;
+        box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+        transition: all 0.3s ease-in-out;
+        border-radius: 8px;
+        z-index: 1;
+        /*margin-bottom: 10%;*/
+        width: inherit;
+    }
+    .mobile-font-size p {
+        font-size: 13px;
     }
 }
 

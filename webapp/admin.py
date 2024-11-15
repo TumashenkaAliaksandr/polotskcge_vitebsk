@@ -1145,3 +1145,14 @@ class StructureAdmin(admin.ModelAdmin):
 
     clean_name.short_description = 'Name'
     list_display = ['clean_name']
+
+
+@admin.register(EnyPayment)
+class EnyPaymentAdmin(admin.ModelAdmin):
+    form = EnyPaymentForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'Name'
+    list_display = ['clean_name']

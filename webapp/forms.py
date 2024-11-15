@@ -941,3 +941,17 @@ class StructureForm(forms.ModelForm):
             'description': SummernoteWidget(),
             'name': SummernoteWidget(),
         }
+
+
+class EnyPaymentForm(forms.ModelForm):
+    class Meta:
+        model = EnyPayment
+        fields = '__all__'
+        widgets = {
+            'description': SummernoteWidget(),
+            'name': SummernoteWidget(),
+            'payment_methods': SummernoteWidget(),
+            'payment_where': SummernoteWidget(),
+            'title_qr': SummernoteWidget(),
+            'unp': SummernoteWidget(),
+        }
