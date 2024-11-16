@@ -610,17 +610,6 @@ def disinfection_disinsection_deratization(request):
     return render(request, 'webapp/services/disinfection_disinsection_deratization.html', context=context)
 
 
-def npa(request):
-    """NPA template"""
-    features = Featured.objects.all()
-
-    context = {
-        'features': features,
-    }
-
-    return render(request, 'webapp/npa.html', context=context)
-
-
 def activity(request):
     """Activity template"""
     features = Featured.objects.all()
