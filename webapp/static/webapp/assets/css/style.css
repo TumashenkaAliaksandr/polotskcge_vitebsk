@@ -813,6 +813,31 @@ h6 {
     #hero h2 {
         font-size: 28px;
     }
+
+    .btn-get-city {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: 1px;
+        display: inline-block;
+        padding: 14px 9px;
+        border-radius: 4px;
+        transition: 0.5s;
+        line-height: 1;
+        color: #fff;
+        background: #3fbbc0;
+        margin-top: 5%;
+        /*padding-left: 24%;*/
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+
+    .faq .faq-list li {
+        border-bottom: 1px solid #c5ddde;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        margin-left: 10%;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -826,6 +851,31 @@ h6 {
 @media (max-height: 500px) {
     #hero {
         height: 160vh;
+    }
+
+    .btn-get-city {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+        letter-spacing: 1px;
+        display: inline-block;
+        padding: 14px 9px;
+        border-radius: 4px;
+        transition: 0.5s;
+        line-height: 1;
+        color: #fff;
+        background: #3fbbc0;
+        margin-top: 5%;
+        padding-left: 24%;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+
+    .faq .faq-list li {
+        border-bottom: 1px solid #c5ddde;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        margin-left: 10%;
     }
 }
 
@@ -1407,6 +1457,14 @@ section#clocks-two {
         padding: 15px 0;
         background-color: #ecf8f9;
         min-height: 40px;
+    }
+
+    .breadcrumbs_contacts {
+        padding: 15px 0;
+        background-color: #ecf8f9;
+        min-height: 40px;
+        /*margin-top: 120px;*/
+        display: none;
     }
 }
 
@@ -2880,7 +2938,7 @@ section#clocks-two {
     .departments .tab-pane img {
         float: none;
         padding: 0 0 15px 0;
-        max-width: 100%;
+        max-width: 50%;
     }
 }
 
@@ -3330,8 +3388,8 @@ section#clocks-two {
 .faq .faq-list i {
     font-size: 16px;
     position: absolute;
-    left: 0;
-    top: -4px;
+    left: 13px;
+    top: -1px;
 }
 
 .faq .faq-list p {
