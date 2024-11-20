@@ -237,28 +237,28 @@
                     <p></p>
                 </ul>
             </div>
-            {% for main_interactiv_string in interactiv %}
-                <div class="move-text single-bg">
-                    <div class="breaking_news">
-                        <h2>Новости Центра</h2>
-                    </div>
-                    <div class="marquee">
-                        <div class="marquee1"><a class="breaking"
-                                                 href="single.html">{{ main_interactiv_string.description | safe }}</a>
-                        </div>
-                        <div class="marquee2"><a class="breaking"
-                                                 href="single.html">{{ main_interactiv_string.description_two | safe }}</a>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <script type="text/javascript" src="{% static 'js/jquery.marquee.js' %}"></script>
-                    <script>
-                        $('.marquee').marquee({pauseOnHover: true});
-                        //@ sourceURL=pen.js
-                    </script>
-                </div>
-            {% endfor %}
+{#            {% for main_interactiv_string in interactiv %}#}
+{#                <div class="move-text single-bg">#}
+{#                    <div class="breaking_news">#}
+{#                        <h2>Новости Центра</h2>#}
+{#                    </div>#}
+{#                    <div class="marquee">#}
+{#                        <div class="marquee1"><a class="breaking"#}
+{#                                                 href="single.html">{{ main_interactiv_string.description | safe }}</a>#}
+{#                        </div>#}
+{#                        <div class="marquee2"><a class="breaking"#}
+{#                                                 href="single.html">{{ main_interactiv_string.description_two | safe }}</a>#}
+{#                        </div>#}
+{#                        <div class="clearfix"></div>#}
+{#                    </div>#}
+{#                    <div class="clearfix"></div>#}
+{#                    <script type="text/javascript" src="{% static 'js/jquery.marquee.js' %}"></script>#}
+{#                    <script>#}
+{#                        $('.marquee').marquee({pauseOnHover: true});#}
+{#                        //@ sourceURL=pen.js#}
+{#                    </script>#}
+{#                </div>#}
+{#            {% endfor %}#}
             <div>
                 <ul>
                     <p></p>
