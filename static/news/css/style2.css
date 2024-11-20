@@ -3389,19 +3389,20 @@ img.mobile1 {
     height: 47.5px;
 }
 
-@media (max-width: 768px) {
-    .move-text {
-        width: 92.3%;
-        margin-left: 0.8em;
-        /*padding-top: 47%;*/
-    }
-}
 @media only screen and (max-width: 768px) {
   .section-title h2 {
     font-size: 25px;
     font-weight: bold;
     text-transform: uppercase;
   }
+
+    .move-text {
+        width: 92.3%;
+        margin-left: 0.8em;
+        /*padding-top: 47%;*/
+        margin-top: 45%;
+        height: 10%;
+    }
 }
 
 .move-text-index {
@@ -4043,6 +4044,7 @@ img.mobile1 {
 	.breaking_news {
 		padding: 10px 5px 10px 10px;
         width: 100%;
+        margin-top: 12%;
 	}
 
 	.marquee {
@@ -4195,7 +4197,7 @@ img.mobile1 {
 		font-size: 1.1em;
 	}
 	.breaking-news-grids {
-		margin: 2.7em 0;
+		margin: 3.7em 0;
 	}
 	.baner-beaking p {
 		margin: 2em 0 0 0.2em;
@@ -4564,10 +4566,162 @@ img.mobile1 {
 		background-size: 100%;
 	}
 }
+/* Стиль для экранов шириной до 360px */
+@media only screen and (max-width: 360px) {
+    .news-grid-rght2:before,
+    .news-grid-rght2:after {
+        width: 300px;
+        background-size: 100%;
+    }
+    .breaking_news {
+        padding: 10px 5px;
+        width: 100%;
+        margin-top: 36%;
+    }
+}
+
+/* Стиль для экранов шириной до 667px */
+@media only screen and (max-width: 667px) {
+    .breaking_news {
+        margin-top: 13%; /* Изменяем только margin-top для этого размера */
+    }
+}
+
+/* Стиль для экранов шириной ровно 812px */
+@media only screen and (width: 812px) {
+    .breaking_news {
+        margin-top: 16%; /* Изменяем только margin-top для этого размера */
+    }
+}
+
+/* Стиль для экранов шириной от 360px до 760px */
+@media only screen and (min-width: 360px) and (max-width: 760px) {
+    .news-grid-rght2:before,
+    .news-grid-rght2:after {
+        width: 300px;
+        background-size: 100%;
+    }
+
+    .breaking_news {
+        padding: 10px 5px;
+        width: 100%;
+        margin-top: 37%; /* Можно изменить в зависимости от нужд */
+    }
+
+    .move-text {
+        width: 92.3%;
+        margin-left: 0.8em;
+        /*padding-top: 47%;*/
+        margin-top: 23%;
+        height: 20%;
+    }
+}
+
+@media only screen and (min-width: 412px) and (max-width: 915px) {
+    .news-grid-rght2:before,
+    .news-grid-rght2:after {
+        width: 300px;
+        background-size: 100%;
+    }
+
+    .breaking_news {
+        padding: 10px 5px;
+        width: 100%;
+        margin-top: 15%; /* Можно изменить в зависимости от нужд */
+    }
+
+    .move-text {
+        width: 92.3%;
+        margin-left: 0.8em;
+        /*padding-top: 47%;*/
+        margin-top: 45%;
+        height: 10%;
+    }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 812px) {
+    .news-grid-rght2:before,
+    .news-grid-rght2:after {
+        width: 300px;
+        background-size: 100%;
+    }
+
+    .breaking_news {
+        padding: 10px 5px;
+        width: 100%;
+        margin-top: 13%; /* Можно изменить в зависимости от нужд */
+    }
+
+    .move-text {
+        width: 92.3%;
+        margin-left: 0.8em;
+        /*padding-top: 47%;*/
+        margin-top: 45%;
+        height: 10%;
+    }
+}
+
+
+@media only screen and (min-width: 384px) and (max-width: 854px) {
+    .news-grid-rght2:before,
+    .news-grid-rght2:after {
+        width: 300px;
+        background-size: 100%;
+    }
+
+    .breaking_news {
+        padding: 10px 5px;
+        width: 100%;
+        margin-top: 15%; /* Можно изменить в зависимости от нужд */
+    }
+
+    .move-text {
+        width: 92.3%;
+        margin-left: 0.8em;
+        /*padding-top: 47%;*/
+        margin-top: 47%;
+        height: 10%;
+    }
+}
+
+
+
+@media only screen and (min-width: 490px) and (max-width: 737px) {
+    .move-text {
+        width: 92.3%;
+        margin-left: 0.8em;
+        /*padding-top: 47%;*/
+        margin-top: 15%;
+        height: 15%;
+    }
+}
+
+@media only screen and (min-width: 428px) and (max-width: 926px) {
+    .breaking_news {
+        padding: 10px 5px;
+        width: 100%;
+        margin-top: 10%;
+    }
+}
+
+
 @media (max-width:320px){
 	.banner-info-slider ul li {
 		font-size: 13px;
 	}
+    .breaking_news {
+		padding: 10px 5px 10px 10px;
+        width: 100%;
+        margin-top: 43%;
+	}
+
+    .move-text {
+        width: 92.3%;
+        margin-left: 0.8em;
+        /*padding-top: 47%;*/
+        margin-top: 20%;
+        height: 30%;
+    }
 	.banner-info-slider {
 		padding: 1.5em 0 0 0em;
 	}

@@ -575,7 +575,6 @@ class Up_Organ(models.Model):
         return self.name
 
 
-
 class Question(models.Model):
     question_text = models.CharField(max_length=255, default='вопрос')
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', blank=True, null=True)  # Added publication date field
