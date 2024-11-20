@@ -1540,7 +1540,6 @@ section#clocks-two {
 /*}*/
 
 
-
 /* Стили для мобильной версии */
 @media (max-width: 768px) {
     .header-icons {
@@ -2168,6 +2167,25 @@ section#clocks-two {
     top: 0;
     left: 0;
     right: 0;
+}
+
+/* Стили для экранов от 428px до 926px */
+@media only screen and (min-width: 428px) and (max-width: 926px) {
+    .pagebanner-city {
+        height: 285px; /* Высота изменяется для мобильных устройств */
+    }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 667px) {
+
+    .pagebanner-city-farin {
+        height: 240px;
+    }
+
+    .breaking-news {
+        padding: 0.5em 0 15px;
+    }
+
 }
 
 .pagebanner-city .page-title {
