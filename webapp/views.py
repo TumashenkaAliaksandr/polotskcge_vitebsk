@@ -314,6 +314,7 @@ def book_of_comments(request):
     questions = Question.objects.all().order_by('-pub_date')
     book_info = Book_complaint.objects.all()
     interactiv = Interactive.objects.all()
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
 
 
     context = {
@@ -322,6 +323,7 @@ def book_of_comments(request):
         'questions': questions,
         'book_info': book_info,
         'interactiv': interactiv,
+        'centre_news': centre_news,
     }
 
     return render(request, 'webapp/appeals/book_of_comments.html', context=context)
