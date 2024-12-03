@@ -205,6 +205,7 @@ def appeals(request):
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
     interactiv = Interactive.objects.all()
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
 
     context = {
         'main_appeals_inf': main_appeals_inf,
@@ -212,6 +213,7 @@ def appeals(request):
         'ansvers': ansvers,
         'title_desc_queans': title_desc_queans,
         'interactiv': interactiv,
+        'centre_news': centre_news,
     }
 
     return render(request, 'webapp/appeals/main_appeals.html', context=context)
