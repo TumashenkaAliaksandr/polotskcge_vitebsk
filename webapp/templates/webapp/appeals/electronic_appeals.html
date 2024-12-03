@@ -107,14 +107,17 @@
     </section>
     <!-- End Frequently Asked Questioins Section -->
 
-    <!-- breaking-news -->
-    <div id="single" class="single main-bg-hotline">
-        <div class="breaking-news">
-            <div class="container">
-                <div class="breaking-news-grids-bottom">
-                    <div class="banner-bottom-grids">
+    <!-- ======= breaking-news Section ======= -->
+    <section id="featured-services" class="featured-services main-bg-appeals">
+        <div class="container" data-aos="fade-up">
+            <div class="breaking-news-grids-bottom">
+                <div class="banner-bottom-grids">
+                    {% for main_litle_news in centre_news %}
                         <div class="col-md-3 banner-bottom-grid-left">
-                            <div class="br-bm-gd-lt">
+                            <div class="br-bm-gd-lt-fon">
+                                <a href="{{ main_litle_news.link }}"><img
+                                        src="{{ main_litle_news.img.url }}" alt=" "
+                                        class="img-responsive"/></a>
                                 <div class="overlay">
                                     <div class="arrow-left"></div>
                                     <div class="rectangle"></div>
@@ -122,115 +125,36 @@
                                 <div class="health-pos">
                                     <div class="health">
                                         <ul>
-                                            <li><a href="{% url 'webapp:healthy_lifestyle' %}">Здоровье</a></li>
-                                            <li>28 Мая 2024</li>
-                                        </ul>
-                                    </div>
-                                    <h3>Наши Статьи о том как беречь своё Здоровье.</h3>
-                                    <div class="dummy">
-                                        <p>Тут мы расскажем вам о правильном питании и сне.</p>
-                                    </div>
-                                    <div class="com-heart">
-                                        <ul>
-                                            <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span>
-                                                Центр Гигиены</a></li>
-                                            <li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span>
-                                                11,536</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 banner-bottom-grid-left">
-                            <div class="br-bm-gd-lt br-bm-gd-lt1">
-                                <div class="overlay">
-                                    <div class="arrow-left"></div>
-                                    <div class="rectangle"></div>
-                                </div>
-                                <div class="health-pos">
-                                    <div class="health">
-                                        <ul>
-                                            <li><a href="#" class="sport">Спорт</a></li>
-                                            <li>28 Мая 2024</li>
-                                        </ul>
-                                    </div>
-                                    <h3>Почему и как нужно заниматься спортом.</h3>
-                                    <div class="dummy">
-                                        <p>Популярные статьи о спорте.</p>
-                                    </div>
-                                    <div class="com-heart">
-                                        <ul>
-                                            <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span>
-                                                Центр Гигиены</a></li>
-                                            <li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span>
-                                                13,536</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 banner-bottom-grid-left">
-                            <div class="br-bm-gd-lt br-bm-gd-lt2">
-                                <div class="overlay">
-                                    <div class="arrow-left"></div>
-                                    <div class="rectangle"></div>
-                                </div>
-                                <div class="health-pos">
-                                    <div class="health">
-                                        <ul>
-                                            <li><a href="#" class="plane">Экономика</a></li>
-                                            <li>28 Мая 2024</li>
-                                        </ul>
-                                    </div>
-                                    <h3>Новости мира Экономики в 2024 году.</h3>
-                                    <div class="dummy">
-                                        <p>Популярные статьи об экономике.</p>
-                                    </div>
-                                    <div class="com-heart">
-                                        <ul>
-                                            <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span>
-                                                Центр Гигиены</a></li>
-                                            <li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span> 7,536</a>
+                                            <li>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|wordwrap:30|truncatechars_html:58 }}</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 banner-bottom-grid-left">
-                            <div class="br-bm-gd-lt br-bm-gd-lt3">
-                                <div class="overlay">
-                                    <div class="arrow-left"></div>
-                                    <div class="rectangle"></div>
-                                </div>
-                                <div class="health-pos">
-                                    <div class="health">
-                                        <ul>
-                                            <li><a href="" class="general">Важное</a></li>
-                                            <li>28 Мая 2024</li>
-                                        </ul>
-                                    </div>
-                                    <h3>Новости о природе Беларуси, леса и водоемы.</h3>
+                                    <h3>{{ main_litle_news.desc|safe|wordwrap:10|truncatechars_html:58 }}</h3>
                                     <div class="dummy">
-                                        <p>Что нужно знать посещая лесополосу и отдыхая рядом с водой.</p>
+                                        <a href="{{ main_litle_news.link }}">
+                                            <p>{{ main_litle_news.desc_hover|safe }}</p></a>
                                     </div>
-                                    <div class="com-heart">
+                                    <div class="com-heart-health">
                                         <ul>
-                                            <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span>
-                                                Центр Гигиены</a></li>
-                                            <li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span>
-                                                15,536</a></li>
+                                            <li><a href="{{ main_litle_news.link }}"><span
+                                                    class="fa fa-user-doctor"
+                                                    aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="clearfix"></div>
-                    </div>
+                    {% endfor %}
+                    <div class="clearfix"></div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- End Breaking Section -->
 
 
 </main><!-- End #main -->
