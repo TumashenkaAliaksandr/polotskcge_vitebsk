@@ -338,6 +338,7 @@ def higher_authority(request):
     title_desc_inf = Up_Organ_inf.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
     questions = Question.objects.all().order_by('-pub_date')
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
     context = {
         'interactiv': interactiv,
         'title_organ': title_organ,
@@ -345,6 +346,7 @@ def higher_authority(request):
         'title_desc_queans': title_desc_queans,
         'questions': questions,
         'title_desc_inf': title_desc_inf,
+        'centre_news': centre_news,
     }
 
     return render(request, 'webapp/appeals/higher_authority.html', context=context)
