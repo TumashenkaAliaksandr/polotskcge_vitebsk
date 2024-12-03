@@ -432,12 +432,14 @@ def rights_duties(request):
     duties_inf = Duties.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
     questions = Question.objects.all().order_by('-pub_date')
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
 
     context = {
         'interactiv': interactiv,
         'duties_inf': duties_inf,
         'title_desc_queans': title_desc_queans,
         'questions': questions,
+        'centre_news': centre_news,
     }
 
     return render(request, 'webapp/ap/rights_duties.html', context=context)
