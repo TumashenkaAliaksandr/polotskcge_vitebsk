@@ -451,12 +451,14 @@ def maintenance_schedule(request):
     maintenanceSch_inf = MaintenanceSchedule.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
     questions = Question.objects.all().order_by('-pub_date')
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
 
     context = {
         'interactiv': interactiv,
         'maintenanceSch_inf': maintenanceSch_inf,
         'title_desc_queans': title_desc_queans,
         'questions': questions,
+        'centre_news': centre_news,
     }
 
     return render(request, 'webapp/ap/maintenance_schedule.html', context=context)

@@ -3414,7 +3414,7 @@ section#clocks-two {
     font-size: 17px;
     line-height: 23px;
     font-weight: 400;
-    padding-left: 50px;
+    padding-left: 70px;
     padding-bottom: 9px;
     cursor: pointer;
     color: #32969a;
@@ -3462,8 +3462,9 @@ section#clocks-two {
 }
 
 .img-fix {
-  max-width: 20%;
-  height: auto;
+    max-width: 20%;
+    height: auto;
+    margin-left: 5px;
 }
 
 .img-fix-two {
