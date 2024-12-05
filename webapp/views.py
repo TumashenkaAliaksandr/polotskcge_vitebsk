@@ -747,6 +747,7 @@ def custom_products(request):
 
     all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
     typical_title = CustomProductsName.objects.all()
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
 
     context = {
         'features': features,
@@ -756,6 +757,7 @@ def custom_products(request):
         'title_desc_queans': title_desc_queans,
         'all_typical_news': all_typical_news,
         'typical_title': typical_title,
+        'centre_news': centre_news,
     }
 
     return render(request, 'webapp/activity/custom_products.html', context=context)
