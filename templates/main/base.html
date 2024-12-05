@@ -107,7 +107,7 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
           <ul>
               <li><a {% if request.resolver_match.url_name == 'home' %} class="active" {% endif %} href="{% url 'webapp:home' %}">Главная</a></li>
-              <li class="dropdown"><a {% if request.resolver_match.url_name in "'entity', 'contacts', 'working_mode', 'anti_corruption', 'ideological_work', 'charter', 'trade_union', 'vacancies', 'laboratory_offerings'" %}
+              <li class="dropdown"><a {% if request.resolver_match.url_name in "'entity', 'contacts', 'working_mode', 'anti_corruption', 'normative_documents', 'other', 'ideological_work', 'charter', 'trade_union', 'vacancies', 'laboratory_offerings'" %}
                   class="nav-link scrollto active"{% endif %} href="{% url 'webapp:entity' %}"><span>О Центре</span>
                   <i class="bi bi-chevron-down"></i></a>
                   <ul>
@@ -118,8 +118,8 @@
                       <li class="dropdown"><a {% if request.resolver_match.url_name in "'anti_corruption'" %}class="active"{% endif %} href="{% url 'webapp:anti_corruption' %}"><span>Борьба с коррупцией</span>
                           <i class="bi bi-chevron-right"></i></a>
                           <ul>
-                              <li><a {% if request.resolver_match.url_name == 'anti_corruption' %}class="active"{% endif %} href="{% url 'webapp:anti_corruption' %}">Нормативные документы</a></li>
-                              <li><a {% if request.resolver_match.url_name == 'anti_corruption' %}class="active"{% endif %} href="{% url 'webapp:anti_corruption' %}">Прочее</a></li>
+                              <li><a {% if request.resolver_match.url_name == 'normative_documents' %}class="active"{% endif %} href="{% url 'webapp:normative_documents' %}">Нормативные документы</a></li>
+                              <li><a {% if request.resolver_match.url_name == 'other' %}class="active"{% endif %} href="{% url 'webapp:anti_corruption' %}">Прочее</a></li>
                           </ul>
                       </li>
                       <li class="dropdown"><a {% if request.resolver_match.url_name == 'ideological_work' %}class="active"{% endif %} href="{% url 'webapp:ideological_work' %}"><span>Идеологическая работа</span> <i
