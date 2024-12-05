@@ -1,5 +1,7 @@
 from news.models import *
 from django.shortcuts import render
+
+from webapp.models import CentreNews
 from .utils import get_weather
 from django.core.paginator import Paginator
 
@@ -25,7 +27,7 @@ def cge_news(request):
     paginator = Paginator(all_news, 3)  # По 10 новостей на страницу
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
     # Получаем данные о погоде
     weather = get_weather()
 
@@ -38,6 +40,7 @@ def cge_news(request):
         'weather': weather,
         'popular_news': popular_news,
         'nature_news': nature_news,
+        'centre_news': centre_news,
     }
 
     return render(request, 'breaking.html', context=context)

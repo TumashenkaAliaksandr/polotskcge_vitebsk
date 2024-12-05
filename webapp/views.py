@@ -125,6 +125,7 @@ def anti_corruption(request):
     interactiv = Interactive.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
     questions = Question.objects.all().order_by('-pub_date')
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
 
     context = {
         'anticorr_title': anticorr_title,
@@ -132,6 +133,7 @@ def anti_corruption(request):
         'interactiv': interactiv,
         'title_desc_queans': title_desc_queans,
         'questions': questions,
+        'centre_news': centre_news,
     }
 
     return render(request, 'webapp/about_us/anti_corruption.html', context=context)
@@ -187,12 +189,14 @@ def vacancies(request):
     vacancies_inf = Vacancies.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
     questions = Question.objects.all().order_by('-pub_date')
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
 
     context = {
         'interactiv': interactiv,
         'vacancies_inf': vacancies_inf,
         'title_desc_queans': title_desc_queans,
         'questions': questions,
+        'centre_news': centre_news,
     }
 
     return render(request, 'webapp/about_us/vacancies.html', context=context)
@@ -571,6 +575,7 @@ def laboratory_services(request):
     questions = Question.objects.all()
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
 
     context = {
         'main_normative_doc_inf': main_normative_doc_inf,
@@ -580,6 +585,7 @@ def laboratory_services(request):
         'questions': questions,
         'ansvers': ansvers,
         'title_desc_queans': title_desc_queans,
+        'centre_news': centre_news,
     }
 
     return render(request, 'webapp/services/laboratory_services.html', context=context)
@@ -682,7 +688,7 @@ def typical_violations_list(request):
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
-
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
     all_typical_news = ControlNadzorTipical.objects.all().order_by('-pub_date')
     typical_title = CNadTipicalName.objects.all()
 
@@ -694,6 +700,7 @@ def typical_violations_list(request):
         'title_desc_queans': title_desc_queans,
         'all_typical_news': all_typical_news,
         'typical_title': typical_title,
+        'centre_news': centre_news,
     }
 
     return render(request, 'webapp/activity/typical_violations.html', context=context)
@@ -989,7 +996,7 @@ def immunoprophylaxis(request):
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
-
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
     all_typical_news = ImmunoprophylaxisInf.objects.all().order_by('-pub_date')
 
     # Получаем данные о погоде
@@ -1002,6 +1009,7 @@ def immunoprophylaxis(request):
         'ansvers': ansvers,
         'title_desc_queans': title_desc_queans,
         'all_typical_news': all_typical_news,
+        'centre_news': centre_news,
     }
 
     return render(request, 'webapp/activity/immunoprophylaxis.html', context=context)
@@ -1069,7 +1077,7 @@ def ticks(request):
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
-
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
     all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
     typical_title = CustomProductsName.objects.all()
 
@@ -1081,6 +1089,7 @@ def ticks(request):
         'all_typical_news': all_typical_news,
         'typical_title': typical_title,
         'ticks_inf': ticks_inf,
+        'centre_news': centre_news,
     }
 
     return render(request, 'webapp/activity/ticks.html', context=context)

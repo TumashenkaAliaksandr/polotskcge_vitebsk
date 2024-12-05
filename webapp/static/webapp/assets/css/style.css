@@ -2300,7 +2300,7 @@ section#clocks-two {
     transition: all 0.3s ease-in-out;
     border-radius: 8px;
     z-index: 1;
-    /*margin-bottom: 10%;*/
+    margin-bottom: 10%; /*добавил отступ в блоке инф анал биллютень*/
 }
 
 .featured-services .icon-box::before {
