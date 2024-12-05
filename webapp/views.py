@@ -1041,6 +1041,7 @@ def sustainable_development_goals(request):
 
     all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
     typical_title = CustomProductsName.objects.all()
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
 
     context = {
         'interactiv': interactiv,
@@ -1050,6 +1051,7 @@ def sustainable_development_goals(request):
         'all_typical_news': all_typical_news,
         'typical_title': typical_title,
         'objectives': objectives,
+        'centre_news': centre_news,
     }
 
     return render(request, 'webapp/activity/sustainable_development_goals.html', context=context)
