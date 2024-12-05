@@ -830,7 +830,7 @@ def eurasian_economic_union(request):
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
     typical_inf = CustomProductsInf.objects.all()
-
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
     all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
 
     # Получаем данные о погоде
@@ -845,6 +845,7 @@ def eurasian_economic_union(request):
         'all_typical_news': all_typical_news,
         'typical_inf': typical_inf,
         'evrz_econom_inf': evrz_econom_inf,
+        'centre_news': centre_news,
     }
     return render(request, 'webapp/activity/eurasian_economic_union.html', context=context)
 
