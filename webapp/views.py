@@ -1080,6 +1080,8 @@ def ticks(request):
     centre_news = CentreNews.objects.all().order_by('-pub_date')
     all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
     typical_title = CustomProductsName.objects.all()
+    epidem_title = EpidemialogyName.objects.all()
+    ticks_inf_files = Ticks_files.objects.all()
 
     context = {
         'interactiv': interactiv,
@@ -1090,6 +1092,9 @@ def ticks(request):
         'typical_title': typical_title,
         'ticks_inf': ticks_inf,
         'centre_news': centre_news,
+        'epidem_title': epidem_title,
+        'ticks_inf_files': ticks_inf_files,
+
     }
 
     return render(request, 'webapp/activity/ticks.html', context=context)

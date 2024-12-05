@@ -957,6 +957,18 @@ class TicksAdmin(admin.ModelAdmin):
     list_display = ['clean_name']
 
 
+@admin.register(Ticks_files)
+class TicksFilesAdmin(admin.ModelAdmin):
+    form = TicksFilesForm
+
+    # Кастомное поле для отображения очищенного текста
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    clean_name.short_description = 'name'
+    list_display = ['clean_name']
+
+
 @admin.register(ContactInfoHad)
 class ContactInfoHadAdmin(admin.ModelAdmin):
     form = ContactInfoHadForm

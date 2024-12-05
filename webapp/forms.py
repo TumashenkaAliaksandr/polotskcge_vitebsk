@@ -796,6 +796,16 @@ class TicksForm(forms.ModelForm):
         }
 
 
+class TicksFilesForm(forms.ModelForm):
+    class Meta:
+        model = Ticks_files
+        fields = '__all__'
+        widgets = {
+            'description': SummernoteWidget(),
+            'name': SummernoteWidget(),
+        }
+
+
 class StudiesForm(forms.ModelForm):
     class Meta:
         model = Studies

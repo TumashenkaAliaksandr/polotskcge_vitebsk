@@ -1261,6 +1261,19 @@ class Ticks(models.Model):
         verbose_name_plural = "Внимание клещи"
 
 
+class Ticks_files(models.Model):
+    name = models.CharField(max_length=300, verbose_name="Имя")
+    description = models.TextField(default='Описание')
+    pdf_file = models.FileField(upload_to='pdfs/', verbose_name="Прикрепить PDF", null=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Внимание клещи (Блок с файлами)"
+        verbose_name_plural = "Внимание клещи (Блок с файлами)"
+
+
 class ContactInfoHad(models.Model):
     """Модель для хранения контактной информации и часов работы."""
 
