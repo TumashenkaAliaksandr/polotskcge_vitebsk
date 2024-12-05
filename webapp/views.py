@@ -938,7 +938,7 @@ def epidemiology(request):
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
     epidem_title = EpidemialogyName.objects.all()
-
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
     all_typical_news = EpidemialogyTipical.objects.all().order_by('-pub_date')
 
     # Получаем данные о погоде
@@ -952,6 +952,8 @@ def epidemiology(request):
         'ansvers': ansvers,
         'title_desc_queans': title_desc_queans,
         'all_typical_news': all_typical_news,
+        'centre_news': centre_news,
+
     }
 
     return render(request, 'webapp/activity/epidemiology.html', context=context)
