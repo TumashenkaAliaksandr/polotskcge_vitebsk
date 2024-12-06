@@ -2847,6 +2847,13 @@ h2.typoh2{
         width: inherit;
     }
 
+    .featured-services-three .icon-box {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        margin-left: 0;
+        width: 100%;
+    }
+
 }
 
 @media (max-width: 320px) {
@@ -3947,7 +3954,7 @@ img.mobile1 {
 
     .section-title {
         text-align: center;
-        padding-bottom: 25px;
+        padding-bottom: 10px;
         padding-top: 25px;
     }
     .section-title h4 {
