@@ -63,17 +63,22 @@
                     <div class="section-title">
                         <h2>{{ main_title.name|safe }}</h2>
                     </div>
-                    <div id="featured-services-tree" class="featured-services-three main-bg-ticks">
-                    <div class="row">
-                        {% for main_ticks_inf in ticks_inf_files %}
-                            <div class="icon-box mt-5 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
-                                <a href="{{ main_ticks_inf.pdf_file.url }}">{{ main_ticks_inf.name|safe }}</a>
-                                <a href="{{ main_ticks_inf.pdf_file.url }}"><p
-                                        class="description">{{ main_ticks_inf.description|safe }}</p></a>
+                    <!-- ======= Counts Section ======= -->
+                    <section id="counts" class="counts main-bg-ticks">
+                        <div class="container" data-aos="fade-up">
+                            <div class="row no-gutters">
+                                 {% for main_ticks_inf in ticks_inf_files %}
+                                    <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+                                        <div class="count-box">
+                                            <i class="fa fa-file"></i>
+                                            <a href="{{ main_ticks_inf.pdf_file.url }}"><strong>{{ main_ticks_inf.name|safe }}</strong> {{ main_ticks_inf.description|safe }}</a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
                             </div>
-                        {% endfor %}
-                    </div>
-                    </div>
+                        </div>
+                    </section>
+                    <!-- End Counts Section -->
                     <div class="description-left">
                         <p>{{ main_title.description|safe }}</p>
                     </div>
@@ -131,27 +136,6 @@
         </div>
     </section>
     <!-- End Frequently Asked Questioins Section -->
-
-    <!-- EVROZES Title and desc Section -->
-    <section id="featured-services-two" class="featured-services-two main-bg-epidem">
-        <div class="container" data-aos="fade-up">
-            {% for main_typical_title in epidem_title %}
-                <div class="section-title">
-                    <p>{{ main_typical_title.name|safe }}</p>
-                </div>
-            {% endfor %}
-            <div class="row">
-                {% for main_typical_inf in all_typical_news %}
-                    <div class="icon-box mt-5 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
-                        <a href="{% url 'webapp:epidemialogy_single' pk=main_typical_inf.id %}">{{ main_typical_inf.name_epidem|safe }}</a>
-                        <a href="{% url 'webapp:epidemialogy_single' pk=main_typical_inf.id %}"><p
-                                class="description">{{ main_typical_inf.description_small|safe }}</p></a>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-    <!-- End  EVROZES Title and desc Section -->
 
     <!-- ======= breaking-news Section ======= -->
     <section id="featured-services" class="featured-services main-bg-ticks">
