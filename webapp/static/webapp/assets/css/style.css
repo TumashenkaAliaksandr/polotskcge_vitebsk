@@ -1127,7 +1127,7 @@ section#footer {
 }
 
 .main-bg-ticks {
-    padding: 15px 0 15px;
+    padding: 15px 15px 15px;
     background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.98)), url('../img/gigi_centr_kashin.jpg') center/cover;
     background-attachment: fixed;
 }
@@ -2378,6 +2378,37 @@ section#clocks-two {
     width: 32%;
     margin-right: 10px;
     margin-bottom: 10px;
+}
+
+.featured-services-three .icon-box {
+  padding: 23px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(247, 252, 252, 0.5);
+  box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+  transition: all 0.3s ease-in-out;
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+  border-radius: 8px;
+  z-index: 1;
+  width: 21%;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-left: 35px;
+}
+
+.featured-services-three .icon-box::before {
+  content: "";
+  position: absolute;
+  background: #d9f1f2;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 100%;
+  transition: all 0.3s;
+  z-index: -1;
 }
 
 @media only screen and (max-width: 991px) {
