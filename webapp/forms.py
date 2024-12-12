@@ -732,6 +732,7 @@ class ServicesLawyerTipicalForm(forms.ModelForm):
             'name_lawyer': SummernoteWidget(),
             'description': SummernoteWidget(),
             'description_two': SummernoteWidget(),
+            'description_small': SummernoteWidget(),
         }
 
 
