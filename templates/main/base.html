@@ -107,7 +107,7 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
           <ul>
               <li><a {% if request.resolver_match.url_name == 'home' %} class="active" {% endif %} href="{% url 'webapp:home' %}">Главная</a></li>
-              <li class="dropdown"><a {% if request.resolver_match.url_name in "'entity', 'contacts', 'working_mode', 'anti_corruption', 'normative_documents', 'other', 'ideological_work', 'charter', 'trade_union', 'vacancies', 'laboratory_offerings'" %}
+              <li class="dropdown"><a {% if request.resolver_match.url_name in "'entity', 'contacts', 'working_mode', 'anti_corruption', 'standart_documents', 'other', 'ideological_work', 'charter', 'trade_union', 'vacancies', 'laboratory_offerings'" %}
                   class="nav-link scrollto active"{% endif %} href="{% url 'webapp:entity' %}"><span>О Центре</span>
                   <i class="bi bi-chevron-down"></i></a>
                   <ul>
@@ -115,10 +115,10 @@
                       <li><a {% if request.resolver_match.url_name == 'contacts' %}class="active"{% endif %} href="{% url 'webapp:contacts' %}">Контакты</a></li>
                       <li><a {% if request.resolver_match.url_name == 'working_mode' %}class="active"{% endif %} href="{% url 'webapp:working_mode' %}">Режим Работы</a></li>
                       <li><a {% if request.resolver_match.url_name == 'laboratory_offerings' %}class="active"{% endif %} href="{% url 'webapp:laboratory_offerings' %}">Лабораторный отдел</a></li>
-                      <li class="dropdown"><a {% if request.resolver_match.url_name in "'anti_corruption'" %}class="active"{% endif %} href="{% url 'webapp:anti_corruption' %}"><span>Борьба с коррупцией</span>
+                      <li class="dropdown"><a {% if request.resolver_match.url_name in "'anti_corruption', 'standart_documents'" %}class="active"{% endif %} href="{% url 'webapp:anti_corruption' %}"><span>Борьба с коррупцией</span>
                           <i class="bi bi-chevron-right"></i></a>
                           <ul>
-                              <li><a {% if request.resolver_match.url_name == 'normative_documents' %}class="active"{% endif %} href="{% url 'webapp:normative_documents' %}">Нормативные документы</a></li>
+                              <li><a {% if request.resolver_match.url_name == 'standart_documents' %}class="active"{% endif %} href="{% url 'webapp:standart_documents' %}">Нормативные документы</a></li>
                               <li><a {% if request.resolver_match.url_name == 'other' %}class="active"{% endif %} href="{% url 'webapp:anti_corruption' %}">Прочее</a></li>
                           </ul>
                       </li>
@@ -135,9 +135,9 @@
               </li>
 
 
-            <li class="dropdown"><a {% if request.resolver_match.url_name in "'appeals', 'normative_documents', 'electronic_appeals', 'hotline', 'book_of_comments', 'higher_authority'" %} class="nav-link scrollto active" {% endif %} href="{% url 'webapp:appeals' %}"><span>Обращения</span> <i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a {% if request.resolver_match.url_name in "'appeals', 'appeals_normative_documents', 'electronic_appeals', 'hotline', 'book_of_comments', 'higher_authority'" %} class="nav-link scrollto active" {% endif %} href="{% url 'webapp:appeals' %}"><span>Обращения</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                    <li><a {% if request.resolver_match.url_name == 'normative_documents' %}class="active"{% endif %} href="{% url 'webapp:normative_documents' %}">Нормативно-правовые акты</a></li>
+                    <li><a {% if request.resolver_match.url_name == 'appeals_normative_documents' %}class="active"{% endif %} href="{% url 'webapp:appeals_normative_documents' %}">Нормативно-правовые акты</a></li>
                     <li><a {% if request.resolver_match.url_name == 'electronic_appeals' %}class="active"{% endif %} href="{% url 'webapp:electronic_appeals' %}">Обращения граждан и юридических лиц</a></li>
                     <li><a {% if request.resolver_match.url_name == 'hotline' %}class="active"{% endif %} href="{% url 'webapp:hotline' %}">Прямая телефонная линия «горячая линия»</a></li>
                     <li><a {% if request.resolver_match.url_name == 'book_of_comments' %}class="active"{% endif %} href="{% url 'webapp:book_of_comments' %}">Книга Замечаний и Предложений</a></li>

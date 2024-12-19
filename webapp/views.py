@@ -223,7 +223,28 @@ def appeals(request):
     return render(request, 'webapp/appeals/main_appeals.html', context=context)
 
 
-def normative_documents(request):
+def standart_documents(request):
+    """Appeals - normative_documents template"""
+    main_normative_doc_inf = NormativeDocuments.objects.all()
+    questions = Question.objects.all().order_by('-pub_date')
+    ansvers = Answer.objects.all()
+    title_desc_queans = Question_Ansver_title.objects.all()
+    interactiv = Interactive.objects.all()
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
+
+    context = {
+        'main_normative_doc_inf': main_normative_doc_inf,
+        'questions': questions,
+        'ansvers': ansvers,
+        'title_desc_queans': title_desc_queans,
+        'interactiv': interactiv,
+        'centre_news': centre_news,
+    }
+
+    return render(request, 'webapp/appeals/normative_documents.html', context=context)
+
+
+def appeals_normative_documents(request):
     """Appeals - normative_documents template"""
     main_normative_doc_inf = NormativeDocuments.objects.all()
     questions = Question.objects.all().order_by('-pub_date')
