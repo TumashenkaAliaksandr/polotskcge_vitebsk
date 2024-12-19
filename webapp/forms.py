@@ -767,11 +767,7 @@ class ImmunoprophylaxisTipicalForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'name': SummernoteWidget(),
-            'name_two': SummernoteWidget(),
-            'name_three': SummernoteWidget(),
             'description': SummernoteWidget(),
-            'description_two': SummernoteWidget(),
-            'description_three': SummernoteWidget(),
         }
 
 

@@ -62,21 +62,15 @@
                 <div class="row">
                     <div class="section-title">
                         <h2>{{ main_profilac.name|safe }}</h2>
-                    </div>
-                    <div class="col-lg-6" data-aos="fade-right">
+                        <div class="row image">
+                        <div data-aos="fade-right">
                         <img src="{{ main_profilac.photo.url }}" class="img-fluid"
                              alt="">
+                        </div>
+                        </div>
                     </div>
-                    <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+                    <div class="mt-5 mt-lg-0 content" data-aos="fade-left">
                         <p class="fst-italic">{{ main_profilac.description | safe }}</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="description-left main-bg-imuno">
-                        <h2><p>{{ main_profilac.name_three|safe }}</h2>
-                        <p>{{ main_profilac.description_three | safe }}</p>
-                        <h3>{{ main_profilac.name_two|safe }}</h3>
-                        <p>{{ main_profilac.description_two | safe }}</p>
                     </div>
                 </div>
             </div>

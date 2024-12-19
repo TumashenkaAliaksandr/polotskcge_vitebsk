@@ -1169,15 +1169,10 @@ class ImmunoprophylaxisInf(models.Model):
         return self.name
 
 
-
 class ImmunoprophylaxisTipical(models.Model):
 
     name = models.CharField(max_length=350, default='Тайтл')
-    name_two = models.CharField(max_length=200, default='Второе название')
-    name_three = models.CharField(max_length=200, default='Третье название')
     description = models.TextField(default='Описание')
-    description_two = models.TextField(default='Второе описание')
-    description_three = models.TextField(default='Третье описание')
     photo = models.ImageField(upload_to='Immunoprofilactixs/', null=True, blank=True)
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
 
