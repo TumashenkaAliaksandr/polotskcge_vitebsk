@@ -719,7 +719,6 @@ class EpidemialogyTipicalForm(forms.ModelForm):
             'name_epidem': SummernoteWidget(),
             'description_small': SummernoteWidget(),
             'description': SummernoteWidget(),
-            'description2': SummernoteWidget(),
         }
 
 

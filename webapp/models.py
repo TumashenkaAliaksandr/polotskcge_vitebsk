@@ -1110,7 +1110,6 @@ class EpidemialogyTipical(models.Model):
     name = models.CharField(max_length=350, default='Тайтл для админки')
     name_epidem = models.CharField(max_length=350, default='Тайтл ля стр. Эпидемиалогия (h3)')
     description = models.TextField(default='Описание')
-    description2 = models.TextField(default='Второе описание')
     photo = models.ImageField(upload_to='Epidemialogy/', null=True, blank=True)
     photo_two = models.ImageField(upload_to='Epidemialogy/', null=True, blank=True)
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
