@@ -1044,7 +1044,7 @@ def immunoprophylaxis_typical(request, pk):
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
     typical_inf = ImmunoprophylaxisTipical.objects.filter(pk=pk)
-
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
     all_typical_news = ImmunoprophylaxisInf.objects.all().order_by('-pub_date')
 
     # Получаем данные о погоде
@@ -1059,6 +1059,7 @@ def immunoprophylaxis_typical(request, pk):
         'title_desc_queans': title_desc_queans,
         'all_typical_news': all_typical_news,
         'typical_inf': typical_inf,
+        'centre_news': centre_news,
     }
 
     return render(request, 'webapp/activity/immunoprophylaxis_single.html', context=context)
