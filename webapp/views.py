@@ -997,6 +997,7 @@ def epidemiology_typical(request, pk):
     title_desc_queans = Question_Ansver_title.objects.all()
     typical_inf = EpidemialogyTipical.objects.filter(pk=pk)
     epidem_title = EpidemialogyName.objects.all()
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
 
 
     context = {
@@ -1006,6 +1007,7 @@ def epidemiology_typical(request, pk):
         'ansvers': ansvers,
         'title_desc_queans': title_desc_queans,
         'typical_inf': typical_inf,
+        'centre_news': centre_news,
     }
 
     return render(request, 'webapp/activity/epidemialogy_single.html', context=context)
