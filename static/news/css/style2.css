@@ -3398,7 +3398,7 @@ img.mobile1 {
 
 @media only screen and (max-width: 768px) {
   .section-title h2 {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bold;
     text-transform: uppercase;
       margin-bottom: 0;
@@ -4706,7 +4706,7 @@ img.mobile1 {
     }
 
     .breaking-news {
-        padding: 0.5em 0 15px;
+        padding: 0.5em 0 2em;
 
     }
 
