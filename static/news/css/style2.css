@@ -4696,7 +4696,7 @@ img.mobile1 {
     .move-text {
         width: 92.3%;
         margin-left: 0.8em;
-        padding-top: 45%;
+        padding-top: 25%;
         /*margin-top: 45%;*/
         height: 10%;
     }
@@ -4709,6 +4709,7 @@ img.mobile1 {
         padding: 0.5em 0 2em;
 
     }
+
 
 
     @media only screen and (min-width: 384px) and (max-width: 854px) {
@@ -4734,6 +4735,10 @@ img.mobile1 {
 
         .pagebanner-city {
             height: 280px;
+        }
+
+        .background-image {
+            height: 75px;
         }
 
         .breaking-news {

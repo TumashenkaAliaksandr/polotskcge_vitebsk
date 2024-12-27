@@ -2756,7 +2756,7 @@ section#clocks-two {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    /*height: 240px;*/
+    height: auto;
 }
 
 /* Стили для десктопной версии */
