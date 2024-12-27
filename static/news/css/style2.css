@@ -2206,8 +2206,8 @@ ul.wmuSliderPagination {
 
     .img-fixed-size-monitoring-plan-arhi {
         position: absolute;
-        top: 0;
-        left: 50%;
+        top: 44px;
+        left: 80%;
         transform: translate(-50%, -50%);
         height: auto;
         width: 25%;
@@ -3398,16 +3398,17 @@ img.mobile1 {
 
 @media only screen and (max-width: 768px) {
   .section-title h2 {
-    font-size: 25px;
+    font-size: 17px;
     font-weight: bold;
     text-transform: uppercase;
+      margin-bottom: 0;
   }
 
     .move-text {
         width: 92.3%;
         margin-left: 0.8em;
         /*padding-top: 47%;*/
-        margin-top: 45%;
+        /*margin-top: 45%;*/
         height: 10%;
     }
 }
@@ -3955,13 +3956,24 @@ img.mobile1 {
     .section-title {
         text-align: center;
         padding-bottom: 10px;
-        padding-top: 25px;
+        padding-top: 15px;
     }
+
+    .section-title h3 {
+        text-align: center;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        font-size: 18px;
+    }
+
     .section-title h4 {
         text-align: center;
         padding-bottom: 35px;
         padding-top: 10px;
-        font-size: 17px;
+        font-size: 16px;
+    }
+    .section-title p {
+        font-size: 13px;!important;
     }
 
     .main-bg-laba {
@@ -3976,6 +3988,13 @@ img.mobile1 {
         font-weight: 600;
         font-size: 26px;
         margin-top: 10px;
+    }
+
+    .main-bg-hotline {
+        padding: 20px 15px 5px;
+    }
+    .description-left h5 {
+        font-size: 15px;
     }
 }
 @media (max-width: 600px){
@@ -4439,7 +4458,7 @@ img.mobile1 {
 	}
 	.banner-bottom-grid-left {
 		float: none;
-		width: 94%;
+		width: 100%;
 	}
 	.health ul li a {
 		padding: 0em 0.5em;
@@ -4619,7 +4638,7 @@ img.mobile1 {
         width: 92.3%;
         margin-left: 0.8em;
         /*padding-top: 47%;*/
-        margin-top: 23%;
+        /*margin-top: 23%;*/
         height: 20%;
     }
     .pagebanner-city {
@@ -4648,8 +4667,8 @@ img.mobile1 {
     .move-text {
         width: 92.3%;
         margin-left: 0.8em;
-        /*padding-top: 47%;*/
-        margin-top: 45%;
+        padding-top: 45%;
+        /*margin-top: 45%;*/
         height: 10%;
     }
     .pagebanner-city {
@@ -4677,13 +4696,13 @@ img.mobile1 {
     .move-text {
         width: 92.3%;
         margin-left: 0.8em;
-        /*padding-top: 47%;*/
-        margin-top: 45%;
+        padding-top: 45%;
+        /*margin-top: 45%;*/
         height: 10%;
     }
 
     .pagebanner-city {
-        height: 280px;
+        height: 250px;
     }
 
     .breaking-news {
@@ -4708,8 +4727,8 @@ img.mobile1 {
         .move-text {
             width: 92.3%;
             margin-left: 0.8em;
-            /*padding-top: 47%;*/
-            margin-top: 47%;
+            padding-top: 47%;
+            /*margin-top: 47%;*/
             height: 10%;
         }
 
@@ -4729,8 +4748,8 @@ img.mobile1 {
         .move-text {
             width: 92.3%;
             margin-left: 0.8em;
-            /*padding-top: 47%;*/
-            margin-top: 15%;
+            padding-top: 47%;
+            /*margin-top: 15%;*/
             height: 15%;
         }
 

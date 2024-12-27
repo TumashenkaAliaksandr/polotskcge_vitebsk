@@ -9,8 +9,7 @@
     <!-- ======= Breadcrumbs Section ======= -->
 
     <!-- pagebanner -->
-    <section class="pagebanner-your">
-    </section>
+    <div class="pagebanner-your"></div>
     <!-- End Pagebanner -->
 
     <section class="breadcrumbs">
@@ -68,7 +67,7 @@
             {% endfor %}
             <div class="row">
                 {% for main_lawyer_inf in all_typical_news %}
-                    <div class="icon-box mt-5 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-box mt-lg-0 paid_services" data-aos="fade-up" data-aos-delay="100">
                         <a href="{% url 'webapp:paid_services_lawyer_single' pk=main_lawyer_inf.id %}">{{ main_lawyer_inf.name_lawyer|safe }}</a>
                         <a href="{% url 'webapp:paid_services_lawyer_single' pk=main_lawyer_inf.id %}"><p
                                 class="description">{{ main_lawyer_inf.description_small|safe }}</p></a>

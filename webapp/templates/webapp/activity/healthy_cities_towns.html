@@ -59,13 +59,13 @@
                 <div class="section-title">
                     <h2>{{ main_title.name|safe }}</h2>
                 </div>
-                <div class="description-left">
+                <div class="description-left city-desc">
                 <p>{{ main_title.description|safe }}</p>
                 </div>
             {% endfor %}
             <div class="row">
                 {% for main_pdf in health_inf %}
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="icon"><i class="{{ main_pdf.icon_class }}"></i></div>
                             <h4 class="title"><a href="{{ main_pdf.pdf_file.url }}" target="_blank">{{ main_pdf.name|safe }}</a></h4>

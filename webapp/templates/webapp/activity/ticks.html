@@ -89,7 +89,7 @@
             <div class="row">
                 {% for main_inf in ticks_inf %}
                     <div class="section-title">
-                        <h2>{{ main_inf.name_map|safe }}</h2>
+                        <p>{{ main_inf.name_map|safe }}</p>
                     </div>
                     <div class="map-container">
                         <div class="map-wrapper">{{ main_inf.google_map_embed_code|safe }}</div>

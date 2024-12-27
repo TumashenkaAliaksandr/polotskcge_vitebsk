@@ -515,6 +515,7 @@ def services(request):
 
 def paid_services(request):
     """Services - paid_services template"""
+    interactiv = Interactive.objects.all()
     info_clocks = GeneralInfo.objects.all()
     studi = Studies.objects.all()
     wqs = WaterQualitySafety.objects.all()
@@ -530,6 +531,7 @@ def paid_services(request):
         'info_clocks': info_clocks,
         'price_lists_fiz': price_lists_fiz,
         'erip_info': erip_info,
+        'interactiv': interactiv,
     }
 
     return render(request, 'webapp/services/paid_services.html', context=context)
@@ -569,6 +571,7 @@ def paid_services_lawyer_single(request, pk):
     title_desc_queans = Question_Ansver_title.objects.all()
     typical_inf = ServicesLawyerTipical.objects.filter(pk=pk)
     epidem_title = EpidemialogyName.objects.all()
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
 
 
     # Получаем данные о погоде
@@ -582,6 +585,7 @@ def paid_services_lawyer_single(request, pk):
         'ansvers': ansvers,
         'title_desc_queans': title_desc_queans,
         'typical_inf': typical_inf,
+        'centre_news': centre_news,
     }
 
     return render(request, 'webapp/services/paid_services_lawyer_single.html', context=context)
@@ -799,7 +803,7 @@ def custom_products_single(request, pk):
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
     typical_inf = CustomProductsInf.objects.all()
-
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
     all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
 
     # Получаем данные о погоде
@@ -814,6 +818,7 @@ def custom_products_single(request, pk):
         'title_desc_queans': title_desc_queans,
         'all_typical_news': all_typical_news,
         'typical_inf': typical_inf,
+        'centre_news': centre_news,
     }
     return render(request, 'webapp/activity/custom_products_single.html', context=context)
 
