@@ -532,6 +532,7 @@ class ProfsouzDescForm(forms.ModelForm):
         model = ProfsouzDesc
         fields = '__all__'
         widgets = {
+            'name': SummernoteWidget(),
             'description': SummernoteWidget(),
             'description_two': SummernoteWidget(),
             'package': SummernoteWidget(),
