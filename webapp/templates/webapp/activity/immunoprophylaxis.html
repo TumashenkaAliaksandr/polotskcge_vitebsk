@@ -64,7 +64,7 @@
                 {% for main_typical_title in all_typical_news %}
                     {% if forloop.first %}
                         <div class="section-title">
-                            <p>{{ main_typical_title.name_page|safe }}</p>
+                            <h2>{{ main_typical_title.name_page|safe }}</h2>
                         </div>
                     {% endif %}
                 {% endfor %}

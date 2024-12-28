@@ -4674,7 +4674,7 @@ img.mobile1 {
     .breaking_news {
         padding: 10px 5px;
         width: 100%;
-        margin-top: 15%; /* Можно изменить в зависимости от нужд */
+        /*margin-top: 15%; !* Можно изменить в зависимости от нужд *!*/
     }
 
     .move-text {
@@ -4693,7 +4693,7 @@ img.mobile1 {
     }
 }
 
-@media only screen and (min-width: 375px) and (max-width: 812px) {
+@media only screen and (min-width: 375px) and (max-width: 810px) {
     .news-grid-rght2:before,
     .news-grid-rght2:after {
         width: 300px;
@@ -4773,7 +4773,7 @@ img.mobile1 {
         .breaking_news {
             padding: 10px 5px;
             width: 100%;
-            margin-top: 15%; /* Можно изменить в зависимости от нужд */
+            margin-top: 0; /* Можно изменить в зависимости от нужд */
         }
 
         .move-text {
@@ -4793,7 +4793,7 @@ img.mobile1 {
         }
 
         .breaking-news {
-            padding: 2.5em 0 15px;
+            padding: 5.5em 0 15px;
         }
 
     }
