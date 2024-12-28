@@ -124,7 +124,7 @@ class EducationalResource(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Образовательный ресурс"
+        verbose_name = "Образовательные ресурсы"
         verbose_name_plural = "Образовательные ресурсы"
         ordering = ['-pub_date']
 

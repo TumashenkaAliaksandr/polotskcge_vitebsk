@@ -224,7 +224,7 @@ def appeals(request):
 
 
 def standart_documents(request):
-    """Appeals - normative_documents template"""
+    """Appeals - standart_documents template"""
     main_normative_doc_inf = NormativeDocuments.objects.all()
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()
@@ -307,6 +307,7 @@ def electronic_appeals(request):
 
 def hotline(request):
     """Appeals - hotline template"""
+    interactiv = Interactive.objects.all()
     features = Featured.objects.all()
     clocks = HotlineHours.objects.all()
     title_desc = HotlineHours_Title.objects.all()
@@ -327,6 +328,7 @@ def hotline(request):
         'title_desc_queans': title_desc_queans,
         'centre_news': centre_news,
         'model_blog_main': model_blog_main,
+        'interactiv': interactiv,
     }
 
     return render(request, 'webapp/appeals/hotline.html', context=context)
@@ -1171,6 +1173,7 @@ def healthy_lifestyle(request):
 
 def preventive_measures(request):
     """Healthy_lifestyle - preventive_measures template"""
+    interactiv = Interactive.objects.all()
     features = Featured.objects.all()
     model_blog_main = ModelNews.objects.filter(is_main_measures=True).order_by('-pub_date')
     title_desc_queans = Question_Ansver_title.objects.all()
@@ -1183,6 +1186,7 @@ def preventive_measures(request):
         'title_desc_queans': title_desc_queans,
         'questions': questions,
         'ansvers': ansvers,
+        'interactiv': interactiv,
     }
 
     return render(request, 'webapp/healthy_lifestyle/preventive_measures.html', context=context)

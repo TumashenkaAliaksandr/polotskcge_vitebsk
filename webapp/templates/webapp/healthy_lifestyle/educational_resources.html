@@ -23,6 +23,7 @@
         </div>
       </div>
     </section><!-- End Breadcrumbs Section -->
+    <div class="margin-padding"></div>
 
     <div id="single" class="single main-bg-recurces">
           <div class="breaking-news">
@@ -61,7 +62,7 @@
               </div>
             <div class="row">
                 {% for main_pdf in see_pdf %}
-                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="icon"><i class="{{ main_pdf.icon_class }}"></i></div>
                             <h4 class="title"><a href="{{ main_pdf.pdf_file.url }}">{{ main_pdf.name }}</a></h4>

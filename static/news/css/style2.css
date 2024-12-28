@@ -2199,9 +2199,21 @@ ul.wmuSliderPagination {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        height: 80px;
-        width: 21%;
+        height: 50px;
+        width: 15%;
         object-fit: cover;
+        margin-top: 18px;
+    }
+
+    .img-fixed-size-monitoring-plan {
+        position: absolute;
+        top: -19%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: auto;
+        width: 10%;
+        object-fit: cover;
+        margin-top: 7px;
     }
 
     .img-fixed-size-monitoring-plan-arhi {
@@ -2237,9 +2249,10 @@ ul.wmuSliderPagination {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        height: 80px;
-        width: 21%;
+        height: 50px;
+        width: 15%;
         object-fit: cover;
+        margin-top: 18px;
     }
     .img-fixed-size-cheme {
         width: 100%;
@@ -2263,10 +2276,10 @@ ul.wmuSliderPagination {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        height: 80px;
-        width: 21%;
+        height: 50px;
+        width: 15%;
         object-fit: cover;
-        margin-top: 0px;
+        margin-top: 18px;
     }
 }
 
@@ -3470,7 +3483,7 @@ img.mobile1 {
         /* Стили для экранов от 366px до 667px */
         width: 92.3%;
         margin-left: 0.8em;
-        padding-top: 61%;
+        padding-top: 61.7%;
     }
 }
 
@@ -3963,7 +3976,7 @@ img.mobile1 {
         text-align: center;
         padding-bottom: 5px;
         padding-top: 5px;
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .section-title h4 {
@@ -4667,7 +4680,7 @@ img.mobile1 {
     .move-text {
         width: 92.3%;
         margin-left: 0.8em;
-        padding-top: 45%;
+        /*padding-top: 45%;*/
         /*margin-top: 45%;*/
         height: 10%;
     }
@@ -4690,15 +4703,53 @@ img.mobile1 {
     .breaking_news {
         padding: 10px 5px;
         width: 100%;
-        margin-top: 13%; /* Можно изменить в зависимости от нужд */
+        margin-top: 5%; /* Можно изменить в зависимости от нужд */
+    }
+
+    .breaking-news-padding {
+        padding: 10px 5px;
+        width: 100%;
+        margin-top: 33%
+    }
+    .margin-padding {
+        margin-top: 10.5%;
+    }
+    .margin-padding-two {
+        margin-top: 34%;
+    }
+    .margin-padding-two-a {
+        margin-top: 40%;
+    }
+    .margin-padding-three {
+        margin-top: 22.7%;
+    }
+    .margin-padding-three-a {
+        margin-top: 17.8%;
+    }
+    .margin-padding-four {
+        margin-top: 32.5%;
+    }
+    .margin-padding-four-a {
+        margin-top: 30%;
+    }
+    .margin-padding-five {
+        margin-top: 5%;
+    }
+    .margin-padding-six {
+        margin-top: 17.8%;
+    }
+
+    .banner-wrap {
+        padding: 0;
+        margin-top: 15%;
     }
 
     .move-text {
         width: 92.3%;
         margin-left: 0.8em;
-        padding-top: 25%;
-        /*margin-top: 45%;*/
-        height: 10%;
+        /*padding-top: 5%;*/
+        margin-top: 5%;
+        height: 0;
     }
 
     .pagebanner-city {
@@ -4706,7 +4757,7 @@ img.mobile1 {
     }
 
     .breaking-news {
-        padding: 0.5em 0 2em;
+        padding: 2.5em 0 2em;
 
     }
 
@@ -4728,7 +4779,7 @@ img.mobile1 {
         .move-text {
             width: 92.3%;
             margin-left: 0.8em;
-            padding-top: 47%;
+            /*padding-top: 47%;*/
             /*margin-top: 47%;*/
             height: 10%;
         }
@@ -4753,9 +4804,9 @@ img.mobile1 {
         .move-text {
             width: 92.3%;
             margin-left: 0.8em;
-            padding-top: 47%;
+            /*padding-top: 47%;*/
             /*margin-top: 15%;*/
-            height: 15%;
+            height: 0;
         }
 
         .pagebanner-city {
@@ -5171,7 +5222,7 @@ img.mobile1 {
 
         .breaking-news {
             padding: 4.5em 0 15px;
-            margin-top: 27%;
+            margin-top: 0;
         }
     }
 }

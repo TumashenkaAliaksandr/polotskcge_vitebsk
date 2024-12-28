@@ -800,7 +800,7 @@ h6 {
         transition-duration: 0.3s;
         transition-timing-function: ease-in-out;
         transition-delay: 0s;
-        border-radius: 8px;
+        /*border-radius: 8px;*/
         z-index: 1;
         /*display: none;*/
     }
@@ -1246,7 +1246,7 @@ section#clocks-two {
     box-shadow: 0 0 15px rgba(193, 215, 213, 0.5) !important; /* Бирюзовая тень */
     padding: 20px !important; /* Отступы внутри секции для более красивого отображения */
     border-radius: 10px !important; /* Радиус для закругленных углов (по желанию) */
-    margin-bottom: 13px;
+    margin-bottom: 10px;
 }
 
 /*styles for map*/
@@ -1945,6 +1945,18 @@ section#clocks-two {
     .city-desc h4{
         font-size: 16px;
     }
+
+    .book_info {
+        display: block;
+        width: 95%;
+        height: auto;
+        /*border: 10px outset lightblue;*/
+        border: 5px solid rgba(0, 0, 0, 0) !important; /* Прозрачная рамка */
+        box-shadow: 0 0 15px rgba(193, 215, 213, 0.5) !important; /* Бирюзовая тень */
+        padding: 20px !important; /* Отступы внутри секции для более красивого отображения */
+        border-radius: 10px !important; /* Радиус для закругленных углов (по желанию) */
+        margin-bottom: 10px;
+    }
 }
 
 
@@ -2253,9 +2265,9 @@ section#clocks-two {
     .map-container {
         text-align: center;
         width: 100%;
-        /*height: 65%;*/
-        padding-left: 10px;
-        padding-right: 10px;
+        height: 65%;
+        padding-left: 15px;
+        padding-right: 15px;
         padding-bottom: 10px;
     }
 }
@@ -2735,7 +2747,7 @@ section#clocks-two {
 }
 
 .features .icon-box i {
-    font-size: 48px;
+    font-size: 50px;
     float: left;
     color: #3fbbc0;
 }
