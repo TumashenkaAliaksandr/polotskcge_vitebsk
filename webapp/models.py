@@ -388,8 +388,8 @@ class Up_Organ_inf(models.Model):
     description = models.CharField(max_length=3000, default='Время работы')
 
     class Meta:
-        verbose_name = 'Информация (низ стр) Вышестоящий Орган'
-        verbose_name_plural = 'Информация (низ стр) Вышестоящий Орган'
+        verbose_name = 'Вышестоящий Орган Информация (низ стр)'
+        verbose_name_plural = 'Вышестоящий Орган Информация (низ стр)'
 
     def __str__(self):
         return self.name
