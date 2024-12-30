@@ -2764,6 +2764,16 @@ section#clocks-two {
     background-size: cover;
     height: 240px;
 }
+
+.features .image-life {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 0px;
+  width: auto;
+  margin-bottom: 5px;
+}
+
 .features .image-two {
     background-position: center center;
     background-repeat: no-repeat;

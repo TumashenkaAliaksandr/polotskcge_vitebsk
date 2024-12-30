@@ -23,6 +23,7 @@
         </div>
       </div>
     </section><!-- End Breadcrumbs Section -->
+    <div class="margin-padding-two"></div>
 
 
     <!-- ======= News Section ======= -->
@@ -170,13 +171,16 @@
                                 <div class="row">
                                     <p>{{ main_zoj_two.description_three | safe }}</p>
                                     <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
-                                        <div class="icon-box-health mt-5 mt-lg-0">
+                                        <div class="description-left icon-box-health mt-5 mt-lg-2">
                                             <p>{{ main_zoj_two.description_two | safe }}</p>
                                         </div>
                                     </div>
-                                    <div class="image col-lg-6 order-1 order-lg-2"
-                                         style='background-image: url({{ main_zoj_two.photo_two.url }});'
-                                         data-aos="zoom-in"></div>
+                                    <div class="image-life col-lg-6 order-1 mt-5 mt-lg-1 order-lg-0">
+                                        <div class="icon-box-health mt-lg-0">
+                                        <a><img src="{{ main_zoj_two.photo_two.url }}" alt=" "
+                                         data-aos="zoom-in"/></a>
+                                        </div>
+                                    </div>
                                 </div>
                             {% endfor %}
 
