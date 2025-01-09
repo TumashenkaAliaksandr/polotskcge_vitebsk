@@ -1286,15 +1286,15 @@ def city_single(request, pk):
     now = timezone.now()
     one_month_ago = now - timedelta(days=30)
 
-    # Фильтруем новости, чтобы исключить те, что старше месяца
-    all_news = ModelNews.objects.filter(is_city=True, pub_date__gte=one_month_ago).order_by('-pub_date')
+    # Получаем город по первичному ключу
+    city_name = get_object_or_404(Cities, pk=pk)
+
+    # Фильтруем новости по текущему городу и дате публикации
+    all_news = ModelNews.objects.filter(is_city=True, city=city_name).order_by('-pub_date')
 
     paginator = Paginator(all_news, 3)  # По 3 новости на страницу
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-
-    city_name = get_object_or_404(Cities, pk=pk)
-    city_page = Cities.objects.filter(pk=pk)
 
     # Получаем данные о погоде
     weather = get_weather()
@@ -1306,11 +1306,48 @@ def city_single(request, pk):
         'monitoring_plan_arkhive': monitoring_plan_arkhive,
         'page_obj': page_obj,
         'city_name': city_name,
-        'city_page': city_page,
         'weather': weather,
     }
 
     return render(request, 'webapp/cities/city_single.html', context=context)
+
+# def city_single(request, pk):
+#     """City Single"""
+#
+#     interactiv = Interactive.objects.all()
+#     city_docum = Cities.objects.filter(pk=pk)
+#     monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
+#     centre_news = CentreNews.objects.all().order_by('-pub_date')
+#
+#     # Получаем текущую дату и дату месяца назад
+#     now = timezone.now()
+#     one_month_ago = now - timedelta(days=30)
+#
+#     # Фильтруем новости, чтобы исключить те, что старше месяца
+#     all_news = ModelNews.objects.filter(is_city=True).order_by('-pub_date')  # pub_date__gte=one_month_ago
+#
+#     paginator = Paginator(all_news, 3)  # По 3 новости на страницу
+#     page_number = request.GET.get('page')
+#     page_obj = paginator.get_page(page_number)
+#
+#     city_name = get_object_or_404(Cities, pk=pk)
+#     city_page = Cities.objects.filter(pk=pk)
+#
+#     # Получаем данные о погоде
+#     weather = get_weather()
+#
+#     context = {
+#         'interactiv': interactiv,
+#         'city_docum': city_docum,
+#         'centre_news': centre_news,
+#         'monitoring_plan_arkhive': monitoring_plan_arkhive,
+#         'page_obj': page_obj,
+#         'city_name': city_name,
+#         'city_page': city_page,
+#         'weather': weather,
+#     }
+#
+#     return render(request, 'webapp/cities/city_single.html', context=context)
 
 
 def archive_single(request, pk):

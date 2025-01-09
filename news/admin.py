@@ -48,7 +48,6 @@ class BlogNewsAdmin(admin.ModelAdmin):
     display_logo_photo.short_description = 'Маленькое Фото'
 
 
-
 @admin.register(Interactive)
 class InteractiveAdmin(admin.ModelAdmin):
     """Администратор интерактивной модели."""
