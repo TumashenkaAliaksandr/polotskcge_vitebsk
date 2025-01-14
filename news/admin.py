@@ -1,7 +1,8 @@
 from django.contrib import admin
-from django.utils.html import format_html
+from django.utils.html import format_html, strip_tags
 from django_summernote.widgets import SummernoteWidget
 
+from webapp.forms import PreviewNewsForm
 from .forms import ModelNewsForm
 from .models import *
 from tinymce.widgets import TinyMCE
@@ -64,22 +65,22 @@ class InteractiveAdmin(admin.ModelAdmin):
     }
 
 
-@admin.register(PreviewNews)
-class PreviewNewsAdmin(admin.ModelAdmin):
-    """Администратор предварительных новостей."""
-    list_display = ('title', 'photo', 'is_popular', 'is_nature_news', 'is_health_news', 'is_sport_news',
-                    'is_economic_news', 'is_main_news')
-    search_fields = ('title',)
-    list_filter = ('title',)
-    fieldsets = (
-        (None, {
-            'fields': ('title', 'photo', 'is_popular', 'is_nature_news', 'is_health_news', 'is_sport_news',
-                    'is_economic_news', 'is_main_news')
-        }),
-    )
-    formfield_overrides = {
-        models.TextField: {'widget': SummernoteWidget}
-    }
+# @admin.register(PreviewNews)
+# class PreviewNewsAdmin(admin.ModelAdmin):
+#     """Администратор предварительных новостей."""
+#     list_display = ('title', 'photo', 'description', 'is_popular', 'is_nature_news', 'is_health_news', 'is_sport_news',
+#                     'is_economic_news', 'is_main_news')
+#     search_fields = ('title',)
+#     list_filter = ('title',)
+#     fieldsets = (
+#         (None, {
+#             'fields': ('title', 'photo', 'is_popular', 'is_nature_news', 'is_health_news', 'is_sport_news',
+#                     'is_economic_news', 'is_main_news')
+#         }),
+#     )
+#     formfield_overrides = {
+#         models.TextField: {'widget': SummernoteWidget}
+#     }
 
 
 @admin.register(Video)
@@ -92,3 +93,15 @@ class VideoAdmin(admin.ModelAdmin):
             'fields': ('title', 'video_file', 'description', 'author', 'category', 'is_featured')
         }),
     )
+
+
+@admin.register(PreviewNews)
+class PreviewNewsAdmin(admin.ModelAdmin):
+    form = PreviewNewsForm
+
+    def clean_name(self, obj):
+        return strip_tags(obj.title)
+
+    clean_name.short_description = 'Title'
+    list_display = ['clean_name']
+

@@ -2,6 +2,7 @@ from django import forms
 from django_summernote.widgets import SummernoteWidget
 from tinymce.widgets import TinyMCE
 
+from news.models import PreviewNews
 from .models import *
 
 
@@ -961,4 +962,14 @@ class EnyPaymentForm(forms.ModelForm):
             'payment_where': SummernoteWidget(),
             'title_qr': SummernoteWidget(),
             'unp': SummernoteWidget(),
+        }
+
+
+class PreviewNewsForm(forms.ModelForm):
+    class Meta:
+        model = PreviewNews
+        fields = '__all__'
+        widgets = {
+            'title': SummernoteWidget(),
+            'description': SummernoteWidget(),
         }
