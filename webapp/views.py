@@ -1281,7 +1281,7 @@ def city_single(request, pk):
     city_docum = Cities.objects.filter(pk=pk)
     monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
     centre_news = CentreNews.objects.all().order_by('-pub_date')
-
+    city_page = Cities.objects.filter(pk=pk)
     # Получаем текущую дату и дату месяца назад
     now = timezone.now()
     one_month_ago = now - timedelta(days=30)
@@ -1306,6 +1306,7 @@ def city_single(request, pk):
         'monitoring_plan_arkhive': monitoring_plan_arkhive,
         'page_obj': page_obj,
         'city_name': city_name,
+        'city_page': city_page,
         'weather': weather,
     }
 
@@ -1355,28 +1356,34 @@ def archive_single(request, pk):
 
     interactiv = Interactive.objects.all()
     city_docum = ModelNews.objects.filter(is_city=True).order_by('-pub_date')
-    city_page = Cities.objects.filter(pk=pk)
+    city_page = Cities.objects.filter(pk=pk).first()  # Получаем город по его ID
     monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
     centre_news = CentreNews.objects.all().order_by('-pub_date')
+    city_name = Cities.objects.filter(pk=pk)
 
     # Получаем все статьи с ненулевыми датами публикации
     all_typical_news = CustomProductsInf.objects.filter(pub_date__isnull=False)
 
-    # Группировка новостей по годам и фильтрация только тех годов, где есть статьи
-    articles_by_year = (
+    # Группировка новостей по годам и городам
+    articles_by_year_and_city = (
         city_docum
+        .filter(city=city_page)  # Фильтруем статьи только для текущего города
         .annotate(year=ExtractYear('pub_date'))
-        .values('year')
+        .values('year')  # Группируем только по годам
         .annotate(count=Count('id'))
         .filter(count__gt=0)  # Фильтруем только те годы, где есть статьи
-        .order_by('-year')
+        .order_by('-year')  # Сортируем по году
     )
 
     # Создание словаря для хранения статей по годам
     articles_dict = {}
-    for year in articles_by_year:
-        year_articles = city_docum.filter(pub_date__year=year['year']).order_by('-pub_date')
-        articles_dict[year['year']] = year_articles
+    for entry in articles_by_year_and_city:
+        year = entry['year']
+        # Получаем статьи для конкретного года и города
+        year_city_articles = city_docum.filter(pub_date__year=year, city=city_page).order_by('-pub_date')
+
+        # Добавляем статьи для конкретного года в словарь
+        articles_dict[year] = year_city_articles
 
     context = {
         'interactiv': interactiv,
@@ -1385,7 +1392,48 @@ def archive_single(request, pk):
         'centre_news': centre_news,
         'monitoring_plan_arkhive': monitoring_plan_arkhive,
         'city_page': city_page,
-        'articles_by_year': articles_dict,  # Передаем статьи по годам
+        'city_name': city_name,
+        'articles_by_year': articles_dict,  # Передаем статьи по годам для текущего города
     }
 
     return render(request, 'webapp/cities/archive_single.html', context=context)
+
+# def archive_single(request, pk):
+#     """City archive single"""
+#
+#     interactiv = Interactive.objects.all()
+#     city_docum = ModelNews.objects.filter(is_city=True).order_by('-pub_date')
+#     city_page = Cities.objects.filter(pk=pk)
+#     monitoring_plan_arkhive = MonitoringPlanArkhive.objects.all()
+#     centre_news = CentreNews.objects.all().order_by('-pub_date')
+#
+#     # Получаем все статьи с ненулевыми датами публикации
+#     all_typical_news = CustomProductsInf.objects.filter(pub_date__isnull=False)
+#
+#     # Группировка новостей по годам и фильтрация только тех годов, где есть статьи
+#     articles_by_year = (
+#         city_docum
+#         .annotate(year=ExtractYear('pub_date'))
+#         .values('year')
+#         .annotate(count=Count('id'))
+#         .filter(count__gt=0)  # Фильтруем только те годы, где есть статьи
+#         .order_by('-year')
+#     )
+#
+#     # Создание словаря для хранения статей по годам
+#     articles_dict = {}
+#     for year in articles_by_year:
+#         year_articles = city_docum.filter(pub_date__year=year['year']).order_by('-pub_date')
+#         articles_dict[year['year']] = year_articles
+#
+#     context = {
+#         'interactiv': interactiv,
+#         'city_docum': city_docum,
+#         'all_typical_news': all_typical_news,
+#         'centre_news': centre_news,
+#         'monitoring_plan_arkhive': monitoring_plan_arkhive,
+#         'city_page': city_page,
+#         'articles_by_year': articles_dict,  # Передаем статьи по годам
+#     }
+#
+#     return render(request, 'webapp/cities/archive_single.html', context=context)

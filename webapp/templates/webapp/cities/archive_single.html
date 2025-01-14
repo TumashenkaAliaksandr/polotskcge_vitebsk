@@ -13,7 +13,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <ol>
                     <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                    {% for city in city_page  %}
+                    {% for city in city_name  %}
                     <li>{{ city.name|safe }}</li>
                     {% endfor %}
                 </ol>
@@ -60,8 +60,10 @@
 
                 <div class="section-title">
                     <h2>{{ main_monitoring_arkhive.description|safe }}</h2>
+                    {% if articles_by_year|length == 0 %}
+                        <p style="color: red;">Пока нет статей</p>
+                    {% endif %}
                 </div>
-
                 <div class="row">
                     <div class="col-lg-3" data-aos="fade-right">
                         <img src="{{ main_monitoring_arkhive.photo.url }}"
@@ -81,6 +83,8 @@
                         <div id="articles-container" class="archive-positions" style="display: none;">
                             <h3>Статьи за <span id="selected-year"></span>:</h3>
                             <ul id="articles-list" class="archive-positions-desc"></ul>
+                            <p id="no-articles-message" style="display: none;">Пока нет статей</p>
+                            <!-- Сообщение об отсутствии статей -->
                         </div>
 
                         <script>
@@ -103,9 +107,11 @@
                                 const articlesList = document.getElementById("articles-list");
                                 const articlesContainer = document.getElementById("articles-container");
                                 const selectedYearText = document.getElementById("selected-year");
+                                const noArticlesMessage = document.getElementById("no-articles-message");
 
                                 // Очищаем предыдущий список статей
                                 articlesList.innerHTML = '';
+                                noArticlesMessage.style.display = "none"; // Скрываем сообщение об отсутствии статей
 
                                 if (selectedYear) {
                                     // Устанавливаем текст выбранного года
@@ -122,11 +128,14 @@
                                             articlesList.appendChild(listItem);
                                         });
                                         articlesContainer.style.display = "block"; // Показываем контейнер со статьями
+                                        noArticlesMessage.style.display = "none"; // Скрываем сообщение
                                     } else {
-                                        articlesContainer.style.display = "none"; // Скрываем, если нет статей
+                                        articlesContainer.style.display = "none"; // Скрываем контейнер со статьями
+                                        noArticlesMessage.style.display = "block"; // Показываем сообщение об отсутствии статей
                                     }
                                 } else {
                                     articlesContainer.style.display = "none"; // Скрываем, если ничего не выбрано
+                                    noArticlesMessage.style.display = "none"; // Скрываем сообщение
                                 }
                             }
                         </script>
@@ -136,6 +145,8 @@
         {% endfor %}
     </section>
     <!-- End Monitoring plan archive Section -->
+
+
 
     <!-- ======= breaking-news Section ======= -->
     <section id="featured-services" class="featured-services main-bg-bogatyrskaya">
