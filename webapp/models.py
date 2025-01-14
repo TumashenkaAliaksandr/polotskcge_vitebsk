@@ -1,3 +1,4 @@
+import django
 from django.utils import timezone
 from tinymce.models import HTMLField
 from django.db import models
@@ -496,6 +497,8 @@ class Quarantine(models.Model):
 
     name_main = models.CharField(max_length=300, default='Тайтл заглавный', blank=True)
     name = models.CharField(max_length=500, default='Тайтл')
+    name_single_main = models.CharField(max_length=1500, default='Тайтл для Новостной страницы')
+    desc_single_main = models.TextField(default='Описание для Новостной страницы', blank=True)
     desc = models.TextField(default='Описание под тайтл', blank=True)
     desc_two = models.TextField(default='СКП', blank=True)
     pdf_file = models.FileField(upload_to='pdfs/', blank=True)
@@ -509,44 +512,6 @@ class Quarantine(models.Model):
     def __str__(self):
         return self.name
 
-
-class EpidemSituations(models.Model):
-
-    name = models.CharField(max_length=1000, default='Тайтл заглавный', blank=True)
-    desc = models.TextField(default='Описание под тайтл')
-
-    class Meta:
-        verbose_name = 'Эпидемиологическая Ситуация'
-        verbose_name_plural = 'Эпидемиологическая Ситуация'
-
-    def __str__(self):
-        return self.name
-
-
-class CountryRegistry(models.Model):
-
-    name = models.CharField(max_length=1000, default='Тайтл заглавный', blank=True)
-    desc = models.TextField(default='Описание под тайтл')
-
-    class Meta:
-        verbose_name = 'Перечень стран неблагополучных по заболеваниям'
-        verbose_name_plural = 'Перечень стран неблагополучных по заболеваниям'
-
-    def __str__(self):
-        return self.name
-
-
-class Resolution(models.Model):
-
-    name = models.CharField(max_length=1000, default='Тайтл заглавный', blank=True)
-    desc = models.TextField(default='Описание под тайтл')
-
-    class Meta:
-        verbose_name = 'Постановление Минздрава (стр карантин)'
-        verbose_name_plural = 'Постановление Минздрава (стр карантин)'
-
-    def __str__(self):
-        return self.name
 
 
 class Organ_Title_desc(models.Model):

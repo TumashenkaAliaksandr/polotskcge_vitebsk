@@ -914,11 +914,12 @@ def sanitary_quarantine_points(request):
     return render(request, 'webapp/activity/sanitary_quarantine_points.html', context=context)
 
 
-def epidemialogic_situations(request):
+def skp(request, pk):
     """Activity - sanitary_quarantine_points template"""
-    evrz_quarantin_inf = EpidemSituations.objects.all()
+    evrz_qua_inf = Quarantine.objects.filter(pk=pk)
     interactiv = Interactive.objects.all()
     typical_inf = CustomProductsInf.objects.all()
+    name_single_main = get_object_or_404(Quarantine, pk=pk)
 
     all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
 
@@ -926,46 +927,11 @@ def epidemialogic_situations(request):
         'interactiv': interactiv,
         'all_typical_news': all_typical_news,
         'typical_inf': typical_inf,
-        'evrz_quarantin_inf': evrz_quarantin_inf,
+        'evrz_qua_inf': evrz_qua_inf,
+        'name_single_main': name_single_main,
     }
 
-    return render(request, 'webapp/activity/epidemialogic_situations.html', context=context)
-
-
-def country_registry(request):
-    """Activity - sanitary_quarantine_points template"""
-    country_reg_inf = CountryRegistry.objects.all()
-    interactiv = Interactive.objects.all()
-    typical_inf = CustomProductsInf.objects.all()
-
-    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
-
-    context = {
-        'interactiv': interactiv,
-        'all_typical_news': all_typical_news,
-        'typical_inf': typical_inf,
-        'country_reg_inf': country_reg_inf,
-    }
-
-    return render(request, 'webapp/activity/country_registry.html', context=context)
-
-
-def resolution(request):
-    """Activity - sanitary_quarantine_points template"""
-    resolution_inf = Resolution.objects.all()
-    interactiv = Interactive.objects.all()
-    typical_inf = CustomProductsInf.objects.all()
-
-    all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
-
-    context = {
-        'interactiv': interactiv,
-        'all_typical_news': all_typical_news,
-        'typical_inf': typical_inf,
-        'resolution_inf': resolution_inf,
-    }
-
-    return render(request, 'webapp/activity/resolution.html', context=context)
+    return render(request, 'webapp/activity/sanitary_quarantine_points_single.html', context=context)
 
 
 def epidemiology(request):

@@ -874,29 +874,6 @@ class QuarantineAdmin(admin.ModelAdmin):
     list_display = ['clean_name']
 
 
-@admin.register(EpidemSituations)
-class EpidemSituationsAdmin(admin.ModelAdmin):
-    form = EpidemialSituationsForm
-
-    # Кастомное поле для отображения очищенного текста
-    def clean_name(self, obj):
-        return strip_tags(obj.name)
-
-    clean_name.short_description = 'Name'
-    list_display = ['clean_name']
-
-@admin.register(CountryRegistry)
-class CountryRegistryAdmin(admin.ModelAdmin):
-    form = CountryRegistryForm
-
-    # Кастомное поле для отображения очищенного текста
-    def clean_name(self, obj):
-        return strip_tags(obj.name)
-
-    clean_name.short_description = 'Name'
-    list_display = ['clean_name']
-
-
 @admin.register(Healthy)
 class HealthyAdmin(admin.ModelAdmin):
     form = HealthyForm
@@ -912,18 +889,6 @@ class HealthyAdmin(admin.ModelAdmin):
 @admin.register(HealthyTitle)
 class HealthyTitleAdmin(admin.ModelAdmin):
     form = HealthyTitleForm
-
-    # Кастомное поле для отображения очищенного текста
-    def clean_name(self, obj):
-        return strip_tags(obj.name)
-
-    clean_name.short_description = 'Name'
-    list_display = ['clean_name']
-
-
-@admin.register(Resolution)
-class ResolutionAdmin(admin.ModelAdmin):
-    form = ResolutionForm
 
     # Кастомное поле для отображения очищенного текста
     def clean_name(self, obj):

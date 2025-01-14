@@ -62,7 +62,7 @@
             {% for main_quarantin_inf in evrz_quarantin_inf %}
                 {% if forloop.first %}
                     <div class="section-title">
-                        <p>{{ main_quarantin_inf.name_main|default:main_quarantin_inf.name|safe }}</p>
+                        <h2>{{ main_quarantin_inf.name_main|default:main_quarantin_inf.name|safe }}</h2>
                     </div>
                 {% endif %}
             {% endfor %}
@@ -77,10 +77,13 @@
                 {% for main_quarantin_inf in evrz_quarantin_inf %}
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                         <div class="icon-two"><i class="{{ main_quarantin_inf.icon_class }}"></i></div>
-                        <h4 class="title-two"><a href="{{ main_quarantin_inf.link }}">{{ main_quarantin_inf.name|safe }}</a></h4>
-                        <a href="{{ main_quarantin_inf.link }}"><p class="description">{{ main_quarantin_inf.desc|safe }}</p></a>
+                        <h4 class="title-two"><a href="{% url 'webapp:skp' pk=main_quarantin_inf.id %}">{{ main_quarantin_inf.name|safe }}</a></h4>
+                        <a href="{% url 'webapp:skp' pk=main_quarantin_inf.id %}">
+                            <p class="description">{{ main_quarantin_inf.desc|safe }}</p>
+                        </a>
                     </div>
                 {% endfor %}
+
             </div>
         </div>
     </section>

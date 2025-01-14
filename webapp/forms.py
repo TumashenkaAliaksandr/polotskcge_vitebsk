@@ -293,32 +293,14 @@ class EconimicSouz_Form(forms.ModelForm):
 class QuarantineForm(forms.ModelForm):
     name_main = forms.CharField(widget=SummernoteWidget())
     name = forms.CharField(widget=SummernoteWidget())
+    name_single_main = forms.CharField(widget=SummernoteWidget())
+    desc_single_main = forms.CharField(widget=SummernoteWidget())
     desc = forms.CharField(widget=SummernoteWidget())
     desc_two = forms.CharField(widget=SummernoteWidget())
 
     class Meta:
         model = EconimicSouz
-        fields = ('name_main', 'name', 'desc', 'desc_two', 'pdf_file', 'link', 'icon_class')
-
-
-class EpidemialSituationsForm(forms.ModelForm):
-    class Meta:
-        model = EpidemSituations
-        fields = '__all__'
-        widgets = {
-            'name': SummernoteWidget(),
-            'desc': SummernoteWidget(),
-        }
-
-
-class CountryRegistryForm(forms.ModelForm):
-    class Meta:
-        model = CountryRegistry
-        fields = '__all__'
-        widgets = {
-            'name': SummernoteWidget(),
-            'desc': SummernoteWidget(),
-        }
+        fields = ('name_main', 'name', 'desc', 'desc_two', 'name_single_main', 'desc_single_main', 'pdf_file', 'link', 'icon_class')
 
 
 class HealthyTitleForm(forms.ModelForm):
@@ -338,17 +320,6 @@ class HealthyForm(forms.ModelForm):
         widgets = {
             'name': SummernoteWidget(),
             'name_taitle': SummernoteWidget(),
-        }
-
-
-
-class ResolutionForm(forms.ModelForm):
-    class Meta:
-        model = Resolution
-        fields = '__all__'
-        widgets = {
-            'name': SummernoteWidget(),
-            'desc': SummernoteWidget(),
         }
 
 

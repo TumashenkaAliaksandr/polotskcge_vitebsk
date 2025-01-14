@@ -8,7 +8,7 @@
 
     <!-- ======= Breadcrumbs Section ======= -->
     <!-- pagebanner -->
-    <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_earth_man.jpg' %}{% endif %}')">
+    <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_book_of_comments.jpg' %}{% endif %}')">
     </section>
     <!-- End Pagebanner -->
     <section class="breadcrumbs_contacts">
@@ -17,7 +17,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <ol>
                     <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                    <li>Реестр стран</li>
+                    <li>{{ name_single_main|safe }}</li>
                 </ol>
             </div>
         </div>
@@ -58,17 +58,20 @@
     <!-- EVROZES Title and desc Section -->
     <section id="featured-services-two" class="featured-services-two main-bg-carantin">
         <div class="container" data-aos="fade-up">
-            {% for main_country_inf in country_reg_inf %}
+            {% for main_resolution_inf in evrz_qua_inf %}
                 {% if forloop.first %}
                     <div class="section-title">
-                        <p>{{ main_country_inf.name|default:main_country_inf.name|safe }}</p>
+                        <h2>{{ main_resolution_inf.name|default:main_resolution_inf.name|safe }}</h2>
+                    </div>
+                    <div class="description">
+                    <p>{{ main_resolution_inf.name_single_main|default:main_resolution_inf.name_single_main|safe }}</p>
                     </div>
                 {% endif %}
             {% endfor %}
             <div class="row">
-                {% for main_country_inf in country_reg_inf %}
+                {% for main_resolution_inf in evrz_qua_inf %}
                     <div class="description" data-aos="fade-up" data-aos-delay="100">
-                        <p>{{ main_country_inf.desc|safe }}</p>
+                        <p>{{ main_resolution_inf.desc_single_main|safe }}</p>
                     </div>
                 {% endfor %}
             </div>

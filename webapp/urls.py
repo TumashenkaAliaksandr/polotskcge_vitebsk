@@ -56,9 +56,6 @@ urlpatterns = [
     path('sanitary_quarantine_points/', sanitary_quarantine_points, name='sanitary_quarantine_points'),
     path('epidemiology/', epidemiology, name='epidemiology'),
     # path('epidemiology_single/<int:pk>/', epidemiology_typical, name='epidemiology_typical'),
-    path('epidemialogic-situations/', epidemialogic_situations, name='epidemialogic-situations'),
-    path('country_registry/', country_registry, name='country_registry'),
-    path('resolution/', resolution, name='resolution'),
     path('ticks/', ticks, name='ticks'),
     path('immunoprophylaxis/', immunoprophylaxis, name='immunoprophylaxis'),
     path('immunoprophylaxis_single/<int:pk>/', immunoprophylaxis_typical, name='immunoprophylaxis_typical'),
@@ -71,6 +68,7 @@ urlpatterns = [
     path('contacts/', contacts, name='contacts'),
     path('city/<int:pk>/', city_single, name='city_single'),
     path('archive/<int:pk>/', archive_single, name='archive_single'),
+    path('skp/<int:pk>/', skp, name='skp'),
     ]
 
 
