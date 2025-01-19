@@ -737,6 +737,7 @@ def typical_violations_single(request, pk):
     """Views for News details"""
     news_typical = ControlNadzorTipical.objects.filter(pk=pk)
     interactiv = Interactive.objects.all()
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
@@ -760,6 +761,7 @@ def typical_violations_single(request, pk):
         'title_desc_queans': title_desc_queans,
         'all_typical_news': all_typical_news,
         'typical_inf': typical_inf,
+        'centre_news': centre_news,
     }
     return render(request, 'webapp/activity/single_typical.html', context=context)
 
