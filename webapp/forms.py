@@ -623,16 +623,25 @@ class ControlNadzorTipicalForm(forms.ModelForm):
         model = ControlNadzorTipical
         fields = '__all__'
         widgets = {
-            'number': SummernoteWidget(),
-            'objects_control': SummernoteWidget(),
-            'typical_violations': SummernoteWidget(),
-            'name_typical_violations': SummernoteWidget(),
             'description': SummernoteWidget(),
             'description_two': SummernoteWidget(),
             'description_three': SummernoteWidget(),
             'name_typical': SummernoteWidget(),
             'name': SummernoteWidget(),
         }
+
+class ControlNadzorRowForm(forms.ModelForm):
+    class Meta:
+        model = ControlNadzorRow
+        fields = '__all__'
+        widgets = {
+            'control_nadzor': SummernoteWidget(),
+            'number': SummernoteWidget(),
+            'objects_control': SummernoteWidget(),
+            'typical_violations': SummernoteWidget(),
+            'name_typical_violations': SummernoteWidget(),
+        }
+
 
 
 class CNadTipicalNameForm(forms.ModelForm):

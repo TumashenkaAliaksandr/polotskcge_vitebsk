@@ -994,17 +994,32 @@ class BlanksInventory(models.Model):
         return self.name
 
 
-class ControlNadzorTipical(models.Model):
+# class ControlNadzorTipical(models.Model):
+#
+#     name = models.CharField(max_length=350, default='Тайтл для админки')
+#     name_typical = models.CharField(max_length=350, default='Тайтл')
+#     description = models.TextField(default='Заголовок таблицы - 1')
+#     description_two = models.TextField(default='Заголовок таблицы - 2')
+#     description_three = models.TextField(default='Заголовок таблицы - 3')
+#     number = models.CharField(max_length=350, default='Номер строки(ячейки в таблице)')
+#     objects_control = models.TextField(default='Объекты контроля')
+#     typical_violations = models.TextField(default='Типичные нарушения')
+#     name_typical_violations = models.TextField(default='Наименования технических регламентов')
+#     pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
+#
+#     class Meta:
+#         verbose_name = 'Контрольно надзорная деятельность Типичные нарушения(таблица)'
+#         verbose_name_plural = 'Контрольно надзорная деятельность Типичные нарушения(таблица)'
+#
+#     def __str__(self):
+#         return self.name
 
+class ControlNadzorTipical(models.Model):
     name = models.CharField(max_length=350, default='Тайтл для админки')
     name_typical = models.CharField(max_length=350, default='Тайтл')
     description = models.TextField(default='Заголовок таблицы - 1')
     description_two = models.TextField(default='Заголовок таблицы - 2')
     description_three = models.TextField(default='Заголовок таблицы - 3')
-    number = models.CharField(max_length=350, default='Номер строки(ячейки в таблице)')
-    objects_control = models.TextField(default='Объекты контроля')
-    typical_violations = models.TextField(default='Типичные нарушения')
-    name_typical_violations = models.TextField(default='Наименования технических регламентов')
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
 
     class Meta:
@@ -1013,6 +1028,18 @@ class ControlNadzorTipical(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ControlNadzorRow(models.Model):
+    control_nadzor = models.ForeignKey(ControlNadzorTipical, related_name='rows', on_delete=models.CASCADE)
+    number = models.CharField(max_length=350, default='Номер строки(ячейки в таблице)')
+    objects_control = models.TextField(default='Объекты контроля')
+    typical_violations = models.TextField(default='Типичные нарушения')
+    name_typical_violations = models.TextField(default='Наименования технических регламентов')
+
+    def __str__(self):
+        return f"{self.control_nadzor.name} - {self.number}"
+
 
 
 class CNadTipicalName(models.Model):
