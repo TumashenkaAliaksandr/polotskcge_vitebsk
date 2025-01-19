@@ -740,7 +740,11 @@ def typical_violations_single(request, pk):
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
-    typical_inf = ControlNadzorTipical.objects.all()
+    # Получаем только одну запись по pk
+    try:
+        typical_inf = ControlNadzorTipical.objects.get(pk=pk)
+    except ControlNadzorTipical.DoesNotExist:
+        typical_inf = None
 
     all_typical_news = ControlNadzorTipical.objects.all().order_by('-pub_date')
 

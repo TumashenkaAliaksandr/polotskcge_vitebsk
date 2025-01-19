@@ -2355,6 +2355,7 @@ section#clocks-two {
     border-radius: 8px;
     z-index: 1;
     margin-bottom: 5%; /*добавил отступ в блоке инф анал биллютень*/
+    width: 100%;
 }
 
 .featured-services .icon-box::before {

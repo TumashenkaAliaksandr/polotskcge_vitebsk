@@ -59,43 +59,42 @@
     <section id="featured-services" class="featured-services main-bg-farm">
         <div class="container book_info" data-aos="fade-up">
             <div class="row">
-                {% for main_typical_title in typical_inf %}
+                {% if typical_inf %}
                     <div class="section-title">
-                        <h2>{{ main_typical_title.name|safe }}</h2>
+                        <h2>{{ typical_inf.name|safe }}</h2>
                     </div>
-                {% endfor %}
-            </div>
-            <div class="row">
-                <section class="hotline">
-                    <div class="table-info">
-                        <div class="box" data-aos="fade-up" data-aos-delay="300">
-                            {% for main_typical_inf in typical_inf %}
+                    <section class="hotline">
+                        <div class="table-info">
+                            <div class="box" data-aos="fade-up" data-aos-delay="300">
                                 <table class="iksweb">
                                     <thead>
                                     <tr>
                                         <th>№</th>
-                                        <th>{{ main_typical_inf.description|safe }}</th>
-                                        <th>{{ main_typical_inf.description_two|safe }}</th>
-                                        <th>{{ main_typical_inf.description_three|safe }}</th>
+                                        <th>{{ typical_inf.description|safe }}</th>
+                                        <th>{{ typical_inf.description_two|safe }}</th>
+                                        <th>{{ typical_inf.description_three|safe }}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td>{{ main_typical_inf.number|safe }}</td>
-                                        <td>{{ main_typical_inf.objects_control|safe }}</td>
-                                        <td>{{ main_typical_inf.typical_violations|safe }}</td>
-                                        <td>{{ main_typical_inf.name_typical_violations|safe }}</td>
+                                        <td>{{ typical_inf.number|safe }}</td>
+                                        <td>{{ typical_inf.objects_control|safe }}</td>
+                                        <td>{{ typical_inf.typical_violations|safe }}</td>
+                                        <td>{{ typical_inf.name_typical_violations|safe }}</td>
                                     </tr>
                                     </tbody>
                                 </table>
-                            {% endfor %}
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                {% else %}
+                    <p>Информация не найдена.</p>
+                {% endif %}
             </div>
         </div>
     </section>
     <!-- End Hotline Title and desc Section -->
+
 
     <!-- breaking-news -->
     <div id="single" class="single main-bg-farm">
