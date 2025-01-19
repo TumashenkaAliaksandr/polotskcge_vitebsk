@@ -62,76 +62,15 @@
                                     <div class="section-title-health">
                                         <h2>{{ main_zoj.name }}</h2>
                                         <p>{{ main_zoj.description | safe }}</p>
+                                        <h2>{{ main_zoj.name_two }}</h2>
                                     </div>
                                 </div>
                             </section>
                     {% endfor %}
-
-                    <div class="breaking-news-grids-health">
-                        <div class="col-md-8 breaking-news-grid-left">
-                            <div class="wmuSlider example1">
-                                {% for main_preview in preview %}
-                                    <div class="wmuSliderWrapper">
-                                        <article style="position: absolute; width: 100%; opacity: 0;">
-                                            <div class="banner-wrap">
-                                                <div class="baner-beaking"
-                                                     style="background-image: url('{{ main_preview.photo.url }}');">
-                                                    <h3>{{ main_preview.title }}</h3>
-                                                    {{ main_preview.description | safe }}
-                                                </div>
-                                            </div>
-                                        </article>
-                                    </div>
-                                {% endfor %}
-                            </div>
-                            <script src="{% static 'js/jquery.wmuSlider.js' %}"></script>
-                            <script>
-                                $('.example1').wmuSlider();
-                            </script>
-                        </div>
-
-                        <div class="col-md-4 breaking-news-grid-right">
-                            <h3>Свежие новости</h3>
-                            <ul>
-                                {% for main_litle_news in model_blog_main|slice:":3" %}
-                                    <li>
-                                        <div class="breaking-news-grid-right-grids">
-                                            <div class="breaking-news-grid-right-gridl img-fixed-size-three">
-                                                <a href="{% url 'news:single' pk=main_litle_news.id %}"><img
-                                                        src="{{ main_litle_news.logo_photo.url }}" alt=" "
-                                                        class="img-responsive"/></a>
-                                            </div>
-                                            <div class="breaking-news-grid-right-gridr">
-                                                <h4>
-                                                    <a href="{% url 'news:single' pk=main_litle_news.id %}">
-                                                        {{ main_litle_news.title|wordwrap:30|truncatechars_html:58 }}
-                                                    </a>
-                                                </h4>
-                                                <ul>
-                                                    <li><a href="{% url 'news:single' pk=main_litle_news.id %}"><span
-                                                            class="fa fa-user-doctor"
-                                                            aria-hidden="true"></span> {{ main_litle_news.author }}
-                                                        <label>|</label> {{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                        <div class="clearfix"></div>
-
-
                         <!-- ======= About health Section ======= -->
                         {% for main_zoj in zoj %}
                             <section id="about" class="about main-bg-health_days">
                                 <div class="container" data-aos="fade-up">
-
-                                    <div class="section-title-health">
-                                        <h2>{{ main_zoj.name_two }}</h2>
-                                    </div>
 
                                     <div class="row">
                                         <div class="col-lg-6" data-aos="fade-right">
