@@ -1145,25 +1145,27 @@ class ServicesLawyerTipical(models.Model):
         return self.name
 
 
-class ImmunoprophylaxisInf(models.Model):
-
-    name = models.CharField(max_length=350, default='Тайтл')
-    name_page = models.CharField(max_length=350, default='Тайтл для страницы имунопрофилактика')
-    description = models.TextField(default='Описание')
-    pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
-
-    class Meta:
-        verbose_name = 'Иммунопрофилактика (название и краткое описание статьи)'
-        verbose_name_plural = 'Иммунопрофилактика (название и краткое описание статьи)'
-
-    def __str__(self):
-        return self.name
+# class ImmunoprophylaxisInf(models.Model):
+#
+#     name = models.CharField(max_length=350, default='Тайтл')
+#     name_page = models.CharField(max_length=350, default='Тайтл для страницы имунопрофилактика')
+#     description = models.TextField(default='Описание')
+#     pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
+#
+#     class Meta:
+#         verbose_name = 'Иммунопрофилактика (название и краткое описание статьи)'
+#         verbose_name_plural = 'Иммунопрофилактика (название и краткое описание статьи)'
+#
+#     def __str__(self):
+#         return self.name
 
 
 class ImmunoprophylaxisTipical(models.Model):
 
     name = models.CharField(max_length=350, default='Тайтл')
-    description = models.TextField(default='Описание')
+    name_block = models.CharField(max_length=350, default='Тайтл для гл.страницы имунопрофилактика')
+    desc_main_page = models.CharField(max_length=400, default='Описание для гл.страницы имунопрофилактика (в блок)')
+    description_single = models.TextField(default='Описание')
     photo = models.ImageField(upload_to='Immunoprofilactixs/', null=True, blank=True)
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
 

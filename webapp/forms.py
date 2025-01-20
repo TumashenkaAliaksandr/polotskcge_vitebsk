@@ -730,15 +730,15 @@ class ContactInfoHadForm(forms.ModelForm):
 
 
 
-class ImmunoprophylaxisInfForm(forms.ModelForm):
-    class Meta:
-        model = ImmunoprophylaxisInf
-        fields = '__all__'
-        widgets = {
-            'description': SummernoteWidget(),
-            'name': SummernoteWidget(),
-            'name_page': SummernoteWidget(),
-        }
+# class ImmunoprophylaxisInfForm(forms.ModelForm):
+#     class Meta:
+#         model = ImmunoprophylaxisInf
+#         fields = '__all__'
+#         widgets = {
+#             'description': SummernoteWidget(),
+#             'name': SummernoteWidget(),
+#             'name_page': SummernoteWidget(),
+#         }
 
 
 
@@ -748,7 +748,9 @@ class ImmunoprophylaxisTipicalForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'name': SummernoteWidget(),
-            'description': SummernoteWidget(),
+            'name_block': SummernoteWidget(),
+            'desc_main_page': SummernoteWidget(),
+            'description_single': SummernoteWidget(),
         }
 
 

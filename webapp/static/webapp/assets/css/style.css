@@ -3576,6 +3576,10 @@ section#clocks-two {
   height: auto;
   margin: -7% 70%;
 }
+.img-fix-immuno {
+  max-width: 21%;
+  height: auto;
+}
 
 .fix-years {
   max-width: 30%;

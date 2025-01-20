@@ -999,7 +999,7 @@ def immunoprophylaxis(request):
     ansvers = Answer.objects.all()
     title_desc_queans = Question_Ansver_title.objects.all()
     centre_news = CentreNews.objects.all().order_by('-pub_date')
-    all_typical_news = ImmunoprophylaxisInf.objects.all().order_by('-pub_date')
+    all_typical_news = ImmunoprophylaxisTipical.objects.all().order_by('-pub_date')
 
     # Получаем данные о погоде
     weather = get_weather()
@@ -1026,7 +1026,7 @@ def immunoprophylaxis_typical(request, pk):
     title_desc_queans = Question_Ansver_title.objects.all()
     typical_inf = ImmunoprophylaxisTipical.objects.filter(pk=pk)
     centre_news = CentreNews.objects.all().order_by('-pub_date')
-    all_typical_news = ImmunoprophylaxisInf.objects.all().order_by('-pub_date')
+    # all_typical_news = ImmunoprophylaxisInf.objects.all().order_by('-pub_date')
 
     # Получаем данные о погоде
     weather = get_weather()
@@ -1038,7 +1038,7 @@ def immunoprophylaxis_typical(request, pk):
         'questions': questions,
         'ansvers': ansvers,
         'title_desc_queans': title_desc_queans,
-        'all_typical_news': all_typical_news,
+        # 'all_typical_news': all_typical_news,
         'typical_inf': typical_inf,
         'centre_news': centre_news,
     }
