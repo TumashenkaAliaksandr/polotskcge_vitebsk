@@ -623,6 +623,7 @@ class ControlNadzorTipicalForm(forms.ModelForm):
         model = ControlNadzorTipical
         fields = '__all__'
         widgets = {
+            'description_for_all': SummernoteWidget(),
             'description': SummernoteWidget(),
             'description_two': SummernoteWidget(),
             'description_three': SummernoteWidget(),
