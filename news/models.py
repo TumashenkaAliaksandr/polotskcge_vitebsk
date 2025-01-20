@@ -1,5 +1,6 @@
 from django.db import models
 from django.conf import settings
+from django.urls import reverse
 from tinymce.models import HTMLField
 
 from webapp.models import Cities
@@ -35,6 +36,9 @@ class ModelNews(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('news:single', kwargs={'pk': self.pk})  # Замените 'news_detail' на имя вашего URL-шаблона
 
     class Meta:
         verbose_name = 'Главная модель Новости'
