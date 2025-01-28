@@ -1018,9 +1018,6 @@ class ControlNadzorTipical(models.Model):
     name = models.CharField(max_length=350, default='Тайтл для админки')
     name_typical = models.CharField(max_length=350, default='Тайтл')
     description_for_all = models.TextField(default='Описание для всего')
-    description = models.TextField(default='Заголовок таблицы - 1')
-    description_two = models.TextField(default='Заголовок таблицы - 2')
-    description_three = models.TextField(default='Заголовок таблицы - 3')
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
 
     class Meta:

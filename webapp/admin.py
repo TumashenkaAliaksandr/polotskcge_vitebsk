@@ -735,15 +735,9 @@ class BanksInventoryAdmin(admin.ModelAdmin):
     list_display = ['clean_name']
 
 
-class ControlNadzorRowInline(admin.TabularInline):
-    model = ControlNadzorRow
-    form = ControlNadzorRowForm
-    extra = 1  # Количество пустых форм для добавления новых строк
-
 @admin.register(ControlNadzorTipical)
 class ControlNadzorAdmin(admin.ModelAdmin):
-    form = ControlNadzorTipicalForm
-    inlines = [ControlNadzorRowInline]  # Добавляем inline-класс для строк
+    form = ControlNadzorTipicalForm # Добавляем inline-класс для строк
 
     # Кастомное поле для отображения очищенного текста
     def clean_name(self, obj):
