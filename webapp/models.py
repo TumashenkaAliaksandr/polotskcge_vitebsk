@@ -77,8 +77,8 @@ class AnticorrTitle(models.Model):
     desc_anticorr = models.CharField(max_length=500, default='Описание под тайтл Анткоррупция')
 
     class Meta:
-        verbose_name = '👮📌 Антикоррупция ТАЙТЛ'
-        verbose_name_plural = '👮📌 Антикоррупция ТАЙТЛ'
+        verbose_name = '👮📌 Антикоррупция ТАЙТЛ  🇹 '
+        verbose_name_plural = '👮📌 Антикоррупция ТАЙТЛ  🇹 '
 
     def __str__(self):
         return self.name
@@ -152,8 +152,8 @@ class Services_title(models.Model):
     description = models.TextField(default='Service Description')
 
     class Meta:
-        verbose_name = '🛠️📌 Тайтл Услуги (блок с gif иконками, на стр.услуг и на главной стр.)'
-        verbose_name_plural = '🛠️📌 Тайтл Услуги (блок с gif иконками, на стр.услуг и на главной стр.)'
+        verbose_name = '🛠️📌 Тайтл Услуги (блок с gif иконками, на стр.услуг и на главной стр.) 🇹 '
+        verbose_name_plural = '🛠️📌 Тайтл Услуги (блок с gif иконками, на стр.услуг и на главной стр.)  🇹 '
 
     def __str__(self):
         return self.name
@@ -193,8 +193,8 @@ class AboutUs(models.Model):
     icon_class_li_five = models.CharField(max_length=100, default='bi bi-check-circle')  # Для пятого элемента списка
 
     class Meta:
-        verbose_name = '🏥ℹ️ Об Учреждении (блок с фото на гл.стр с описанием)'
-        verbose_name_plural = '🏥ℹ️ Об Учреждении (блок с фото на гл.стр с описанием)'
+        verbose_name = '🏥ℹ️ Об Учреждении (блок с фото на гл.стр с описанием) 🇩'
+        verbose_name_plural = '🏥ℹ️ Об Учреждении (блок с фото на гл.стр с описанием) 🇩'
 
     def __str__(self):
         return self.name
@@ -228,8 +228,8 @@ class GeneralInfo(models.Model):
     description = HTMLField(max_length=200, default='Описание')
 
     class Meta:
-        verbose_name = '💹📌 График Приёма Заголовок и описание'
-        verbose_name_plural = '💹📌 График Приёма Заголовок и описание'
+        verbose_name = '💹📌 График Приёма Заголовок и описание  🇹 | 🇩'
+        verbose_name_plural = '💹📌 График Приёма Заголовок и описание  🇹 | 🇩'
 
     def __str__(self):
         return self.title
@@ -247,8 +247,8 @@ class ReceptionHours(models.Model):
                                         blank=True, null=True, default='Основная Инф')
 
     class Meta:
-        verbose_name = '💹📌 Часы приема (таблица)'
-        verbose_name_plural = '💹📌 Часы приема (таблица)'
+        verbose_name = '💹📌 Часы приема (таблица) 𝄜'
+        verbose_name_plural = '💹📌 Часы приема (таблица) 𝄜'
 
     def __str__(self):
         return self.name
@@ -275,8 +275,8 @@ class Studies(models.Model):
         return self.employees_school or ''
 
     class Meta:
-        verbose_name = '🙎‍♂️💳📌 Платные Услуги ФИЗ ЛИЦАМ - осмотр работающих (табл 1)'
-        verbose_name_plural = '🙎‍♂️💳📌 Платные Услуги ФИЗ ЛИЦАМ - осмотр работающих (табл 1)'
+        verbose_name = '🧑‍🔬 Платные Услуги ФИЗ ЛИЦАМ - осмотр работающих таб1 𝄜'
+        verbose_name_plural = '🧑‍🔬 Платные Услуги ФИЗ ЛИЦАМ - осмотр работающих (табл 1) 𝄜'
 
     def __str__(self):
         return self.name
@@ -308,8 +308,8 @@ class WaterQualitySafety(models.Model):
         return self.standart_plus or ''
 
     class Meta:
-        verbose_name = '🙎‍♂️💳📌 Лабораторные исследования воды 🧪 на качество и безопасность ⚛︎🧬🧫 (ФИЗ ЛИЦАМ табл 2)'
-        verbose_name_plural = '🙎‍♂️💳📌 Лабораторные исследования воды 🧪 на качество и безопасность ⚛︎🧬🧫 (ФИЗ ЛИЦАМ табл 2)'
+        verbose_name = '🧑‍🔬 Лабораторные исследования воды 🧪 на качество ⚛︎🧬🧫'
+        verbose_name_plural = '🧑‍🔬 Лабораторные исследования воды 🧪 на качество и безопасность ⚛︎🧬🧫 (ФИЗ ЛИЦАМ табл 2) 𝄜'
 
     def __str__(self):
         return self.name
@@ -326,8 +326,8 @@ class LaboratoryFruitVegetable(models.Model):
         return self.cost or ''
 
     class Meta:
-        verbose_name = '🙎‍♂️💳📌 Лабораторные исследования плодоовощной 🥗 продукции (ФИЗ ЛИЦАМ табл 3)'
-        verbose_name_plural = '🙎‍♂️💳📌 Лабораторные исследования плодоовощной 🥗 продукции (ФИЗ ЛИЦАМ табл 3)'
+        verbose_name = '🧑‍🔬 Лабораторные исследования плод/овощ 🥗 продукции'
+        verbose_name_plural = '🧑‍🔬 Лабораторные исследования плодоовощной 🥗 продукции (ФИЗ ЛИЦАМ табл 3) 𝄜'
 
     def __str__(self):
         return self.name
@@ -341,8 +341,8 @@ class HotlineHours(models.Model):
     date_hotline = models.CharField(max_length=100, default='Дата Проведения прям линии')
 
     class Meta:
-        verbose_name = '☎️♨️ Прямая линия (таблица)'
-        verbose_name_plural = '☎️♨️ Прямая линия (таблица)'
+        verbose_name = '☎️♨️ Прямая линия (таблица) 𝄜'
+        verbose_name_plural = '☎️♨️ Прямая линия (таблица) 𝄜'
 
     def __str__(self):
         return self.name
@@ -353,8 +353,8 @@ class HotlineHours_Title(models.Model):
     description = models.CharField(max_length=300, default='График проведения "прямой телефонной линии" в Государственном учреждении "Полоцкий зональный центр гигиены и эпидемиологии"')
 
     class Meta:
-        verbose_name = '☎️♨️ Прямая линия тайтл и описание'
-        verbose_name_plural = '☎️♨️ Прямая линия тайтл и описание'
+        verbose_name = '☎️♨️ Прямая линия тайтл и описание  🇹 | 🇩'
+        verbose_name_plural = '☎️♨️ Прямая линия тайтл и описание  🇹 | 🇩'
 
     def __str__(self):
         return self.name
@@ -365,8 +365,8 @@ class HotlineHours_Title_desc(models.Model):
     description = models.CharField(max_length=3000, default='Описание проведения')
 
     class Meta:
-        verbose_name = '☎️♨️ Прямая линия Порядок проведения (тайтл и описание)'
-        verbose_name_plural = '☎️♨️ Прямая линия Порядок проведения (тайтл и описание)'
+        verbose_name = '☎️♨️ Прямая линия Порядок проведения (тайтл и описание)  🇹 | 🇩'
+        verbose_name_plural = '☎️♨️ Прямая линия Порядок проведения (тайтл и описание)  🇹 | 🇩'
 
     def __str__(self):
         return self.name
@@ -377,8 +377,8 @@ class Electronic_appeals_Title_desc(models.Model):
     description = models.CharField(max_length=3000, default='Описание проведения')
 
     class Meta:
-        verbose_name = '👨‍💻 Электронные Обращения (тайтл и описание)'
-        verbose_name_plural = '👨‍💻 Электронные Обращения (тайтл и описание)'
+        verbose_name = '👨‍💻 Электронные Обращения (тайтл и описание)  🇹 | 🇩'
+        verbose_name_plural = '👨‍💻 Электронные Обращения (тайтл и описание)  🇹 | 🇩'
 
     def __str__(self):
         return self.name
@@ -415,8 +415,8 @@ class MaintenanceSchedule(models.Model):
     description = models.CharField(max_length=3000, default='Большое описание')
 
     class Meta:
-        verbose_name = '📅⏰ Порядок и Сроки Обжалования (тайтл и описание)'
-        verbose_name_plural = '📅⏰ Порядок и Сроки Обжалования (тайтл и описание)'
+        verbose_name = '📅⏰ Порядок и Сроки Обжалования (тайтл и описание)  🇹 | 🇩'
+        verbose_name_plural = '📅⏰ Порядок и Сроки Обжалования (тайтл и описание)  🇹 | 🇩'
 
     def __str__(self):
         return self.name
@@ -427,8 +427,8 @@ class Duties(models.Model):
     description = models.CharField(max_length=7000, default='Большое описание')
 
     class Meta:
-        verbose_name = '⚖️ Права и обязанности (тайтл и описание)'
-        verbose_name_plural = '⚖️ Права и обязанности (тайтл и описание)'
+        verbose_name = '⚖️ Права и обязанности (тайтл и описание)  🇹 | 🇩'
+        verbose_name_plural = '⚖️ Права и обязанности (тайтл и описание)  🇹 | 🇩'
 
     def __str__(self):
         return self.name
@@ -458,8 +458,8 @@ class MainAppeals(models.Model):
     appeals_desc_four = models.CharField(max_length=7000, default='Описание 3')
 
     class Meta:
-        verbose_name = '📧📢 Обращения главная стр.(тайтл и описание)'
-        verbose_name_plural = '📧📢 Обращения главная стр.(тайтл и описание)'
+        verbose_name = '📧📢 Обращения главная стр.(тайтл и описание)  🇹 | 🇩'
+        verbose_name_plural = '📧📢 Обращения главная стр.(тайтл и описание)  🇹 | 🇩'
 
     def __str__(self):
         return self.name
@@ -506,8 +506,8 @@ class Quarantine(models.Model):
     icon_class = models.CharField(max_length=100, default='fas fa-heartbeat')
 
     class Meta:
-        verbose_name = 'Санитарно - Карантинные пункты'
-        verbose_name_plural = 'Санитарно - Карантинные пункты'
+        verbose_name = '🏥😷 Санитарно - Карантинные пункты (блоки )'
+        verbose_name_plural = '🏥😷 Санитарно - Карантинные пункты (блоки)'
 
     def __str__(self):
         return self.name
@@ -519,8 +519,8 @@ class Organ_Title_desc(models.Model):
     description = models.CharField(max_length=3000, default='Описание')
 
     class Meta:
-        verbose_name = 'Вышестоящий орган тайтл и описание'
-        verbose_name_plural = 'Вышестоящий орган тайтл и описание'
+        verbose_name = '🧑‍⚖️ Вышестоящий орган (тайтл и описание)  🇹 | 🇩'
+        verbose_name_plural = '🧑‍⚖️ Вышестоящий орган (тайтл и описание)  🇹 | 🇩'
 
     def __str__(self):
         return self.name
@@ -533,8 +533,8 @@ class Up_Organ(models.Model):
     reception_time = models.CharField(max_length=200, default='Время Приема')
 
     class Meta:
-        verbose_name = 'Вышестоящий орган данные'
-        verbose_name_plural = 'Вышестоящий орган данные'
+        verbose_name = '🧑‍⚖️ Вышестоящий орган 𝄜 (таблица)'
+        verbose_name_plural = '🧑‍⚖️ Вышестоящий орган 𝄜 (таблица)'
 
     def __str__(self):
         return self.name
@@ -545,8 +545,8 @@ class Question(models.Model):
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', blank=True, null=True)  # Added publication date field
 
     class Meta:
-        verbose_name = 'Вопрос'
-        verbose_name_plural = 'Вопросы'
+        verbose_name = '❓❓❓  Вопросы'
+        verbose_name_plural = '❓❓❓ Вопросы'
 
     def __str__(self):
         return self.question_text
@@ -557,8 +557,8 @@ class Answer(models.Model):
     answer_text = models.TextField(blank=True)
 
     class Meta:
-        verbose_name = 'Ответ'
-        verbose_name_plural = 'Ответы'
+        verbose_name = '💡🗣️ Ответ'
+        verbose_name_plural = '💡🗣️ Ответы'
 
     def __str__(self):
         return self.answer_text
@@ -570,8 +570,8 @@ class Question_Ansver_title(models.Model):
     description = HTMLField(max_length=200, default='Описание')
 
     class Meta:
-        verbose_name = 'Заголовок и Описание Ответов'
-        verbose_name_plural = 'Заголовок и Описание Ответов'
+        verbose_name = '💡🗣️ Заголовок и Описание Ответов  🇹 | 🇩'
+        verbose_name_plural = '💡🗣️ Заголовок и Описание Ответов  🇹 | 🇩'
 
     def __str__(self):
         return self.name
@@ -598,8 +598,8 @@ class Zoj(models.Model):
     icon_class_li_five = models.CharField(max_length=100, default='bi bi-check-circle')  # Для пятого элемента списка
 
     class Meta:
-        verbose_name = 'Здоровый Образ Жизни'
-        verbose_name_plural = 'Здоровый Образ Жизни'
+        verbose_name = '🤸‍♂️🏀 Здоровый Образ Жизни'
+        verbose_name_plural = '🤸‍♂️🏀 Здоровый Образ Жизни'
 
     def __str__(self):
         return self.name
@@ -628,8 +628,8 @@ class Laboratory(models.Model):
     icon_class_li_six = models.CharField(max_length=100, default='bi bi-check-circle')  # Для пятого элемента списка
 
     class Meta:
-        verbose_name = 'Лабораторные услуги'
-        verbose_name_plural = 'Лабораторные услуги'
+        verbose_name = '💉☣ Лабораторные услуги 🧪'
+        verbose_name_plural = '💉☣ Лабораторные услуги 🧪'
 
     def __str__(self):
         return self.name
@@ -641,8 +641,8 @@ class Laboratories(models.Model):
     photo = models.ImageField(upload_to='Laboratory/', null=True, blank=True)
 
     class Meta:
-        verbose_name = 'Лабораторные услуги (2ая половина)'
-        verbose_name_plural = 'Лабораторные услуги (2ая половина)'
+        verbose_name = '💉☣  Лабораторные услуги (2ая половина) 🧪'
+        verbose_name_plural = '💉☣  Лабораторные услуги (2ая половина) 🧪'
 
     def __str__(self):
         return self.name
@@ -655,8 +655,8 @@ class Registration(models.Model):
     description_three = models.TextField(default='Описание 3')
 
     class Meta:
-        verbose_name = 'АП Регистрация'
-        verbose_name_plural = 'АП Регистрация'
+        verbose_name = '📓✔️ АП Регистрация (перечень) 🇩'
+        verbose_name_plural = '📓✔️ АП Регистрация (перечень) 🇩'
 
     def __str__(self):
         return self.name
@@ -668,8 +668,8 @@ class Relation(models.Model):
     description = models.TextField(default='Описание')
 
     class Meta:
-        verbose_name = 'АП в отношении граждан'
-        verbose_name_plural = 'АП в отношении граждан'
+        verbose_name = '👦✔️ АП в отношении граждан (тайтл и описание)  🇹 | 🇩'
+        verbose_name_plural = '👦✔️ АП в отношении граждан (тайтл и описание)  🇹 | 🇩'
 
     def __str__(self):
         return self.name
@@ -680,8 +680,8 @@ class HumanResourcesDesc(models.Model):
     description = models.TextField(default='Описание')
 
     class Meta:
-        verbose_name = 'АП Кадровая Служба'
-        verbose_name_plural = 'АП Кадровая Служба'
+        verbose_name = '👦✔️ АП Кадровая Служба (название и описание)  🇹 | 🇩'
+        verbose_name_plural = '👦✔️ АП Кадровая Служба (название и описание)  🇹 | 🇩'
 
     def __str__(self):
         return self.name
@@ -695,8 +695,8 @@ class HumanResources(models.Model):
     size_ap = models.CharField(max_length=300, default='Размер Платы взымаемой при АП')
 
     class Meta:
-        verbose_name = 'АП Кадровая Служба таблица'
-        verbose_name_plural = 'АП Кадровая Служба таблица'
+        verbose_name = '👦✔️ АП Кадровая Служба (таблица) 𝄜'
+        verbose_name_plural = '👦✔️ АП Кадровая Служба (таблица) 𝄜'
 
     def __str__(self):
         return self.number_ap
@@ -707,8 +707,8 @@ class AccountingDesc(models.Model):
     description = models.TextField(default='Описание')
 
     class Meta:
-        verbose_name = 'АП Бухгалтерия тайтл'
-        verbose_name_plural = 'АП Бухгалтерия тайтл'
+        verbose_name = '👦✔️ АП Бухгалтерия (тайтл и описание) 🇹 | 🇩'
+        verbose_name_plural = '👦✔️ АП Бухгалтерия (тайтл и описание) 🇹 | 🇩'
 
     def __str__(self):
         return self.name
@@ -723,8 +723,8 @@ class Accounting(models.Model):
     date_ap = models.CharField(max_length=500, default='Сроки выполнения АП')
 
     class Meta:
-        verbose_name = 'АП Кадровая Служба таблица Бухгалтерия'
-        verbose_name_plural = 'АП Кадровая Служба таблица Бухгалтерия'
+        verbose_name = '👦✔️ АП Кадровая Служба (таблица Бухгалтерия) 𝄜'
+        verbose_name_plural = '👦✔️ АП Кадровая Служба (таблица Бухгалтерия) 𝄜'
 
     def __str__(self):
         return self.number_ap
@@ -735,8 +735,8 @@ class UnionDesc(models.Model):
     description = models.TextField(default='Описание')
 
     class Meta:
-        verbose_name = 'АП Профсоюз'
-        verbose_name_plural = 'АП Профсоюз'
+        verbose_name = '👦✔️ АП Профсоюз (тайтл и описание) 🇹 | 🇩'
+        verbose_name_plural = '👦✔️ АП Профсоюз (тайтл и описание) 🇹 | 🇩'
 
     def __str__(self):
         return self.name
@@ -751,8 +751,8 @@ class Union(models.Model):
     date_ap = models.CharField(max_length=500, default='Сроки выполнения АП')
 
     class Meta:
-        verbose_name = 'АП Профсоюз таблица'
-        verbose_name_plural = 'АП Профсоюз таблица'
+        verbose_name = '👦✔️ АП Профсоюз 𝄜 (таблица)'
+        verbose_name_plural = '👦✔️ АП Профсоюз 𝄜 (таблица)'
 
     def __str__(self):
         return self.number_ap
@@ -763,8 +763,8 @@ class ListingDecreeDesc(models.Model):
     description = models.TextField(default='Описание')
 
     class Meta:
-        verbose_name = 'АП Указ (в отношении граждан)'
-        verbose_name_plural = 'АП Указ (в отношении граждан)'
+        verbose_name = '👦✔️ АП Указ (в отношении граждан) 🇩'
+        verbose_name_plural = '👦✔️ АП Указ (в отношении граждан) 🇩'
 
     def __str__(self):
         return self.name
@@ -779,8 +779,8 @@ class ListingDecree(models.Model):
     date_ap = models.CharField(max_length=500, default='Сроки действия')
 
     class Meta:
-        verbose_name = 'АП указ таблица'
-        verbose_name_plural = 'АП указ таблица'
+        verbose_name = '👦✔️ АП Указ (таблица) 𝄜'
+        verbose_name_plural = '👦✔️ АП Указ (таблица) 𝄜'
 
     def __str__(self):
         return self.number_ap
@@ -796,8 +796,8 @@ class Profsouz(models.Model):
     phone = models.TextField(default='Телефон')
 
     class Meta:
-        verbose_name = 'О центре Профсоюз таблицы с сотрудниками'
-        verbose_name_plural = 'О центре Профсоюз таблицы с сотрудниками'
+        verbose_name = '🏥👩🏿‍⚕️ О центре Профсоюз таблицы с сотрудниками 𝄜'
+        verbose_name_plural = '🏥👩🏿‍⚕️ О центре Профсоюз таблицы с сотрудниками 𝄜'
 
     def __str__(self):
         return self.name
@@ -814,8 +814,8 @@ class ProfsouzTwo(models.Model):
     phone = models.TextField(default='Телефон')
 
     class Meta:
-        verbose_name = 'О центре Профсоюз таблицы с сотрудниками (таблица 2)'
-        verbose_name_plural = 'О центре Профсоюз таблицы с сотрудниками (таблица 2)'
+        verbose_name = '🏥👩🏿‍⚕️  О центре Профсоюз таб/сотрудник (таблица 2) 𝄜'
+        verbose_name_plural = '🏥👩🏿‍⚕️  О центре Профсоюз таблицы с сотрудниками (таблица 2) 𝄜'
 
     def __str__(self):
         return self.name
@@ -828,8 +828,8 @@ class ProfsouzDesc(models.Model):
     package = models.TextField(default='Состав')
 
     class Meta:
-        verbose_name = 'О центре Профсоюз верхнее описание'
-        verbose_name_plural = 'О центре Профсоюз верхнее описание'
+        verbose_name = '🏥👩🏿‍⚕️  О центре Профсоюз верхнее описание 🇩'
+        verbose_name_plural = '🏥👩🏿‍⚕️  О центре Профсоюз верхнее описание 🇩'
 
     def __str__(self):
         return self.name
@@ -843,8 +843,8 @@ class ProfsouzDescOne(models.Model):
     package = models.TextField(default='Состав')
 
     class Meta:
-        verbose_name = 'О центре Профсоюз описание таблицы'
-        verbose_name_plural = 'О центре Профсоюз таблицы'
+        verbose_name = '🏥👩🏿‍⚕️ О центре Профсоюз описание таблицы 𝄜'
+        verbose_name_plural = '🏥👩🏿‍⚕️ О центре Профсоюз таблицы 𝄜'
 
     def __str__(self):
         return self.name
@@ -864,8 +864,8 @@ class ProfsouzIcons(models.Model):
     link_instagram = models.URLField(max_length=200, default='https://instagram.com')
 
     class Meta:
-        verbose_name = 'О центре Профсоюз Иконки'
-        verbose_name_plural = 'О центре Профсоюз Иконки'
+        verbose_name = '🏥👩🏿‍⚕️ О центре Профсоюз Иконки'
+        verbose_name_plural = '🏥👩🏿‍⚕️ О центре Профсоюз Иконки'
 
     def __str__(self):
         return self.name
@@ -879,8 +879,8 @@ class Disinfection(models.Model):
     description_two = models.TextField(default='Описание 2')
 
     class Meta:
-        verbose_name = 'Дезинфекция главное'
-        verbose_name_plural = 'Дезинфекция главное'
+        verbose_name = '🧼🚩 Дезинфекция главное 🇲 🇩'
+        verbose_name_plural = '🧼🚩 Дезинфекция главное 🇲 🇩'
 
     def __str__(self):
         return self.name
@@ -895,8 +895,8 @@ class Deratization(models.Model):
     photo = models.ImageField(upload_to='Deratization/', null=True, blank=True)
 
     class Meta:
-        verbose_name = 'Дератизация описание'
-        verbose_name_plural = 'Дератизация описание'
+        verbose_name = '🧼🚩 Дератизация описание 🇩'
+        verbose_name_plural = '🧼🚩 Дератизация описание 🇩'
 
     def __str__(self):
         return self.name
@@ -910,8 +910,8 @@ class MonitoringPlan(models.Model):
     photo = models.ImageField(upload_to='MonitoringPlan/', null=True, blank=True)
 
     class Meta:
-        verbose_name = 'План Мониторинга'
-        verbose_name_plural = 'План Мониторинга'
+        verbose_name = '📊 План Мониторинга 🇲 🇹 🇩'
+        verbose_name_plural = '📊 План Мониторинга 🇲 🇹 🇩'
 
     def __str__(self):
         return self.name
@@ -925,8 +925,8 @@ class MonitoringPlanArkhive(models.Model):
     photo = models.ImageField(upload_to='MonitoringPlanArkhive/', null=True, blank=True)
 
     class Meta:
-        verbose_name = 'План Мониторинга Архив'
-        verbose_name_plural = 'План Мониторинга Архив'
+        verbose_name = '📊 План Мониторинга Архив 🗄️🇹 🇩'
+        verbose_name_plural = '📊 План Мониторинга Архив 🗄️🇹 🇩'
 
     def __str__(self):
         return self.name
@@ -941,8 +941,8 @@ class Disinsection(models.Model):
     photo = models.ImageField(upload_to='Disinsection/', null=True, blank=True)
 
     class Meta:
-        verbose_name = 'Дезинсекция описание'
-        verbose_name_plural = 'Дезинсекция описание'
+        verbose_name = '🧼🚩 Дезинсекция описание 🇩'
+        verbose_name_plural = '🧼🚩 Дезинсекция описание 🇩'
 
     def __str__(self):
         return self.name
@@ -957,8 +957,8 @@ class DisinfectionDesc(models.Model):
     photo = models.ImageField(upload_to='Disinfection/', null=True, blank=True)
 
     class Meta:
-        verbose_name = 'Дезинфекция описание'
-        verbose_name_plural = 'Дезинфекция описание'
+        verbose_name = '🧼🚩 Дезинфекция описание 🇩'
+        verbose_name_plural = '🧼🚩 Дезинфекция описание 🇩'
 
     def __str__(self):
         return self.name
@@ -972,8 +972,8 @@ class Inventory(models.Model):
     description_two = models.TextField(default='Описание 2')
 
     class Meta:
-        verbose_name = 'АП перечень'
-        verbose_name_plural = 'АП перечень'
+        verbose_name = '👦✔️ АП перечень'
+        verbose_name_plural = '👦✔️ АП перечень'
 
     def __str__(self):
         return self.name
@@ -987,8 +987,8 @@ class BlanksInventory(models.Model):
     up_file = models.FileField(upload_to='files/', default='Добавить файл')
 
     class Meta:
-        verbose_name = 'АП Бланки (перечень)'
-        verbose_name_plural = 'АП Бланки (перечень)'
+        verbose_name = '👦✔️ АП Бланки (перечень)'
+        verbose_name_plural = '👦✔️ АП Бланки (перечень)'
 
     def __str__(self):
         return self.name
@@ -1021,8 +1021,8 @@ class ControlNadzorTipical(models.Model):
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
 
     class Meta:
-        verbose_name = 'Контрольно надзорная деятельность Типичные нарушения(таблица)'
-        verbose_name_plural = 'Контрольно надзорная деятельность Типичные нарушения(таблица)'
+        verbose_name = '🕹️🧐 Конт/надзор деятельность Типичные нарушения(таблица) 𝄜'
+        verbose_name_plural = '🕹️🧐 Контрольно надзорная деятельность Типичные нарушения(таблица) 𝄜'
 
     def __str__(self):
         return self.name
@@ -1046,8 +1046,8 @@ class CNadTipicalName(models.Model):
     name_typical = models.CharField(max_length=350, default='Тайтл')
 
     class Meta:
-        verbose_name = 'Контрольно надзорная деятельность Типичные нарушения (Тайтл)'
-        verbose_name_plural = 'Контрольно надзорная деятельность Типичные нарушения(Тайтл)'
+        verbose_name = '🕹️🧐 Конт/надзор деятельность Типичные нарушения (Тайтл) 🇹'
+        verbose_name_plural = '🕹️🧐 Контрольно надзорная деятельность Типичные нарушения(Тайтл) 🇹'
 
     def __str__(self):
         return self.name
@@ -1062,8 +1062,8 @@ class CustomProductsInf(models.Model):
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
 
     class Meta:
-        verbose_name = 'Контрольно надзорная деятельность Нестандартная продукция (таблица)'
-        verbose_name_plural = 'Контрольно надзорная деятельность Нестандартная продукция(таблица)'
+        verbose_name = '🕹️🧐 Конт/надзор деятельность Нестандартная продукция 𝄜'
+        verbose_name_plural = '🕹️🧐 Контрольно надзорная деятельность Нестандартная продукция(таблица) 𝄜'
 
     def __str__(self):
         return self.name
@@ -1075,8 +1075,8 @@ class CustomProductsName(models.Model):
     name_typical = models.CharField(max_length=350, default='Тайтл')
 
     class Meta:
-        verbose_name = 'Контрольно надзорная деятельность Нестандартная продукция (Тайтл)'
-        verbose_name_plural = 'Контрольно надзорная деятельность Нестандартная продукция(Тайтл)'
+        verbose_name = '🕹️🧐 Конт/надзор деятельность Нестандартная продукция (Тайтл) 🇹'
+        verbose_name_plural = '🕹️🧐 Контрольно надзорная деятельность Нестандартная продукция(Тайтл) 🇹'
 
     def __str__(self):
         return self.name
@@ -1087,8 +1087,8 @@ class EpidemialogyName(models.Model):
     name = models.CharField(max_length=350, default='Тайтл')
 
     class Meta:
-        verbose_name = 'Эпидемиалогия (Тайтл)'
-        verbose_name_plural = 'Эпидемиалогия (Тайтл)'
+        verbose_name = '☣️😷 Эпидемиалогия (Тайтл) 🇹'
+        verbose_name_plural = '☣️😷 Эпидемиалогия (Тайтл) 🇹'
 
     def __str__(self):
         return self.name
@@ -1105,8 +1105,8 @@ class EpidemialogyTipical(models.Model):
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
 
     class Meta:
-        verbose_name = 'Эпидемиалогия (статьи)'
-        verbose_name_plural = 'Эпидемиалогия (статьи)'
+        verbose_name = '☣️😷 Эпидемиалогия (статьи) 📜'
+        verbose_name_plural = '☣️😷 Эпидемиалогия (статьи) 📜'
 
     def __str__(self):
         return self.name
@@ -1117,8 +1117,8 @@ class ServicesLawyerName(models.Model):
     name = models.CharField(max_length=350, default='Тайтл')
 
     class Meta:
-        verbose_name = 'Пл услуги Юр лицам и ИП (Тайтл)'
-        verbose_name_plural = 'Пл услуги Юр лицам и ИП (Тайтл)'
+        verbose_name = '🪙💲 Пл услуги Юр лицам и ИП (Тайтл)'
+        verbose_name_plural = '🪙💲 Пл услуги Юр лицам и ИП (Тайтл)'
 
     def __str__(self):
         return self.name
@@ -1136,8 +1136,8 @@ class ServicesLawyerTipical(models.Model):
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
 
     class Meta:
-        verbose_name = 'Пл услуги Юр лицам и ИП (статьи)'
-        verbose_name_plural = 'Пл услуги Юр лицам и ИП (статьи)'
+        verbose_name = '🪙💲 Пл услуги Юр лицам и ИП (статьи)'
+        verbose_name_plural = '🪙💲 Пл услуги Юр лицам и ИП (статьи)'
 
     def __str__(self):
         return self.name
@@ -1168,8 +1168,8 @@ class ImmunoprophylaxisTipical(models.Model):
     pub_date = models.DateTimeField(verbose_name='Дата Публикации', default=timezone.now)
 
     class Meta:
-        verbose_name = 'Иммунопрофилактика (статьи)'
-        verbose_name_plural = 'Иммунопрофилактика (статьи)'
+        verbose_name = '☣️😷 Иммунопрофилактика (статьи) 📜'
+        verbose_name_plural = '☣️😷 Иммунопрофилактика (статьи) 📜'
 
     def __str__(self):
         return self.name
@@ -1185,8 +1185,8 @@ class InformationAnalytical(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Информационно-аналитический бюллетень"
-        verbose_name_plural = "Информационно-аналитический бюллетень"
+        verbose_name = "📜📊 Информационно-аналитический бюллетень"
+        verbose_name_plural = "📜📊 Информационно-аналитический бюллетень"
         ordering = ['-pub_date']
 
 
@@ -1198,8 +1198,8 @@ class HealthyTitle(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Здоровые города и поселки (Верхний ТАЙТЛ и ОПИСАНИЕ)"
-        verbose_name_plural = "Здоровые города и поселки (Верхний ТАЙТЛ и ОПИСАНИЕ)"
+        verbose_name = "🏰🏋️ Зд/Гор и поселки (Верхний ТАЙТЛ и ОПИСАНИЕ) 🇹 | 🇩"
+        verbose_name_plural = "🏰🏋️ Здоровые города и поселки (Верхний ТАЙТЛ и ОПИСАНИЕ) 🇹 | 🇩"
 
 
 class Healthy(models.Model):
@@ -1214,8 +1214,8 @@ class Healthy(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Здоровые города и поселки (ФАЙЛЫ)"
-        verbose_name_plural = "Здоровые города и поселки (ФАЙЛЫ)"
+        verbose_name = "🏰🏋️ Здоровые города и поселки (ФАЙЛЫ) 📁"
+        verbose_name_plural = "🏰🏋️ Здоровые города и поселки (ФАЙЛЫ) 📁"
         ordering = ['-pub_date']
 
 
@@ -1228,8 +1228,8 @@ class Objectives(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Цели устойчивого развития"
-        verbose_name_plural = "Цели устойчивого развития"
+        verbose_name = "🎯📈 Цели устойчивого развития"
+        verbose_name_plural = "🎯📈 Цели устойчивого развития"
 
 
 class Ticks(models.Model):
@@ -1243,8 +1243,8 @@ class Ticks(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Внимание клещи"
-        verbose_name_plural = "Внимание клещи"
+        verbose_name = "⚠️🪲 Внимание клещи"
+        verbose_name_plural = "⚠️🪲 Внимание клещи"
 
 
 class Ticks_files(models.Model):
@@ -1256,8 +1256,8 @@ class Ticks_files(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Внимание клещи (Блок с файлами)"
-        verbose_name_plural = "Внимание клещи (Блок с файлами)"
+        verbose_name = "⚠️🪲 Внимание клещи (Блок с файлами) 📁"
+        verbose_name_plural = "⚠️🪲 Внимание клещи (Блок с файлами) 📁"
 
 
 class ContactInfoHad(models.Model):
@@ -1273,8 +1273,8 @@ class ContactInfoHad(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Контактная информация для Top Bar"
-        verbose_name_plural = "Контактная информация для Top Bar"
+        verbose_name = "📲🗺️ Контактная информация для Top Bar"
+        verbose_name_plural = "📲🗺️ Контактная информация для Top Bar"
 
 
 class EripPayment(models.Model):
@@ -1294,8 +1294,8 @@ class EripPayment(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "ЕРИП данные"
-        verbose_name_plural = "ЕРИП данные"
+        verbose_name = "🪙💲 ЕРИП данные"
+        verbose_name_plural = "🪙💲 ЕРИП данные"
 
 
 class PhotoDay(models.Model):
@@ -1308,8 +1308,8 @@ class PhotoDay(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Фото дня"
-        verbose_name_plural = "Фото дня"
+        verbose_name = "🖼️ Фото дня"
+        verbose_name_plural = "🖼️ Фото дня"
 
 
 class Contacts(models.Model):
@@ -1323,8 +1323,8 @@ class Contacts(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Контакты данные"
-        verbose_name_plural = "Контакты данные"
+        verbose_name = "📲🗺️ Контакты & данные"
+        verbose_name_plural = "📲🗺️ Контакты & данные"
 
 
 class CentreNews(models.Model):
@@ -1341,8 +1341,8 @@ class CentreNews(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Блок с новостями(зелено-красный)"
-        verbose_name_plural = "Блок с новостями(зелено-красный)"
+        verbose_name = "📰🌐 Блок с новостями(зелено-красный)"
+        verbose_name_plural = "📰🌐 Блок с новостями(зелено-красный)"
 
 
 class OurPartners (models.Model):
@@ -1355,8 +1355,8 @@ class OurPartners (models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Слайдер Партнеры"
-        verbose_name_plural = "Слайдер Партнеры"
+        verbose_name = "🧑‍🦲 Слайдер Партнеры"
+        verbose_name_plural = "🧑‍🦲 Слайдер Партнеры"
 
 
 class CitiesTitle(models.Model):
@@ -1364,8 +1364,8 @@ class CitiesTitle(models.Model):
     name = models.CharField(max_length=350, default='Тайтл для блока города')
 
     class Meta:
-        verbose_name = 'Здоровые города и поселки (Тайтл для блока Посёлка)'
-        verbose_name_plural = 'Здоровые города и поселки (Тайтл для блока Посёлка)'
+        verbose_name = '🏰🏋️ Здоровые города и поселки (Тайтл для блока Посёлка) 🇹'
+        verbose_name_plural = '🏰🏋️ Здоровые города и поселки (Тайтл для блока Посёлка) 🇹'
 
     def __str__(self):
         return self.name
@@ -1383,8 +1383,8 @@ class Cities(models.Model):
     pdf_file = models.FileField(upload_to='city_documents/', blank=True, null=True)
 
     class Meta:
-        verbose_name = 'Здоровые города и поселки (Тайтл описание фото, добавить посёлок)'
-        verbose_name_plural = 'Здоровые города и поселки (Тайтл описание фото, добавить посёлок)'
+        verbose_name = '🏰🏋️ Здоровые города и поселки (Тайтл описание фото, добавить посёлок) 🇩'
+        verbose_name_plural = '🏰🏋️ Здоровые города и поселки (Тайтл описание фото, добавить посёлок) 🇩'
 
     def __str__(self):
         return self.name
@@ -1398,8 +1398,8 @@ class CityDescription(models.Model):
     add_file = models.FileField(upload_to='pdfs/', verbose_name="Прикрепить PDF", blank=True)
 
     class Meta:
-        verbose_name = 'Здоровые города и поселки - Интерактивная Доска'
-        verbose_name_plural = 'Здоровые города и поселки - Интерактивная Доска'
+        verbose_name = '🏰🏋️ Здоровые города и поселки - Интерактивная Доска'
+        verbose_name_plural = '🏰🏋️ Здоровые города и поселки - Интерактивная Доска'
 
     def __str__(self):
         return f"Описание {self.id}"
@@ -1415,8 +1415,8 @@ class NormativeDoc(models.Model):
     add_file = models.FileField(upload_to='pdfs/', blank=True)
 
     class Meta:
-        verbose_name = 'Нормативные документы (описание и файлы)'
-        verbose_name_plural = 'Нормативные документы (описание и файлы)'
+        verbose_name = '📝🗂️ Нормативные документы (описание и файлы) 🇩'
+        verbose_name_plural = '📝🗂️ Нормативные документы (описание и файлы) 🇩'
 
     def __str__(self):
         return self.name
@@ -1429,8 +1429,8 @@ class AboutHistory(models.Model):
     icon_class = models.CharField(max_length=50)
 
     class Meta:
-        verbose_name = 'История - Описание'
-        verbose_name_plural = 'История - Описание'
+        verbose_name = '🏥ℹ️ История - Описание (блоки на главной под фото) 🇩'
+        verbose_name_plural = '🏥ℹ️ История - Описание (блоки на главной под фото) 🇩'
 
     def __str__(self):
         return self.name
@@ -1444,8 +1444,8 @@ class Structure(models.Model):
     photo = models.ImageField(upload_to='Structure/', null=True, blank=True)
 
     class Meta:
-        verbose_name = 'Структура'
-        verbose_name_plural = 'Структура'
+        verbose_name = '🧬 Структура 👩🏻‍🔬⚗️🧪🥼'
+        verbose_name_plural = '🧬 Структура 👩🏻‍🔬⚗️🧪🥼'
 
     def __str__(self):
         return self.name
@@ -1465,5 +1465,5 @@ class EnyPayment(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "ЕРИП платные услуги физ лицам"
-        verbose_name_plural = "ЕРИП платные услуги физ лицам"
+        verbose_name = "🪙💲 ЕРИП платные услуги физ лицам"
+        verbose_name_plural = "🪙💲 ЕРИП платные услуги физ лицам"
