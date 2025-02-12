@@ -3,305 +3,415 @@
 
 {% block head %}
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Полоцкий зональный центр гигиены и эпидемиологии</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+        <title>Полоцкий зональный центр гигиены и эпидемиологии</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="{% static 'webapp/assets/img/favicon_epigigcentr.png' %}" rel="icon">
-  <link href="{% static 'webapp/assets/img/favicon_epigigcentr.png' %}" rel="apple-touch-icon">
+        <!-- Favicons -->
+        <link href="{% static 'webapp/assets/img/favicon_epigigcentr.png' %}" rel="icon">
+        <link href="{% static 'webapp/assets/img/favicon_epigigcentr.png' %}" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+              rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="{% static 'webapp/assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
-  <link href="{% static 'webapp/assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
-  <link href="{% static 'webapp/assets/vendor/aos/aos.css' %}" rel="stylesheet">
-  <link href="{% static 'webapp/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'webapp/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-  <link href="{% static 'webapp/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
-  <link href="{% static 'webapp/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-  <link href="{% static 'webapp/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-
-
-
-  <!-- Template Main CSS File -->
-  <link href="{% static 'webapp/assets/css/style.css' %}" rel="stylesheet">
-
-    <!-- Custom Theme files -->
-    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all"/>
-    <link href="{% static 'css/style2.css' %}" rel="stylesheet" type="text/css" media="all"/>
-    <!-- js -->
-    <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
-
-    <!-- //js -->
+        <!-- Vendor CSS Files -->
+        <link href="{% static 'webapp/assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+        <link href="{% static 'webapp/assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+        <link href="{% static 'webapp/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+        <link href="{% static 'webapp/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'webapp/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+        <link href="{% static 'webapp/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+        <link href="{% static 'webapp/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+        <link href="{% static 'webapp/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
 
-  <!-- =======================================================
-  * Template Name: Medicio
-  * Updated: Jan 29 2024 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/medicio-free-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
+        <!-- Template Main CSS File -->
+        <link href="{% static 'webapp/assets/css/style.css' %}" rel="stylesheet">
+
+        <!-- Custom Theme files -->
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all"/>
+        <link href="{% static 'css/style2.css' %}" rel="stylesheet" type="text/css" media="all"/>
+        <!-- js -->
+        <script src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
+
+        <!-- //js -->
+
+
+        <!-- =======================================================
+        * Template Name: Medicio
+        * Updated: Jan 29 2024 with Bootstrap v5.3.2
+        * Template URL: https://bootstrapmade.com/medicio-free-bootstrap-theme/
+        * Author: BootstrapMade.com
+        * License: https://bootstrapmade.com/license/
+        ======================================================== -->
+    </head>
 {% endblock %}
 <body>
 
-  <!-- ======= Top Bar ======= -->
-  <div id="topbar" class="d-flex align-items-center fixed-top">
-      <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
-          <div class="align-items-center d-none d-md-flex">
-              <i class="bi bi-clock"></i>
-              <i class="align-items-center"></i> Пн - Пт, 8.00 - 17.00
-              <i class="bi bi-cup-hot"></i>
-              <i class="align-items-center"></i>Обед: 13.00 - 14.00
-          </div>
-          <div class="header-icons">
-              <a href=""><i data-description="Версия для слабо видящих">Aa</i></a>
-              <a href="#" aria-label="Беларуский язык"><img src="{% static 'webapp/assets/img/gigi_centr_prapor_blr.png' %}" class="img-fixed-size-prapors-had"></a>
-              <a href="https://www.polotskcge.by" aria-label="Русский язык"><img src="{% static 'webapp/assets/img/gigi_centr_prapor_zvo.png' %}" class="img-fixed-size-prapors-had"></a>
-              <a href="#" aria-label="Английский язык"><img src="{% static 'webapp/assets/img/gigi_centr_eng_prapor-nbg.png' %}" class="img-fixed-size-prapors-had"></a>
-          </div>
-          <div class="haderphone d-flex align-items-center">
-              <a href="tel:+80214493168"><i class="bi bi-phone"></i> Наш телефон: 8 (0214) 49 45 81</a>
-              <a href=""><i class="bi bi-mailbox-flag"></i> Наша почта: polotzk_hyg@vitebsk.by</a>
-          </div>
-      </div>
-      <div class="haderphone-mobile">
-          <a href=""><i class="bi bi-clock"></i> Пн - Пт, 8.00 - 17.00</a>
-          <a href=""><i class="bi bi-egg-fried"></i> Обед: 12.00 - 13.00</a>
-      </div>
-      <div class="align-items-center-mobile">
-          <div class="header-icons-mobile">
-              <a href=""><i data-description="Версия для слабо видящих">Aa</i></a>
-              <a href=""><i data-description="Английский язык">🇬🇧</i></a>
-              <a href=""><i data-description="Беларуский язык">🇧🇾</i></a>
-              <a href=""><i data-description="Русский язык">🇷🇺</i></a>
-          </div>
-      </div>
-      <div class="haderphone-mobile">
-          <a href="tel:+80214493168"><i class="bi bi-phone"></i> Наш телефон: 8 (0214) 49 45 81</a>
-          <a href=""><i class=""></i></a>
-          <a href=""><i class="bi bi-mailbox-flag"></i> Наша почта: polotzk_hyg@vitebsk.by</a>
-      </div>
-  </div>
+<!-- ======= Top Bar ======= -->
+<div id="topbar" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
+        <div class="align-items-center d-none d-md-flex">
+            <i class="bi bi-clock"></i>
+            <i class="align-items-center"></i> Пн - Пт, 8.00 - 17.00
+            <i class="bi bi-cup-hot"></i>
+            <i class="align-items-center"></i>Обед: 13.00 - 14.00
+        </div>
+        <div class="header-icons">
+            <label for="fontSizeSelector"><i>Aa</i></label>
+            <select id="fontSizeSelector">
+                <option value="16" selected>Обычный</option>
+                <option value="24">Средний</option>
+                <option value="28">Крупный</option>
+
+            </select>
+            <a href="#" aria-label="Беларуский язык"><img
+                    src="{% static 'webapp/assets/img/gigi_centr_prapor_blr.png' %}" class="img-fixed-size-prapors-had"></a>
+            <a href="https://www.polotskcge.by" aria-label="Русский язык"><img
+                    src="{% static 'webapp/assets/img/gigi_centr_prapor_zvo.png' %}" class="img-fixed-size-prapors-had"></a>
+            <a href="#" aria-label="Английский язык"><img
+                    src="{% static 'webapp/assets/img/gigi_centr_eng_prapor-nbg.png' %}"
+                    class="img-fixed-size-prapors-had"></a>
+        </div>
+        <div class="haderphone d-flex align-items-center">
+            <a href="tel:+80214493168"><i class="bi bi-phone"></i> Наш телефон: 8 (0214) 49 45 81</a>
+            <a href=""><i class="bi bi-mailbox-flag"></i> Наша почта: polotzk_hyg@vitebsk.by</a>
+        </div>
+    </div>
+    <div class="haderphone-mobile">
+        <a href=""><i class="bi bi-clock"></i> Пн - Пт, 8.00 - 17.00</a>
+        <a href=""><i class="bi bi-egg-fried"></i> Обед: 12.00 - 13.00</a>
+    </div>
+    <div class="align-items-center-mobile">
+        <div class="header-icons-mobile">
+            <a href=""><i data-description="Версия для слабо видящих">Aa</i></a>
+            <a href=""><i data-description="Английский язык">🇬🇧</i></a>
+            <a href=""><i data-description="Беларуский язык">🇧🇾</i></a>
+            <a href=""><i data-description="Русский язык">🇷🇺</i></a>
+        </div>
+    </div>
+    <div class="haderphone-mobile">
+        <a href="tel:+80214493168"><i class="bi bi-phone"></i> Наш телефон: 8 (0214) 49 45 81</a>
+        <a href=""><i class=""></i></a>
+        <a href=""><i class="bi bi-mailbox-flag"></i> Наша почта: polotzk_hyg@vitebsk.by</a>
+    </div>
+</div>
 
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-      <div class="container d-flex align-items-center">
-          <div class="logos-container">
-          </div>
-          <a href="{% url 'webapp:home' %}" class="logo me-auto"><img
-                      src="{% static 'webapp/assets/img/epigigicentr_polock_logo.png' %}" alt=""></a>
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+        <div class="logos-container">
+        </div>
+        <a href="{% url 'webapp:home' %}" class="logo me-auto"><img
+                src="{% static 'webapp/assets/img/epigigicentr_polock_logo.png' %}" alt=""></a>
 
-          <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
 
-      <nav id="navbar" class="navbar order-last order-lg-0">
-          <ul>
-              <li><a {% if request.resolver_match.url_name == 'home' %} class="active" {% endif %} href="{% url 'webapp:home' %}">Главная</a></li>
-              <li class="dropdown"><a {% if request.resolver_match.url_name in "'entity', 'contacts', 'working_mode', 'anti_corruption', 'standart_documents', 'other', 'ideological_work', 'charter', 'trade_union', 'vacancies', 'laboratory_offerings'" %}
-                  class="nav-link scrollto active"{% endif %} href="{% url 'webapp:entity' %}"><span>О Центре</span>
-                  <i class="bi bi-chevron-down"></i></a>
-                  <ul>
-                      <li><a {% if request.resolver_match.url_name == 'entity' %}class="active"{% endif %} href="{% url 'webapp:entity' %}">Структура</a></li>
-                      <li><a {% if request.resolver_match.url_name == 'contacts' %}class="active"{% endif %} href="{% url 'webapp:contacts' %}">Контакты</a></li>
-                      <li><a {% if request.resolver_match.url_name == 'working_mode' %}class="active"{% endif %} href="{% url 'webapp:working_mode' %}">Режим Работы</a></li>
-                      <li><a {% if request.resolver_match.url_name == 'laboratory_offerings' %}class="active"{% endif %} href="{% url 'webapp:laboratory_offerings' %}">Лабораторный отдел</a></li>
-                      <li class="dropdown"><a {% if request.resolver_match.url_name in "'anti_corruption', 'standart_documents'" %}class="active"{% endif %} href="{% url 'webapp:anti_corruption' %}"><span>Борьба с коррупцией</span>
-                          <i class="bi bi-chevron-right"></i></a>
-                          <ul>
-                              <li><a {% if request.resolver_match.url_name == 'standart_documents' %}class="active"{% endif %} href="{% url 'webapp:standart_documents' %}">Нормативные документы</a></li>
-                              <li><a {% if request.resolver_match.url_name == 'other' %}class="active"{% endif %} href="{% url 'webapp:anti_corruption' %}">Прочее</a></li>
-                          </ul>
-                      </li>
-                      <li class="dropdown"><a {% if request.resolver_match.url_name == 'ideological_work' %}class="active"{% endif %} href="{% url 'webapp:ideological_work' %}"><span>Идеологическая работа</span> <i
-                            class="bi bi-chevron-right"></i></a>
-                        <ul>
-                            <li><a href="https://vitebsk-region.gov.by/ru/inform_den-ru/">Единые дни информирования</a></li>
-                        </ul>
-                      </li>
-{#                      <li><a href="{% url 'webapp:charter' %}">Устав</a></li>#}
-                      <li><a {% if request.resolver_match.url_name == 'trade_union' %}class="active"{% endif %} href="{% url 'webapp:trade_union' %}">Профсоюз</a></li>
-                      <li><a {% if request.resolver_match.url_name == 'vacancies' %}class="active"{% endif %} href="{% url 'webapp:vacancies' %}">Вакансии</a></li>
-                  </ul>
-              </li>
-
-
-            <li class="dropdown"><a {% if request.resolver_match.url_name in "'appeals', 'appeals_normative_documents', 'electronic_appeals', 'hotline', 'book_of_comments', 'higher_authority'" %} class="nav-link scrollto active" {% endif %} href="{% url 'webapp:appeals' %}"><span>Обращения</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                    <li><a {% if request.resolver_match.url_name == 'appeals_normative_documents' %}class="active"{% endif %} href="{% url 'webapp:appeals_normative_documents' %}">Нормативно-правовые акты</a></li>
-                    <li><a {% if request.resolver_match.url_name == 'electronic_appeals' %}class="active"{% endif %} href="{% url 'webapp:electronic_appeals' %}">Обращения граждан и юридических лиц</a></li>
-                    <li><a {% if request.resolver_match.url_name == 'hotline' %}class="active"{% endif %} href="{% url 'webapp:hotline' %}">Прямая телефонная линия «горячая линия»</a></li>
-                    <li><a {% if request.resolver_match.url_name == 'book_of_comments' %}class="active"{% endif %} href="{% url 'webapp:book_of_comments' %}">Книга Замечаний и Предложений</a></li>
-                    <li><a {% if request.resolver_match.url_name == 'higher_authority' %}class="active"{% endif %} href="{% url 'webapp:higher_authority' %}">Вышестоящий Орган</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"><a {% if request.resolver_match.url_name in "'regulations', 'documents_ap', 'expertise', 'registrations', 'relation_to_citizens', 'rights_duties', 'maintenance_schedule'" %} class="nav-link scrollto active" {% endif %} href="{% url 'webapp:regulations' %}"><span>АП</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                    <li><a {% if request.resolver_match.url_name == 'documents_ap' %}class="active"{% endif %} href="{% url 'webapp:documents_ap' %}">Нормативные Документы</a></li>
-                    <li><a {% if request.resolver_match.url_name == 'expertise' %}class="active"{% endif %} href="{% url 'webapp:expertise' %}">Экспертиза</a></li>
-                    <li><a {% if request.resolver_match.url_name == 'registrations' %}class="active"{% endif %} href="{% url 'webapp:registrations' %}">Регистрация</a></li>
-                    <li><a {% if request.resolver_match.url_name == 'relation_to_citizens' %}class="active"{% endif %} href="{% url 'webapp:relation_to_citizens' %}">В отношении граждан</a></li>
-                    <li><a {% if request.resolver_match.url_name == 'rights_duties' %}class="active"{% endif %} href="{% url 'webapp:rights_duties' %}">Права и Обязанности</a></li>
-                    <li><a {% if request.resolver_match.url_name == 'maintenance_schedule' %}class="active"{% endif %} href="{% url 'webapp:maintenance_schedule' %}">Порядок и сроки обжалования</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"><a {% if request.resolver_match.url_name in "'services', 'paid_services', 'paid_services_lawyer', 'disinfection_disinsection_deratization', 'price_lists'" %} class="nav-link scrollto active" {% endif %} href="{% url 'webapp:services' %}"><span>Услуги</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                    <li><a {% if request.resolver_match.url_name == 'paid_services' %}class="active"{% endif %} href="{% url 'webapp:paid_services' %}">Платные услуги физическим лицам</a></li>
-                    <li><a {% if request.resolver_match.url_name == 'paid_services_lawyer' %}class="active"{% endif %} href="{% url 'webapp:paid_services_lawyer' %}">Платные услуги ЮР лицам и ИП</a></li>
-                    <li><a {% if request.resolver_match.url_name == 'disinfection_disinsection_deratization' %}class="active"{% endif %} href="{% url 'webapp:disinfection_disinsection_deratization' %}">Дезинфекция | Дезинсекция | Дератизация</a></li>
-                    <li><a {% if request.resolver_match.url_name == 'price_lists' %}class="active"{% endif %} href="{% url 'webapp:price_lists' %}">Прейскуранты</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"><a {% if request.resolver_match.url_name in "'cge-info', 'control_supervisory_activities', 'custom_products', 'sustainable_development_goals', 'custom_products', 'healthy_lifestyle', 'monitoring_plan', 'typical_violations', 'preventive_measures', 'analytical_newsletter', 'health_days', 'educational_resources', 'healthy_cities_towns', 'ticks', 'immunoprophylaxis', 'epidemiology', 'eurasian_economic_union', 'sanitary_quarantine_points', 'city_single', 'archive_single'" %} class="nav-link scrollto active" {% endif %} href="{% url 'webapp:cge-info' %}"><span>Деятельность</span> <i class="bi bi-chevron-down"></i></a>
-                <ul>
-                    <li class="dropdown"><a {% if request.resolver_match.url_name in "'control_supervisory_activities', 'monitoring_plan', 'typical_violations'" %}class="active"{% endif %} href="{% url 'webapp:control_supervisory_activities' %}"><span>Контрольно (надзорная) деятельность</span> <i
-                            class="bi bi-chevron-right"></i></a>
-                        <ul>
-                            <li><a href="https://kgk.gov.by/ru/pvproverok-ru/">План Проверок</a></li>
-                            <li><a {% if request.resolver_match.url_name == 'monitoring_plan' %}class="active"{% endif %} href="{% url 'webapp:monitoring_plan' %}">План Мониторинга</a></li>
-                            <li><a {% if request.resolver_match.url_name == 'typical_violations' %}class="active"{% endif %} href="{% url 'webapp:typical_violations' %}">О типичных Нарушениях</a></li>
-                            <li><a href="https://www.rcheph.by/nadzor/chek-listy/">Чек-Листы</a></li>
-                        </ul>
-                    </li>
-                    <li><a {% if request.resolver_match.url_name == 'custom_products' %}class="active"{% endif %} href="{% url 'webapp:custom_products' %}">Нестандартная Продукция</a></li>
-                    <li class="dropdown"><a {% if request.resolver_match.url_name in "'healthy_lifestyle', 'preventive_measures', 'health_days', 'educational_resources'" %}class="active"{% endif %} href="{% url 'webapp:healthy_lifestyle' %}"><span>Здоровый Образ Жизни</span> <i
-                            class="bi bi-chevron-right"></i></a>
-                        <ul>
-                            <li><a {% if request.resolver_match.url_name == 'preventive_measures' %}class="active"{% endif %} href="{% url 'webapp:preventive_measures' %}">Профилактические мероприятия</a></li>
-                            <li><a {% if request.resolver_match.url_name == 'health_days' %}class="active"{% endif %} href="{% url 'webapp:health_days' %}">Единые Дни Здоровья</a></li>
-                            <li><a {% if request.resolver_match.url_name == 'educational_resources' %}class="active"{% endif %} href="{% url 'webapp:educational_resources' %}">Информационно-Образовательные<br>ресурсы</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown"><a {% if request.resolver_match.url_name in "'sustainable_development_goals', 'analytical_newsletter'" %}class="active"{% endif %} href="{% url 'webapp:sustainable_development_goals' %}"><span>Цели Устойчивого Развития</span> <i
-                            class="bi bi-chevron-right"></i></a>
-                        <ul>
-                            <li><a {% if request.resolver_match.url_name == 'analytical_newsletter' %}class="active"{% endif %} href="{% url 'webapp:analytical_newsletter' %}">Информационно-Аналитический<br>бюллетень</a></li>
-                        </ul>
-                    </li>
-                    <li><a {% if request.resolver_match.url_name in "'healthy_cities_towns', 'city_single', 'archive_single'" %}class="active"{% endif %} href="{% url 'webapp:healthy_cities_towns' %}">Здоровые Города и Посёлки</a></li>
-                    <li class="dropdown"><a {% if request.resolver_match.url_name in "'epidemiology', 'ticks', 'immunoprophylaxis'" %}class="active"{% endif %} href="{% url 'webapp:epidemiology' %}"><span>Эпидемиология</span> <i class="bi bi-chevron-right"></i></a>
-                        <ul>
-                            <li><a {% if request.resolver_match.url_name == 'ticks' %}class="active"{% endif %} href="{% url 'webapp:ticks' %}">Внимание Клещи</a></li>
-                            <li><a {% if request.resolver_match.url_name == 'immunoprophylaxis' %}class="active"{% endif %} href="{% url 'webapp:immunoprophylaxis' %}">Иммунопрофилактика</a></li>
-                        </ul>
-                    </li>
-                    <li><a {% if request.resolver_match.url_name == 'eurasian_economic_union' %}class="active"{% endif %} href="{% url 'webapp:eurasian_economic_union' %}">Евразийский экономический союз</a></li>
-                    <li><a {% if request.resolver_match.url_name == 'sanitary_quarantine_points' %}class="active"{% endif %} href="{% url 'webapp:sanitary_quarantine_points' %}">Санитарно-Карантинные пункты</a></li>
-                </ul>
-            </li>
-            <li><a {% if request.resolver_match.url_name == 'cge_news' %}class="active"{% endif %} href="{% url 'news:cge_news' %}">Новости</a></li>
-            <li><a class="nav-link scrollto " href="https://www.rcheph.by/nadzor/npa/">НПА</a></li>
-        </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-          {#      <a href="#appointment" class="appointment-btn scrollto fa fa-phone"><span class="d-none d-md-inline">  Горячая</span> Линия</a>#}
-          <div class="header-search">
-              <a href="{% url 'webapp:home' %}" class="search-icon"><i class="fa fa-search"></i></a>
-              <div class="search-box-wrap" style="display: none;">
-                  <div class="searchform" role="search">
-                      <form class="search-form" method="get" action="{% url 'webapp:home' %}">
-                          <input type="text" name="s" id="s" placeholder="Search..." value="" class="search-field">
-                          <input type="submit" class="search-submit" value="Search">
-                      </form>
-                  </div><!-- .searchform -->
-              </div><!-- .search-box-wrap -->
-          </div>
-      </div>
-  </header><!-- End Header -->
-
-  {% block content %}{% endblock %}
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-      <div class="footer-top">
-          <div class="container">
-              <div class="row">
-
-                  <div class="col-lg-3 col-md-6">
-                      <div class="footer-info">
-                          <h3>Полоцкий ЦГЭ</h3>
-                          <p>
-                              211400, г. Полоцк, <br>
-                              ул. Юбилейная, д.7б, пом.2<br><br>
-                              <strong>Телефон:</strong>
-                              <a href="tel:+80214494581">8 (0214) 49 45 81</a><br> <!-- Сделано кликабельным -->
-                              <strong>Почта:</strong> <a href="mailto:polotzk_hyg@vitebsk.by">polotzk_hyg@vitebsk.by</a><br>
-                              <!-- Сделано кликабельным -->
-                          </p>
-                      </div>
-                  </div>
+        <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul>
+                <li><a {% if request.resolver_match.url_name == 'home' %} class="active" {% endif %}
+                                                                          href="{% url 'webapp:home' %}">Главная</a>
+                </li>
+                <li class="dropdown"><a
+                        {% if request.resolver_match.url_name in "'entity', 'contacts', 'working_mode', 'anti_corruption', 'standart_documents', 'other', 'ideological_work', 'charter', 'trade_union', 'vacancies', 'laboratory_offerings'" %}
+                            class="nav-link scrollto active"{% endif %}
+                            href="{% url 'webapp:entity' %}"><span>О Центре</span>
+                    <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a {% if request.resolver_match.url_name == 'entity' %}class="active"{% endif %}
+                               href="{% url 'webapp:entity' %}">Структура</a></li>
+                        <li><a {% if request.resolver_match.url_name == 'contacts' %}class="active"{% endif %}
+                               href="{% url 'webapp:contacts' %}">Контакты</a></li>
+                        <li><a {% if request.resolver_match.url_name == 'working_mode' %}class="active"{% endif %}
+                               href="{% url 'webapp:working_mode' %}">Режим Работы</a></li>
+                        <li>
+                            <a {% if request.resolver_match.url_name == 'laboratory_offerings' %}class="active"{% endif %}
+                               href="{% url 'webapp:laboratory_offerings' %}">Лабораторный отдел</a></li>
+                        <li class="dropdown"><a
+                                {% if request.resolver_match.url_name in "'anti_corruption', 'standart_documents'" %}class="active"{% endif %}
+                                href="{% url 'webapp:anti_corruption' %}"><span>Борьба с коррупцией</span>
+                            <i class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li>
+                                    <a {% if request.resolver_match.url_name == 'standart_documents' %}class="active"{% endif %}
+                                       href="{% url 'webapp:standart_documents' %}">Нормативные документы</a></li>
+                                <li><a {% if request.resolver_match.url_name == 'other' %}class="active"{% endif %}
+                                       href="{% url 'webapp:anti_corruption' %}">Прочее</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a
+                                {% if request.resolver_match.url_name == 'ideological_work' %}class="active"{% endif %}
+                                href="{% url 'webapp:ideological_work' %}"><span>Идеологическая работа</span> <i
+                                class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li><a href="https://vitebsk-region.gov.by/ru/inform_den-ru/">Единые дни
+                                    информирования</a></li>
+                            </ul>
+                        </li>
+                        {#                      <li><a href="{% url 'webapp:charter' %}">Устав</a></li>#}
+                        <li><a {% if request.resolver_match.url_name == 'trade_union' %}class="active"{% endif %}
+                               href="{% url 'webapp:trade_union' %}">Профсоюз</a></li>
+                        <li><a {% if request.resolver_match.url_name == 'vacancies' %}class="active"{% endif %}
+                               href="{% url 'webapp:vacancies' %}">Вакансии</a></li>
+                    </ul>
+                </li>
 
 
-                  <div class="col-lg-2 col-md-6 footer-links">
-                      <h4>Главное меню</h4>
-                      <ul>
-                          <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:home' %}">Главная</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:working_mode' %}">О Центре</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:paid_services' %}">Обращения</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="{% url 'news:cge_news' %}">Новости</a></li>
-                      </ul>
-                  </div>
+                <li class="dropdown"><a
+                        {% if request.resolver_match.url_name in "'appeals', 'appeals_normative_documents', 'electronic_appeals', 'hotline', 'book_of_comments', 'higher_authority'" %}
+                            class="nav-link scrollto active" {% endif %} href="{% url 'webapp:appeals' %}"><span>Обращения</span>
+                    <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li>
+                            <a {% if request.resolver_match.url_name == 'appeals_normative_documents' %}class="active"{% endif %}
+                               href="{% url 'webapp:appeals_normative_documents' %}">Нормативно-правовые акты</a></li>
+                        <li><a {% if request.resolver_match.url_name == 'electronic_appeals' %}class="active"{% endif %}
+                               href="{% url 'webapp:electronic_appeals' %}">Обращения граждан и юридических лиц</a></li>
+                        <li><a {% if request.resolver_match.url_name == 'hotline' %}class="active"{% endif %}
+                               href="{% url 'webapp:hotline' %}">Прямая телефонная линия «горячая линия»</a></li>
+                        <li><a {% if request.resolver_match.url_name == 'book_of_comments' %}class="active"{% endif %}
+                               href="{% url 'webapp:book_of_comments' %}">Книга Замечаний и Предложений</a></li>
+                        <li><a {% if request.resolver_match.url_name == 'higher_authority' %}class="active"{% endif %}
+                               href="{% url 'webapp:higher_authority' %}">Вышестоящий Орган</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a
+                        {% if request.resolver_match.url_name in "'regulations', 'documents_ap', 'expertise', 'registrations', 'relation_to_citizens', 'rights_duties', 'maintenance_schedule'" %}
+                            class="nav-link scrollto active" {% endif %}
+                            href="{% url 'webapp:regulations' %}"><span>АП</span> <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a {% if request.resolver_match.url_name == 'documents_ap' %}class="active"{% endif %}
+                               href="{% url 'webapp:documents_ap' %}">Нормативные Документы</a></li>
+                        <li><a {% if request.resolver_match.url_name == 'expertise' %}class="active"{% endif %}
+                               href="{% url 'webapp:expertise' %}">Экспертиза</a></li>
+                        <li><a {% if request.resolver_match.url_name == 'registrations' %}class="active"{% endif %}
+                               href="{% url 'webapp:registrations' %}">Регистрация</a></li>
+                        <li>
+                            <a {% if request.resolver_match.url_name == 'relation_to_citizens' %}class="active"{% endif %}
+                               href="{% url 'webapp:relation_to_citizens' %}">В отношении граждан</a></li>
+                        <li><a {% if request.resolver_match.url_name == 'rights_duties' %}class="active"{% endif %}
+                               href="{% url 'webapp:rights_duties' %}">Права и Обязанности</a></li>
+                        <li>
+                            <a {% if request.resolver_match.url_name == 'maintenance_schedule' %}class="active"{% endif %}
+                               href="{% url 'webapp:maintenance_schedule' %}">Порядок и сроки обжалования</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a
+                        {% if request.resolver_match.url_name in "'services', 'paid_services', 'paid_services_lawyer', 'disinfection_disinsection_deratization', 'price_lists'" %}
+                            class="nav-link scrollto active" {% endif %}
+                            href="{% url 'webapp:services' %}"><span>Услуги</span> <i
+                        class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li><a {% if request.resolver_match.url_name == 'paid_services' %}class="active"{% endif %}
+                               href="{% url 'webapp:paid_services' %}">Платные услуги физическим лицам</a></li>
+                        <li>
+                            <a {% if request.resolver_match.url_name == 'paid_services_lawyer' %}class="active"{% endif %}
+                               href="{% url 'webapp:paid_services_lawyer' %}">Платные услуги ЮР лицам и ИП</a></li>
+                        <li>
+                            <a {% if request.resolver_match.url_name == 'disinfection_disinsection_deratization' %}class="active"{% endif %}
+                               href="{% url 'webapp:disinfection_disinsection_deratization' %}">Дезинфекция |
+                                Дезинсекция | Дератизация</a></li>
+                        <li><a {% if request.resolver_match.url_name == 'price_lists' %}class="active"{% endif %}
+                               href="{% url 'webapp:price_lists' %}">Прейскуранты</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a
+                        {% if request.resolver_match.url_name in "'cge-info', 'control_supervisory_activities', 'custom_products', 'sustainable_development_goals', 'custom_products', 'healthy_lifestyle', 'monitoring_plan', 'typical_violations', 'preventive_measures', 'analytical_newsletter', 'health_days', 'educational_resources', 'healthy_cities_towns', 'ticks', 'immunoprophylaxis', 'epidemiology', 'eurasian_economic_union', 'sanitary_quarantine_points', 'city_single', 'archive_single'" %}
+                            class="nav-link scrollto active" {% endif %} href="{% url 'webapp:cge-info' %}"><span>Деятельность</span>
+                    <i class="bi bi-chevron-down"></i></a>
+                    <ul>
+                        <li class="dropdown"><a
+                                {% if request.resolver_match.url_name in "'control_supervisory_activities', 'monitoring_plan', 'typical_violations'" %}class="active"{% endif %}
+                                href="{% url 'webapp:control_supervisory_activities' %}"><span>Контрольно (надзорная) деятельность</span>
+                            <i
+                                    class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li><a href="https://kgk.gov.by/ru/pvproverok-ru/">План Проверок</a></li>
+                                <li>
+                                    <a {% if request.resolver_match.url_name == 'monitoring_plan' %}class="active"{% endif %}
+                                       href="{% url 'webapp:monitoring_plan' %}">План Мониторинга</a></li>
+                                <li>
+                                    <a {% if request.resolver_match.url_name == 'typical_violations' %}class="active"{% endif %}
+                                       href="{% url 'webapp:typical_violations' %}">О типичных Нарушениях</a></li>
+                                <li><a href="https://www.rcheph.by/nadzor/chek-listy/">Чек-Листы</a></li>
+                            </ul>
+                        </li>
+                        <li><a {% if request.resolver_match.url_name == 'custom_products' %}class="active"{% endif %}
+                               href="{% url 'webapp:custom_products' %}">Нестандартная Продукция</a></li>
+                        <li class="dropdown"><a
+                                {% if request.resolver_match.url_name in "'healthy_lifestyle', 'preventive_measures', 'health_days', 'educational_resources'" %}class="active"{% endif %}
+                                href="{% url 'webapp:healthy_lifestyle' %}"><span>Здоровый Образ Жизни</span> <i
+                                class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li>
+                                    <a {% if request.resolver_match.url_name == 'preventive_measures' %}class="active"{% endif %}
+                                       href="{% url 'webapp:preventive_measures' %}">Профилактические мероприятия</a>
+                                </li>
+                                <li>
+                                    <a {% if request.resolver_match.url_name == 'health_days' %}class="active"{% endif %}
+                                       href="{% url 'webapp:health_days' %}">Единые Дни Здоровья</a></li>
+                                <li>
+                                    <a {% if request.resolver_match.url_name == 'educational_resources' %}class="active"{% endif %}
+                                       href="{% url 'webapp:educational_resources' %}">Информационно-Образовательные<br>ресурсы</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a
+                                {% if request.resolver_match.url_name in "'sustainable_development_goals', 'analytical_newsletter'" %}class="active"{% endif %}
+                                href="{% url 'webapp:sustainable_development_goals' %}"><span>Цели Устойчивого Развития</span>
+                            <i
+                                    class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li>
+                                    <a {% if request.resolver_match.url_name == 'analytical_newsletter' %}class="active"{% endif %}
+                                       href="{% url 'webapp:analytical_newsletter' %}">Информационно-Аналитический<br>бюллетень</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a {% if request.resolver_match.url_name in "'healthy_cities_towns', 'city_single', 'archive_single'" %}class="active"{% endif %}
+                               href="{% url 'webapp:healthy_cities_towns' %}">Здоровые Города и Посёлки</a></li>
+                        <li class="dropdown"><a
+                                {% if request.resolver_match.url_name in "'epidemiology', 'ticks', 'immunoprophylaxis'" %}class="active"{% endif %}
+                                href="{% url 'webapp:epidemiology' %}"><span>Эпидемиология</span> <i
+                                class="bi bi-chevron-right"></i></a>
+                            <ul>
+                                <li><a {% if request.resolver_match.url_name == 'ticks' %}class="active"{% endif %}
+                                       href="{% url 'webapp:ticks' %}">Внимание Клещи</a></li>
+                                <li>
+                                    <a {% if request.resolver_match.url_name == 'immunoprophylaxis' %}class="active"{% endif %}
+                                       href="{% url 'webapp:immunoprophylaxis' %}">Иммунопрофилактика</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a {% if request.resolver_match.url_name == 'eurasian_economic_union' %}class="active"{% endif %}
+                               href="{% url 'webapp:eurasian_economic_union' %}">Евразийский экономический союз</a></li>
+                        <li>
+                            <a {% if request.resolver_match.url_name == 'sanitary_quarantine_points' %}class="active"{% endif %}
+                               href="{% url 'webapp:sanitary_quarantine_points' %}">Санитарно-Карантинные пункты</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a {% if request.resolver_match.url_name == 'cge_news' %}class="active"{% endif %}
+                       href="{% url 'news:cge_news' %}">Новости</a></li>
+                <li><a class="nav-link scrollto " href="https://www.rcheph.by/nadzor/npa/">НПА</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+        {#      <a href="#appointment" class="appointment-btn scrollto fa fa-phone"><span class="d-none d-md-inline">  Горячая</span> Линия</a>#}
+        <div class="header-search">
+            <a href="{% url 'webapp:home' %}" class="search-icon"><i class="fa fa-search"></i></a>
+            <div class="search-box-wrap" style="display: none;">
+                <div class="searchform" role="search">
+                    <form class="search-form" method="get" action="{% url 'webapp:home' %}">
+                        <input type="text" name="s" id="s" placeholder="Search..." value="" class="search-field">
+                        <input type="submit" class="search-submit" value="Search">
+                    </form>
+                </div><!-- .searchform -->
+            </div><!-- .search-box-wrap -->
+        </div>
+    </div>
+</header><!-- End Header -->
 
-                  <div class="col-lg-3 col-md-6 footer-links">
-                      <h4>Услуги</h4>
-                      <ul>
-                          <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:services' %}">Платные услуги Физ лица</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:paid_services_lawyer' %}">Платные услуги ЮР лица</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:laboratory_offerings' %}">Лабораторные услуги</a></li>
-                          <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:price_lists' %}">Прейскуранты</a></li>
-                      </ul>
-                  </div>
+{% block content %}{% endblock %}
 
-{#                  <div class="col-lg-4 col-md-6 footer-newsletter">#}
-{#                      <h4>Наши Новости</h4>#}
-{#                      <p>Подпишись на наши новости, будь вкурсе всех событий, мы не занимаемся рассылкой спама!</p>#}
-{#                      <form action="" method="post">#}
-{#                          <input type="email" name="email"><input type="submit" value="Подписаться">#}
-{#                      </form>#}
-{##}
-{#                  </div>#}
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
 
-              </div>
-          </div>
-      </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-info">
+                        <h3>Полоцкий ЦГЭ</h3>
+                        <p>
+                            211400, г. Полоцк, <br>
+                            ул. Юбилейная, д.7б, пом.2<br><br>
+                            <strong>Телефон:</strong>
+                            <a href="tel:+80214494581">8 (0214) 49 45 81</a><br> <!-- Сделано кликабельным -->
+                            <strong>Почта:</strong> <a
+                                href="mailto:polotzk_hyg@vitebsk.by">polotzk_hyg@vitebsk.by</a><br>
+                            <!-- Сделано кликабельным -->
+                        </p>
+                    </div>
+                </div>
 
-      <div class="container">
-          <div class="copyright">
-              &copy; Copyright <strong><span>Phoenix 2024</span></strong>. All Rights Reserved
-          </div>
-          <div class="credits">
-              <!-- All the links in the footer should remain intact. -->
-              <!-- You can delete the links only if you purchased the pro version. -->
-              <!-- Licensing information: https://bootstrapmade.com/license/ -->
-              <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medicio-free-bootstrap-theme/ -->
-              Designed by <a href="https://t.me/ultravioletpartyeyes">Phoenix</a>
-          </div>
-      </div>
-  </footer><!-- End Footer -->
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+                <div class="col-lg-2 col-md-6 footer-links">
+                    <h4>Главное меню</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:home' %}">Главная</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:working_mode' %}">О Центре</a>
+                        </li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:paid_services' %}">Обращения</a>
+                        </li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{% url 'news:cge_news' %}">Новости</a></li>
+                    </ul>
+                </div>
 
-  <!-- Vendor JS Files -->
-  <script src="{% static 'webapp/assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
-  <script src="{% static 'webapp/assets/vendor/aos/aos.js' %}"></script>
-  <script src="{% static 'webapp/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'webapp/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
-  <script src="{% static 'webapp/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
-  <script src="{% static 'webapp/assets/vendor/php-email-form/validate.js' %}"></script>
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:services' %}">Платные услуги Физ
+                            лица</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:paid_services_lawyer' %}">Платные
+                            услуги ЮР лица</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="{% url 'webapp:laboratory_offerings' %}">Лабораторные
+                            услуги</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a
+                                href="{% url 'webapp:price_lists' %}">Прейскуранты</a></li>
+                    </ul>
+                </div>
 
-  <!-- Template Main JS File -->
-  <script src="{% static 'webapp/assets/js/main.js' %}"></script>
-  <!-- for bootstrap working -->
-  <script src="{% static 'js/bootstrap.js' %}"></script>
-  <!-- //for bootstrap working -->
+                {#                  <div class="col-lg-4 col-md-6 footer-newsletter">#}
+                {#                      <h4>Наши Новости</h4>#}
+                {#                      <p>Подпишись на наши новости, будь вкурсе всех событий, мы не занимаемся рассылкой спама!</p>#}
+                {#                      <form action="" method="post">#}
+                {#                          <input type="email" name="email"><input type="submit" value="Подписаться">#}
+                {#                      </form>#}
+                {##}
+                {#                  </div>#}
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="copyright">
+            &copy; Copyright <strong><span>Phoenix 2024</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medicio-free-bootstrap-theme/ -->
+            Designed by <a href="https://t.me/ultravioletpartyeyes">Phoenix</a>
+        </div>
+    </div>
+</footer><!-- End Footer -->
+
+<div id="preloader"></div>
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="{% static 'webapp/assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+<script src="{% static 'webapp/assets/vendor/aos/aos.js' %}"></script>
+<script src="{% static 'webapp/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'webapp/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+<script src="{% static 'webapp/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'webapp/assets/vendor/php-email-form/validate.js' %}"></script>
+<script src="{% static 'webapp/assets/vendor/big_text.js' %}"></script>
+
+<!-- Template Main JS File -->
+<script src="{% static 'webapp/assets/js/main.js' %}"></script>
+<!-- for bootstrap working -->
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<!-- //for bootstrap working -->
