@@ -202,11 +202,66 @@ h6 {
 }
 
 #topbar i {
-    padding-right: 0px;
+    padding-right: 0;
     line-height: 0;
-    padding-left: 15px;
-    padding-bottom: 4px;
+    padding-left: 5px;
+    padding-bottom: 5px;
 }
+/* Основные стили для выпадающего списка */
+#fontSizeSelector {
+    appearance: none;
+    padding: 1px 5px;
+    font-size: 14px;
+    border: 2px solid #3fbbc0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #737373;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+
+    /* Добавляем тень */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Тень при наведении */
+#fontSizeSelector:hover {
+    border-color: #00eef8;
+    box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Тень при активации (при выборе опции) */
+#fontSizeSelector:focus {
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* При фокусе */
+#fontSizeSelector:focus {
+    box-shadow: 0 0 10px rgba(63, 187, 192, 0.5);
+}
+
+/* Стили для опций */
+#fontSizeSelector option {
+    background: #ffffff;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Если нужно сделать выпадающий список больше */
+#fontSizeSelector {
+    width: 55px; /* Ширина списка */
+    height: 25px; /* Высота списка */
+}
+
+/* Стилизация стрелочки */
+#fontSizeSelector {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23007bff"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0 center;
+    background-size: 17px;
+}
+
 
 .haderphone {
     display: flex;
@@ -2808,7 +2863,7 @@ section#clocks-two {
         display: flex; /* Оставляем иконки видимыми на десктопной версии */
         align-items: center;
         margin-right: 14%;
-        margin-left: 33px;
+        margin-left: 0;
     }
 
     .header-icons a {
