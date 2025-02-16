@@ -61,6 +61,7 @@ def NewsDetailView(request, pk):
     news = ModelNews.objects.filter(pk=pk)
     news_main = ModelNews.objects.all().order_by('-pub_date')
     interactiv = Interactive.objects.all()
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
 
     # Получаем данные о погоде
     weather = get_weather()
@@ -70,5 +71,6 @@ def NewsDetailView(request, pk):
         'news_main': news_main,
         'interactiv': interactiv,
         'weather': weather,  # Передаем данные о погоде в контекст
+        'centre_news': centre_news,
     }
     return render(request, 'single.html', context=context)
