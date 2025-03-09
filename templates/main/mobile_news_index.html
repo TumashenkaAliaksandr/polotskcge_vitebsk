@@ -7,7 +7,7 @@
         <div class="news">
             <div class="news-grids">
                 <div class="col-md-8 news-grid-left">
-                <h3>Новости</h3>
+                <h3>{{ "Новости"|translate_text }}</h3>
                     <ul>
                         {% for main_litle_news in model_blog_main|slice:":3" %}
                             <li>
@@ -20,7 +20,7 @@
                                         <a href="{% url 'news:single' pk=main_litle_news.id %}">{{ main_litle_news.title|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
                                     </h4>
                                     <h5 class="fa fa-user-doctor"><label>|</label><a
-                                            href="{% url 'news:single' pk=main_litle_news.id %}"> {{ main_litle_news.author|translate_text }}</a>
+                                            href="{% url 'news:single' pk=main_litle_news.id %}"> {{ main_litle_news.author|translate_text|safe }}</a>
                                         <label>|</label> <i>{{ main_litle_news.pub_date|date:"d.m.Y" }}</i></h5>
                                     <a href="{% url 'news:single' pk=main_litle_news.id %}">
                                         <p>{{ main_litle_news.description_small|translate_text|wordwrap:40|truncatechars_html:132|safe }}</p>
@@ -31,7 +31,7 @@
                         {% endfor %}
                     </ul>
                     <div class="news-more">
-                        <a href="{% url 'news:cge_news' %}"><p>Узнать больше..</p></a>
+                        <a href="{% url 'news:cge_news' %}"><p>{{ "Узнать больше.."|translate_text }}</p></a>
                     </div>
                 </div>
                 <!-- Tab panes -->
@@ -39,19 +39,19 @@
                     <div class="news-grids">
                         <div class="col-md-4 breaking-news-grid-right">
                             <div class="news-grid-rght1">
-                                <h3>Погода в Полоцке</h3>
+                                <h3>{{ "Погода в Полоцке"|translate_text }}</h3>
                                 <!-- Nav tabs -->
                                 <div class="tab-content-weather-bg">
                                     <div class="tab-content-weather">
                                         <ul>
-                                            <h4>{{ weather.month }} {{ weather.day_of_month }}, {{ weather.day }}</h4>
+                                            <h4>{{ weather.month|translate_text }} {{ weather.day_of_month }}, {{ weather.day|translate_text }}</h4>
                                             <p><span
-                                                    class="fa fa-wind"> Ветер: {{ weather.wind_direction }}-ный | {{ weather.wind_speed }} м/с</span>
+                                                    class="fa fa-wind"> {{ "Ветер: "|translate_text }} {{ weather.wind_direction }}-ный | {{ weather.wind_speed }} {{ "м/с" |translate_text }}</span>
                                             </p>
                                             <p><span class="fas fa-thermometer-half">
-                                                Температура: {{ weather.temperature }}</span></p>
+                                                {{ "Температура:"|translate_text }} {{ weather.temperature }}</span></p>
                                             <p><span class="fas fa-tachometer-alt">
-                                                Давление: {{ weather.pressure }} гПа</span></p>
+                                               {{ "Давление:"|translate_text }} {{ weather.pressure }} {{ "гПа"|translate_text }}</span></p>
                                         </ul>
                                     </div>
                                 </div>
@@ -60,8 +60,8 @@
                                 <img src="{% static 'images/gigi_centr_girispolkom.jpg' %}" alt=" "
                                      class="img-responsive"/>
                                 <div class="story">
-                                    <p>фото дня</p>
-                                    <h3><a href="{% url 'webapp:contacts' %}">Горисполком город Полоцк</a></h3>
+                                    <p>{{ "фото дня"|translate_text }}</p>
+                                    <h3><a href="{% url 'webapp:contacts' %}">{{ "Горисполком город Полоцк"|translate_text }}</a></h3>
                                 </div>
                             </div>
                         </div>

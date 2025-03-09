@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load templatetags %}
 
 <div id="single" class="single main-bg">
     <div class="breaking-news">
@@ -7,14 +7,14 @@
             {% for main_interactiv_string in interactiv %}
                 <div class="move-text-index">
                     <div class="breaking_news">
-                        <h2>Новости Центра</h2>
+                        <h2>{{ "Новости Центра"|translate_text }}</h2>
                     </div>
                     <div class="marquee">
                         <div class="marquee1"><a class="breaking"
-                                                 href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description | safe }}</a>
+                                                 href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description|translate_text|safe }}</a>
                         </div>
                         <div class="marquee2"><a class="breaking"
-                                                 href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                                                 href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two|translate_text|safe }}</a>
                         </div>
                         <div class="clearfix"></div>
                     </div>
