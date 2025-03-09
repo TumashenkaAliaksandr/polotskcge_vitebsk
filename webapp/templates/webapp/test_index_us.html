@@ -1,7 +1,7 @@
 {% extends 'main/base.html' %}
 {% load static %}
 {% load i18n %}
-
+{% load templatetags %}
 {% block content %}
 
     {% include 'slider/slider.html' %}
@@ -37,8 +37,8 @@
             <div class="container book_info img-container" data-aos="fade-left">
                 {% for main_about in about_us %}
                     <div class="section-title">
-                        <h2>{{ main_about.name }}</h2>
-                        <p>{{ main_about.description | safe }}</p>
+                        <h2>{{ main_about.name|translate_text }}</h2>
+                        <p>{{ main_about.description|translate_text| safe }}</p>
                         <!-- Контейнер для изображения -->
                         <div data-aos="fade-right">
                             <img src="{{ main_about.photo.url }}" >
@@ -62,12 +62,8 @@
                                       data-purecounter-duration="1"
                                       class="purecounter"></span>
                                 <p>
-                                    <strong>{{ main_ab_his.name }}</strong>
-                                    {% if current_language == 'ru' %}
-                                        {{ main_ab_his.description_ru|default:main_ab_his.description }}
-                                    {% else %}
-                                        {{ main_ab_his.description_en|default:main_ab_his.description }}
-                                    {% endif %}
+                                    <strong>{{ main_ab_his.name|translate_text|safe }}</strong>
+                                    {{ main_ab_his.description|translate_text|safe }}
                                 </p>
                             </div>
                         </div>
@@ -85,13 +81,13 @@
                       <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
                           <div class="icon-box mt-5 mt-lg-0">
                               <i class="{{ main_innovations.icon_class }}"></i>
-                              <h4>{{ main_innovations.name }}</h4>
-                              <p>{{ main_innovations.description | safe}}</p>
+                              <h4>{{ main_innovations.name|translate_text }}</h4>
+                              <p>{{ main_innovations.description|translate_text| safe}}</p>
                           </div>
                           <div class="icon-box mt-5">
                               <i class="{{ main_innovations.icon_class_two }}"></i>
-                              <h4>{{ main_innovations.name_two }}</h4>
-                              <p>{{ main_innovations.description_two | safe }}</p>
+                              <h4>{{ main_innovations.name_two|translate_text }}</h4>
+                              <p>{{ main_innovations.description_two|translate_text| safe }}</p>
                           </div>
                       </div>
                       <div class="image col-lg-6 order-1 order-lg-2"
@@ -108,8 +104,8 @@
           <div class="container" data-aos="fade-up">
               {% for desc in desc_services_title %}
                   <div class="section-title">
-                      <h2>{{ desc.name }}</h2>
-                      <p>{{ desc.description | safe }}</p>
+                      <h2>{{ desc.name|translate_text }}</h2>
+                      <p>{{ desc.description|translate_text| safe }}</p>
                   </div>
               {% endfor %}
 
@@ -119,8 +115,8 @@
                           <div class="icon">
                               <img src="{{ main_servic.icon.url }}">
                           </div>
-                          <h4 class="title"><a href="{{ main_servic.link }}">{{ main_servic.name }}</a></h4>
-                          <p class="description">{{ main_servic.description | safe }}</p>
+                          <h4 class="title"><a href="{{ main_servic.link }}">{{ main_servic.name|translate_text }}</a></h4>
+                          <p class="description">{{ main_servic.description|translate_text|safe }}</p>
                       </div>
                   {% endfor %}
               </div>
@@ -134,8 +130,8 @@
             <div class="container" data-aos="fade-up">
                 {% for main_info_erip in erip_info %}
                     <div class="section-title">
-                        <h2>{{ main_info_erip.name|safe }}</h2>
-                        <p>{{ main_info_erip.description|safe }}</p>
+                        <h2>{{ main_info_erip.name|translate_text|safe }}</h2>
+                        <p>{{ main_info_erip.description|translate_text|safe }}</p>
                     </div>
 
                     <div class="row">
@@ -144,7 +140,7 @@
                                  alt="">
                         </div>
                         <div class="col-lg-10 pt-4 pt-lg-0 content" data-aos="fade-left">
-                            <p class="fst-italic">{{ main_info_erip.payment_methods|safe }}</p>
+                            <p class="fst-italic">{{ main_info_erip.payment_methods|translate_text|safe }}</p>
                             <p class="fst-italic"><a href="{% static 'webapp/assets/img/gigi_centr_oplata_erip.jpg' %}"
                                                      target="_blank">{% trans "Схема проведения платежа" %}</a></p>
                         </div>
@@ -202,7 +198,7 @@
             <div class="container" data-aos="fade-up">
                 {% for title_desc in title_desc_queans %}
                     <div class="section-title">
-                        <h2>{{ title_desc.name }}</h2>
+                        <h2>{{ title_desc.name|translate_text }}</h2>
 {#                        <p>{{ title_desc.description | safe }}</p>#}
                     </div>
                 {% endfor %}
@@ -211,7 +207,7 @@
                     {% for question in questions|slice:":6" %}
                         <li>
                             <div data-bs-toggle="collapse" class="collapsed question"
-                                 href="#{{ question.id }}"> {{ question.question_text }} <i
+                                 href="#{{ question.id }}"> {{ question.question_text|translate_text }} <i
                                     class="bi bi-chevron-down icon-show"><img src="{% static 'webapp/assets/img/gigi_centr_marker-nbg.png' %}" class="img-fix"
                                  alt=""></i><i class="bi bi-chevron-up icon-close"><img src="{% static 'webapp/assets/img/gigi_centr_marker-nbg.png' %}" class="img-fix"
                                  alt=""></i>
@@ -219,7 +215,7 @@
                             <div id="{{ question.id }}" class="collapse" data-bs-parent=".faq-list">
                                 <p>
                                     {% for ansver in question.answers.all %}
-                                        {{ ansver.answer_text }}
+                                        {{ ansver.answer_text|translate_text }}
                                     {% endfor %}
                                 </p>
                             </div>
@@ -292,15 +288,5 @@
         <!-- End Contact Section -->
         {% include 'slider/slider_rotate3d.html' %}
   </main><!-- End #main -->
-
-  <div style="display: flex; gap: 10px; margin-top: 20px;">
-    <a href="{% url 'set_language' %}?language=en" aria-label="English">
-        <img src="{% static 'webapp/assets/img/gigi_centr_eng_prapor-nbg.png' %}"
-             class="img-fixed-size-prapors-had" alt="English">
-    </a>
-    <a href="{% url 'set_language' %}?language=ru" aria-label="Русский">
-        <img src="{% static 'webapp/assets/img/gigi_centr_prapor_zvo.png' %}" class="img-fixed-size-prapors-had" alt="Русский">
-    </a>
-  </div>
 
 {% endblock %}
