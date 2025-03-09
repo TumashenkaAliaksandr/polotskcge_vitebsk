@@ -4498,3 +4498,11 @@ section#clocks-two {
         margin-left: -4%;
     }
 }
+
+.transparent-btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+

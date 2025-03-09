@@ -2,24 +2,20 @@
 {% load static %}
 {% load i18n %}
 
-
 {% block content %}
 
     {% include 'slider/slider.html' %}
-        <!-- ======= Breadcrumbs Section ======= -->
-
+    <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
         <div class="container">
-
             <div class="d-flex justify-content-between align-items-center">
                 <ol>
-                    <li><a href="{% url 'webapp:home' %}">{% trans "Главная" %}</a></li>
+                    <li><a href="{% url 'webapp:home' %}">{% translate "Главная" %}</a></li>
                 </ol>
             </div>
         </div>
     </section>
     <!-- End Breadcrumbs Section -->
-
 
     <main id="main">
 
@@ -35,8 +31,7 @@
             {% include 'main/featured-services.html' %}
         </div>
 
-      <!-- ======= About Us Section ======= -->
-
+        <!-- ======= About Us Section ======= -->
         <!-- About Section -->
         <section class="main-bg">
             <div class="container book_info img-container" data-aos="fade-left">
@@ -44,7 +39,6 @@
                     <div class="section-title">
                         <h2>{{ main_about.name }}</h2>
                         <p>{{ main_about.description | safe }}</p>
-
                         <!-- Контейнер для изображения -->
                         <div data-aos="fade-right">
                             <img src="{{ main_about.photo.url }}" >
@@ -67,7 +61,14 @@
                                 <span data-purecounter-start="0" data-purecounter-end="{{ main_ab_his.quantity }}"
                                       data-purecounter-duration="1"
                                       class="purecounter"></span>
-                                <p><strong>{{ main_ab_his.name|safe }}</strong> {{ main_ab_his.description|safe }}</p>
+                                <p>
+                                    <strong>{{ main_ab_his.name }}</strong>
+                                    {% if current_language == 'ru' %}
+                                        {{ main_ab_his.description_ru|default:main_ab_his.description }}
+                                    {% else %}
+                                        {{ main_ab_his.description_en|default:main_ab_his.description }}
+                                    {% endif %}
+                                </p>
                             </div>
                         </div>
                     {% endfor %}
@@ -292,21 +293,14 @@
         {% include 'slider/slider_rotate3d.html' %}
   </main><!-- End #main -->
 
-  <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-    <input name="next" type="hidden" value="{{ redirect_to }}">
-    <select name="language">
-        {% get_current_language as LANGUAGE_CODE %}
-        {% get_available_languages as LANGUAGES %}
-        {% for language in LANGUAGES %}
-        <option value="{{ language.0 }}"{% if language.0 == LANGUAGE_CODE %} selected{% endif %}>
-            {{ language.1 }} ({{ language.0 }})
-        </option>
-        {% endfor %}
-    </select>
-    <input type="submit" value="Переключить">
-</form>
-
-<a href="{% url 'set_language' %}?language=en">English</a>
-<a href="{% url 'set_language' %}?language=ru">Русский</a>
+  <div style="display: flex; gap: 10px; margin-top: 20px;">
+    <a href="{% url 'set_language' %}?language=en" aria-label="English">
+        <img src="{% static 'webapp/assets/img/gigi_centr_eng_prapor-nbg.png' %}"
+             class="img-fixed-size-prapors-had" alt="English">
+    </a>
+    <a href="{% url 'set_language' %}?language=ru" aria-label="Русский">
+        <img src="{% static 'webapp/assets/img/gigi_centr_prapor_zvo.png' %}" class="img-fixed-size-prapors-had" alt="Русский">
+    </a>
+  </div>
 
 {% endblock %}

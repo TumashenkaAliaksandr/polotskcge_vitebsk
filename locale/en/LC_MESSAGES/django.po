@@ -1,0 +1,51 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-08 12:56+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"  # Укажите язык
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"  # Для английского языка
+
+#: .\webapp\templates\webapp\test_index_us.html:13
+msgid "Главная"
+msgstr "Home"  # Перевод на английский
+
+#: .\webapp\templates\webapp\test_index_us.html:48
+msgid "Информация отсутствует."
+msgstr "Information is missing."
+
+#: .\webapp\templates\webapp\test_index_us.html:142
+msgid "Схема проведения платежа"
+msgstr "Payment scheme"
+
+#: .\webapp\templates\webapp\test_index_us.html:232
+msgid "Контакты"
+msgstr "Contacts"
+
+#: .\webapp\templates\webapp\test_index_us.html:251
+msgid "Наш Адрес"
+msgstr "Our Address"
+
+#: .\webapp\templates\webapp\test_index_us.html:252
+msgid "211400 г.Полоцк, ТЦ.Евролюкс ул.Юбилейная, д.7(б), пом.2"
+msgstr "211400 Polotsk, EuroLux Shopping Center, Jubilee St., bldg. 7(b), room 2"
+
+#: .\webapp\templates\webapp\test_index_us.html:265
+msgid "Наша Почта"
+msgstr "Our Email"
+
+#: .\webapp\templates\webapp\test_index_us.html:272
+msgid "Телефон Горячей линии"
+msgstr "Hotline Phone"

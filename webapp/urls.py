@@ -1,4 +1,5 @@
 from django.urls import path
+from django.views.i18n import set_language
 
 from webapp.views import *
 from django.conf import settings
@@ -69,6 +70,7 @@ urlpatterns = [
     path('city/<int:pk>/', city_single, name='city_single'),
     path('archive/<int:pk>/', archive_single, name='archive_single'),
     path('skp/<int:pk>/', skp, name='skp'),
+    path('i18n/setlang/', set_language, name='set_language'),
     ]
 
 

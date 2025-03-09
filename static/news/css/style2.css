@@ -2156,9 +2156,9 @@ ul.wmuSliderPagination {
 .img-fixed-size-prapors-had {
     width: 26px;
     height: 19px;
-    margin-right: 0px;
+    margin-right: 3px;
     object-fit: cover;
-    margin-top: 8%;
+    margin-top: 50%;
     border-radius: 5px;
 }
 

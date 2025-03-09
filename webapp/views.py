@@ -5,7 +5,7 @@ from django.db.models.functions import ExtractYear
 from news.models import Interactive, ModelNews, PreviewNews
 from news.utils import get_weather
 from webapp.models import *
-from django.utils import timezone
+from django.utils import timezone, translation
 from datetime import timedelta
 
 
@@ -14,13 +14,13 @@ def base_main(request):
     logo_main = Logo.objects.all()
     info_contact = ContactInfoHad.objects.first()
 
+
     context = {
         'logo_main': logo_main,
         'info_contact': info_contact,
     }
 
     return render(request, 'main/base.html', context=context)
-
 
 def index(request):
     """Main, center"""
@@ -39,6 +39,7 @@ def index(request):
     sliders = OurPartners.objects.all()
     about_history = AboutHistory.objects.all()
     erip_info = EripPayment.objects.all()
+    current_language = translation.get_language()
 
     context = {
         'desc_services_title': desc_services_title,
@@ -53,11 +54,12 @@ def index(request):
         'model_blog_main': model_blog_main,
         'interactiv': interactiv,
         'sliders': sliders,
-        'about_history': about_history,
+        'about_history': about_history,  # Используем переведенные данные
         'erip_info': erip_info,
+        'current_language': current_language,
     }
 
-    return render(request, 'webapp/index.html', context=context)
+    return render(request, 'webapp/test_index_us.html', context=context)
 
 
 def chief_doctor(request):
