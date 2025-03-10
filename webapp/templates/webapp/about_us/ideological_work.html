@@ -1,7 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
-
-
+{% load templatetags %}
 {% block content %}
 
 <main id="main">
@@ -16,8 +15,8 @@
 
             <div class="d-flex justify-content-between align-items-center">
                 <ol>
-                    <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                    <li>Идеологические работы</li>
+                    <li><a href="{% url 'webapp:home' %}">{{ "Главная"|translate_text }}</a></li>
+                    <li>{{ "Идеологические работы"|translate_text }}</li>
                 </ol>
             </div>
         </div>
@@ -33,8 +32,8 @@
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="icon"><i class="{{ main_features.icon_class }}"></i></div>
-                            <h4 class="title"><a href="{{ main_features.link }}">{{ main_features.name }}</a></h4>
-                            <p class="description">{{ main_features.description|safe }}</p>
+                            <h4 class="title"><a href="{{ main_features.link }}">{{ main_features.name|translate_text }}</a></h4>
+                            <p class="description">{{ main_features.description|translate_text|safe }}</p>
                         </div>
                     </div>
                 {% endfor %}

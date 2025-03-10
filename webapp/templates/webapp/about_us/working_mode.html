@@ -1,7 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
-
-
+{% load templatetags %}
 {% block content %}
 
     <main id="main">
@@ -17,8 +16,8 @@
 
               <div class="d-flex justify-content-between align-items-center">
                   <ol>
-                      <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                      <li>Режим работы</li>
+                      <li><a href="{% url 'webapp:home' %}">{{ "Главная"|translate_text }}</a></li>
+                      <li>{{ "Режим работы"|translate_text }}</li>
                   </ol>
               </div>
           </div>
@@ -34,14 +33,14 @@
                         {% for main_interactiv_string in interactiv %}
                             <div class="move-text">
                                 <div class="breaking_news">
-                                    <h2>Новости Центра</h2>
+                                    <h2>{{ "Новости Центра"|translate_text }}</h2>
                                 </div>
                                 <div class="marquee">
                                     <div class="marquee1"><a class="breaking"
-                                                             href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description | safe }}</a>
+                                                             href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description |translate_text| safe }}</a>
                                     </div>
                                     <div class="marquee2"><a class="breaking"
-                                                             href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                                                             href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two |translate_text| safe }}</a>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -62,8 +61,8 @@
             <div class="container" data-aos="fade-up">
                 {% for main_title_clocks in info_clocks %}
                     <div class="section-title">
-                        <h2>{{ main_title_clocks.title }}</h2>
-                        <p>{{ main_title_clocks.description | safe }}</p>
+                        <h2>{{ main_title_clocks.title|translate_text }}</h2>
+                        <p>{{ main_title_clocks.description |translate_text| safe }}</p>
                     </div>
                 {% endfor %}
 
@@ -74,19 +73,19 @@
                                 <table class="iksweb">
                                     <thead>
                                     <tr>
-                                        <th>Должность</th>
-                                        <th>ФИО</th>
-                                        <th>Этаж | Кабинет</th>
-                                        <th>Дни и Время приёма</th>
-                                        <th>Телефон</th>
+                                        <th>{{ "Должность"|translate_text }}</th>
+                                        <th>{{ "ФИО"|translate_text }}</th>
+                                        <th>{{ "Этаж | Кабинет"|translate_text }}</th>
+                                        <th>{{ "Дни и Время приёма"|translate_text }}</th>
+                                        <th>{{ "Телефон"|translate_text }}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     {% for main_clock in clocks %}
                                         <tr>
-                                            <td>{{ main_clock.name }}</td>
-                                            <td>{{ main_clock.family_name }}</td>
-                                            <td>{{ main_clock.office }}</td>
+                                            <td>{{ main_clock.name|translate_text }}</td>
+                                            <td>{{ main_clock.family_name|translate_text }}</td>
+                                            <td>{{ main_clock.office|translate_text }}</td>
                                             <td>{{ main_clock.reception_time }}</td>
                                             <td>{{ main_clock.phone }}</td>
                                         </tr>
@@ -121,9 +120,8 @@
                 <div id="contact" class="contact">
                     <div class="container" data-aos="fade-up">
                         <div class="section-title">
-                            <h2>Наша Команда</h2>
-                            <p>Каждый наш сотрудник - мастер своего дела, обладающий неповторимым багажом знаний и
-                                опыта.</p>
+                            <h2>{{ "Наша Команда"|translate_text }}</h2>
+                            <p>{{ "Каждый наш сотрудник - мастер своего дела, обладающий неповторимым багажом знаний и опыта."|translate_text }}</p>
                         </div>
 
                         <div class="row">
@@ -135,13 +133,13 @@
                                              class="img-fluid"
                                              alt="">
                                         <div class="social">
-                                            <a href="{% url 'webapp:chief-doctor' %}"><h4>Записаться на приём</h4></a>
+                                            <a href="{% url 'webapp:chief-doctor' %}"><h4>{{ "Записаться на приём"|translate_text }}</h4></a>
                                         </div>
                                     </div>
                                     <div class="member-info">
-                                        <h4>Гуринович<br>Михаил Евгеньевич</h4>
-                                        <span>Главный государственный<br>санитарный врач</span>
-                                        <span>города Полоцка и Полоцкого района</span>
+                                        <h4>{{ "Гуринович"|translate_text }}<br>{{ "Михаил Евгеньевич"|translate_text }}</h4>
+                                        <span>{{ "Главный государственный"|translate_text }}<br>{{ "санитарный врач"|translate_text }}</span>
+                                        <span>{{ "города Полоцка и Полоцкого района"|translate_text }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -152,12 +150,12 @@
                                              class="img-fluid"
                                              alt="">
                                         <div class="social">
-                                            <a href=""><h4>Записаться на приём</h4></a>
+                                            <a href=""><h4>{{ "Записаться на приём"|translate_text }}</h4></a>
                                         </div>
                                     </div>
                                     <div class="member-info">
-                                        <h4>Гречуха Юлия<br>Владимировна</h4>
-                                        <span>Заместитель главного врача</span>
+                                        <h4>{{ "Гречуха Юлия"|translate_text }}<br>{{ "Владимировна"|translate_text }}</h4>
+                                        <span>{{ "Заместитель главного врача"|translate_text }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -169,14 +167,14 @@
                                              class="img-fluid"
                                              alt="">
                                         <div class="social">
-                                            <a href=""><h4>Отдел Гигиены</h4></a>
+                                            <a href=""><h4>{{ "Отдел Гигиены"|translate_text }}</h4></a>
                                         </div>
                                     </div>
                                     <div class="member-info">
-                                        <h4>Щербакова Ольга Александровна</h4>
-                                        <span>Заведующий отделом</span>
-                                        <span>каб. №12, 4-этаж</span>
-                                        <span>тел: +375(214)49-31-52</span>
+                                        <h4>{{ "Щербакова Ольга Александровна"|translate_text }}</h4>
+                                        <span>{{ "Заведующий отделом"|translate_text }}</span>
+                                        <span>{{ "каб. №12, 4-этаж"|translate_text }}</span>
+                                        <span>{{ "тел:"|translate_text }} +375(214)49-31-52</span>
                                     </div>
                                 </div>
                             </div>
@@ -188,14 +186,14 @@
                                              class="img-fluid"
                                              alt="">
                                         <div class="social">
-                                            <a href=""><h4>Отдел Гигиены Питания</h4></a>
+                                            <a href=""><h4>{{ "Отдел Гигиены Питания"|translate_text }}</h4></a>
                                         </div>
                                     </div>
                                     <div class="member-info">
-                                        <h4>Мороз Юрий<br>Олегович</h4>
-                                        <span>Заведующий отделением</span>
-                                        <span>каб. №14, 4-этаж</span>
-                                        <span>тел: +375(214)49-31-52</span>
+                                        <h4>{{ "Мороз Юрий"|translate_text }}<br>{{ "Олегович"|translate_text }}</h4>
+                                        <span>{{ "Заведующий отделением"|translate_text }}</span>
+                                        <span>{{ "каб. №14, 4-этаж"|translate_text }}</span>
+                                        <span>{{ "тел:"|translate_text }} +375(214)49-31-52</span>
                                     </div>
                                 </div>
                             </div>

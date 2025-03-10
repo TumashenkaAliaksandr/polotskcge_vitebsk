@@ -1,7 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
-
-
+{% load templatetags %}
 {% block content %}
 
 <main id="main">
@@ -16,8 +15,8 @@
 
             <div class="d-flex justify-content-between align-items-center">
                 <ol>
-                    <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                    <li>Профсоюз</li>
+                    <li><a href="{% url 'webapp:home' %}">{{ "Главная"|translate_text }}</a></li>
+                    <li>{{ "Профсоюз"|translate_text }}</li>
                 </ol>
             </div>
         </div>
@@ -35,14 +34,14 @@
                     {% for main_interactiv_string in interactiv %}
                         <div class="move-text">
                             <div class="breaking_news">
-                                <h2>Новости Центра</h2>
+                                <h2>{{ "Новости Центра"|translate_text }}</h2>
                             </div>
                             <div class="marquee">
                                 <div class="marquee1"><a class="breaking"
-                                                         href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description | safe }}</a>
+                                                         href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description|translate_text | safe }}</a>
                                 </div>
                                 <div class="marquee2"><a class="breaking"
-                                                         href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                                                         href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two|translate_text | safe }}</a>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -63,7 +62,7 @@
             <div class="row">
                 {% for main_profsouz in profsouz_inf %}
                     <div class="section-title">
-                        <h2>{{ main_profsouz.name|safe }}</h2>
+                        <h2>{{ main_profsouz.name|translate_text|safe }}</h2>
                     </div>
                 {% endfor %}
             </div>
@@ -74,9 +73,9 @@
                             <table class="iksweb">
                                 {% for main_profsouz in profsouz_inf %}
                                     <div class="description-left">
-                                        <p>{{ main_profsouz.description|safe }}</p>
-                                        <p>{{ main_profsouz.package|safe }}</p>
-                                        <p>{{ main_profsouz.description_two|safe }}</p>
+                                        <p>{{ main_profsouz.description|translate_text|safe }}</p>
+                                        <p>{{ main_profsouz.package|translate_text|safe }}</p>
+                                        <p>{{ main_profsouz.description_two|translate_text|safe }}</p>
                                     </div>
                                 {% endfor %}
                             </table>
@@ -96,28 +95,28 @@
                             <table class="iksweb">
                                 {% for main_profsouz in profsouz_inf_two %}
                                     <div class="section-title">
-                                        <h2>{{ main_profsouz.name_main|safe }}</h2>
+                                        <h2>{{ main_profsouz.name_main|translate_text|safe }}</h2>
                                     </div>
                                 {% endfor %}
                                 {% for main_degree in profsouz_inf_two %}
                                     <div class="description-left">
-                                        <p>{{ main_degree.description|safe }}</p>
+                                        <p>{{ main_degree.description|translate_text|safe }}</p>
                                     </div>
                                 {% endfor %}
                                 <thead>
                                 <tr>
                                     <th>№</th>
-                                    <th>ФИО</th>
-                                    <th>Занимаемая должность</th>
-                                    <th>Телефон</th>
+                                    <th>{{ "ФИО"|translate_text }}</th>
+                                    <th>{{ "Занимаемая должность"|translate_text }}</th>
+                                    <th>{{ "Телефон"|translate_text }}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 {% for main_profsouz in profsouz_infall %}
                                     <tr>
                                         <td>{{ main_profsouz.number|safe }}</td>
-                                        <td>{{ main_profsouz.name_doctors|safe }}</td>
-                                        <td>{{ main_profsouz.status|safe }}</td>
+                                        <td>{{ main_profsouz.name_doctors|translate_text|safe }}</td>
+                                        <td>{{ main_profsouz.status|translate_text|safe }}</td>
                                         <td>{{ main_profsouz.phone|safe }}</td>
                                     </tr>
                                 {% endfor %}
@@ -125,7 +124,7 @@
                             </table>
                             {% for main_profsouz in profsouz_icons %}
                                 <div class="description-left">
-                                    <p>{{ main_profsouz.description|safe }}</p>
+                                    <p>{{ main_profsouz.description|translate_text|safe }}</p>
                                 </div>
                                 <div class="social-links mt-3">
                                     <a href="{{ main_profsouz.link_telegram }}"><i class="bx bxl-telegram"></i></a>
@@ -147,23 +146,23 @@
                             <table class="iksweb">
                                 {% for main_degree in profsouz_inf_two %}
                                     <div class="description-left">
-                                        <p>{{ main_degree.package|safe }}</p>
+                                        <p>{{ main_degree.package|translate_text|safe }}</p>
                                     </div>
                                 {% endfor %}
                                 <thead>
                                 <tr>
                                     <th>№</th>
-                                    <th>ФИО</th>
-                                    <th>Занимаемая должность</th>
-                                    <th>Телефон</th>
+                                    <th>{{ "ФИО"|translate_text }}</th>
+                                    <th>{{ "Занимаемая должность"|translate_text }}</th>
+                                    <th>{{ "Телефон"|translate_text }}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 {% for main_prof_tabl_three in profsouz_inf_three %}
                                     <tr>
                                         <td>{{ main_prof_tabl_three.number|safe }}</td>
-                                        <td>{{ main_prof_tabl_three.name_doctors|safe }}</td>
-                                        <td>{{ main_prof_tabl_three.status|safe }}</td>
+                                        <td>{{ main_prof_tabl_three.name_doctors|translate_text|safe }}</td>
+                                        <td>{{ main_prof_tabl_three.status|translate_text|safe }}</td>
                                         <td>{{ main_prof_tabl_three.phone|safe }}</td>
                                     </tr>
                                 {% endfor %}
