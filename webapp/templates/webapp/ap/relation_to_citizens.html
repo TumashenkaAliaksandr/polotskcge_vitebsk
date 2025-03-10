@@ -1,6 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
-
+{% load templatetags %}
 
 {% block content %}
 
@@ -16,8 +16,8 @@
 
             <div class="d-flex justify-content-between align-items-center">
                 <ol>
-                    <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                    <li>В отношении граждан</li>
+                    <li><a href="{% url 'webapp:home' %}">{{ "Главная"|translate_text }}</a></li>
+                    <li>{{ "В отношении граждан"|translate_text }}</li>
                 </ol>
             </div>
         </div>
@@ -32,14 +32,14 @@
                 {% for main_interactiv_string in interactiv %}
                     <div class="move-text">
                         <div class="breaking_news">
-                            <h2>Новости Центра</h2>
+                            <h2>{{ "Новости Центра"|translate_text }}</h2>
                         </div>
                         <div class="marquee">
                             <div class="marquee1"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description |translate_text| safe }}</a>
                             </div>
                             <div class="marquee2"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two |translate_text| safe }}</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -63,8 +63,8 @@
             <div class="row">
                 {% for main_rel in rel_inf %}
                     <div class="section-title">
-                        <h2>{{ main_rel.name|safe }}</h2>
-                        <p>{{ main_rel.description|safe }}</p>
+                        <h2>{{ main_rel.name|translate_text|safe }}</h2>
+                        <p>{{ main_rel.description|translate_text|safe }}</p>
                     </div>
                 {% endfor %}
             </div>
@@ -75,25 +75,25 @@
                             <table class="iksweb">
                                 {% for main_human_recurces in hr_inf %}
                                     <div class="description-left">
-                                        <h3>{{ main_human_recurces.name|safe }}</h3>
-                                        <p>{{ main_human_recurces.description|safe }}</p>
+                                        <h3>{{ main_human_recurces.name|translate_text|safe }}</h3>
+                                        <p>{{ main_human_recurces.description|translate_text|safe }}</p>
                                     </div>
                                 {% endfor %}
                                 <thead>
                                 <tr>
                                     <th>№</th>
-                                    <th>Наименование административной процедуры</th>
-                                    <th>Документы и (или) сведения, представляемые гражданином для осуществления аминистративной процедуры</th>
-                                    <th>Размер платы, взимаемой при осуществлении административной процедуры</th>
+                                    <th>{{ "Наименование административной процедуры"|translate_text }}</th>
+                                    <th>{{ "Документы и (или) сведения, представляемые гражданином для осуществления аминистративной процедуры"|translate_text }}</th>
+                                    <th>{{ "Размер платы, взимаемой при осуществлении административной процедуры"|translate_text }}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 {% for main_human_recurces in table_inf %}
                                     <tr>
                                         <td>{{ main_human_recurces.number_ap|safe }}</td>
-                                        <td>{{ main_human_recurces.name_ap|safe }}</td>
-                                        <td>{{ main_human_recurces.doc_ap|safe }}</td>
-                                        <td>{{ main_human_recurces.size_ap|safe }}</td>
+                                        <td>{{ main_human_recurces.name_ap|translate_text|safe }}</td>
+                                        <td>{{ main_human_recurces.doc_ap|translate_text|safe }}</td>
+                                        <td>{{ main_human_recurces.size_ap|translate_text|safe }}</td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
@@ -110,26 +110,26 @@
                                 <thead>
                                 <tr>
                                     <th>№</th>
-                                    <th>Наименование административной процедуры</th>
-                                    <th>Документы и (или) сведения, представляемые гражданином для осуществления административной процедуры</th>
-                                    <th>Размер платы, взимаемой при осуществлении административной процедуры</th>
-                                    <th>Сроки выполнения административной процедуры</th>
+                                    <th>{{ "Наименование административной процедуры"|translate_text }}</th>
+                                    <th>{{ "Документы и (или) сведения, представляемые гражданином для осуществления административной процедуры"|translate_text }}</th>
+                                    <th>{{ "Размер платы, взимаемой при осуществлении административной процедуры"|translate_text }}</th>
+                                    <th>{{ "Сроки выполнения административной процедуры"|translate_text }}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 {% for main_accounting in accounting_desc %}
                                     <div class="description-left">
-                                        <h3>{{ main_accounting.name|safe }}</h3>
-                                        <p>{{ main_accounting.description|safe }}</p>
+                                        <h3>{{ main_accounting.name|translate_text|safe }}</h3>
+                                        <p>{{ main_accounting.description|translate_text|safe }}</p>
                                     </div>
                                 {% endfor %}
                                 {% for main_accounting in accounting_inf %}
                                     <tr>
                                         <td>{{ main_accounting.number_ap|safe }}</td>
-                                        <td>{{ main_accounting.name_ap|safe }}</td>
-                                        <td>{{ main_accounting.doc_ap|safe }}</td>
-                                        <td>{{ main_accounting.size_ap|safe }}</td>
-                                        <td>{{ main_accounting.date_ap|safe }}</td>
+                                        <td>{{ main_accounting.name_ap|translate_text|safe }}</td>
+                                        <td>{{ main_accounting.doc_ap|translate_text|safe }}</td>
+                                        <td>{{ main_accounting.size_ap|translate_text|safe }}</td>
+                                        <td>{{ main_accounting.date_ap|translate_text|safe }}</td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
@@ -146,26 +146,26 @@
                                 <thead>
                                 <tr>
                                     <th>№</th>
-                                    <th>Наименование административной процедуры</th>
-                                    <th>Документы и (или) сведения, представляемые гражданином для осуществления административной процедуры</th>
-                                    <th>Размер платы, взимаемой при осуществлении административной процедуры</th>
-                                    <th>Сроки выполнения административной процедуры</th>
+                                    <th>{{ "Наименование административной процедуры"|translate_text }}</th>
+                                    <th>{{ "Документы и (или) сведения, представляемые гражданином для осуществления административной процедуры"|translate_text }}</th>
+                                    <th>{{ "Размер платы, взимаемой при осуществлении административной процедуры"|translate_text }}</th>
+                                    <th>{{ "Сроки выполнения административной процедуры"|translate_text }}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 {% for main_union in union_desc %}
                                     <div class="description-left">
-                                        <h3>{{ main_union.name|safe }}</h3>
-                                        <p>{{ main_union.description|safe }}</p>
+                                        <h3>{{ main_union.name|translate_text|safe }}</h3>
+                                        <p>{{ main_union.description|translate_text|safe }}</p>
                                     </div>
                                 {% endfor %}
                                 {% for main_union in union_inf %}
                                     <tr>
                                         <td>{{ main_union.number_ap|safe }}</td>
-                                        <td>{{ main_union.name_ap|safe }}</td>
-                                        <td>{{ main_union.doc_ap|safe }}</td>
-                                        <td>{{ main_union.size_ap|safe }}</td>
-                                        <td>{{ main_union.date_ap|safe }}</td>
+                                        <td>{{ main_union.name_ap|translate_text|safe }}</td>
+                                        <td>{{ main_union.doc_ap|translate_text|safe }}</td>
+                                        <td>{{ main_union.size_ap|translate_text|safe }}</td>
+                                        <td>{{ main_union.date_ap|translate_text|safe }}</td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>
@@ -182,28 +182,28 @@
                                 <thead>
                                 <tr>
                                     <th>№</th>
-                                    <th>Наименование административной процедуры</th>
-                                    <th>Государственный орган (иная организация), в который гражданин должен обратиться</th>
-                                    <th>Документы, и (или) сведения, предостав-ляемые граждани-ном для осуществле-ния административ-ной процедуры</th>
-                                    <th>Максимальный срок осуществления административной процедуры</th>
-                                    <th>Срок действия справки, другого документа (решения), выдаваемых (принимаемого) при осуществлении административной процедуры</th>
+                                    <th>{{ "Наименование административной процедуры"|translate_text }}</th>
+                                    <th>{{ "Государственный орган (иная организация), в который гражданин должен обратиться"|translate_text }}</th>
+                                    <th>{{ "Документы, и (или) сведения, предостав-ляемые граждани-ном для осуществле-ния административ-ной процедуры"|translate_text }}</th>
+                                    <th>{{ "Максимальный срок осуществления административной процедуры"|translate_text }}</th>
+                                    <th>{{ "Срок действия справки, другого документа (решения), выдаваемых (принимаемого) при осуществлении административной процедуры"|translate_text }}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 {% for main_degree in degree_desc %}
                                     <div class="description-left">
-                                        <h5>{{ main_degree.name|safe }}</h5>
-                                        <p>{{ main_degree.description|safe }}</p>
+                                        <h5>{{ main_degree.name|translate_text|safe }}</h5>
+                                        <p>{{ main_degree.description|translate_text|safe }}</p>
                                     </div>
                                 {% endfor %}
                                 {% for main_degree in degree_inf %}
                                     <tr>
                                         <td>{{ main_degree.number_ap|safe }}</td>
-                                        <td>{{ main_degree.name|safe }}</td>
-                                        <td>{{ main_degree.name_ap|safe }}</td>
-                                        <td>{{ main_degree.doc_ap|safe }}</td>
-                                        <td>{{ main_degree.size_ap|safe }}</td>
-                                        <td>{{ main_degree.date_ap|safe }}</td>
+                                        <td>{{ main_degree.name|translate_text|safe }}</td>
+                                        <td>{{ main_degree.name_ap|translate_text|safe }}</td>
+                                        <td>{{ main_degree.doc_ap|translate_text|safe }}</td>
+                                        <td>{{ main_degree.size_ap|translate_text|safe }}</td>
+                                        <td>{{ main_degree.date_ap|translate_text|safe }}</td>
                                     </tr>
                                 {% endfor %}
                                 </tbody>

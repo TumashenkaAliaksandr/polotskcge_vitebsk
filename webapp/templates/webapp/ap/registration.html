@@ -1,6 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
-
+{% load templatetags %}
 
 {% block content %}
 
@@ -16,8 +16,8 @@
 
             <div class="d-flex justify-content-between align-items-center">
                 <ol>
-                    <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                    <li>Регистрация</li>
+                    <li><a href="{% url 'webapp:home' %}">{{ "Главная"|translate_text }}</a></li>
+                    <li>{{ "Регистрация"|translate_text }}</li>
                 </ol>
             </div>
         </div>
@@ -32,14 +32,14 @@
                 {% for main_interactiv_string in interactiv %}
                     <div class="move-text">
                         <div class="breaking_news">
-                            <h2>Новости Центра</h2>
+                            <h2>{{ "Новости Центра"|translate_text }}</h2>
                         </div>
                         <div class="marquee">
                             <div class="marquee1"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description |translate_text| safe }}</a>
                             </div>
                             <div class="marquee2"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two |translate_text| safe }}</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -63,12 +63,12 @@
             <div class="row">
                 {% for main_reg in reg_inf %}
                     <div class="section-title">
-                        <h2>{{ main_reg.name|safe }}</h2>
+                        <h2>{{ main_reg.name|translate_text|safe }}</h2>
                     </div>
                     <div class="description-left">
-                        <p>{{ main_reg.description|safe }}</p>
-                        <p>{{ main_reg.description_two|safe }}</p>
-                        <p>{{ main_reg.description_three|safe }}</p>
+                        <p>{{ main_reg.description|translate_text|safe }}</p>
+                        <p>{{ main_reg.description_two|translate_text|safe }}</p>
+                        <p>{{ main_reg.description_three|translate_text|safe }}</p>
                     </div>
                 {% endfor %}
             </div>
