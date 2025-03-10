@@ -1,6 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
-
+{% load templatetags %}
 
 {% block content %}
 
@@ -14,11 +14,10 @@
         <!-- End Pagebanner -->
         <section class="breadcrumbs">
             <div class="container">
-
                 <div class="d-flex justify-content-between align-items-center">
                     <ol>
-                        <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                        <li>Деятельность</li>
+                        <li><a href="{% url 'webapp:home' %}">{{ "Главная"|translate_text }}</a></li>
+                        <li>{{ "Деятельность"|translate_text }}</li>
                     </ol>
                 </div>
 
@@ -31,7 +30,7 @@
             <div id="contact" class="contact">
                 <div class="container">
                     <div class="section-title">
-                        <h2>Контакты</h2>
+                        <h2>{{ "Контакты"|translate_text }}</h2>
                         {#          <p>Мы на карте</p>#}
                     </div>
                 </div>
@@ -50,22 +49,21 @@
                                 <div class="col-md-12">
                                     <div class="info-box">
                                         <i class="bx bx-map"></i>
-                                        <h3>Наш Адрес</h3>
-                                        <p>211400 г.Полоцк, ТЦ.Евролюкс
-                                            ул.Юбилейная, д.7(б), пом.2</p>
+                                        <h3>{{ "Наш Адрес"|translate_text }}</h3>
+                                        <p>{{ "211400 г.Полоцк, ТЦ.Евролюкс ул.Юбилейная, д.7(б), пом.2"|translate_text }}</p>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="info-box mt-4">
                                         <i class="bx bx-envelope"></i>
-                                        <h3>Наша Почта</h3>
+                                        <h3>{{ "Наша Почта"|translate_text }}</h3>
                                         <p>polotzk_hyg@vitebsk.by</p>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="info-box mt-4">
                                         <i class="bx bx-phone-call"></i>
-                                        <h3>Телефон Горячей линии</h3>
+                                        <h3>{{ "Телефон Горячей линии"|translate_text }}</h3>
                                         <p>+375(214)49-45-81</p>
                                     </div>
                                 </div>
@@ -97,10 +95,10 @@
                                 <div class="my-3">
                                     <div class="loading">Loading</div>
                                     <div class="error-message"></div>
-                                    <div class="sent-message">Ваше сообщение отправлено!</div>
+                                    <div class="sent-message">{{ "Ваше сообщение отправлено!"|translate_text }}</div>
                                 </div>
                                 <div class="text-center">
-                                    <button type="submit">Отправить сообщение</button>
+                                    <button type="submit">{{ "Отправить сообщение"|translate_text }}</button>
                                 </div>
                             </form>
                         </div>
