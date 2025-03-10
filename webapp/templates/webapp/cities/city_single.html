@@ -1,6 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
-
+{% load templatetags %}
 
 {% block content %}
 
@@ -16,8 +16,8 @@
             <div class="d-flex justify-content-between align-items-center">
 
                 <ol>
-                    <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                    <li>{{ city_name|safe }}</li>
+                    <li><a href="{% url 'webapp:home' %}">{{ "Главная"|translate_text }}</a></li>
+                    <li>{{ city_name|translate_text|safe }}</li>
                 </ol>
             </div>
         </div>
@@ -30,14 +30,14 @@
             <div class="container">
                 {% for main_interactiv_string in interactiv %}
                         <div class="breaking_news">
-                            <h2>Новости Центра</h2>
+                            <h2>{{ "Новости Центра"|translate_text }}</h2>
                         </div>
                         <div class="marquee">
                             <div class="marquee1"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description |translate_text| safe }}</a>
                             </div>
                             <div class="marquee2"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two |translate_text| safe }}</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -64,8 +64,8 @@
                                  alt="">
                         </div>
                         <div class="col-lg-9 pt-4 pt-lg-0 content bogatyrskaya description-left city-h2" data-aos="fade-left">
-                            <h2>{{ main_inf.name_city | safe }}</h2>
-                            <p>{{ main_inf.description_two | safe }}</p>
+                            <h2>{{ main_inf.name_city |translate_text| safe }}</h2>
+                            <p>{{ main_inf.description_two |translate_text| safe }}</p>
                             <img src="{{ main_inf.photo.url }}" class="img-fix-two"
                                      alt="">
 {#                            <div class="col-lg-14" data-aos="fade-left">#}
@@ -87,7 +87,7 @@
                                         <img src="{% static 'webapp/assets/img/gigi_centr_marker-nbg.png' %}"
                                              class="img-fix" alt="">
                                     </i>
-                                    {{ main_inf.file_desc | safe }}
+                                    {{ main_inf.file_desc |translate_text| safe }}
                                 </a>
                             {% else %}
                                 <p>No PDF file available.</p> <!-- Сообщение, если файла нет -->
@@ -108,7 +108,7 @@
             <div class="news">
                 <div class="news-grids">
                     <div class="col-md-8 news-grid-left">
-                        <h3>Наши новости</h3>
+                        <h3>{{ "Наши новости"|translate_text }}</h3>
                         <ul>
                             {% for news_item in page_obj %}
                                 <li>
@@ -120,16 +120,16 @@
                                     </div>
                                     <div class="news-grid-right1">
                                         <h4>
-                                            <a href="{% url 'news:single' pk=news_item.id %}">{{ news_item.title|wordwrap:30|truncatechars_html:58 }}</a>
+                                            <a href="{% url 'news:single' pk=news_item.id %}">{{ news_item.title|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
                                         </h4>
                                         <h5 class="fa fa-user-doctor">
                                             <label>|</label>
-                                            <a href="{% url 'news:single' pk=news_item.id %}">{{ news_item.author }}</a>
+                                            <a href="{% url 'news:single' pk=news_item.id %}">{{ news_item.author|translate_text }}</a>
                                             <label>|</label>
                                             <i>{{ news_item.pub_date|date:"d.m.Y" }}</i>
                                         </h5>
                                         <a href="{% url 'news:single' pk=news_item.id %}">
-                                            <p>{{ news_item.description_small|wordwrap:40|truncatechars_html:132|safe }}</p>
+                                            <p>{{ news_item.description_small|translate_text|wordwrap:40|truncatechars_html:132|safe }}</p>
                                         </a>
                                     </div>
                                     <div class="clearfix"></div>
@@ -138,7 +138,7 @@
                             <li>
                                 <div class="no-news">
                                     <img src="{% static 'images/gigi_centr_no_news.png' %}" alt="Нет новостей" class="img-responsive"/>
-                                    <p>В данный момент нет доступных новостей.</p>
+                                    <p>{{ "В данный момент нет доступных новостей."|translate_text }}</p>
                                 </div>
                             </li>
                             {% endfor %}
@@ -146,17 +146,17 @@
                         <div class="pagination">
                                         <span class="step-links">
                                             {% if page_obj.has_previous %}
-                                                <a href="?page=1">&laquo; первая</a>
-                                                <a href="?page={{ page_obj.previous_page_number }}"> предыдущая </a>
+                                                <a href="?page=1">&laquo; {{ "первая"|translate_text }}</a>
+                                                <a href="?page={{ page_obj.previous_page_number }}"> {{ "предыдущая"|translate_text }} </a>
                                             {% endif %}
 
                                             <span class="current">
-                                                Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+                                                {{ "Страница"|translate_text }} {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
                                             </span>
 
                                             {% if page_obj.has_next %}
-                                                <a href="?page={{ page_obj.next_page_number }}"> следующая </a>
-                                                <a href="?page={{ page_obj.paginator.num_pages }}"> последняя &raquo;</a>
+                                                <a href="?page={{ page_obj.next_page_number }}"> {{ "следующая"|translate_text }} </a>
+                                                <a href="?page={{ page_obj.paginator.num_pages }}"> {{ "последняя"|translate_text }} &raquo;</a>
                                             {% endif %}
                                         </span>
                         </div>
@@ -166,19 +166,19 @@
                         <div class="news-grids">
                             <div class="col-md-4 breaking-news-grid-right">
                                 <div class="news-grid-rght1">
-                                    <h3>Погода в Полоцке</h3>
+                                    <h3>{{ "Погода в Полоцке"|translate_text }}</h3>
                                     <!-- Nav tabs -->
                                     <div class="tab-content-weather-bg">
                                         <div class="tab-content-weather">
                                             <ul>
-                                                <h4>{{ weather.month }} {{ weather.day_of_month }}, {{ weather.day }}</h4>
+                                                <h4>{{ weather.month|translate_text }} {{ weather.day_of_month }}, {{ weather.day|translate_text }}</h4>
                                                 <p><span
-                                                        class="fa fa-wind"> Ветер: {{ weather.wind_direction }}-ный | {{ weather.wind_speed }} м/с</span>
+                                                        class="fa fa-wind"> {{ "Ветер:"|translate_text }} {{ weather.wind_direction }}-ный | {{ weather.wind_speed }} {{"м/с"|translate_text }}</span>
                                                 </p>
                                                 <p><span class="fas fa-thermometer-half">
-                                                Температура: {{ weather.temperature }}</span></p>
+                                                {{ "Температура:"|translate_text }} {{ weather.temperature }}</span></p>
                                                 <p><span class="fas fa-tachometer-alt">
-                                                Давление: {{ weather.pressure }} гПа</span></p>
+                                                {{ "Давление:"|translate_text }} {{ weather.pressure }} {{ "гПа"|translate_text }}</span></p>
                                             </ul>
                                         </div>
                                     </div>
@@ -187,8 +187,8 @@
                                     <img src="{% static 'images/gigi_centr_girispolkom.jpg' %}" alt=" "
                                          class="img-responsive"/>
                                     <div class="story">
-                                        <p>фото дня</p>
-                                        <h3><a href="">Горисполком город Полоцк</a></h3>
+                                        <p>{{ "фото дня"|translate_text }}</p>
+                                        <h3><a href="">{{ "Горисполком город Полоцк"|translate_text }}</a></h3>
                                     </div>
                                 </div>
                             </div>
@@ -207,7 +207,7 @@
             <div class="container book_info" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>{{ main_monitoring_arkhive.description|safe }}</h2>
+                    <h2>{{ main_monitoring_arkhive.description|translate_text|safe }}</h2>
                 </div>
 
                 <div class="row">
@@ -219,7 +219,7 @@
                         {% for city in city_page %}
                             <div class="archive">
                                 <a href="{% url 'webapp:archive_single' pk=city.id %}" target="_blank">
-                                    <li class="fa fa-calendar-plus"> {{ main_monitoring_arkhive.name|safe }}</li>
+                                    <li class="fa fa-calendar-plus"> {{ main_monitoring_arkhive.name|translate_text|safe }}</li>
                                 </a>
                             </div>
                         {% endfor %}
@@ -250,23 +250,23 @@
                                     <div class="health">
                                         <ul>
                                             <li>
-                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|wordwrap:30|truncatechars_html:58 }}</a>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
                                             </li>
                                             <li>
                                                 <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
                                             </li>
                                         </ul>
                                     </div>
-                                    <h3>{{ main_litle_news.desc|safe|wordwrap:10|truncatechars_html:58 }}</h3>
+                                    <h3>{{ main_litle_news.desc|translate_text|safe|wordwrap:10|truncatechars_html:58 }}</h3>
                                     <div class="dummy">
                                         <a href="{{ main_litle_news.link }}">
-                                            <p>{{ main_litle_news.desc_hover|safe }}</p></a>
+                                            <p>{{ main_litle_news.desc_hover|translate_text|safe }}</p></a>
                                     </div>
                                     <div class="com-heart-health">
                                         <ul>
                                             <li><a href="{{ main_litle_news.link }}"><span
                                                     class="fa fa-user-doctor"
-                                                    aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
+                                                    aria-hidden="true"></span> {{ main_litle_news.author|translate_text }}</a></li>
                                         </ul>
                                     </div>
                                 </div>
