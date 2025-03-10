@@ -1,6 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
-
+{% load templatetags %}
 
 {% block content %}
 
@@ -17,8 +17,8 @@
 
         <div class="d-flex justify-content-between align-items-center">
           <ol>
-            <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-            <li>Здоровый образ жизни</li>
+            <li><a href="{% url 'webapp:home' %}">{{ "Главная"|translate_text }}</a></li>
+            <li>{{ "Здоровый образ жизни"|translate_text }}</li>
           </ol>
         </div>
       </div>
@@ -36,14 +36,14 @@
                         {% for main_interactiv_string in interactiv %}
                             <div class="move-text">
                                 <div class="breaking_news">
-                                    <h2>Новости Центра</h2>
+                                    <h2>{{ "Новости Центра"|translate_text }}</h2>
                                 </div>
                                 <div class="marquee">
                                     <div class="marquee1"><a class="breaking"
-                                                             href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description | safe }}</a>
+                                                             href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description |translate_text| safe }}</a>
                                     </div>
                                     <div class="marquee2"><a class="breaking"
-                                                             href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                                                             href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two |translate_text| safe }}</a>
                                     </div>
                                     <div class="clearfix"></div>
                                 </div>
@@ -60,9 +60,9 @@
                             <section id="about" class="about main-bg-health_days">
                                 <div class="container" data-aos="fade-up">
                                     <div class="section-title-health">
-                                        <h2>{{ main_zoj.name }}</h2>
-                                        <p>{{ main_zoj.description | safe }}</p>
-                                        <h2>{{ main_zoj.name_two }}</h2>
+                                        <h2>{{ main_zoj.name|translate_text }}</h2>
+                                        <p>{{ main_zoj.description |translate_text| safe }}</p>
+                                        <h2>{{ main_zoj.name_two|translate_text }}</h2>
                                     </div>
                                 </div>
                             </section>
@@ -80,19 +80,19 @@
                                         <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
                                             <ul class="icon-list">
                                                 <li>
-                                                    <i class="{{ main_zoj.icon_class_li_one }}"></i> {{ main_zoj.name_li_one | safe }}
+                                                    <i class="{{ main_zoj.icon_class_li_one }}"></i> {{ main_zoj.name_li_one |translate_text| safe }}
                                                 </li>
                                                 <li>
-                                                    <i class="{{ main_zoj.icon_class_li_two }}"></i> {{ main_zoj.name_li_two | safe }}
+                                                    <i class="{{ main_zoj.icon_class_li_two }}"></i> {{ main_zoj.name_li_two |translate_text| safe }}
                                                 </li>
                                                 <li>
-                                                    <i class="{{ main_zoj.icon_class_li_three }}"></i> {{ main_zoj.name_li_three | safe }}
+                                                    <i class="{{ main_zoj.icon_class_li_three }}"></i> {{ main_zoj.name_li_three |translate_text| safe }}
                                                 </li>
                                                 <li>
-                                                    <i class="{{ main_zoj.icon_class_li_four }}"></i> {{ main_zoj.name_li_four | safe }}
+                                                    <i class="{{ main_zoj.icon_class_li_four }}"></i> {{ main_zoj.name_li_four |translate_text| safe }}
                                                 </li>
                                                 <li>
-                                                    <i class="{{ main_zoj.icon_class_li_five }}"></i> {{ main_zoj.name_li_five | safe }}
+                                                    <i class="{{ main_zoj.icon_class_li_five }}"></i> {{ main_zoj.name_li_five |translate_text| safe }}
                                                 </li>
                                             </ul>
                                         </div>
@@ -108,10 +108,10 @@
                         <div class="container" data-aos="fade-up">
                             {% for main_zoj_two in zoj %}
                                 <div class="row">
-                                    <p>{{ main_zoj_two.description_three | safe }}</p>
+                                    <p>{{ main_zoj_two.description_three|translate_text | safe }}</p>
                                     <div class="col-lg-6 order-2 order-lg-1" data-aos="fade-right">
                                         <div class="description-left icon-box-health mt-5 mt-lg-2">
-                                            <p>{{ main_zoj_two.description_two | safe }}</p>
+                                            <p>{{ main_zoj_two.description_two|translate_text | safe }}</p>
                                         </div>
                                     </div>
                                     <div class="image-life col-lg-6 order-1 mt-5 mt-lg-1 order-lg-0">
@@ -122,11 +122,9 @@
                                     </div>
                                 </div>
                             {% endfor %}
-
                         </div>
                     </section>
                     <!-- End Hl Section -->
-
                 </div>
             </div>
         </div>
@@ -136,7 +134,7 @@
     <section id="featured-services" class="featured-services main-bg-health_days">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
-                <h2>Статьи о здоровье</h2>
+                <h2>{{ "Статьи о здоровье"|translate_text }}</h2>
             </div>
             <div class="breaking-news-grids-bottom">
                 <div class="banner-bottom-grids">
@@ -154,7 +152,7 @@
                                     <div class="health">
                                         <ul>
                                             <li>
-                                                <a href="{% url 'news:single' pk=main_litle_news.id %}">{{ main_litle_news.title|wordwrap:30|truncatechars_html:58 }}</a>
+                                                <a href="{% url 'news:single' pk=main_litle_news.id %}">{{ main_litle_news.title|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
                                             </li>
                                             <li><a href="{% url 'news:single' pk=main_litle_news.id %}">{{ main_litle_news.pub_date|date:"d.m.Y" }}</a></li>
                                         </ul>
@@ -166,7 +164,7 @@
                                         <ul>
                                             <li><a href="{% url 'news:single' pk=main_litle_news.id %}"><span
                                                     class="fa fa-user-doctor"
-                                                    aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
+                                                    aria-hidden="true"></span> {{ main_litle_news.author|translate_text }}</a></li>
                                         </ul>
                                     </div>
                                 </div>

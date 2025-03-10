@@ -1,7 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
-
-
+{% load templatetags %}
 {% block content %}
 
     <main id="main">
@@ -19,8 +18,8 @@
 
                 <div class="d-flex justify-content-between align-items-center">
                     <ol>
-                        <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                        <li>Контакты</li>
+                        <li><a href="{% url 'webapp:home' %}">{{ "Главная"|translate_text }}</a></li>
+                        <li>{{ "Контакты"|translate_text }}</li>
                     </ol>
                 </div>
             </div>
@@ -36,14 +35,14 @@
                     {% for main_interactiv_string in interactiv %}
                         <div class="move-text">
                             <div class="breaking_news">
-                                <h2>Новости Центра</h2>
+                                <h2>{{ "Новости Центра"|translate_text }}</h2>
                             </div>
                             <div class="marquee">
                                 <div class="marquee1"><a class="breaking"
-                                                         href="single.html">{{ main_interactiv_string.description | safe }}</a>
+                                                         href="single.html">{{ main_interactiv_string.description |translate_text| safe }}</a>
                                 </div>
                                 <div class="marquee2"><a class="breaking"
-                                                         href="single.html">{{ main_interactiv_string.description_two | safe }}</a>
+                                                         href="single.html">{{ main_interactiv_string.description_two |translate_text| safe }}</a>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -63,7 +62,7 @@
         <section id="contact" class="main-bg">
             <div id="contact" class="contact">
                     <div class="section-title">
-                        <h2>Контакты</h2>
+                        <h2>{{ "Контакты"|translate_text }}</h2>
                     </div>
                 <div class="container">
                     <div class="row mt-5">
@@ -72,9 +71,8 @@
                                 <div class="col-md-12">
                                     <div class="info-box">
                                         <i class="bx bx-map"></i>
-                                        <h3>Наш Адрес</h3>
-                                        <p>211400 г.Полоцк, ТЦ.Евролюкс
-                                            ул.Юбилейная, д.7(б), пом.2</p>
+                                        <h3>{{ "Наш Адрес"|translate_text }}</h3>
+                                        <p>{{ "211400 г.Полоцк, ТЦ.Евролюкс ул.Юбилейная, д.7(б), пом.2"|translate_text }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -85,14 +83,14 @@
                                     <div class="col-md-6">
                                         <div class="info-box">
                                             <i class="bx bx-envelope"></i>
-                                            <h3>Наша Почта</h3>
+                                            <h3>{{ "Наша Почта"|translate_text }}</h3>
                                             <p>polotzk_hyg@vitebsk.by</p>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="info-box">
                                             <i class="bx bx-phone-call"></i>
-                                            <h3>Телефон Горячей линии</h3>
+                                            <h3>{{ "Телефон Горячей линии"|translate_text }}</h3>
                                             <p>+375(214)49-45-81</p>
                                         </div>
                                     </div>
@@ -102,7 +100,7 @@
                         </div>
                         <div class="section-title">
                             {#                  <h2>Контакты</h2>#}
-                            <h4>Мы на карте</h4>
+                            <h4>{{ "Мы на карте"|translate_text }}</h4>
                         </div>
                         <div class="map-container">
                             <div class="map-wrapper">
