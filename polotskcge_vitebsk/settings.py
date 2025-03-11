@@ -140,6 +140,14 @@ LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
 ]
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+    }
+}
+
+
 TIME_ZONE = 'UTC'
 # URL-префикс по умолчанию
 PREFIX_DEFAULT_LANGUAGE = False
