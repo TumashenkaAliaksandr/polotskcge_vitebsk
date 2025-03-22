@@ -66,9 +66,9 @@
                         <h2>{{ main_title_two.name|translate_text|safe }}</h2>
                     </div>
                     <div class="description-left">
-                        <p>{{ main_title_two.description|translate_text|safe }}</p>
-                        <p>{{ main_title_two.description_two|translate_text|safe }}</p>
-                        <p>{{ main_title_two.description_three|translate_text|safe }}</p>
+                        {{ main_title_two.description|translate_text|safe }}
+                        {{ main_title_two.description_two|translate_text|safe }}
+                        {{ main_title_two.description_three|translate_text|safe }}
                     </div>
                 {% endfor %}
             </div>

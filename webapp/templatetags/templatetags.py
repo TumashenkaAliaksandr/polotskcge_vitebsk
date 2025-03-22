@@ -1,3 +1,5 @@
+import re
+
 from django import template
 from django.utils.translation import get_language
 from deep_translator import GoogleTranslator
@@ -16,13 +18,6 @@ def language_prefix(path):
         return f'/{current_language}{path}'
     return path
 
-
-from django import template
-from django.utils.translation import get_language
-from deep_translator import GoogleTranslator
-from django.core.cache import cache
-
-register = template.Library()
 
 @register.filter
 def translate_text(text):
