@@ -1562,8 +1562,8 @@ a.high {
 }
 .news-grid-rght2:before{
 	position:absolute;
-	top:0%;
-	left:0%;
+	top:0;
+	left:0;
 	background:url(../images/1.png) no-repeat 0px 0px;
 	width: 350px;
     height: 6px;
@@ -1572,8 +1572,8 @@ a.high {
 }
 .news-grid-rght2:after{
 	position:absolute;
-	bottom:0%;
-	left:0%;
+	bottom:0;
+	left:0;
 	background:url(../images/1.png) no-repeat 0px 0px;
 	width: 350px;
     height: 6px;
@@ -2008,6 +2008,11 @@ h4.panel-title a span{
   .breaking-news {
     padding: 5.5em 0 10px!important;
   }
+
+    .news-grid-left1 {
+        float: left;
+        width: 27%;
+    }
 }
 
 /*-- wmuslider --*/
@@ -2062,7 +2067,7 @@ ul.wmuSliderPagination {
 	padding: 9em 2em 0;
 }
 .baner-beaking{
-	background:url(../images/gigi_centr_globus.png) no-repeat 0px 0px;
+	background:url(../images/gigi_centr_globus.png) no-repeat 0 0;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -2070,7 +2075,7 @@ ul.wmuSliderPagination {
 	-ms-background-size:cover;
 }
 .baner-beaking1{
-	background:url(../images/gigi_centr_globus.png) no-repeat 0px 0px;
+	background:url(../images/gigi_centr_globus.png) no-repeat 0 0;
 	background-size:cover;
 	-webkit-background-size:cover;
 	-moz-background-size:cover;
@@ -2326,7 +2331,7 @@ ul.wmuSliderPagination {
 .img-fixed-size-cheme p{
     font-size: 13.1px;
     padding-bottom: 2px;
-    padding-top: 0px;
+    padding-top: 0;
 }
 
 .breaking-news-grid-right ul li{
@@ -2341,7 +2346,7 @@ ul.wmuSliderPagination {
 	font-size:0.8em;
 	color:#000;
 	line-height:1.7em;
-	margin:0 10px 0px;
+	margin:0 10px 0;
 }
 
 /*@media (min-width: 767px) {*/
@@ -2762,6 +2767,11 @@ h2.typoh2{
     .img-fixed-size-cheme {
         width: 100%;
     }
+
+    .news-grid-left1 {
+        float: left;
+        width: 27%;
+    }
 }
 @media (max-width:640px){
 	h1, .h1, h2, .h2, h3, .h3 {
@@ -2804,6 +2814,11 @@ h2.typoh2{
         /*margin-bottom: 10%;*/
         width: inherit;
     }
+
+    .news-grid-left1 {
+        float: left;
+        width: 27%;
+    }
 }
 @media (max-width:480px){
 	.table h1 {
@@ -2828,6 +2843,18 @@ h2.typoh2{
     .img-fixed-size-cheme {
         width: 100%;
         left: 10%;
+    }
+
+    .news-grid-right1 p {
+        color: #000;
+        margin: 0;
+        font-size: .78em;
+        line-height: 1.8em;
+    }
+
+    .news-grid-left1 {
+        float: left;
+        width: 27%;
     }
 
     .img-positions-fiz-erip {
@@ -2867,6 +2894,13 @@ h2.typoh2{
         width: 100%;
     }
 
+    .news-grid-right1 p {
+        color: #000;
+        margin: 0;
+        font-size: .78em;
+        line-height: 1.8em;
+    }
+
 }
 
 @media (max-width: 320px) {
@@ -2888,6 +2922,20 @@ h2.typoh2{
     }
     .mobile-font-size p {
         font-size: 13px;
+    }
+
+    .news-grid-right1 p {
+        color: #000;
+        margin: 0;
+        font-size: .78em;
+        line-height: 1.8em;
+    }
+
+    .news-grid-right1 p {
+        color: #000;
+        margin: 0;
+        font-size: .78em;
+        line-height: 1.8em;
     }
 }
 
@@ -2927,6 +2975,13 @@ h2.typoh2{
 	table.table.table-striped,.table-bordered,.bs-docs-example {
 		display: none;
 	}
+
+    .news-grid-right1 p {
+        color: #000;
+        margin: 0;
+        font-size: .78em;
+        line-height: 1.8em;
+    }
 }
 /*--//Typography --*/
 /*-- entertainment --*/
@@ -4130,6 +4185,7 @@ img.mobile1 {
         position: relative;
         height: 260px;
         width: 100%;
+        border-radius: 10px;
     }
 
     .section-title-health h2 {
@@ -4234,7 +4290,7 @@ img.mobile1 {
         margin-bottom: 0;
     }
 	.news {
-		margin: 1em 0 2em;
+		margin: 1em 0 0.5em;
 	}
 	.baner-beaking h3 {
 		padding: .5em;
@@ -4422,13 +4478,24 @@ img.mobile1 {
     }
 
     .main-bg {
-        padding: 5px 0 21px;
+        padding: 5px 0 5px;
     }
 
     .main-bg-contact {
         /*padding: 35px 0 35px;*/
         background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.97)), url('../../webapp/assets/img/epi_gigi_polock_contact.png') center/cover;
         background-attachment: fixed;
+    }
+
+    .tab-content-weather h4 {
+        color: #6d6d6d;
+        font-size: 21px;
+        font-weight: bold;
+        margin-top: 15px;
+        margin-bottom: 50px;
+        margin-left: 7px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        -webkit-text-stroke: 1px #A6A8A6;
     }
 
     /*#footer .footer-top {*/
@@ -4530,6 +4597,7 @@ img.mobile1 {
 	.blog-leftl,.blog-leftr {
 		float: none;
 		width: 100%;
+        margin-top: 18%;
 	}
 	.admin-text {
 		padding: 1em;
