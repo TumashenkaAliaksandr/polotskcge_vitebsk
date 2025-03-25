@@ -53,6 +53,20 @@ document.addEventListener('DOMContentLoaded', function() {
             element.style.width = '30%';
             element.style.marginBottom = '10px';
         });
+        document.querySelectorAll('.count-box p').forEach(element => {
+            if (size >= 18) {
+                element.style.fontSize = `${size * 0.9}px`; // 24px при размере 30px
+            } else {
+                element.style.fontSize = `${size * 0.7}px`; // 14px при размере 20px
+            }
+        });
+        document.querySelectorAll('.features h4 p').forEach(element => {
+            if (size >= 18) {
+                element.style.fontSize = `${size * 0.9}px`; // 24px при размере 30px
+            } else {
+                element.style.fontSize = `${size * 0.7}px`; // 14px при размере 20px
+            }
+        });
 
         document.querySelectorAll('.header-search a').forEach(element => {
             element.style.marginLeft = `${size * 2}px`;
