@@ -4506,3 +4506,38 @@ section#clocks-two {
     cursor: pointer;
 }
 
+.monochrome {
+    filter: grayscale(100%);
+    background-color: #f0f0f0 !important;
+    color: #000 !important;
+}
+
+
+
+.monochrome #hero h4 {
+        color: #000000 !important;
+        margin-bottom: 20px !important;
+        font-size: 36px !important;
+        font-weight: 700 !important;
+    }
+
+.monochrome #hero .container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 90px;
+  border-top: 4px solid #303030;
+}
+
+.monochrome * {
+        color: #000 !important;
+        background-color: transparent !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        font-weight: bold;
+        position: inherit;
+        z-index: 10;
+    }
+.monochrome #hero {
+        display: none;
+    }

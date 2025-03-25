@@ -7,9 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    // Функция сброса стилей
     function resetStyles() {
-        // Сбрасываем все изменяемые элементы
         document.querySelectorAll(`
             .col-lg-3,
             .col-lg-2,
@@ -32,23 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
             element.removeAttribute('style');
         });
 
-        // Принудительный сброс цветовых свойств
-        document.querySelectorAll(`
-            .footer-info,
-            .footer-links,
-            .col-lg-3,
-            .col-lg-2,
-            .news-grid-right2,
-            .news-grid-right1,
-            .breaking-news
-        `).forEach(element => {
-            element.style.color = '';
-            element.style.opacity = '';
-            element.style.backgroundColor = '';
-        });
+        document.body.classList.remove('monochrome');
     }
 
-    // Функция изменения шрифта
     function changeFontSize(size) {
         resetStyles();
 
@@ -61,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('fontSize', size);
         document.body.style.fontSize = size + 'px';
 
-        // Установка ширины для .col-lg-3
         document.querySelectorAll('.col-lg-3').forEach(element => {
             element.style.width = '33%';
             element.style.marginBottom = '10px';
@@ -71,12 +54,10 @@ document.addEventListener('DOMContentLoaded', function() {
             element.style.marginBottom = '10px';
         });
 
-        // Элементы поиска в хедере
         document.querySelectorAll('.header-search a').forEach(element => {
             element.style.marginLeft = `${size * 2}px`;
         });
 
-        // Управление футером
         document.querySelectorAll('#footer .footer-top .footer-info').forEach(element => {
             element.style.marginBottom = `${size * 1.5}px`;
         });
@@ -95,7 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
             element.style.fontFamily = '"Roboto", sans-serif';
         });
 
-        // Остальные элементы
         document.querySelectorAll('.news-grid-right2').forEach(element => {
             element.style.margin = `${size * 0.02}em 0 0`;
         });
@@ -114,7 +94,6 @@ document.addEventListener('DOMContentLoaded', function() {
             element.style.fontSize = `${size * 1}px`;
         });
 
-        // Footer links
         document.querySelectorAll('.footer-links').forEach(element => {
             element.style.marginBottom = `${size * 1.5}px`;
         });
@@ -130,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function() {
             element.style.marginBottom = `${size * 0.5}px`;
         });
 
-        // Navbar
         document.querySelectorAll('.navbar a').forEach(element => {
             if (element.parentElement.classList.contains('navbar-brand')) {
                 element.style.fontSize = `${size * 0.6}px`;
@@ -138,9 +116,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.style.fontSize = `${size * 0.6}px`;
             }
         });
+
+        // Установка монохромного стиля для Aa2 и Aa3
+        if (size >= 18) {
+            document.body.classList.add('monochrome');
+        }
     }
 
-    // Инициализация при загрузке
     let savedFontSize = localStorage.getItem('fontSize');
     if (!savedFontSize || savedFontSize === 'default') {
         document.body.style.fontSize = DEFAULT_FONT_SIZE + 'px';
@@ -151,27 +133,11 @@ document.addEventListener('DOMContentLoaded', function() {
         changeFontSize(savedFontSize);
     }
 
-    // Обработчик изменений
     fontSizeSelector.addEventListener('change', function() {
         if (this.value === 'default') {
             resetStyles();
             document.body.style.fontSize = DEFAULT_FONT_SIZE + 'px';
             localStorage.removeItem('fontSize');
-
-            // Принудительный сброс цветовых свойств
-            document.querySelectorAll(`
-                .footer-info,
-                .footer-links,
-                .col-lg-3,
-                .col-lg-2,
-                .news-grid-right2,
-                .news-grid-right1,
-                .breaking-news
-            `).forEach(element => {
-                element.style.color = '';
-                element.style.opacity = '';
-                element.style.backgroundColor = '';
-            });
         } else {
             changeFontSize(this.value);
         }
