@@ -3742,7 +3742,7 @@ img.mobile1 {
 	.banner-bottom-grid-left {
 		float: left;
 		width: 100%;
-		margin: 0 auto 1em;
+		margin: 0 auto 0;
 	}
 	.banner-bottom-grid-left img{
 		width:100%;
@@ -3876,6 +3876,10 @@ img.mobile1 {
 		margin: 4em 0 0;
 	}
 }
+.bi {
+    margin-right: 5px;
+}
+
 @media (max-width:767px){
 	.navbar-default .navbar-toggle {
 		border-color: #fff;

@@ -1,26 +1,179 @@
 document.addEventListener('DOMContentLoaded', function() {
     const fontSizeSelector = document.getElementById('fontSizeSelector');
+    const DEFAULT_FONT_SIZE = 16;
 
     if (!fontSizeSelector) {
         console.error('Элемент "fontSizeSelector" не найден.');
         return;
     }
 
-    // Функция изменения шрифта
-    function changeFontSize(size) {
-        localStorage.setItem('fontSize', size);
-        document.body.style.fontSize = size + 'px';
+    // Функция сброса стилей
+    function resetStyles() {
+        // Сбрасываем все изменяемые элементы
+        document.querySelectorAll(`
+            .col-lg-3,
+            .col-lg-2,
+            .header-search a,
+            #footer .footer-top .footer-info,
+            #footer .footer-top .footer-info h3,
+            #footer .footer-top .footer-info p,
+            .news-grid-right2,
+            .news-grid-right1,
+            .breadcrumbs_contacts ol,
+            .breaking-news,
+            .iksweb td,
+            .footer-links,
+            .footer-links h4,
+            .footer-links li,
+            .navbar a,
+            .dropdown-menu a,
+            .dropdown-menu li a
+        `).forEach(element => {
+            element.removeAttribute('style');
+        });
+
+        // Принудительный сброс цветовых свойств
+        document.querySelectorAll(`
+            .footer-info,
+            .footer-links,
+            .col-lg-3,
+            .col-lg-2,
+            .news-grid-right2,
+            .news-grid-right1,
+            .breaking-news
+        `).forEach(element => {
+            element.style.color = '';
+            element.style.opacity = '';
+            element.style.backgroundColor = '';
+        });
     }
 
-    // Устанавливаем сохраненный размер шрифта
-    let savedFontSize = localStorage.getItem('fontSize') || 16;
-    document.body.style.fontSize = savedFontSize + 'px';
+    // Функция изменения шрифта
+    function changeFontSize(size) {
+        resetStyles();
 
-    // Устанавливаем значение в селекте
-    fontSizeSelector.value = savedFontSize;
+        if (size === 'default') {
+            localStorage.removeItem('fontSize');
+            document.body.style.fontSize = DEFAULT_FONT_SIZE + 'px';
+            return;
+        }
 
-    // Изменение при выборе
+        localStorage.setItem('fontSize', size);
+        document.body.style.fontSize = size + 'px';
+
+        // Установка ширины для .col-lg-3
+        document.querySelectorAll('.col-lg-3').forEach(element => {
+            element.style.width = '33%';
+            element.style.marginBottom = '10px';
+        });
+        document.querySelectorAll('.col-lg-2').forEach(element => {
+            element.style.width = '30%';
+            element.style.marginBottom = '10px';
+        });
+
+        // Элементы поиска в хедере
+        document.querySelectorAll('.header-search a').forEach(element => {
+            element.style.marginLeft = `${size * 2}px`;
+        });
+
+        // Управление футером
+        document.querySelectorAll('#footer .footer-top .footer-info').forEach(element => {
+            element.style.marginBottom = `${size * 1.5}px`;
+        });
+
+        document.querySelectorAll('#footer .footer-top .footer-info h3').forEach(element => {
+            element.style.fontSize = `${size * 1.2}px`;
+            element.style.marginBottom = `${size * 0.8}px`;
+            element.style.lineHeight = '1';
+            element.style.fontWeight = '700';
+        });
+
+        document.querySelectorAll('#footer .footer-top .footer-info p').forEach(element => {
+            element.style.fontSize = `${size * 0.9}px`;
+            element.style.lineHeight = `${size * 1.7}px`;
+            element.style.marginBottom = '0px';
+            element.style.fontFamily = '"Roboto", sans-serif';
+        });
+
+        // Остальные элементы
+        document.querySelectorAll('.news-grid-right2').forEach(element => {
+            element.style.margin = `${size * 0.02}em 0 0`;
+        });
+        document.querySelectorAll('.news-grid-right1').forEach(element => {
+            element.style.margin = `${size * 0.0067}em 0 0`;
+        });
+        document.querySelectorAll('.breadcrumbs_contacts ol').forEach(element => {
+            element.style.fontSize = `${size * 0.9}px`;
+        });
+        document.querySelectorAll('.breaking-news').forEach(element => {
+            element.style.padding = `${size * 0.17}px`;
+        });
+        document.querySelectorAll('.iksweb td').forEach(element => {
+            element.style.padding = `${size * 0.5}px ${size * 0.5}px ${size * 0.5}px`;
+            element.style.lineHeight = `${size * 1.17}px`;
+            element.style.fontSize = `${size * 1}px`;
+        });
+
+        // Footer links
+        document.querySelectorAll('.footer-links').forEach(element => {
+            element.style.marginBottom = `${size * 1.5}px`;
+        });
+
+        document.querySelectorAll('.footer-links h4').forEach(element => {
+            element.style.fontSize = `${size * 1.2}px`;
+            element.style.marginBottom = `${size * 0.8}px`;
+        });
+
+        document.querySelectorAll('.footer-links li').forEach(element => {
+            element.style.fontSize = `${size * 0.7}px`;
+            element.style.lineHeight = `${size * 1.7}px`;
+            element.style.marginBottom = `${size * 0.5}px`;
+        });
+
+        // Navbar
+        document.querySelectorAll('.navbar a').forEach(element => {
+            if (element.parentElement.classList.contains('navbar-brand')) {
+                element.style.fontSize = `${size * 0.6}px`;
+            } else {
+                element.style.fontSize = `${size * 0.6}px`;
+            }
+        });
+    }
+
+    // Инициализация при загрузке
+    let savedFontSize = localStorage.getItem('fontSize');
+    if (!savedFontSize || savedFontSize === 'default') {
+        document.body.style.fontSize = DEFAULT_FONT_SIZE + 'px';
+        fontSizeSelector.value = 'default';
+    } else {
+        document.body.style.fontSize = savedFontSize + 'px';
+        fontSizeSelector.value = savedFontSize;
+        changeFontSize(savedFontSize);
+    }
+
+    // Обработчик изменений
     fontSizeSelector.addEventListener('change', function() {
-        changeFontSize(this.value);
+        if (this.value === 'default') {
+            resetStyles();
+            document.body.style.fontSize = DEFAULT_FONT_SIZE + 'px';
+            localStorage.removeItem('fontSize');
+
+            // Принудительный сброс цветовых свойств
+            document.querySelectorAll(`
+                .footer-info,
+                .footer-links,
+                .col-lg-3,
+                .col-lg-2,
+                .news-grid-right2,
+                .news-grid-right1,
+                .breaking-news
+            `).forEach(element => {
+                element.style.color = '';
+                element.style.opacity = '';
+                element.style.backgroundColor = '';
+            });
+        } else {
+            changeFontSize(this.value);
+        }
     });
 });

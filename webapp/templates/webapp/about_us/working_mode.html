@@ -116,91 +116,91 @@
             <!-- End Doctors Section -->
 
             <!-- ======= Doctors Section ======= -->
-            <section id="doctors" class="doctors">
-                <div id="contact" class="contact">
-                    <div class="container" data-aos="fade-up">
-                        <div class="section-title">
-                            <h2>{{ "Наша Команда"|translate_text }}</h2>
-                            <p>{{ "Каждый наш сотрудник - мастер своего дела, обладающий неповторимым багажом знаний и опыта."|translate_text }}</p>
-                        </div>
-
-                        <div class="row">
-
-                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                                <div class="member" data-aos="fade-up" data-aos-delay="100">
-                                    <div class="member-img">
-                                        <img src="{% static 'webapp/assets/img/doctors/gigi_centr_user_man.png' %}"
-                                             class="img-fluid"
-                                             alt="">
-                                        <div class="social">
-                                            <a href="{% url 'webapp:chief-doctor' %}"><h4>{{ "Записаться на приём"|translate_text }}</h4></a>
-                                        </div>
-                                    </div>
-                                    <div class="member-info">
-                                        <h4>{{ "Гуринович"|translate_text }}<br>{{ "Михаил Евгеньевич"|translate_text }}</h4>
-                                        <span>{{ "Главный государственный"|translate_text }}<br>{{ "санитарный врач"|translate_text }}</span>
-                                        <span>{{ "города Полоцка и Полоцкого района"|translate_text }}</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                                <div class="member" data-aos="fade-up" data-aos-delay="400">
-                                    <div class="member-img">
-                                        <img src="{% static 'webapp/assets/img/doctors/gigi_centr_user_women.jpg' %}"
-                                             class="img-fluid"
-                                             alt="">
-                                        <div class="social">
-                                            <a href=""><h4>{{ "Записаться на приём"|translate_text }}</h4></a>
-                                        </div>
-                                    </div>
-                                    <div class="member-info">
-                                        <h4>{{ "Гречуха Юлия"|translate_text }}<br>{{ "Владимировна"|translate_text }}</h4>
-                                        <span>{{ "Заместитель главного врача"|translate_text }}</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                                <div class="member" data-aos="fade-up" data-aos-delay="200">
-                                    <div class="member-img">
-                                        <img src="{% static 'webapp/assets/img/doctors/gigi_centr_user_women.jpg' %}"
-                                             class="img-fluid"
-                                             alt="">
-                                        <div class="social">
-                                            <a href=""><h4>{{ "Отдел Гигиены"|translate_text }}</h4></a>
-                                        </div>
-                                    </div>
-                                    <div class="member-info">
-                                        <h4>{{ "Щербакова Ольга Александровна"|translate_text }}</h4>
-                                        <span>{{ "Заведующий отделом"|translate_text }}</span>
-                                        <span>{{ "каб. №12, 4-этаж"|translate_text }}</span>
-                                        <span>{{ "тел:"|translate_text }} +375(214)49-31-52</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                                <div class="member" data-aos="fade-up" data-aos-delay="300">
-                                    <div class="member-img">
-                                        <img src="{% static 'webapp/assets/img/doctors/gigi_centr_user_man.png' %}"
-                                             class="img-fluid"
-                                             alt="">
-                                        <div class="social">
-                                            <a href=""><h4>{{ "Отдел Гигиены Питания"|translate_text }}</h4></a>
-                                        </div>
-                                    </div>
-                                    <div class="member-info">
-                                        <h4>{{ "Мороз Юрий"|translate_text }}<br>{{ "Олегович"|translate_text }}</h4>
-                                        <span>{{ "Заведующий отделением"|translate_text }}</span>
-                                        <span>{{ "каб. №14, 4-этаж"|translate_text }}</span>
-                                        <span>{{ "тел:"|translate_text }} +375(214)49-31-52</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+{#            <section id="doctors" class="doctors">#}
+{#                <div id="contact" class="contact">#}
+{#                    <div class="container" data-aos="fade-up">#}
+{#                        <div class="section-title">#}
+{#                            <h2>{{ "Наша Команда"|translate_text }}</h2>#}
+{#                            <p>{{ "Каждый наш сотрудник - мастер своего дела, обладающий неповторимым багажом знаний и опыта."|translate_text }}</p>#}
+{#                        </div>#}
+{##}
+{#                        <div class="row">#}
+{##}
+{#                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">#}
+{#                                <div class="member" data-aos="fade-up" data-aos-delay="100">#}
+{#                                    <div class="member-img">#}
+{#                                        <img src="{% static 'webapp/assets/img/doctors/gigi_centr_user_man.png' %}"#}
+{#                                             class="img-fluid"#}
+{#                                             alt="">#}
+{#                                        <div class="social">#}
+{#                                            <a href="{% url 'webapp:chief-doctor' %}"><h4>{{ "Записаться на приём"|translate_text }}</h4></a>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="member-info">#}
+{#                                        <h4>{{ "Гуринович"|translate_text }}<br>{{ "Михаил Евгеньевич"|translate_text }}</h4>#}
+{#                                        <span>{{ "Главный государственный"|translate_text }}<br>{{ "санитарный врач"|translate_text }}</span>#}
+{#                                        <span>{{ "города Полоцка и Полоцкого района"|translate_text }}</span>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">#}
+{#                                <div class="member" data-aos="fade-up" data-aos-delay="400">#}
+{#                                    <div class="member-img">#}
+{#                                        <img src="{% static 'webapp/assets/img/doctors/gigi_centr_user_women.jpg' %}"#}
+{#                                             class="img-fluid"#}
+{#                                             alt="">#}
+{#                                        <div class="social">#}
+{#                                            <a href=""><h4>{{ "Записаться на приём"|translate_text }}</h4></a>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="member-info">#}
+{#                                        <h4>{{ "Гречуха Юлия"|translate_text }}<br>{{ "Владимировна"|translate_text }}</h4>#}
+{#                                        <span>{{ "Заместитель главного врача"|translate_text }}</span>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{##}
+{#                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">#}
+{#                                <div class="member" data-aos="fade-up" data-aos-delay="200">#}
+{#                                    <div class="member-img">#}
+{#                                        <img src="{% static 'webapp/assets/img/doctors/gigi_centr_user_women.jpg' %}"#}
+{#                                             class="img-fluid"#}
+{#                                             alt="">#}
+{#                                        <div class="social">#}
+{#                                            <a href=""><h4>{{ "Отдел Гигиены"|translate_text }}</h4></a>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="member-info">#}
+{#                                        <h4>{{ "Щербакова Ольга Александровна"|translate_text }}</h4>#}
+{#                                        <span>{{ "Заведующий отделом"|translate_text }}</span>#}
+{#                                        <span>{{ "каб. №12, 4-этаж"|translate_text }}</span>#}
+{#                                        <span>{{ "тел:"|translate_text }} +375(214)49-31-52</span>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{##}
+{#                            <div class="col-lg-3 col-md-6 d-flex align-items-stretch">#}
+{#                                <div class="member" data-aos="fade-up" data-aos-delay="300">#}
+{#                                    <div class="member-img">#}
+{#                                        <img src="{% static 'webapp/assets/img/doctors/gigi_centr_user_man.png' %}"#}
+{#                                             class="img-fluid"#}
+{#                                             alt="">#}
+{#                                        <div class="social">#}
+{#                                            <a href=""><h4>{{ "Отдел Гигиены Питания"|translate_text }}</h4></a>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <div class="member-info">#}
+{#                                        <h4>{{ "Мороз Юрий"|translate_text }}<br>{{ "Олегович"|translate_text }}</h4>#}
+{#                                        <span>{{ "Заведующий отделением"|translate_text }}</span>#}
+{#                                        <span>{{ "каб. №14, 4-этаж"|translate_text }}</span>#}
+{#                                        <span>{{ "тел:"|translate_text }} +375(214)49-31-52</span>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </section>#}
             <!-- End Doctors Section -->
         </section>
 
