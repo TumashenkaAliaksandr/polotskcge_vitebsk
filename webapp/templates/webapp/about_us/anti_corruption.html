@@ -69,7 +69,7 @@
                     {% for main_anti in corruptions %}
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="icon-two"><i class="{{ main_anti.icon_class }}"></i></div>
-                            <h4 class="title-two"><a href="{{ main_anti.link }}">{{ main_anti.name|translate_text|safe }}</a></h4>
+                            <h5 class="title-two"><a href="{{ main_anti.link }}">{{ main_anti.name|translate_text|safe }}</a></h5>
                             <p class="description">{{ main_anti.description|translate_text|safe }}</p>
                         </div>
                     {% endfor %}

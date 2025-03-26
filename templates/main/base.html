@@ -155,8 +155,7 @@
                             </ul>
                         </li>
                         <li class="dropdown"><a
-                                {% if request.resolver_match.url_name == 'ideological_work' %}class="active"{% endif %}
-                                href="{% url 'webapp:ideological_work' %}"><span>{{ "Идеологическая работа"|translate_text }}</span> <i
+                                {% if request.resolver_match.url_name == 'ideological_work' %}class="active"{% endif %}><span>{{ "Идеологическая работа"|translate_text }}</span> <i
                                 class="bi bi-chevron-right"></i></a>
                             <ul>
                                 <li><a href="https://vitebsk-region.gov.by/ru/inform_den-ru/">{{ "Единые дни информирования"|translate_text }}</a></li>

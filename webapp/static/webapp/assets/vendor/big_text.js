@@ -34,7 +34,9 @@ document.addEventListener('DOMContentLoaded', function() {
             .contact .info-box p,
             .contact .info-box h3,
             .breadcrumbs ol,
-            .count-box p
+            .count-box p,
+            .featured-services-two p,
+            .featured-services-two .title-two
         `).forEach(element => {
             element.removeAttribute('style');
         });
@@ -145,6 +147,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.style.fontSize = `${size * 0.9}px`; // 24px при размере 30px
             } else {
                 element.style.fontSize = `${size * 0.7}px`; // 14px при размере 20px
+            }
+        });
+        document.querySelectorAll('.featured-services-two p').forEach(element => {
+            if (size >= 18) {
+                element.style.fontSize = `${size * 0.9}px`; // 24px при размере 30px
+            } else {
+                element.style.fontSize = `${size * 0.7}px`; // 14px при размере 20px
+            }
+        });
+        document.querySelectorAll('.featured-services-two .title-two').forEach(element => {
+            if (size >= 18) {
+                element.style.fontSize = `${size * 1.3}px`; // 24px при размере 30px
+            } else {
+                element.style.fontSize = `${size * 1.1}px`; // 14px при размере 20px
             }
         });
 
