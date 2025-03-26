@@ -25,7 +25,16 @@ document.addEventListener('DOMContentLoaded', function() {
             .footer-links li,
             .navbar a,
             .dropdown-menu a,
-            .dropdown-menu li a
+            .dropdown-menu li a,
+            .features .icon-box h4,
+            .features .icon-box p,
+            .services .icon-box h6,
+            .faq .faq-list i,
+            .faq .faq-list .question,
+            .contact .info-box p,
+            .contact .info-box h3,
+            .breadcrumbs ol,
+            .count-box p
         `).forEach(element => {
             element.removeAttribute('style');
         });
@@ -60,7 +69,57 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.style.fontSize = `${size * 0.7}px`; // 14px при размере 20px
             }
         });
-        document.querySelectorAll('.features h4 p').forEach(element => {
+        document.querySelectorAll('.features .icon-box p').forEach(element => {
+            if (size >= 18) {
+                element.style.fontSize = `${size * 0.9}px`; // 24px при размере 30px
+            } else {
+                element.style.fontSize = `${size * 0.7}px`; // 14px при размере 20px
+            }
+        });
+        document.querySelectorAll('.features .icon-box h4').forEach(element => {
+            if (size >= 18) {
+                element.style.fontSize = `${size * 0.9}px`; // 24px при размере 30px
+            } else {
+                element.style.fontSize = `${size * 0.7}px`; // 14px при размере 20px
+            }
+        });
+        document.querySelectorAll('.services .icon-box h6').forEach(element => {
+            if (size >= 18) {
+                element.style.fontSize = `${size * 0.9}px`; // 24px при размере 30px
+            } else {
+                element.style.fontSize = `${size * 0.7}px`; // 14px при размере 20px
+            }
+        });
+        document.querySelectorAll('.faq .faq-list i').forEach(element => {
+            if (size >= 18) {
+                element.style.fontSize = `${size * 0.9}px`; // 24px при размере 30px
+            } else {
+                element.style.fontSize = `${size * 0.7}px`; // 14px при размере 20px
+            }
+        });
+        document.querySelectorAll('.faq .faq-list .question').forEach(element => {
+            if (size >= 18) {
+                element.style.fontSize = `${size * 0.9}px`; // 24px при размере 30px
+            } else {
+                element.style.fontSize = `${size * 0.7}px`; // 14px при размере 20px
+            }
+        });
+        document.querySelectorAll('.contact .info-box p').forEach(element => {
+            if (size >= 18) {
+                element.style.fontSize = `${size * 0.9}px`; // 24px при размере 30px
+            } else {
+                element.style.fontSize = `${size * 0.7}px`; // 14px при размере 20px
+            }
+        });
+        document.querySelectorAll('.contact .info-box h3').forEach(element => {
+            if (size >= 18) {
+                element.style.fontSize = `${size * 0.9}px`; // 24px при размере 30px
+            } else {
+                element.style.fontSize = `${size * 0.7}px`; // 14px при размере 20px
+            }
+        });
+
+        document.querySelectorAll('.breadcrumbs ol').forEach(element => {
             if (size >= 18) {
                 element.style.fontSize = `${size * 0.9}px`; // 24px при размере 30px
             } else {

@@ -4622,3 +4622,26 @@ section#clocks-two {
     padding-top: 11%;
 }
 
+.monochrome .navbar .dropdown ul {
+
+  position: absolute;
+  left: -130px;
+  top: calc(100% + 30px);
+  background: #fff;
+  box-shadow: 0 0 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+  border-radius: 4px;
+}
+
+.monochrome .partner-slider {
+    display: none;
+}
+
+.monochrome .contact .info-box {
+  color: #444444;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(214, 215, 216, 0.57);
+  padding: 20px 0 30px 0;
+  margin-left: 15px;
+  width: 106%;
+}
