@@ -67,38 +67,38 @@
                     <div>
                     {{ typical_inf.description_for_all|safe }}
                     </div>
-                    <section class="hotline">
-                        <div class="table-info">
-                            <div class="box" data-aos="fade-up" data-aos-delay="300">
-                                <table class="iksweb">
-                                    <thead>
-                                    <tr>
-                                        <th>№</th>
-                                        <th>{{ typical_inf.description|safe }}</th>
-                                        <th>{{ typical_inf.description_two|safe }}</th>
-                                        <th>{{ typical_inf.description_three|safe }}</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    {% for row in typical_inf.rows.all %}
-                                        <tr>
-                                            <td>{{ forloop.counter }}</td>
-                                            <!-- Используем forloop.counter для номера строки -->
-                                            <td>{{ row.objects_control|safe }}</td>
-                                            <td>{{ row.typical_violations|safe }}</td>
-                                            <td>{{ row.name_typical_violations|safe }}</td>
-                                        </tr>
-                                    {% empty %}
-                                        <tr>
-                                            <td colspan="4">Нет данных для отображения.</td>
-                                            <!-- Сообщение, если нет строк -->
-                                        </tr>
-                                    {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </section>
+{#                    <section class="hotline">#}
+{#                        <div class="table-info">#}
+{#                            <div class="box" data-aos="fade-up" data-aos-delay="300">#}
+{#                                <table class="iksweb">#}
+{#                                    <thead>#}
+{#                                    <tr>#}
+{#                                        <th>№</th>#}
+{#                                        <th>{{ typical_inf.description|safe }}</th>#}
+{#                                        <th>{{ typical_inf.description_two|safe }}</th>#}
+{#                                        <th>{{ typical_inf.description_three|safe }}</th>#}
+{#                                    </tr>#}
+{#                                    </thead>#}
+{#                                    <tbody>#}
+{#                                    {% for row in typical_inf.rows.all %}#}
+{#                                        <tr>#}
+{#                                            <td>{{ forloop.counter }}</td>#}
+{#                                            <!-- Используем forloop.counter для номера строки -->#}
+{#                                            <td>{{ row.objects_control|safe }}</td>#}
+{#                                            <td>{{ row.typical_violations|safe }}</td>#}
+{#                                            <td>{{ row.name_typical_violations|safe }}</td>#}
+{#                                        </tr>#}
+{#                                    {% empty %}#}
+{#                                        <tr>#}
+{#                                            <td colspan="4">Нет данных для отображения.</td>#}
+{#                                            <!-- Сообщение, если нет строк -->#}
+{#                                        </tr>#}
+{#                                    {% endfor %}#}
+{#                                    </tbody>#}
+{#                                </table>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </section>#}
                 {% else %}
                     <p>Информация не найдена.</p>
                 {% endif %}

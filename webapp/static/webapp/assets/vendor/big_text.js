@@ -126,6 +126,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.style.fontSize = `${size * 0.7}px`; // 14px при размере 20px
             }
         });
+        document.querySelectorAll('.dropdown ul .active').forEach(element => {
+            if (size >= 18) {
+                element.style.fontSize = `${size * 0.9}px`; // 24px при размере 30px
+            } else {
+                element.style.fontSize = `${size * 0.7}px`; // 14px при размере 20px
+            }
+        });
+        document.querySelectorAll('.dropdown li').forEach(element => {
+            if (size >= 18) {
+                element.style.fontSize = `${size * 0.9}px`; // 24px при размере 30px
+            } else {
+                element.style.fontSize = `${size * 0.7}px`; // 14px при размере 20px
+            }
+        });
+        document.querySelectorAll('.navbar li').forEach(element => {
+            if (size >= 18) {
+                element.style.fontSize = `${size * 0.9}px`; // 24px при размере 30px
+            } else {
+                element.style.fontSize = `${size * 0.7}px`; // 14px при размере 20px
+            }
+        });
 
         document.querySelectorAll('.header-search a').forEach(element => {
             element.style.marginLeft = `${size * 2}px`;
