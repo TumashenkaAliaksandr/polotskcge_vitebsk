@@ -59,10 +59,12 @@
             <div class="margin-custom">
                 <div class="row">
                     {% for main_inf in city_docum %}
+                        {% for main_busel in busel %}
                         <div class="col-lg-3" data-aos="fade-right">
-                            <img src="{% static 'webapp/assets/img/gigi_centr_busel_nbg.png' %}" class="img-fluid"
+                            <img src="{{ main_busel.photo_busel.url }}" class="img-fluid"
                                  alt="">
                         </div>
+                            {% endfor %}
                         <div class="col-lg-9 pt-4 pt-lg-0 content bogatyrskaya description-left city-h2" data-aos="fade-left">
                             <h2>{{ main_inf.name_city |translate_text| safe }}</h2>
                             <p>{{ main_inf.description_two |translate_text| safe }}</p>

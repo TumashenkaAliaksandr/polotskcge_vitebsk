@@ -1467,3 +1467,16 @@ class EnyPayment(models.Model):
     class Meta:
         verbose_name = "🪙💲 ЕРИП платные услуги физ лицам"
         verbose_name_plural = "🪙💲 ЕРИП платные услуги физ лицам"
+
+
+class Busel (models.Model):
+
+    name = models.CharField(max_length=50, default='Busel')
+    photo_busel = models.ImageField(upload_to='busel/', null=True, blank=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "🐦🐥 Бусел (фото)"
+        verbose_name_plural = "🐦🐥 Бусел (фото)"

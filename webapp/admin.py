@@ -1135,3 +1135,11 @@ class EnyPaymentAdmin(admin.ModelAdmin):
     list_display = ['clean_name']
 
 
+@admin.register(Busel)
+class BuselAdmin(admin.ModelAdmin):
+
+    def clean_name(self, obj):
+        return strip_tags(obj.name)
+
+    list_display = ['name']
+
