@@ -64,10 +64,10 @@
                 {% for main_price_lists in price_lists %}
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                            <div class="icon"><a href="{{ main_price_lists.add_file }}"><i
+                            <div class="icon"><a href="{{ main_price_lists.add_file.url }}"><i
                                     class="{{ main_price_lists.icon_class }}"></i></a></div>
                             <h4 class="title"><a
-                                    href="{{ main_price_lists.add_file }}">{{ main_price_lists.name|translate_text|safe }}</a></h4>
+                                    href="{{ main_price_lists.add_file.url }}">{{ main_price_lists.name|translate_text|safe }}</a></h4>
                             <p class="description">{{ main_price_lists.description|translate_text|safe }}</p>
                         </div>
                     </div>
