@@ -4697,3 +4697,33 @@ section#clocks-two {
     height: 190px;
     width: 100%;
 }
+
+.monochrome .img-fix-two {
+  max-width: 10%;
+  height: auto;
+  margin: -9% 98%;
+}
+
+.monochrome .img-fix-city {
+  max-width: 20%;
+  height: auto;
+}
+
+.monochrome .faq .faq-list i {
+  font-size: 16px;
+  position: absolute;
+  left: -25px;
+  top: -18px;
+}
+
+.monochrome .archive {
+  padding-top: 15px;
+  padding-bottom: 5px;
+  padding-left: 62%;
+}
+
+.monochrome .fix-years {
+  max-width: 50%;
+  height: auto;
+  margin: -2% -5% 5%;
+}

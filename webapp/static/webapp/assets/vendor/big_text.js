@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .services .icon-box h6,
             .faq .faq-list i,
             .faq-list li,
+            .faq .faq-list p,
             .counts h5,
             .counts a,
             .faq .faq-list .question,
@@ -38,6 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
             .contact .info-box h3,
             .breadcrumbs ol,
             .count-box p,
+            .departments .nav-link h4,
+            .departments .nav-link p,
             .featured-services-two p,
             .featured-services-two .title-two,
             .featured-services .description,
@@ -46,7 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
             .featured-services h3,
             .featured-services-two h5,
             .featured-services-two h4,
-            .featured-services .title a
+            .featured-services .title a,
+            .blog-leftr p
         `).forEach(element => {
             element.removeAttribute('style');
         });
@@ -102,7 +106,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.style.fontSize = `${size * 0.7}px`; // 14px при размере 20px
             }
         });
+        document.querySelectorAll('.blog-leftr p').forEach(element => {
+            if (size >= 18) {
+                element.style.fontSize = `${size * 0.9}px`; // 24px при размере 30px
+            } else {
+                element.style.fontSize = `${size * 0.7}px`; // 14px при размере 20px
+            }
+        });
         document.querySelectorAll('.faq .faq-list i').forEach(element => {
+            if (size >= 18) {
+                element.style.fontSize = `${size * 0.9}px`; // 24px при размере 30px
+            } else {
+                element.style.fontSize = `${size * 0.7}px`; // 14px при размере 20px
+            }
+        });
+        document.querySelectorAll('.faq .faq-list p').forEach(element => {
             if (size >= 18) {
                 element.style.fontSize = `${size * 0.9}px`; // 24px при размере 30px
             } else {
@@ -241,6 +259,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.style.fontSize = `${size * 1.3}px`; // 24px при размере 30px
             } else {
                 element.style.fontSize = `${size * 1.1}px`; // 14px при размере 20px
+            }
+        });
+        document.querySelectorAll('.departments .nav-link h4').forEach(element => {
+            if (size >= 18) {
+                element.style.fontSize = `${size * 1.3}px`; // 24px при размере 30px
+            } else {
+                element.style.fontSize = `${size * 1.1}px`; // 14px при размере 20px
+            }
+        });
+        document.querySelectorAll('.departments .nav-link p').forEach(element => {
+            if (size >= 18) {
+                element.style.fontSize = `${size * 0.9}px`; // 24px при размере 30px
+            } else {
+                element.style.fontSize = `${size * 0.7}px`; // 14px при размере 20px
             }
         });
 
