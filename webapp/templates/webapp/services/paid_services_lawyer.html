@@ -73,8 +73,12 @@
                         <a href="{% url 'webapp:paid_services_lawyer_single' pk=main_lawyer_inf.id %}"><p
                                 class="description">{{ main_lawyer_inf.description_small|safe }}</p></a>
                     </div>
+                    {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                        </div>
+                        <div class="row">
+                    {% endif %}
                 {% endfor %}
-            </div>
+                </div>
         </div>
     </section>
     <!-- End  EVROZES Title and desc Section -->
