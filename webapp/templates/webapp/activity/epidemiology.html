@@ -67,7 +67,7 @@
             <div class="row">
                 {% for main_typical_inf in all_typical_news %}
                     <div class="icon-box mt-lg-0" data-aos="fade-up" data-aos-delay="100">
-                        <a href="{% url 'webapp:epidemialogy_single' pk=main_typical_inf.id %}">{{ main_typical_inf.name_epidem|safe }}</a>
+                        <h5><a href="{% url 'webapp:epidemialogy_single' pk=main_typical_inf.id %}">{{ main_typical_inf.name_epidem|safe }}</a></h5>
                         <a href="{% url 'webapp:epidemialogy_single' pk=main_typical_inf.id %}"><p class="description">{{ main_typical_inf.description_small|safe }}</p></a>
                     </div>
                 {% endfor %}

@@ -62,7 +62,7 @@
             {% for main_econimic_inf in evrz_econom_inf %}
                 {% if forloop.first %}
                     <div class="section-title">
-                        <p>{{ main_econimic_inf.name_main|default:main_econimic_inf.name|safe }}</p>
+                        <h2>{{ main_econimic_inf.name_main|default:main_econimic_inf.name|safe }}</h2>
                     </div>
                 {% endif %}
             {% endfor %}

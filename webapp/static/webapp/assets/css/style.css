@@ -4677,3 +4677,23 @@ section#clocks-two {
   background: none;
   font-size: 13px;
 }
+
+.monochrome .img-fixed-size-monitoring-plan {
+  position: absolute;
+  top: -19%;
+  left: 250%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: 31%;
+  object-fit: cover;
+}
+
+.monochrome .pagebanner_three {
+    background: url(../img/gigi_centr_hoz.png) no-repeat;
+    background-attachment: scroll;
+    background-size: auto;
+    background-size: 100%;
+    background-attachment: fixed;
+    height: 190px;
+    width: 100%;
+}

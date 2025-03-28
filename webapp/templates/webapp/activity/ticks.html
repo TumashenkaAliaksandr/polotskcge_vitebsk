@@ -71,8 +71,8 @@
                                  {% for main_ticks_inf in ticks_inf_files %}
                                     <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
                                         <div class="count-box">
-                                            <i class="fa fa-file"></i>
-                                            <a href="{{ main_ticks_inf.pdf_file.url }}"><strong>{{ main_ticks_inf.name|safe }}</strong> {{ main_ticks_inf.description|safe }}</a>
+                                            <i class="fa fa-file-alt"></i>
+                                            <a href="{{ main_ticks_inf.pdf_file.url }}"><h5><strong>{{ main_ticks_inf.name|safe }}</strong></h5> {{ main_ticks_inf.description|safe }}</a>
                                         </div>
                                     </div>
                                 {% endfor %}
