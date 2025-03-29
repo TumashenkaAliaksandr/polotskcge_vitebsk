@@ -76,18 +76,18 @@
                                 <li>
                                     <div class="breaking-news-grid-right-grids">
                                         <div class="breaking-news-grid-right-gridl img-fixed-size-three">
-                                            <a href="{% url 'news:single' pk=main_litle_news.id %}"><img
+                                            <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"><img
                                                     src="{{ main_litle_news.logo_photo.url }}" alt=" "
                                                     class="img-responsive"/></a>
                                         </div>
                                         <div class="breaking-news-grid-right-gridr">
                                             <h4>
-                                                <a href="{% url 'news:single' pk=main_litle_news.id %}">
+                                                <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}">
                                                     {{ main_litle_news.title|wordwrap:30|truncatechars_html:58 }}
                                                 </a>
                                             </h4>
                                             <ul>
-                                                <li><a href="{% url 'news:single' pk=main_litle_news.id %}"><span
+                                                <li><a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"><span
                                                         class="fa fa-user-doctor"
                                                         aria-hidden="true"></span> {{ main_litle_news.author }}
                                                     <label>|</label> {{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
@@ -114,22 +114,22 @@
                                         {% for news_item in page_obj %}
                                             <li>
                                                 <div class="news-grid-left1">
-                                                    <a href="{% url 'news:single' pk=news_item.id %}">
+                                                    <a href="{% url 'news:single' pk=news_item.id slug=news_item.slug %}">
                                                         <img src="{{ news_item.photo.url }}" alt=" "
                                                              class="img-responsive"/>
                                                     </a>
                                                 </div>
                                                 <div class="news-grid-right1">
                                                     <h4>
-                                                        <a href="{% url 'news:single' pk=news_item.id %}">{{ news_item.title|wordwrap:30|truncatechars_html:58 }}</a>
+                                                        <a href="{% url 'news:single' pk=news_item.id slug=news_item.slug %}">{{ news_item.title|wordwrap:30|truncatechars_html:58 }}</a>
                                                     </h4>
                                                     <h5 class="fa fa-user-doctor">
                                                         <label>|</label>
-                                                        <a href="{% url 'news:single' pk=news_item.id %}">{{ news_item.author }}</a>
+                                                        <a href="{% url 'news:single' pk=news_item.id slug=news_item.slug %}">{{ news_item.author }}</a>
                                                         <label>|</label>
                                                         <i>{{ news_item.pub_date|date:"d.m.Y" }}</i>
                                                     </h5>
-                                                    <a href="{% url 'news:single' pk=news_item.id %}">
+                                                    <a href="{% url 'news:single' pk=news_item.id slug=news_item.slug %}">
                                                         <p>{{ news_item.description_small|wordwrap:40|truncatechars_html:132|safe }}</p>
                                                     </a>
                                                 </div>
@@ -436,12 +436,12 @@
                                                 <div class="tab_list1">
                                                     <ul>
                                                         <li>
-                                                            <a href="{% url 'news:single' pk=main_popular.id %}">{{ main_popular.author }}</a>
+                                                            <a href="{% url 'news:single' pk=main_popular.id slug=main_popular.slug %}">{{ main_popular.author }}</a>
                                                         </li>
                                                         <li>{{ main_popular.pub_date|date:"d.m.Y" }}</li>
                                                     </ul>
                                                     <p>
-                                                        <a href="{% url 'news:single' pk=main_popular.id %}">{{ main_popular.title }}</a>
+                                                        <a href="{% url 'news:single' pk=main_popular.id slug=main_popular.slug %}">{{ main_popular.title }}</a>
                                                     </p>
                                                 </div>
                                                 <div class="clearfix"></div>
@@ -461,12 +461,12 @@
                                                 <div class="tab_list1">
                                                     <ul>
                                                         <li>
-                                                            <a href="{% url 'news:single' pk=main_nature.id %}">{{ main_nature.author }}</a>
+                                                            <a href="{% url 'news:single' pk=main_nature.id slug=main_nature.slug %}">{{ main_nature.author }}</a>
                                                         </li>
                                                         <li>{{ main_nature.pub_date|date:"d.m.Y" }}</li>
                                                     </ul>
                                                     <p>
-                                                        <a href="{% url 'news:single' pk=main_nature.id %}">{{ main_nature.title }}</a>
+                                                        <a href="{% url 'news:single' pk=main_nature.id slug=main_nature.slug %}">{{ main_nature.title }}</a>
                                                     </p>
                                                 </div>
                                                 <div class="clearfix"></div>

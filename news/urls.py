@@ -12,6 +12,6 @@ sitemaps = {
 
 urlpatterns = [
     path('cge_news/', cge_news, name='cge_news'),
-    path('single/<int:pk>/', NewsDetailView, name='single'),
+    path('news/<int:pk>/<slug:slug>/', NewsDetailView, name='single'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 ]

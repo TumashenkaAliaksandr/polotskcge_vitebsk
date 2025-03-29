@@ -67,7 +67,7 @@
                     {% for main_litle_news in model_blog_main %}
                         <div class="col-md-3 banner-bottom-grid-left">
                             <div class="br-bm-gd-lt-fon">
-                                <a href="{% url 'news:single' pk=main_litle_news.id %}"><img
+                                <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"><img
                                         src="{{ main_litle_news.logo_photo.url }}" alt=" "
                                         class="img-responsive"/></a>
                                 <div class="overlay">
@@ -78,10 +78,10 @@
                                     <div class="health">
                                         <ul>
                                             <li>
-                                                <a href="{% url 'news:single' pk=main_litle_news.id %}">{{ main_litle_news.title|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
+                                                <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}">{{ main_litle_news.title|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
                                             </li>
                                             <li>
-                                                <a href="{% url 'news:single' pk=main_litle_news.id %}">{{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
+                                                <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}">{{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -90,7 +90,7 @@
                                     </div>
                                     <div class="com-heart-health">
                                         <ul>
-                                            <li><a href="{% url 'news:single' pk=main_litle_news.id %}"><span
+                                            <li><a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"><span
                                                     class="fa fa-user-doctor"
                                                     aria-hidden="true"></span> {{ main_litle_news.author|translate_text }}</a></li>
                                         </ul>

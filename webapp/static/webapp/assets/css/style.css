@@ -4411,7 +4411,7 @@ section#clocks-two {
     }
 
     .main-bg-profsouz {
-        padding: 0px 0 0px;
+        padding: 0 0 0;
 
     }
 
@@ -4535,12 +4535,18 @@ section#clocks-two {
         /*background-color: transparent !important;*/
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         font-weight: bold;
-        position: inherit;
+        /*position: initial;*/
         z-index: 10;
     }
 .monochrome #hero {
         display: none;
     }
+
+.monochrome .breadcrumbs {
+  padding: 40px 0;
+  background-color: #ecf8f9;
+  min-height: 40px;
+}
 
 
 /* Стили для элементов внутри */
@@ -4555,6 +4561,7 @@ section#clocks-two {
     transition: all 0.3s ease;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
     border-radius: 10px;
+    position: initial!important;
 }
 
 /* Стили для пунктов меню */
@@ -4575,6 +4582,36 @@ section#clocks-two {
 .monochrome .dropdown-menu a:hover {
     background: rgba(0, 0, 0, 0.1);
     color: #000;
+}
+.monochrome .navbar {
+  color: #000 !important;
+  background-color: transparent !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  position: inherit;
+  z-index: 10;
+}
+
+.monochrome .breaking_news {
+    float: left;
+    padding: 10px 18px 12px 21px;
+    background-color: #3fbbc0;
+    position: initial;
+}
+
+.monochrome .breadcrumbs_contacts ol{
+    padding: 15px 0;
+    background-color: #ecf8f9;
+    min-height: 40px;
+    position: relative!important;
+    z-index: 0;
+}
+.monochrome .breadcrumbs_contacts li{
+    padding: 15px 0;
+    background-color: #ecf8f9;
+    min-height: 40px;
+    position: relative!important;
+    z-index: 0;
 }
 
 .monochrome .single {
@@ -4712,8 +4749,8 @@ section#clocks-two {
 .monochrome .faq .faq-list i {
   font-size: 16px;
   position: absolute;
-  left: -25px;
-  top: -18px;
+  left: -10px;
+  top: -5px;
 }
 
 .monochrome .archive {
@@ -4727,3 +4764,4 @@ section#clocks-two {
   height: auto;
   margin: -2% -5% 5%;
 }
+

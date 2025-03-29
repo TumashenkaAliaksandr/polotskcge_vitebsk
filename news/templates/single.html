@@ -25,23 +25,21 @@
             <div class="single-grid">
                 <div class="col-md-8 blog-left">
                     <div class="blog-left-grid">
-                        {% for main_single_news in news %}
-                            <div class="blog-leftl">
-                                <h4>{{ main_single_news.pub_date|date:"M" }}</h4>
-                                <a href="#"><i class="fa fa-tags"
-                                               aria-hidden="true"></i> {{ main_single_news.pub_date.day }}</a>
-                            </div>
-                            <div class="blog-leftr">
-                                <img src="{{ main_single_news.photo.url }}" alt=" " class="img-responsive"/>
-                                <p>{{ main_single_news.description|safe }}</p>
-                                <p>{{ main_single_news.description_company|safe }}</p>
-                                <ul>
-                                    <li><a href="#"><i class="fa fa-user-doctor"
-                                                       aria-hidden="true"></i> {{ main_single_news.author }}</a></li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"></div>
-                        {% endfor %}
+                        <!-- Убран цикл for, так как news — объект модели -->
+                        <div class="blog-leftl">
+                            <h4>{{ news.pub_date|date:"M" }}</h4>
+                            <a href="#"><i class="fa fa-tags" aria-hidden="true"></i> {{ news.pub_date.day }}</a>
+                        </div>
+                        <div class="blog-leftr">
+                            <img src="{{ news.photo.url }}" alt=" " class="img-responsive"/>
+                            <p>{{ news.description|safe }}</p>
+                            <p>{{ news.description_company|safe }}</p>
+                            <ul>
+                                <li><a href="#"><i class="fa fa-user-doctor" aria-hidden="true"></i> {{ news.author }}
+                                </a></li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
                 <div class="col-md-4 breaking-news-grid-right">
@@ -51,20 +49,23 @@
                             <li>
                                 <div class="breaking-news-grid-right-grids">
                                     <div class="breaking-news-grid-right-gridl img-fixed-size-three">
-                                        <a href="{% url 'news:single' pk=main_litle_news.id %}"><img
+                                        <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"><img
                                                 src="{{ main_litle_news.logo_photo.url }}" alt=" "
                                                 class="img-responsive"/></a>
                                     </div>
                                     <div class="breaking-news-grid-right-gridr">
                                         <h4>
-                                            <a href="{% url 'news:single' pk=main_litle_news.id %}">
+                                            <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}">
                                                 {{ main_litle_news.title|wordwrap:30|truncatechars_html:58 }}
                                             </a>
                                         </h4>
                                         <ul>
-                                            <li><a href="{% url 'news:single' pk=main_litle_news.id %}"><span
-                                                    class="fa fa-user-doctor"
-                                                    aria-hidden="true"></span> {{ main_litle_news.author }} <label>|</label> {{ main_litle_news.pub_date|date:"d.m.Y" }}</a></li>
+                                            <li>
+                                                <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"><span
+                                                        class="fa fa-user-doctor"
+                                                        aria-hidden="true"></span> {{ main_litle_news.author }}
+                                                    <label>|</label> {{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
+                                            </li>
                                         </ul>
                                     </div>
                                     <div class="clearfix"></div>
@@ -77,19 +78,21 @@
                     <div class="news-grids">
                         <div class="col-md-4 breaking-news-grid-right">
                             <div class="news-grid-right4">
-                                 <h3>Погода в Полоцке</h3>
+                                <h3>Погода в Полоцке</h3>
                                 <!-- Nav tabs -->
                                 <div class="tab-content-weather-bg">
                                     <div class="tab-content-weather">
                                         <ul>
                                             <h4>{{ weather.month }} {{ weather.day_of_month }}, {{ weather.day }}</h4>
                                             <p><span
-                                                    class="fa fa-wind"> Ветер: {{ weather.wind_direction }} - ый / {{ weather.wind_speed }} м/с</span>
+                                                    class="fa fa-wind"> Ветер: {{ weather.wind_direction }} -ый / {{ weather.wind_speed }} м/с</span>
                                             </p>
-                                            <p><span class="fas fa-thermometer-half">
-                                                Температура: {{ weather.temperature }}</span></p>
-                                            <p><span class="fas fa-tachometer-alt">
-                                                Давление: {{ weather.pressure }} гПа</span></p>
+                                            <p><span
+                                                    class="fas fa-thermometer-half">Температура: {{ weather.temperature }}</span>
+                                            </p>
+                                            <p><span
+                                                    class="fas fa-tachometer-alt">Давление: {{ weather.pressure }} гПа</span>
+                                            </p>
                                         </ul>
                                     </div>
                                 </div>
@@ -106,11 +109,11 @@
                         <div class="clearfix"></div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
     <!-- //single -->
+
 
     <!-- ======= breaking-news Section ======= -->
     <section id="featured-services" class="featured-services main-bg-bogatyrskaya">

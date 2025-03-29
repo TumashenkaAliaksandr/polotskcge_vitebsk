@@ -2,7 +2,9 @@ from django.db import models
 from django.conf import settings
 from django.urls import reverse
 from tinymce.models import HTMLField
-
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
+from django.utils.text import slugify
 from webapp.models import Cities
 
 
@@ -10,6 +12,7 @@ class ModelNews(models.Model):
     """Main model News"""
 
     title = models.CharField(max_length=200, verbose_name='Название')
+    slug = models.SlugField(max_length=100, unique=True, verbose_name='URL-адрес', default="default-slug")
     description_small = models.TextField(max_length=500, default='', verbose_name='Не большое описание')
     description = models.TextField(verbose_name='Описание', default='Описание')
     description_company = models.TextField(verbose_name='Описание для нижнего блока', default='Описание для нижнего блока')
@@ -38,11 +41,27 @@ class ModelNews(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('news:single', kwargs={'pk': self.pk})  # Замените 'news_detail' на имя вашего URL-шаблона
+        return reverse('news:single', kwargs={
+            'pk': self.pk,
+            'slug': self.slug,
+        })  # Замените 'news_detail' на имя вашего URL-шаблона
 
     class Meta:
         verbose_name = 'Главная модель Новости'
         verbose_name_plural = 'Главная модель Новости'
+
+# Сигнал для автоматического формирования слага
+# Стало (используем title)
+@receiver(pre_save, sender=ModelNews)
+def create_slug(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        base_slug = slugify(instance.title)
+        unique_slug = base_slug
+        num = 1
+        while ModelNews.objects.filter(slug=unique_slug).exists():
+            unique_slug = f"{base_slug}-{num}"
+            num += 1
+        instance.slug = unique_slug
 
 
 class Interactive(models.Model):

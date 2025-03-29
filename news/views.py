@@ -1,5 +1,5 @@
 from news.models import *
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from webapp.models import CentreNews
 from .utils import get_weather
@@ -46,9 +46,9 @@ def cge_news(request):
     return render(request, 'breaking.html', context=context)
 
 
-def one_news(request, pk):
+def one_news(request, pk, slug):
     """these are views for Blog News list"""
-    news = ModelNews.objects.filter(pk=pk)
+    news = get_object_or_404(ModelNews, pk=pk, slug=slug)
 
     context = {
         'news': news,
@@ -56,9 +56,9 @@ def one_news(request, pk):
     return render(request, 'breaking.html', context=context)
 
 
-def NewsDetailView(request, pk):
+def NewsDetailView(request, pk, slug):
     """Views for News details"""
-    news = ModelNews.objects.filter(pk=pk)
+    news = get_object_or_404(ModelNews, pk=pk, slug=slug)
     news_main = ModelNews.objects.all().order_by('-pub_date')
     interactiv = Interactive.objects.all()
     centre_news = CentreNews.objects.all().order_by('-pub_date')
@@ -73,4 +73,5 @@ def NewsDetailView(request, pk):
         'weather': weather,  # Передаем данные о погоде в контекст
         'centre_news': centre_news,
     }
+
     return render(request, 'single.html', context=context)
