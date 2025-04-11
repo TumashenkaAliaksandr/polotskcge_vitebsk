@@ -930,6 +930,7 @@ def skp(request, pk):
     interactiv = Interactive.objects.all()
     typical_inf = CustomProductsInf.objects.all()
     name_single_main = get_object_or_404(Quarantine, pk=pk)
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
 
     all_typical_news = CustomProductsInf.objects.all().order_by('-pub_date')
 
@@ -939,6 +940,7 @@ def skp(request, pk):
         'typical_inf': typical_inf,
         'evrz_qua_inf': evrz_qua_inf,
         'name_single_main': name_single_main,
+        'centre_news': centre_news,
     }
 
     return render(request, 'webapp/activity/sanitary_quarantine_points_single.html', context=context)

@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load templatetags %}
 
 
 {% block content %}
@@ -16,8 +17,10 @@
 
             <div class="d-flex justify-content-between align-items-center">
                 <ol>
-                    <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                    <li>{{ name_single_main|safe }}</li>
+                    <li><a href="{% url 'webapp:home' %}">{{ "Главная" |translate_text }}</a></li>
+                    {% if name_single_main  %}
+                    <li>{{ name_single_main|default_if_none:""|translate_text|safe }}</li>
+                    {% endif %}
                 </ol>
             </div>
         </div>
@@ -31,14 +34,14 @@
                 {% for main_interactiv_string in interactiv %}
                     <div class="move-text">
                         <div class="breaking_news">
-                            <h2>Новости Центра</h2>
+                            <h2>{{ "Новости Центра" |translate_text }}</h2>
                         </div>
                         <div class="marquee">
                             <div class="marquee1"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description |translate_text| safe }}</a>
                             </div>
                             <div class="marquee2"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two |translate_text| safe }}</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -61,17 +64,17 @@
             {% for main_resolution_inf in evrz_qua_inf %}
                 {% if forloop.first %}
                     <div class="section-title">
-                        <h2>{{ main_resolution_inf.name|default:main_resolution_inf.name|safe }}</h2>
+                        <h2>{{ main_resolution_inf.name|translate_text|default:main_resolution_inf.name|translate_text|safe }}</h2>
                     </div>
                     <div class="description">
-                    <p>{{ main_resolution_inf.name_single_main|default:main_resolution_inf.name_single_main|safe }}</p>
+                    <p>{{ main_resolution_inf.name_single_main|translate_text|default:main_resolution_inf.name_single_main|translate_text|safe }}</p>
                     </div>
                 {% endif %}
             {% endfor %}
             <div class="row">
                 {% for main_resolution_inf in evrz_qua_inf %}
                     <div class="description" data-aos="fade-up" data-aos-delay="100">
-                        <p>{{ main_resolution_inf.desc_single_main|safe }}</p>
+                        <p>{{ main_resolution_inf.desc_single_main|translate_text|safe }}</p>
                     </div>
                 {% endfor %}
             </div>
@@ -84,8 +87,8 @@
         <div class="container" data-aos="fade-up">
             {% for title_desc in title_desc_queans %}
                 <div class="section-title">
-                    <h2>{{ title_desc.name }}</h2>
-                    <p>{{ title_desc.description | safe }}</p>
+                    <h2>{{ title_desc.name|translate_text }}</h2>
+                    <p>{{ title_desc.description |translate_text| safe }}</p>
                 </div>
             {% endfor %}
 
@@ -93,7 +96,7 @@
                 {% for question in questions|slice:":6" %}
                     <li>
                         <div data-bs-toggle="collapse" class="collapsed question"
-                             href="#{{ question.id }}"> {{ question.question_text }} <i
+                             href="#{{ question.id }}"> {{ question.question_text|translate_text }} <i
                                 class="bi bi-chevron-down icon-show"><img src="{% static 'webapp/assets/img/gigi_centr_marker-nbg.png' %}" class="img-fix"
                                  alt=""></i><i class="bi bi-chevron-up icon-close"><img src="{% static 'webapp/assets/img/gigi_centr_marker-nbg.png' %}" class="img-fix"
                                  alt=""></i>
@@ -101,7 +104,7 @@
                         <div id="{{ question.id }}" class="collapse" data-bs-parent=".faq-list">
                             <p>
                                 {% for ansver in question.answers.all %}
-                                    {{ ansver.answer_text }}
+                                    {{ ansver.answer_text|translate_text }}
                                 {% endfor %}
                             </p>
                         </div>
@@ -112,14 +115,17 @@
     </section>
     <!-- End Frequently Asked Questioins Section -->
 
-    <!-- breaking-news -->
-    <div id="single" class="single main-bg-carantin">
-        <div class="breaking-news">
-            <div class="container">
-                <div class="breaking-news-grids-bottom">
-                    <div class="banner-bottom-grids">
+    <!-- ======= breaking-news Section ======= -->
+    <section id="featured-services" class="featured-services main-bg-appeals">
+        <div class="container" data-aos="fade-up">
+            <div class="breaking-news-grids-bottom">
+                <div class="banner-bottom-grids">
+                    {% for main_litle_news in centre_news %}
                         <div class="col-md-3 banner-bottom-grid-left">
-                            <div class="br-bm-gd-lt">
+                            <div class="br-bm-gd-lt-fon">
+                                <a href="{{ main_litle_news.link }}"><img
+                                        src="{{ main_litle_news.img.url }}" alt=" "
+                                        class="img-responsive"/></a>
                                 <div class="overlay">
                                     <div class="arrow-left"></div>
                                     <div class="rectangle"></div>
@@ -127,115 +133,38 @@
                                 <div class="health-pos">
                                     <div class="health">
                                         <ul>
-                                            <li><a href="{% url 'webapp:healthy_lifestyle' %}">Здоровье</a></li>
-                                            <li>28 Мая 2024</li>
-                                        </ul>
-                                    </div>
-                                    <h3>Наши Статьи о том как беречь своё Здоровье.</h3>
-                                    <div class="dummy">
-                                        <p>Тут мы расскажем вам о правильном питании и сне.</p>
-                                    </div>
-                                    <div class="com-heart">
-                                        <ul>
-                                            <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span>
-                                                Центр Гигиены</a></li>
-                                            <li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span>
-                                                11,536</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 banner-bottom-grid-left">
-                            <div class="br-bm-gd-lt br-bm-gd-lt1">
-                                <div class="overlay">
-                                    <div class="arrow-left"></div>
-                                    <div class="rectangle"></div>
-                                </div>
-                                <div class="health-pos">
-                                    <div class="health">
-                                        <ul>
-                                            <li><a href="#" class="sport">Спорт</a></li>
-                                            <li>28 Мая 2024</li>
-                                        </ul>
-                                    </div>
-                                    <h3>Почему и как нужно заниматься спортом.</h3>
-                                    <div class="dummy">
-                                        <p>Популярные статьи о спорте.</p>
-                                    </div>
-                                    <div class="com-heart">
-                                        <ul>
-                                            <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span>
-                                                Центр Гигиены</a></li>
-                                            <li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span>
-                                                13,536</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 banner-bottom-grid-left">
-                            <div class="br-bm-gd-lt br-bm-gd-lt2">
-                                <div class="overlay">
-                                    <div class="arrow-left"></div>
-                                    <div class="rectangle"></div>
-                                </div>
-                                <div class="health-pos">
-                                    <div class="health">
-                                        <ul>
-                                            <li><a href="#" class="plane">Экономика</a></li>
-                                            <li>28 Мая 2024</li>
-                                        </ul>
-                                    </div>
-                                    <h3>Новости мира Экономики в 2024 году.</h3>
-                                    <div class="dummy">
-                                        <p>Популярные статьи об экономике.</p>
-                                    </div>
-                                    <div class="com-heart">
-                                        <ul>
-                                            <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span>
-                                                Центр Гигиены</a></li>
-                                            <li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span> 7,536</a>
+                                            <li>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}</a>
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 banner-bottom-grid-left">
-                            <div class="br-bm-gd-lt br-bm-gd-lt3">
-                                <div class="overlay">
-                                    <div class="arrow-left"></div>
-                                    <div class="rectangle"></div>
-                                </div>
-                                <div class="health-pos">
-                                    <div class="health">
-                                        <ul>
-                                            <li><a href="" class="general">Важное</a></li>
-                                            <li>28 Мая 2024</li>
-                                        </ul>
-                                    </div>
-                                    <h3>Новости о природе Беларуси, леса и водоемы.</h3>
+                                    <h3>{{ main_litle_news.desc|translate_text|safe|wordwrap:10|truncatechars_html:58 }}</h3>
                                     <div class="dummy">
-                                        <p>Что нужно знать посещая лесополосу и отдыхая рядом с водой.</p>
+                                        <a href="{{ main_litle_news.link }}">
+                                            <p>{{ main_litle_news.desc_hover|translate_text|safe }}</p></a>
                                     </div>
-                                    <div class="com-heart">
+                                    <div class="com-heart-health">
                                         <ul>
-                                            <li><a href="#"><span class="fa fa-user-doctor" aria-hidden="true"></span>
-                                                Центр Гигиены</a></li>
-                                            <li><a href="#"><span class="fa fa-eye" aria-hidden="true"></span>
-                                                15,536</a></li>
+                                            <li><a href="{{ main_litle_news.link }}"><span
+                                                    class="fa fa-user-doctor"
+                                                    aria-hidden="true"></span> {{ main_litle_news.author|translate_text }}
+                                            </a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="clearfix"></div>
-                    </div>
+                    {% endfor %}
+                    <div class="clearfix"></div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- End Breaking Section -->
+
 
 </main><!-- End #main -->
 
