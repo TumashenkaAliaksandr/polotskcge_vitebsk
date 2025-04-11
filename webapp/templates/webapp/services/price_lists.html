@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load templatetags %}
 
 
 {% block content %}
@@ -18,8 +19,8 @@
 
         <div class="d-flex justify-content-between align-items-center">
           <ol>
-            <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-            <li>Прейскуранты</li>
+            <li><a href="{% url 'webapp:home' %}">{{ "Главная" |translate_text }}</a></li>
+            <li>{{ "Прейскуранты" |translate_text }}</li>
           </ol>
         </div>
       </div>
@@ -33,14 +34,14 @@
                 {% for main_interactiv_string in interactiv %}
                     <div class="move-text">
                         <div class="breaking_news">
-                            <h2>Новости Центра</h2>
+                            <h2>{{ "Новости Центра" |translate_text }}</h2>
                         </div>
                         <div class="marquee">
                             <div class="marquee1"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description |translate_text| safe }}</a>
                             </div>
                             <div class="marquee2"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two |translate_text| safe }}</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -77,14 +78,14 @@
                             </div>
                             <h4 class="title">
                                 {% if main_price_lists.add_file %}
-                                    <a href="{{ main_price_lists.add_file }}">{{ main_price_lists.name|safe }}</a>
+                                    <a href="{{ main_price_lists.add_file }}">{{ main_price_lists.name|translate_text|safe }}</a>
                                 {% elif main_price_lists.link %}
-                                    <a href="{{ main_price_lists.link }}">{{ main_price_lists.name|safe }}</a>
+                                    <a href="{{ main_price_lists.link }}">{{ main_price_lists.name|translate_text|safe }}</a>
                                 {% else %}
-                                    {{ main_price_lists.name|safe }}
+                                    {{ main_price_lists.name|translate_text|safe }}
                                 {% endif %}
                             </h4>
-                            <p class="description">{{ main_price_lists.description|safe }}</p>
+                            <p class="description">{{ main_price_lists.description|translate_text|safe }}</p>
                         </div>
                     </div>
                 {% endfor %}
@@ -98,8 +99,8 @@
         <div class="container" data-aos="fade-up">
             {% for desc in desc_services_title %}
                 <div class="section-title">
-                    <h2>{{ desc.name }}</h2>
-                    <p>{{ desc.description | safe }}</p>
+                    <h2>{{ desc.name|translate_text }}</h2>
+                    <p>{{ desc.description |translate_text| safe }}</p>
                 </div>
             {% endfor %}
 
@@ -109,8 +110,8 @@
                         <div class="icon">
                             <img src="{{ main_servic.icon.url }}">
                         </div>
-                        <h4 class="title"><a href="{{ main_servic.link }}">{{ main_servic.name }}</a></h4>
-                        <p class="description">{{ main_servic.description | safe }}</p>
+                        <h4 class="title"><a href="{{ main_servic.link }}">{{ main_servic.name|translate_text }}</a></h4>
+                        <p class="description">{{ main_servic.description |translate_text| safe }}</p>
                     </div>
                 {% endfor %}
             </div>
@@ -123,7 +124,7 @@
     <section id="featured-services" class="featured-services price-bg">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
-                <h2>Наши Новости</h2>
+                <h2>{{ "Наши Новости" | translate_text }}</h2>
             </div>
             <div class="breaking-news-grids-bottom">
                 <div class="banner-bottom-grids">
@@ -141,23 +142,23 @@
                                     <div class="health">
                                         <ul>
                                             <li>
-                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|wordwrap:30|truncatechars_html:58 }}</a>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
                                             </li>
                                             <li>
-                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}</a>
                                             </li>
                                         </ul>
                                     </div>
-                                    <h3>{{ main_litle_news.desc|safe|wordwrap:10|truncatechars_html:58 }}</h3>
+                                    <h3>{{ main_litle_news.desc|translate_text|safe|wordwrap:10|truncatechars_html:58 }}</h3>
                                     <div class="dummy">
                                         <a href="{{ main_litle_news.link }}">
-                                            <p>{{ main_litle_news.desc_hover|safe }}</p></a>
+                                            <p>{{ main_litle_news.desc_hover|translate_text|safe }}</p></a>
                                     </div>
                                     <div class="com-heart-health">
                                         <ul>
                                             <li><a href="{{ main_litle_news.link }}"><span
                                                     class="fa fa-user-doctor"
-                                                    aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
+                                                    aria-hidden="true"></span> {{ main_litle_news.author|translate_text }}</a></li>
                                         </ul>
                                     </div>
                                 </div>

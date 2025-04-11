@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load templatetags %}
 
 
 {% block content %}
@@ -17,8 +18,8 @@
 
         <div class="d-flex justify-content-between align-items-center">
           <ol>
-            <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-            <li>Платные услуги физическим лицам</li>
+            <li><a href="{% url 'webapp:home' %}">{{ "Главная" |translate_text }}</a></li>
+            <li>{{ "Платные услуги физическим лицам" |translate_text }}</li>
           </ol>
         </div>
       </div>
@@ -32,14 +33,14 @@
                 {% for main_interactiv_string in interactiv %}
                     <div class="move-text">
                         <div class="breaking_news">
-                            <h2>Новости Центра</h2>
+                            <h2>{{ "Новости Центра" |translate_text }}</h2>
                         </div>
                         <div class="marquee">
                             <div class="marquee1"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description |translate_text| safe }}</a>
                             </div>
                             <div class="marquee2"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two |translate_text| safe }}</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -61,8 +62,8 @@
     <section class="ap-bg">
         <div class="container" data-aos="fade-up">
             <div class="section-title">
-                <h2>{{ studi.0.name|safe }}</h2>
-                <p>{{ studi.0.desc | safe }}</p>
+                <h2>{{ studi.0.name|translate_text|safe }}</h2>
+                <p>{{ studi.0.desc |translate_text| safe }}</p>
             </div>
             <div class="row">
                 <div class="table-info">
@@ -70,19 +71,19 @@
                         <table class="iksweb">
                             <thead>
                             <tr>
-                                <th>Показатели</th>
-                                <th>Работники торговли и общепита</th>
-                                <th>Работники детских дошкольных учреждений</th>
-                                <th>Работники водоснабжения</th>
+                                <th>{{ "Показатели" |translate_text }}</th>
+                                <th>{{ "Работники торговли и общепита" |translate_text }}</th>
+                                <th>{{ "Работники детских дошкольных учреждений" |translate_text }}</th>
+                                <th>{{ "Работники водоснабжения" |translate_text }}</th>
                             </tr>
                             </thead>
                             <tbody>
                             {% for main_studi in studi %}
                                 <tr>
-                                    <td>{{ main_studi.indicators|safe }}</td>
-                                    <td>{{ main_studi.catering_workers_display|safe }}</td>
-                                    <td>{{ main_studi.after_workers_display|safe }}</td>
-                                    <td>{{ main_studi.employees_school_display|safe }}</td>
+                                    <td>{{ main_studi.indicators|translate_text|safe }}</td>
+                                    <td>{{ main_studi.catering_workers_display|translate_text|safe }}</td>
+                                    <td>{{ main_studi.after_workers_display|translate_text|safe }}</td>
+                                    <td>{{ main_studi.employees_school_display|translate_text|safe }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>
@@ -98,7 +99,7 @@
     <section class="ap-bg">
         <div class="container" data-aos="fade-up">
             <div class="description-left">
-                <p>{{ wqs.0.desc | safe }}</p>
+                <p>{{ wqs.0.desc |translate_text| safe }}</p>
             </div>
             <div class="row">
                 <div class="table-info">
@@ -106,21 +107,21 @@
                         <table class="iksweb">
                             <thead>
                             <tr>
-                                <th>Показатели</th>
-                                <th>Шахтный колодец</th>
-                                <th>Базовый</th>
-                                <th>Стандарт</th>
-                                <th>Стандарт Плюс</th>
+                                <th>{{ "Показатели" |translate_text }}</th>
+                                <th>{{ "Шахтный колодец" |translate_text }}</th>
+                                <th>{{ "Базовый" |translate_text }}</th>
+                                <th>{{ "Стандарт" |translate_text }}</th>
+                                <th>{{ "Стандарт Плюс" |translate_text }}</th>
                             </tr>
                             </thead>
                             <tbody>
                             {% for main_wqs in wqs %}
                                 <tr>
-                                    <td>{{ main_wqs.indicators|safe }}</td>
-                                    <td>{{ main_wqs.mine_well_display|safe }}</td>
-                                    <td>{{ main_wqs.basic_display|safe }}</td>
-                                    <td>{{ main_wqs.standart_display|safe }}</td>
-                                    <td>{{ main_wqs.standart_plus_display|safe }}</td>
+                                    <td>{{ main_wqs.indicators|translate_text|safe }}</td>
+                                    <td>{{ main_wqs.mine_well_display|translate_text|safe }}</td>
+                                    <td>{{ main_wqs.basic_display|translate_text|safe }}</td>
+                                    <td>{{ main_wqs.standart_display|translate_text|safe }}</td>
+                                    <td>{{ main_wqs.standart_plus_display|translate_text|safe }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>
@@ -136,7 +137,7 @@
     <section class="ap-bg">
         <div class="container" data-aos="fade-up">
             <div class="description-left">
-                <p>{{ lfv.0.desc | safe }}</p>
+                <p>{{ lfv.0.desc |translate_text| safe }}</p>
             </div>
             <div class="row">
                 <div class="table-info">
@@ -144,22 +145,22 @@
                         <table class="iksweb">
                             <thead>
                             <tr>
-                                <th>Пакет исследований</th>
-                                <th>Стоимость пакета с учетом<br>НДС и расходных материалов*</th>
+                                <th>{{ "Пакет исследований" |translate_text }}</th>
+                                <th>{{ "Стоимость пакета с учетом" |translate_text }}<br>{{ "НДС и расходных материалов*" |translate_text }}</th>
                             </tr>
                             </thead>
                             <tbody>
                             {% for main_lfv in lfv %}
                                 <tr>
-                                    <td>{{ main_lfv.paket|safe }}</td>
-                                    <td>{{ main_lfv.cost_display|safe }}</td>
+                                    <td>{{ main_lfv.paket|translate_text|safe }}</td>
+                                    <td>{{ main_lfv.cost_display|translate_text|safe }}</td>
                                 </tr>
                             {% endfor %}
                             </tbody>
                         </table>
                         <div class="description-left">
                             <ul>
-                                <h5><br>*Стоимость услуг указана по состоянию на 01.06.2024г</h5>
+                                <h5><br>{{ "*Стоимость услуг указана по состоянию на 01.06.2024г" |translate_text }}</h5>
                             </ul>
                         </div>
                     </div>
@@ -180,8 +181,8 @@
                             <div class="icon"><a href="{{ main_price_lists.add_file }}"><i
                                     class="{{ main_price_lists.icon_class }}"></i></a></div>
                             <h4 class="title"><a
-                                    href="{{ main_price_lists.add_file }}">{{ main_price_lists.name|safe }}</a></h4>
-                            <a href="{{ main_price_lists.add_file }}"><p class="description">{{ main_price_lists.description|safe }}</p></a>
+                                    href="{{ main_price_lists.add_file }}">{{ main_price_lists.name|translate_text|safe }}</a></h4>
+                            <a href="{{ main_price_lists.add_file }}"><p class="description">{{ main_price_lists.description|translate_text|safe }}</p></a>
                         </div>
                     </div>
                 {% endfor %}
@@ -196,8 +197,8 @@
         <div class="container" data-aos="fade-up">
             {% for main_info_erip in erip_info %}
                 <div class="section-title">
-                    <h2>{{ main_info_erip.name|safe }}</h2>
-                    <p>{{ main_info_erip.description|safe }}</p>
+                    <h2>{{ main_info_erip.name|translate_text|safe }}</h2>
+                    <p>{{ main_info_erip.description|translate_text|safe }}</p>
                 </div>
 
                 <div class="row">
@@ -206,7 +207,7 @@
                              alt="">
                     </div>
                     <div class="col-lg-10 pt-4 pt-lg-0 content" data-aos="fade-left">
-                        <p class="mobile-font-size">{{ main_info_erip.payment_where|safe }}</p>
+                        <p class="mobile-font-size">{{ main_info_erip.payment_where|translate_text|safe }}</p>
 {#                        <p class="fst-italic"><a href="{% static 'webapp/assets/img/gigi_centr_oplata_erip.jpg' %}"#}
 {#                                                 target="_blank">Схема проведения платежа</a></p>#}
                     </div>
@@ -225,20 +226,20 @@
                         <!-- Изображение для первой колонки -->
                         <div class="col-lg-4 txt-fixed-size my-column-three">
                             <p>
-                                {{ main_info_erip.unp|safe }}
+                                {{ main_info_erip.unp|translate_text|safe }}
                             </p>
                         </div>
                     </div>
                     <!-- Вторая колонка -->
                     <div class="col-lg-5 img-fixed-size-cheme">
                         <p>
-                            {{ main_info_erip.payment_methods|safe }}
+                            {{ main_info_erip.payment_methods|translate_text|safe }}
                         </p>
                     </div>
                     <div class="col-lg-4 display-none-landscape" data-aos="fade-right">
                         <div class="img-positions-fiz-erip mt-4 mt-lg-0">
                             <!-- Текст для второй колонки -->
-                            <p>{{ main_info_erip.title_qr|safe }}</p>
+                            <p>{{ main_info_erip.title_qr|translate_text|safe }}</p>
                             <img src="{{ main_info_erip.qr_img.url }}" class="img-fixed-size-unp-qrblrbnk">
                         </div>
                     </div>

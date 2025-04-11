@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load templatetags %}
 
 
 {% block content %}
@@ -15,8 +16,8 @@
 
             <div class="d-flex justify-content-between align-items-center">
                 <ol>
-                    <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                    <li>Дезинфекция | Дезинсекция | Дератизация</li>
+                    <li><a href="{% url 'webapp:home' %}">{{ "Главная" |translate_text }}</a></li>
+                    <li>{{ "Дезинфекция | Дезинсекция | Дератизация" |translate_text }}</li>
                 </ol>
             </div>
         </div>
@@ -32,14 +33,14 @@
                 {% for main_interactiv_string in interactiv %}
                     <div class="move-text">
                         <div class="breaking_news">
-                            <h2>Новости Центра</h2>
+                            <h2>{{ "Новости Центра" |translate_text }}</h2>
                         </div>
                         <div class="marquee">
                             <div class="marquee1"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description |translate_text| safe }}</a>
                             </div>
                             <div class="marquee2"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two |translate_text| safe }}</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -63,10 +64,10 @@
             <div class="row">
                 {% for main_desinfection in disinfection_info %}
                     <div class="section-title">
-                        <h2>{{ main_desinfection.name_main|safe }}</h2>
+                        <h2>{{ main_desinfection.name_main|translate_text|safe }}</h2>
                     </div>
                     <div class="gslide-description">
-                        <p>{{ main_desinfection.description|safe }}</p>
+                        <p>{{ main_desinfection.description|translate_text|safe }}</p>
                     </div>
 
                 {% endfor %}
@@ -89,18 +90,18 @@
                              alt="gigi_boy.gif">
                     </div>
                     <div class="news-grid-right2">
-                        <h4>Получатель: Государственное учреждение «Полоцкий зональный ЦГЭ»<br>
-                            ОАО «АСБ «Беларусбанк»<br>г. Полоцк, ул.Ф.Скорины,4<br>
-                            Банковский идентификационный код (BIC):АКВВВY2X<br>
-                            р/сBY16 AKBB 3632 0002 1011 9230 0000<br>
-                            УНН 300250571 ОКПО 05562961<br>
-                            e-mail: polotzk_hyg@vitebsk.by
+                        <h4>{{ "Получатель: Государственное учреждение «Полоцкий зональный ЦГЭ»" |translate_text }}<br>
+                            {{ "ОАО «АСБ «Беларусбанк»" |translate_text }}<br>{{ "г. Полоцк, ул.Ф.Скорины,4" |translate_text }}<br>
+                            {{ "Банковский идентификационный код (BIC):АКВВВY2X" |translate_text }}<br>
+                            {{ "р/сBY16 AKBB 3632 0002 1011 9230 0000" |translate_text }}<br>
+                            {{ "УНН 300250571 ОКПО 05562961" |translate_text }}<br>
+                            {{ "e-mail: polotzk_hyg@vitebsk.by" |translate_text }}
                         </h4>
                     </div>
                 </div>
                 {% for main_disinfection in disinfection_info %}
                     <div class="description-right">
-                        <p>{{ main_disinfection.description_two|safe }}</p>
+                        <p>{{ main_disinfection.description_two|translate_text|safe }}</p>
                     </div>
                 {% endfor %}
             </div>
@@ -113,7 +114,7 @@
               <div class="container book_info" data-aos="fade-up">
 
                   <div class="section-title">
-                      <h2>{{ main_deratisation.name|safe }}</h2>
+                      <h2>{{ main_deratisation.name|translate_text|safe }}</h2>
                   </div>
 
                   <div class="row">
@@ -122,8 +123,8 @@
                                alt="">
                       </div>
                       <div class="col-lg-9 pt-4 pt-lg-0 content" data-aos="fade-left">
-                          <p>{{ main_deratisation.description|safe }}</p>
-                          <p>{{ main_deratisation.description_two|safe }}</p>
+                          <p>{{ main_deratisation.description|translate_text|safe }}</p>
+                          <p>{{ main_deratisation.description_two|translate_text|safe }}</p>
                       </div>
                   </div>
 
@@ -138,13 +139,13 @@
         <div class="container book_info" data-aos="fade-up">
             {% for main_disinsection in disinsection_info %}
                 <div class="section-title">
-                <h2>{{ main_disinsection.name|safe }}</h2>
+                <h2>{{ main_disinsection.name|translate_text|safe }}</h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-9 order-2 order-lg-1" data-aos="fade-right">
                         <div class=" mt-5 mt-lg-0">
-                            <p>{{ main_disinsection.description | safe }}</p>
-                            <p>{{ main_disinsection.description_two | safe }}</p>
+                            <p>{{ main_disinsection.description |translate_text| safe }}</p>
+                            <p>{{ main_disinsection.description_two |translate_text| safe }}</p>
                         </div>
 
                     </div>
@@ -164,7 +165,7 @@
             <div class="container book_info" data-aos="fade-up">
 
                 <div class="section-title">
-                    <h2>{{ main_disinfection_desc.name|safe }}</h2>
+                    <h2>{{ main_disinfection_desc.name|translate_text|safe }}</h2>
                 </div>
 
                 <div class="row">
@@ -173,8 +174,8 @@
                              alt="">
                     </div>
                     <div class="col-lg-9 pt-4 pt-lg-0 content" data-aos="fade-left">
-                        <p>{{ main_disinfection_desc.description|safe }}</p>
-                        <p>{{ main_disinfection_desc.description_two|safe }}</p>
+                        <p>{{ main_disinfection_desc.description|translate_text|safe }}</p>
+                        <p>{{ main_disinfection_desc.description_two|translate_text|safe }}</p>
                     </div>
                 </div>
 

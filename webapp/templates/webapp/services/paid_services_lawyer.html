@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load templatetags %}
 
 
 {% block content %}
@@ -17,8 +18,8 @@
 
         <div class="d-flex justify-content-between align-items-center">
           <ol>
-            <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-            <li>Платные услуги Юридическим лицам и ИП</li>
+            <li><a href="{% url 'webapp:home' %}">{{ "Главная" |translate_text }}</a></li>
+            <li>{{ "Платные услуги Юридическим лицам и ИП" |translate_text }}</li>
           </ol>
         </div>
       </div>
@@ -33,14 +34,14 @@
                 {% for main_interactiv_string in interactiv %}
                     <div class="move-text">
                         <div class="breaking_news">
-                            <h2>Новости Центра</h2>
+                            <h2>{{ "Новости Центра" |translate_text }}</h2>
                         </div>
                         <div class="marquee">
                             <div class="marquee1"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description |translate_text| safe }}</a>
                             </div>
                             <div class="marquee2"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two |translate_text| safe }}</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -63,15 +64,15 @@
         <div class="container" data-aos="fade-up">
             {% for main_lawyer_title in lawyer_title %}
                 <div class="section-title">
-                    <p>{{ main_lawyer_title.name|safe }}</p>
+                    <p>{{ main_lawyer_title.name|translate_text|safe }}</p>
                 </div>
             {% endfor %}
             <div class="row">
                 {% for main_lawyer_inf in all_typical_news %}
                     <div class="icon-box mt-lg-0 paid_services" data-aos="fade-up" data-aos-delay="100">
-                        <a href="{% url 'webapp:paid_services_lawyer_single' pk=main_lawyer_inf.id %}">{{ main_lawyer_inf.name_lawyer|safe }}</a>
+                        <a href="{% url 'webapp:paid_services_lawyer_single' pk=main_lawyer_inf.id %}">{{ main_lawyer_inf.name_lawyer|translate_text|safe }}</a>
                         <a href="{% url 'webapp:paid_services_lawyer_single' pk=main_lawyer_inf.id %}"><p
-                                class="description">{{ main_lawyer_inf.description_small|safe }}</p></a>
+                                class="description">{{ main_lawyer_inf.description_small|translate_text|safe }}</p></a>
                     </div>
                     {% if forloop.counter|divisibleby:3 and not forloop.last %}
                         </div>
@@ -88,8 +89,8 @@
         <div class="container" data-aos="fade-up">
             {% for title_desc in title_desc_queans %}
                 <div class="section-title">
-                    <h2>{{ title_desc.name }}</h2>
-                    <p>{{ title_desc.description | safe }}</p>
+                    <h2>{{ title_desc.name|translate_text }}</h2>
+                    <p>{{ title_desc.description |translate_text| safe }}</p>
                 </div>
             {% endfor %}
 
@@ -97,7 +98,7 @@
                 {% for question in questions|slice:":6" %}
                     <li>
                         <div data-bs-toggle="collapse" class="collapsed question"
-                             href="#{{ question.id }}"> {{ question.question_text }} <i
+                             href="#{{ question.id }}"> {{ question.question_text|translate_text }} <i
                                 class="bi bi-chevron-down icon-show"><img src="{% static 'webapp/assets/img/gigi_centr_marker-nbg.png' %}" class="img-fix"
                                  alt=""></i><i class="bi bi-chevron-up icon-close"><img src="{% static 'webapp/assets/img/gigi_centr_marker-nbg.png' %}" class="img-fix"
                                  alt=""></i>
@@ -105,7 +106,7 @@
                         <div id="{{ question.id }}" class="collapse" data-bs-parent=".faq-list">
                             <p>
                                 {% for ansver in question.answers.all %}
-                                    {{ ansver.answer_text }}
+                                    {{ ansver.answer_text|translate_text }}
                                 {% endfor %}
                             </p>
                         </div>
