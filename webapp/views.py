@@ -226,7 +226,9 @@ def appeals(request):
 
 
 def standart_documents(request):
+
     """Appeals - standart_documents template"""
+
     main_normative_doc_inf = NormativeDocuments.objects.all()
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()

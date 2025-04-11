@@ -1,112 +1,168 @@
+# webapp/templatetags/translation_tags.py
 import re
-
+import json
+import os
+from pathlib import Path
 from django import template
+from django.conf import settings
 from django.utils.translation import get_language
 from deep_translator import GoogleTranslator
 from django.core.cache import cache
+from html import unescape
 
 register = template.Library()
 
+# Конфигурация
+TRANSLATIONS_DIR = Path(settings.BASE_DIR) / 'translations'
+TRANSLATIONS_DIR.mkdir(exist_ok=True)
+
+
+def get_translation_file(lang: str) -> Path:
+    """Получаем путь к файлу переводов для языка"""
+    return TRANSLATIONS_DIR / f'{lang}_translations.json'
+
+
+def load_translations(lang: str) -> dict:
+    """Загружаем переводы из JSON файла"""
+    file_path = get_translation_file(lang)
+    if not file_path.exists():
+        return {}
+
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def save_translations(lang: str, data: dict):
+    """Сохраняем переводы в JSON файл"""
+    file_path = get_translation_file(lang)
+    with open(file_path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+
+def translate_and_cache(text: str, lang: str) -> str:
+    """Умный переводчик с кэшированием в JSON и памяти"""
+    if text is None:
+        return ""
+
+    # Нормализация текста
+    clean_text = text.replace('& laquo;', '«').replace('& raquo;', '»').replace('& ndash;', '-')
+    clean_text = re.sub(r'(&nbsp;|\s+)', ' ', clean_text).strip()
+
+    # Ключи для кэша
+    cache_key = f'trans_{lang}_{hash(clean_text)}'
+    json_key = clean_text
+
+    # Проверка кэша
+    if cached := cache.get(cache_key):
+        return cached
+
+    # Загрузка переводов
+    translations = load_translations(lang)
+    if json_key in translations:
+        cache.set(cache_key, translations[json_key], 86400)
+        return translations[json_key]
+
+    # Логика перевода
+    try:
+        translator = GoogleTranslator(source='auto', target=lang)
+        text_to_translate = unescape(clean_text)
+
+        # Обработка длинных текстов
+        if len(text_to_translate) > 1000:
+            parts = [text_to_translate[i:i + 1000] for i in range(0, len(text_to_translate), 1000)]
+            translated = ''.join(translator.translate_batch(parts))
+        else:
+            translated = translator.translate(text_to_translate)
+
+        # Защита HTML-тегов после перевода
+        translated = (
+            translated.replace('&', '&amp;')
+            .replace('<', '&lt;')
+            .replace('>', '&gt;')
+        )
+
+        # Сохранение результатов
+        translations[json_key] = translated
+        save_translations(lang, translations)
+        cache.set(cache_key, translated, 86400)
+
+        return translated
+
+    except Exception as e:
+        print(f'Translation error: {e}')
+        return clean_text
+
+
 @register.simple_tag
-def language_prefix(path):
-    """
-    Добавляет префикс текущего языка к пути, если язык не 'ru'.
-    Поддерживаемые языки: русский ('ru'), белорусский ('be'), английский ('en').
-    """
-    current_language = get_language()
-    if current_language in ['be', 'en']:
-        return f'/{current_language}{path}'
-    return path
+def language_prefix(path: str) -> str:
+    """Генерация языкового префикса для URL"""
+    lang = get_language()
+    return f'/{lang}{path}' if lang in ('be', 'en') else path
 
 
 @register.filter
-def translate_text(text):
-    """
-    Переводит текст в зависимости от текущего языка интерфейса.
-    Поддерживаемые языки: русский ('ru'), белорусский ('be'), английский ('en').
-    Если язык 'ru', перевод не выполняется.
-    """
-    # Проверяем, является ли текст строкой
+def translate_text(text: str) -> str:
+    """Фильтр для перевода текста с поддержкой HTML"""
+    if text is None:
+        return ""
+
     if not isinstance(text, str):
-        return text  # Возвращаем оригинальный объект, если это не строка
-
-    current_language = get_language()
-
-    # Поддерживаемые языки
-    supported_languages = ['ru', 'be', 'en']
-
-    # Если язык русский или не поддерживается, возвращаем оригинальный текст
-    if current_language not in supported_languages or current_language == 'ru':
         return text
 
-    # Удаляем &nbsp из текста перед переводом
-    text = text.replace("&nbsp;", "")
+    current_lang = get_language()
 
-    # Ключ для кэша (уникальный для текста и языка)
-    cache_key = f"translation_{current_language}_{text}"
+    # Пропуск перевода для русского
+    if current_lang == 'ru':
+        return text
 
-    # Проверяем, есть ли перевод в кэше
-    cached_translation = cache.get(cache_key)
-    if cached_translation:
-        return cached_translation
+    # Улучшенное разделение HTML/текста
+    parts = re.split(r'(<[^>]+>)', text)
+    result = []
 
-    # Максимальная длина текста для Google Translator (5000 символов)
-    max_length = 1000
+    for part in parts:
+        if re.match(r'<[^>]+>', part) or part.strip() == '':
+            result.append(part)
+        else:
+            # Защита от None после перевода
+            translated = translate_and_cache(part, current_lang) or part
+            result.append(translated)
 
-    try:
-        # Если текст длиннее 5000 символов, разбиваем его на части
-        if len(text) > max_length:
-            chunks = split_text_into_chunks(text, max_length)
-            translated_chunks = []
+    return ''.join(result)
 
-            translator = GoogleTranslator(source='auto', target=current_language)
 
-            # Переводим каждую часть отдельно
-            for chunk in chunks:
+# Дополнительные функции
+def preload_translations(texts: list, langs: list = ['en', 'be']):
+    """Пакетная предзагрузка переводов"""
+    for lang in langs:
+        translations = load_translations(lang)
+        need_save = False
+
+        for text in texts:
+            clean_text = re.sub(r'(&nbsp;|\s+)', ' ', text).strip()
+            if clean_text not in translations:
                 try:
-                    translated_chunk = translator.translate(chunk)
-                    translated_chunks.append(translated_chunk)
+                    translator = GoogleTranslator(source='auto', target=lang)
+                    translated = translator.translate(clean_text)
+                    translations[clean_text] = translated
+                    need_save = True
                 except Exception as e:
-                    print(f"Ошибка перевода части текста: {chunk} --> {e}")
-                    translated_chunks.append(chunk)  # Возвращаем оригинал части при ошибке
+                    print(f'Preload error: {e}')
 
-            # Объединяем переведенные части обратно в один текст
-            translated_text = ''.join(translated_chunks)
-        else:
-            # Если текст короче 5000 символов, переводим его напрямую
-            translator = GoogleTranslator(source='auto', target=current_language)
-            translated_text = translator.translate(text)
-
-        # Сохраняем результат в кэше на 24 часа (86400 секунд)
-        cache.set(cache_key, translated_text, timeout=86400)
-        return translated_text
-
-    except Exception as e:
-        # Логируем ошибку (опционально)
-        print(f"Ошибка перевода: {text} --> {e}")
-        return text  # Возвращаем оригинальный текст при ошибке
+        if need_save:
+            save_translations(lang, translations)
 
 
-def split_text_into_chunks(text, max_length):
-    """
-    Разбивает текст на части длиной не более max_length символов.
-    Учитывает разбиение по словам для сохранения целостности.
-    """
-    words = text.split()
-    chunks = []
-    current_chunk = []
+def update_translation_json(lang: str, key: str, value: str):
+    """Ручное обновление перевода"""
+    translations = load_translations(lang)
+    translations[key] = value
+    save_translations(lang, translations)
+    cache.delete_many([f'trans_{lang}_{hash(k)}' for k in translations.keys()])
 
-    for word in words:
-        # Проверяем, поместится ли слово в текущий кусок
-        if sum(len(w) for w in current_chunk) + len(word) + len(current_chunk) <= max_length:
-            current_chunk.append(word)
-        else:
-            # Если текущий кусок заполнен, добавляем его в список и начинаем новый
-            chunks.append(' '.join(current_chunk))
-            current_chunk = [word]
 
-    # Добавляем последний кусок
-    if current_chunk:
-        chunks.append(' '.join(current_chunk))
-
-    return chunks
+def get_all_translations(lang: str) -> dict:
+    """Получение всех переводов для языка"""
+    return load_translations(lang)

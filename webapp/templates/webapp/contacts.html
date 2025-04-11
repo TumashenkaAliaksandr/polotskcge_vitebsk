@@ -1,6 +1,9 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load i18n %}
 {% load templatetags %}
+
+
 {% block content %}
 
     <main id="main">
@@ -39,10 +42,10 @@
                             </div>
                             <div class="marquee">
                                 <div class="marquee1"><a class="breaking"
-                                                         href="single.html">{{ main_interactiv_string.description |translate_text| safe }}</a>
+                                                         href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description |translate_text| safe }}</a>
                                 </div>
                                 <div class="marquee2"><a class="breaking"
-                                                         href="single.html">{{ main_interactiv_string.description_two |translate_text| safe }}</a>
+                                                         href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two |translate_text| safe }}</a>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>

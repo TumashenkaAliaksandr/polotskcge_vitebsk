@@ -961,9 +961,9 @@ position:relative;
 .nbs-flexisel-item {
     float: left;
     margin: 0;
-    padding: 0em;
+    padding: 0;
     position: relative;
-    line-height: 0px;
+    line-height: 0
     /*width: auto; !* Позволим контейнеру изменяться в ширине в зависимости от содержимого *!*/
     /*height: auto; !* Позволим контейнеру изменяться в высоте в зависимости от содержимого *!*/
 }
@@ -1052,7 +1052,7 @@ position:relative;
 ul.resp-tabs-list {
 	list-style: none;
 	background:#8b8e8b;
-	margin: 0em auto;
+	margin: 0 auto;
 	border-bottom:1px solid #DFDFDF;
 }
 div#horizontalTab {
@@ -1104,7 +1104,7 @@ h2.resp-accordion {
 }
 h2.resp-accordion {
 	font-size:1em;
-	margin: 0px;
+	margin: 0;
 	padding: 10px 15px;
 	background:#3FBBC0;
 	margin:10px 0;
@@ -1143,7 +1143,7 @@ h2.resp-accordion {
 }
 }
 ul.tab_list{
-	padding:0em;
+	padding:0;
 	margin:0;
 }
 /******** //SAP ************/
@@ -1564,7 +1564,7 @@ a.high {
 	position:absolute;
 	top:0;
 	left:0;
-	background:url(../images/1.png) no-repeat 0px 0px;
+	background:url(../images/1.png) no-repeat 0 0;
 	width: 350px;
     height: 6px;
 	display:block;
@@ -1574,7 +1574,7 @@ a.high {
 	position:absolute;
 	bottom:0;
 	left:0;
-	background:url(../images/1.png) no-repeat 0px 0px;
+	background:url(../images/1.png) no-repeat 0 0;
 	width: 350px;
     height: 6px;
 	display:block;

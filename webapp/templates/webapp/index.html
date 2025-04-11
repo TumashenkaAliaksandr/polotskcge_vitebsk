@@ -3,6 +3,7 @@
 {% load i18n %}
 
 
+
 {% block content %}
 
     {% include 'slider/slider.html' %}
@@ -43,7 +44,7 @@
             <div class="container book_info img-container" data-aos="fade-left">
                 {% for main_about in about_us %}
                     <div class="section-title">
-                        <h2>{{ main_about.name }}</h2>
+                        <h2>{{ main_about.name|language_name_translated }}</h2>
                         <p>{{ main_about.description | safe }}</p>
 
                         <!-- Контейнер для изображения -->
