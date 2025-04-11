@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load templatetags %}
 
 
 {% block content %}
@@ -16,8 +17,8 @@
 
             <div class="d-flex justify-content-between align-items-center">
                 <ol>
-                    <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                    <li>О типичных нарушениях</li>
+                    <li><a href="{% url 'webapp:home' %}">{{ "Главная" |translate_text }}</a></li>
+                    <li>{{ "О типичных нарушениях" |translate_text }}</li>
                 </ol>
             </div>
         </div>
@@ -31,14 +32,14 @@
                 {% for main_interactiv_string in interactiv %}
                     <div class="move-text">
                         <div class="breaking_news">
-                            <h2>Новости Центра</h2>
+                            <h2>{{ "Новости Центра" |translate_text }}</h2>
                         </div>
                         <div class="marquee">
                             <div class="marquee1"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description |translate_text| safe }}</a>
                             </div>
                             <div class="marquee2"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two |translate_text| safe }}</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -61,11 +62,11 @@
             <div class="row">
                 {% if typical_inf %}
                     <div class="section-title">
-                        <h2>{{ typical_inf.name|safe }}</h2>
-                        <p>{{ typical_inf.name_typical|safe }}</p>
+                        <h2>{{ typical_inf.name|translate_text|safe }}</h2>
+                        <p>{{ typical_inf.name_typical|translate_text|safe }}</p>
                     </div>
                     <div>
-                    {{ typical_inf.description_for_all|safe }}
+                    {{ typical_inf.description_for_all|translate_text|safe }}
                     </div>
 {#                    <section class="hotline">#}
 {#                        <div class="table-info">#}
@@ -100,7 +101,7 @@
 {#                        </div>#}
 {#                    </section>#}
                 {% else %}
-                    <p>Информация не найдена.</p>
+                    <p>{{ "Информация не найдена." | translate_text }}</p>
                 {% endif %}
             </div>
         </div>
@@ -126,23 +127,23 @@
                                     <div class="health">
                                         <ul>
                                             <li>
-                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|wordwrap:30|truncatechars_html:58 }}</a>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
                                             </li>
                                             <li>
-                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}</a>
                                             </li>
                                         </ul>
                                     </div>
-                                    <h3>{{ main_litle_news.desc|safe|wordwrap:10|truncatechars_html:58 }}</h3>
+                                    <h3>{{ main_litle_news.desc|translate_text|safe|wordwrap:10|truncatechars_html:58 }}</h3>
                                     <div class="dummy">
                                         <a href="{{ main_litle_news.link }}">
-                                            <p>{{ main_litle_news.desc_hover|safe }}</p></a>
+                                            <p>{{ main_litle_news.desc_hover|translate_text|safe }}</p></a>
                                     </div>
                                     <div class="com-heart-health">
                                         <ul>
                                             <li><a href="{{ main_litle_news.link }}"><span
                                                     class="fa fa-user-doctor"
-                                                    aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
+                                                    aria-hidden="true"></span> {{ main_litle_news.author|translate_text }}</a></li>
                                         </ul>
                                     </div>
                                 </div>

@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load templatetags %}
 
 
 {% block content %}
@@ -16,8 +17,8 @@
 
             <div class="d-flex justify-content-between align-items-center">
                 <ol>
-                    <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                    <li>Еврозийский экономичекский союз</li>
+                    <li><a href="{% url 'webapp:home' %}">{{ "Главная" |translate_text }}</a></li>
+                    <li>{{ "Еврозийский экономичекский союз" |translate_text }}</li>
                 </ol>
             </div>
         </div>
@@ -32,14 +33,14 @@
                 {% for main_interactiv_string in interactiv %}
                     <div class="move-text">
                         <div class="breaking_news">
-                            <h2>Новости Центра</h2>
+                            <h2>{{ "Новости Центра" |translate_text }}</h2>
                         </div>
                         <div class="marquee">
                             <div class="marquee1"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description |translate_text| safe }}</a>
                             </div>
                             <div class="marquee2"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two |translate_text| safe }}</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -62,7 +63,7 @@
             {% for main_econimic_inf in evrz_econom_inf %}
                 {% if forloop.first %}
                     <div class="section-title">
-                        <h2>{{ main_econimic_inf.name_main|default:main_econimic_inf.name|safe }}</h2>
+                        <h2>{{ main_econimic_inf.name_main|translate_text|default:main_econimic_inf.name|translate_text|safe }}</h2>
                     </div>
                 {% endif %}
             {% endfor %}
@@ -71,8 +72,8 @@
                     <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                         <div class="icon-two"><i class="{{ main_econimic_inf.icon_class }}"></i></div>
                         <h4 class="title-two"><a
-                                href="{{ main_econimic_inf.link }}">{{ main_econimic_inf.name|safe }}</a></h4>
-                        <p class="description">{{ main_econimic_inf.desc|safe }}</p>
+                                href="{{ main_econimic_inf.link }}">{{ main_econimic_inf.name|translate_text|safe }}</a></h4>
+                        <p class="description">{{ main_econimic_inf.desc|translate_text|safe }}</p>
                     </div>
                 {% endfor %}
             </div>
@@ -85,8 +86,8 @@
         <div class="container" data-aos="fade-up">
             {% for title_desc in title_desc_queans %}
                 <div class="section-title">
-                    <h2>{{ title_desc.name }}</h2>
-                    <p>{{ title_desc.description | safe }}</p>
+                    <h2>{{ title_desc.name|translate_text }}</h2>
+                    <p>{{ title_desc.description |translate_text| safe }}</p>
                 </div>
             {% endfor %}
 
@@ -94,7 +95,7 @@
                 {% for question in questions|slice:":6" %}
                     <li>
                         <div data-bs-toggle="collapse" class="collapsed question"
-                             href="#{{ question.id }}"> {{ question.question_text }} <i
+                             href="#{{ question.id }}"> {{ question.question_text|translate_text }} <i
                                 class="bi bi-chevron-down icon-show"><img src="{% static 'webapp/assets/img/gigi_centr_marker-nbg.png' %}" class="img-fix"
                                  alt=""></i><i class="bi bi-chevron-up icon-close"><img src="{% static 'webapp/assets/img/gigi_centr_marker-nbg.png' %}" class="img-fix"
                                  alt=""></i>
@@ -102,7 +103,7 @@
                         <div id="{{ question.id }}" class="collapse" data-bs-parent=".faq-list">
                             <p>
                                 {% for ansver in question.answers.all %}
-                                    {{ ansver.answer_text }}
+                                    {{ ansver.answer_text|translate_text }}
                                 {% endfor %}
                             </p>
                         </div>
@@ -132,23 +133,23 @@
                                     <div class="health">
                                         <ul>
                                             <li>
-                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|wordwrap:30|truncatechars_html:58 }}</a>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
                                             </li>
                                             <li>
-                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}</a>
                                             </li>
                                         </ul>
                                     </div>
-                                    <h3>{{ main_litle_news.desc|safe|wordwrap:10|truncatechars_html:58 }}</h3>
+                                    <h3>{{ main_litle_news.desc|translate_text|safe|wordwrap:10|truncatechars_html:58 }}</h3>
                                     <div class="dummy">
                                         <a href="{{ main_litle_news.link }}">
-                                            <p>{{ main_litle_news.desc_hover|safe }}</p></a>
+                                            <p>{{ main_litle_news.desc_hover|translate_text|safe }}</p></a>
                                     </div>
                                     <div class="com-heart-health">
                                         <ul>
                                             <li><a href="{{ main_litle_news.link }}"><span
                                                     class="fa fa-user-doctor"
-                                                    aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
+                                                    aria-hidden="true"></span> {{ main_litle_news.author|translate_text}}</a></li>
                                         </ul>
                                     </div>
                                 </div>
