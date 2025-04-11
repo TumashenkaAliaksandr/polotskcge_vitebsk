@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load templatetags %}
 
 
 {% block content %}
@@ -16,8 +17,8 @@
 
             <div class="d-flex justify-content-between align-items-center">
                 <ol>
-                    <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                    <li>Вышестоящий орган</li>
+                    <li><a href="{% url 'webapp:home' %}">{{ "Главная" |translate_text }}</a></li>
+                    <li>{{ "Вышестоящий орган" |translate_text }}</li>
                 </ol>
             </div>
         </div>
@@ -32,14 +33,14 @@
                 {% for main_interactiv_string in interactiv %}
                     <div class="move-text">
                         <div class="breaking_news">
-                            <h2>Новости Центра</h2>
+                            <h2>{{ "Новости Центра" |translate_text }}</h2>
                         </div>
                         <div class="marquee">
                             <div class="marquee1"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description |translate_text| safe }}</a>
                             </div>
                             <div class="marquee2"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two |translate_text| safe }}</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -62,8 +63,8 @@
             <div class="row">
                 {% for main_title in title_organ %}
                     <div class="section-title">
-                        <p>{{ main_title.name|safe }}</p>
-                        <p>{{ main_title.description|safe }}</p>
+                        <p>{{ main_title.name|translate_text|safe }}</p>
+                        <p>{{ main_title.description|translate_text|safe }}</p>
                     </div>
                 {% endfor %}
                 <div class="map-container">
@@ -87,19 +88,19 @@
                                 <table class="iksweb">
                                     <thead>
                                     <tr>
-                                        <th>ФИО</th>
-                                        <th>Должность</th>
-                                        <th>Время работы</th>
-                                        <th>Телефон</th>
+                                        <th>{{ "ФИО" |translate_text }}</th>
+                                        <th>{{ "Должность" |translate_text }}</th>
+                                        <th>{{ "Время работы" |translate_text }}</th>
+                                        <th>{{ "Телефон" |translate_text }}</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     {% for main_table in table %}
                                         <tr>
-                                            <td>{{ main_table.name|safe }}</td>
-                                            <td>{{ main_table.post|safe }}</td>
-                                            <td>{{ main_table.reception_time|safe }}</td>
-                                            <td>{{ main_table.phone|safe }}</td>
+                                            <td>{{ main_table.name|translate_text|safe }}</td>
+                                            <td>{{ main_table.post|translate_text|safe }}</td>
+                                            <td>{{ main_table.reception_time|translate_text|safe }}</td>
+                                            <td>{{ main_table.phone|translate_text|safe }}</td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>
@@ -110,7 +111,7 @@
                     <div class="row">
                         {% for main_title_inf in title_desc_inf %}
                             <div class="description-left">
-                                <p>{{ main_title_inf.description|safe }}</p>
+                                <p>{{ main_title_inf.description|translate_text|safe }}</p>
                             </div>
                         {% endfor %}
                     </div>
@@ -124,8 +125,8 @@
         <div class="container book_info" data-aos="fade-up">
             {% for title_desc in title_desc_queans %}
                 <div class="section-title">
-                    <h2>{{ title_desc.name }}</h2>
-                    <p>{{ title_desc.description | safe }}</p>
+                    <h2>{{ title_desc.name|translate_text }}</h2>
+                    <p>{{ title_desc.description |translate_text| safe }}</p>
                 </div>
             {% endfor %}
 
@@ -133,7 +134,7 @@
                 {% for question in questions|slice:":6" %}
                     <li>
                         <div data-bs-toggle="collapse" class="collapsed question"
-                             href="#{{ question.id }}"> {{ question.question_text }} <i
+                             href="#{{ question.id }}"> {{ question.question_text|translate_text }} <i
                                 class="bi bi-chevron-down icon-show"><img src="{% static 'webapp/assets/img/gigi_centr_marker-nbg.png' %}" class="img-fix"
                                  alt=""></i><i class="bi bi-chevron-up icon-close"><img src="{% static 'webapp/assets/img/gigi_centr_marker-nbg.png' %}" class="img-fix"
                                  alt=""></i>
@@ -141,7 +142,7 @@
                         <div id="{{ question.id }}" class="collapse" data-bs-parent=".faq-list">
                             <p>
                                 {% for ansver in question.answers.all %}
-                                    {{ ansver.answer_text }}
+                                    {{ ansver.answer_text|translate_text }}
                                 {% endfor %}
                             </p>
                         </div>
@@ -172,23 +173,23 @@
                                     <div class="health">
                                         <ul>
                                             <li>
-                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|wordwrap:30|truncatechars_html:58 }}</a>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
                                             </li>
                                             <li>
-                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}</a>
                                             </li>
                                         </ul>
                                     </div>
-                                    <h3>{{ main_litle_news.desc|safe|wordwrap:10|truncatechars_html:58 }}</h3>
+                                    <h3>{{ main_litle_news.desc|translate_text|safe|wordwrap:10|truncatechars_html:58 }}</h3>
                                     <div class="dummy">
                                         <a href="{{ main_litle_news.link }}">
-                                            <p>{{ main_litle_news.desc_hover|safe }}</p></a>
+                                            <p>{{ main_litle_news.desc_hover|translate_text|safe }}</p></a>
                                     </div>
                                     <div class="com-heart-health">
                                         <ul>
                                             <li><a href="{{ main_litle_news.link }}"><span
                                                     class="fa fa-user-doctor"
-                                                    aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
+                                                    aria-hidden="true"></span> {{ main_litle_news.author|translate_text }}</a></li>
                                         </ul>
                                     </div>
                                 </div>
