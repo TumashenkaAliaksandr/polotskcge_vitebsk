@@ -17,7 +17,7 @@
 
                 <ol>
                     <li><a href="{% url 'webapp:home' %}">{{ "Главная"|translate_text }}</a></li>
-                    <li>{{ city_name|translate_text|safe }}</li>
+                    <li>{{ city_name.name|translate_text|safe }}</li>
                 </ol>
             </div>
         </div>
@@ -115,22 +115,22 @@
                             {% for news_item in page_obj %}
                                 <li>
                                     <div class="news-grid-left1">
-                                        <a href="{% url 'news:single' pk=news_item.id %}">
+                                        <a href="{% url 'news:single' pk=news_item.id slug=news_item.slug %}">
                                             <img src="{{ news_item.photo.url }}" alt=" "
                                                  class="img-responsive"/>
                                         </a>
                                     </div>
                                     <div class="news-grid-right1">
                                         <h4>
-                                            <a href="{% url 'news:single' pk=news_item.id %}">{{ news_item.title|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
+                                            <a href="{% url 'news:single' pk=news_item.id slug=news_item.slug%}">{{ news_item.title|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
                                         </h4>
                                         <h5 class="fa fa-user-doctor">
                                             <label>|</label>
-                                            <a href="{% url 'news:single' pk=news_item.id %}">{{ news_item.author|translate_text }}</a>
+                                            <a href="{% url 'news:single' pk=news_item.id slug=news_item.slug %}">{{ news_item.author|translate_text }}</a>
                                             <label>|</label>
                                             <i>{{ news_item.pub_date|date:"d.m.Y" }}</i>
                                         </h5>
-                                        <a href="{% url 'news:single' pk=news_item.id %}">
+                                        <a href="{% url 'news:single' pk=news_item.id slug=news_item.slug %}">
                                             <p>{{ news_item.description_small|translate_text|wordwrap:40|truncatechars_html:132|safe }}</p>
                                         </a>
                                     </div>

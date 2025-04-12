@@ -1,6 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
-
+{% load templatetags %}
 
 {% block content %}
 
@@ -15,8 +15,8 @@
 
             <div class="d-flex justify-content-between align-items-center">
                 <ol>
-                    <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                    <li>Здоровые города и поселки</li>
+                    <li><a href="{% url 'webapp:home' %}">{{ "Главная"|translate_text }}</a></li>
+                    <li>{{ "Здоровые города и поселки"|translate_text }}</li>
                 </ol>
             </div>
         </div>
@@ -29,14 +29,14 @@
             <div class="container">
                 {% for main_interactiv_string in interactiv %}
                         <div class="breaking_news">
-                            <h2>Новости Центра</h2>
+                            <h2>{{ "Новости Центра"|translate_text }}</h2>
                         </div>
                         <div class="marquee">
                             <div class="marquee1"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description |translate_text| safe }}</a>
                             </div>
                             <div class="marquee2"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two |translate_text| safe }}</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -57,10 +57,10 @@
         <div class="container" data-aos="fade-up">
             {% for main_title in heltitle_inf %}
                 <div class="section-title">
-                    <h2>{{ main_title.name|safe }}</h2>
+                    <h2>{{ main_title.name|translate_text|safe }}</h2>
                 </div>
                 <div class="description-left city-desc">
-                <p>{{ main_title.description|safe }}</p>
+                <p>{{ main_title.description|translate_text|safe }}</p>
                 </div>
             {% endfor %}
             <div class="row">
@@ -68,8 +68,8 @@
                     <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-lg-0">
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="icon"><i class="{{ main_pdf.icon_class }}"></i></div>
-                            <h4 class="title"><a href="{{ main_pdf.pdf_file.url }}" target="_blank">{{ main_pdf.name|safe }}</a></h4>
-                            <a href="{{ main_pdf.pdf_file.url }}"><p class="description">Смотреть (Скачать) PDF</p></a>
+                            <h4 class="title"><a href="{{ main_pdf.pdf_file.url }}" target="_blank">{{ main_pdf.name|translate_text|safe }}</a></h4>
+                            <a href="{{ main_pdf.pdf_file.url }}"><p class="description">{{ "Смотреть (Скачать) PDF" | translate_text }}</p></a>
                         </div>
                     </div>
                 {% endfor %}
@@ -84,7 +84,7 @@
             {% for city in city_title %}
                 {% if forloop.first %}
                     <div class="description-left city-name-block">
-                        <h4>{{ city.name|safe }}</h4>
+                        <h4>{{ city.name|translate_text|safe }}</h4>
                     </div>
                 {% endif %}
             {% endfor %}
@@ -95,8 +95,8 @@
                             <li class="nav-item">
                                 <a class="nav-link {% if forloop.first %}active show{% endif %}" data-bs-toggle="tab"
                                    data-bs-target="#tab-{{ forloop.counter }}">
-                                    <h4>{{ city.name|safe }}</h4>
-                                    <p>{{ city.description|safe }}</p>
+                                    <h4>{{ city.name|translate_text|safe }}</h4>
+                                    <p>{{ city.description|translate_text|safe }}</p>
                                 </a>
                             </li>
                         {% endfor %}
@@ -110,21 +110,20 @@
                                 <img src="{{ city.photo.url }}" alt="" class="img-fluid">
                                 <section class="faq">
                                     <ul class="faq-list">
-                                        <li><h5>Интерактивная доска:</h5></li>
+                                        <li><h5>{{ "Интерактивная доска:" | translate_text }}</h5></li>
                                         {% for description in city.descriptions.all %}
                                             <div data-bs-toggle="collapse" class="collapsed question"
                                                  href="#description-{{ forloop.counter }}" style="cursor: pointer;">
-                                                {{ description.description_two|safe }}
+                                                {{ description.description_two|translate_text|safe }}
                                                 <i class="bi bi-chevron-down icon-show"></i>
                                                 <i class="bi bi-chevron-up icon-close"></i>
                                             </div>
                                             <div id="description-{{ forloop.counter }}" class="collapse"
                                                  data-bs-parent=".faq-list">
                                                 <p>
-                                                    {{ description.description_three|safe }}
+                                                    {{ description.description_three|translate_text|safe }}
                                                     {% if description.add_file %}
-                                                        <a href="{{ description.add_file.url }}" target="_blank">(Посмотреть
-                                                            файл)</a>
+                                                        <a href="{{ description.add_file.url }}" target="_blank">{{ "(Посмотреть файл)"|translate_text }}</a>
                                                     {% endif %}
                                                 </p>
                                             </div>
@@ -132,7 +131,7 @@
                                     </ul>
                                     <div class="btn-get-city eye">
                                         <a href="{% url 'webapp:city_single' pk=city.id %}" target="_blank">
-                                            <li class="fa fa-arrow-right"> Перейти на стр. {{ city.name|safe }}</li>
+                                            <li class="fa fa-arrow-right"> {{ "Перейти на стр."|translate_text }} {{ city.name|translate_text|safe }}</li>
                                         </a>
                                     </div>
                                 </section>
@@ -164,23 +163,23 @@
                                     <div class="health">
                                         <ul>
                                             <li>
-                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|wordwrap:30|truncatechars_html:58 }}</a>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
                                             </li>
                                             <li>
-                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}</a>
                                             </li>
                                         </ul>
                                     </div>
-                                    <h3>{{ main_litle_news.desc|safe|wordwrap:10|truncatechars_html:58 }}</h3>
+                                    <h3>{{ main_litle_news.desc|translate_text|safe|wordwrap:10|truncatechars_html:58 }}</h3>
                                     <div class="dummy">
                                         <a href="{{ main_litle_news.link }}">
-                                            <p>{{ main_litle_news.desc_hover|safe }}</p></a>
+                                            <p>{{ main_litle_news.desc_hover|translate_text|safe }}</p></a>
                                     </div>
                                     <div class="com-heart-health">
                                         <ul>
                                             <li><a href="{{ main_litle_news.link }}"><span
                                                     class="fa fa-user-doctor"
-                                                    aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
+                                                    aria-hidden="true"></span> {{ main_litle_news.author|translate_text }}</a></li>
                                         </ul>
                                     </div>
                                 </div>

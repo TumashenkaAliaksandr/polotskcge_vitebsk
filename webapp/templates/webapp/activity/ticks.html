@@ -73,7 +73,7 @@
                                     <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
                                         <div class="count-box">
                                             <i class="fa fa-file-alt"></i>
-                                            <a href="{{ main_ticks_inf.pdf_file.url }}"><h5><strong>{{ main_ticks_inf.name|translate_text|safe }}</strong></h5> {{ main_ticks_inf.description|safe }}</a>
+                                            <a href="{{ main_ticks_inf.pdf_file.url }}"><h5><strong>{{ main_ticks_inf.name|translate_text|safe }}</strong></h5> {{ main_ticks_inf.description|translate_text|safe }}</a>
                                         </div>
                                     </div>
                                 {% endfor %}

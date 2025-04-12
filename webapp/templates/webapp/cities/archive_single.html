@@ -94,7 +94,7 @@
                                         {% for article in articles %}
                                             {
                                                 "title": "{{ article.title|escapejs }}",  // Экранируем заголовки для JS
-                                                "url": "{% url 'news:single' pk=article.id %}"
+                                                "url": "{% url 'news:single' pk=article.id slug=article.slug %}"
                                             }{% if not forloop.last %},{% endif %}
                                         {% endfor %}
                                     ]{% if not forloop.last %},{% endif %}
@@ -169,7 +169,7 @@
                                                 <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
                                             </li>
                                             <li>
-                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}</a>
                                             </li>
                                         </ul>
                                     </div>
