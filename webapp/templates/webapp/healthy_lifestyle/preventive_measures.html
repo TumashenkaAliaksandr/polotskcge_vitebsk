@@ -81,7 +81,7 @@
                                                 <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}">{{ main_litle_news.title|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
                                             </li>
                                             <li>
-                                                <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}">{{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
+                                                <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}">{{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -105,6 +105,56 @@
         </div>
     </section>
     <!-- End Featured Services Section -->
+
+        <!-- ======= breaking-news Section ======= -->
+    <section id="featured-services" class="featured-services main-bg-appeals">
+        <div class="container" data-aos="fade-up">
+            <div class="breaking-news-grids-bottom">
+                <div class="banner-bottom-grids">
+                    {% for main_litle_news in centre_news %}
+                        <div class="col-md-3 banner-bottom-grid-left">
+                            <div class="br-bm-gd-lt-fon">
+                                <a href="{{ main_litle_news.link }}"><img
+                                        src="{{ main_litle_news.img.url }}" alt=" "
+                                        class="img-responsive"/></a>
+                                <div class="overlay">
+                                    <div class="arrow-left"></div>
+                                    <div class="rectangle"></div>
+                                </div>
+                                <div class="health-pos">
+                                    <div class="health">
+                                        <ul>
+                                            <li>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <h3>{{ main_litle_news.desc|translate_text|safe|wordwrap:10|truncatechars_html:58 }}</h3>
+                                    <div class="dummy">
+                                        <a href="{{ main_litle_news.link }}">
+                                            <p>{{ main_litle_news.desc_hover|translate_text|safe }}</p></a>
+                                    </div>
+                                    <div class="com-heart-health">
+                                        <ul>
+                                            <li><a href="{{ main_litle_news.link }}"><span
+                                                    class="fa fa-user-doctor"
+                                                    aria-hidden="true"></span> {{ main_litle_news.author|translate_text }}
+                                            </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Breaking Section -->
 
     <!-- ======= Frequently Asked Questioins Section ======= -->
     <section id="faq" class="faq main-bg">
@@ -139,7 +189,7 @@
     </section>
     <!-- End Frequently Asked Questioins Section -->
 
-    {% include 'slider/resurces_slider.html' %}
+    {% include 'slider/slider_rotate3d.html' %}
 
   </main><!-- End #main -->
 

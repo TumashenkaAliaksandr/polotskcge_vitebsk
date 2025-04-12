@@ -1157,6 +1157,7 @@ def preventive_measures(request):
     title_desc_queans = Question_Ansver_title.objects.all()
     questions = Question.objects.all().order_by('-pub_date')
     ansvers = Answer.objects.all()
+    sliders = OurPartners.objects.all()
 
     context = {
         'features': features,
@@ -1165,6 +1166,7 @@ def preventive_measures(request):
         'questions': questions,
         'ansvers': ansvers,
         'interactiv': interactiv,
+        'sliders': sliders,
     }
 
     return render(request, 'webapp/healthy_lifestyle/preventive_measures.html', context=context)
