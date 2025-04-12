@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load templatetags %}
 
 
 {% block content %}
@@ -13,8 +14,8 @@
 
             <div class="d-flex justify-content-between align-items-center">
                 <ol>
-                    <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                    <li>Наши Новости</li>
+                    <li><a href="{% url 'webapp:home' %}">{{ "Главная"|translate_text }}</a></li>
+                    <li>{{ "Наши Новости"|translate_text }}</li>
                 </ol>
             </div>
         </div>
@@ -27,14 +28,14 @@
                 {% for main_interactiv_string in interactiv %}
                     <div class="move-text">
                         <div class="breaking_news">
-                            <h2>Новости Центра</h2>
+                            <h2>{{ "Новости Центра"|translate_text }}</h2>
                         </div>
                         <div class="marquee">
                             <div class="marquee1"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description |translate_text| safe }}</a>
                             </div>
                             <div class="marquee2"><a class="breaking"
-                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two | safe }}</a>
+                                                     href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two |translate_text| safe }}</a>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -55,8 +56,8 @@
                                         <div class="banner-wrap">
                                             <div class="baner-beaking"
                                                  style="background-image: url('{{ main_preview.photo.url }}');">
-                                                <h3>{{ main_preview.title }}</h3>
-                                                {{ main_preview.description | safe }}
+                                                <h3>{{ main_preview.title|translate_text }}</h3>
+                                                {{ main_preview.description |translate_text| safe }}
                                             </div>
                                         </div>
                                     </article>
@@ -70,7 +71,7 @@
                     </div>
 
                     <div class="col-md-4 breaking-news-grid-right">
-                        <h3>Свежие новости</h3>
+                        <h3>{{ "Свежие новости"|translate_text }}</h3>
                         <ul>
                             {% for main_litle_news in model_blog_main|slice:":3" %}
                                 <li>
@@ -83,14 +84,14 @@
                                         <div class="breaking-news-grid-right-gridr">
                                             <h4>
                                                 <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}">
-                                                    {{ main_litle_news.title|wordwrap:30|truncatechars_html:58 }}
+                                                    {{ main_litle_news.title|translate_text|wordwrap:30|truncatechars_html:58 }}
                                                 </a>
                                             </h4>
                                             <ul>
                                                 <li><a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"><span
                                                         class="fa fa-user-doctor"
-                                                        aria-hidden="true"></span> {{ main_litle_news.author }}
-                                                    <label>|</label> {{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
+                                                        aria-hidden="true"></span> {{ main_litle_news.author|translate_text }}
+                                                    <label>|</label> {{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -109,7 +110,7 @@
                         <div class="news">
                             <div class="news-grids">
                                 <div class="col-md-8 news-grid-left">
-                                    <h3>Все новости</h3>
+                                    <h3>{{ "Все новости"|translate_text }}</h3>
                                     <ul>
                                         {% for news_item in page_obj %}
                                             <li>
@@ -121,16 +122,16 @@
                                                 </div>
                                                 <div class="news-grid-right1">
                                                     <h4>
-                                                        <a href="{% url 'news:single' pk=news_item.id slug=news_item.slug %}">{{ news_item.title|wordwrap:30|truncatechars_html:58 }}</a>
+                                                        <a href="{% url 'news:single' pk=news_item.id slug=news_item.slug %}">{{ news_item.title|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
                                                     </h4>
                                                     <h5 class="fa fa-user-doctor">
                                                         <label>|</label>
-                                                        <a href="{% url 'news:single' pk=news_item.id slug=news_item.slug %}">{{ news_item.author }}</a>
+                                                        <a href="{% url 'news:single' pk=news_item.id slug=news_item.slug %}">{{ news_item.author|translate_text }}</a>
                                                         <label>|</label>
-                                                        <i>{{ news_item.pub_date|date:"d.m.Y" }}</i>
+                                                        <i>{{ news_item.pub_date|translate_text|date:"d.m.Y" }}</i>
                                                     </h5>
                                                     <a href="{% url 'news:single' pk=news_item.id slug=news_item.slug %}">
-                                                        <p>{{ news_item.description_small|wordwrap:40|truncatechars_html:132|safe }}</p>
+                                                        <p>{{ news_item.description_small|translate_text|wordwrap:40|truncatechars_html:132|safe }}</p>
                                                     </a>
                                                 </div>
                                                 <div class="clearfix"></div>
@@ -140,17 +141,17 @@
                                     <div class="pagination">
                                         <span class="step-links">
                                             {% if page_obj.has_previous %}
-                                                <a href="?page=1">&laquo; первая</a>
-                                                <a href="?page={{ page_obj.previous_page_number }}"> предыдущая </a>
+                                                <a href="?page=1">&laquo; {{ "первая"|translate_text }}</a>
+                                                <a href="?page={{ page_obj.previous_page_number }}"> {{ "предыдущая"|translate_text }} </a>
                                             {% endif %}
 
                                             <span class="current">
-                                                Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+                                                {{ "Страница"|translate_text }} {{ page_obj.number }} {{ "из"|translate_text }} {{ page_obj.paginator.num_pages }}.
                                             </span>
 
                                             {% if page_obj.has_next %}
-                                                <a href="?page={{ page_obj.next_page_number }}"> следующая </a>
-                                                <a href="?page={{ page_obj.paginator.num_pages }}"> последняя &raquo;</a>
+                                                <a href="?page={{ page_obj.next_page_number }}"> {{ "следующая"|translate_text }} </a>
+                                                <a href="?page={{ page_obj.paginator.num_pages }}"> {{ "последняя"|translate_text }} &raquo;</a>
                                             {% endif %}
                                         </span>
                                     </div>
@@ -160,19 +161,19 @@
                                     <div class="news-grids">
                                         <div class="col-md-4 breaking-news-grid-right">
                                             <div class="news-grid-rght1">
-                                                <h3>Погода в Полоцке</h3>
+                                                <h3>{{ "Погода в Полоцке"|translate_text }}</h3>
                                                 <!-- Nav tabs -->
                                                 <div class="tab-content-weather-bg">
                                                     <div class="tab-content-weather">
                                                         <ul>
-                                                            <h4>{{ weather.month }} {{ weather.day_of_month }}, {{ weather.day }}</h4>
+                                                            <h4>{{ weather.month|translate_text }} {{ weather.day_of_month|translate_text }}, {{ weather.day|translate_text }}</h4>
                                                             <p><span
-                                                                    class="fa fa-wind"> Ветер: {{ weather.wind_direction }}-ный | {{ weather.wind_speed }} м/с</span>
+                                                                    class="fa fa-wind"> {{ "Ветер:"|translate_text }} {{ weather.wind_direction|translate_text }}-ный | {{ weather.wind_speed }} {{ "м/с"|translate_text }}</span>
                                                             </p>
                                                             <p><span class="fas fa-thermometer-half">
-                                                Температура: {{ weather.temperature }}</span></p>
+                                                {{ "Температура:"|translate_text }} {{ weather.temperature }}</span></p>
                                                             <p><span class="fas fa-tachometer-alt">
-                                                Давление: {{ weather.pressure }} гПа</span></p>
+                                                {{ "Давление:"|translate_text }} {{ weather.pressure }} {{ "гПа"|translate_text }}</span></p>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -181,8 +182,8 @@
                                                 <img src="{% static 'images/gigi_centr_girispolkom.jpg' %}" alt=" "
                                                      class="img-responsive"/>
                                                 <div class="story">
-                                                    <p>фото дня</p>
-                                                    <h3><a href="single.html">Горисполком город Полоцк</a></h3>
+                                                    <p>{{ "фото дня"|translate_text }}</p>
+                                                    <h3><a href="{% url 'webapp:cge-info' %}">{{ "Горисполком город Полоцк"|translate_text }}</a></h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -212,23 +213,23 @@
                                     <div class="health">
                                         <ul>
                                             <li>
-                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|wordwrap:30|truncatechars_html:58 }}</a>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
                                             </li>
                                             <li>
-                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}</a>
                                             </li>
                                         </ul>
                                     </div>
-                                    <h3>{{ main_litle_news.desc|safe|wordwrap:10|truncatechars_html:58 }}</h3>
+                                    <h3>{{ main_litle_news.desc|translate_text|safe|wordwrap:10|truncatechars_html:58 }}</h3>
                                     <div class="dummy">
                                         <a href="{{ main_litle_news.link }}">
-                                            <p>{{ main_litle_news.desc_hover|safe }}</p></a>
+                                            <p>{{ main_litle_news.desc_hover|translate_text|safe }}</p></a>
                                     </div>
                                     <div class="com-heart-health">
                                         <ul>
                                             <li><a href="{{ main_litle_news.link }}"><span
                                                     class="fa fa-user-doctor"
-                                                    aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
+                                                    aria-hidden="true"></span> {{ main_litle_news.author|translate_text }}</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -242,7 +243,7 @@
                 <div class="video-grids">
                     <div class="news">
                         <div class="col-md-8 video-grids-left">
-                            <h3>Видео о главном</h3>
+                            <h3>{{ "Видео о главном"|translate_text }}</h3>
                             {% for main_video in model_video %}
                                 {% if main_video.is_featured %}  <!-- Добавлено условие проверки is_featured -->
                                     <div class="video-grids-left1">
@@ -250,11 +251,11 @@
                                              class="img-responsive">
                                         <span> </span>
                                         <div class="video-grid-pos">
-                                            <h3><span>{{ main_video.title }}</span></h3>
+                                            <h3><span>{{ main_video.title|translate_text }}</span></h3>
                                             <ul>
-                                                <li>{{ main_video.timestamp|date:"d.m.Y" }} <label>|</label></li>
-                                                <li><i>{{ main_video.author }}</i> <label>|</label></li>
-                                                <li><span>{{ main_video.category }}</span></li>
+                                                <li>{{ main_video.timestamp|translate_text|date:"d.m.Y" }} <label>|</label></li>
+                                                <li><i>{{ main_video.author|translate_text }}</i> <label>|</label></li>
+                                                <li><span>{{ main_video.category|translate_text }}</span></li>
                                             </ul>
                                         </div>
 
@@ -270,7 +271,7 @@
                                         <div class="video-container">
                                             <video controls>
                                                 <source src="{{ main_video.video_file.url }}" type="video/mp4">
-                                                Ваш браузер не поддерживает видео тег.
+                                                {{ "Ваш браузер не поддерживает видео тег."|translate_text }}
                                             </video>
                                         </div>
 
@@ -338,16 +339,16 @@
                                                                            style="width: 100%;">
                                                                         <source src="{{ main_video.video_file.url }}"
                                                                                 type="video/mp4">
-                                                                        Ваш браузер не поддерживает видео тег.
+                                                                        {{ "Ваш браузер не поддерживает видео тег."|translate_text }}
                                                                     </video>
                                                                 </div>
                                                             </a>
 
                                                             <div class="floods-text">
-                                                                <h3>{{ main_video.title }}
-                                                                    <span>{{ main_video.category }} <label>|</label> <i>{{ main_video.author }}</i></span>
+                                                                <h3>{{ main_video.title|translate_text }}
+                                                                    <span>{{ main_video.category|translate_text }} <label>|</label> <i>{{ main_video.author|translate_text }}</i></span>
                                                                 </h3>
-                                                                <p>{{ main_video.timestamp|date:"d.m.Y" }}</p>
+                                                                <p>{{ main_video.timestamp|translate_text|date:"d.m.Y" }}</p>
                                                             </div>
                                                         </div>
                                                     </li>
@@ -413,13 +414,13 @@
                 </div>
                 <div class="col-md-4 video-grids-right">
                     <div class="sap_tabs">
-                        <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+                        <div id="horizontalTab" style="display: block; width: 100%; margin: 0;">
                             <ul class="nav resp-tabs-list">
                                 <li class="resp-tab-item grid1 resp-tab-active" aria-controls="tab_item-0" role="tab">
-                                    <span>Популярные Новости</span>
+                                    <span>{{ "Популярные Новости"|translate_text }}</span>
                                 </li>
                                 <li class="resp-tab-item grid2" aria-controls="tab_Йitem-1" role="tab">
-                                    <span>Новости О природе</span>
+                                    <span>{{ "Новости О природе"|translate_text }}</span>
                                 </li>
                                 <div class="clear"></div>
                             </ul>
@@ -436,12 +437,12 @@
                                                 <div class="tab_list1">
                                                     <ul>
                                                         <li>
-                                                            <a href="{% url 'news:single' pk=main_popular.id slug=main_popular.slug %}">{{ main_popular.author }}</a>
+                                                            <a href="{% url 'news:single' pk=main_popular.id slug=main_popular.slug %}">{{ main_popular.author|translate_text }}</a>
                                                         </li>
-                                                        <li>{{ main_popular.pub_date|date:"d.m.Y" }}</li>
+                                                        <li>{{ main_popular.pub_date|translate_text|date:"d.m.Y" }}</li>
                                                     </ul>
                                                     <p>
-                                                        <a href="{% url 'news:single' pk=main_popular.id slug=main_popular.slug %}">{{ main_popular.title }}</a>
+                                                        <a href="{% url 'news:single' pk=main_popular.id slug=main_popular.slug %}">{{ main_popular.title|translate_text }}</a>
                                                     </p>
                                                 </div>
                                                 <div class="clearfix"></div>
@@ -461,12 +462,12 @@
                                                 <div class="tab_list1">
                                                     <ul>
                                                         <li>
-                                                            <a href="{% url 'news:single' pk=main_nature.id slug=main_nature.slug %}">{{ main_nature.author }}</a>
+                                                            <a href="{% url 'news:single' pk=main_nature.id slug=main_nature.slug %}">{{ main_nature.author|translate_text }}</a>
                                                         </li>
-                                                        <li>{{ main_nature.pub_date|date:"d.m.Y" }}</li>
+                                                        <li>{{ main_nature.pub_date|translate_text|date:"d.m.Y" }}</li>
                                                     </ul>
                                                     <p>
-                                                        <a href="{% url 'news:single' pk=main_nature.id slug=main_nature.slug %}">{{ main_nature.title }}</a>
+                                                        <a href="{% url 'news:single' pk=main_nature.id slug=main_nature.slug %}">{{ main_nature.title|translate_text }}</a>
                                                     </p>
                                                 </div>
                                                 <div class="clearfix"></div>

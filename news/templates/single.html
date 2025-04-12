@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load templatetags %}
 
 
 {% block content %}
@@ -12,8 +13,8 @@
 
             <div class="d-flex justify-content-between align-items-center">
                 <ol>
-                    <li><a href="{% url 'webapp:home' %}">Главная</a></li>
-                    <li>Новость</li>
+                    <li><a href="{% url 'webapp:home' %}">{{ "Главная"|translate_text }}</a></li>
+                    <li>{{ "Новости"|translate_text }}</li>
                 </ol>
             </div>
         </div>
@@ -27,15 +28,15 @@
                     <div class="blog-left-grid">
                         <!-- Убран цикл for, так как news — объект модели -->
                         <div class="blog-leftl">
-                            <h4>{{ news.pub_date|date:"M" }}</h4>
-                            <a href="#"><i class="fa fa-tags" aria-hidden="true"></i> {{ news.pub_date.day }}</a>
+                            <h4>{{ news.pub_date|translate_text|date:"M" }}</h4>
+                            <a href="#"><i class="fa fa-tags" aria-hidden="true"></i> {{ news.pub_date.day|translate_text }}</a>
                         </div>
                         <div class="blog-leftr">
                             <img src="{{ news.photo.url }}" alt=" " class="img-responsive"/>
-                            <p>{{ news.description|safe }}</p>
-                            <p>{{ news.description_company|safe }}</p>
+                            <p>{{ news.description|translate_text|safe }}</p>
+                            <p>{{ news.description_company|translate_text|safe }}</p>
                             <ul>
-                                <li><a href="#"><i class="fa fa-user-doctor" aria-hidden="true"></i> {{ news.author }}
+                                <li><a href="#"><i class="fa fa-user-doctor" aria-hidden="true"></i> {{ news.author|translate_text }}
                                 </a></li>
                             </ul>
                         </div>
@@ -43,7 +44,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 breaking-news-grid-right">
-                    <h3>Свежие новости</h3>
+                    <h3>{{ "Свежие новости"|translate_text }}</h3>
                     <ul>
                         {% for main_litle_news in news_main|slice:":3" %}
                             <li>
@@ -56,15 +57,15 @@
                                     <div class="breaking-news-grid-right-gridr">
                                         <h4>
                                             <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}">
-                                                {{ main_litle_news.title|wordwrap:30|truncatechars_html:58 }}
+                                                {{ main_litle_news.title|translate_text|wordwrap:30|truncatechars_html:58 }}
                                             </a>
                                         </h4>
                                         <ul>
                                             <li>
                                                 <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"><span
                                                         class="fa fa-user-doctor"
-                                                        aria-hidden="true"></span> {{ main_litle_news.author }}
-                                                    <label>|</label> {{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
+                                                        aria-hidden="true"></span> {{ main_litle_news.author|translate_text }}
+                                                    <label>|</label> {{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -78,20 +79,20 @@
                     <div class="news-grids">
                         <div class="col-md-4 breaking-news-grid-right">
                             <div class="news-grid-right4">
-                                <h3>Погода в Полоцке</h3>
+                                <h3>{{ "Погода в Полоцке"|translate_text }}</h3>
                                 <!-- Nav tabs -->
                                 <div class="tab-content-weather-bg">
                                     <div class="tab-content-weather">
                                         <ul>
-                                            <h4>{{ weather.month }} {{ weather.day_of_month }}, {{ weather.day }}</h4>
+                                            <h4>{{ weather.month|translate_text }} {{ weather.day_of_month|translate_text }}, {{ weather.day|translate_text }}</h4>
                                             <p><span
-                                                    class="fa fa-wind"> Ветер: {{ weather.wind_direction }} -ый / {{ weather.wind_speed }} м/с</span>
+                                                    class="fa fa-wind"> {{ "Ветер:"|translate_text }} {{ weather.wind_direction|translate_text }} -ый / {{ weather.wind_speed|translate_text }} {{ "м/с"|translate_text }}</span>
                                             </p>
                                             <p><span
-                                                    class="fas fa-thermometer-half">Температура: {{ weather.temperature }}</span>
+                                                    class="fas fa-thermometer-half">{{ "Температура:"|translate_text }} {{ weather.temperature }}</span>
                                             </p>
                                             <p><span
-                                                    class="fas fa-tachometer-alt">Давление: {{ weather.pressure }} гПа</span>
+                                                    class="fas fa-tachometer-alt">{{ "Давление:"|translate_text }} {{ weather.pressure }} {{ "гПа"|translate_text }}</span>
                                             </p>
                                         </ul>
                                     </div>
@@ -102,7 +103,7 @@
                                      class="img-responsive"/>
                                 <div class="story">
                                     <p>фото дня</p>
-                                    <h3><a href="single.html">Горисполком город Полоцк</a></h3>
+                                    <h3><a href="single.html">{{ "Горисполком город Полоцк"|translate_text }}</a></h3>
                                 </div>
                             </div>
                         </div>
@@ -134,23 +135,23 @@
                                     <div class="health">
                                         <ul>
                                             <li>
-                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|wordwrap:30|truncatechars_html:58 }}</a>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
                                             </li>
                                             <li>
-                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
+                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}</a>
                                             </li>
                                         </ul>
                                     </div>
-                                    <h3>{{ main_litle_news.desc|safe|wordwrap:10|truncatechars_html:58 }}</h3>
+                                    <h3>{{ main_litle_news.desc|translate_text|safe|wordwrap:10|truncatechars_html:58 }}</h3>
                                     <div class="dummy">
                                         <a href="{{ main_litle_news.link }}">
-                                            <p>{{ main_litle_news.desc_hover|safe }}</p></a>
+                                            <p>{{ main_litle_news.desc_hover|translate_text|safe }}</p></a>
                                     </div>
                                     <div class="com-heart-health">
                                         <ul>
                                             <li><a href="{{ main_litle_news.link }}"><span
                                                     class="fa fa-user-doctor"
-                                                    aria-hidden="true"></span> {{ main_litle_news.author }}</a></li>
+                                                    aria-hidden="true"></span> {{ main_litle_news.author|translate_text }}</a></li>
                                         </ul>
                                     </div>
                                 </div>
