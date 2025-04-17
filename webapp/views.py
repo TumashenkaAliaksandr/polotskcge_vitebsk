@@ -22,6 +22,7 @@ def base_main(request):
 
     return render(request, 'main/base.html', context=context)
 
+
 def index(request):
     """Main, center"""
     main_services = Services.objects.all()
@@ -40,6 +41,10 @@ def index(request):
     about_history = AboutHistory.objects.all()
     erip_info = EripPayment.objects.all()
     current_language = translation.get_language()
+    # Получаем нужный слайдер (например, с id=1)
+    # slider = get_object_or_404(SliderMain, id=1)
+    # Передаём слайды, связанные с этим слайдером, уже отсортированные по order
+    slides = Slide.objects.select_related('slider').order_by('slider', 'order').all()
 
     context = {
         'desc_services_title': desc_services_title,
@@ -54,6 +59,7 @@ def index(request):
         'model_blog_main': model_blog_main,
         'interactiv': interactiv,
         'sliders': sliders,
+        'slides': slides,
         'about_history': about_history,  # Используем переведенные данные
         'erip_info': erip_info,
         'current_language': current_language,

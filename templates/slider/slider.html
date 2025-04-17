@@ -6,35 +6,21 @@
 
       <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
-      <div class="carousel-inner" role="listbox">
-
-        <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url({% static 'webapp/assets/img/slide/polock_epi_banner.png' %})">
-          <div class="container">
-            <h2>{{ "Государственное"|translate_text }}<span> {{ "Учреждение"|translate_text }}</span></h2>
-            <h4>{{ "Полоцкий Зональный Центр Гигиены и Эпидемиологии"|translate_text }}</h4>
-            <a href="{% url 'news:cge_news' %}" class="btn-get-started scrollto">{{ "Узнать Больше"|translate_text }}</a>
-          </div>
+        <div class="carousel-inner" role="listbox">
+            {% for slide in slides %}
+                <div class="carousel-item {% if forloop.first %}active{% endif %}"
+                     style="background-image: url('{{ slide.photo.url }}')">
+                    <div class="container">
+                        <h2>{{ slide.slider.name|translate_text }}</h2>
+                        <h4>{{ slide.description|translate_text }}</h4>
+                        <a href="{% url 'news:cge_news' %}"
+                           class="btn-get-started scrollto">{{ "Узнать Больше"|translate_text }}</a>
+                    </div>
+                </div>
+            {% empty %}
+                <p>Слайды отсутствуют.</p>
+            {% endfor %}
         </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url({% static 'webapp/assets/img/slide/gigi_centr_himnasty.jpg' %})">
-          <div class="container">
-            <h2>{{ "Гимнастика, Ходьба и Физические упражнения"|translate_text }}</h2>
-            <h4>{{ "должны прочно войти в повседневный быт каждого, кто хочет сохранить работоспособность, здоровье, полноценную и радостную жизнь."|translate_text }}</h4>
-            <a href="{% url 'news:cge_news' %}" class="btn-get-started scrollto">{{ "Узнать Больше"|translate_text }}</a>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url({% static 'webapp/assets/img/slide/gigi_centr_moidodyr.jpg' %})">
-          <div class="container">
-            <h2>{{ "Наши Рекомендации"|translate_text }}</h2>
-            <h4>{{ "Ознакомьтесь с актуальными рекомендациями по профилактике и последним тенденциям в области эпидемиологии для вашего здоровья и безопасности"|translate_text }}</h4>
-            <a href="{% url 'news:cge_news' %}" class="btn-get-started scrollto">{{ "Узнать Больше"|translate_text }}</a>
-          </div>
-        </div>
-
       </div>
 
       <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">

@@ -1480,3 +1480,31 @@ class Busel (models.Model):
     class Meta:
         verbose_name = "🐦🐥 Бусел (фото)"
         verbose_name_plural = "🐦🐥 Бусел (фото)"
+
+
+class SliderMain(models.Model):
+    """Главный слайдер (например, для страницы)"""
+    name = models.CharField(max_length=300, default="Name Slider", null=False, blank=False)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "🎞️ 🖼️ Главный Слайдер"
+        verbose_name_plural = "🎞️ 🖼️ Главный Слайдер"
+
+
+class Slide(models.Model):
+    """Отдельный слайд, принадлежащий слайдеру"""
+    slider = models.ForeignKey(SliderMain, related_name='slides', on_delete=models.CASCADE)
+    description = models.TextField(null=False, blank=False)
+    photo = models.ImageField(upload_to='slider/', null=True, blank=True)
+    order = models.PositiveIntegerField(default=0, help_text='Порядок слайда')
+
+    def __str__(self):
+        return f"Слайд {self.order} для {self.slider.name}"
+
+    class Meta:
+        verbose_name = "🎞️ 🖼️ Слайд"
+        verbose_name_plural = "🎞️ 🖼️ Слайды"
+        ordering = ['order']

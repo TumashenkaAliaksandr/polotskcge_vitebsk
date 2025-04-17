@@ -1143,3 +1143,20 @@ class BuselAdmin(admin.ModelAdmin):
 
     list_display = ['name']
 
+
+class SlideInline(admin.TabularInline):
+    model = Slide
+    extra = 3  # Показывать сразу 3 пустых формы для добавления слайдов
+    fields = ('order', 'description', 'photo')
+    ordering = ('order',)
+
+@admin.register(SliderMain)
+class SliderMainAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    inlines = [SlideInline]
+
+@admin.register(Slide)
+class SlideAdmin(admin.ModelAdmin):
+    list_display = ('slider', 'order', 'description')
+    list_filter = ('slider',)
+    ordering = ('slider', 'order')
