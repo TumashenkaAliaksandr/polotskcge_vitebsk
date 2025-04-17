@@ -54,14 +54,16 @@
                                     </div>
                                 </div>
                             </div>
+                            {% for photo_of_the_day in photo_day %}
                             <div class="news-grid-rght3">
-                                <img src="{% static 'images/gigi_centr_girispolkom.jpg' %}" alt=" "
+                                <img src="{{ photo_of_the_day.image.url }}" alt=" "
                                      class="img-responsive"/>
                                 <div class="story">
-                                    <p>{{ "фото дня"|translate_text }}</p>
-                                    <h3><a href="{% url 'webapp:contacts' %}">{{ "Горисполком город Полоцк"|translate_text }}</a></h3>
+                                    <p>{{ photo_of_the_day.description|safe|translate_text }}</p>
+                                    <h3><a href="{% url 'webapp:contacts' %}">{{ photo_of_the_day.name|safe|translate_text }}</a></h3>
                                 </div>
                             </div>
+                            {% endfor %}
                         </div>
                         <div class="clearfix"></div>
                     </div>

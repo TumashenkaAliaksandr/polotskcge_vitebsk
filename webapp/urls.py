@@ -21,7 +21,6 @@ urlpatterns = [
     path('cge-info/', info_main, name='cge-info'),
     path('charter/', charter, name='charter'),
     path('check_lists/', check_lists, name='check_lists'),
-    path('chief-doctor/', chief_doctor, name='chief-doctor'),
     path('city/<int:pk>/', city_single, name='city_single'),
     path('contacts/', contacts, name='contacts'),
     path('control_supervisory_activities/', supervisory_activities, name='control_supervisory_activities'),

@@ -41,10 +41,9 @@ def index(request):
     about_history = AboutHistory.objects.all()
     erip_info = EripPayment.objects.all()
     current_language = translation.get_language()
-    # Получаем нужный слайдер (например, с id=1)
-    # slider = get_object_or_404(SliderMain, id=1)
     # Передаём слайды, связанные с этим слайдером, уже отсортированные по order
     slides = Slide.objects.select_related('slider').order_by('slider', 'order').all()
+    photo_day = PhotoDay.objects.all()
 
     context = {
         'desc_services_title': desc_services_title,
@@ -63,15 +62,12 @@ def index(request):
         'about_history': about_history,  # Используем переведенные данные
         'erip_info': erip_info,
         'current_language': current_language,
+        'photo_day': photo_day,
     }
 
-    return render(request, 'webapp/test_index_us.html', context=context)
+    return render(request, 'webapp/index.html', context=context)
 
 
-def chief_doctor(request):
-    """Main Page Doctor Clinic"""
-
-    return render(request, 'webapp/doctors/main_doctor.html')
 
 
 def info_main(request):
