@@ -2799,7 +2799,7 @@ section#clocks-two {
 .features .icon-box h4 {
     font-size: 20px;
     font-weight: 700;
-    margin: 7px 0px 15px 60px;
+    margin: 7px 0 15px 60px;
 }
 
 .features .icon-box i {
@@ -2819,6 +2819,7 @@ section#clocks-two {
     background-repeat: no-repeat;
     background-size: cover;
     height: 240px;
+    border-radius: 35%;
 }
 
 .features .image-life {
@@ -4243,6 +4244,9 @@ section#clocks-two {
         background-size: cover;
         /*min-height: 400px;*/
         height: 121px;
+        width: 90%;
+        left: 20px;
+        border-radius: 22%;
     }
 
     .map-wrapper {
@@ -4455,10 +4459,11 @@ section#clocks-two {
 
 
 .img-container img {
-    width: 85%; /* Ширина изображения */
+    width: 50%; /* Ширина изображения */
     height: auto; /* Автоматическая высота для сохранения пропорций */
     display: inline-block; /* Используйте inline-block для центрирования */
     margin-top: 21px; /* Отступ сверху */
+    border-radius: 5%;
 }
 
 
@@ -4765,3 +4770,10 @@ section#clocks-two {
   margin: -2% -5% 5%;
 }
 
+.img-border-radius {
+    border-radius: 27% !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 121px;
+}

@@ -4738,6 +4738,14 @@ img.mobile1 {
     .breaking-news {
         padding: 0.5em 0 15px;
     }
+
+    .img-container img {
+        width: 95%;
+        height: auto;
+        display: inline-block;
+        margin-top: 21px;
+        border-radius: 5%;
+    }
 }
 
 
