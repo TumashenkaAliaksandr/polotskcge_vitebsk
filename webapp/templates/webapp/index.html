@@ -38,7 +38,7 @@
                 {% for main_about in about_us %}
                     <div class="section-title">
                         <h2>{{ main_about.name|translate_text }}</h2>
-                        <p>{{ main_about.description|translate_text| safe }}</p>
+                        <h5>{{ main_about.description|translate_text| safe }}</h5>
                         <!-- Контейнер для изображения -->
                         <div data-aos="fade-right">
                             <img src="{{ main_about.photo.url }}" >

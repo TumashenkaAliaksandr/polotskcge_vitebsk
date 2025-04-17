@@ -2637,7 +2637,7 @@ li.list-group-item1 {
 .tab-content-weather p {
     /* Стили для p тегов внутри .tab-content-weather */
     color: #6d6d6d; /* Цвет текста */
-    font-size: 20px; /* Размер шрифта */
+    font-size: 17px; /* Размер шрифта */
     line-height: 1.5; /* Межстрочный интервал */
     margin-top: 20px;
     font-weight: bold;
