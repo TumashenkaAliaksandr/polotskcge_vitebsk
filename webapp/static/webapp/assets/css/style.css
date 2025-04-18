@@ -487,9 +487,10 @@ h6 {
     opacity: 0;
     visibility: hidden;
     background: #fff;
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    box-shadow: 0 0 30px rgba(127, 137, 161, 0.25);
     transition: 0.3s;
     border-radius: 4px;
+    margin-left: 5px;
 }
 
 .navbar .dropdown ul li {
@@ -4776,4 +4777,12 @@ section#clocks-two {
     background-repeat: no-repeat;
     background-size: cover;
     height: 121px;
+}
+
+.img-epidemialogy-single {
+    border-radius: 27% !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 220px;
 }
