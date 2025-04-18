@@ -81,7 +81,7 @@ a:hover {
 
 
 .header-search input.search-submit, .header-search input.search-submit:visited {
-    background: #3fbbc0;
+    background: linear-gradient(90deg, #5bc9cc 0%, #009299 100%);
     border-color: #3fbbc0;
     position: absolute;
     top: -3px;
@@ -149,7 +149,7 @@ h6 {
     right: 15px;
     bottom: 15px;
     z-index: 996;
-    background: #3fbbc0;
+    background: linear-gradient(90deg, #62d5d8 0%, #019ea5 100%);
     width: 40px;
     height: 40px;
     border-radius: 4px;
@@ -160,10 +160,11 @@ h6 {
     font-size: 28px;
     color: #fff;
     line-height: 0;
+    margin-left: 5px;
 }
 
 .back-to-top:hover {
-    background: #5ec6ca;
+    background: linear-gradient(90deg, #5bc9cc 0%, #009299 100%);
     color: #fff;
 }
 
@@ -185,7 +186,7 @@ h6 {
 # Top Bar
 --------------------------------------------------------------*/
 #topbar {
-    background: #3fbbc0;
+    background: linear-gradient(90deg, #62d5d8 0%, #019ea5 100%);
     color: #fff;
     height: 40px;
     font-size: 14px;
@@ -740,7 +741,7 @@ h6 {
     line-height: 0;
     width: auto;
     height: auto;
-    background: rgba(63, 187, 192, 0.8);
+    background: linear-gradient(90deg, #62d5d8 0%, #019ea5 100%);
     border-radius: 50px;
     transition: 0.3s;
     color: rgba(255, 255, 255, 0.5);
@@ -772,7 +773,7 @@ h6 {
 
 #hero .carousel-indicators li.active {
     opacity: 1;
-    background: #3fbbc0;
+    background: linear-gradient(90deg, #62d5d8 0%, #019ea5 100%);
 }
 
 #hero .btn-get-started {
@@ -786,11 +787,11 @@ h6 {
     transition: 0.5s;
     line-height: 1;
     color: #fff;
-    background: #3fbbc0;
+    background: linear-gradient(90deg, #62d5d8 0%, #019ea5 100%);
 }
 
 #hero .btn-get-started:hover {
-    background: #65c9cd;
+    background: linear-gradient(90deg, #5dd5d8 0%, #019ca3 100%);
 }
 
 
@@ -805,11 +806,11 @@ h6 {
     transition: 0.5s;
     line-height: 1;
     color: #fff;
-    background: #3fbbc0;
+    background: linear-gradient(90deg, #62d5d8 0%, #019ea5 100%);
 }
 
 .btn-get-normative:hover {
-    background: #65c9cd;
+    background: linear-gradient(90deg, #5dd5d8 0%, #019ca3 100%);
 }
 
 .btn-get-city {
@@ -823,12 +824,12 @@ h6 {
     transition: 0.5s;
     line-height: 1;
     color: #fff;
-    background: #3fbbc0;
+    background: linear-gradient(90deg, #62d5d8 0%, #019ea5 100%);
     margin-top: 5%;
 }
 
 .btn-get-city:hover {
-    background: #45d0d9;
+    background: linear-gradient(90deg, #5dd5d8 0%, #019ca3 100%);
 }
 
 .btn-get-city li {
@@ -1301,7 +1302,7 @@ section#clocks-two {
     border: 5px solid rgba(0, 0, 0, 0) !important; /* Прозрачная рамка */
     box-shadow: 0 0 15px rgba(193, 215, 213, 0.5) !important; /* Бирюзовая тень */
     padding: 20px !important; /* Отступы внутри секции для более красивого отображения */
-    border-radius: 10px !important; /* Радиус для закругленных углов (по желанию) */
+    border-radius: 122px !important; /* Радиус для закругленных углов (по желанию) */
     margin-bottom: 10px;
 }
 
@@ -1389,7 +1390,7 @@ section#clocks-two {
     display: block;
     width: 50px;
     height: 3px;
-    background: #3fbbc0;
+    background: linear-gradient(90deg, #5bc9cc 0%, #009299 100%);
     bottom: 5px;
     left: calc(50% - 25px);
 }
@@ -2965,7 +2966,7 @@ section#clocks-two {
     display: block;
     width: 50px;
     height: 2px;
-    background: #3fbbc0;
+    background: linear-gradient(90deg, #5bc9cc 0%, #009299 100%);
     bottom: 0;
     left: calc(50% - 25px);
 }
@@ -3746,7 +3747,7 @@ section#clocks-two {
 }
 
 .contact .php-email-form button[type=submit] {
-    background: #3fbbc0;
+    background: linear-gradient(90deg, #62d5d8 0%, #019ea5 100%);
     border: 0;
     padding: 10px 30px;
     color: #fff;

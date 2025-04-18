@@ -806,7 +806,7 @@ body a:hover{
 .breaking_news {
     float: left;
     padding:10px 18px 12px 21px;
-    background-color: #3fbbc0;
+    background: linear-gradient(90deg, #62d5d8 0%, #019ea5 100%);
     position: relative;
 }
 .marquee {
@@ -932,7 +932,7 @@ padding: 70px 0 165px 0;
 }
 .opportunity{
 background:#28282e;
-margin:0px 20px;
+margin:0 20px;
 padding:80px 0;
 position:relative;
 }
@@ -946,13 +946,13 @@ position:relative;
 .nbs-flexisel-ul {
 	position: relative;
 	width: 9999px;
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 	list-style-type: none;
 }
 .nbs-flexisel-inner {
 	overflow: hidden;
-	margin: 0px auto;
+	margin: 0 auto;
 	background: #f8f8f8;
 	border: 1px solid #DFDFDF;
 	border-right:none;
@@ -1085,7 +1085,7 @@ div#horizontalTab {
     width: 75%;
 }
 .resp-tabs-container {
-	padding: 0px;
+	padding: 0;
 	clear: left;
 	border:1px solid #DFDFDF;
 	border-top:none;
@@ -1352,7 +1352,7 @@ ul.list6 li a:hover,.res6 a{
 	font-size: 1.1em;
     color: #fff;
     margin: 0;
-    background: #3fbbc0;
+    background: linear-gradient(90deg, #5bc9cc 0%, #009299 100%);
     padding: .8em 1em;
     text-transform: uppercase;
     font-weight: 400;
@@ -1699,13 +1699,13 @@ a.high {
     margin:-1.3rem;
 }
 .footer-bottom-right ul li .icon-button .icon-twitter{
-    background:url(../images/3.png) no-repeat 0px -7px;
+    background:url(../images/3.png) no-repeat 0 -7px;
     display: block;
     width: 43px;
     height: 43px;
 }
 .footer-bottom-right ul li .icon-button .icon-twitter:hover{
-    background:url(../images/3.png) no-repeat 0px -54px;
+    background:url(../images/3.png) no-repeat 0 -54px;
     display: block;
 }
 .footer-bottom-right ul li .icon-button .icon-google{
@@ -1742,7 +1742,7 @@ a.high {
     color: #fff;
     font-weight: 400;
     margin:0 0 2.6em;
-    background: #3fbbc0;
+    background: linear-gradient(90deg, #5bc9cc 0%, #009299 100%);
     padding: 0.8em;
 }
 .upcoming-events-right h3{
