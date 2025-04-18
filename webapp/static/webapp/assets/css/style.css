@@ -1302,7 +1302,18 @@ section#clocks-two {
     border: 5px solid rgba(0, 0, 0, 0) !important; /* Прозрачная рамка */
     box-shadow: 0 0 15px rgba(193, 215, 213, 0.5) !important; /* Бирюзовая тень */
     padding: 20px !important; /* Отступы внутри секции для более красивого отображения */
-    border-radius: 122px !important; /* Радиус для закругленных углов (по желанию) */
+    border-radius: 5px !important; /* Радиус для закругленных углов (по желанию) */
+    margin-bottom: 10px;
+}
+
+.main_info {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 5px solid rgba(0, 0, 0, 0) !important;
+    box-shadow: 0 0 15px rgba(193, 215, 213, 0.5) !important;
+    padding: 20px !important;
+    border-radius: 200px !important;
     margin-bottom: 10px;
 }
 
@@ -2821,7 +2832,15 @@ section#clocks-two {
     background-repeat: no-repeat;
     background-size: cover;
     height: 240px;
-    border-radius: 35%;
+    border-radius: 10px;
+}
+
+.features .image-main {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 240px;
+    border-radius: 15px;
 }
 
 .features .image-life {
@@ -3219,7 +3238,6 @@ section#clocks-two {
     background: #f0fafa;
     position: relative;
     border-radius: 6px;
-    position: relative;
     z-index: 1;
 }
 
@@ -3249,7 +3267,7 @@ section#clocks-two {
     text-align: center;
     border-radius: 4px;
     background: #fff;
-    box-shadow: 0px 2px 15px rgba(63, 187, 192, 0.2);
+    box-shadow: 0 2px 15px rgba(63, 187, 192, 0.2);
 }
 
 .doctors .member .member-img {
@@ -3522,7 +3540,7 @@ section#clocks-two {
 }
 
 .iksweb tr:hover td {
-    color: #58c3c6;
+    background: linear-gradient(90deg, #62d5d8 0%, #019ea5 100%);
     cursor: default;
 }
 
@@ -3605,7 +3623,7 @@ section#clocks-two {
 }
 
 .faq .faq-list .collapsed:hover {
-    color: #3fbbc0;
+    background: linear-gradient(90deg, #5dd5d8 0%, #019ca3 100%);
 }
 
 .faq .faq-list .collapsed .icon-show {
@@ -4465,7 +4483,7 @@ section#clocks-two {
     height: auto; /* Автоматическая высота для сохранения пропорций */
     display: inline-block; /* Используйте inline-block для центрирования */
     margin-top: 21px; /* Отступ сверху */
-    border-radius: 5%;
+    border-radius: 25px;
 }
 
 
