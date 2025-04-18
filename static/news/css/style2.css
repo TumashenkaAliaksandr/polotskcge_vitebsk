@@ -2624,7 +2624,7 @@ li.list-group-item1 {
 .tab-content-weather h4 {
     /* Стили для h4 тегов внутри .tab-content-weather */
     color: #6d6d6d; /* Цвет текста */
-    font-size: 27px; /* Размер шрифта */
+    font-size: 19px; /* Размер шрифта */
     /*font-weight: bold; !* Жирный текст *!*/
     margin-top: 15px;
     margin-bottom: 50px;
