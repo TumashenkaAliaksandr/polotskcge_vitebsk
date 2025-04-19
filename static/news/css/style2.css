@@ -3457,6 +3457,13 @@ img.mobile1 {
 .dropdown-menu > li > a:hover {
     color: #fff !important;
 }
+
+.section-title h5 {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
 /*-- //single --*/
 /*-----start-responsive-design------*/
 .move-text {
@@ -3467,11 +3474,18 @@ img.mobile1 {
 
 @media only screen and (max-width: 768px) {
   .section-title h2 {
-    font-size: 16px;
+    font-size: 25px;
     font-weight: bold;
     text-transform: uppercase;
       margin-bottom: 0;
   }
+
+    .section-title h5 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: -15px;
+        margin-top: 15px;
+    }
 
     .move-text {
         width: 92.3%;
