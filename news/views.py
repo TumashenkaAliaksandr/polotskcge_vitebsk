@@ -1,7 +1,7 @@
 from news.models import *
 from django.shortcuts import render, get_object_or_404
 
-from webapp.models import CentreNews
+from webapp.models import CentreNews, PhotoDay
 from .utils import get_weather
 from django.core.paginator import Paginator
 
@@ -30,6 +30,7 @@ def cge_news(request):
     centre_news = CentreNews.objects.all().order_by('-pub_date')
     # Получаем данные о погоде
     weather = get_weather()
+    photo_day = PhotoDay.objects.all()
 
     context = {
         'model_blog_main': model_blog_main,
@@ -41,6 +42,7 @@ def cge_news(request):
         'popular_news': popular_news,
         'nature_news': nature_news,
         'centre_news': centre_news,
+        'photo_day': photo_day,
     }
 
     return render(request, 'breaking.html', context=context)
@@ -62,6 +64,7 @@ def NewsDetailView(request, pk, slug):
     news_main = ModelNews.objects.all().order_by('-pub_date')
     interactiv = Interactive.objects.all()
     centre_news = CentreNews.objects.all().order_by('-pub_date')
+    photo_day = PhotoDay.objects.all()
 
     # Получаем данные о погоде
     weather = get_weather()
@@ -72,6 +75,7 @@ def NewsDetailView(request, pk, slug):
         'interactiv': interactiv,
         'weather': weather,  # Передаем данные о погоде в контекст
         'centre_news': centre_news,
+        'photo_day': photo_day,
     }
 
     return render(request, 'single.html', context=context)

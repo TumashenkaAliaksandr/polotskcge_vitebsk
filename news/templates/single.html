@@ -75,41 +75,46 @@
                         {% endfor %}
                     </ul>
                 </div>
+                <!-- Tab panes -->
                 <div class="news">
                     <div class="news-grids">
                         <div class="col-md-4 breaking-news-grid-right">
-                            <div class="news-grid-right4">
+                            <div class="news-grid-rght1">
                                 <h3>{{ "Погода в Полоцке"|translate_text }}</h3>
                                 <!-- Nav tabs -->
                                 <div class="tab-content-weather-bg">
                                     <div class="tab-content-weather">
                                         <ul>
-                                            <h4>{{ weather.month|translate_text }} {{ weather.day_of_month|translate_text }}, {{ weather.day|translate_text }}</h4>
+                                            <h4>{{ weather.month|translate_text }} {{ weather.day_of_month }}, {{ weather.day|translate_text }}</h4>
                                             <p><span
-                                                    class="fa fa-wind"> {{ "Ветер:"|translate_text }} {{ weather.wind_direction|translate_text }} -ый / {{ weather.wind_speed|translate_text }} {{ "м/с"|translate_text }}</span>
+                                                    class="fa fa-wind"> {{ "Ветер: "|translate_text }} {{ weather.wind_direction }}-ный | {{ weather.wind_speed }} {{ "м/с" |translate_text }}</span>
                                             </p>
-                                            <p><span
-                                                    class="fas fa-thermometer-half">{{ "Температура:"|translate_text }} {{ weather.temperature }}</span>
-                                            </p>
-                                            <p><span
-                                                    class="fas fa-tachometer-alt">{{ "Давление:"|translate_text }} {{ weather.pressure }} {{ "гПа"|translate_text }}</span>
+                                            <p><span class="fas fa-thermometer-half">
+                                                {{ "Температура:"|translate_text }} {{ weather.temperature }}</span></p>
+                                            <p><span class="fas fa-tachometer-alt">
+                                               {{ "Давление:"|translate_text }} {{ weather.pressure }} {{ "гПа"|translate_text }}</span>
                                             </p>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="news-grid-rght3">
-                                <img src="{% static 'images/gigi_centr_girispolkom.jpg' %}" alt=" "
-                                     class="img-responsive"/>
-                                <div class="story">
-                                    <p>фото дня</p>
-                                    <h3><a href="single.html">{{ "Горисполком город Полоцк"|translate_text }}</a></h3>
+                            {% for photo_of_the_day in photo_day %}
+                                <div class="news-grid-rght3">
+                                    <img src="{{ photo_of_the_day.image.url }}" alt=" "
+                                         class="img-responsive"/>
+                                    <div class="story">
+                                        <p>{{ photo_of_the_day.description|safe|translate_text }}</p>
+                                        <h3>
+                                            <a href="{% url 'webapp:contacts' %}">{{ photo_of_the_day.name|safe|translate_text }}</a>
+                                        </h3>
+                                    </div>
                                 </div>
-                            </div>
+                            {% endfor %}
                         </div>
                         <div class="clearfix"></div>
                     </div>
                 </div>
+                <div class="clearfix"></div>
             </div>
         </div>
     </div>
