@@ -32,25 +32,26 @@
         </div>
 
         <!-- ======= About Us Section ======= -->
-        <!-- About Section -->
         <section class="main-bg">
-            <div class="container main_info img-container" data-aos="fade-left">
+            <div class="container main_info img-container-about" data-aos="fade-left">
                 {% for main_about in about_us %}
                     <div class="section-title">
                         <h2>{{ main_about.name|translate_text }}</h2>
-                        <h5>{{ main_about.description|translate_text| safe }}</h5>
-                        <!-- Контейнер для изображения -->
-                        <div data-aos="fade-right">
-                            <img src="{{ main_about.photo.url }}" >
+                        <h5>{{ main_about.description|translate_text|safe }}</h5>
+
+                        <!-- Контейнер для фонового телевизора и фото из модели -->
+                        <div class="photo-wrapper" data-aos="fade-right">
+                            <div class="main-info-tele"></div> <!-- фон с телевизором -->
+                            <img src="{{ main_about.photo.url }}" class="model-photo" alt="{{ main_about.name }}">
                         </div>
                     </div>
                 {% empty %}
-                    <p>{% trans "Информация отсутствует." %}</p>  <!-- Сообщение, если список пуст -->
+                    <p>{% trans "Информация отсутствует." %}</p>
                 {% endfor %}
             </div>
         </section>
 
-      <!-- ======= Counts Section ======= -->
+        <!-- ======= Counts Section ======= -->
         <section id="counts" class="counts main-bg">
             <div class="container" data-aos="fade-up">
                 <div class="row no-gutters">

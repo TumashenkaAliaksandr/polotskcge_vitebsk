@@ -783,7 +783,7 @@ h6 {
     letter-spacing: 1px;
     display: inline-block;
     padding: 14px 32px;
-    border-radius: 4px;
+    /*border-radius: 4px;*/
     transition: 0.5s;
     line-height: 1;
     color: #fff;
@@ -1311,11 +1311,46 @@ section#clocks-two {
     width: 100%;
     height: auto;
     border: 5px solid rgba(0, 0, 0, 0) !important;
-    box-shadow: 0 0 15px rgba(193, 215, 213, 0.5) !important;
+    box-shadow: 0 13px 15px -8px rgba(193, 215, 213, 0.5) !important;
     padding: 20px !important;
     border-radius: 200px !important;
     margin-bottom: 10px;
 }
+
+.main_info_container {
+  display: flex;
+  align-items: center; /* вертикальное выравнивание */
+  gap: 20px; /* расстояние между фоном и контентом */
+}
+
+.photo-wrapper {
+  position: relative;
+  width: fit-content; /* чтобы размер по содержимому */
+  display: inline-block; /* чтобы не растягивался на всю ширину */
+}
+
+.main-info-tele {
+  position: inherit;
+  /*top: 50%;*/
+  /*left: 50%;*/
+  height: 420px;
+  background: url('../../assets/img/tv.png') no-repeat center center;
+  background-size: contain;
+  /*box-shadow: 0 0 15px rgba(193, 215, 213, 0.5);*/
+  /*transform: translate(-50%, -50%);*/
+  z-index: 10; /* фон ниже фото */
+    opacity: 0.95;
+}
+
+.model-photo {
+  position: relative;
+  z-index: 2; /* фото выше фона */
+  max-width: 100%; /* адаптивность */
+  border-radius: 20px; /* если нужно скругление */
+  display: block;
+}
+
+
 
 /*styles for map*/
 
@@ -1356,6 +1391,10 @@ section#clocks-two {
     text-align: center;
     padding-bottom: 20px;
     padding-top: 70px;
+}
+
+.news-more {
+    box-shadow: 0 15px 15px -10px rgba(193, 215, 213, 0.5) !important;
 }
 
 .news-more p {
@@ -1657,6 +1696,35 @@ section#clocks-two {
         text-overflow: ellipsis;
         opacity: 0;
         transition: opacity 0.3s ease;
+    }
+
+    .img-container-about img {
+        width: 75% !important;
+        height: auto!important;
+        display: inline-block!important;
+        margin-top: -275px!important;
+        border-radius: 25px!important;
+        right: 35px!important;
+    }
+
+    .main_info {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 5px solid rgba(0, 0, 0, 0) !important;
+        box-shadow: 0 13px 15px -8px rgba(193, 215, 213, 0.5) !important;
+        padding: 13px !important;
+        border-radius: 50px !important;
+        margin-bottom: 10px;
+    }
+
+    .main-info-tele {
+        position: inherit;
+        height: 340px;
+        background: url('../../assets/img/tv.png') no-repeat center center;
+        background-size: contain;
+        z-index: 10;
+        opacity: 0.95;
     }
 
     .header-icons-mobile i:hover::after {
@@ -2418,7 +2486,8 @@ section#clocks-two {
     position: relative;
     overflow: hidden;
     background: #f7fcfc;
-    box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+    /*box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);*/
+    box-shadow: 0 15px 15px 3px rgba(193, 215, 213, 0.5) !important;
     transition: all 0.3s ease-in-out;
     border-radius: 8px;
     z-index: 1;
@@ -2440,9 +2509,9 @@ section#clocks-two {
 
 
 .featured-services .icon-box:hover::before {
-    background: #3fbbc0;
+    background: linear-gradient(90deg, #62d5d8 0%, #019ea5 100%);
     top: 0;
-    border-radius: 0px;
+    border-radius: 0;
 }
 
 @media (max-width: 823px) {
@@ -2764,7 +2833,8 @@ section#clocks-two {
 }
 
 .counts .count-box {
-    box-shadow: -10px -5px 40px 0 rgba(0, 0, 0, 0.1);
+    /*box-shadow: -10px -5px 40px 0 rgba(0, 0, 0, 0.1);*/
+    box-shadow: 0 15px 15px 5px rgba(193, 215, 213, 0.5) !important;
     padding: 30px;
     width: 100%;
 }
@@ -2840,7 +2910,8 @@ section#clocks-two {
     background-repeat: no-repeat;
     background-size: cover;
     height: 240px;
-    border-radius: 15px;
+    border-radius: 7px;
+    box-shadow: 0 13px 15px -8px rgba(193, 215, 213, 0.5) !important;
 }
 
 .features .image-life {
@@ -4475,6 +4546,15 @@ section#clocks-two {
     margin: 0 auto; /* Центрирование контейнера */
     overflow: hidden; /* Скрытие лишнего содержимого */
     text-align: center;
+}
+
+.img-container-about img {
+    width: 50%;
+    height: auto;
+    display: inline-block;
+    margin-top: -376px;
+    border-radius: 25px;
+    right: 53px;
 }
 
 

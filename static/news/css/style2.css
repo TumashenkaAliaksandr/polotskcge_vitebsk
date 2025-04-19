@@ -1079,7 +1079,7 @@ div#horizontalTab {
 	text-shadow: none;
 }
 .resp-tab-active{
-	background:#3fbbc0;
+	background:linear-gradient(90deg, #5bc9cc 0%, #009299 100%);
 	text-shadow: none;
 	color:#fff;
     width: 75%;
@@ -1634,6 +1634,7 @@ a.high {
 .story{
 	padding:1.5em 1em;
 	background:#f8f8f8;
+    box-shadow: 0 15px 15px -10px rgba(193, 215, 213, 0.5) !important;
 }
 .story p{
 	text-transform: uppercase;

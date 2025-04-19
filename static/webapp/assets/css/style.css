@@ -863,6 +863,12 @@ section#footer {
     background-attachment: fixed;
 }
 
+.main-bg-about {
+    padding: 35px 0 35px;
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.97)), url('../img/departments-1.jpg') center/cover;
+    background-attachment: fixed;
+}
+
 
 .news-main {
     padding: 35px 0 35px;
@@ -1634,7 +1640,7 @@ section#clocks-two {
   transition: 0.5s;
   color: #3fbbc0;
   overflow: hidden;
-  box-shadow: 0px 0 17px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 17px rgba(0, 0, 0, 0.15);
 }
 
 .services .icon i {
