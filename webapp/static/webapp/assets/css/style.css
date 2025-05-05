@@ -171,6 +171,8 @@ h6 {
 .back-to-top.active {
     visibility: visible;
     opacity: 1;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 
 /*--------------------------------------------------------------
@@ -2878,6 +2880,8 @@ section#clocks-two {
     font-size: 30px;
     color: #3fbbc0;
     float: left;
+    filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 
 .counts .count-box span {
@@ -2887,6 +2891,8 @@ section#clocks-two {
     font-weight: 700;
     color: #555555;
     margin-left: 50px;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 
 .counts .count-box p {
@@ -2923,6 +2929,8 @@ section#clocks-two {
     font-size: 50px;
     float: left;
     color: #3fbbc0;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 
 .features .icon-box p {
@@ -3045,12 +3053,14 @@ section#clocks-two {
     width: 85px;
     height: 85px;
     margin-bottom: 20px;
-    background: #f9fbfb;
+    background: #fffffff5;
     border-radius: 50%;
-    transition: 0.5s;
+    /*transition: 0.5s;*/
     color: #3fbbc0;
     overflow: hidden;
-    box-shadow: 0 0 17px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 
 .services .icon i {
@@ -3225,7 +3235,7 @@ section#clocks-two {
 }
 
 .departments .nav-link:hover h4 {
-    color: #3fbbc0;
+    color: #387577;
 }
 
 .departments .nav-link.active {
@@ -3247,6 +3257,8 @@ section#clocks-two {
     padding: 0 15px 15px 25px;
     margin-left: 35px;
     margin-right: 25px;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 
 @media (max-width: 768px) {
@@ -3753,9 +3765,11 @@ section#clocks-two {
 }
 
 .img-fix-two {
-  max-width: 12%;
-  height: auto;
-  margin: -7% 70%;
+    max-width: 12%;
+    height: auto;
+    margin: -7% 70%;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 .img-fix-immuno {
   max-width: 21%;
@@ -3932,7 +3946,7 @@ section#clocks-two {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-    background: #e4f2f6;
+    background: #8fd2db;
     padding: 0 0 30px 0;
     color: #555555;
     font-size: 14px;
@@ -3948,8 +3962,7 @@ section#clocks-two {
     /*  background: #f6f6f6;*/
     padding: 60px 0 30px 0;
     /*padding: 35px 0 35px;*/
-    background: linear-gradient(rgba(255, 255, 255, 0.83), rgb(236, 248, 249, 0.88)), url('../img/gigi_centr_footer.jpg') center/cover;
-    background-attachment: fixed;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85) 0%, rgba(87, 207, 210, 0.6) 50%, rgba(139, 209, 211, 0.8) 100%), url('../img/gigi_centr_footer.jpg') center/cover no-repeat;
 }
 
 #footer .footer-top .footer-info {

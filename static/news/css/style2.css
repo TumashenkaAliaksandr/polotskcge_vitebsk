@@ -602,6 +602,8 @@ body a:hover{
     width: auto; /* задайте ширину */
     /*height: 42.2%;*/
     margin-bottom: 10%;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 .br-bm-gd-lt1 {
     background: url(../images/gigi_centr_sport2.jpg) no-repeat 0px 0px;
@@ -630,21 +632,23 @@ body a:hover{
 	display:block;
 }
 .br-bm-gd-lt5{
-	background:url(../../webapp/assets/img/istoriya_evolyucii_ofisa_eicenter_polock.png) no-repeat 0px 0px;
+	background:url(../../webapp/assets/img/istoriya_evolyucii_ofisa_eicenter_polock.png) no-repeat 0 0;
 	display:block;
 }
 .br-bm-gd-lt6{
-	background:url(../../webapp/assets/img/istoriya_evolyucii_ofisa_eicenter_polock.png) no-repeat 0px 0px;
+	background:url(../../webapp/assets/img/istoriya_evolyucii_ofisa_eicenter_polock.png) no-repeat 0 0;
 	display:block;
 }
 .br-bm-gd-lt7{
-	background:url(../../webapp/assets/img/istoriya_evolyucii_ofisa_eicenter_polock.png) no-repeat 0px 0px;
+	background:url(../../webapp/assets/img/istoriya_evolyucii_ofisa_eicenter_polock.png) no-repeat 0 0;
 	display:block;
 }
 .health-pos {
     position: absolute;
-    top: 0%;
-    left: 0%;
+    top: 0;
+    left: 0;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 .health{
 	padding:1.4em 1em 0;
@@ -671,6 +675,8 @@ body a:hover{
 	padding: .1em 0.2em;
 	border:2px solid #007cff;
 	text-decoration:none;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 .health ul li:nth-child(1){
 	margin-left:10px;
@@ -1154,6 +1160,8 @@ ul.tab_list{
 .tab_list{
 	float:left;
 	width: 35%;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 .tab_list1{
 	float:right;
@@ -1478,7 +1486,7 @@ ul.list6 li a:hover,.res6 a{
 
 .nav-tabs {
     border-bottom:none;
-    background: #ebf5ff;
+    background: linear-gradient(90deg, #fff 0%, #a1e7ea 100%);
 }
 .nav-tabs > li > a {
     margin-right: 0;
@@ -1505,7 +1513,7 @@ ul.list6 li a:hover,.res6 a{
     border: none;
 }
 .nav > li > a:hover, .nav > li > a:focus {
-    background: #d3fcfa;
+    background: linear-gradient(90deg, #a1e7ea 0%, #fff 100%);
 }
 a.high {
     padding: 10px 68px 10px 25px !important;
@@ -1758,6 +1766,12 @@ a.high {
     filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
     transition: filter 0.3s ease;
 }
+
+.filters-h3 h3{
+    filter: none!important;
+    transition: none!important;
+}
+
 .upcoming-events-right h3{
 	background:#950202;
 	margin: 0 !important;
@@ -2136,13 +2150,15 @@ ul.wmuSliderPagination {
     width: 115px; /* Установите желаемую ширину */
     height: auto; /* Установите желаемую высоту */
     object-fit: cover; /* Этот свойство сохраняет соотношение сторон и обрезает изображение по нужным размерам */
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 .img-fixed-size-erip {
     width: 185px; /* Установите желаемую ширину */
     height: 200px;
     margin-right: 20px;
     object-fit: cover; /* Этот свойство сохраняет соотношение сторон и обрезает изображение по нужным размерам */
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
     transition: filter 0.3s ease;
 }
 
