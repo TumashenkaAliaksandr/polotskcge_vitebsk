@@ -788,6 +788,7 @@ h6 {
     line-height: 1;
     color: #fff;
     background: linear-gradient(90deg, #62d5d8 0%, #019ea5 100%);
+    border-radius: 5px;
 }
 
 #hero .btn-get-started:hover {
@@ -1333,14 +1334,34 @@ section#clocks-two {
     position: inherit;
     /*top: 50%;*/
     /*left: 50%;*/
-    height: 420px;
+    height: 370px;
     background: url('../../assets/img/tv.png') no-repeat center center;
     background-size: contain;
     /*box-shadow: 0 0 15px rgba(193, 215, 213, 0.5);*/
     /*transform: translate(-50%, -50%);*/
     z-index: 10; /* фон ниже фото */
-    opacity: 0.95;
+    opacity: 0.97;
     margin-top: 21px;
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
+    left: 18%;
+}
+
+.main-info-about {
+    position: relative;
+    /*top: 50%;*/
+    height: 315px;
+    background: url('../../assets/img/gigi_centr_bssr.png') no-repeat;
+    background-size: contain;
+    /*box-shadow: 0 0 15px rgba(193, 215, 213, 0.5);*/
+    /*transform: translate(-50%, -50%);*/
+    z-index: 10; /* фон ниже фото */
+    opacity: 0.97;
+    margin-top: -320px;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
+    width: 245px;
+    right: 370px;
 }
 
 .model-photo {
@@ -1444,6 +1465,8 @@ section#clocks-two {
     background: linear-gradient(90deg, #5bc9cc 0%, #009299 100%);
     bottom: 5px;
     left: calc(50% - 25px);
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 
 .section-title-news h2::after {
@@ -1705,7 +1728,15 @@ section#clocks-two {
         display: inline-block!important;
         margin-top: -275px!important;
         border-radius: 25px!important;
-        right: 35px!important;
+        left: -30px!important;
+    }
+
+    .main-info-about {
+        display: none;
+    }
+
+    .main-info-tele {
+        left: 0;
     }
 
     .main_info {
@@ -2530,7 +2561,9 @@ section#clocks-two {
     font-size: 48px;
     line-height: 1;
     color: #3fbbc0;
-    transition: all 0.3s ease-in-out;
+    /*transition: all 0.3s ease-in-out;*/
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 
 .featured-services .title {
@@ -2634,7 +2667,7 @@ section#clocks-two {
     .featured-services-two .icon-box:hover::before {
         background: #3fbbc0;
         top: 0;
-        border-radius: 0px;
+        border-radius: 0;
     }
 
     .featured-services-two .icon-two {
@@ -2919,7 +2952,7 @@ section#clocks-two {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 0px;
+  height: 0;
   width: auto;
   margin-bottom: 5px;
 }
@@ -3017,7 +3050,7 @@ section#clocks-two {
     transition: 0.5s;
     color: #3fbbc0;
     overflow: hidden;
-    box-shadow: 0px 0 17px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 17px rgba(0, 0, 0, 0.15);
 }
 
 .services .icon i {
@@ -3026,7 +3059,7 @@ section#clocks-two {
 }
 
 .services .icon-box:hover .icon {
-    box-shadow: 0px 0 25px rgba(63, 187, 192, 0.3);
+    box-shadow: 0 0 25px rgba(63, 187, 192, 0.3);
 }
 
 .services .icon img {
@@ -4550,12 +4583,13 @@ section#clocks-two {
 }
 
 .img-container-about img {
-    width: 50%;
-    height: auto;
-    display: inline-block;
-    margin-top: -376px;
-    border-radius: 25px;
-    right: 53px;
+  width: 31%;
+  height: auto;
+  display: inline-block;
+  margin-top: -333px;
+  border-radius: 25px;
+  right: 54px;
+  left: 15%;
 }
 
 

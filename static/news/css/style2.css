@@ -808,6 +808,7 @@ body a:hover{
     padding:10px 18px 12px 21px;
     background: linear-gradient(90deg, #62d5d8 0%, #019ea5 100%);
     position: relative;
+    border-radius: 5px;
 }
 .marquee {
     /*width: 80%;*/
@@ -1051,9 +1052,12 @@ position:relative;
 }
 ul.resp-tabs-list {
 	list-style: none;
-	background:#8b8e8b;
+	background:linear-gradient(90deg, #0c979e 0%, #73cdd0 100%);
 	margin: 0 auto;
 	border-bottom:1px solid #DFDFDF;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
+    border-radius: 10px;
 }
 div#horizontalTab {
   background:#fff;
@@ -1356,6 +1360,9 @@ ul.list6 li a:hover,.res6 a{
     padding: .8em 1em;
     text-transform: uppercase;
     font-weight: 400;
+    border-radius: 5px;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 .news-grid-left ul li{
 	list-style-type:none;
@@ -1365,6 +1372,8 @@ ul.list6 li a:hover,.res6 a{
 .news-grid-left1{
 	float:left;
 	width:21%;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 .news-grid-right1{
 	float:right;
@@ -1745,6 +1754,9 @@ a.high {
     margin:0 0 2.6em;
     background: linear-gradient(90deg, #5bc9cc 0%, #009299 100%);
     padding: 0.8em;
+    border-radius: 5px;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 .upcoming-events-right h3{
 	background:#950202;
@@ -2075,6 +2087,7 @@ ul.wmuSliderPagination {
 	-o-background-size:cover;
 	-ms-background-size:cover;
 }
+
 .baner-beaking1{
 	background:url(../images/gigi_centr_globus.png) no-repeat 0 0;
 	background-size:cover;
@@ -2083,10 +2096,11 @@ ul.wmuSliderPagination {
 	-o-background-size:cover;
 	-ms-background-size:cover;
 }
+
 /*-- //wmuslider --*/
 .baner-beaking h3{
 	padding: 1em;
-    background:rgba(255, 255, 255, 0.22);
+    background:rgba(255, 255, 255, 0.75);
     font-size: 1.5em;
     text-transform: uppercase;
     margin: 0;
@@ -2128,6 +2142,8 @@ ul.wmuSliderPagination {
     height: 200px;
     margin-right: 20px;
     object-fit: cover; /* Этот свойство сохраняет соотношение сторон и обрезает изображение по нужным размерам */
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 
 .img-fixed-size-kvit {
@@ -2166,6 +2182,8 @@ ul.wmuSliderPagination {
     object-fit: cover;
     margin-top: 50%;
     border-radius: 5px;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 
 
@@ -2303,14 +2321,18 @@ ul.wmuSliderPagination {
     margin-left: -16px;
     margin-right: 20px;
     margin-top: 2px;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 
 .img-fixed-size-unp-two {
-  width: 67px;
-  height: 47px;
-  object-fit: cover;
-  margin-left: 100px;
-  margin-bottom: 10px;
+    width: 67px;
+    height: 47px;
+    object-fit: cover;
+    margin-left: 100px;
+    margin-bottom: 10px;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 
 .img-fixed-size-unp-three {
@@ -2320,6 +2342,8 @@ ul.wmuSliderPagination {
     margin-left: 55px;
     margin-right: 20px;
     margin-bottom: 21px;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 
 .img-fixed-size-cheme {
@@ -4508,7 +4532,7 @@ img.mobile1 {
 
     .tab-content-weather h4 {
         color: #6d6d6d;
-        font-size: 21px;
+        font-size: 18px;
         font-weight: bold;
         margin-top: 15px;
         margin-bottom: 50px;

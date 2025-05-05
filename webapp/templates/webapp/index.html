@@ -44,6 +44,10 @@
                             <div class="main-info-tele"></div> <!-- фон с телевизором -->
                             <img src="{{ main_about.photo.url }}" class="model-photo" alt="{{ main_about.name }}">
                         </div>
+                    <!-- Контейнер для фонового телевизора и фото из модели -->
+                        <div class="photo-wrapper" data-aos="zoom-in" data-aos-duration="1200">
+                            <div class="main-info-about"></div> <!-- фон с гербом-->
+                        </div>
                     </div>
                 {% empty %}
                     <p>{% trans "Информация отсутствует." %}</p>
