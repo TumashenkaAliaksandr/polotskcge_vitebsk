@@ -146,21 +146,21 @@
                             {% endfor %}
                         </ul>
                         <div class="pagination">
-                                        <span class="step-links">
-                                            {% if page_obj.has_previous %}
-                                                <a href="?page=1">&laquo; {{ "первая"|translate_text }}</a>
-                                                <a href="?page={{ page_obj.previous_page_number }}"> {{ "предыдущая"|translate_text }} </a>
-                                            {% endif %}
+                                <span class="step-links">
+                                    {% if page_obj.has_previous %}
+                                        <a href="?page=1">&laquo; {{ "первая"|translate_text }}</a>
+                                        <a href="?page={{ page_obj.previous_page_number }}"> {{ "предыдущая"|translate_text }} </a>
+                                    {% endif %}
 
-                                            <span class="current">
-                                                {{ "Страница"|translate_text }} {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
-                                            </span>
+                                    <span class="current">
+                                        {{ "Страница"|translate_text }} {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+                                    </span>
 
-                                            {% if page_obj.has_next %}
-                                                <a href="?page={{ page_obj.next_page_number }}"> {{ "следующая"|translate_text }} </a>
-                                                <a href="?page={{ page_obj.paginator.num_pages }}"> {{ "последняя"|translate_text }} &raquo;</a>
-                                            {% endif %}
-                                        </span>
+                                    {% if page_obj.has_next %}
+                                        <a href="?page={{ page_obj.next_page_number }}"> {{ "следующая"|translate_text }} </a>
+                                        <a href="?page={{ page_obj.paginator.num_pages }}"> {{ "последняя"|translate_text }} &raquo;</a>
+                                    {% endif %}
+                                </span>
                         </div>
                     </div>
                     <!-- Tab panes -->
@@ -185,14 +185,18 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="news-grid-rght3">
-                                    <img src="{% static 'images/gigi_centr_girispolkom.jpg' %}" alt=" "
-                                         class="img-responsive"/>
-                                    <div class="story">
-                                        <p>{{ "фото дня"|translate_text }}</p>
-                                        <h3><a href="">{{ "Горисполком город Полоцк"|translate_text }}</a></h3>
+                                {% for photo_of_the_day in photo_day %}
+                                    <div class="news-grid-rght3 filters-h3">
+                                        <img src="{{ photo_of_the_day.image.url }}" alt=" "
+                                             class="img-responsive"/>
+                                        <div class="story">
+                                            <p>{{ photo_of_the_day.description|safe|translate_text }}</p>
+                                            <h3>
+                                                <a href="{% url 'webapp:contacts' %}">{{ photo_of_the_day.name|safe|translate_text }}</a>
+                                            </h3>
+                                        </div>
                                     </div>
-                                </div>
+                                {% endfor %}
                             </div>
                             <div class="clearfix"></div>
                         </div>

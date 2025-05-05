@@ -1278,6 +1278,7 @@ def city_single(request, pk):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     busel = Busel.objects.all()
+    photo_day = PhotoDay.objects.all()
 
     # Получаем данные о погоде
     weather = get_weather()
@@ -1292,6 +1293,7 @@ def city_single(request, pk):
         'city_page': city_page,
         'weather': weather,
         'busel': busel,
+        'photo_day': photo_day,
     }
 
     return render(request, 'webapp/cities/city_single.html', context=context)
