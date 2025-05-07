@@ -118,10 +118,10 @@
                   {% for main_servic in main_services %}
                       <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
                           <div class="icon">
-                              <img src="{{ main_servic.icon.url }}">
+                              <a href="{{ main_servic.link }}"><img src="{{ main_servic.icon.url }}"></a>
                           </div>
                           <h4 class="title"><a href="{{ main_servic.link }}">{{ main_servic.name|translate_text }}</a></h4>
-                          <p class="description">{{ main_servic.description|translate_text|safe }}</p>
+                          <a href="{{ main_servic.link }}"><p class="description">{{ main_servic.description|translate_text|safe }}</p></a>
                       </div>
                   {% endfor %}
               </div>

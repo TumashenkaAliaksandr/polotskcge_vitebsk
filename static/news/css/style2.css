@@ -2866,6 +2866,12 @@ h2.typoh2{
         line-height: 1;
     }
 
+    .btn-container {
+        position: relative;
+        width: 80%;
+        margin: 0 auto 15% !important;
+    }
+
     .news-grid-left1 {
         float: left;
         width: 27%;
