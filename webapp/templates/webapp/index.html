@@ -110,7 +110,7 @@
               {% for desc in desc_services_title %}
                   <div class="section-title">
                       <h2>{{ desc.name|translate_text }}</h2>
-                      <p>{{ desc.description|translate_text| safe }}</p>
+                      <h5>{{ desc.description|translate_text| safe }}</h5>
                   </div>
               {% endfor %}
 
