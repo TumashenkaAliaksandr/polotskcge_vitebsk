@@ -601,7 +601,7 @@ body a:hover{
     background-size: cover; /* или любой другой размер, который вам нужен */
     width: auto; /* задайте ширину */
     /*height: 42.2%;*/
-    margin-bottom: 10%;
+    margin-bottom: 6%;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
     transition: filter 0.3s ease;
 }
@@ -1012,9 +1012,11 @@ position:relative;
     left: 40%;
 }
 .item img,.tab_list img,.news-grid-left1 img{
-    padding: .15em;
+    padding: .35em;
     /*background: #fff;*/
     border:1px dotted #919191;
+    object-fit: cover;    /* Сохраняет пропорции изображения */
+    object-position: center;
 }
 .floods-text{
 	margin:0.5em 0 0;
@@ -1116,11 +1118,12 @@ h2.resp-accordion {
 }
 h2.resp-accordion {
 	font-size:1em;
-	margin: 0;
 	padding: 10px 15px;
-	background:#3FBBC0;
+	background: linear-gradient(90deg, #62d5d8 0%, #019ea5 100%);
 	margin:10px 0;
 	color:#fff;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 }
 h2.resp-accordion:hover{
 	background:#27B311;
@@ -1768,6 +1771,7 @@ a.high {
     border-radius: 5px;
     /*filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));*/
     transition: filter 0.3s ease;
+    width: 393px;
 }
 
 .filters-h3 h3{
@@ -2135,7 +2139,7 @@ ul.wmuSliderPagination {
     opacity: 0.85;
 }
 .breaking-news-grids {
-    margin: 3em 0;
+    margin: 1em 0;
 }
 .breaking-news-grids-health {
   margin: 1em 0;
@@ -2146,7 +2150,7 @@ ul.wmuSliderPagination {
 }
 .breaking-news-grid-right-gridr{
 	float:right;
-	width:63%;
+	width: 260px;
 }
 
 .img-fixed-size-three {
@@ -2155,6 +2159,7 @@ ul.wmuSliderPagination {
     object-fit: cover; /* Этот свойство сохраняет соотношение сторон и обрезает изображение по нужным размерам */
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
     transition: filter 0.3s ease;
+    padding-buttom: 21px;
 }
 .img-fixed-size-erip {
     width: 185px; /* Установите желаемую ширину */
@@ -2956,6 +2961,7 @@ h2.typoh2{
         margin: 0;
         font-size: .78em;
         line-height: 1.8em;
+        display: none;
     }
 
 }
@@ -3366,7 +3372,7 @@ img.mobile1 {
 .blog-leftl {
     float: left;
     width: 18%;
-    background: #3FBBC0;
+    background: linear-gradient(90deg, #5bc9cc 0%, #009299 100%);
     padding: 1em;
     border-top: 4px solid #02575b;
 }
@@ -3707,6 +3713,8 @@ img.mobile1 {
 	}
 	.news-grid-right1 {
 		margin: 0;
+        padding-top: 30px;
+        padding-left: 21px;
 	}
 	a.high {
 		padding: 10px 14px 10px 25px !important;
@@ -3921,6 +3929,7 @@ img.mobile1 {
 	}
 	.upcoming-events-left h3, .upcoming-events-right h3, .breaking-news-grid-right h3, .gallery h3, .albums h3 {
 		margin: 0 0 2em;
+        width: auto!important;
 	}
 	.cl-effect-18 a::before, .cl-effect-18 a::after {
 		left: 10%;
@@ -4099,7 +4108,7 @@ img.mobile1 {
     .section-title {
         text-align: center;
         padding-bottom: 40px;
-        padding-top: 15px;
+        padding-top: 25px;
     }
 
     .section-title h3 {
@@ -4313,6 +4322,28 @@ img.mobile1 {
 	.blog-left, .blog-right {
 		padding: 0;
 	}
+    .blog-left {
+		margin-top: 255px;
+        padding-left: 19px;
+	}
+
+    .blog-leftl {
+        float: left;
+        width: 18%;
+        background: linear-gradient(90deg, #5bc9cc 0%, #009299 100%);
+        padding: 1em;
+        border-top: 4px solid #02575b;
+        z-index: 10;
+        position: absolute;
+    }
+
+    .blog-leftr {
+        float: right;
+        width: 100%;
+        position: inherit;
+        padding-right: 15px;
+    }
+
 	.blog-leftl h4 {
 		font-size: 14px;
 	}
@@ -4372,8 +4403,52 @@ img.mobile1 {
 		font-size: 1.1em;
 	}
 	.breaking-news-grids {
-		margin: 3.7em 0;
+		margin: 0.7em 0;
 	}
+
+    .delay-none-mobile {
+        display: none;
+    }
+
+    .news-grid-left ul li {
+        list-style-type: none;
+        padding: 1.5em 0;
+        border-bottom: 1px solid #D2D2D2;
+        margin-top: -25px;
+    }
+
+    #next {
+        right: 0;
+        margin-bottom: 23%;
+        filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+        transition: filter 0.3s ease;
+        border-radius: 50px;
+        width: 40px;
+        padding-left: 16px;
+    }
+
+
+    #prev {
+        left: 0;
+        margin-bottom: 23%;
+        filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+        transition: filter 0.3s ease;
+        border-radius: 50px;
+        width: 40px;
+        padding-left: 12px;
+    }
+
+    .tab_list img {
+        padding: .35em;
+        /*background: #fff;*/
+        border: 1px dotted #919191;
+        border-radius: 50px;
+        width: 88px;
+        height: 88px;
+        object-fit: cover;
+        object-position: center;
+    }
+
 	.baner-beaking p {
 		margin: 2em 0 0 0.2em;
 		width: 100%;
@@ -4415,9 +4490,18 @@ img.mobile1 {
 	.breaking-news-grid-right-gridr {
 		margin: 1em 0 0;
         width: 50%;
-        font-size: 0.75em;
-        padding-top: 10px;
+        /*font-size: 0.75em;*/
+        /*padding-top: 10px;*/
 	}
+
+    .breaking-news-grid-right-gridr h4 {
+        text-transform: uppercase;
+        font-size: 0.8em;
+        color: #000;
+        line-height: 1.7em;
+        margin: -25px 10px 0;
+    }
+
 	.slicebox-slider-grid {
 		margin: 2em 0 0;
 	}
@@ -4443,6 +4527,22 @@ img.mobile1 {
 	.breaking-news-grid-right {
 		margin: 3em 0 0;
 	}
+
+    .tab-content-weather-bg {
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        background-image: url(../images/gigi_centr_risunok.png);
+        background-repeat: no-repeat;
+        background-size: cover; /* или contain, в зависимости от вашего предпочтения */
+        background-position: center center;
+        width: 100%; /* задайте нужные размеры */
+        height: 225px; /* задайте нужные размеры */
+        position: relative; /* Добавляем относительное позиционирование */
+    }
+
     .video-container {
     width: 100%;
     height: 266px; /* Высота вашего видео */
@@ -4451,14 +4551,48 @@ img.mobile1 {
     }
 
     .video-grid-pos ul {
-        padding: 1.7em 5px 0px;
+        padding: 1.7em 5px 0;
         text-align: left;
         width: 121%;
     }
     .news-grid-right2{
 	float:right;
-	width:65%;
-	margin:0.2em 11% 0px;
+	width: 74%;
+	margin:0.2em 15% 0;
+    }
+
+    .news-grid-margin {
+        margin: 2.5em 0 0.5em;
+    }
+
+    .news-grid-left1 img {
+        padding: .35em;
+        background: #fff;
+        border: 1px dotted #919191;
+        height: 88px;
+        width: 88px;
+        object-fit: cover; /* Сохраняет пропорции изображения */
+        object-position: center; /* Центрирует изображение внутри блока */
+        display: block;
+        filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+        transition: filter 0.3s ease;
+        border-radius: 50px;
+    }
+
+    .news-grid-left1 {
+        margin-top: 0;
+        padding-top: 20px;
+    }
+
+
+    .features .image-main {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 240px;
+        border-radius: 7px;
+        box-shadow: 0 13px 15px -8px rgba(193, 215, 213, 0.5) !important;
+        margin-top: 25px;
     }
 
     .news-grid-right1 h5{
@@ -4487,11 +4621,12 @@ img.mobile1 {
 
 
     .img-fixed-size-erip {
-    width: 84.5%; /* Установите желаемую ширину */
-    height: 200px;
-    /*! margin-right: 8px; */
-    object-fit: cover; /* Этот свойство сохраняет соотношение сторон и обрезает изображение по нужным размерам */
-    padding-left: 19%;
+        width: 84.5%; /* Установите желаемую ширину */
+        height: 200px;
+        /*! margin-right: 8px; */
+        object-fit: cover; /* Этот свойство сохраняет соотношение сторон и обрезает изображение по нужным размерам */
+        padding-left: 19%;
+        margin-bottom: 30px;
     }
 
     .img-fixed-size-unp {
@@ -4878,6 +5013,9 @@ img.mobile1 {
     }
     .margin-padding-two {
         margin-top: 34%;
+    }
+    .margin-padding-t {
+        margin-top: 50%;
     }
     .margin-padding-two-a {
         margin-top: 40%;

@@ -21,7 +21,7 @@
         </div>
     </section>
     <!-- breaking-news -->
-    <div class="margin-padding-two"></div>
+    <div class="margin-padding-two margin-padding-t "></div>
     <div id="single" class="single main-bg">
         <div class="breaking-news">
             <div class="container">
@@ -72,34 +72,38 @@
 
                     <div class="col-md-4 breaking-news-grid-right">
                         <h3>{{ "Свежие новости"|translate_text }}</h3>
-                        <ul>
-                            {% for main_litle_news in model_blog_main|slice:":3" %}
-                                <li>
-                                    <div class="breaking-news-grid-right-grids">
-                                        <div class="breaking-news-grid-right-gridl img-fixed-size-three">
-                                            <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"><img
-                                                    src="{{ main_litle_news.logo_photo.url }}" alt=" "
-                                                    class="img-responsive"/></a>
+                        <div class="delay-none-mobile">
+                            <ul>
+                                {% for main_litle_news in model_blog_main|slice:":3" %}
+                                    <li>
+                                        <div class="breaking-news-grid-right-grids">
+                                            <div class="breaking-news-grid-right-gridl img-fixed-size-three">
+                                                <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"><img
+                                                        src="{{ main_litle_news.logo_photo.url }}" alt=" "
+                                                        class="img-responsive"/></a>
+                                            </div>
+                                            <div class="breaking-news-grid-right-gridr">
+                                                <h4>
+                                                    <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}">
+                                                        {{ main_litle_news.title|translate_text|safe|wordwrap:30|truncatechars_html:58 }}
+                                                    </a>
+                                                </h4>
+                                                <ul>
+                                                    <li>
+                                                        <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"><span
+                                                                class="fa fa-user-doctor"
+                                                                aria-hidden="true"></span> {{ main_litle_news.author|translate_text }}
+                                                            <label>|</label> {{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="clearfix"></div>
                                         </div>
-                                        <div class="breaking-news-grid-right-gridr">
-                                            <h4>
-                                                <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}">
-                                                    {{ main_litle_news.title|translate_text|safe|wordwrap:30|truncatechars_html:58 }}
-                                                </a>
-                                            </h4>
-                                            <ul>
-                                                <li><a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"><span
-                                                        class="fa fa-user-doctor"
-                                                        aria-hidden="true"></span> {{ main_litle_news.author|translate_text }}
-                                                    <label>|</label> {{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </li>
-                            {% endfor %}
-                        </ul>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -185,9 +189,9 @@
                                                          class="img-responsive"/>
                                                     <div class="story">
                                                         <p>{{ photo_of_the_day.description|safe|translate_text }}</p>
-                                                        <h3>
+                                                        <p>
                                                             <a href="{% url 'webapp:contacts' %}">{{ photo_of_the_day.name|safe|translate_text }}</a>
-                                                        </h3>
+                                                        </p>
                                                     </div>
                                                 </div>
                                             {% endfor %}
