@@ -1012,12 +1012,32 @@ position:relative;
     left: 40%;
 }
 .item img,.tab_list img,.news-grid-left1 img{
+    width: 180px; /* Фиксированная ширина */
+    height: 110px; /* Фиксированная высота */
     padding: .35em;
-    /*background: #fff;*/
-    border:1px dotted #919191;
-    object-fit: cover;    /* Сохраняет пропорции изображения */
+    background: #fff;
+    border: 1px dotted #919191;
+    object-fit: cover; /* Фото заполняет блок, лишнее обрезается */
     object-position: center;
+    display: block; /* Убирает нижний отступ у img */
+    box-sizing: border-box; /* padding и border входят в размеры */
+    border-radius: 13px;
 }
+
+.news-grid-2 img{
+    width: 160px; /* Фиксированная ширина */
+    height: 96px; /* Фиксированная высота */
+    padding: .35em;
+    background: #fff;
+    border: 1px dotted #919191;
+    object-fit: cover; /* Фото заполняет блок, лишнее обрезается */
+    object-position: center;
+    display: block; /* Убирает нижний отступ у img */
+    box-sizing: border-box; /* padding и border входят в размеры */
+    border-radius: 13px;
+}
+
+
 .floods-text{
 	margin:0.5em 0 0;
 }
@@ -3536,7 +3556,7 @@ img.mobile1 {
 
 @media only screen and (max-width: 768px) {
   .section-title h2 {
-    font-size: 25px;
+    font-size: 21px;
     font-weight: bold;
     text-transform: uppercase;
       margin-bottom: 0;
@@ -5082,6 +5102,7 @@ img.mobile1 {
             /*padding-top: 47%;*/
             /*margin-top: 47%;*/
             height: 10%;
+            padding-top: 43px;
         }
 
         .pagebanner-city {

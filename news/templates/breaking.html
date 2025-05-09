@@ -77,7 +77,7 @@
                                 {% for main_litle_news in model_blog_main|slice:":3" %}
                                     <li>
                                         <div class="breaking-news-grid-right-grids">
-                                            <div class="breaking-news-grid-right-gridl img-fixed-size-three">
+                                            <div class="breaking-news-grid-right-gridl news-grid-2 img img-fixed-size-three">
                                                 <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"><img
                                                         src="{{ main_litle_news.logo_photo.url }}" alt=" "
                                                         class="img-responsive"/></a>
@@ -428,7 +428,7 @@
                                 <li class="resp-tab-item grid1 resp-tab-active" aria-controls="tab_item-0" role="tab">
                                     <span>{{ "Популярные Новости"|translate_text }}</span>
                                 </li>
-                                <li class="resp-tab-item grid2" aria-controls="tab_Йitem-1" role="tab">
+                                <li class="resp-tab-item grid2" aria-controls="tab_item-1" role="tab">
                                     <span>{{ "Новости О природе"|translate_text }}</span>
                                 </li>
                                 <div class="clear"></div>
@@ -451,7 +451,7 @@
                                                         <li>{{ main_popular.pub_date|translate_text|date:"d.m.Y" }}</li>
                                                     </ul>
                                                     <p>
-                                                        <a href="{% url 'news:single' pk=main_popular.id slug=main_popular.slug %}">{{ main_popular.title|translate_text }}</a>
+                                                        <a href="{% url 'news:single' pk=main_popular.id slug=main_popular.slug %}">{{ main_popular.title|translate_text|slice:":45" }}{% if main_popular.title|translate_text|length > 45 %}...{% endif %}</a>
                                                     </p>
                                                 </div>
                                                 <div class="clearfix"></div>
