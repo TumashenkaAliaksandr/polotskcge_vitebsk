@@ -31,7 +31,7 @@ a:hover {
 
 .hotline {
     padding: 15px 0;
-    padding-right: 0px;
+    padding-right: 0;
     padding-left: 30px;
     overflow: hidden;
 }
@@ -87,8 +87,8 @@ a:hover {
     top: -3px;
     right: -1px;
     font-size: 14px;
-    margin: 0px;
-    border-radius: 0px;
+    margin: 0;
+    border-radius: 0;
     color: #fff;
 }
 
@@ -300,7 +300,7 @@ h6 {
     z-index: 997;
     padding: 20px 0;
     top: 40px;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
     opacity: 0.98;
 }
 
@@ -311,7 +311,7 @@ h6 {
         z-index: 997;
         padding: 16px 0;
         top: 30%; /* Добавлено значение высоты хедера */
-        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
         opacity: 0.95;
         position: fixed;
         width: 100%;
@@ -391,7 +391,7 @@ h6 {
 
     #header .logo img {
         max-height: 35px;
-        margin-right: 0px;
+        margin-right: 0;
     }
 }
 
@@ -626,7 +626,7 @@ h6 {
     opacity: 1;
     visibility: visible;
     background: #fff;
-    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    box-shadow: 0 0 30px rgba(127, 137, 161, 0.25);
 }
 
 .navbar-mobile .dropdown ul li {
@@ -1028,7 +1028,7 @@ h6 {
 .news-grid-right2 {
     float: right;
     width: 90%;
-    margin: 1.2em 27px 0px;
+    margin: 1.2em 27px 0;
 }
 
 
@@ -1270,19 +1270,19 @@ section#footer {
 }
 
 .main-bg-health_days {
-    padding: 0px 0 35px;
+    padding: 0 0 35px;
     background: linear-gradient(rgba(255, 255, 255, 0.95), rgb(236, 248, 249, 0.97)), url('../img/gigi_centr_zoj.jpg') center/cover;
     background-attachment: fixed;
 }
 
 .news-main {
-    padding: 0px 0 35px;
+    padding: 0 0 35px;
     background: linear-gradient(rgba(255, 255, 255, 0.96), rgb(236, 248, 249, 0.98)), url('../img/gigi_centr_news2.jpg') center/cover;
     background-attachment: fixed;
 }
 
 section#clocks {
-    padding: 0px 0 25px;
+    padding: 0 0 25px;
     background: linear-gradient(rgba(255, 255, 255, 0.93), rgb(236, 248, 249, 0.95)), url('../img/gigi_centr_back.jpg') center/cover;
     background-attachment: fixed;
 }
@@ -1389,7 +1389,7 @@ section#clocks-two {
 .map-wrapper {
     border: 1px solid #ccc;
     border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 255, 0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
     display: inline-block;
     overflow: hidden;
     width: 85%;
@@ -1754,7 +1754,7 @@ section#clocks-two {
 
     .main-info-tele {
         position: inherit;
-        height: 340px;
+        height: 300px;
         background: url('../../assets/img/tv.png') no-repeat center center;
         background-size: contain;
         z-index: 10;
@@ -1960,7 +1960,7 @@ section#clocks-two {
         align-items: center;
         justify-content: center;
         text-align: left;
-        margin-bottom: 0px;
+        margin-bottom: 0;
         padding: 21px 0;
     }
 }
@@ -1968,8 +1968,8 @@ section#clocks-two {
 @media (max-width: 320px) {
     .haderphone-mobile a {
         margin-top: 5px;
-        margin-bottom: 0px;
-        margin-left: 0px;
+        margin-bottom: 0;
+        margin-left: 0;
         color: #ffffff;
         font-size: 15px;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
@@ -1987,7 +1987,7 @@ section#clocks-two {
         /*align-items: center;*/
         /*justify-content: center;*/
         text-align: left;
-        margin-bottom: 0px;
+        margin-bottom: 0;
         padding: 10px 0;
     }
 
@@ -2022,13 +2022,13 @@ section#clocks-two {
 
 @media (max-width: 320px) {
   .haderphone-mobile {
-    margin-top: 0%;
+    margin-top: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: left;
-    margin-bottom: 0px;
+    margin-bottom: 0;
     padding: 13px 0;
   }
 }
@@ -4513,7 +4513,7 @@ section#clocks-two {
         align-items: center;
         justify-content: center;
         text-align: left;
-        margin-bottom: 0px;
+        margin-bottom: 0;
         padding: 5px 0;
     }
 
@@ -4537,7 +4537,7 @@ section#clocks-two {
         width: 157px;
         height: 105px;
         object-fit: cover;
-        margin-left: 0px;
+        margin-left: 0;
         margin-right: 20px;
         margin-bottom: 21px;
     }
