@@ -2171,7 +2171,7 @@ section#clocks-two {
 
 
 .pagebanner-city-farin {
-    background: url(../img/gigi_centr_far_city.jpg) no-repeat; /* gigi_centr_three_bogat.jpg */
+    background: url(../img/gigi_centr_single_city.jpg) no-repeat; /* gigi_centr_three_bogat.jpg */
     background-size: 100%;
     background-attachment: fixed;
     height: 310px;
@@ -2344,9 +2344,8 @@ section#clocks-two {
 
 
 .pagebanner-city {
-    background: url(../img/gigi_centr_heath_city_land.jpg) no-repeat;
-    background-size: 100%;
-    background-attachment: fixed;
+    background: url(../img/gigi_center_city_h.jpg) no-repeat center center fixed;
+    background-size: contain;
     height: 310px;
     width: 100%;
 }
@@ -3688,7 +3687,7 @@ section#clocks-two {
 
     .hotline {
         padding: 5px 0;
-        padding-right: 0px;
+        padding-right: 0;
         padding-left: 13px;
         overflow: hidden;
     }
@@ -3736,7 +3735,7 @@ section#clocks-two {
 }
 
 .faq .faq-list p {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     padding: 2px 0 0 10px;
 }
 

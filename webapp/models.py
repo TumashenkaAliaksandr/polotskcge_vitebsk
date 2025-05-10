@@ -320,6 +320,7 @@ class LaboratoryFruitVegetable(models.Model):
     desc = models.CharField(max_length=500, default='Описание')
     paket = models.TextField(default='Пакет исследований')
     cost = models.CharField(max_length=300, default='Цена', blank=True, null=True)
+    cost_info = models.TextField(max_length=500, default='Цена указана по состоянию на:')
 
     @property
     def cost_display(self):

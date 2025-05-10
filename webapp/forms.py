@@ -809,6 +809,7 @@ class LaboratoryFruitVegetableForm(forms.ModelForm):
             'cost': SummernoteWidget(),
             'name': SummernoteWidget(),
             'paket': SummernoteWidget(),
+            'cost_info': SummernoteWidget(),
         }
 
 

@@ -191,9 +191,10 @@
                                              class="img-responsive"/>
                                         <div class="story">
                                             <p>{{ photo_of_the_day.description|safe|translate_text }}</p>
-                                            <h3>
+                                            <br>
+                                            <p>
                                                 <a href="{% url 'webapp:contacts' %}">{{ photo_of_the_day.name|safe|translate_text }}</a>
-                                            </h3>
+                                            </p>
                                         </div>
                                     </div>
                                 {% endfor %}

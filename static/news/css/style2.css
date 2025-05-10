@@ -2218,6 +2218,8 @@ ul.wmuSliderPagination {
     /*height: 105px;*/
     object-fit: cover;
     margin-left: 45px;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
 
 }
 
