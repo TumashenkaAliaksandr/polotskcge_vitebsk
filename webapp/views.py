@@ -11,16 +11,7 @@ from datetime import timedelta
 
 def base_main(request):
     """main base template"""
-    logo_main = Logo.objects.all()
-    info_contact = ContactInfoHad.objects.first()
-
-
-    context = {
-        'logo_main': logo_main,
-        'info_contact': info_contact,
-    }
-
-    return render(request, 'main/base.html', context=context)
+    return render(request, 'main/base.html')
 
 
 def index(request):
@@ -44,6 +35,7 @@ def index(request):
     # Передаём слайды, связанные с этим слайдером, уже отсортированные по order
     slides = Slide.objects.select_related('slider').order_by('slider', 'order').all()
     photo_day = PhotoDay.objects.all()
+    info_contact = ContactInfoHad.objects.first()
 
     context = {
         'desc_services_title': desc_services_title,
@@ -63,6 +55,7 @@ def index(request):
         'erip_info': erip_info,
         'current_language': current_language,
         'photo_day': photo_day,
+        'info_contact': info_contact,
     }
 
     return render(request, 'webapp/index.html', context=context)

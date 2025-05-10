@@ -476,7 +476,7 @@
                                                         <li>{{ main_nature.pub_date|translate_text|date:"d.m.Y" }}</li>
                                                     </ul>
                                                     <p>
-                                                        <a href="{% url 'news:single' pk=main_nature.id slug=main_nature.slug %}">{{ main_nature.title|translate_text }}</a>
+                                                        <a href="{% url 'news:single' pk=main_nature.id slug=main_nature.slug %}">{{ main_nature.title|translate_text|slice:":45" }}</a>
                                                     </p>
                                                 </div>
                                                 <div class="clearfix"></div>

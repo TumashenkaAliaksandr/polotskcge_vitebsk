@@ -58,9 +58,9 @@
     <div class="container d-flex align-items-center justify-content-center justify-content-md-between">
         <div class="align-items-center d-none d-md-flex">
             <i class="bi bi-clock"></i>
-            <i class="align-items-center"></i> {{ "Пн - Пт,"|translate_text }} 8.00 - 17.00
+            <i class="align-items-center"></i> {{ info_contact.working_days|safe|translate_text }}
             <i class="bi bi-cup-hot"></i>
-            <i class="align-items-center"></i>{{ "Обед:"|translate_text }} 13.00 - 14.00
+            <i class="align-items-center"></i>{{ info_contact.lunch_time|safe|translate_text }}
         </div>
         <div class="header-icons">
 {#            <label for="fontSizeSelector"><i>Aa</i></label>#}
@@ -87,13 +87,13 @@
             </form>
         </div>
         <div class="haderphone d-flex align-items-center">
-            <a href="tel:+80214493168"><i class="bi bi-phone"></i>{{ "Наш телефон:" |translate_text }} 8 (0214) 49 45 81</a>
-            <a href=""><i class="bi bi-mailbox-flag"></i>{{ "Наша почта:" |translate_text }} polotzk_hyg@vitebsk.by</a>
+            <a href="tel:{{ info_contact.phone_number|default:''|cut:' ' }}"><i class="bi bi-phone"></i>{{ info_contact.phone_number|safe|translate_text }}</a>
+            <a href=""><i class="bi bi-mailbox-flag"></i>{{ info_contact.email_address|safe|translate_text }}</a>
         </div>
     </div>
     <div class="haderphone-mobile">
-        <a href=""><i class="bi bi-clock"></i> {{ "Пн - Пт,"|translate_text }} 8.00 - 17.00</a>
-        <a href=""><i class="bi bi-egg-fried"></i> {{ "Обед:" |translate_text }} 12.00 - 13.00</a>
+        <a href=""><i class="bi bi-clock"></i> {{ info_contact.working_days|safe|translate_text }}</a>
+        <a href=""><i class="bi bi-egg-fried"></i> {{ info_contact.lunch_time|safe|translate_text }}</a>
     </div>
     <div class="align-items-center-mobile">
         <div class="header-icons-mobile">
@@ -104,9 +104,9 @@
         </div>
     </div>
     <div class="haderphone-mobile">
-        <a href="tel:+80214493168"><i class="bi bi-phone"></i>{{ "Наш телефон:"|translate_text }} 8 (0214) 49 45 81</a>
+        <a href="tel:{{ info_contact.phone_number|default:''|cut:' ' }}"><i class="bi bi-phone"></i>{{ info_contact.phone_number|safe|translate_text }}</a>
         <a href=""><i class=""></i></a>
-        <a href=""><i class="bi bi-mailbox-flag"></i>{{ "Наша почта:"|translate_text }} polotzk_hyg@vitebsk.by</a>
+        <a href=""><i class="bi bi-mailbox-flag"></i>{{ info_contact.lunch_time|safe|translate_text }}</a>
     </div>
 </div>
 
@@ -116,9 +116,11 @@
     <div class="container d-flex align-items-center">
         <div class="logos-container">
         </div>
-        <a href="{% url 'webapp:home' %}" class="logo me-auto"><img
-                src="{% static 'webapp/assets/img/epigigicentr_polock_logo.png' %}" alt=""></a>
-
+        <a href="{% url 'webapp:home' %}" class="logo me-auto">
+            {% if logo_main %}
+                <img src="{{ logo_main.icon.url }}" alt="{{ logo_main.name }}">
+            {% endif %}
+        </a>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <h1 class="logo me-auto"><a href="index.html">Medicio</a></h1> -->
 
