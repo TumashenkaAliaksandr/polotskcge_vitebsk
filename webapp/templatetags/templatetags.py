@@ -166,3 +166,11 @@ def update_translation_json(lang: str, key: str, value: str):
 def get_all_translations(lang: str) -> dict:
     """Получение всех переводов для языка"""
     return load_translations(lang)
+
+
+@register.filter
+def insert_br_after_n_chars(value, n=28):
+    if not value or len(value) <= n:
+        return value
+    return value[:n] + '<br>' + value[n:]
+

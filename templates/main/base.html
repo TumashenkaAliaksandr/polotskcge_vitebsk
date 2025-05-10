@@ -88,7 +88,7 @@
         </div>
         <div class="haderphone d-flex align-items-center">
             <a href="tel:{{ info_contact.phone_number|default:''|cut:' ' }}"><i class="bi bi-phone"></i>{{ info_contact.phone_number|safe|translate_text }}</a>
-            <a href=""><i class="bi bi-mailbox-flag"></i>{{ info_contact.email_address|safe|translate_text }}</a>
+            <a href="mailto:{{ info_contact.email_address|default:'' }}"><i class="bi bi-mailbox-flag"></i>{{ info_contact.email_address|safe|translate_text }}</a>
         </div>
     </div>
     <div class="haderphone-mobile">
@@ -106,7 +106,7 @@
     <div class="haderphone-mobile">
         <a href="tel:{{ info_contact.phone_number|default:''|cut:' ' }}"><i class="bi bi-phone"></i>{{ info_contact.phone_number|safe|translate_text }}</a>
         <a href=""><i class=""></i></a>
-        <a href=""><i class="bi bi-mailbox-flag"></i>{{ info_contact.lunch_time|safe|translate_text }}</a>
+        <a href="mailto:{{ info_contact.email_address|default:'' }}"><i class="bi bi-mailbox-flag"></i>{{ info_contact.email_address|safe|translate_text }}</a>
     </div>
 </div>
 
@@ -337,12 +337,12 @@
                     <div class="footer-info">
                         <h3>{{ "Полоцкий ЦГЭ"|translate_text }}</h3>
                         <p>
-                            {{ "211400, г. Полоцк,"|translate_text }} <br>
-                            {{ "ул. Юбилейная, д.7б, пом.2"|translate_text }}<br><br>
-                            <strong>{{ "Телефон:"|translate_text }}</strong>
-                            <a href="tel:+80214494581">8 (0214) 49 45 81</a><br> <!-- Сделано кликабельным -->
-                            <strong>{{ "Почта:"|translate_text }}</strong> <a
-                                href="mailto:polotzk_hyg@vitebsk.by">polotzk_hyg@vitebsk.by</a><br>
+                            <strong>{{ "🚩 Адрес:"|translate_text }}</strong> <br>
+                            {{ contacts_footer.adres|insert_br_after_n_chars|safe|translate_text }}<br><br>
+                            <strong>{{ "☎️ Телефон:"|translate_text }}</strong>
+                            <a href="tel:{{ contacts_footer.phone|default:''|cut:' ' }}">{{ contacts_footer.phone|safe|translate_text }}</a> <!-- Сделано кликабельным -->
+                            <strong>{{ "📧 Почта:"|translate_text }}</strong>
+                            <a href="mailto:{{ contacts_footer.mail|default:'' }}">{{ contacts_footer.mail|safe|translate_text }}</a>
                             <!-- Сделано кликабельным -->
                         </p>
                     </div>
