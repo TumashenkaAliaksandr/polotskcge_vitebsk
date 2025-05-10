@@ -73,7 +73,15 @@ def index(request):
 def info_main(request):
     """Main Page Main Info of Clinic"""
 
-    return render(request, 'webapp/informations/info_main.html')
+    centre_news = CentreNews.objects.all().order_by('-pub_date')
+    contacts_page = Contacts.objects.all()
+
+    context = {
+        'centre_news': centre_news,
+        'contacts_page': contacts_page,
+    }
+
+    return render(request, 'webapp/informations/info_main.html', context=context)
 
 
 def news_block(request):
@@ -1225,10 +1233,12 @@ def contacts(request):
     """Contacts template"""
     features = Featured.objects.all()
     interactiv = Interactive.objects.all()
+    contacts_info = Contacts.objects.all()
 
     context = {
         'features': features,
         'interactiv': interactiv,
+        'contacts_info': contacts_info,
     }
 
     return render(request, 'webapp/contacts.html', context=context)

@@ -67,6 +67,7 @@
                     <div class="section-title">
                         <h2>{{ "Контакты"|translate_text }}</h2>
                     </div>
+                {% for main_contact in contacts_info %}
                 <div class="container">
                     <div class="row mt-5">
                         <div class="col-lg-6">
@@ -74,8 +75,8 @@
                                 <div class="col-md-12">
                                     <div class="info-box">
                                         <i class="bx bx-map"></i>
-                                        <h3>{{ "Наш Адрес"|translate_text }}</h3>
-                                        <p>{{ "211400 г.Полоцк, ТЦ.Евролюкс ул.Юбилейная, д.7(б), пом.2"|translate_text }}</p>
+                                        <h3>{{ main_contact.name|translate_text }}</h3>
+                                        <p>{{ main_contact.adres|safe|translate_text }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -87,14 +88,14 @@
                                         <div class="info-box">
                                             <i class="bx bx-envelope"></i>
                                             <h3>{{ "Наша Почта"|translate_text }}</h3>
-                                            <p>polotzk_hyg@vitebsk.by</p>
+                                            <p>{{ main_contact.mail|safe }}</p>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="info-box">
                                             <i class="bx bx-phone-call"></i>
                                             <h3>{{ "Телефон Горячей линии"|translate_text }}</h3>
-                                            <p>+375(214)49-45-81</p>
+                                            <p>{{ main_contact.phone }}</p>
                                         </div>
                                     </div>
 
@@ -115,6 +116,7 @@
                         </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </section>
         <!-- End Contact Section -->

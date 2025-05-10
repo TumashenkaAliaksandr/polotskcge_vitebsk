@@ -42,6 +42,7 @@
                         </iframe>
                     </div>
                 </div>
+                {% for main_contact in contacts_page %}
                 <div class="container">
                     <div class="row mt-5">
                         <div class="col-lg-6">
@@ -49,66 +50,89 @@
                                 <div class="col-md-12">
                                     <div class="info-box">
                                         <i class="bx bx-map"></i>
-                                        <h3>{{ "Наш Адрес"|translate_text }}</h3>
-                                        <p>{{ "211400 г.Полоцк, ТЦ.Евролюкс ул.Юбилейная, д.7(б), пом.2"|translate_text }}</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="info-box mt-4">
-                                        <i class="bx bx-envelope"></i>
-                                        <h3>{{ "Наша Почта"|translate_text }}</h3>
-                                        <p>polotzk_hyg@vitebsk.by</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="info-box mt-4">
-                                        <i class="bx bx-phone-call"></i>
-                                        <h3>{{ "Телефон Горячей линии"|translate_text }}</h3>
-                                        <p>+375(214)49-45-81</p>
+                                        <h3>{{ main_contact.name|safe|translate_text }}</h3>
+                                        <p>{{ main_contact.adres|safe|translate_text }}</p>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-
                         <div class="col-lg-6">
-                            <form action="{% static 'webapp/forms/contact.php' %}" method="post" role="form"
-                                  class="php-email-form">
-                                <div class="row">
-                                    <div class="col-md-6 form-group">
-                                        <input type="text" name="name" class="form-control" id="name"
-                                               placeholder="Ваше Имя"
-                                               required="">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-6">
+                                        <div class="info-box">
+                                            <i class="bx bx-envelope"></i>
+                                            <h3>{{ "Наша Почта"|translate_text }}</h3>
+                                            <p>{{ main_contact.mail|safe }}</p>
+                                        </div>
                                     </div>
-                                    <div class="col-md-6 form-group mt-3 mt-md-0">
-                                        <input type="email" class="form-control" name="email" id="email"
-                                               placeholder="Ваша Почта" required="">
+                                    <div class="col-md-6">
+                                        <div class="info-box">
+                                            <i class="bx bx-phone-call"></i>
+                                            <h3>{{ "Телефон Горячей линии"|translate_text }}</h3>
+                                            <p>{{ main_contact.phone }}</p>
+                                        </div>
                                     </div>
+
                                 </div>
-                                {#              <div class="form-group mt-3">#}
-                                {#                <input type="text" class="form-control" name="subject" id="subject" placeholder="Телефон" required="">#}
-                                {#              </div>#}
-                                <div class="form-group mt-3">
-                              <textarea class="form-control" name="message" rows="7" placeholder="Сообщение"
-                                        required=""></textarea>
-                                </div>
-                                <div class="my-3">
-                                    <div class="loading">Loading</div>
-                                    <div class="error-message"></div>
-                                    <div class="sent-message">{{ "Ваше сообщение отправлено!"|translate_text }}</div>
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit">{{ "Отправить сообщение"|translate_text }}</button>
-                                </div>
-                            </form>
+                            </div>
                         </div>
-
                     </div>
-
                 </div>
+                {% endfor %}
             </div>
         </section>
         <!-- End Contact Section -->
+
+        <!-- ======= breaking-news Section ======= -->
+        <section id="featured-services" class="featured-services main-bg-bogatyrskaya">
+            <div class="container" data-aos="fade-up">
+                <div class="breaking-news-grids-bottom">
+                    <div class="banner-bottom-grids">
+                        {% for main_litle_news in centre_news %}
+                            <div class="col-md-3 banner-bottom-grid-left">
+                                <div class="br-bm-gd-lt-fon">
+                                    <a href="{{ main_litle_news.link }}"><img
+                                            src="{{ main_litle_news.img.url }}" alt=" "
+                                            class="img-responsive"/></a>
+                                    <div class="overlay">
+                                        <div class="arrow-left"></div>
+                                        <div class="rectangle"></div>
+                                    </div>
+                                    <div class="health-pos">
+                                        <div class="health">
+                                            <ul>
+                                                <li>
+                                                    <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|date:"d.m.Y" }}</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h3>{{ main_litle_news.desc|translate_text|safe|wordwrap:10|truncatechars_html:58 }}</h3>
+                                        <div class="dummy">
+                                            <a href="{{ main_litle_news.link }}">
+                                                <p>{{ main_litle_news.desc_hover|translate_text|safe }}</p></a>
+                                        </div>
+                                        <div class="com-heart-health">
+                                            <ul>
+                                                <li><a href="{{ main_litle_news.link }}"><span
+                                                        class="fa fa-user-doctor"
+                                                        aria-hidden="true"></span> {{ main_litle_news.author|translate_text }}
+                                                </a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Featured Services Section -->
 
     </main><!-- End #main -->
 

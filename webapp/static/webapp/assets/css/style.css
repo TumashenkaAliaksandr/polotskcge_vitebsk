@@ -3820,6 +3820,10 @@ section#clocks-two {
     margin: 10px 0;
 }
 
+.nbs-flexisel-inner video {
+    border-radius: 5px;
+}
+
 .contact .info-box p {
     padding: 0;
     line-height: 24px;
@@ -3936,6 +3940,7 @@ section#clocks-two {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border-radius: 5px;
 }
 
 /* Перекрывающее изображение приостановки видео */

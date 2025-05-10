@@ -604,9 +604,10 @@ body a:hover{
     margin-bottom: 6%;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
     transition: filter 0.3s ease;
+    border-radius: 5px;
 }
 .br-bm-gd-lt1 {
-    background: url(../images/gigi_centr_sport2.jpg) no-repeat 0px 0px;
+    background: url(../images/gigi_centr_sport2.jpg) no-repeat 0 0;
     display: block;
     background-size: cover; /* или любой другой размер, который вам нужен */
     width: 300px; /* задайте ширину */
@@ -2127,6 +2128,7 @@ ul.wmuSliderPagination {
 	-moz-background-size:cover;
 	-o-background-size:cover;
 	-ms-background-size:cover;
+    border-radius: 5px;
 }
 
 .baner-beaking1{
