@@ -6,7 +6,11 @@
 {% block content %}
     <!-- ======= Breadcrumbs Section ======= -->
     <!-- pagebanner -->
-    <section id="pagebanner" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_centr.png' %}{% endif %}')">
+    <section id="pagebanner1" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_breadcr_recurces.jpeg' %}{% endif %}')">
+    <div class="brcr-title">
+        <div class="overlay"></div>
+        <h2>Новости Центра</h2>
+    </div>
     </section>
     <!-- End Pagebanner -->
     <section class="breadcrumbs_contacts">
@@ -47,7 +51,7 @@
                         </script>
                     </div>
                 {% endfor %}
-                <div class="breaking-news-grids">
+                <div class="breaking-news-grids margin-padding2">
                     <div class="col-md-8 breaking-news-grid-left">
                         <div class="wmuSlider example1">
                             {% for main_preview in preview %}

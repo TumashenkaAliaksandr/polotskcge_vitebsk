@@ -298,7 +298,7 @@ h6 {
     background: #fff;
     transition: all 0.5s;
     z-index: 997;
-    padding: 20px 0;
+    padding: 13px 0;
     top: 40px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
     opacity: 0.98;
@@ -310,7 +310,7 @@ h6 {
         transition: all 0.5s;
         z-index: 997;
         padding: 16px 0;
-        top: 30%; /* Добавлено значение высоты хедера */
+        top: 28%; /* Добавлено значение высоты хедера */
         box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
         opacity: 0.95;
         position: fixed;
@@ -1838,7 +1838,7 @@ section#clocks-two {
         background-color: rgba(20, 58, 59, 0.9); /* bluish color with 0.7 opacity */
         background-blend-mode: overlay;
         color: #fff;
-        height: 30%;
+        height: 28%;
         font-size: initial;
         font-weight: 600;
         z-index: 996;
@@ -2064,6 +2064,52 @@ section#clocks-two {
     width: 100%;
 }
 
+#pagebanner1 .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(175, 251, 255, 0.2); /* затемнение для контраста */
+    z-index: 1;
+    border-radius: 7px;
+}
+
+.brcr-title {
+    position: absolute;
+    z-index: 2;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+    padding: 0 15px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    overflow: hidden;
+    color: white;
+    margin-top: 100px;
+    margin-left: 38%;
+    margin-right: 38%;
+    text-decoration-color: #fff;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
+}
+.brcr-title h2 {
+    font-size: 40px;
+    font-weight: 700;
+    font-family: "Microsoft Sans Serif", Arial, sans-serif;
+}
+
+
+#pagebanner1 {
+    background-color: rgba(0, 255, 255, 0.1);
+    background: url(../img/doctor_gigi_centr.jpg) no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    height: 300px;
+    width: 100%;
+    background-position: center calc(0% - 175px);
+}
+
 #pagebanner_two {
     background: url(../img/gigi_centr_perechen.png) no-repeat;
     background-size: 100%;
@@ -2176,6 +2222,10 @@ section#clocks-two {
     background-attachment: fixed;
     height: 310px;
     width: 100%;
+    object-fit: contain;
+    align-items: flex-end;
+    overflow: hidden;
+    background-position: center calc(0% - 175px);
 }
 
 
@@ -3796,13 +3846,19 @@ section#clocks-two {
 .contact .info-box {
     color: #444444;
     text-align: center;
-    box-shadow: 0 0 20px rgba(214, 215, 216, 0.57);
     padding: 20px 0 30px 0;
     margin-left: 15px;
+    border-radius: 10px;
     filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
     transition: filter 0.3s ease;
-    border-radius: 10px;
+    box-shadow: 0 13px 15px -8px rgba(193, 215, 213, 0.5) !important;
 }
+
+
+.margin-padding2 {
+    padding-top: 25px!important;
+}
+
 
 .contact .info-box i {
     font-size: 32px;
