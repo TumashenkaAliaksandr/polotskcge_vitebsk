@@ -49,7 +49,7 @@
                         {% for main_litle_news in news_main|slice:":3" %}
                             <li>
                                 <div class="breaking-news-grid-right-grids">
-                                    <div class="breaking-news-grid-right-gridl img-fixed-size-three">
+                                    <div class="breaking-news-grid-right-gridl news-grid-2 img img-fixed-size-three">
                                         <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"><img
                                                 src="{{ main_litle_news.logo_photo.url }}" alt=" "
                                                 class="img-responsive"/></a>
@@ -70,6 +70,7 @@
                                         </ul>
                                     </div>
                                     <div class="clearfix"></div>
+                                    <div class="margin-padding-b"></div>
                                 </div>
                             </li>
                         {% endfor %}
