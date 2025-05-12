@@ -87,13 +87,14 @@
 
             <div class="row">
                 {% for main_servic in main_services %}
-                    <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
+                    <a href="{{ main_servic.link }}" class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in"
+                       data-aos-delay="100" style="text-decoration: none; color: inherit;">
                         <div class="icon">
-                            <img src="{{ main_servic.icon.url }}">
+                            <img src="{{ main_servic.icon.url }}" alt="{{ main_servic.name }}">
                         </div>
-                        <h4 class="title"><a href="{{ main_servic.link }}">{{ main_servic.name|translate_text }}</a></h4>
-                        <p class="description">{{ main_servic.description |translate_text| safe }}</p>
-                    </div>
+                        <h4 class="title">{{ main_servic.name|translate_text }}</h4>
+                        <p class="description">{{ main_servic.description|translate_text|safe }}</p>
+                    </a>
                 {% endfor %}
             </div>
 

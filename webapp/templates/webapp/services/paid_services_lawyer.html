@@ -70,7 +70,7 @@
             <div class="row">
                 {% for main_lawyer_inf in all_typical_news %}
                     <div class="icon-box mt-lg-0 paid_services" data-aos="fade-up" data-aos-delay="100">
-                        <a href="{% url 'webapp:paid_services_lawyer_single' pk=main_lawyer_inf.id %}">{{ main_lawyer_inf.name_lawyer|translate_text|safe }}</a>
+                        <a href="{% url 'webapp:paid_services_lawyer_single' pk=main_lawyer_inf.id %}">🧩 {{ main_lawyer_inf.name_lawyer|translate_text|safe }}</a>
                         <a href="{% url 'webapp:paid_services_lawyer_single' pk=main_lawyer_inf.id %}"><p
                                 class="description">{{ main_lawyer_inf.description_small|translate_text|safe }}</p></a>
                     </div>
