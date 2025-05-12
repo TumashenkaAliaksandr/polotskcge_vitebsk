@@ -2468,11 +2468,11 @@ ul.wmuSliderPagination {
 	margin:0 !important;
 }
 
-.single-bg {
-  padding: 35px 0 35px;
-  background: linear-gradient(rgba(255, 255, 255, 0.98), rgba(248, 253, 255, 0.99)), url('../../../news/static/news/images/gigi_centr_polock.png') center/cover;
-  background-attachment: fixed;
-}
+/*.single-bg {*/
+/*  padding: 35px 0 35px;*/
+/*  background: linear-gradient(rgba(255, 255, 255, 0.98), rgba(248, 253, 255, 0.99)), url('../../../news/static/news/images/gigi_centr_polock.png') center/cover;*/
+/*  background-attachment: fixed;*/
+/*}*/
 /*-- //breaking-news --*/
 /*-- contact --*/
 .typo,.contact,.slicebox-slider,.single{
