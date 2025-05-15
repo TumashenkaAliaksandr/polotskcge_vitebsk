@@ -194,7 +194,7 @@
                                                     <div class="story">
                                                         <p>{{ photo_of_the_day.description|safe|translate_text }}</p>
                                                         <p>
-                                                            <a href="{% url 'webapp:contacts' %}">{{ photo_of_the_day.name|safe|translate_text }}</a>
+                                                            <a href="{% url 'webapp:contacts' %}">{{ photo_of_the_day.name|translate_text|safe }}</a>
                                                         </p>
                                                     </div>
                                                 </div>

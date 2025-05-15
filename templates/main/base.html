@@ -340,9 +340,9 @@
                             <strong>{{ "🚩 Адрес:"|translate_text }}</strong> <br>
                             {{ contacts_footer.adres|insert_br_after_n_chars|safe|translate_text }}<br><br>
                             <strong>{{ "☎️ Телефон:"|translate_text }}</strong>
-                            <a href="tel:{{ contacts_footer.phone|default:''|cut:' ' }}">{{ contacts_footer.phone|safe|translate_text }}</a> <!-- Сделано кликабельным -->
+                            <a href="tel:{{ contacts_footer.phone|default:''|cut:' ' }}">{{ contacts_footer.phone|translate_text|safe }}</a> <!-- Сделано кликабельным -->
                             <strong>{{ "📧 Почта:"|translate_text }}</strong>
-                            <a href="mailto:{{ contacts_footer.mail|default:'' }}">{{ contacts_footer.mail|safe|translate_text }}</a>
+                            <a href="mailto:{{ contacts_footer.mail|default:'' }}">{{ contacts_footer.mail|translate_text|safe }}</a>
                             <!-- Сделано кликабельным -->
                         </p>
                     </div>

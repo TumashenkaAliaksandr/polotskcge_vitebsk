@@ -50,9 +50,14 @@
                             <li>
                                 <div class="breaking-news-grid-right-grids">
                                     <div class="breaking-news-grid-right-gridl news-grid-2 img img-fixed-size-three">
-                                        <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"><img
-                                                src="{{ main_litle_news.logo_photo.url }}" alt=" "
-                                                class="img-responsive"/></a>
+                                        {% if main_litle_news.logo_photo %}
+                                            <img src="{{ main_litle_news.logo_photo.url }}" alt=" "
+                                                 class="img-responsive"/>
+                                        {% else %}
+                                            <img src="{% static 'webapp/assets/img/gigi_centr_gazeta.jpg' %}" alt=" "
+                                                 class="img-responsive"/>
+                                        {% endif %}
+
                                     </div>
                                     <div class="breaking-news-grid-right-gridr">
                                         <h4>
@@ -106,7 +111,7 @@
                                     <div class="story">
                                         <p>{{ photo_of_the_day.description|safe|translate_text }}</p>
                                         <br>
-                                    <p><a href="{% url 'webapp:contacts' %}">{{ photo_of_the_day.name|safe|translate_text }}</a></p>
+                                    <p><a href="{% url 'webapp:contacts' %}">{{ photo_of_the_day.name|translate_text|safe }}</a></p>
                                     </div>
                                 </div>
                             {% endfor %}
