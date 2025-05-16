@@ -899,7 +899,7 @@ section#clocks-two {
 .map-wrapper {
   border: 1px solid #ccc;
   border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 255, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
   display: inline-block;
   overflow: hidden;
   width: 85%;

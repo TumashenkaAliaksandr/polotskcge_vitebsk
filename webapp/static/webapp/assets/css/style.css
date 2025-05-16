@@ -5104,7 +5104,7 @@ section#clocks-two {
 
 
 .address-icon:hover, .address-icon:focus {
-    transform: scale(1.1) rotate(-4deg);
+    /*transform: scale(1.1) rotate(-4deg);*/
     box-shadow: 0 8px 32px rgba(255, 88, 88, 0.22), 0 4px 12px rgba(0, 0, 0, 0.10);
     background: linear-gradient(135deg, #666 0%, #1dffec 100%);
     cursor: pointer;

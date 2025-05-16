@@ -25,7 +25,7 @@ class ModelNewsAdminForm(forms.ModelForm):
 @admin.register(ModelNews)
 class BlogNewsAdmin(admin.ModelAdmin):
     form = ModelNewsForm
-    list_display = ('title', 'location', 'display_photo', 'display_logo_photo', 'pub_date', 'author', 'comment_author', 'is_popular', 'is_nature_news', 'is_health_news', 'is_sport_news', 'is_economic_news', 'is_main_news', 'is_main_measures', 'is_main_days_health')
+    list_display = ('title', 'slug', 'location', 'display_photo', 'display_logo_photo', 'pub_date', 'author', 'comment_author', 'is_popular', 'is_nature_news', 'is_health_news', 'is_sport_news', 'is_economic_news', 'is_main_news', 'is_main_measures', 'is_main_days_health')
 
     def author(self, obj):
         return obj.author.username if obj.author else '-'
