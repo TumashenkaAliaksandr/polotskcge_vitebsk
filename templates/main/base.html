@@ -337,11 +337,15 @@
                     <div class="footer-info">
                         <h3>{{ "Полоцкий ЦГЭ"|translate_text }}</h3>
                         <p>
-                            <strong>{{ "🚩 Адрес:"|translate_text }}</strong> <br>
-                            {{ contacts_footer.adres|insert_br_after_n_chars|safe|translate_text }}<br><br>
-                            <strong>{{ "☎️ Телефон:"|translate_text }}</strong>
+                            <span class="address-icon" aria-hidden="true">🚩</span>
+                            <strong>{{ "Адрес:"|translate_text }}</strong>
+                            <br>
+                            {{ contacts_footer.adres|insert_br_after_n_chars|translate_text|safe }}<br><br>
+                            <span class="address-icon" aria-hidden="true">☎️</span>
+                            <strong>{{ "Телефон:"|translate_text }}</strong>
                             <a href="tel:{{ contacts_footer.phone|default:''|cut:' ' }}">{{ contacts_footer.phone|translate_text|safe }}</a> <!-- Сделано кликабельным -->
-                            <strong>{{ "📧 Почта:"|translate_text }}</strong>
+                            <span class="address-icon" aria-hidden="true">📧</span>
+                            <strong>{{ "Почта:"|translate_text }}</strong>
                             <a href="mailto:{{ contacts_footer.mail|default:'' }}">{{ contacts_footer.mail|translate_text|safe }}</a>
                             <!-- Сделано кликабельным -->
                         </p>
@@ -352,22 +356,36 @@
                 <div class="col-lg-2 col-md-6 footer-links">
                     <h4>{{ "Главное меню"|translate_text }}</h4>
                     <ul>
-                        <li>📌&nbsp;<a href="{% url 'webapp:home' %}">{{ "Главная"|translate_text }}</a></li>
-                        <li>🏥&nbsp;<a href="{% url 'webapp:working_mode' %}">{{ "О Центре"|translate_text }}</a>
+                        <li>
+                            <a href="{% url 'webapp:home' %}"><span class="address-icon" aria-hidden="true">📌</span>{{ "Главная"|translate_text }}</a>
                         </li>
-                        <li>🗣️&nbsp;<a href="{% url 'webapp:paid_services' %}">{{ "Обращения"|translate_text }}</a>
+                        <li>
+                            <a href="{% url 'webapp:working_mode' %}"><span class="address-icon" aria-hidden="true">🏥</span>{{ "О Центре"|translate_text }}</a>
                         </li>
-                        <li>📰&nbsp;<a href="{% url 'news:cge_news' %}">{{ "Новости"|translate_text }}</a></li>
+                        <li>
+                            <a href="{% url 'webapp:paid_services' %}"><span class="address-icon" aria-hidden="true">🗣️</span>{{ "Обращения"|translate_text }}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'news:cge_news' %}"><span class="address-icon" aria-hidden="true">📰</span>{{ "Новости"|translate_text }}</a>
+                        </li>
                     </ul>
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>{{ "Услуги"|translate_text }}</h4>
                     <ul>
-                        <li>🪙&nbsp;<a href="{% url 'webapp:services' %}">{{ "Платные услуги Физ лица"|translate_text }}</a></li>
-                        <li>💼&nbsp;<a href="{% url 'webapp:paid_services_lawyer' %}">{{ "Платные услуги ЮР лица"|translate_text }}</a></li>
-                        <li>🧬&nbsp;<a href="{% url 'webapp:laboratory_offerings' %}">{{ "Лабораторные услуги"|translate_text }}</a></li>
-                        <li>🏷️&nbsp;<a href="{% url 'webapp:price_lists' %}">{{ "Прейскуранты"|translate_text }}</a></li>
+                        <li>
+                            <a href="{% url 'webapp:services' %}"><span class="address-icon" aria-hidden="true">🪙</span>{{ "Платные услуги Физ лица"|translate_text }}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'webapp:paid_services_lawyer' %}"><span class="address-icon" aria-hidden="true">💼</span>{{ "Платные услуги ЮР лица"|translate_text }}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'webapp:laboratory_offerings' %}"><span class="address-icon" aria-hidden="true">🧬</span>{{ "Лабораторные услуги"|translate_text }}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'webapp:price_lists' %}"><span class="address-icon" aria-hidden="true">🏷️</span>{{ "Прейскуранты"|translate_text }}</a>
+                        </li>
                     </ul>
                 </div>
 

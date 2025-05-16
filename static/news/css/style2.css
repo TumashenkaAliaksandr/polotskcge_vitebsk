@@ -18,8 +18,9 @@ ul,label{
 	margin:0;
 	padding:0;
 }
-body a:hover{
-	text-decoration:none;
+
+body a:hover {
+    text-decoration: none;
 }
 /*-- banner --*/
 /*------------------ Slider Part starts Here----------*/
@@ -1023,6 +1024,16 @@ position:relative;
     display: block; /* Убирает нижний отступ у img */
     box-sizing: border-box; /* padding и border входят в размеры */
     border-radius: 13px;
+    transition: filter 0.3s ease;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+.item img:hover,
+.tab_list img:hover,
+.news-grid-left1 img:hover {
+    filter: drop-shadow(4px 8px 12px rgba(106, 234, 255, 0.35));
+    box-shadow: 0 4px 13px rgba(0,0,0,0.18);
+    transform: translateY(-2px) scale(1.05);
 }
 
 .news-grid-2 img{
@@ -1036,6 +1047,14 @@ position:relative;
     display: block; /* Убирает нижний отступ у img */
     box-sizing: border-box; /* padding и border входят в размеры */
     border-radius: 13px;
+    transition: filter 0.3s ease;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+.news-grid-2 img:hover {
+    filter: drop-shadow(4px 8px 12px rgba(106, 234, 255, 0.35));
+    box-shadow: 0 4px 13px rgba(0,0,0,0.18);
+    transform: translateY(-2px) scale(1.05);
 }
 
 
@@ -2232,6 +2251,12 @@ ul.wmuSliderPagination {
     border-radius: 5px;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
     transition: filter 0.3s ease;
+}
+
+.img-fixed-size-prapors-had:hover {
+    filter: drop-shadow(4px 8px 12px rgba(106, 234, 255, 0.35));
+    box-shadow: 0 4px 13px rgba(0, 0, 0, 0.18);
+    transform: translateY(0px) scale(1.25);
 }
 
 
