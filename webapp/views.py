@@ -26,7 +26,13 @@ def index(request):
     title_desc_queans = Question_Ansver_title.objects.all()
     model_blog_main = ModelNews.objects.all().order_by('-pub_date')
     # Получаем данные о погоде
-    weather = get_weather()
+    try:
+        weather = get_weather()
+    except Exception as e:
+        # Логируем ошибку, если нужно
+        print(f"Ошибка при получении погоды: {e}")
+        # Можно задать значение по умолчанию или None
+        weather = None
     interactiv = Interactive.objects.all()
     sliders = OurPartners.objects.all()
     about_history = AboutHistory.objects.all()

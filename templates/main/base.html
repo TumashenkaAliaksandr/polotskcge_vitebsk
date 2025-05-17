@@ -83,7 +83,7 @@
                     <img src="{% static 'webapp/assets/img/gigi_centr_prapor_blr.png' %}"
                          class="img-fixed-size-prapors-had" alt="Белорусский">
                 </button>
-                <input type="hidden" name="next" value="{{ request.path }}">
+                <input type="hidden" name="next" value="{{ request.get_full_path }}">
             </form>
         </div>
         <div class="haderphone d-flex align-items-center">
