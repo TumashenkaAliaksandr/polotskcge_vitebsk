@@ -3664,7 +3664,7 @@ img.mobile1 {
         /* Стили для экранов от 366px до 667px */
         width: 92.3%;
         margin-left: 0.8em;
-        padding-top: 61.7%;
+        padding-top: 60%;
     }
 }
 
@@ -4933,7 +4933,7 @@ img.mobile1 {
 	color:#000;
 	margin:0;
 	font-size:0.9em;
-	margin-left: -37%;
+	margin-left: -15%;
 	margin-right: 25%;
     }
 }
