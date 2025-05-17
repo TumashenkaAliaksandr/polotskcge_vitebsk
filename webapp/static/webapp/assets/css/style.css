@@ -3033,6 +3033,9 @@ section#clocks-two {
     height: 240px;
     border-radius: 7px;
     box-shadow: 0 13px 15px -8px rgba(193, 215, 213, 0.5) !important;
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
+    cursor: pointer;
+    transition: background 0.5s ease, filter 0.3s ease, transform 0.3s ease;
 }
 
 .features .image-life {
@@ -3889,8 +3892,8 @@ section#clocks-two {
 }
 
 
-.margin-padding-b {
-    margin-bottom: 20px;
+.margin-padding-b-b {
+    margin-bottom: -55px;
 }
 
 .contact .info-box i {
@@ -4085,7 +4088,7 @@ section#clocks-two {
 #footer .footer-top .footer-info p {
     font-size: 14px;
     line-height: 24px;
-    margin-bottom: 0;
+    margin-bottom: 3px;
     font-family: "Roboto", sans-serif;
 }
 
@@ -4113,7 +4116,8 @@ section#clocks-two {
     font-size: 16px;
     font-weight: 600;
     position: relative;
-    padding-bottom: 12px;
+    padding-bottom: 11px;
+    padding-top: 10px;
 }
 
 #footer .footer-top .footer-links {

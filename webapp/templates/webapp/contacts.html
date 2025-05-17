@@ -64,58 +64,59 @@
         <!-- ======= Contact Section ======= -->
         <section id="contact" class="main-bg">
             <div id="contact" class="contact">
-                    <div class="section-title">
-                        <h2>{{ "Контакты"|translate_text }}</h2>
-                    </div>
                 {% for main_contact in contacts_info %}
-                <div class="container">
-                    <div class="row mt-5">
-                        <div class="col-lg-6">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="info-box">
-                                        <i class="bx bx-map"></i>
-                                        <h3>{{ main_contact.name|translate_text }}</h3>
-                                        <p>{{ main_contact.adres|safe|translate_text }}</p>
+                    <div class="container">
+                        <div class="section-title margin-padding-b-b">
+                            <h2>{{ "Контакты"|translate_text }}</h2>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="info-box">
+                                            <i class="bx bx-map"></i>
+                                            <h3>{{ main_contact.name|translate_text }}</h3>
+                                            <p>{{ main_contact.adres|translate_text|safe }}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="col-md-6">
-                                        <div class="info-box">
-                                            <i class="bx bx-envelope"></i>
-                                            <h3>{{ "Наша Почта"|translate_text }}</h3>
-                                            <p>{{ main_contact.mail|safe }}</p>
+                            <div class="col-lg-6">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="col-md-6">
+                                            <div class="info-box">
+                                                <i class="bx bx-envelope"></i>
+                                                <h3>{{ "Наша Почта"|translate_text }}</h3>
+                                                <p>{{ main_contact.mail|safe }}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="info-box">
-                                            <i class="bx bx-phone-call"></i>
-                                            <h3>{{ "Телефон Горячей линии"|translate_text }}</h3>
-                                            <p>{{ main_contact.phone }}</p>
+                                        <div class="col-md-6">
+                                            <div class="info-box">
+                                                <i class="bx bx-phone-call"></i>
+                                                <h3>{{ "Телефон Горячей линии"|translate_text }}</h3>
+                                                <p>{{ main_contact.phone|safe }}</p>
+                                            </div>
                                         </div>
-                                    </div>
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="section-title">
-                            {#                  <h2>Контакты</h2>#}
-                            <h4>{{ "Мы на карте"|translate_text }}</h4>
-                        </div>
-                        <div class="map-container">
-                            <div class="map-wrapper">
-                                <iframe class="map-iframe"
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2353.167571702526!2d28.785063615814045!3d55.48583038046348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c491fd7e6a28f5%3A0x6b860a7ba5f18ad1!2z0JTQmiDQodGC0LXQutC70L7QstC-0LvQvtC60L3Qviwg0JLQuNGC0LXQsdGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCDQkdC10LvQsNGA0YPRgdGM!5e0!3m2!1sru!2sby!4v1646779601928!5m2!1sru!2sby"
-                                        frameborder="0" allowfullscreen>
-                                </iframe>
+                            <div class="section-title">
+                                <br>
+                                <h2>{{ "Мы на карте"|translate_text }}</h2>
+                                <br>
+                            </div>
+                            <div class="map-container">
+                                <div class="map-wrapper">
+                                    <iframe class="map-iframe"
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2353.167571702526!2d28.785063615814045!3d55.48583038046348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c491fd7e6a28f5%3A0x6b860a7ba5f18ad1!2z0JTQmiDQodGC0LXQutC70L7QstC-0LvQvtC60L3Qviwg0JLQuNGC0LXQsdGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCDQkdC10LvQsNGA0YPRgdGM!5e0!3m2!1sru!2sby!4v1646779601928!5m2!1sru!2sby"
+                                            frameborder="0" allowfullscreen>
+                                    </iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 {% endfor %}
             </div>
         </section>
