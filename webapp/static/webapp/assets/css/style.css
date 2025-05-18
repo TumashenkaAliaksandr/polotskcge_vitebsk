@@ -1749,7 +1749,7 @@ section#clocks-two {
         width: 75% !important;
         height: auto!important;
         display: inline-block!important;
-        margin-top: -275px!important;
+        margin-top: -249px!important;
         border-radius: 25px!important;
         left: -30px!important;
     }
@@ -1849,6 +1849,54 @@ section#clocks-two {
 }
 
 /*end hader icons*/
+
+@media (max-width: 360px) {
+    #topbar i {
+        padding: 2px;
+        margin-right: 15px;
+        filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.3));
+        transition: filter 0.3s ease;
+        font-size: 21px !important;
+    }
+
+    .breaking-news {
+        padding: 3.5em 0 15px!important;
+    }
+
+    .section-title {
+        text-align: center;
+        padding-bottom: 13px!important;
+        padding-top: 25px;
+    }
+
+    .section-title h5 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 15px!important;
+        margin-top: 15px;
+    }
+
+    .main-info-tele {
+        margin-top: 0;
+    }
+
+    .news-grid-left1 img {
+        padding: .35em;
+        background: #fff;
+        border: 1px dotted #919191;
+        height: 82px!important;
+        width: 88px;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+        transition: filter 0.3s ease;
+        border-radius: 50px;
+    }
+    .mobile-services-title-padding {
+        padding-bottom: 21px;
+    }
+}
 
 /**/
 @media (max-width: 768px) {

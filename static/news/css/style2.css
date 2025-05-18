@@ -4156,8 +4156,16 @@ img.mobile1 {
 
     .section-title {
         text-align: center;
-        padding-bottom: 40px;
+        padding-bottom: 21px;
         padding-top: 25px;
+    }
+
+    .mobile-services-title-padding {
+        padding-bottom: 0;
+    }
+
+    .main-info-tele {
+        margin-top: 0;
     }
 
     .section-title h3 {
@@ -4702,7 +4710,7 @@ img.mobile1 {
     .features .icon-box h4 {
         font-size: 16px;
         font-weight: 700;
-        margin: 38px 0 10px 59px;
+        margin: 38px 0 10px 40px;
     }
     .features .icon-box-two h4 {
         font-size: 21px;

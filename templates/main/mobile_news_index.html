@@ -9,7 +9,7 @@
                 <div class="col-md-8 news-grid-left">
                 <h3>{{ "Новости"|translate_text }}</h3>
                     <ul>
-                        {% for main_litle_news in model_blog_main|slice:":3" %}
+                        {% for main_litle_news in model_blog_main|slice:":6" %}
                             <li>
                                 <div class="news-grid-left1">
                                     <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"><img
