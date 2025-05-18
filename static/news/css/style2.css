@@ -3594,7 +3594,7 @@ img.mobile1 {
     .section-title h5 {
         font-size: 18px;
         font-weight: bold;
-        margin-bottom: -15px;
+        /*margin-bottom: -15px;*/
         margin-top: 15px;
     }
 
@@ -4476,23 +4476,33 @@ img.mobile1 {
 
     #next {
         right: 0;
-        margin-bottom: 23%;
+        margin-bottom: 3%;
         filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
         transition: filter 0.3s ease;
         border-radius: 50px;
-        width: 40px;
+        width: 50px;
         padding-left: 16px;
     }
 
 
     #prev {
         left: 0;
-        margin-bottom: 23%;
+        margin-bottom: 3%;
         filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
         transition: filter 0.3s ease;
         border-radius: 50px;
-        width: 40px;
+        width: 50px;
         padding-left: 12px;
+    }
+
+    #prev::before, #next::before {
+        position: absolute;
+        top: 46.3%!important;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        user-select: none;
     }
 
     .tab_list img {
@@ -4710,7 +4720,7 @@ img.mobile1 {
     .features .icon-box h4 {
         font-size: 16px;
         font-weight: 700;
-        margin: 38px 0 10px 40px;
+        /*margin: 38px 0 10px 40px;*/
     }
     .features .icon-box-two h4 {
         font-size: 21px;
