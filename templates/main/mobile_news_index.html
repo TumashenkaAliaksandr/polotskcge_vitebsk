@@ -11,7 +11,7 @@
                     <ul>
                         {% for main_litle_news in model_blog_main|slice:":6" %}
                             <li>
-                                <div class="news-grid-left1">
+                                <div class="news-grid-left1 news-grid-left2">
                                     <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"><img
                                             src="{{ main_litle_news.photo.url }}" alt=" " class="img-responsive"/></a>
                                 </div>

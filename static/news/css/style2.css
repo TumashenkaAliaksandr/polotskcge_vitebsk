@@ -4294,7 +4294,7 @@ img.mobile1 {
 		font-size: 10px;
 	}
 	.tab_list1 {
-		margin: 0.5em 0 0;
+		margin: 0 0 0;
 	}
 	.tab_list1 p {
 		font-size: 14px;
@@ -4636,7 +4636,21 @@ img.mobile1 {
         padding: .35em;
         background: #fff;
         border: 1px dotted #919191;
-        height: 88px;
+        height: 80px;
+        width: 88px;
+        object-fit: cover; /* Сохраняет пропорции изображения */
+        object-position: center; /* Центрирует изображение внутри блока */
+        display: block;
+        filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+        transition: filter 0.3s ease;
+        border-radius: 50px;
+    }
+
+    .news-grid-left2 img {
+        padding: .35em;
+        background: #fff;
+        border: 1px dotted #919191;
+        height: 88px!important;
         width: 88px;
         object-fit: cover; /* Сохраняет пропорции изображения */
         object-position: center; /* Центрирует изображение внутри блока */
@@ -4920,10 +4934,10 @@ img.mobile1 {
 		padding: 3.7em 2em 0;
 	}
 	.breaking-news-grid-right-gridr {
-		margin: 0;
+		margin: 21px;
 	}
 	.video-grids {
-		margin: 0em 0 2em;
+		margin: 0 0 2em;
 	}
 	.wrapper1 {
 		padding: 0 13px;
