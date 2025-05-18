@@ -4380,25 +4380,25 @@ img.mobile1 {
 		padding: 0;
 	}
     .blog-left {
-		margin-top: 255px;
-        padding-left: 19px;
+		margin-top: 230px;
+        /*padding-left: 19px;*/
 	}
 
     .blog-leftl {
         float: left;
         width: 18%;
-        background: linear-gradient(90deg, #5bc9cc 0%, #009299 100%);
+        background: linear-gradient(90deg, #a3f2f4 0%, #009299 100%);
         padding: 1em;
         border-top: 4px solid #02575b;
         z-index: 10;
-        position: absolute;
+        position: inherit;
     }
 
     .blog-leftr {
         float: right;
         width: 100%;
         position: inherit;
-        padding-right: 15px;
+        /*padding-right: 15px;*/
     }
 
 	.blog-leftl h4 {
@@ -4880,7 +4880,7 @@ img.mobile1 {
 	.blog-leftl,.blog-leftr {
 		float: none;
 		width: 100%;
-        margin-top: 18%;
+        margin-top: 0;
 	}
 	.admin-text {
 		padding: 1em;
