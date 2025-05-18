@@ -1,0 +1,77 @@
+{% load static %}
+{% load templatetags %}
+
+<!-- news-and-events -->
+<section id="about" class="about main-bg">
+    <div class="container" data-aos="fade-up">
+        <div class="news">
+            <div class="news-grids news-grid-margin">
+                <div class="col-md-8 news-grid-left">
+                <h3>{{ "Новости"|translate_text }}</h3>
+                    <ul>
+                        {% for main_litle_news in model_blog_main|slice:":3" %}
+                            <li>
+                                <div class="news-grid-left1">
+                                    <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"><img
+                                            src="{{ main_litle_news.photo.url }}" alt=" " class="img-responsive"/></a>
+                                </div>
+                                <div class="news-grid-right1">
+                                        <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"><h4>{{ main_litle_news.title|translate_text|wordwrap:30|truncatechars_html:58 }}</h4></a>
+                                    <h5 class="fa fa-user-doctor"><label>|</label><a
+                                            href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"> {{ main_litle_news.author|translate_text|safe }}</a>
+                                        <label>|</label> <i>{{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}</i></h5>
+                                    <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}">
+                                        <p>{{ main_litle_news.description_small|translate_text|wordwrap:40|truncatechars_html:132|safe }}</p>
+                                    </a>
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="news-more">
+                        <a href="{% url 'news:cge_news' %}"><p>{{ "Узнать больше.."|translate_text }}</p></a>
+                    </div>
+                </div>
+                <!-- Tab panes -->
+                <div class="news">
+                    <div class="news-grids">
+                        <div class="col-md-4 breaking-news-grid-right">
+                            <div class="news-grid-rght1">
+                                <h3>{{ "Погода в Полоцке"|translate_text }}</h3>
+                                <!-- Nav tabs -->
+                                <div class="tab-content-weather-bg">
+                                    <div class="tab-content-weather">
+                                        <ul>
+                                            <h4>{{ weather.month|translate_text }} {{ weather.day_of_month }}, {{ weather.day|translate_text }}</h4>
+                                            <p><span
+                                                    class="fa fa-wind"> {{ "Ветер: "|translate_text }} {{ weather.wind_direction }}-ный | {{ weather.wind_speed }} {{ "м/с" |translate_text }}</span>
+                                            </p>
+                                            <p><span class="fas fa-thermometer-half">
+                                                {{ "Температура:"|translate_text }} {{ weather.temperature }}</span></p>
+                                            <p><span class="fas fa-tachometer-alt">
+                                               {{ "Давление:"|translate_text }} {{ weather.pressure }} {{ "гПа"|translate_text }}</span></p>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            {% for photo_of_the_day in photo_day %}
+                            <div class="news-grid-rght3 filters-h3">
+                                <img src="{{ photo_of_the_day.image.url }}" alt=" "
+                                     class="img-responsive"/>
+                                <div class="story">
+                                    <p>{{ photo_of_the_day.description|safe|translate_text }}</p>
+                                    <br>
+                                    <p><a href="{% url 'webapp:contacts' %}">{{ photo_of_the_day.name|safe|translate_text }}</a></p>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- //news-and-events -->
