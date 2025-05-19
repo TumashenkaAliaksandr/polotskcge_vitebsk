@@ -4386,7 +4386,7 @@ img.mobile1 {
 
     .blog-leftl {
         float: left;
-        width: 18%;
+        width: 100%;
         background: linear-gradient(90deg, #a3f2f4 0%, #009299 100%);
         padding: 1em;
         border-top: 4px solid #02575b;
@@ -4815,7 +4815,20 @@ img.mobile1 {
 		padding: 4em 1em 2.5em 0.5em;
 	}
 }
-@media (max-width: 414px){
+.news-grid-left1 img {
+        padding: .35em;
+        background: #fff;
+        border: 1px dotted #919191;
+        /*height: 88px;*/
+        /*width: 88px;*/
+        object-fit: cover; /* Сохраняет пропорции изображения */
+        object-position: center; /* Центрирует изображение внутри блока */
+        display: block;
+        filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+        transition: filter 0.3s ease;
+        border-radius: 13px;
+    }
+    {
 	.banner-info-slider h1 {
 		font-size: .9em;
 	}
@@ -4843,7 +4856,7 @@ img.mobile1 {
 		width: 100%;
 	}
 	.health ul li a {
-		padding: 0em 0.5em;
+		padding: 0 0.5em;
 	}
 	.banner-bottom-grid-left h3 {
 		margin: 0.5em 0 0;
@@ -4933,9 +4946,9 @@ img.mobile1 {
 	.baner-beaking, .baner-beaking1 {
 		padding: 3.7em 2em 0;
 	}
-	.breaking-news-grid-right-gridr {
-		margin: 21px;
-	}
+	/*.breaking-news-grid-right-gridr {*/
+	/*	margin: 21px;*/
+	/*}*/
 	.video-grids {
 		margin: 0 0 2em;
 	}
@@ -4986,6 +4999,22 @@ img.mobile1 {
         padding: 10px 5px;
         width: 100%;
         margin-top: 36%;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .news-grid-left1 img {
+        padding: .35em;
+        background: #fff;
+        border: 1px dotted #919191;
+        height: 66px!important;
+        width: 88px;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+        transition: filter 0.3s ease;
+        border-radius: 50px;
     }
 }
 
