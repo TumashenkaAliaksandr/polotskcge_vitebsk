@@ -1389,7 +1389,7 @@ section#clocks-two {
     /*top: 50%;*/
     /*left: 50%;*/
     height: 370px;
-    background: url('../../assets/img/tv.png') no-repeat center center;
+    /*background: url('../../assets/img/tv.png') no-repeat center center;*/
     background-size: contain;
     /*box-shadow: 0 0 15px rgba(193, 215, 213, 0.5);*/
     /*transform: translate(-50%, -50%);*/
@@ -1406,17 +1406,17 @@ section#clocks-two {
     position: relative;
     /*top: 50%;*/
     height: 315px;
-    background: url('../../assets/img/gigi_centr_bssr.png') no-repeat;
+    background: url('../../assets/img/gigi_centr_logo_about.png') no-repeat;
     background-size: contain;
     /*box-shadow: 0 0 15px rgba(193, 215, 213, 0.5);*/
     /*transform: translate(-50%, -50%);*/
     z-index: 10; /* фон ниже фото */
     opacity: 0.97;
-    margin-top: -320px;
+    margin-top: -315px;
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
     transition: filter 0.3s ease;
-    width: 245px;
-    right: 370px;
+    width: 270px;
+    right: 369px;
 }
 
 .model-photo {
@@ -1778,12 +1778,19 @@ section#clocks-two {
     }
 
     .img-container-about img {
-        width: 75% !important;
+        width: 90% !important;
         height: auto!important;
         display: inline-block!important;
         margin-top: -249px!important;
         border-radius: 25px!important;
-        left: -30px!important;
+        /*left: -30px!important;*/
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+        filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+        transition: filter 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+        text-align: center;
+        margin-left: 20px;
+        margin-right: 25px;
+        left: 0!important;
     }
 
     .main-info-about {
@@ -1808,7 +1815,7 @@ section#clocks-two {
     .main-info-tele {
         position: inherit;
         height: 300px;
-        background: url('../../assets/img/tv.png') no-repeat center center;
+        /*background: url('../../assets/img/tv.png') no-repeat center center;*/
         background-size: contain;
         z-index: 10;
         opacity: 0.95;
@@ -4964,13 +4971,16 @@ section#clocks-two {
 }
 
 .img-container-about img {
-  width: 31%;
-  height: auto;
-  display: inline-block;
-  margin-top: -333px;
-  border-radius: 25px;
-  right: 54px;
-  left: 15%;
+    width: 35%;
+    height: auto;
+    display: inline-block;
+    margin-top: -333px;
+    border-radius: 7px;
+    right: 54px;
+    left: 21%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 
