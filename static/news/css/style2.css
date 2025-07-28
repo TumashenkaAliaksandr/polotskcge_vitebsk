@@ -4250,6 +4250,31 @@ img.mobile1 {
 	.banner, .banner-info {
 		min-height: 420px;
 	}
+
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+        width: 150px;
+        display: block; /* важный момент */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #fontSizeSelector {
+        appearance: none;
+        padding: 1px 5px;
+        font-size: 14px;
+         border: none;
+        border-radius: 8px;
+        background-color: #d3d3d38c;
+        color: #ffffff;
+        cursor: pointer;
+        outline: none;
+        transition: all 0.3s ease;
+        margin-right: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
 	.callbacks_tabs {
 		bottom: -5%;
 	}

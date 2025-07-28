@@ -97,11 +97,40 @@
     </div>
     <div class="align-items-center-mobile">
         <div class="header-icons-mobile">
-            <a href=""><i data-description="Версия для слабо видящих">Aa</i></a>
-            <a href=""><i data-description="Английский язык">🇬🇧</i></a>
-            <a href=""><i data-description="Беларуский язык">🇧🇾</i></a>
-            <a href=""><i data-description="Русский язык">🇷🇺</i></a>
+
+            <!-- Селектор размера шрифта с таким же id для совместимости -->
+            <select id="fontSizeSelector" aria-label="Выберите размер шрифта"
+                    style="margin-right: 10px; min-width: 70px;">
+                <option value="default" selected>Aa</option>
+                <option value="24">Aa 2</option>
+                <option value="28">Aa 3</option>
+            </select>
+
+            <!-- Форма выбора языка с кнопками с картинками флагов -->
+            <form action="{% url 'set_language' %}" method="post" class="language-form-mobile"
+                  style="display: inline-flex; gap: 8px; align-items: center;">
+                {% csrf_token %}
+                <button type="submit" name="language" value="en" class="transparent-btn" aria-label="Английский язык"
+                        title="English" style="background: none; border: none; cursor: pointer; padding: 0;">
+                    <img src="{% static 'webapp/assets/img/gigi_centr_eng_prapor-nbg.png' %}"
+                         class="img-fixed-size-prapors-had" alt="Английский">
+                </button>
+                <button type="submit" name="language" value="ru" class="transparent-btn" aria-label="Русский язык"
+                        title="Русский" style="background: none; border: none; cursor: pointer; padding: 0;">
+                    <img src="{% static 'webapp/assets/img/gigi_centr_prapor_zvo.png' %}"
+                         class="img-fixed-size-prapors-had" alt="Русский">
+                </button>
+                <button type="submit" name="language" value="be" class="transparent-btn" aria-label="Белорусский язык"
+                        title="Беларуская" style="background: none; border: none; cursor: pointer; padding: 0;">
+                    <img src="{% static 'webapp/assets/img/gigi_centr_prapor_blr.png' %}"
+                         class="img-fixed-size-prapors-had" alt="Белорусский">
+                </button>
+
+                <input type="hidden" name="next" value="{{ request.get_full_path }}">
+            </form>
+
         </div>
+
     </div>
     <div class="haderphone-mobile">
         <a href="tel:{{ info_contact.phone_number|default:''|cut:' ' }}"><i class="bi bi-phone"></i>{{ info_contact.phone_number|safe|translate_text }}</a>
@@ -317,12 +346,36 @@
             <div class="search-box-wrap" style="display: none;">
                 <div class="searchform" role="search">
                     <form class="search-form" method="get" action="{% url 'webapp:home' %}">
-                        <input type="text" name="s" id="s" placeholder="Search..." value="" class="search-field">
-                        <input type="submit" class="search-submit" value="Search">
+                        <input type="text" name="s" id="s" placeholder="Search..." value="{{ query }}" class="search-field">
+{#                        <input type="submit" class="search-submit" value="Search">#}
                     </form>
                 </div><!-- .searchform -->
             </div><!-- .search-box-wrap -->
         </div>
+
+        <div class="search-results-block" id="search-results-block">
+            {% if query %}
+                <h2 id="search-results-title">Результаты поиска по запросу "{{ query }}"</h2>
+
+                {% if news_results.exists %}
+                    <ul class="search-results-list">
+                        {% for news in news_results %}
+                            <li>
+                                <a href="{{ news.get_absolute_url }}">{{ news.title }}</a><br>
+                                <small>
+                                    {{ news.pub_date|date:"d.m.Y" }}
+                                    {% if news.location %} | {{ news.location }}{% endif %}
+                                </small><br>
+                                <p>{{ news.description_small|truncatewords:30 }}</p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p id="no-results-message">Ничего не найдено</p>
+                {% endif %}
+            {% endif %}
+        </div>
+
     </div>
 </header><!-- End Header -->
 
@@ -433,4 +486,5 @@
 <script src="{% static 'webapp/assets/js/main.js' %}"></script>
 <!-- for bootstrap working -->
 <script src="{% static 'js/bootstrap.js' %}"></script>
+<script src="{% static 'webapp/assets/js/search_form.js' %}"></script>
 <!-- //for bootstrap working -->

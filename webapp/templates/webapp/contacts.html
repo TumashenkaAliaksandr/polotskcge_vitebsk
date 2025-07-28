@@ -102,6 +102,63 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- ======= Doctors Section ======= -->
+                            <div class="container" data-aos="fade-up">
+                                {% for main_title_clocks in info_clocks %}
+                                    <div class="section-title">
+                                        <h2>{{ main_title_clocks.title|translate_text }}</h2>
+                                        <p>{{ main_title_clocks.description |translate_text| safe }}</p>
+                                    </div>
+                                {% endfor %}
+
+                                <div class="row">
+                                    <section id="clocks-two" class="clocks-two">
+                                        <div class="table-info">
+                                            <div class="box" data-aos="fade-up" data-aos-delay="300">
+                                                <table class="iksweb">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>{{ "Должность"|translate_text }}</th>
+                                                        <th>{{ "ФИО"|translate_text }}</th>
+                                                        <th>{{ "Этаж | Кабинет"|translate_text }}</th>
+                                                        <th>{{ "Дни и Время приёма"|translate_text }}</th>
+                                                        <th>{{ "Телефон"|translate_text }}</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    {% for main_clock in clocks %}
+                                                        <tr>
+                                                            <td>{{ main_clock.name|translate_text }}</td>
+                                                            <td>{{ main_clock.family_name|translate_text }}</td>
+                                                            <td>{{ main_clock.office|translate_text }}</td>
+                                                            <td>{{ main_clock.reception_time|translate_text }}</td>
+                                                            <td>{{ main_clock.phone }}</td>
+                                                        </tr>
+                                                    {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                {#                <div class="row">#}
+                                {#                    {% for main_clocks in clocks %}#}
+                                {#                        <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">#}
+                                {#                            <div class="box" data-aos="fade-up" data-aos-delay="300">#}
+                                {#                                <h3>{{ main_clocks.name }}</h3>#}
+                                {#                                <ul>#}
+                                {#                                    <li>{{ main_clocks.family_name }}</li>#}
+                                {#                                    <li>{{ main_clocks.last_name }}</li>#}
+                                {#                                    <li>{{ main_clocks.office }}</li>#}
+                                {#                                    <li>{{ main_clocks.phone }}</li>#}
+                                {#                                    <li>{{ main_clocks.reception_time }}</li>#}
+                                {#                                </ul>#}
+                                {#                            </div>#}
+                                {#                        </div>#}
+                                {#                    {% endfor %}#}
+                                {#                </div>#}
+                            </div>
+                            <!-- End Doctors Section -->
                             <div class="section-title">
                                 <br>
                                 <h2>{{ "Мы на карте"|translate_text }}</h2>

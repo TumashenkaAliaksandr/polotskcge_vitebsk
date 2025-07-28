@@ -1,17 +1,72 @@
+import json
+import os
+
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Count
 from django.db.models.functions import ExtractYear
 from news.models import Interactive, ModelNews, PreviewNews
 from news.utils import get_weather
+from polotskcge_vitebsk import settings
 from webapp.models import *
 from django.utils import timezone, translation
 from datetime import timedelta
+from django.http import JsonResponse
+from django.db.models import Q
+from django.views.decorators.http import require_GET
+from news.models import ModelNews  # и другие модели, если нужно
 
 
 def base_main(request):
     """main base template"""
     return render(request, 'main/base.html')
+
+
+
+@require_GET
+def ajax_search(request):
+    query = request.GET.get('s', '').strip()
+    results = []
+
+    # --- Поиск по ModelNews ---
+    if query:
+        news_results = ModelNews.objects.filter(
+            Q(title__icontains=query) |
+            Q(description_small__icontains=query) |
+            Q(description__icontains=query) |
+            Q(description_company__icontains=query) |
+            Q(location__icontains=query)
+        ).order_by('-pub_date')[:10]
+
+        for news in news_results:
+            results.append({
+                'type': 'news',
+                'title': news.title,
+                'url': news.get_absolute_url(),
+                'date': news.pub_date.strftime('%d.%m.%Y'),
+                'location': news.location,
+                'description': news.description_small[:200],
+            })
+
+    # --- Поиск по JSON-переводам ---
+    translations_path = os.path.join(settings.BASE_DIR, 'translations', 'be_translations.json')
+    if os.path.exists(translations_path):
+        with open(translations_path, 'r', encoding='utf-8') as f:
+            translations = json.load(f)
+
+            for key, value in translations.items():
+                if query.lower() in value.lower():  # ищем по переведённому тексту
+                    results.append({
+                        'type': 'translation',
+                        'title': value,
+                        'url': '#',  # ссылки нет, но можно потом добавить якорь
+                        'date': '',
+                        'location': f'Ключ: {key}',
+                        'description': f'Найдено в переводах',
+                    })
+
+    return JsonResponse({'results': results})
+
 
 
 def index(request):
@@ -1233,11 +1288,15 @@ def contacts(request):
     features = Featured.objects.all()
     interactiv = Interactive.objects.all()
     contacts_info = Contacts.objects.all()
+    info_clocks = GeneralInfo.objects.all()
+    clocks = ReceptionHours.objects.all()
 
     context = {
         'features': features,
         'interactiv': interactiv,
         'contacts_info': contacts_info,
+        'info_clocks': info_clocks,
+        'clocks': clocks,
     }
 
     return render(request, 'webapp/contacts.html', context=context)

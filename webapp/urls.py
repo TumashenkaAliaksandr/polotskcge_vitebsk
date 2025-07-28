@@ -95,6 +95,8 @@ urlpatterns = [
 
     # Root
     path('', index, name='home'),
+
+    path('ajax/search/', ajax_search, name='ajax_search'),
 ]
 
 if settings.DEBUG:

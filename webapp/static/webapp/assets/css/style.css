@@ -48,6 +48,90 @@ a:hover {
     margin-right: 21px;
 }
 
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    border: none;       /* убрать рамку */
+    outline: none;      /* убрать обводку при фокусе */
+    background: transparent; /* при необходимости убрать фон */
+}
+
+
+.header-search {
+    position: relative; /* родитель с relative для позиционирования вложенного */
+    display: inline-block; /* чтобы ширина была минимальна по содержимому */
+}
+
+.search-box-wrap {
+    display: none; /* скрывается по умолчанию */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    height: 40px;
+    border-radius: 7px;
+}
+
+.search-results-block {
+    font-size: 0.9rem;
+    color: #444;
+    position: absolute;
+    background: lightskyblue;
+    padding: 5px 25px 0;
+    border-radius: 7px;
+    right: 100px;
+    top: 100px;
+}
+
+.search-results-block {
+    display: none;
+}
+
+#no-results-message {
+    transition: opacity 1s ease;
+    /* лучше добавить начальное состояние */
+    opacity: 1;
+}
+
+
+
+.search-results-block h2 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.search-results-list li {
+    margin-bottom: 15px; /* Межстрочный отступ между результатами */
+}
+
+.search-results-list a {
+    font-weight: 600; /* Сделать заголовки ссылок чуть более заметными */
+    font-size: 1rem;
+    color: #007BFF; /* Цвет ссылок */
+    text-decoration: none;
+}
+
+.search-results-list a:hover {
+    text-decoration: underline;
+}
+
+.search-results-list small {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.search-results-list p {
+    margin: 5px 0 0 0;
+    font-size: 0.85rem;
+    color: #555;
+}
+
 @media (max-width: 768px) {
     .header-search a {
         color: #3fbbc0;
@@ -348,6 +432,16 @@ h6 {
         position: fixed;
         width: 100%;
     }
+
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+        width: 150px;
+        display: block; /* важный момент */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }
 
 
@@ -4079,6 +4173,8 @@ section#clocks-two {
 
 .faq .faq-list .collapsed:hover {
     background: linear-gradient(90deg, #5dd5d8 0%, #019ca3 100%);
+    border-radius: 7px;
+
 }
 
 .faq .faq-list .collapsed .icon-show {
