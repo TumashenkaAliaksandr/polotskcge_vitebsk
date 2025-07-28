@@ -4746,12 +4746,12 @@ img.mobile1 {
 
 
     .img-fixed-size-erip {
-        width: 84.5%; /* Установите желаемую ширину */
-        height: 200px;
-        /*! margin-right: 8px; */
-        object-fit: cover; /* Этот свойство сохраняет соотношение сторон и обрезает изображение по нужным размерам */
+        width: 84.5%;
+        height: 150px;
+        object-fit: cover;
         padding-left: 19%;
-        margin-bottom: 30px;
+        margin-bottom: 0;
+        top: 20px;
     }
 
     .img-fixed-size-unp {

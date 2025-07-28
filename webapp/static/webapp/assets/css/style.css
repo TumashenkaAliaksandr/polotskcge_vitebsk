@@ -1833,10 +1833,10 @@ section#clocks-two {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 10px;
-        margin-top: 10px;
-        padding-top: 10px;
-        padding-left: 3px;
+        /*margin-bottom: 10px;*/
+        /*margin-top: 10px;*/
+        /*padding-top: 10px;*/
+        /*padding-left: 3px;*/
     }
 
     .header-icons-mobile a {
@@ -2351,7 +2351,7 @@ section#clocks-two {
         /*justify-content: center;*/
         text-align: left;
         margin-bottom: 0;
-        padding: 10px 0;
+        padding: 0 0;
     }
 
 
