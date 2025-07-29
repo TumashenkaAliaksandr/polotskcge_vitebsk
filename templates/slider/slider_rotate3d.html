@@ -1,286 +1,61 @@
-{#{% load static %}#}
-{##}
-{#<style>#}
-{#  /* Общий контейнер слайдера */#}
-{#  .slider-box {#}
-{#    position: relative;#}
-{#    width: 100%;#}
-{#    max-width: 960px; /* под 3 слайда по 320px + отступы */#}
-{#    margin: 20px auto;#}
-{#    overflow: hidden;#}
-{#    border-radius: 8px;#}
-{#    box-shadow: 0 4px 10px rgb(1 158 165 / 0.3);#}
-{#    background: #fff;#}
-{#  }#}
-{##}
-{#  /* Контейнер вокруг слайдов */#}
-{#  .slider-container {#}
-{#    overflow: hidden;#}
-{#  }#}
-{##}
-{#  /* Обёртка для слайдов: горизонтальный flex */#}
-{#  .slider-wrapper {#}
-{#    display: flex;#}
-{#    transition: transform 0.4s ease-in-out;#}
-{#    will-change: transform;#}
-{#  }#}
-{##}
-{#  /* Отдельный слайд - занимает ровно треть ширины слайдера */#}
-{#  .slider-item {#}
-{#    flex: 0 0 33.3333%; /* 1/3 ширины строки */#}
-{#    box-sizing: border-box;#}
-{#    padding: 15px 12px; /* Отступы вокруг слайда */#}
-{#    display: flex;#}
-{#    flex-direction: column;#}
-{#    align-items: center; /* выравнивание по центру */#}
-{#    user-select: none;#}
-{#  }#}
-{##}
-{#  /* Изображение слайда */#}
-{#  .slider-img {#}
-{#    width: 320px;#}
-{#    max-width: 100%;#}
-{#    border-radius: 8px;#}
-{#    object-fit: cover;#}
-{#    box-shadow: 0 2px 6px rgba(0,0,0,0.15);#}
-{#    user-select: none;#}
-{#  }#}
-{##}
-{#  /* Контент описания под картинкой */#}
-{#  .slider-caption {#}
-{#    width: 100%;#}
-{#    margin-top: 12px;#}
-{#    color: #027c81;#}
-{#    text-align: center; /* Центрируем текст */#}
-{#  }#}
-{##}
-{#  .slider-caption h5 {#}
-{#    margin: 0 0 8px;#}
-{#    font-weight: 700;#}
-{#    font-size: 20px;#}
-{#  }#}
-{##}
-{#  .slider-caption p {#}
-{#    font-size: 14px;#}
-{#    line-height: 1.4;#}
-{#    margin: 0 0 15px;#}
-{#  }#}
-{##}
-{#  /* Кнопка "Buy now" */#}
-{#  .slider-caption .btn-primary {#}
-{#    display: inline-block;#}
-{#    background-color: #019ea5;#}
-{#    border: none;#}
-{#    padding: 8px 24px;#}
-{#    color: white;#}
-{#    font-weight: 600;#}
-{#    font-size: 14px;#}
-{#    border-radius: 4px;#}
-{#    text-decoration: none;#}
-{#    cursor: pointer;#}
-{#    transition: background-color 0.25s ease;#}
-{#  }#}
-{##}
-{#  .slider-caption .btn-primary:hover,#}
-{#  .slider-caption .btn-primary:focus {#}
-{#    background-color: #017f86;#}
-{#    outline: none;#}
-{#    text-decoration: none;#}
-{#  }#}
-{##}
-{#  /* Убираем кнопки управления (просто не в разметке и нет стилей) */#}
-{##}
-{#  /* Адаптив */#}
-{#  @media (max-width: 992px) {#}
-{#    .slider-box {#}
-{#      max-width: 720px;#}
-{#    }#}
-{#    .slider-img {#}
-{#      width: 100%;#}
-{#    }#}
-{#  }#}
-{##}
-{#  @media (max-width: 640px) {#}
-{#    .slider-box {#}
-{#      max-width: 100%;#}
-{#      margin: 20px 10px;#}
-{#    }#}
-{#    .slider-wrapper {#}
-{#      /* Показываем по 1 слайду в строке на мобиле */#}
-{#      flex-wrap: nowrap;#}
-{#    }#}
-{#    .slider-item {#}
-{#      flex: 0 0 100%;#}
-{#      padding: 15px 10px;#}
-{#    }#}
-{#    .slider-caption h5 {#}
-{#      font-size: 18px;#}
-{#    }#}
-{#    .slider-caption p {#}
-{#      font-size: 13px;#}
-{#    }#}
-{#  }#}
-{#</style>#}
-{##}
-{#<div class="slider-box mb-3" role="region" aria-label="Слайдер продуктов">#}
-{#  <div class="slider-container">#}
-{#    <div class="slider-wrapper" id="slider-wrapper" style="transform: translateX(0);">#}
-{#      {% for slide in sliders %}#}
-{#        <div class="slider-item" role="group" aria-roledescription="slide" aria-label="Слайд {{ forloop.counter }} из {{ sliders|length }}">#}
-{#          <img#}
-{#            src="{{ slide.img.url }}"#}
-{#            alt="{% if slide.title %}{{ slide.title }}{% else %}Слайд {{ forloop.counter }}{% endif %}"#}
-{#            class="slider-img"#}
-{#            loading="lazy"#}
-{#            width="320"#}
-{#            height="180"#}
-{#          />#}
-{##}
-{#          <div class="slider-caption">#}
-{#            <h5>{{ slide.title }}</h5>#}
-{#            <p>{{ slide.description }}</p>#}
-{#            {% if slide.link %}#}
-{#              <a href="{{ slide.link }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Buy now</a>#}
-{#            {% endif %}#}
-{#          </div>#}
-{#        </div>#}
-{#      {% endfor %}#}
-{#    </div>#}
-{#  </div>#}
-{#</div>#}
-{##}
-{#<script>#}
-{#  (function() {#}
-{#    const sliderWrapper = document.getElementById('slider-wrapper');#}
-{#    const slides = sliderWrapper.children;#}
-{#    const totalSlides = slides.length;#}
-{##}
-{#    let currentIndex = 0;#}
-{#    let slidesPerPage = 3;#}
-{##}
-{#    function updateSlidesPerPage() {#}
-{#      if (window.innerWidth <= 640) {#}
-{#        slidesPerPage = 1;#}
-{#      } else {#}
-{#        slidesPerPage = 3;#}
-{#      }#}
-{#    }#}
-{##}
-{#    function updateSlider() {#}
-{#      const offset = currentIndex * (100 / slidesPerPage); // в процентах смещение#}
-{#      sliderWrapper.style.transform = `translateX(-${offset}%)`;#}
-{#    }#}
-{##}
-{#    function nextPage() {#}
-{#      currentIndex++;#}
-{#      if (currentIndex > Math.ceil(totalSlides / slidesPerPage) - 1) {#}
-{#        currentIndex = 0;#}
-{#      }#}
-{#      updateSlider();#}
-{#    }#}
-{##}
-{#    function prevPage() {#}
-{#      currentIndex--;#}
-{#      if (currentIndex < 0) {#}
-{#        currentIndex = Math.ceil(totalSlides / slidesPerPage) - 1;#}
-{#      }#}
-{#      updateSlider();#}
-{#    }#}
-{##}
-{#    // Автопрокрутка каждые 5 секунд#}
-{#    let autoSlideInterval = setInterval(() => {#}
-{#      nextPage();#}
-{#    }, 5000);#}
-{##}
-{#    // При ресайзе учитывать количество слайдов на странице#}
-{#    window.addEventListener('resize', () => {#}
-{#      updateSlidesPerPage();#}
-{#      // Корректируем текущий индекс, если изменилось количество страниц#}
-{#      const maxIndex = Math.ceil(totalSlides / slidesPerPage) - 1;#}
-{#      if (currentIndex > maxIndex) {#}
-{#        currentIndex = maxIndex;#}
-{#      }#}
-{#      updateSlider();#}
-{#    });#}
-{##}
-{#    // Инициализация#}
-{#    updateSlidesPerPage();#}
-{#    updateSlider();#}
-{##}
-{#    // Если понадобятся кнопки, их можно добавить, сейчас скрыты по задаче#}
-{#  })();#}
-{#</script>#}
 {% load static %}
 
 <style>
-  /* Общий контейнер слайдера */
   .slider-box {
     position: relative;
     width: 100%;
-    max-width: 1280px; /* под 4 слайда по 320px + отступы */
+    max-width: 1280px;
     margin: 20px auto;
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgb(1 158 165 / 0.3);
     background: #fff;
+    box-shadow: 0 4px 10px rgb(1 158 165 / 0.3);
     user-select: none;
   }
-
-  /* Контейнер вокруг слайдов */
   .slider-container {
     overflow: hidden;
   }
-
-  /* Обёртка для слайдов: горизонтальный flex */
   .slider-wrapper {
     display: flex;
-    transition: transform 0.4s ease-in-out;
     will-change: transform;
+    /* плавный переход при смене шага через JS */
+    transition: transform 0.5s ease;
   }
-
-  /* Отдельный слайд - занимает ровно четверть ширины слайдера */
   .slider-item {
-    flex: 0 0 25%; /* 1/4 ширины строки */
+    flex: 0 0 25%; /* 4 слайда в строке */
     box-sizing: border-box;
-    padding: 15px 12px; /* Отступы вокруг слайда */
+    padding: 15px 12px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* выравнивание по центру */
+    align-items: center;
   }
-
-  /* Изображение слайда */
   .slider-img {
-    width: 300px;            /* немного уменьшил ширину для свободного места для кнопок */
+    width: 300px;
     max-width: 100%;
     border-radius: 8px;
     object-fit: cover;
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   }
-
-  /* Контент описания под картинкой */
   .slider-caption {
     width: 100%;
     margin-top: 12px;
     color: #027c81;
     text-align: center;
   }
-
   .slider-caption h5 {
     margin: 0 0 8px;
     font-weight: 700;
     font-size: 20px;
   }
-
   .slider-caption p {
     font-size: 14px;
     line-height: 1.4;
     margin: 0 0 15px;
   }
 
-  /* Навигационные кнопки */
   .nav-btn {
     position: absolute;
-    top: 87%; /* вертикальное центрирование */
+    top: 50%;
     transform: translateY(-50%);
     background-color: #019ea5;
     border: none;
@@ -297,49 +72,21 @@
     transition: background-color 0.3s ease, filter 0.3s ease;
     z-index: 10;
   }
-
-  #prev-btn {
-    left: 10px;
-  }
-
-  #next-btn {
-    right: 10px;
-  }
-
-  .nav-btn:hover,
-  .nav-btn:focus {
+  #prev-btn { left: 10px; }
+  #next-btn { right: 10px; }
+  .nav-btn:hover, .nav-btn:focus {
     background-color: #017f86;
     outline: none;
   }
 
-  /* Мобильная адаптация */
-  @media (max-width: 992px) {
-    .slider-box {
-      max-width: 960px;
-    }
-    .slider-img {
-      width: 100%;
-    }
-  }
-
+  /* Адаптив */
   @media (max-width: 640px) {
-    .slider-box {
-      max-width: 100%;
-
-    }
     .slider-wrapper {
-      /* Показываем по 1 слайду в строке на мобиле */
-      flex-wrap: nowrap;
+      transition: none; /* без анимации */
     }
     .slider-item {
       flex: 0 0 100%;
       padding: 15px 10px;
-    }
-    .slider-caption h5 {
-      font-size: 18px;
-    }
-    .slider-caption p {
-      font-size: 13px;
     }
     #prev-btn {
       left: 8px;
@@ -354,105 +101,156 @@
   }
 </style>
 
-<div class="slider-box mb-3" role="region" aria-label="Слайдер продуктов">
+<div class="slider-box" role="region" aria-label="Бесконечный карусельный слайдер">
   <div class="slider-container main-bg">
-    <div class="slider-wrapper" id="slider-wrapper" style="transform: translateX(0);">
+    <div class="slider-wrapper" id="slider-wrapper">
+      {# Все слайды рендерятся #}
       {% for slide in sliders %}
-        <div class="slider-item" role="group" aria-roledescription="slide" aria-label="Слайд {{ forloop.counter }} из {{ sliders|length }}">
-          <img
-            src="{{ slide.img.url }}"
-            alt="{% if slide.title %}{{ slide.title }}{% else %}Слайд {{ forloop.counter }}{% endif %}"
-            class="slider-img"
-            loading="lazy"
-            width="320"
-            height="180"
-          />
-          <div class="slider-caption">
-            <h5>{{ slide.title }}</h5>
-            <p>{{ slide.description }}</p>
-          </div>
+        <div class="slider-item">
+          <a href="{{ slide.link }}" target="_blank" rel="noopener noreferrer"
+             style="text-decoration: none; color: inherit; display: block; width: 100%; height: 100%;">
+            <img src="{{ slide.img.url }}"
+                 alt="{{ slide.title}} {{ forloop.counter }}"
+                 class="slider-img"
+                 loading="lazy"
+                 width="320" height="180"
+                 />
+            <div class="slider-caption">
+              <h5>{{ slide.title }}</h5>
+              <p>{{ slide.description }}</p>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+      {# Дублируем первые 4 слайда для плавного цикла #}
+      {% for slide in sliders %}
+        <div class="slider-item">
+          <a href="{{ slide.link }}" target="_blank" rel="noopener noreferrer"
+             style="text-decoration: none; color: inherit; display: block; width: 100%; height: 100%;">
+            <img src="{{ slide.img.url }}"
+                 alt="{{ slide.title }} {{ forloop.counter }}"
+                 class="slider-img"
+                 loading="lazy"
+                 width="320" height="180"
+                 />
+            <div class="slider-caption">
+              <h5>{{ slide.title }}</h5>
+              <p>{{ slide.description }}</p>
+            </div>
+          </a>
         </div>
       {% endfor %}
     </div>
   </div>
 
-  <!-- Навигационные кнопки -->
+  <!-- Кнопки навигации -->
   <button id="prev-btn" class="nav-btn" aria-label="Предыдущий слайд" type="button">&#8592;</button>
   <button id="next-btn" class="nav-btn" aria-label="Следующий слайд" type="button">&#8594;</button>
 </div>
 
 <script>
   (function() {
-    const sliderWrapper = document.getElementById('slider-wrapper');
-    const slides = sliderWrapper.children;
-    const totalSlides = slides.length;
+    const wrapper = document.getElementById('slider-wrapper');
+    const totalSlides = {{ sliders|length }};
+    const slidesPerPage = 4;
+    const slideWidthPercent = 100 / slidesPerPage;
 
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
 
     let currentIndex = 0;
-    let slidesPerPage = 4;
+    let isAnimating = false;
 
-    function updateSlidesPerPage() {
-      if (window.innerWidth <= 640) {
-        slidesPerPage = 1;
+    // Функция установки смещения
+    function setTranslateX(percentage) {
+      wrapper.style.transform = `translateX(-${percentage}%)`;
+    }
+
+    // Плавный сдвиг
+    function moveToIndex(index) {
+      if (isAnimating) return;
+      isAnimating = true;
+      setTranslateX(index * slideWidthPercent);
+      currentIndex = index;
+
+      // Если дошли до клонированных слайдов - без анимации *прыгаем* в начало
+      if (index === totalSlides) {
+        setTimeout(() => {
+          wrapper.style.transition = 'none';
+          setTranslateX(0);
+          currentIndex = 0;
+          // Форсим рефреш transition
+          void wrapper.offsetWidth;
+          wrapper.style.transition = 'transform 0.5s ease';
+          isAnimating = false;
+        }, 500);
       } else {
-        slidesPerPage = 4;
+        setTimeout(() => {
+          isAnimating = false;
+        }, 500);
       }
     }
 
-    function updateSlider() {
-      // Ограничиваем currentIndex в пределах количества страниц
-      const maxIndex = Math.max(0, Math.ceil(totalSlides / slidesPerPage) - 1);
-      if (currentIndex > maxIndex) {
-        currentIndex = 0;
+    function nextSlide() {
+      if (currentIndex < totalSlides) {
+        moveToIndex(currentIndex + 1);
       }
-      if (currentIndex < 0) {
-        currentIndex = maxIndex;
-      }
-      const offset = currentIndex * (100 / slidesPerPage); // процентное смещение
-      sliderWrapper.style.transform = `translateX(-${offset}%)`;
     }
 
-    function nextPage() {
-      currentIndex++;
-      updateSlider();
-    }
-
-    function prevPage() {
-      currentIndex--;
-      updateSlider();
+    function prevSlide() {
+      if (isAnimating) return;
+      isAnimating = true;
+      if (currentIndex === 0) {
+        // С прыжком в конец (клонирование)
+        wrapper.style.transition = 'none';
+        setTranslateX(totalSlides * slideWidthPercent);
+        currentIndex = totalSlides;
+        void wrapper.offsetWidth;
+        wrapper.style.transition = 'transform 0.5s ease';
+        moveToIndex(totalSlides - 1);
+      } else {
+        moveToIndex(currentIndex - 1);
+      }
+      setTimeout(() => {
+        isAnimating = false;
+      }, 500);
     }
 
     prevBtn.addEventListener('click', () => {
-      prevPage();
-      resetAutoSlide();
+      prevSlide();
+      resetAutoPlay();
     });
 
     nextBtn.addEventListener('click', () => {
-      nextPage();
-      resetAutoSlide();
+      nextSlide();
+      resetAutoPlay();
     });
 
-    // Автопрокрутка каждые 5 секунд
-    let autoSlideInterval = setInterval(() => {
-      nextPage();
-    }, 5000);
+    // Автопрокрутка каждые 4 секунды
+    let autoPlayTimer = setInterval(nextSlide, 4000);
 
-    function resetAutoSlide() {
-      clearInterval(autoSlideInterval);
-      autoSlideInterval = setInterval(() => {
-        nextPage();
-      }, 5000);
+    function resetAutoPlay() {
+      clearInterval(autoPlayTimer);
+      autoPlayTimer = setInterval(nextSlide, 4000);
     }
 
-    window.addEventListener('resize', () => {
-      updateSlidesPerPage();
-      updateSlider();
-    });
+    // Адаптив: отключаем transition на мобильных и показываем 1 слайд
+    function updateSlidesPerPage() {
+      if (window.innerWidth <= 640) {
+        wrapper.style.transition = 'none';
+        wrapper.style.transform = 'translateX(0)';
+        // Для мобилки можно отключать JS или ставить другие настройки
+        // Здесь просто стили, JS не меняется, но flex шагает по 1/1
+        document.querySelectorAll('.slider-item').forEach(item => item.style.flex = '0 0 100%');
+      } else {
+        wrapper.style.transition = 'transform 0.5s ease';
+        document.querySelectorAll('.slider-item').forEach(item => item.style.flex = '0 0 25%');
+      }
+    }
 
-    // Инициализация
+    window.addEventListener('resize', updateSlidesPerPage);
+
     updateSlidesPerPage();
-    updateSlider();
+
   })();
 </script>
