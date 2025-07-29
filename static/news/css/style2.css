@@ -4254,7 +4254,7 @@ img.mobile1 {
     .img-fluid {
         max-width: 100%;
         height: auto;
-        width: 150px;
+        width: 170px;
         display: block; /* важный момент */
         margin-left: auto;
         margin-right: auto;
@@ -5230,7 +5230,7 @@ img.mobile1 {
         }
 
         .breaking_news {
-            padding: 10px 5px;
+            padding: 10px 10px;
             width: 100%;
             margin-top: 0; /* Можно изменить в зависимости от нужд */
         }

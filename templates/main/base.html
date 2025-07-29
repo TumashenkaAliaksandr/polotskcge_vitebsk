@@ -87,8 +87,8 @@
             </form>
         </div>
         <div class="haderphone d-flex align-items-center">
-            <a href="tel:{{ info_contact.phone_number|default:''|cut:' ' }}"><i class="bi bi-phone"></i>{{ info_contact.phone_number|safe|translate_text }}</a>
-            <a href="mailto:{{ info_contact.email_address|default:'' }}"><i class="bi bi-mailbox-flag"></i>{{ info_contact.email_address|safe|translate_text }}</a>
+            <a href="tel:{{ info_contact.phone_number }}"><i class="bi bi-phone"></i>{{ "Наш телефон:"|translate_text }} {{ info_contact.phone_number|safe }}</a>
+            <a href="mailto:{{ info_contact.email_address }}"><i class="bi bi-mailbox-flag"></i>{{ "Наша почта:"|translate_text }} {{ info_contact.email_address|safe }}</a>
         </div>
     </div>
     <div class="haderphone-mobile">
@@ -99,8 +99,7 @@
         <div class="header-icons-mobile">
 
             <!-- Селектор размера шрифта с таким же id для совместимости -->
-            <select id="fontSizeSelector" aria-label="Выберите размер шрифта"
-                    style="margin-right: 10px; min-width: 70px;">
+            <select id="fontSizeSelector" aria-label="Выберите размер шрифта">
                 <option value="default" selected>Aa</option>
                 <option value="24">Aa 2</option>
                 <option value="28">Aa 3</option>
@@ -133,9 +132,9 @@
 
     </div>
     <div class="haderphone-mobile">
-        <a href="tel:{{ info_contact.phone_number|default:''|cut:' ' }}"><i class="bi bi-phone"></i>{{ info_contact.phone_number|safe|translate_text }}</a>
+        <a href="tel:{{ info_contact.phone_number }}"><i class="bi bi-phone"></i>{{ "Наш телефон:"|translate_text }} {{ info_contact.phone_number|safe|translate_text }}</a>
         <a href=""><i class=""></i></a>
-        <a href="mailto:{{ info_contact.email_address|default:'' }}"><i class="bi bi-mailbox-flag"></i>{{ info_contact.email_address|safe|translate_text }}</a>
+        <a href="mailto:{{ info_contact.email_address }}"><i class="bi bi-mailbox-flag"></i>{{ "Наша почта:"|translate_text }} {{ info_contact.email_address|safe|translate_text }}</a>
     </div>
 </div>
 
@@ -363,10 +362,10 @@
                             <li>
                                 <a href="{{ news.get_absolute_url }}">{{ news.title }}</a><br>
                                 <small>
-                                    {{ news.pub_date|date:"d.m.Y" }}
+                                    {{ news.pub_date }}
                                     {% if news.location %} | {{ news.location }}{% endif %}
                                 </small><br>
-                                <p>{{ news.description_small|truncatewords:30 }}</p>
+                                <p>{{ news.description_small }}</p>
                             </li>
                         {% endfor %}
                     </ul>
@@ -396,10 +395,10 @@
                             {{ contacts_footer.adres|insert_br_after_n_chars|translate_text|safe }}<br><br>
                             <span class="address-icon" aria-hidden="true">☎️</span>
                             <strong>{{ "Телефон:"|translate_text }}</strong>
-                            <a href="tel:{{ contacts_footer.phone|default:''|cut:' ' }}">{{ contacts_footer.phone|translate_text|safe }}</a> <!-- Сделано кликабельным -->
+                            <a href="tel:{{ contacts_footer.phone }}">{{ contacts_footer.phone|translate_text|safe }}</a> <!-- Сделано кликабельным -->
                             <span class="address-icon" aria-hidden="true">📧</span>
                             <strong>{{ "Почта:"|translate_text }}</strong>
-                            <a href="mailto:{{ contacts_footer.mail|default:'' }}">{{ contacts_footer.mail|translate_text|safe }}</a>
+                            <a href="mailto:{{ contacts_footer.mail }}">{{ contacts_footer.mail|translate_text|safe }}</a>
                             <!-- Сделано кликабельным -->
                         </p>
                     </div>
@@ -468,6 +467,7 @@
         </div>
     </div>
 </footer><!-- End Footer -->
+</body>
 
 <div id="preloader"></div>
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
