@@ -58,9 +58,9 @@ def one_news(request, pk, slug):
     return render(request, 'breaking.html', context=context)
 
 
-def NewsDetailView(request, pk, slug):
+def NewsDetailView(request, slug):
     """Views for News details"""
-    news = get_object_or_404(ModelNews, pk=pk, slug=slug)
+    news = get_object_or_404(ModelNews, slug=slug)
     news_main = ModelNews.objects.all().order_by('-pub_date')
     interactiv = Interactive.objects.all()
     centre_news = CentreNews.objects.all().order_by('-pub_date')

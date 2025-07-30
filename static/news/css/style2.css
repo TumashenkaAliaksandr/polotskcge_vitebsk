@@ -191,7 +191,7 @@ body a:hover {
 .callbacks_tabs a:after {
   content: "\f111";
   font-size:0;
-  font-family: FontAwesome;
+  /*font-family: FontAwesome;*/
   visibility: visible;
   display: block;
   height:13px;
@@ -2687,6 +2687,44 @@ li.list-group-item1 {
   display: block;
   visibility: visible;
 }
+
+@media only screen and (max-width: 740px) and (orientation: landscape) {
+  .main-info-about {
+    width: 220px;           /* адаптивная ширина для широкого, но низкого экрана */
+    height: 180px;          /* понижаем высоту, чтобы не “уезжало” за пределы экрана */
+    margin-top: 0;          /* убираем отрицательный отступ сверху */
+    right: 50%;             /* центрируем по горизонтали */
+    left: 50%;
+    top: 20px;              /* небольшой отступ сверху */
+    transform: translate(-50%, 0);  /* центрируем по ширине */
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0.97;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
+    z-index: 10;
+      background: url(webapp/static/webapp/assets/img/gigi_centr_logo_about.png) no-repeat;
+  }
+
+    .main-info-about {
+    position: relative;
+    /* top: 50%; */
+    height: 222px;
+    background: url(webapp/static/webapp/assets/img/gigi_centr_logo_about.png) no-repeat;
+    background-size: contain;
+    /* box-shadow: 0 0 15px rgba(193, 215, 213, 0.5); */
+    /* transform: translate(-50%, -50%); */
+    z-index: 10;
+    opacity: 0.97;
+    margin-top: -352px;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.3));
+    transition: filter 0.3s ease;
+    width: 200px;
+    right: 150px;
+}
+}
+
 
 .tab-content-weather-bg {
     border: 2px solid #ccc;

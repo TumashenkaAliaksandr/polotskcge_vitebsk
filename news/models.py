@@ -42,7 +42,7 @@ class ModelNews(models.Model):
 
     def get_absolute_url(self):
         return reverse('news:single', kwargs={
-            'pk': self.pk,
+            # 'pk': self.pk,
             'slug': self.slug,
         })  # Замените 'news_detail' на имя вашего URL-шаблона
 

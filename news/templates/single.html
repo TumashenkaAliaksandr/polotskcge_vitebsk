@@ -61,13 +61,13 @@
                                     </div>
                                     <div class="breaking-news-grid-right-gridr">
                                         <h4>
-                                            <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}">
+                                            <a href="{% url 'news:single' slug=main_litle_news.slug %}">
                                                 {{ main_litle_news.title|translate_text|wordwrap:30|truncatechars_html:58 }}
                                             </a>
                                         </h4>
                                         <ul>
                                             <li>
-                                                <a href="{% url 'news:single' pk=main_litle_news.id slug=main_litle_news.slug %}"><span
+                                                <a href="{% url 'news:single' slug=main_litle_news.slug %}"><span
                                                         class="fa fa-user-doctor"
                                                         aria-hidden="true"></span> {{ main_litle_news.author|translate_text }}
                                                     <label>|</label> {{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}</a>
