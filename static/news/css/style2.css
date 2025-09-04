@@ -772,14 +772,15 @@ body a:hover {
 }
 .dummy{
 	display:none;
-	padding:0 4.6em;
+	padding:0 3em;
 }
 .dummy p{
-	color:#fff;
-	font-size:1.1em;
-	line-height:1.8em;
-	margin:0;
-	font-weight:300;
+    color: #13ff00;
+    font-size: 1.1em;
+    line-height: 1.8em;
+    margin: 0;
+    font-weight: 600;
+    text-transform: lowercase;
 }
 .health ul li a.sport{
 	background: #ba00ff;

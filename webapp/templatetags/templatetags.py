@@ -42,6 +42,8 @@ def save_translations(lang: str, data: dict):
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
+
+# этот работает на локали
 def translate_and_cache(text: str, lang: str) -> str:
     """Умный переводчик с кэшированием в JSON и памяти"""
     if text is None:
@@ -94,6 +96,81 @@ def translate_and_cache(text: str, lang: str) -> str:
     except Exception as e:
         print(f'Translation error: {e}')
         return clean_text
+
+
+#этот работает на серваке
+#------
+
+# def translate_and_cache(text: str, lang: str) -> str:
+#     """
+#     Перевод с приоритетом:
+#     1) из локального JSON
+#     2) из Redis cache (при нахождении — дозаписать в JSON)
+#     3) GoogleTranslator + сохранение в JSON и Redis
+#
+#     Использует django-redis кеш с настройками из settings.CACHES
+#     """
+#
+#     if text is None:
+#         return ""
+#
+#     import re
+#     from html import unescape
+#
+#     # Очистка текста и нормализация
+#     clean_text = text.replace('& laquo;', '«').replace('& raquo;', '»').replace('& ndash;', '-')
+#     clean_text = re.sub(r'(&nbsp;|\s+)', ' ', clean_text).strip()
+#
+#     cache_key = f'trans_{lang}_{hash(clean_text)}'
+#     json_key = clean_text
+#
+#     # 1. Попытка получить из локального JSON
+#     translations = load_translations(lang)
+#     if json_key in translations:
+#         return translations[json_key]
+#
+#     # 2. Попытка получить из Redis кэша
+#     cached_translation = cache.get(cache_key)
+#     if cached_translation:
+#         # Дозаписываем найденный в Redis перевод в JSON, чтобы при следующих запросах читать из JSON
+#         translations[json_key] = cached_translation
+#         save_translations(lang, translations)
+#         return cached_translation
+#
+#     # 3. Если нет нигде — переводим через GoogleTranslator
+#     try:
+#         translator = GoogleTranslator(source='auto', target=lang)
+#         text_to_translate = unescape(clean_text)
+#
+#         if len(text_to_translate) > 1000:
+#             parts = [text_to_translate[i:i + 1000] for i in range(0, len(text_to_translate), 1000)]
+#             translated = ''.join(translator.translate_batch(parts))
+#         else:
+#             translated = translator.translate(text_to_translate)
+#
+#         # Экранирование HTML символов после перевода
+#         translated = (
+#             translated.replace('&', '&amp;')
+#                       .replace('<', '&lt;')
+#                       .replace('>', '&gt;')
+#         )
+#
+#         # Сохраняем в JSON
+#         translations[json_key] = translated
+#         save_translations(lang, translations)
+#
+#         # Сохраняем в Redis кэш
+#         cache.set(cache_key, translated, timeout=86400)  # 1 день
+#
+#         return translated
+#
+#     except Exception as e:
+#         # Логируем ошибку, можно использовать logging, здесь пока принт
+#         print(f'Translation error: {e}')
+#         return clean_text
+
+
+#------
 
 
 @register.simple_tag
