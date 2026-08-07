@@ -24,6 +24,177 @@ a:hover {
     text-decoration: none;
 }
 
+/* =========================================
+   NAVBAR FOCUS AND HOVER
+   ========================================= */
+
+#navbar {
+    --menu-color: #555555;
+    --menu-accent: #30b5b7;
+    --menu-accent-dark: #159b9d;
+    --menu-focus-bg: rgba(48, 181, 183, 0.09);
+    --menu-focus-shadow: rgba(48, 181, 183, 0.18);
+}
+
+/* Все ссылки основного и выпадающего меню */
+#navbar a {
+    position: relative;
+    border-radius: 6px;
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* Обычное наведение */
+#navbar > ul > li > a:hover,
+#navbar ul ul li > a:hover {
+    color: var(--menu-accent-dark);
+    background-color: var(--menu-focus-bg);
+}
+
+/* Главные пункты меню */
+#navbar > ul > li > a {
+    padding: 10px 12px;
+}
+
+/* Ссылки выпадающих меню */
+#navbar ul ul li > a {
+    padding: 10px 16px;
+}
+
+/* =========================================
+   КРАСИВЫЙ FOCUS
+   ========================================= */
+
+/* Все ссылки при фокусе */
+#navbar a:focus,
+#navbar a:focus-visible {
+    outline: 2px solid var(--menu-accent) !important;
+    outline-offset: 3px;
+    color: var(--menu-accent-dark) !important;
+    background-color: var(--menu-focus-bg);
+    box-shadow: 0 0 0 5px var(--menu-focus-shadow) !important;
+}
+
+/* Фокус главного пункта меню */
+#navbar > ul > li > a:focus,
+#navbar > ul > li > a:focus-visible {
+    transform: translateY(-1px);
+}
+
+/* Фокус ссылки внутри выпадающего меню */
+#navbar ul ul li > a:focus,
+#navbar ul ul li > a:focus-visible {
+    transform: translateX(4px);
+}
+
+/* Бирюзовая полоска слева у ссылок dropdown */
+#navbar ul ul li > a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 3px;
+    height: 0;
+    border-radius: 0 3px 3px 0;
+    background-color: var(--menu-accent);
+    transform: translateY(-50%);
+    transition: height 0.25s ease;
+}
+
+/* Показываем полоску при наведении или фокусе */
+#navbar ul ul li > a:hover::before,
+#navbar ul ul li > a:focus::before,
+#navbar ul ul li > a:focus-visible::before {
+    height: 60%;
+}
+
+/* =========================================
+   ACTIVE
+   ========================================= */
+
+#navbar > ul > li > a.active {
+    color: var(--menu-accent-dark);
+    background-color: var(--menu-focus-bg);
+    font-weight: 600;
+}
+
+/* Полоска у активного главного пункта */
+#navbar > ul > li > a.active::after {
+    content: "";
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 3px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--menu-accent);
+}
+
+/* =========================================
+   DROPDOWN ARROWS
+   ========================================= */
+
+#navbar .dropdown > a i {
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* Стрелка главного меню при наведении/фокусе */
+#navbar .dropdown > a:hover i,
+#navbar .dropdown > a:focus i,
+#navbar .dropdown > a:focus-visible i {
+    color: var(--menu-accent);
+}
+
+/* Поворот стрелки вниз */
+#navbar > ul > li.dropdown:hover > a > i,
+#navbar > ul > li.dropdown:focus-within > a > i {
+    transform: rotate(180deg);
+}
+
+/* Поворот стрелки вложенного меню */
+#navbar ul ul li.dropdown:hover > a > i,
+#navbar ul ul li.dropdown:focus-within > a > i {
+    transform: rotate(90deg);
+}
+
+/* =========================================
+   KEYBOARD NAVIGATION
+   ========================================= */
+
+/* Открываем dropdown при навигации клавишей Tab */
+#navbar li:focus-within > ul {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 991px) {
+    #navbar > ul > li > a,
+    #navbar ul ul li > a {
+        transform: none;
+    }
+
+    #navbar a:focus,
+    #navbar a:focus-visible {
+        outline-offset: 2px;
+        box-shadow: 0 0 0 4px var(--menu-focus-shadow) !important;
+    }
+
+    #navbar ul ul li > a:focus,
+    #navbar ul ul li > a:focus-visible {
+        transform: none;
+    }
+}
+
 .haderphone a {
     color: #ffffff;
     text-decoration: none;
@@ -1500,12 +1671,9 @@ section#clocks-two {
 
 .main-info-about {
     position: relative;
-    /*top: 50%;*/
     height: 315px;
     background: url('../../assets/img/gigi_centr_logo_about.png') no-repeat;
     background-size: contain;
-    /*box-shadow: 0 0 15px rgba(193, 215, 213, 0.5);*/
-    /*transform: translate(-50%, -50%);*/
     z-index: 10; /* фон ниже фото */
     opacity: 0.97;
     margin-top: -315px;
@@ -1911,7 +2079,6 @@ section#clocks-two {
     .main-info-tele {
         position: inherit;
         height: 300px;
-        /*background: url('../../assets/img/tv.png') no-repeat center center;*/
         background-size: contain;
         z-index: 10;
         opacity: 0.95;
