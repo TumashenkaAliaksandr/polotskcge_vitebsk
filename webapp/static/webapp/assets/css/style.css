@@ -111,6 +111,13 @@ a:hover {
     height: 60%;
 }
 
+/* Убираем outline и box-shadow у всех элементов при фокусе и focus-visible */
+*:focus,
+*:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 /* =========================================
    ACTIVE
    ========================================= */

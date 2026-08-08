@@ -24,7 +24,7 @@ def cge_news(request):
     model_video = Video.objects.all().order_by('-timestamp')
 
     # Пагинация: разбиваем новости на страницы по 10 новостей на страницу
-    paginator = Paginator(all_news, 3)  # По 10 новостей на страницу
+    paginator = Paginator(all_news, 6)  # По 10 новостей на страницу
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     centre_news = CentreNews.objects.all().order_by('-pub_date')
@@ -48,14 +48,14 @@ def cge_news(request):
     return render(request, 'breaking.html', context=context)
 
 
-def one_news(request, pk, slug):
-    """these are views for Blog News list"""
-    news = get_object_or_404(ModelNews, pk=pk, slug=slug)
-
-    context = {
-        'news': news,
-    }
-    return render(request, 'breaking.html', context=context)
+# def one_news(request, pk, slug):
+#     """these are views for Blog News list"""
+#     news = get_object_or_404(ModelNews, pk=pk, slug=slug)
+#
+#     context = {
+#         'news': news,
+#     }
+#     return render(request, 'breaking.html', context=context)
 
 
 def NewsDetailView(request, slug):
