@@ -636,14 +636,23 @@ h6 {
 }
 
 
-#header .logo {
-    font-size: 28px;
-    margin: 0;
-    padding: 0;
-    line-height: 1;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+/* Убираем рамку focus-visible у логотипа */
+a.logo:focus,
+a.logo:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
+#header a.logo:focus,
+#header a.logo:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Эффект «нажатия» */
+a.logo:active,
+a.logo.active-click {
+    transform: scale(0.92);
+    opacity: 0.85;
 }
 
 #header .logo a {
