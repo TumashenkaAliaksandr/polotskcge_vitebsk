@@ -24,7 +24,7 @@ def cge_news(request):
     model_video = Video.objects.all().order_by('-timestamp')
 
     # Пагинация: разбиваем новости на страницы по 10 новостей на страницу
-    paginator = Paginator(all_news, 6)  # По 10 новостей на страницу
+    paginator = Paginator(all_news, 15)  # По 10 новостей на страницу
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     centre_news = CentreNews.objects.all().order_by('-pub_date')
