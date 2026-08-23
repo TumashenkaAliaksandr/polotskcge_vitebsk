@@ -4,6 +4,7 @@ from django.shortcuts import render, get_object_or_404
 from webapp.models import CentreNews, PhotoDay
 from .utils import get_weather
 from django.core.paginator import Paginator
+from django.template.defaultfilters import truncatechars_html, wordwrap
 
 
 def cge_news(request):
@@ -31,6 +32,12 @@ def cge_news(request):
     # Получаем данные о погоде
     weather = get_weather()
     photo_day = PhotoDay.objects.all()
+
+    for news_item in page_obj:
+        news_item.description_small_rendered = truncatechars_html(
+            wordwrap(news_item.description_small, 31),
+            31
+        )
 
     context = {
         'model_blog_main': model_blog_main,

@@ -6,11 +6,12 @@
 {% block content %}
     <!-- ======= Breadcrumbs Section ======= -->
     <!-- pagebanner -->
-    <section id="pagebanner1" style="background-image: url('{% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_breadcr_recurces.jpeg' %}{% endif %}')">
-    <div class="brcr-title">
-        <div class="overlay"></div>
-        <h2>{{ "Новости Центра"|translate_text }}</h2>
-    </div>
+    <section id="pagebanner1" style="background-image: url('
+            {% if contact_banner_image %}{{ contact_banner_image.url }}{% else %}{% static 'webapp/assets/img/gigi_centr_breadcr_recurces.jpeg' %}{% endif %}')">
+        <div class="brcr-title">
+            <div class="overlay"></div>
+            <h2>{{ "Новости Центра"|translate_text }}</h2>
+        </div>
     </section>
     <!-- End Pagebanner -->
     <section class="breadcrumbs_contacts">
@@ -41,21 +42,15 @@
                             <div class="marquee2"><a class="breaking"
                                                      href="{% url 'news:cge_news' %}">{{ main_interactiv_string.description_two |translate_text| safe }}</a>
                             </div>
-                            <div class="clearfix"></div>
                         </div>
                         <div class="clearfix"></div>
-                        <script type="text/javascript" src="{% static 'js/jquery.marquee.js' %}"></script>
-                        <script>
-                            $('.marquee').marquee({pauseOnHover: true});
-                            //@ sourceURL=pen.js
-                        </script>
                     </div>
                 {% endfor %}
                 <div class="breaking-news-grids margin-padding2">
                     <div class="col-md-8 breaking-news-grid-left">
                         <div class="wmuSlider example1">
-                            {% for main_preview in preview %}
-                                <div class="wmuSliderWrapper">
+                            <div class="wmuSliderWrapper">
+                                {% for main_preview in preview %}
                                     <article style="position: absolute; width: 100%; opacity: 0;">
                                         <div class="banner-wrap">
                                             <div class="baner-beaking"
@@ -65,13 +60,9 @@
                                             </div>
                                         </div>
                                     </article>
-                                </div>
-                            {% endfor %}
+                                {% endfor %}
+                            </div>
                         </div>
-                        <script src="{% static 'js/jquery.wmuSlider.js' %}"></script>
-                        <script>
-                            $('.example1').wmuSlider();
-                        </script>
                     </div>
 
                     <div class="col-md-4 breaking-news-grid-right">
@@ -84,7 +75,7 @@
                                             <div class="breaking-news-grid-right-gridl news-grid-2 img img-fixed-size-three">
                                                 <a href="{% url 'news:single' slug=main_litle_news.slug %}"><img
                                                         src="{{ main_litle_news.logo_photo.url }}" alt=" "
-                                                        class="img-responsive"/></a>
+                                                        class="img-responsive" loading="lazy" decoding="async"></a>
                                             </div>
                                             <div class="breaking-news-grid-right-gridr">
                                                 <h4>
@@ -97,7 +88,8 @@
                                                         <a href="{% url 'news:single' slug=main_litle_news.slug %}"><span
                                                                 class="fa fa-user-doctor"
                                                                 aria-hidden="true"></span> {{ main_litle_news.author|translate_text }}
-                                                            <label>|</label> {{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}
+                                                            <label>|</label>
+                                                            {{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -114,58 +106,58 @@
 
                 <!-- news-and-events -->
                 <section id="about" class="about main-bg">
-                    <div class="container" data-aos="fade-up">
+                    <div class="container">
                         <div class="news">
                             <div class="news-grids">
                                 <div class="col-md-8 news-grid-left">
-    <h3>{{ "Все новости"|translate_text }}</h3>
+                                    <h3>{{ "Все новости"|translate_text }}</h3>
 
-    <ul>
-        {% for news_item in page_obj %}
-            <li>
-                <div class="news-grid-left1">
-                    <a href="{% url 'news:single' slug=news_item.slug %}">
-                        <img src="{{ news_item.photo.url }}"
-                             alt=""
-                             class="img-responsive"/>
-                    </a>
-                </div>
+                                    <ul>
+                                        {% for news_item in page_obj %}
+                                            <li>
+                                                <div class="news-grid-left1">
+                                                    <a href="{% url 'news:single' slug=news_item.slug %}">
+                                                        <img src="{{ news_item.photo.url }}"
+                                                             alt=""
+                                                             class="img-responsive" loading="lazy" decoding="async">
+                                                    </a>
+                                                </div>
 
-                <div class="news-grid-right1">
-                    <h4>
-                        <a href="{% url 'news:single' slug=news_item.slug %}">
-                            {{ news_item.title|translate_text|wordwrap:30|truncatechars_html:58 }}
-                        </a>
-                    </h4>
+                                                <div class="news-grid-right1">
+                                                    <h4>
+                                                        <a href="{% url 'news:single' slug=news_item.slug %}">
+                                                            {{ news_item.title|translate_text|wordwrap:30|truncatechars_html:58 }}
+                                                        </a>
+                                                    </h4>
 
-                    <h5 class="fa fa-user-doctor">
-                        <label>|</label>
+                                                    <h5 class="fa fa-user-doctor">
+                                                        <label>|</label>
 
-                        <a href="{% url 'news:single' slug=news_item.slug %}">
-                            {{ news_item.author|translate_text }}
-                        </a>
+                                                        <a href="{% url 'news:single' slug=news_item.slug %}">
+                                                            {{ news_item.author|translate_text }}
+                                                        </a>
 
-                        <label>|</label>
+                                                        <label>|</label>
 
 
-                    </h5>
-                    <i>
-                            {{ news_item.pub_date|translate_text|date:"d.m.Y" }}
-                        </i>
+                                                    </h5>
+                                                    <i>
+                                                        {{ news_item.pub_date|translate_text|date:"d.m.Y" }}
+                                                    </i>
 
-                    <a href="{% url 'news:single' slug=news_item.slug %}">
-                        <p>
-                            {{ news_item.description_small|translate_text|wordwrap:31|truncatechars_html:31|safe }}
-                        </p>
-                    </a>
-                </div>
+                                                    <a href="{% url 'news:single' slug=news_item.slug %}">
+                                                        <p>
+                                                            {{ news_item.description_small|translate_text|safe }}
+                                                        </p>
+                                                    </a>
+                                                </div>
 
-                <div class="clearfix"></div>
-            </li>
-        {% endfor %}
-    </ul>
+                                                <div class="clearfix"></div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
 
-    <div class="pagination">
+                                    <div class="pagination">
         <span class="step-links">
 
             {% if page_obj.has_previous %}
@@ -196,8 +188,8 @@
             {% endif %}
 
         </span>
-    </div>
-</div>
+                                    </div>
+                                </div>
                                 <!-- Tab panes -->
                                 <div class="news">
                                     <div class="news-grids">
@@ -224,7 +216,7 @@
                                             {% for photo_of_the_day in photo_day %}
                                                 <div class="news-grid-rght3">
                                                     <img src="{{ photo_of_the_day.image.url }}" alt=" "
-                                                         class="img-responsive"/>
+                                                         class="img-responsive" loading="lazy" decoding="async">
                                                     <div class="story">
                                                         <p>{{ photo_of_the_day.description|safe|translate_text }}</p>
                                                         <p>
@@ -238,33 +230,42 @@
                                             <div class="sap_tabs">
                                                 <div id="horizontalTab" style="display: block; width: 100%; margin: 0;">
                                                     <ul class="nav resp-tabs-list">
-                                                        <li class="resp-tab-item grid1 resp-tab-active" aria-controls="tab_item-0" role="tab">
+                                                        <li class="resp-tab-item grid1 resp-tab-active"
+                                                            aria-controls="tab_item-0" role="tab">
                                                             <span>{{ "Популярные Новости"|translate_text }}</span>
                                                         </li>
-                                                        <li class="resp-tab-item grid2" aria-controls="tab_item-1" role="tab">
+                                                        <li class="resp-tab-item grid2" aria-controls="tab_item-1"
+                                                            role="tab">
                                                             <span>{{ "Новости О природе"|translate_text }}</span>
                                                         </li>
                                                         <div class="clear"></div>
                                                     </ul>
                                                     <div class="resp-tabs-container">
                                                         <!-- Проверяем, является ли новость популярной -->
-                                                        <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
+                                                        <div class="tab-1 resp-tab-content"
+                                                             aria-labelledby="tab_item-0">
                                                             {% for main_popular in popular_news %}
                                                                 {% if main_popular.is_popular %}
                                                                     <div class="facts">
                                                                         <div class="tab_list">
-                                                                            <img src="{{ main_popular.photo.url }}" alt=""
-                                                                                 class="img-responsive">
+                                                                            <img src="{{ main_popular.photo.url }}"
+                                                                                 alt=""
+                                                                                 class="img-responsive" loading="lazy"
+                                                                                 decoding="async">
                                                                         </div>
                                                                         <div class="tab_list1">
                                                                             <ul>
                                                                                 <li>
                                                                                     <a href="{% url 'news:single' slug=main_popular.slug %}">{{ main_popular.author|translate_text }}</a>
                                                                                 </li>
-                                                                                <li>{{ main_popular.pub_date|translate_text|date:"d.m.Y" }}</li>
+                                                                                <li>
+                                                                                    {{ main_popular.pub_date|translate_text|date:"d.m.Y" }}</li>
                                                                             </ul>
                                                                             <p>
-                                                                                <a href="{% url 'news:single' slug=main_popular.slug %}">{{ main_popular.title|translate_text|slice:":45" }}{% if main_popular.title|translate_text|length > 45 %}...{% endif %}</a>
+                                                                                <a href="{% url 'news:single' slug=main_popular.slug %}">
+                                                                                    {{ main_popular.title|translate_text|slice:":45" }}
+                                                                                            {% if main_popular.title|translate_text|length > 45 %}
+                                                                                                ...{% endif %}</a>
                                                                             </p>
                                                                         </div>
                                                                         <div class="clearfix"></div>
@@ -273,23 +274,28 @@
                                                             {% endfor %}
                                                         </div>
 
-                                                        <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
+                                                        <div class="tab-1 resp-tab-content"
+                                                             aria-labelledby="tab_item-1">
                                                             {% for main_nature in nature_news %}
                                                                 {% if main_nature.is_nature_news %}
                                                                     <div class="facts">
                                                                         <div class="tab_list">
-                                                                            <img src="{{ main_nature.photo.url }}" alt=""
-                                                                                 class="img-responsive">
+                                                                            <img src="{{ main_nature.photo.url }}"
+                                                                                 alt=""
+                                                                                 class="img-responsive" loading="lazy"
+                                                                                 decoding="async">
                                                                         </div>
                                                                         <div class="tab_list1">
                                                                             <ul>
                                                                                 <li>
                                                                                     <a href="{% url 'news:single' slug=main_nature.slug %}">{{ main_nature.author|translate_text }}</a>
                                                                                 </li>
-                                                                                <li>{{ main_nature.pub_date|translate_text|date:"d.m.Y" }}</li>
+                                                                                <li>
+                                                                                    {{ main_nature.pub_date|translate_text|date:"d.m.Y" }}</li>
                                                                             </ul>
                                                                             <p>
-                                                                                <a href="{% url 'news:single' slug=main_nature.slug %}">{{ main_nature.title|translate_text|slice:":45" }}</a>
+                                                                                <a href="{% url 'news:single' slug=main_nature.slug %}">
+                                                                                    {{ main_nature.title|translate_text|slice:":45" }}</a>
                                                                             </p>
                                                                         </div>
                                                                         <div class="clearfix"></div>
@@ -298,17 +304,6 @@
                                                             {% endfor %}
                                                         </div>
                                                     </div>
-                                                    <script src="{% static 'js/easyResponsiveTabs.js' %}" type="text/javascript"></script>
-                                                    <script type="text/javascript">
-                                                        $(document).ready(function () {
-                                                            $('#horizontalTab').easyResponsiveTabs({
-                                                                type: 'default', //Types: default, vertical, accordion
-                                                                width: 'auto', //auto or any width like 600px
-                                                                fit: true   // 100% fit in a container
-                                                            });
-                                                        });
-
-                                                    </script>
                                                 </div>
                                             </div>
                                         </div>
@@ -381,8 +376,10 @@
                             <script>
                                 $(document).ready(function () {
                                     {% for main_video in model_video %}
-                                        var video{{ forloop.counter }} = document.getElementById('video{{ forloop.counter }}');
-                                        var videoContainer{{ forloop.counter }} = document.getElementById('video-container{{ forloop.counter }}');
+                                        var video{{ forloop.counter }} = document.getElementById('video
+                    {{ forloop.counter }}');
+                                        var videoContainer{{ forloop.counter }}
+                     = document.getElementById('video-container{{ forloop.counter }}');
 
                                         // Дождитесь, пока видео будет загружено
                                         video{{ forloop.counter }}.addEventListener('loadedmetadata', function () {
@@ -421,16 +418,19 @@
                                                                            style="width: 100%;">
                                                                         <source src="{{ main_video.video_file.url }}"
                                                                                 type="video/mp4">
-                                                                        {{ "Ваш браузер не поддерживает видео тег."|translate_text }}
+
+                    {{ "Ваш браузер не поддерживает видео тег."|translate_text }}
                                                                     </video>
                                                                 </div>
                                                             </a>
 
                                                             <div class="floods-text">
                                                                 <h3>{{ main_video.title|translate_text }}
-                                                                    <span>{{ main_video.category|translate_text }} <label>|</label> <i>{{ main_video.author|translate_text }}</i></span>
+                                                                    <span>{{ main_video.category|translate_text }}
+                     <label>|</label> <i>{{ main_video.author|translate_text }}</i></span>
                                                                 </h3>
-                                                                <p>{{ main_video.timestamp|translate_text|date:"d.m.Y" }}</p>
+                                                                <p>
+                    {{ main_video.timestamp|translate_text|date:"d.m.Y" }}</p>
                                                             </div>
                                                         </div>
                                                     </li>
@@ -497,50 +497,81 @@
 
 
                 <div class="breaking-news-grids-bottom">
-                <div class="banner-bottom-grids">
-                    {% for main_litle_news in centre_news %}
-                        <div class="col-md-3 banner-bottom-grid-left">
-                            <div class="br-bm-gd-lt-fon">
-                                <a href="{{ main_litle_news.link }}"><img
-                                        src="{{ main_litle_news.img.url }}" alt=" "
-                                        class="img-responsive"/></a>
-                                <div class="overlay">
-                                    <div class="arrow-left"></div>
-                                    <div class="rectangle"></div>
-                                </div>
-                                <div class="health-pos">
-                                    <div class="health">
-                                        <ul>
-                                            <li>
-                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.name|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ main_litle_news.link }}">{{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}</a>
-                                            </li>
-                                        </ul>
+                    <div class="banner-bottom-grids">
+                        {% for main_litle_news in centre_news %}
+                            <div class="col-md-3 banner-bottom-grid-left">
+                                <div class="br-bm-gd-lt-fon">
+                                    <a href="{{ main_litle_news.link }}"><img
+                                            src="{{ main_litle_news.img.url }}" alt=" "
+                                            class="img-responsive" loading="lazy" decoding="async"></a>
+                                    <div class="overlay">
+                                        <div class="arrow-left"></div>
+                                        <div class="rectangle"></div>
                                     </div>
-                                    <h3>{{ main_litle_news.desc|translate_text|safe|wordwrap:10|truncatechars_html:58 }}</h3>
-                                    <div class="dummy">
-                                        <a href="{{ main_litle_news.link }}">
-                                            <p>{{ main_litle_news.desc_hover|translate_text|safe }}</p></a>
-                                    </div>
-                                    <div class="com-heart-health">
-                                        <ul>
-                                            <li><a href="{{ main_litle_news.link }}"><span
-                                                    class="fa fa-user-doctor"
-                                                    aria-hidden="true"></span> {{ main_litle_news.author|translate_text }}</a></li>
-                                        </ul>
+                                    <div class="health-pos">
+                                        <div class="health">
+                                            <ul>
+                                                <li>
+                                                    <a href="{{ main_litle_news.link }}">
+                                                        {{ main_litle_news.name|translate_text|wordwrap:30|truncatechars_html:58 }}</a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ main_litle_news.link }}">
+                                                        {{ main_litle_news.pub_date|translate_text|date:"d.m.Y" }}</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h3>
+                                            {{ main_litle_news.desc|translate_text|safe|wordwrap:10|truncatechars_html:58 }}</h3>
+                                        <div class="dummy">
+                                            <a href="{{ main_litle_news.link }}">
+                                                <p>{{ main_litle_news.desc_hover|translate_text|safe }}</p></a>
+                                        </div>
+                                        <div class="com-heart-health">
+                                            <ul>
+                                                <li><a href="{{ main_litle_news.link }}"><span
+                                                        class="fa fa-user-doctor"
+                                                        aria-hidden="true"></span> {{ main_litle_news.author|translate_text }}
+                                                </a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    {% endfor %}
-                    <div class="clearfix"></div>
+                        {% endfor %}
+                        <div class="clearfix"></div>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>
     <!-- //breaking-news -->
+    <script type="text/javascript" src="{% static 'js/jquery.marquee.js' %}"></script>
+    <script src="{% static 'js/jquery.wmuSlider.js' %}"></script>
+    <script src="{% static 'js/easyResponsiveTabs.js' %}" type="text/javascript"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            if ($.fn.marquee) {
+                $('.marquee').marquee({
+                    pauseOnHover: true
+                });
+            }
+
+            if ($.fn.wmuSlider) {
+                $('.example1').wmuSlider();
+            }
+
+            if ($.fn.easyResponsiveTabs) {
+                $('#horizontalTab').easyResponsiveTabs({
+                    type: 'default',
+                    width: 'auto',
+                    fit: true
+                });
+            }
+
+        });
+    </script>
 
 {% endblock %}
